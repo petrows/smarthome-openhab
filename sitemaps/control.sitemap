@@ -94,6 +94,10 @@ sitemap control label="УПРАВЛЕНИЕ"
 				Switch	item=cfgHeatingEnable label="Включено"
 				Switch	item=cfgHeatingAutoEnable label="Прогрев по расписанию" visibility=[cfgHeatingEnable==ON]
 				Switch	item=cfgHeatingPersistanceEnable label="Прогрев при возврате домой" visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempOff label="Температура выкл." minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempIdle label="Температура день" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempHeat label="Температура тепло" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Text	item=heatingTempAuto label="Температура авто [%.1f °C]" icon=heatingt visibility=[cfgHeatingEnable==ON]
 			}
 			Frame label="Присутствие" {
 				Switch	item=cfgPersistanceEnable
@@ -138,10 +142,4 @@ sitemap control label="УПРАВЛЕНИЕ"
 		}
 		
 	}
-	
-	//Frame label="Состояние" visibility=[cfgPersistanceEnable==ON] {
-	//	Switch	item=persTest
-	//}
-
-
 }

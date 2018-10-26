@@ -3,37 +3,49 @@ Switch windowKitchenOpen "Проветривание: Кухня/Кабинет"
 Switch windowLivingOpen "Проветривание: Зал"
 Switch windowSleepingOpen "Проветривание: Спальня"
 
+// Current temp set by rules
+Number heatingTempAuto
+
+// Groups define
+Group gHeatingAll <heatingt>
+
+// Items to be controlled by Auto 
+Group gHeatingAuto <heatingt>
+
+// Items to be controlled for OFF
+Group gHeatingOff <heatingt>
+
 Number maxCabinetTempAuto
 Switch maxCabinetBattLow "Разряд" <battery> (gBattery) {channel="max:thermostat:NEQ1442869:OEQ1208573:battery_low"}
 String maxCabinetMode    "Режим []" {channel="max:thermostat:NEQ1442869:OEQ1208573:mode"}
-Number maxCabinetTempActual "Температура  [%.1f °C]" <temperature> (gMaxCabinetTemp) {channel="max:thermostat:NEQ1442869:OEQ1208573:actual_temp"}
-Number maxCabinetTempSet "Термостат [%.1f °C]" <heatingt> (gMaxCabinetTemp) {channel="max:thermostat:NEQ1442869:OEQ1208573:set_temp"}
+Number maxCabinetTempActual "Температура  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1208573:actual_temp"}
+Number maxCabinetTempSet "Термостат [%.1f °C]" <heatingt> (gHeatingAll,gHeatingAuto,gHeatingOff) {channel="max:thermostat:NEQ1442869:OEQ1208573:set_temp"}
 Number maxCabinetValve "Клапан" <pressure> {channel="max:thermostat:NEQ1442869:OEQ1208573:valve"}
 
 Number maxKitchenTempAuto
 Switch maxKitchenBattLow "Разряд" <battery> (gBattery) {channel="max:thermostat:NEQ1442869:NEQ1399641:battery_low"}
 String maxKitchenMode    "Режим []" {channel="max:thermostat:NEQ1442869:NEQ1399641:mode"}
 Number maxKitchenTempActual "Температура  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:NEQ1399641:actual_temp"} 
-Number maxKitchenTempSet"Термостат [%.1f °C]"  <heatingt> {channel="max:thermostat:NEQ1442869:NEQ1399641:set_temp"}
+Number maxKitchenTempSet"Термостат [%.1f °C]"  <heatingt> (gHeatingAll,gHeatingAuto,gHeatingOff) {channel="max:thermostat:NEQ1442869:NEQ1399641:set_temp"}
 Number maxKitchenValve "Клапан" <pressure> {channel="max:thermostat:NEQ1442869:NEQ1399641:valve"}
 
 Number maxSleepingTempAuto
 Switch maxSleepingBattLow "Разряд" <battery> (gBattery) {channel="max:thermostat:NEQ1442869:MEQ1775184:battery_low"}
 String maxSleepingMode    "Режим []" {channel="max:thermostat:NEQ1442869:MEQ1775184:mode"}
 Number maxSleepingTempActual "Температура  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:MEQ1775184:actual_temp"}
-Number maxSleepingTempSet "Термостат [%.1f °C]" <heatingt> {channel="max:thermostat:NEQ1442869:MEQ1775184:set_temp"}
+Number maxSleepingTempSet "Термостат [%.1f °C]" <heatingt> (gHeatingAll,gHeatingAuto,gHeatingOff) {channel="max:thermostat:NEQ1442869:MEQ1775184:set_temp"}
 Number maxSleepingValve "Клапан" <pressure> {channel="max:thermostat:NEQ1442869:MEQ1775184:valve"}
 
 Number maxLivingTempAuto
 Switch maxLivingBattLow "Разряд" <battery> (gBattery) {channel="max:thermostat:NEQ1442869:MEQ1774936:battery_low"}
 String maxLivingMode    "Режим []" {channel="max:thermostat:NEQ1442869:MEQ1774936:mode"}
 Number maxLivingTempActual "Температура  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:MEQ1774936:actual_temp"}
-Number maxLivingTempSet "Термостат [%.1f °C]" <heatingt> {channel="max:thermostat:NEQ1442869:MEQ1774936:set_temp"}
+Number maxLivingTempSet "Термостат [%.1f °C]" <heatingt> (gHeatingAll,gHeatingAuto,gHeatingOff) {channel="max:thermostat:NEQ1442869:MEQ1774936:set_temp"}
 Number maxLivingValve "Клапан" <pressure> {channel="max:thermostat:NEQ1442869:MEQ1774936:valve"}
 
 Number maxBathTempAuto
 Switch maxBathBattLow "Разряд" <battery> (gBattery) {channel="max:thermostat:NEQ1442869:OEQ1037125:battery_low"}
 String maxBathMode    "Режим []" {channel="max:thermostat:NEQ1442869:OEQ1037125:mode"}
 Number maxBathTempActual "Температура  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1037125:actual_temp"}
-Number maxBathTempSet "Термостат [%.1f °C]" <heatingt> {channel="max:thermostat:NEQ1442869:OEQ1037125:set_temp"}
+Number maxBathTempSet "Термостат [%.1f °C]" <heatingt> (gHeatingAll,gHeatingOff) {channel="max:thermostat:NEQ1442869:OEQ1037125:set_temp"}
 Number maxBathValve "Клапан" <pressure> {channel="max:thermostat:NEQ1442869:OEQ1037125:valve"}
