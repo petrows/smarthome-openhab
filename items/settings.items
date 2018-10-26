@@ -1,0 +1,11 @@
+Group gSettings <settings>
+Group gSettingsHeating <settings>
+
+Switch cfgHeatingEnable "Отопление: включено" <radiator> (gSettings,gSettingsHeating)
+Switch cfgHeatingAutoEnable "Отопление: авто-прогрев" <radiator> (gSettings)
+Switch cfgHeatingPersistanceEnable "Отопление: прогрев при возврате домой" <radiator> (gSettings)
+Switch cfgPersistanceEnable "Определение присутствия" <parents_1_1> (gSettings)
+
+Group:Switch:OR(ON,OFF) gBattery
+
+

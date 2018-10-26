@@ -1,0 +1,12 @@
+Strategies {
+    everyMinute : "0 * * * * ?"
+    everyQHour  : "0 */15 * * * ?"
+    everyHour   : "0 0 * * * ?"
+    everyDay    : "0 0 0 * * ?"
+}
+
+Items {
+	* : strategy = everyChange, restoreOnStartup
+	gMiSensorsClimate* : strategy = everyChange, everyMinute
+	gMax* : strategy = everyChange, everyHour
+}

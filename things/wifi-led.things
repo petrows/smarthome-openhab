@@ -1,0 +1,1 @@
+Thing wifiled:wifiled:6001949568A9 [ ip="192.168.80.22", port=5577, pollingPeriod=3000, protocol="LD686", driver="CLASSIC", fadeDurationInMs=2000, fadeSteps=100 ]

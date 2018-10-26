@@ -1,0 +1,6 @@
+// Switch mqttSw1 {mqtt=">[mqtt:pws/testsw/comd1:command:ON:1],>[mqtt:pws/testsw/comd1:command:OFF:0]"} 
+// Switch mqttSw1 {mqtt=">[mqtt:pws/testsw/comd1:command:ON:1],>[mqtt:pws/testsw/comd1:command:OFF:0],<[mqtt:pws/testdevice1/button:command:ON:ON],<[mqtt:pws/testdevice1/button:command:OFF:OFF]"} 
+
+// Switch mqttSw1 {mqtt=">[mqtt:pws/testsw/comd1:command:ON:1],>[mqtt:pws/testsw/comd1:command:OFF:0]"} 
+
+Switch testSw

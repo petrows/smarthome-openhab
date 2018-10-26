@@ -1,0 +1,45 @@
+rule "Yeelight 1 power"
+when
+    Item yeeSwitch changed
+then
+	if (yeeSwitch.state == ON) {
+		executeCommandLine("yeecli --ip mi-lamp-1.pws turn on")
+	} else {
+		executeCommandLine("yeecli --ip mi-lamp-1.pws turn off")
+	}
+end
+
+rule "Yeelight 1 brightness"
+when
+    Item yeeBrightness changed
+then
+	yeeSwitch.sendCommand(ON)
+	executeCommandLine("yeecli --ip mi-lamp-1.pws brightness " + yeeBrightness.state)
+end
+
+rule "Yeelight 1 color temp"
+when
+    Item yeeColorTemp changed
+then
+	yeeSwitch.sendCommand(ON)
+	executeCommandLine("yeecli --ip mi-lamp-1.pws temperature " + yeeColorTemp.state)
+end
+
+rule "Yeelight 1 color"
+when
+    Item yeeColor changed
+then
+	logInfo("LED", "Color changing: " + yeeColor.state)
+		
+	var hsbValue = yeeColor.state as HSBType
+	
+	var redValue   = String.format("%02X", (hsbValue.red.floatValue * 2.55) as int)
+	var greenValue = String.format("%02X", (hsbValue.green.floatValue * 2.55) as int)
+	var blueValue  = String.format("%02X", (hsbValue.blue.floatValue * 2.55) as int)
+	
+	executeCommandLine("yeecli --ip mi-lamp-1.pws rgb " + redValue + greenValue + blueValue)
+	
+	val brightness = hsbValue.brightness.intValue
+	yeeBrightness.sendCommand(brightness)
+end
+

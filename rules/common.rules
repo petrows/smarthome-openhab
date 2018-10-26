@@ -1,0 +1,23 @@
+rule "System started"
+when
+    System started
+then
+    presAll.sendCommand(OFF) // assume no one is home on startup
+    presBlePeter.sendCommand(OFF)
+    presBleMarina.sendCommand(OFF)
+    presMobilePeter.sendCommand(OFF)
+    presMobileMarina.sendCommand(OFF)
+end
+
+rule "Presence master"
+when
+	Item gPresent changed
+then
+	logInfo("presence", "Presence master: " + gPresent.state)
+	if (ON == gPresent.state)
+	{
+		presAll.sendCommand(ON)
+	} else {
+		presAll.sendCommand(OFF)
+	}
+end

@@ -1,0 +1,30 @@
+Group  gVac     "Xiaomi Robot"      <fan>
+Group  gVacStat "Статус"           <status> (gVac)
+Group  gVacHist "История"         <calendar> (gVac)
+Group  gVacCons "Расходники"        <line-increase> (gVac)
+
+String miRobotStatus    "Статус [%s]"  <status>  (gVacStat) {channel="miio:vacuum:03DBC3C3:status#state"}
+Number miRobotStatusArea    "Площадь [%1.0fm²]" <zoom>   (gVac,gVacStat) {channel="miio:vacuum:03DBC3C3:status#clean_area" }
+Number miRobotStatusTime    "Время [%1.0f']" <time>   (gVac,gVacStat) {channel="miio:vacuum:03DBC3C3:status#clean_time" }
+String  miRobotStatusError    "Ошибка [%s]"  <error>  (gVac,gVacStat) {channel="miio:vacuum:03DBC3C3:status#error_code" }
+Number miRobotStatusFanPow    "Мощность [%1.0f %%]"  <signal>   (gVacStat) {channel="miio:vacuum:03DBC3C3:status#fan_power" } 
+Number miRobotStatusClean    "Статус чистки [%1.0f]"   <switch>  (gVacStat) {channel="miio:vacuum:03DBC3C3:status#in_cleaning" }
+Switch miRobotStatusDND    "DND Activated"    (gVacStat) {channel="miio:vacuum:03DBC3C3:status#dnd_enabled" }
+
+
+String miRobotMode "Режим []" <fan> {channel="miio:vacuum:03DBC3C3:actions#control"}
+Number miRobotFan "Мощность []" <pressure> {channel="miio:vacuum:03DBC3C3:actions#fan" }
+Number miRobotBattery "Заряд" <battery> {channel="miio:vacuum:03DBC3C3:status#battery"}
+
+Number miRobotHistoryArea "Площадь [%1.0fm²]" <zoom> (gVacHist) {channel="miio:vacuum:03DBC3C3:history#total_clean_area"}
+Number miRobotHistoryTime "Время [%1.0f']" <time> (gVacHist) {channel="miio:vacuum:03DBC3C3:history#total_clean_time"}
+Number miRobotHistoryCount "Итого уборок [%1.0f]" <office> (gVacHist) {channel="miio:vacuum:03DBC3C3:history#total_clean_count"}
+
+// Number miRobotConsumableMainT    "Main Brush [%1.0f]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#main_brush_time"}
+Number miRobotConsumableMainP    "Main Brush [%1.0f%%]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#main_brush_percent"}
+//Number miRobotConsumableSideT    "Side Brush [%1.0f]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#side_brush_time"}
+Number miRobotConsumableSideP    "Side Brush [%1.0f%%]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#side_brush_percent"}
+//Number miRobotConsumableFilterT    "Filter Time[%1.0f]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#filter_time" }
+Number miRobotConsumableFilterP    "Filter Time[%1.0f%%]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#filter_percent" }
+//Number miRobotConsumableSensorT    "Sensor [%1.0f]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#sensor_dirt_time"}
+Number miRobotConsumableSensorP    "Sensor [%1.0f%%]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#sensor_dirt_percent"}

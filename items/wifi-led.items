@@ -1,0 +1,5 @@
+Group:Switch:OR(ON, OFF) miLed1_Power
+
+Switch	miLed1_Switch	"Питание" (miLed1_Power)
+Number	miLed1_White	"Белый" <colorpicker>
+Color	miLed1_Color	"Цвет" (gYeelight)

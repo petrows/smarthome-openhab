@@ -1,0 +1,11 @@
+Switch presAll "Someone is Present" <present> // master presence switch
+
+Group:Switch:OR(ON,OFF) gPresent <present> // all presence sensors belong to this group
+Group:Switch:OR(ON,OFF) gPresentPeter <present>
+Group:Switch:OR(ON,OFF) gPresentMarina <present>
+
+Switch presBlePeter (gPresent,gPresentPeter) { mqtt="<[mqtt:pws/ble/device:state:ON:CC236E5AB136]", expire="5m,command=OFF" }
+Switch presBleMarina (gPresent,gPresentMarina) { mqtt="<[mqtt:pws/ble/device:state:ON:FD42CE687FD8]", expire="5m,command=OFF" }
+
+Switch presMobilePeter (gPresent,gPresentPeter) { channel="network:pingdevice:petro_mobile:online" }
+Switch presMobileMarina (gPresent,gPresentMarina) { channel="network:pingdevice:marina_mobile:online" }

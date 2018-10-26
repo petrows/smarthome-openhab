@@ -1,0 +1,23 @@
+rule "Washmachine notify"
+when
+	Item washMachinePower changed from ON to OFF
+then
+	sendCommand(miGwSoundVolume, 15)
+	sendCommand(miGwSound, 10003)
+	sendBroadcastNotification("Waschmachine: DONE")
+end
+
+rule "Online notify"
+when
+	Item gOnline changed from ON to OFF
+then
+	sendBroadcastNotification("Online device warning")
+end
+
+rule "LowBattery notify"
+when
+	Item gBattery changed from OFF to ON
+then
+	sendBroadcastNotification("Battery warning")
+end
+

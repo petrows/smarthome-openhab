@@ -1,0 +1,147 @@
+sitemap control label="УПРАВЛЕНИЕ"
+{
+	Frame label="Улица" {
+		Text 		item=miSensorBalkonTemp label="Температура"
+		Text 		item=miSensorBalkonHum label="Влажность"
+	}
+	
+	Frame label="Зимний сад" {
+		Text 		item=miSensorWintergartenTemp label="Температура"
+		Text 		item=miSensorWintergartenHum label="Влажность"
+	}
+
+	Frame label="Кабинет" {
+		Text 		item=miSensorCabinetTemp label="Температура"
+		Text 		item=miSensorCabinetHum label="Влажность"
+		Text		item=maxCabinetValve icon="climate" 
+		Setpoint	item=maxCabinetTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxCabinetTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+	}
+
+	Frame label="Кухня" icon="kitchen" {
+		Text 		item=miSensorKitchenTemp label="Температура"
+		Text 		item=miSensorKitchenHum label="Влажность"
+		Text		item=maxKitchenValve icon="climate" 
+		Setpoint	item=maxKitchenTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxKitchenTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Group item=miGwLight label="GW Xiaomi []" icon="light" {
+			Switch	item=miGwLight label="Питание []"
+			Setpoint	item=miGwBrightness label="Яркость [%d]" minValue=0 maxValue=100 step=10
+			Colorpicker	item=miGwColor
+		}
+	}
+	
+	Frame label="Зал" {
+		Text 		item=miSensorLivingTemp label="Температура"
+		Text 		item=miSensorLivingHum label="Влажность"
+		Text		item=maxLivingValve icon="climate" 
+		Setpoint	item=maxLivingTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxLivingTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Group item=yeeSwitch label="Лампочка" icon="light" {
+			Switch	item=yeeSwitch
+			Slider	item=yeeBrightness label="Яркость [%d]"
+			Setpoint	item=yeeColorTemp 	label="Температура [%d K]" minValue=2000 maxValue=5000 step=500
+			Colorpicker	item=yeeColor
+		}		
+	}
+		
+	Frame label="Спальня" {
+		Text 		item=miSensorSleepingTemp label="Температура"
+		Text 		item=miSensorSleepingHum label="Влажность"
+
+		Text		item=maxSleepingValve icon="climate" 
+		Setpoint	item=maxSleepingTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxSleepingTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+	}
+	
+	Frame label="Ванная" {
+	//	Text 		item=miSensorBadTemp label="Температура"
+	//	Text 		item=miSensorBadHum label="Влажность"
+	
+		Text		item=maxBathValve icon="climate" 
+		Setpoint	item=maxBathTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxBathTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+	}
+	
+	Frame label="Веранда" {
+		Group item=miLed1_Power label="Освещение" icon="light" {
+			Switch	item=miLed1_Switch
+			Slider	item=miLed1_White label="Белый [%d]"
+			Colorpicker	item=miLed1_Color
+		}
+	}
+	
+	Frame label="Стиральная машина" {
+		Text 		item=washMachinePower icon="washingmachine" label="Статус [MAP(washmachine.map):%s]"
+		Text 		item=sonoffWMPower icon="washingmachine" label="Мощность [%d W]"
+	}
+	
+	Frame label="Робот" {
+		Switch 		item=miRobotMode icon="fan" mappings=[vacuum="►", pause="❚❚", dock="⏏"]
+		Switch 		item=miRobotFan mappings=[38="Silent", 60="Normal", 77="Power",90="Full"]
+		Default		item=miRobotStatusArea
+		Default		item=miRobotStatusTime
+		Default		item=miRobotBattery
+		Group  item=gVacStat
+		Group  item=gVacCons
+		Group  item=gVacHist
+	}
+	
+	Frame label="Обслуживание" icon="bedroom" {
+	
+		Group item=gSettings label="Настройки" {
+			Frame label="Отопление" {
+				Switch	item=cfgHeatingEnable label="Включено"
+				Switch	item=cfgHeatingAutoEnable label="Прогрев по расписанию" visibility=[cfgHeatingEnable==ON]
+				Switch	item=cfgHeatingPersistanceEnable label="Прогрев при возврате домой" visibility=[cfgHeatingEnable==ON]
+			}
+			Frame label="Присутствие" {
+				Switch	item=cfgPersistanceEnable
+			}
+		}
+		
+		Group item=gBattery label="Заряд батарей [MAP(lowbat.map):%s]" icon=lowbattery {			
+			Frame label="Термостаты" icon=heating {
+				Text	item=maxCabinetBattLow label="Кабинет [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=maxKitchenBattLow label="Кухня [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=maxLivingBattLow label="Зал [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=maxSleepingBattLow label="Спальня [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=maxBathBattLow label="Ванная [MAP(lowbat.map):%s]" icon=lowbattery
+			}
+			Frame label="Mi датчики" icon=heating {
+				Text	item=miSensorBalkonBattLow label="Балкон [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorWintergartenBattLow label="Зимний сад [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorCabinetBattLow label="Кабинет [MAP(lowbat.map):%s]" icon=lowbattery
+				Text    item=miSensorKitchenBattLow label="Кухня [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorLivingBattLow label="Зал [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorSleepingBattLow label="Спальня [MAP(lowbat.map):%s]" icon=lowbattery
+				// Text	item=miSensorBadBattLow label="Ванная [MAP(lowbat.map):%s]" icon=lowbattery
+			}
+		}
+		
+		Group item=gOnline label="Онлайн [MAP(online.map):%s]" icon=network {
+			Text	item=onlineClockBle1 icon=network
+			Text	item=onlineClockBle2 icon=network
+			Text	item=onlineWlanMain icon=network
+			Text	item=onlineWlanKeller icon=network
+		}
+		
+		Group item=gPresent label="Присутствие [MAP(presence.map):%s]" icon=network {
+			Text	item=gPresentPeter label="Петр [MAP(presence.map):%s]" icon=network {
+				Text	item=presBlePeter label="Петр BLE" icon=network
+				Text	item=presMobilePeter label="Петр мобильный" icon=network
+			}
+			Text	item=gPresentMarina label="Марина [MAP(presence.map):%s]" icon=network {
+				Text	item=presBleMarina label="Марина BLE" icon=network
+				Text	item=presMobileMarina label="Марина мобильный" icon=network
+			}
+		}
+		
+	}
+	
+	//Frame label="Состояние" visibility=[cfgPersistanceEnable==ON] {
+	//	Switch	item=persTest
+	//}
+
+
+}

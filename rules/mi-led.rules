@@ -1,0 +1,82 @@
+import org.eclipse.xtext.xbase.lib.Functions
+
+val Functions$Function2<Number, HSBType, Boolean> setMilght= [ warmLevel, colorLevel |
+	var turnOn = false
+	var commandWarm = null
+	var commandRGB = null
+	
+	if (null != warmLevel) {
+		if (0 != warmLevel) {
+			turnOn = true
+			commandWarm = String.format("%d", warmLevel)
+		} else {
+			commandWarm = "-1"
+		}
+	}
+	
+	if (null != colorLevel) {	
+		var redValue   = ((colorLevel.red.floatValue * 2.55) as int)
+		var greenValue = ((colorLevel.green.floatValue * 2.55) as int)
+		var blueValue  = ((colorLevel.blue.floatValue * 2.55) as int)
+		
+		if (0 != redValue || 0 != greenValue || 0 != blueValue) {
+			turnOn = true
+		}
+		
+		commandRGB = String.format("%d,%d,%d", redValue, greenValue, blueValue)
+	}
+	
+	logInfo("LED", "Power state: " + turnOn)
+	var powerCommand = ""
+	
+	if (turnOn) {
+		powerCommand = "-1"
+	} else {
+		powerCommand = "-0"
+	}
+	
+	var res = "";
+	
+	if (null !== commandWarm) {
+		res = executeCommandLine("flux_led wifilight1.pws " + powerCommand + " -w " + commandWarm, 5000)
+		logInfo("mi-led", "Command : " + powerCommand + " -w " + commandWarm + ", res = " + res)
+	}
+	
+	if (null !== commandRGB) {
+		res = executeCommandLine("flux_led wifilight1.pws " + powerCommand + " -c " + commandRGB, 5000)
+		logInfo("mi-led", "Command : " + powerCommand + " -c " + commandRGB + ", res = " + res)
+	}
+	
+	if (turnOn) {
+		if (miLed1_Power.state == OFF) { miLed1_Power.sendCommand(ON) }
+	} else {
+		if (miLed1_Power.state == ON) { miLed1_Power.sendCommand(OFF) }
+	}
+	
+	return true
+]
+
+rule "miLed1_Power command"
+when
+    Item miLed1_Power changed
+then
+	if (miLed1_Power.state == ON) {
+		executeCommandLine("flux_led wifilight1.pws --on", 5000)
+	} else {
+		executeCommandLine("flux_led wifilight1.pws --off", 5000)
+	}
+end
+
+rule "miLed1_White command"
+when
+    Item miLed1_White changed
+then
+	setMilght.apply((miLed1_White.state as DecimalType).intValue, miLed1_Color.state as HSBType)
+end
+
+rule "miLed1_Color command"
+when
+    Item miLed1_Color changed
+then
+	setMilght.apply((miLed1_White.state as DecimalType).intValue, miLed1_Color.state as HSBType)
+end

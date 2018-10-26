@@ -1,0 +1,53 @@
+rule "BTN1 Switch"
+when
+    Channel "mihome:sensor_switch:158d0001be5b2d:button" triggered
+then
+	var actionName = receivedEvent.getEvent()
+	logInfo("mi-button", "Btn1: " + actionName)
+	
+	switch(actionName) {
+		case "SHORT_PRESSED": {
+			if (yeeSwitch.state == ON) {
+				yeeSwitch.sendCommand(OFF);
+			} else {
+				yeeSwitch.sendCommand(ON);
+			}
+		}
+		case "DOUBLE_PRESSED": {
+			// <ACTION>
+		}
+		case "LONG_PRESSED": {
+			if (yeeBrightness.state == 100) {
+				yeeBrightness.sendCommand(10);
+			} else {
+				yeeBrightness.sendCommand(100);
+			}
+		}
+		case "LONG_RELEASED": {
+			// <ACTION>
+		}
+	} 
+end
+
+rule "BTN2 Switch"
+when
+    Channel "mihome:sensor_switch:158d0001e612b9:button" triggered
+then
+	var actionName = receivedEvent.getEvent()
+	logInfo("mi-button", "Btn2: " + actionName)
+	
+	switch(actionName) {
+		case "SHORT_PRESSED": {
+			
+		}
+		case "DOUBLE_PRESSED": {
+			// <ACTION>
+		}
+		case "LONG_PRESSED": {
+			// <ACTION>
+		}
+		case "LONG_RELEASED": {
+			// <ACTION>
+		}
+	}
+end

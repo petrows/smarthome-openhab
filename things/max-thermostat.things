@@ -1,0 +1,7 @@
+Bridge max:bridge:NEQ1442869 [ ipAddress="192.168.80.9", serialNumber="NEQ1442869" ] {
+Thing max:thermostat:NEQ1442869:NEQ1399641 "Термостат кухня" [ serialNumber="NEQ1399641", refreshActualRate=0 ]
+Thing max:thermostat:NEQ1442869:OEQ1208573 "Термостат кабинет" [ serialNumber="OEQ1208573", refreshActualRate=0 ]
+Thing max:thermostat:NEQ1442869:MEQ1774936 "Термостат зал" [ serialNumber="MEQ1774936", refreshActualRate=0 ]
+Thing max:thermostat:NEQ1442869:MEQ1775184 "Термостат спальня" [ serialNumber="MEQ1775184", refreshActualRate=0 ]
+Thing max:thermostat:NEQ1442869:OEQ1037125 "Термостат ванная" [ serialNumber="OEQ1037125", refreshActualRate=0 ]
+}
