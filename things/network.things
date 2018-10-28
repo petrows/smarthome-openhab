@@ -1,12 +1,18 @@
 
+// Our phones
+
 Thing network:pingdevice:petro_mobile "Петр телефон" [ hostname="petro-mobile.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:marina_mobile "Марина телефон" [ hostname="marina-mobile.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 
 // Important devices
-Thing network:pingdevice:clock_ble_1 "Сканер BLE (Часы)" [ hostname="clock-ble-1.pws", retry=5, timeout=5000, refreshInterval=60000 ] // Kitchen device
-Thing network:pingdevice:clock_ble_2 "Сканер BLE (Спальня)" [ hostname="clock-ble-2.pws", retry=5, timeout=5000, refreshInterval=60000 ] // Bedroom device
 
-Thing network:pingdevice:wlan_main "WLAN (Главный)" [ hostname="wlan.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-// Thing network:pingdevice:wlan_system "WLAN (Система)" [ hostname="root.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:wlan_keller "WLAN (Подвал)" [ hostname="wlan-keller.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:clock_ble_1 "Сканер BLE (Часы)" [ hostname="clock-ble-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:clock_ble_2 "Сканер BLE (Спальня)" [ hostname="clock-ble-2.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:sonoff_1 "Стиральная машина" [ hostname="sonoff-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+
+// AP devices
+
+Thing network:pingdevice:wlan_main "WLAN Главный" [ hostname="wlan.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:wlan_balkon "WLAN Балкон" [ hostname="wlan-balkon.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:wlan_keller "WLAN Подвал" [ hostname="wlan-keller.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 

@@ -1,8 +1,10 @@
 Group:Switch:AND(ON, OFF) gOnline <present>
 
-Switch onlineClockBle1 "Часы-детектор (кухня)" (gOnline) { channel="network:pingdevice:clock_ble_1:online" }
-Switch onlineClockBle2 "Часы-детектор (спальня)" (gOnline) { channel="network:pingdevice:clock_ble_2:online" }
+Switch onlineClockBle1 "Часы кухня" (gOnline) { channel="network:pingdevice:clock_ble_1:online" }
+Switch onlineClockBle2 "Часы спальня" (gOnline) { channel="network:pingdevice:clock_ble_2:online" }
+Switch onlineSonoff1 "Стиральная машина" (gOnline) { channel="network:pingdevice:sonoff_1:online" }
 
-Switch onlineWlanMain "WLAN (Главный)" (gOnline) { channel="network:pingdevice:wlan_main:online" }
-Switch onlineWlanSystem "WLAN (Система)" (gOnline) { channel="network:pingdevice:wlan_system:online" }
-Switch onlineWlanKeller "WLAN (подвал)" (gOnline) { channel="network:pingdevice:wlan_keller:online" }
+Switch onlineWlanMain "WLAN Главный" (gOnline) { channel="network:pingdevice:wlan_main:online" }
+Switch onlineWlanBalkon "WLAN Балкон" (gOnline) { channel="network:pingdevice:wlan_balkon:online" }
+Switch onlineWlanKeller "WLAN Подвал" (gOnline) { channel="network:pingdevice:wlan_keller:online" }
+

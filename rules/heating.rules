@@ -6,7 +6,7 @@ when
 	Time cron "0 00 00,01,02,03,04 ? * *"
 then
 	logWarn("heating", "Set safe off")
-	gHeatingAll.sendCommand(cfgHeatingTempOff.state)
+	gHeatingOff.sendCommand(cfgHeatingTempOff.state)
 end
 
 // === TIME RULES ==========================================
@@ -65,7 +65,7 @@ then
 			if (presAll.state != ON) {
 				// Nobody at home, skip auto set
 				logInfo("heating", "Nobody at home, skip auto set")
-				gHeatingAuto.sendCommand(cfgHeatingTempOff.state)
+				gHeatingOff.sendCommand(cfgHeatingTempOff.state)
 			}
 		}
 	}
@@ -85,11 +85,12 @@ then
 		return;
 	}
 	
+	logInfo("heating", "Heating switched by presence to " + presAll.state)
+	
 	if (presAll.state == ON) {
 		gHeatingAuto.sendCommand(heatingTempAuto.state)
 	} else {
-		logInfo("heating", "Nobody at home")
-		gHeatingAuto.sendCommand(cfgHeatingTempOff.state)
+		gHeatingOff.sendCommand(cfgHeatingTempOff.state)
 	}
 end
 
@@ -100,6 +101,6 @@ then
 	if (cfgHeatingEnable.state == ON) {
 		gHeatingAll.sendCommand(heatingTempAuto.state)
 	} else {
-		gHeatingAll.sendCommand(cfgHeatingTempOff.state)
+		gHeatingOff.sendCommand(cfgHeatingTempOff.state)
 	}
 end

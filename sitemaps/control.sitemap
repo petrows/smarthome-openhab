@@ -13,15 +13,15 @@ sitemap control label="УПРАВЛЕНИЕ"
 	Frame label="Кабинет" {
 		Text 		item=miSensorCabinetTemp label="Температура"
 		Text 		item=miSensorCabinetHum label="Влажность"
-		Text		item=maxCabinetValve icon="climate" 
-		Setpoint	item=maxCabinetTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxCabinetTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Text		item=maxCabinetValve
+		Setpoint	item=maxCabinetTempSet label="Термостат" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxCabinetTempSet label="Пресет []" icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
 	}
 
 	Frame label="Кухня" icon="kitchen" {
 		Text 		item=miSensorKitchenTemp label="Температура"
 		Text 		item=miSensorKitchenHum label="Влажность"
-		Text		item=maxKitchenValve icon="climate" 
+		Text		item=maxKitchenValve
 		Setpoint	item=maxKitchenTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 		Switch  	item=maxKitchenTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
 		Group item=miGwLight label="GW Xiaomi []" icon="light" {
@@ -34,7 +34,7 @@ sitemap control label="УПРАВЛЕНИЕ"
 	Frame label="Зал" {
 		Text 		item=miSensorLivingTemp label="Температура"
 		Text 		item=miSensorLivingHum label="Влажность"
-		Text		item=maxLivingValve icon="climate" 
+		Text		item=maxLivingValve
 		Setpoint	item=maxLivingTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 		Switch  	item=maxLivingTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
 		Group item=yeeSwitch label="Лампочка" icon="light" {
@@ -49,7 +49,7 @@ sitemap control label="УПРАВЛЕНИЕ"
 		Text 		item=miSensorSleepingTemp label="Температура"
 		Text 		item=miSensorSleepingHum label="Влажность"
 
-		Text		item=maxSleepingValve icon="climate" 
+		Text		item=maxSleepingValve
 		Setpoint	item=maxSleepingTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 		Switch  	item=maxSleepingTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
 	}
@@ -58,7 +58,7 @@ sitemap control label="УПРАВЛЕНИЕ"
 	//	Text 		item=miSensorBadTemp label="Температура"
 	//	Text 		item=miSensorBadHum label="Влажность"
 	
-		Text		item=maxBathValve icon="climate" 
+		Text		item=maxBathValve
 		Setpoint	item=maxBathTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 		Switch  	item=maxBathTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
 	}
@@ -126,7 +126,9 @@ sitemap control label="УПРАВЛЕНИЕ"
 		Group item=gOnline label="Онлайн [MAP(online.map):%s]" icon=network {
 			Text	item=onlineClockBle1 icon=network
 			Text	item=onlineClockBle2 icon=network
+			Text	item=onlineSonoff1 icon=network
 			Text	item=onlineWlanMain icon=network
+			Text	item=onlineWlanBalkon icon=network
 			Text	item=onlineWlanKeller icon=network
 		}
 		
