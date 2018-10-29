@@ -29,7 +29,7 @@ then
 	} 
 end
 
-rule "BTN2 Switch"
+rule "BTN2 Switch (heating)"
 when
     Channel "mihome:sensor_switch:158d0001e612b9:button" triggered
 then
@@ -38,13 +38,13 @@ then
 	
 	switch(actionName) {
 		case "SHORT_PRESSED": {
-			
+			maxBathTimerShort.sendCommand(ON)
 		}
 		case "DOUBLE_PRESSED": {
-			// <ACTION>
+			maxBathTimerShort.sendCommand(ON)
 		}
 		case "LONG_PRESSED": {
-			// <ACTION>
+			maxBathTimerShort.sendCommand(ON)
 		}
 		case "LONG_RELEASED": {
 			// <ACTION>

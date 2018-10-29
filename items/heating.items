@@ -50,3 +50,5 @@ Number maxBathTempActual "Температура  [%.1f °C]" <temperature> {cha
 Number maxBathTempSet "Термостат [%.1f °C]" <heatingt> (gHeatingAll,gHeatingOff) {channel="max:thermostat:NEQ1442869:OEQ1037125:set_temp"}
 Number maxBathValve "Клапан" <heating> {channel="max:thermostat:NEQ1442869:OEQ1037125:valve"}
 
+Switch maxBathTimerShort "Полотенцесушитель (1)" { expire="60m,command=OFF" }
+

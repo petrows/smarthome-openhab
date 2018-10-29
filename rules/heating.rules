@@ -55,7 +55,7 @@ when
 then
 	if (cfgHeatingEnable.state != ON || cfgHeatingAutoEnable.state != ON) {
 		logInfo("heating", "Auto disabled")
-		return;
+		return
 	}
 	
 	// Check perisstance only if setting temp != OFF
@@ -66,6 +66,7 @@ then
 				// Nobody at home, skip auto set
 				logInfo("heating", "Nobody at home, skip auto set")
 				gHeatingOff.sendCommand(cfgHeatingTempOff.state)
+				return
 			}
 		}
 	}
@@ -74,15 +75,33 @@ then
 	gHeatingAuto.sendCommand(heatingTempAuto.state)
 end
 
+rule "Bad heating switch"
+when
+	Item maxBathTimerShort changed
+then
+	logInfo("heating", "Bad heating timer: " + triggeringItem.state)
+	
+	if (ON == triggeringItem.state) {
+		maxBathTempSet.sendCommand(cfgHeatingTempHeat.state)
+	} else {
+		maxBathTempSet.sendCommand(cfgHeatingTempOff.state)
+	}
+end
+
 // === HEATING SWITCHES =========================================
 
 rule "Heating presense switch"
 when
 	Item presAll changed
 then
-	if (cfgHeatingEnable.state != ON || cfgPersistanceEnable.state != ON) {
-		logInfo("heating", "Presence disabled")
-		return;
+	if (ON != cfgHeatingEnable.state) {
+		logInfo("heating", "Heating disabled")
+		return
+	}
+
+	if (ON != cfgHeatingPersistanceEnable.state && ON == presAll.state) {
+		logInfo("heating", "Return-heat is disabled")
+		return
 	}
 	
 	logInfo("heating", "Heating switched by presence to " + presAll.state)

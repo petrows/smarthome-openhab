@@ -13,7 +13,13 @@ rule "Presence master"
 when
 	Item gPresent changed
 then
+	if (ON != cfgPersistanceEnable.state) {
+		logInfo("presence", "Presence disabled")
+		return
+	}
+
 	logInfo("presence", "Presence master: " + gPresent.state)
+
 	if (ON == gPresent.state)
 	{
 		presAll.sendCommand(ON)
@@ -21,3 +27,4 @@ then
 		presAll.sendCommand(OFF)
 	}
 end
+

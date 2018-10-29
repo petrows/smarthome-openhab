@@ -5,6 +5,8 @@ val Functions$Function2<Number, HSBType, Boolean> setMilght= [ warmLevel, colorL
 	var commandWarm = null
 	var commandRGB = null
 	
+	logInfo("LED", "Power 1: " + warmLevel)
+	
 	if (null != warmLevel) {
 		if (0 != warmLevel) {
 			turnOn = true
@@ -14,7 +16,7 @@ val Functions$Function2<Number, HSBType, Boolean> setMilght= [ warmLevel, colorL
 		}
 	}
 	
-	if (null != colorLevel) {	
+	if (null != colorLevel) {
 		var redValue   = ((colorLevel.red.floatValue * 2.55) as int)
 		var greenValue = ((colorLevel.green.floatValue * 2.55) as int)
 		var blueValue  = ((colorLevel.blue.floatValue * 2.55) as int)
@@ -71,12 +73,23 @@ rule "miLed1_White command"
 when
     Item miLed1_White changed
 then
-	setMilght.apply((miLed1_White.state as DecimalType).intValue, miLed1_Color.state as HSBType)
+	var warmLevel = (miLed1_White.state as DecimalType).intValue
+	var commandWarm = String.format("%d", warmLevel)	
+	var res = executeCommandLine("flux_led wifilight1.pws -1 -w " + commandWarm, 5000)
+	logInfo("mi-led", "Command : -1 -w " + commandWarm + ", res = " + res)
 end
 
 rule "miLed1_Color command"
 when
     Item miLed1_Color changed
 then
-	setMilght.apply((miLed1_White.state as DecimalType).intValue, miLed1_Color.state as HSBType)
+	var colorLevel = (miLed1_Color.state as HSBType)
+	
+	var redValue   = ((colorLevel.red.floatValue * 2.55) as int)
+	var greenValue = ((colorLevel.green.floatValue * 2.55) as int)
+	var blueValue  = ((colorLevel.blue.floatValue * 2.55) as int)
+	
+	var commandRGB = String.format("%d,%d,%d", redValue, greenValue, blueValue)
+	var res = executeCommandLine("flux_led wifilight1.pws -1 -c " + commandRGB, 5000)
+	logInfo("mi-led", "Command : -1 -c " + commandRGB + ", res = " + res)
 end
