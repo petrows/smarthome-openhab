@@ -8,6 +8,7 @@ Thing network:pingdevice:marina_mobile "Марина телефон" [ hostname=
 
 Thing network:pingdevice:clock_ble_1 "Сканер BLE (Часы)" [ hostname="clock-ble-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:clock_ble_2 "Сканер BLE (Спальня)" [ hostname="clock-ble-2.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:clock_ble_3 "Сканер BLE (Марина)" [ hostname="clock-ble-3.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:sonoff_1 "Стиральная машина" [ hostname="sonoff-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 
 // AP devices

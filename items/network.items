@@ -2,6 +2,7 @@ Group:Switch:AND(ON, OFF) gOnline <present>
 
 Switch onlineClockBle1 "Часы кухня" (gOnline) { channel="network:pingdevice:clock_ble_1:online" }
 Switch onlineClockBle2 "Часы спальня" (gOnline) { channel="network:pingdevice:clock_ble_2:online" }
+Switch onlineClockBle3 "Часы зал" (gOnline) { channel="network:pingdevice:clock_ble_3:online" }
 Switch onlineSonoff1 "Стиральная машина" (gOnline) { channel="network:pingdevice:sonoff_1:online" }
 
 Switch onlineWlanMain "WLAN Главный" (gOnline) { channel="network:pingdevice:wlan_main:online" }

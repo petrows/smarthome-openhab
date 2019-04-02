@@ -126,6 +126,7 @@ sitemap control label="УПРАВЛЕНИЕ"
 		Group item=gOnline label="Онлайн [MAP(online.map):%s]" icon=network {
 			Text	item=onlineClockBle1 icon=network
 			Text	item=onlineClockBle2 icon=network
+			Text	item=onlineClockBle3 icon=network
 			Text	item=onlineSonoff1 icon=network
 			Text	item=onlineWlanMain icon=network
 			Text	item=onlineWlanBalkon icon=network
