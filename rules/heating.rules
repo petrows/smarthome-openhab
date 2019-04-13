@@ -53,7 +53,7 @@ rule "Auto command"
 when
 	Item heatingTempAuto changed
 then
-	if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && heatingTempAuto.state != cfgHeatingTempOff.state))) {
+	if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && heatingTempAuto.state != cfgHeatingTempOff.state)) {
 		logInfo("heating", "Auto disabled")
 		return
 	}
