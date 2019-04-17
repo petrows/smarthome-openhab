@@ -64,7 +64,7 @@ Switch miSensorWintergartenBattLow <energy> (gBattery) { channel="mihome:sensor_
 //Switch miButton1 <energy> { channel="mihome:sensor_switch:158d0001be5b2d:button" }
 //Switch miButton2 <energy> { channel="mihome:sensor_switch:158d0001e612b9:button" }
 
-Number miButton1Batt <energy> { channel="mihome:sensor_switch:17811dc6c95de:158d0001be5b2d:batteryLevel" }
-Number miButton2Batt <energy> { channel="mihome:sensor_switch:17811dc6c95de:158d0001e612b9:batteryLevel" }
+Number miButton1Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001be5b2d:batteryLevel" }
+Number miButton2Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001e612b9:batterylevel" }
 
 
