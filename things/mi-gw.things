@@ -1,16 +1,19 @@
 Bridge mihome:bridge:7811dc6c95de "Xiaomi Gateway" [ serialNumber="7811dc6c95de", ipAddress="192.168.80.13", port=9898, key="h0dy8eantvmsoqyw", pollingInterval=6000 ] {
-	Thing gateway 7811dc6c95de "Xiaomi Mi Smart Home Gateway" [itemId="7811dc6c95de"]
 
-	Thing sensor_ht 158d0001c2cc22 "HT Sensor 1" [ itemId="158d0001c2cc22" ]
-	Thing sensor_ht 158d0001c19a6b "HT Sensor 2" [ itemId="158d0001c19a6b" ]
-	Thing sensor_ht 158d0001c15121 "HT Sensor 3" [ itemId="158d0001c15121" ]
-	
-	Thing sensor_weather_v1 158d0001b95e02 "AQ Sensor 4" [ itemId="158d0001b95e02" ]
-	Thing sensor_weather_v1 158d0001b95fc4 "AQ Sensor 5" [ itemId="158d0001b95fc4" ]
-	Thing sensor_weather_v1 158d0001b95e08 "AQ Sensor 6" [ itemId="158d0001b95e08" ]
-	
-	Thing sensor_weather_v1 158d00022cbcb6 "AQ Sensor 7" [ itemId="158d00022cbcb6" ]
+	Things:
+		gateway 7811dc6c95de "Xiaomi Mi Smart Home Gateway" [itemId="7811dc6c95de"]
 
-	Thing sensor_switch 158d0001be5b2d "Mi Button1" [ itemId="158d0001be5b2d" ]
-	Thing sensor_switch 158d0001e612b9 "Mi Button2" [ itemId="158d0001e612b9" ]
+		sensor_ht 158d0001c2cc22 "HT Sensor 1" [ itemId="158d0001c2cc22" ]
+		sensor_ht 158d0001c19a6b "HT Sensor 2" [ itemId="158d0001c19a6b" ]
+		sensor_ht 158d0001c15121 "HT Sensor 3" [ itemId="158d0001c15121" ]
+		
+		sensor_weather_v1 158d0001b95e02 "AQ Sensor 4" [ itemId="158d0001b95e02" ]
+		sensor_weather_v1 158d0001b95fc4 "AQ Sensor 5" [ itemId="158d0001b95fc4" ]
+		sensor_weather_v1 158d0001b95e08 "AQ Sensor 6" [ itemId="158d0001b95e08" ]
+		
+		sensor_weather_v1 158d00022cbcb6 "AQ Sensor 7" [ itemId="158d00022cbcb6" ]
+
+		sensor_switch 158d0001be5b2d "Mi Button1" [ itemId="158d0001be5b2d" ]
+		sensor_switch 158d0001e612b9 "Mi Button2" [ itemId="158d0001e612b9" ]
+	
 }
