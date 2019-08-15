@@ -1,26 +1,50 @@
 sitemap control label="УПРАВЛЕНИЕ"
 {
 	Frame label="Улица" {
-		Text 		item=miSensorWeatherTemp
-		Text 		item=miSensorWeatherHum
+		Text 		item=miSensorBalkonTemp
+		Text 		item=miSensorBalkonHum
 	}
 	
-	Frame label="Маникюрная" {
-		Text 		item=miSensorNsTemp
-		Text 		item=miSensorNsHum
-		Text		item=maxNsValve
-		Setpoint	item=maxNsTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxNsTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+	Frame label="Зимний сад" {
+		Text 		item=miSensorWintergartenTemp
+		Text 		item=miSensorWintergartenHum
 	}
 
-	Frame label="Фотостудия" {
-		Text 		item=miSensorFsTemp
-		Text 		item=miSensorFsHum
-		Text		item=maxFsValve
-		Setpoint	item=maxFsTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxFsTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+	Frame label="Кабинет" {
+		Text 		item=miSensorCabinetTemp
+		Text 		item=miSensorCabinetHum
+		Text		item=maxCabinetValve
+		Setpoint	item=maxCabinetTempSet label="Термостат" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxCabinetTempSet label="Пресет []" icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
 	}
 
+	Frame label="Кухня" icon="kitchen" {
+		Text 		item=miSensorKitchenTemp
+		Text 		item=miSensorKitchenHum
+		Text		item=maxKitchenValve
+		Setpoint	item=maxKitchenTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxKitchenTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Group item=miGwLight label="GW Xiaomi []" icon="light" {
+			Switch	item=miGwLight label="Питание []"
+			Setpoint	item=miGwBrightness label="Яркость [%d]" minValue=0 maxValue=100 step=10
+			Colorpicker	item=miGwColor
+		}
+	}
+	
+	Frame label="Зал" {
+		Text 		item=miSensorLivingTemp
+		Text 		item=miSensorLivingHum
+		Text		item=maxLivingValve
+		Setpoint	item=maxLivingTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxLivingTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Group item=yeeSwitch label="Лампочка" icon="light" {
+			Switch	item=yeeSwitch
+			Slider	item=yeeBrightness label="Яркость [%d]"
+			Setpoint	item=yeeColorTemp 	label="Температура [%d K]" minValue=2000 maxValue=5000 step=500
+			Colorpicker	item=yeeColor
+		}		
+	}
+		
 	Frame label="Спальня" {
 		Text 		item=miSensorSleepingTemp
 		Text 		item=miSensorSleepingHum
@@ -30,21 +54,26 @@ sitemap control label="УПРАВЛЕНИЕ"
 		Switch  	item=maxSleepingTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
 	}
 	
-	Frame label="Кухня" icon="kitchen" {
-		Text 		item=miSensorKitchenTemp
-		Text 		item=miSensorKitchenHum
-		Text		item=maxKitchenValve
-		Setpoint	item=maxKitchenTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxKitchenTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+	Frame label="Ванная" {
+	//	Text 		item=miSensorBadTemp
+	//	Text 		item=miSensorBadHum
+	
+		Text		item=maxBathValve
+		Setpoint	item=maxBathTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=maxBathTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
 	}
 	
-	Frame label="KG" {
-		Text 		item=miSensorKGTemp
-		Text 		item=miSensorKGHum
-		Switch  	item=snf_kg_l1 label="Свет главный" icon="light"
-		Text		item=maxKGValve
-		Setpoint	item=maxKGTempSet label="Термостат" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxKGTempSet label="Пресет []" icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+	Frame label="Веранда" {
+		Group item=miLed1_Power label="Освещение" icon="light" {
+			Switch	item=miLed1_Switch
+			Slider	item=miLed1_White label="Белый [%d]"
+			Colorpicker	item=miLed1_Color
+		}
+	}
+	
+	Frame label="Стиральная машина" {
+		Text 		item=washMachinePower icon="washingmachine" label="Статус [MAP(washmachine.map):%s]"
+		Text 		item=sonoffWMPower icon="washingmachine" label="Мощность [%d W]"
 	}
 	
 	Frame label="Робот" {
@@ -75,7 +104,7 @@ sitemap control label="УПРАВЛЕНИЕ"
 			}
 		}
 		
-		Group item=gBattery label="Заряд батарей [MAP(lowbat.map):%s]" icon=lowbattery {
+		Group item=gBattery label="Заряд батарей [MAP(lowbat.map):%s]" icon=lowbattery {			
 			Frame label="Термостаты" icon=heating {
 				Text	item=maxCabinetBattLow label="Кабинет [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=maxKitchenBattLow label="Кухня [MAP(lowbat.map):%s]" icon=lowbattery
@@ -84,11 +113,11 @@ sitemap control label="УПРАВЛЕНИЕ"
 				Text	item=maxBathBattLow label="Ванная [MAP(lowbat.map):%s]" icon=lowbattery
 			}
 			Frame label="Mi датчики" icon=heating {
-				Text	item=miSensorWeatherBattLow label="Улица [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorNsBattLow label="Маникюрная [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorKGBattLow label="Кабинет [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorBalkonBattLow label="Балкон [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorWintergartenBattLow label="Зимний сад [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorCabinetBattLow label="Кабинет [MAP(lowbat.map):%s]" icon=lowbattery
 				Text    item=miSensorKitchenBattLow label="Кухня [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorFsBattLow label="Фотостудия [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorLivingBattLow label="Зал [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=miSensorSleepingBattLow label="Спальня [MAP(lowbat.map):%s]" icon=lowbattery
 				// Text	item=miSensorBadBattLow label="Ванная [MAP(lowbat.map):%s]" icon=lowbattery
 			}

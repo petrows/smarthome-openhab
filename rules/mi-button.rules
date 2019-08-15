@@ -39,6 +39,12 @@ then
 	switch(actionName) {
 		case "SHORT_PRESSED": {
 			maxBathTimerShort.sendCommand(ON)
+			
+			if (snf_kg_l1.state == ON) {
+				snf_kg_l1.sendCommand(OFF);
+			} else {
+				snf_kg_l1.sendCommand(ON);
+			}
 		}
 		case "DOUBLE_PRESSED": {
 			maxBathTimerShort.sendCommand(ON)
