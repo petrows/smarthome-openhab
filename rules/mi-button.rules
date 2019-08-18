@@ -29,7 +29,7 @@ then
 	} 
 end
 
-rule "BTN2 Switch (heating)"
+rule "BTN2 Switch (KG light)"
 when
     Channel "mihome:sensor_switch:7811dc6c95de:158d0001e612b9:button" triggered
 then
@@ -38,19 +38,21 @@ then
 	
 	switch(actionName) {
 		case "SHORT_PRESSED": {
-			maxBathTimerShort.sendCommand(ON)
-			
-			if (snf_kg_l1.state == ON) {
-				snf_kg_l1.sendCommand(OFF);
-			} else {
-				snf_kg_l1.sendCommand(ON);
-			}
+			snf_kg_l1.sendCommand(OFF);
+			snf_kg_l2.sendCommand(OFF);
+			executeCommandLine("yeecli --ip mi-lamp-2.pws turn off")
 		}
 		case "DOUBLE_PRESSED": {
-			maxBathTimerShort.sendCommand(ON)
+			// maxBathTimerShort.sendCommand(ON)
+			snf_kg_l1.sendCommand(ON);
+			snf_kg_l2.sendCommand(ON);
+			executeCommandLine("yeecli --ip mi-lamp-2.pws turn on")
 		}
 		case "LONG_PRESSED": {
-			maxBathTimerShort.sendCommand(ON)
+			// maxBathTimerShort.sendCommand(ON)
+			snf_kg_l1.sendCommand(OFF);
+			snf_kg_l2.sendCommand(OFF);
+			executeCommandLine("yeecli --ip mi-lamp-2.pws turn on")
 		}
 		case "LONG_RELEASED": {
 			// <ACTION>

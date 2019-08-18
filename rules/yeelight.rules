@@ -14,7 +14,7 @@ when
     Item yeeBrightness changed
 then
 	yeeSwitch.sendCommand(ON)
-	executeCommandLine("yeecli --ip mi-lamp-1.pws brightness " + yeeBrightness.state)
+	executeCommandLine("yeecli --ip mi-lamp-1.pws brightness " + (yeeBrightness.state as DecimalType).intValue)
 end
 
 rule "Yeelight 1 color temp"
@@ -22,7 +22,7 @@ when
     Item yeeColorTemp changed
 then
 	yeeSwitch.sendCommand(ON)
-	executeCommandLine("yeecli --ip mi-lamp-1.pws temperature " + yeeColorTemp.state)
+	executeCommandLine("yeecli --ip mi-lamp-1.pws temperature " + (yeeColorTemp.state as DecimalType).intValue)
 end
 
 rule "Yeelight 1 color"
