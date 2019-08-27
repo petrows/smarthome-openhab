@@ -1,4 +1,4 @@
-rule "BTN1 Switch"
+rule "BTN1 Switch (KG desktop)"
 when
     Channel "mihome:sensor_switch:7811dc6c95de:158d0001be5b2d:button" triggered
 then
@@ -7,21 +7,17 @@ then
 	
 	switch(actionName) {
 		case "SHORT_PRESSED": {
-			if (yeeSwitch.state == ON) {
-				yeeSwitch.sendCommand(OFF);
+			if (yel_petro_ds_sw.state == ON) {
+				yel_petro_ds_sw.sendCommand(OFF);
 			} else {
-				yeeSwitch.sendCommand(ON);
+				yel_petro_ds_sw.sendCommand(ON);
 			}
 		}
 		case "DOUBLE_PRESSED": {
 			// <ACTION>
 		}
 		case "LONG_PRESSED": {
-			if (yeeBrightness.state == 100) {
-				yeeBrightness.sendCommand(10);
-			} else {
-				yeeBrightness.sendCommand(100);
-			}
+			g_kg_light.sendCommand(OFF);
 		}
 		case "LONG_RELEASED": {
 			// <ACTION>
@@ -38,21 +34,13 @@ then
 	
 	switch(actionName) {
 		case "SHORT_PRESSED": {
-			snf_kg_l1.sendCommand(OFF);
-			snf_kg_l2.sendCommand(OFF);
-			executeCommandLine("yeecli --ip mi-lamp-2.pws turn off")
+			g_kg_light.sendCommand(OFF);
 		}
 		case "DOUBLE_PRESSED": {
-			// maxBathTimerShort.sendCommand(ON)
-			snf_kg_l1.sendCommand(ON);
-			snf_kg_l2.sendCommand(ON);
-			executeCommandLine("yeecli --ip mi-lamp-2.pws turn on")
+			g_kg_light.sendCommand(ON);			
 		}
 		case "LONG_PRESSED": {
-			// maxBathTimerShort.sendCommand(ON)
-			snf_kg_l1.sendCommand(OFF);
-			snf_kg_l2.sendCommand(OFF);
-			executeCommandLine("yeecli --ip mi-lamp-2.pws turn on")
+			g_kg_light.sendCommand(OFF);
 		}
 		case "LONG_RELEASED": {
 			// <ACTION>

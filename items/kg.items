@@ -1,0 +1,13 @@
+
+Group:Switch:OR(ON, OFF) g_kg_light
+
+// Celling light
+
+Switch snf_kg_l1 "KG light main" <light> (g_kg_light) { mqtt=">[mqtt:cmnd/snf-kg-1/POWER:command:*:default],<[mqtt:stat/snf-kg-1/POWER:state:default]" }
+Switch snf_kg_l2 "KG light p1" <light> (g_kg_light) { mqtt=">[mqtt:cmnd/snf-kg-2/POWER:command:*:default],<[mqtt:stat/snf-kg-2/POWER:state:default]" }
+
+// Desktop light
+
+Switch yel_petro_ds_sw "Питание" <light> (g_kg_light)
+Switch yel_petro_ds_brightness "Яркость" <light>
+Switch yel_petro_ds_temp "Цветовая температура" <colorpicker>

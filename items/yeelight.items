@@ -6,11 +6,6 @@ Dimmer	yeeBrightness	"Яркость" (gYeelight)
 Number	yeeColorTemp	"Цветовая температура" <colorpicker> (gYeelight)
 Color	yeeColor	"Цвет" (gYeelight)
 
-
-Switch	yel_sleeping_sw	{ channel="yeelight:wonder:sleeping:color" }
-Dimmer	yel_sleeping_brightness	{ channel="yeelight:wonder:sleeping:color" }
-Dimmer	yel_sleeping_temp	{ channel="yeelight:wonder:sleeping:colorTemperature" }
-Color	yel_sleeping_color	{ channel="yeelight:wonder:sleeping:color" }
-
-Dimmer	yel_petro_desktop_brightness	{ channel="yeelight:ct_bulb:petro:brightness" }
-Dimmer	yel_petro_desktop_temp	{ channel="yeelight:ct_bulb:petro:colorTemperature" }
+Switch yel_petro_ds_sw "Питание"
+Switch yel_petro_ds_brightness "Яркость"
+Switch yel_petro_ds_temp "Цветовая температура"

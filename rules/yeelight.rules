@@ -43,3 +43,26 @@ then
 	yeeBrightness.sendCommand(brightness)
 end
 
+rule "Yeelight 2 power"
+when
+    Item yel_petro_ds_sw changed
+then
+	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 turn " + yel_petro_ds_sw.state.toString.toLowerCase)
+end
+
+rule "Yeelight 2 brightness"
+when
+    Item yel_petro_ds_brightness changed
+then
+	yel_petro_ds_sw.sendCommand(ON)
+	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 brightness " + (yel_petro_ds_brightness.state as DecimalType).intValue)
+end
+
+rule "Yeelight 1 color temp"
+when
+    Item yel_petro_ds_temp changed
+then
+	yel_petro_ds_sw.sendCommand(ON)
+	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 temperature " + (yel_petro_ds_temp.state as DecimalType).intValue)
+end
+
