@@ -1,0 +1,25 @@
+.pws-value {
+	color: red;
+}
+#clock-table {
+	width: 100%;
+}
+#clock-table-time-row {
+	text-align: center;
+	width: 50%;
+}
+#clock-table-date-row {
+	
+	text-align: center;
+	width: 50%;
+	text-transform: uppercase;
+}
+#clock-table-date {
+	font-size: 24pt;
+}
+#clock-table-wdate {
+	font-size: 18pt;
+}
+.weather-outside-value {
+	font-size: 20pt;
+}

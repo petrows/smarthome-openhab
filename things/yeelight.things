@@ -1,6 +1,6 @@
 
 // Petro KG desktop lamp
-Thing yeelight:ct_bulb:petro [ deviceId="0x0000000007d5196c", duration=1000, location="mi-lamp-2.pws" ]
+// Thing yeelight:ct_bulb:petro [ deviceId="0x0000000007d5196c", duration=1000, location="mi-lamp-2.pws" ]
 
 // Sleeping RGB lamp
-Thing yeelight:wonder:sleeping [ deviceId="0x0000000003471fc5", duration=1000 ]
+// Thing yeelight:wonder:sleeping [ deviceId="0x0000000003471fc5", duration=1000 ]

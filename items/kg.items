@@ -9,5 +9,5 @@ Switch snf_kg_l2 "KG light p1" <light> (g_kg_light) { mqtt=">[mqtt:cmnd/snf-kg-2
 // Desktop light
 
 Switch yel_petro_ds_sw "Питание" <light> (g_kg_light)
-Switch yel_petro_ds_brightness "Яркость" <light>
+Dimmer yel_petro_ds_brightness "Яркость" <light>
 Switch yel_petro_ds_temp "Цветовая температура" <colorpicker>
