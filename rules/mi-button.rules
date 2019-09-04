@@ -14,7 +14,7 @@ then
 			}
 		}
 		case "DOUBLE_PRESSED": {
-			g_kg_light.sendCommand(OFF);
+			g_light_kg.sendCommand(OFF);
 		}
 		case "LONG_PRESSED": {
 			// g_kg_light.sendCommand(OFF);
@@ -40,13 +40,13 @@ then
 	
 	switch(actionName) {
 		case "SHORT_PRESSED": {
-			g_kg_light.sendCommand(OFF);
+			g_light_kg.sendCommand(OFF);
 		}
 		case "DOUBLE_PRESSED": {
-			g_kg_light.sendCommand(ON);			
+			g_light_kg.sendCommand(ON);			
 		}
 		case "LONG_PRESSED": {
-			g_kg_light.sendCommand(OFF);
+			g_light_kg.sendCommand(OFF);
 		}
 		case "LONG_RELEASED": {
 			// <ACTION>

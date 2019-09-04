@@ -15,47 +15,47 @@ Group gMiSensors
 Group gMiSensorsClimate (gMiSensors)
 
 // Sensor 1
-Number miSensorWeatherTemp "Температура [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c2cc22:temperature" }
-Number miSensorWeatherHum "Влажность [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c2cc22:humidity" }
+Number miSensorWeatherTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c2cc22:temperature" }
+Number miSensorWeatherHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c2cc22:humidity" }
 Number miSensorWeatherBatt <battery> { channel="mihome:sensor_ht:158d0001c2cc22:b7811dc6c95de:batteryLevel" }
 Switch miSensorWeatherBattLow <energy> (gBattery) { channel="mihome:sensor_ht:158d0001c2cc22:lowBattery" }
 
 // Sensor 2 // Sleeping room
-Number miSensorSleepingTemp "Температура [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c19a6b:temperature" }
-Number miSensorSleepingHum "Влажность [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c19a6b:humidity" }
+Number miSensorSleepingTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c19a6b:temperature" }
+Number miSensorSleepingHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c19a6b:humidity" }
 Number miSensorSleepingBatt <battery> { channel="mihome:sensor_ht:158d0001c19a6b:batteryLevel" }
 Switch miSensorSleepingBattLow <energy> (gBattery) { channel="mihome:sensor_ht:158d0001c19a6b:lowBattery" }
 
 // Sensor 3 // Fotostudio
-Number miSensorFsTemp "Температура [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c15121:temperature" }
-Number miSensorFsHum "Влажность [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c15121:humidity" }
+Number miSensorFsTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c15121:temperature" }
+Number miSensorFsHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c15121:humidity" }
 Number miSensorFsBatt <battery> { channel="mihome:sensor_ht:158d0001c15121:batteryLevel" }
 Switch miSensorFsBattLow <energy> (gBattery) { channel="mihome:sensor_ht:158d0001c15121:lowBattery" }
 
 // Sensor 2.0 4 // KG
-Number miSensorKGTemp "Температура [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e02:temperature" }
-Number miSensorKGHum "Влажность [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e02:humidity" }
+Number miSensorKGTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e02:temperature" }
+Number miSensorKGHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e02:humidity" }
 Number miSensorKGPressure <pressure> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e02:pressure" }
 Number miSensorKGBatt <battery> { channel="mihome:sensor_weather_v1:158d0001b95e02:batteryLevel" }
 Switch miSensorKGBattLow <energy> (gBattery) { channel="mihome:sensor_weather_v1:158d0001b95e02:lowBattery" }
 
 // Sensor 2.0 5 // Kitchen
-Number miSensorKitchenTemp "Температура [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95fc4:temperature" }
-Number miSensorKitchenHum "Влажность [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95fc4:humidity" }
+Number miSensorKitchenTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95fc4:temperature" }
+Number miSensorKitchenHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95fc4:humidity" }
 Number miSensorKitchenPressure <pressure> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95fc4:pressure" }
 Number miSensorKitchenBatt <battery> { channel="mihome:sensor_weather_v1:158d0001b95fc4:batteryLevel" }
 Switch miSensorKitchenBattLow <energy> (gBattery) { channel="mihome:sensor_weather_v1:158d0001b95fc4:lowBattery" }
 
 // Sensor 2.0 6 // Nails studio
-Number miSensorNsTemp "Температура [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e08:temperature" }
-Number miSensorNsHum "Влажность [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e08:humidity" }
+Number miSensorNsTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e08:temperature" }
+Number miSensorNsHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e08:humidity" }
 Number miSensorNsPressure <pressure> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e08:pressure" }
 Number miSensorNsBatt <battery> { channel="mihome:sensor_weather_v1:158d0001b95e08:batteryLevel" }
 Switch miSensorNsBattLow <energy> (gBattery) { channel="mihome:sensor_weather_v1:158d0001b95e08:lowBattery" }
 
 // Sensor 2.0 7
-//Number miSensorBadTemp "Температура [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d00022cbcb6:temperature" }
-//Number miSensorBadHum "Влажность [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d00022cbcb6:humidity" }
+//Number miSensorBadTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d00022cbcb6:temperature" }
+//Number miSensorBadHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d00022cbcb6:humidity" }
 //Number miSensorBadPressure <pressure> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d00022cbcb6:pressure" }
 //Number miSensorBadBatt <battery> { channel="mihome:sensor_weather_v1:158d00022cbcb6:batteryLevel" }
 //Switch miSensorBadBattLow <energy> (gBattery) { channel="mihome:sensor_weather_v1:158d00022cbcb6:lowBattery" }

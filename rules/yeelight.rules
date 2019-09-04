@@ -1,46 +1,42 @@
 rule "Yeelight 1 power"
 when
-    Item yeeSwitch changed
+    Item yel_rgb_sw changed
 then
-	if (yeeSwitch.state == ON) {
-		executeCommandLine("yeecli --ip mi-lamp-1.pws turn on")
-	} else {
-		executeCommandLine("yeecli --ip mi-lamp-1.pws turn off")
-	}
+	executeCommandLine("yeecli --ip mi-lamp-1.pws -e smooth -d 500 turn " + yel_rgb_sw.state.toString.toLowerCase)
 end
 
 rule "Yeelight 1 brightness"
 when
-    Item yeeBrightness changed
+    Item yel_rgb_brightness changed
 then
-	yeeSwitch.sendCommand(ON)
-	executeCommandLine("yeecli --ip mi-lamp-1.pws brightness " + (yeeBrightness.state as DecimalType).intValue)
+	yel_rgb_sw.sendCommand(ON)
+	executeCommandLine("yeecli --ip mi-lamp-1.pws -e smooth -d 500 brightness " + (yel_rgb_brightness.state as DecimalType).intValue)
 end
 
 rule "Yeelight 1 color temp"
 when
-    Item yeeColorTemp changed
+    Item yel_rgb_temp changed
 then
-	yeeSwitch.sendCommand(ON)
-	executeCommandLine("yeecli --ip mi-lamp-1.pws temperature " + (yeeColorTemp.state as DecimalType).intValue)
+	yel_rgb_sw.sendCommand(ON)
+	executeCommandLine("yeecli --ip mi-lamp-1.pws -e smooth -d 500 temperature " + (yel_rgb_temp.state as DecimalType).intValue)
 end
 
 rule "Yeelight 1 color"
 when
-    Item yeeColor changed
+    Item yel_rgb_color changed
 then
-	logInfo("LED", "Color changing: " + yeeColor.state)
+	logInfo("LED", "Color changing: " + yel_rgb_color.state)
 		
-	var hsbValue = yeeColor.state as HSBType
+	var hsbValue = yel_rgb_color.state as HSBType
 	
 	var redValue   = String.format("%02X", (hsbValue.red.floatValue * 2.55) as int)
 	var greenValue = String.format("%02X", (hsbValue.green.floatValue * 2.55) as int)
 	var blueValue  = String.format("%02X", (hsbValue.blue.floatValue * 2.55) as int)
 	
-	executeCommandLine("yeecli --ip mi-lamp-1.pws rgb " + redValue + greenValue + blueValue)
+	executeCommandLine("yeecli --ip mi-lamp-1.pws -e smooth -d 500 rgb " + redValue + greenValue + blueValue)
 	
 	val brightness = hsbValue.brightness.intValue
-	yeeBrightness.sendCommand(brightness)
+	yel_rgb_brightness.sendCommand(brightness)
 end
 
 rule "Yeelight 2 power"

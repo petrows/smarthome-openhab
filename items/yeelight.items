@@ -1,7 +1,0 @@
-Group gYeelight
-Group:Switch:OR(ON, OFF) gYeelightPower
-
-Switch	yeeSwitch	"Питание" (gYeelight,gYeelightPower)
-Dimmer	yeeBrightness	"Яркость" (gYeelight)
-Number	yeeColorTemp	"Цветовая температура" <colorpicker> (gYeelight)
-Color	yeeColor	"Цвет" (gYeelight)
