@@ -67,4 +67,10 @@ Switch miSensorNsBattLow <energy> (gBattery) { channel="mihome:sensor_weather_v1
 Number miButton1Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001be5b2d:batteryLevel" }
 Number miButton2Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001e612b9:batterylevel" }
 
-
+// Cube Petro
+// Mijia & Aqara Cube Controller - see "xiaomi.rules" for action triggers
+DateTime micube_petro_last_action "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:lastAction" }
+Number:Angle micube_petro_angle { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:rotationAngle" }
+Number:Time micube_petro_time { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:rotationTime" }
+Number micube_petro_batlevel <battery> { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:batteryLevel" }
+Switch micube_petro_batlow <energy> { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:lowBattery" }

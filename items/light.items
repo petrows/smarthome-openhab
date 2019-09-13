@@ -1,0 +1,29 @@
+
+Group:Switch:OR(ON, OFF) g_light_all
+Group:Switch:OR(ON, OFF) g_light_eg (g_light_all)
+Group:Switch:OR(ON, OFF) g_light_kg (g_light_all)
+
+// ====== EG
+
+Switch	yel_rgb_sw	"Питание" (g_light_eg)
+Dimmer	yel_rgb_brightness	"Яркость"
+Number	yel_rgb_temp	"Цветовая температура" <colorpicker>
+Color	yel_rgb_color	"Цвет"
+
+Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_eg) { mqtt=">[mqtt:cmnd/snf-eg-sz/POWER:command:*:default],<[mqtt:stat/snf-eg-sz/POWER:state:default]" }
+Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_eg) { mqtt=">[mqtt:cmnd/snf-eg-ns/POWER:command:*:default],<[mqtt:stat/snf-eg-ns/POWER:state:default]" }
+Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_eg) { mqtt=">[mqtt:cmnd/snf-eg-fs/POWER:command:*:default],<[mqtt:stat/snf-eg-fs/POWER:state:default]" }
+
+// ====== KG
+
+// Celling light
+
+Switch snf_kg_l1 "KG light main" <light> (g_light_kg) { mqtt=">[mqtt:cmnd/snf-kg-1/POWER:command:*:default],<[mqtt:stat/snf-kg-1/POWER:state:default]" }
+Switch snf_kg_l2 "KG light p1" <light> (g_light_kg) { mqtt=">[mqtt:cmnd/snf-kg-2/POWER:command:*:default],<[mqtt:stat/snf-kg-2/POWER:state:default]" }
+
+// Desktop light
+
+Switch yel_petro_ds_sw "Питание" <light> (g_light_kg)
+Dimmer yel_petro_ds_brightness "Яркость" <light>
+Switch yel_petro_ds_temp "Цветовая температура" <colorpicker>
+

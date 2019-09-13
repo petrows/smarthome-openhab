@@ -15,5 +15,6 @@ Bridge mihome:bridge:7811dc6c95de "Xiaomi Gateway" [ serialNumber="7811dc6c95de"
 
 		sensor_switch 158d0001be5b2d "Mi Button1" [ itemId="158d0001be5b2d" ]
 		sensor_switch 158d0001e612b9 "Mi Button2" [ itemId="158d0001e612b9" ]
-	
+
+		sensor_cube 158d00029bf66a "Cube Petro" [ itemId="158d00029bf66a" ]	
 }

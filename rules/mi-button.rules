@@ -53,3 +53,43 @@ then
 		}
 	}
 end
+
+rule "Cube Petro"
+when
+    Channel 'mihome:sensor_cube:7811dc6c95de:158d00029bf66a:action' triggered
+then
+    var actionName = receivedEvent.getEvent()
+    switch(actionName) {
+        case "MOVE": {
+            // ?
+        }
+        case "ROTATE_RIGHT": {
+            yel_petro_ds_brightness.sendCommand((yel_petro_ds_brightness.state as Number) + 10)
+        }
+        case "ROTATE_LEFT": {
+            yel_petro_ds_brightness.sendCommand((yel_petro_ds_brightness.state as Number) - 10)
+        }
+        case "FLIP90": {
+            //<ACTION>
+        }
+        case "FLIP180": {
+            if (yel_petro_ds_sw.state == ON) {
+				yel_petro_ds_sw.sendCommand(OFF);
+			} else {
+				yel_petro_ds_sw.sendCommand(ON);
+			}
+        }
+        case "TAP_TWICE": {
+            //<ACTION>
+        }
+        case "SHAKE_AIR": {
+            // <ACTION>
+        }
+        case "FREE_FALL": {
+            // <ACTION>
+        }
+        case "ALERT": {
+            // <ACTION>
+        }
+    }
+end
