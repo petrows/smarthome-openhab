@@ -1,0 +1,42 @@
+<div class="row room-info">
+  <div class="col-xs-2 room-title">
+    KG
+  </div>
+  <div class="col-xs-2">
+    <widget-icon iconset="'smarthome-set'" icon="'temperature'" size="16"/>
+  </div>
+  <div class="col-xs-2">
+    <span>{{'%.0f' | sprintf:itemValue('miSensorKGTemp')}}°C</span> 
+  </div>
+  <div class="col-xs-2">
+    <widget-icon iconset="'smarthome-set'" icon="'drop'" size="16"/>
+  </div>
+  <div class="col-xs-2">
+    {{'%.0f' | sprintf:itemValue('miSensorKGHum')}}%
+  </div>
+</div>
+
+
+<div class="room-hz">
+	
+</div>
+
+<button ng-style="{ background: (itemValue('hz_kg_set')=='4.5')?'#666':'#000'}"
+        ng-click="sendCmd('hz_kg_set', 4.5)"
+        >
+OFF
+</button>
+<button ng-style="{ background: (itemValue('hz_kg_set')=='17.0')?'#666':'#000'}"
+        ng-click="sendCmd('hz_kg_set', 17.0)"
+        >
+<widget-icon iconset="'smarthome-set'" icon="'drop'" size="16" state="OFF"/>
+</button>
+<button ng-style="{ background: (itemValue('hz_kg_set')=='23.0')?'#666':'#000'}"
+        ng-click="sendCmd('hz_kg_set', 23.0)"
+        >
+<widget-icon iconset="'smarthome-set'" icon="'drop'" size="16" state="ON"/>
+</button>
+<button ng-class="{ 'value': itemValue('yel_petro_ds_sw') == 'ON' }"
+        >
+<widget-icon iconset="'smarthome-set'" icon="'drop'" size="16"/>
+</button>

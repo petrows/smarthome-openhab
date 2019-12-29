@@ -3,7 +3,7 @@ sitemap control label="KONTROL"
 	Frame label="Allgemeinsam" {
 		Switch  	item=g_light_eg label="Licht EG" icon="light"
 		Switch  	item=g_light_kg label="Licht KG" icon="light"
-		Switch  	item=g_hz_all label="Heizung []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=g_hz_all label="Heizung []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		Text		item=g_hz_valve label="Beheizung [%d %%]"
 	}
 	
@@ -17,7 +17,7 @@ sitemap control label="KONTROL"
 		Text 		item=miSensorNsHum
 		Text		item=hz_ns_valve label="Beheizung [%d %%]"
 		Setpoint	item=hz_ns_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=hz_ns_set label="Modus []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_ns_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		Switch		item=snf_eg_ns label="Hauptlicht" icon="light"
 	}
 
@@ -26,7 +26,7 @@ sitemap control label="KONTROL"
 		Text 		item=miSensorFsHum
 		Text		item=hz_fs_valve label="Beheizung [%d %%]"
 		Setpoint	item=hz_fs_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=hz_fs_set label="Modus []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_fs_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		Switch		item=snf_eg_fs label="Hauptlicht" icon="light"
 	}
 
@@ -36,7 +36,7 @@ sitemap control label="KONTROL"
 
 		Text		item=hz_sz_valve label="Beheizung [%d %%]"
 		Setpoint	item=hz_sz_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=hz_sz_set label="Modus []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_sz_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 
 		Switch		item=snf_eg_sz label="Hauptlicht" icon="light"
 		Switch		item=yel_rgb_sw label="Nachtlampe" icon="light"
@@ -54,7 +54,7 @@ sitemap control label="KONTROL"
 		Text 		item=miSensorKitchenHum
 		Text		item=hz_ku_valve label="Beheizung [%d %%]"
 		Setpoint	item=hz_ku_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=hz_ku_set label="Modus []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_ku_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 	}
 	
 	Frame label="KG" {
@@ -66,7 +66,7 @@ sitemap control label="KONTROL"
 		Slider  	item=yel_petro_ds_brightness label="Tischlampe [%d %%]" icon="light"
 		Text		item=hz_kg_valve label="Beheizung [%d %%]"
 		Setpoint	item=hz_kg_set label="Ziel" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-		Switch  	item=hz_kg_set label="Modus []" icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_kg_set label="Modus []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 	}
 	
 	Frame label="Robotier" {
@@ -87,10 +87,11 @@ sitemap control label="KONTROL"
 				Switch	item=cfgHeatingEnable label="Включено"
 				Switch	item=cfgHeatingAutoEnable label="Прогрев по расписанию" visibility=[cfgHeatingEnable==ON]
 				Switch	item=cfgHeatingPersistanceEnable label="Прогрев при возврате домой" visibility=[cfgHeatingEnable==ON]
-				Setpoint	item=cfgHeatingTempOff label="Температура выкл." minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-				Setpoint	item=cfgHeatingTempIdle label="Температура день" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-				Setpoint	item=cfgHeatingTempHeat label="Температура тепло" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-				Text	item=heatingTempAuto label="Температура авто [%.1f °C]" icon=heatingt visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempOff minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempDay minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempNight minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempHeat minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Text	item=hz_temp_auto label="Температура авто [%.1f °C]" icon=heatingt visibility=[cfgHeatingEnable==ON]
 			}
 			Frame label="Присутствие" {
 				Switch	item=cfgPersistanceEnable
@@ -116,13 +117,17 @@ sitemap control label="KONTROL"
 		}
 		
 		Group item=gOnline label="Онлайн [MAP(online.map):%s]" icon=network {
-			Text	item=onlineClockBle1 icon=network
-			Text	item=onlineClockBle2 icon=network
-			Text	item=onlineClockBle3 icon=network
-			Text	item=onlineSonoff1 icon=network
-			Text	item=onlineWlanMain icon=network
-			Text	item=onlineWlanBalkon icon=network
-			Text	item=onlineWlanKeller icon=network
+			Text	item=online_wlan_eg_1 icon=network
+			Text	item=online_wlan_eg_2 icon=network
+			Text	item=online_wlan_kg icon=network
+			Text	item=online_mi_gw icon=network
+			Text	item=online_mi_robot icon=network
+			Text	item=online_max_thermostat icon=network
+			Text	item=online_snf_kg_1 icon=network
+			Text	item=online_snf_kg_2 icon=network
+			Text	item=online_snf_eg_fs icon=network
+			Text	item=online_snf_eg_ns icon=network
+			Text	item=online_snf_eg_sz icon=network
 		}
 		
 		Group item=gPresent label="Присутствие [MAP(presence.map):%s]" icon=network {

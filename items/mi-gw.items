@@ -17,7 +17,7 @@ Group gMiSensorsClimate (gMiSensors)
 // Sensor 1
 Number miSensorWeatherTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c2cc22:temperature" }
 Number miSensorWeatherHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_ht:158d0001c2cc22:humidity" }
-Number miSensorWeatherBatt <battery> { channel="mihome:sensor_ht:158d0001c2cc22:b7811dc6c95de:batteryLevel" }
+Number miSensorWeatherBatt <battery> { channel="mihome:sensor_ht:158d0001c2cc22:batteryLevel" }
 Switch miSensorWeatherBattLow <energy> (gBattery) { channel="mihome:sensor_ht:158d0001c2cc22:lowBattery" }
 
 // Sensor 2 // Sleeping room

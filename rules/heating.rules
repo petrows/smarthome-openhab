@@ -3,7 +3,7 @@
 
 rule "Heating safe switch"
 when
-	Time cron "0 00 23,00,01,02,03,04 ? * *"
+	Time cron "0 00 01,02,03,04 ? * *"
 then
 	logWarn("heating", "Set safe off")
 	g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
@@ -17,7 +17,7 @@ when
 then
 	logWarn("heating", "Set NIGHT")
 	
-	hz_temp_auto.sendCommand(cfgHeatingTempOff.state as Number)
+	hz_temp_auto.sendCommand(cfgHeatingTempNight.state as Number)
 end
 
 rule "Heating MORNING"
@@ -35,7 +35,7 @@ when
 then
 	logWarn("heating", "Set DAY")
 	
-	hz_temp_auto.sendCommand(cfgHeatingTempIdle.state as Number)
+	hz_temp_auto.sendCommand(cfgHeatingTempDay.state as Number)
 end
 
 rule "Heating EVENING"
@@ -44,7 +44,7 @@ when
 then
 	logWarn("heating", "Set EVENING")
 	
-	hz_temp_auto.sendCommand(cfgHeatingTempIdle.state as Number)
+	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
 end
 
 // === RULE CONTROLS ==========================================
@@ -72,20 +72,7 @@ then
 	}
 	
 	logInfo("heating", "Auto temp -> " + hz_temp_auto.state)
-	g_hz_all.sendCommand(hz_temp_auto.state as Number)
-end
-
-rule "Bad heating switch"
-when
-	Item maxBathTimerShort changed
-then
-	logInfo("heating", "Bad heating timer: " + triggeringItem.state)
-	
-	if (ON == triggeringItem.state) {
-		maxBathTempSet.sendCommand(cfgHeatingTempHeat.state as Number)
-	} else {
-		maxBathTempSet.sendCommand(cfgHeatingTempOff.state as Number)
-	}
+	g_hz_auto.sendCommand(hz_temp_auto.state as Number)
 end
 
 // === HEATING SWITCHES =========================================
@@ -118,7 +105,7 @@ when
 	Item cfgHeatingEnable changed
 then
 	if (cfgHeatingEnable.state == ON) {
-		gHeatingAll.sendCommand(hz_temp_auto.state as Number)
+		g_hz_all.sendCommand(hz_temp_auto.state as Number)
 	} else {
 		g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
 	}
