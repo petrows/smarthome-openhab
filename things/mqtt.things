@@ -1,25 +1,30 @@
 Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabian", password="***REMOVED***" , clientID="openhab" ]
 {
+	Thing topic snf-pow-1 "snf-pow-1" {
+		Channels:
+			Type switch : power  [ stateTopic="stat/snf-pow-1/POWER", commandTopic="cmnd/snf-pow-1/POWER", on="ON", off="OFF" ]
+	}
+	
 	Thing topic snf-eg-sz "snf-eg-sz" {
 		Channels:
-			Type switch : PowerSwitch  [ stateTopic="stat/snf-eg-sz/POWER", commandTopic="cmnd/snf-eg-sz/POWER", on="ON", off="OFF" ]
+			Type switch : power  [ stateTopic="stat/snf-eg-sz/POWER", commandTopic="cmnd/snf-eg-sz/POWER", on="ON", off="OFF" ]
 	}
 	Thing topic snf-eg-ns "snf-eg-ns" {
 		Channels:
-			Type switch : PowerSwitch  [ stateTopic="stat/snf-eg-ns/POWER", commandTopic="cmnd/snf-eg-ns/POWER", on="ON", off="OFF" ]
+			Type switch : power  [ stateTopic="stat/snf-eg-ns/POWER", commandTopic="cmnd/snf-eg-ns/POWER", on="ON", off="OFF" ]
 	}
 	Thing topic snf-eg-fs "snf-eg-fs" {
 		Channels:
-			Type switch : PowerSwitch  [ stateTopic="stat/snf-eg-fs/POWER", commandTopic="cmnd/snf-eg-fs/POWER", on="ON", off="OFF" ]
+			Type switch : power  [ stateTopic="stat/snf-eg-fs/POWER", commandTopic="cmnd/snf-eg-fs/POWER", on="ON", off="OFF" ]
 	}
 	
 	Thing topic snf-kg-1 "snf-kg-1" {
 		Channels:
-			Type switch : PowerSwitch  [ stateTopic="stat/snf-kg-1/POWER", commandTopic="cmnd/snf-kg-1/POWER", on="ON", off="OFF" ]
+			Type switch : power  [ stateTopic="stat/snf-kg-1/POWER", commandTopic="cmnd/snf-kg-1/POWER", on="ON", off="OFF" ]
 	}
 	Thing topic snf-kg-2 "snf-kg-2" {
 		Channels:
-			Type switch : PowerSwitch  [ stateTopic="stat/snf-kg-2/POWER", commandTopic="cmnd/snf-kg-2/POWER", on="ON", off="OFF" ]
+			Type switch : power  [ stateTopic="stat/snf-kg-2/POWER", commandTopic="cmnd/snf-kg-2/POWER", on="ON", off="OFF" ]
 	}
 }
 

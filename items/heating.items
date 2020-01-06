@@ -15,6 +15,10 @@ Group g_hz_eg <heating>
 // AVG valve
 Group:Number:AVG g_hz_valve "Alle Ventil" <heatingt>
 
+// NS force fan
+Switch hz_ns_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF" }
+Switch hz_ns_fan "NS Heuzung Fan" <fan> (g_hz_all) { channel="mqtt:topic:openhab:snf-pow-1:power" }
+
 // Items to be controlled by Auto (sheduled heating)
 // Group g_hz_auto <heatingt>
 
@@ -42,7 +46,7 @@ Number hz_sz_temp_auto
 Switch hz_sz_lbatt "Leer Batt" <battery> (gBattery) {channel="max:thermostat:NEQ1442869:MEQ1775184:battery_low"}
 String hz_sz_mode "Modus []" {channel="max:thermostat:NEQ1442869:MEQ1775184:mode"}
 Number hz_sz_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:MEQ1775184:actual_temp"}
-Number hz_sz_set "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="max:thermostat:NEQ1442869:MEQ1775184:set_temp"}
+Number hz_sz_set "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_eg) {channel="max:thermostat:NEQ1442869:MEQ1775184:set_temp"}
 Number hz_sz_valve "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:MEQ1775184:valve"}
 
 // Foto Studio

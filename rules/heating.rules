@@ -77,6 +77,26 @@ end
 
 // === HEATING SWITCHES =========================================
 
+rule "Heating NS boost switch"
+when
+	Item hz_ns_boost changed
+then
+	if (ON != cfgHeatingEnable.state) {
+		logInfo("heating", "Heating disabled")
+		return
+	}
+	
+	logInfo("heating", "Heating NS boost -> " + hz_ns_boost.state)
+
+	if (ON == hz_ns_boost.state) {
+		hz_ns_fan.sendCommand(ON)
+		hz_ns_mode.sendCommand("BOOST")
+	} else {
+        hz_ns_fan.sendCommand(OFF)
+		hz_ns_mode.sendCommand("MANUAL")
+	}
+end
+
 rule "Heating presense switch"
 when
 	Item presAll changed

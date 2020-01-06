@@ -10,16 +10,16 @@ Dimmer	yel_rgb_brightness	"Яркость"
 Number	yel_rgb_temp	"Цветовая температура" <colorpicker>
 Color	yel_rgb_color	"Цвет"
 
-Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_eg) { channel="mqtt:topic:openhab:snf-eg-sz:PowerSwitch" }
-Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ns:PowerSwitch" }
-Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fs:PowerSwitch" }
+Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_eg) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
+Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
+Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
 
 // ====== KG
 
 // Celling light
 
-Switch snf_kg_l1 "KG light main" <light> (g_light_kg) { channel="mqtt:topic:openhab:snf-kg-1:PowerSwitch" }
-Switch snf_kg_l2 "KG light p1" <light> (g_light_kg) { channel="mqtt:topic:openhab:snf-kg-2:PowerSwitch" }
+Switch snf_kg_l1 "KG light main" <light> (g_light_kg) { channel="mqtt:topic:openhab:snf-kg-1:power" }
+Switch snf_kg_l2 "KG light p1" <light> (g_light_kg) { channel="mqtt:topic:openhab:snf-kg-2:power" }
 
 // Desktop light
 
