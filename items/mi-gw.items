@@ -33,11 +33,11 @@ Number miSensorFsBatt <battery> { channel="mihome:sensor_ht:158d0001c15121:batte
 Switch miSensorFsBattLow <energy> (gBattery) { channel="mihome:sensor_ht:158d0001c15121:lowBattery" }
 
 // Sensor 2.0 4 // KG
-Number miSensorKGTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e02:temperature" }
-Number miSensorKGHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e02:humidity" }
-Number miSensorKGPressure <pressure> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95e02:pressure" }
-Number miSensorKGBatt <battery> { channel="mihome:sensor_weather_v1:158d0001b95e02:batteryLevel" }
-Switch miSensorKGBattLow <energy> (gBattery) { channel="mihome:sensor_weather_v1:158d0001b95e02:lowBattery" }
+Number miSensorKGTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:temperature" }
+Number miSensorKGHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:humidity" }
+Number miSensorKGPressure <pressure> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:pressure" }
+Number miSensorKGBatt <battery> { channel="mqtt:topic:openhab:mi-sensor-5e02:battery" }
+Switch miSensorKGBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-sensor-5e02:battery_low" }
 
 // Sensor 2.0 5 // Kitchen
 Number miSensorKitchenTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mihome:sensor_weather_v1:158d0001b95fc4:temperature" }

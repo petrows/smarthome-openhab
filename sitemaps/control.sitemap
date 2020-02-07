@@ -98,6 +98,9 @@ sitemap control label="KONTROL"
 			Frame label="Присутствие" {
 				Switch	item=cfgPersistanceEnable
 			}
+			Frame label="ZigBee" {
+				Switch	item=zigbee_root_pair label="ZigBee pair Erlaubnis"
+			}
 		}
 		
 		Group item=gBattery label="Заряд батарей [MAP(lowbat.map):%s]" icon=lowbattery {
@@ -115,6 +118,9 @@ sitemap control label="KONTROL"
 				Text    item=miSensorKitchenBattLow label="Küche [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=miSensorFsBattLow label="Foto Studio [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=miSensorSleepingBattLow label="Schlaffzimmer [MAP(lowbat.map):%s]" icon=lowbattery
+			}
+			Frame label="Mi Andere" icon=heating {
+				Text	item=mi_button_5b2d_battery_low label="BTN KG Desktop [MAP(lowbat.map):%s]" icon=lowbattery
 			}
 		}
 		
