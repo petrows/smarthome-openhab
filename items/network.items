@@ -13,3 +13,7 @@ Switch online_snf_kg_2 "Sonoff KG 2" (gOnline) { channel="network:pingdevice:snf
 Switch online_snf_eg_fs "Sonoff EG FS" (gOnline) { channel="network:pingdevice:snf_eg_fs:online" }
 Switch online_snf_eg_ns "Sonoff EG NS" (gOnline) { channel="network:pingdevice:snf_eg_ns:online" }
 Switch online_snf_eg_sz "Sonoff EG SZ" (gOnline) { channel="network:pingdevice:snf_eg_sz:online" }
+
+Number zigbee_router_1_connection "ZB router 1 conn" { channel="mqtt:topic:openhab:zigbee-router-1:connection" }
+Number zigbee_cube_1_battery "ZB Cube 1 batt" { channel="mqtt:topic:openhab:zigbee-cube-1:battery" }
+Number zigbee_cube_1_connection "ZB Cube 1 conn" { channel="mqtt:topic:openhab:zigbee-cube-1:connection" }

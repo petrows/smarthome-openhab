@@ -26,5 +26,27 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 		Channels:
 			Type switch : power  [ stateTopic="stat/snf-kg-2/POWER", commandTopic="cmnd/snf-kg-2/POWER", on="ON", off="OFF" ]
 	}
-}
 
+	// 0x00124b000b4ed5cc
+	Thing topic zigbee-router-1 {
+		Channels:
+			Type number : connection [ stateTopic="zigbee2mqtt/0x00124b000b4ed5cc", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+
+	// 0x00158d00029bf66a
+
+	Thing topic zigbee-cube-1 {
+		Channels:
+			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d00029bf66a", transformationPattern="JSONPATH:$.battery" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d00029bf66a", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+
+	// MiJia wireless switch 5b2d
+	Thing topic mi-button-5b2d {
+		Channels:
+			Type string : click [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.click", trigger=true ]
+			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.battery" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+
+}

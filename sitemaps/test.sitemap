@@ -1,6 +1,7 @@
 sitemap test label="ТЕСТ"
 {	
 	Frame label="Test"{ 
+		Text item=zigbee_cube_1_connection label="Cube conn"
 		Switch item=testSw label="TestSW"
 		
 		Switch item=yel_petro_desktop_brightness

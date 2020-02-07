@@ -1,22 +1,23 @@
 rule "BTN1 Switch (KG desktop)"
 when
-    Channel "mihome:sensor_switch:7811dc6c95de:158d0001be5b2d:button" triggered
+    Channel "mqtt:topic:openhab:mi-button-5b2d:click" triggered
 then
+
 	var actionName = receivedEvent.getEvent()
 	logInfo("mi-button", "Btn1: " + actionName)
 	
 	switch(actionName) {
-		case "SHORT_PRESSED": {
+		case "single": {
 			if (yel_petro_ds_sw.state == ON) {
 				yel_petro_ds_sw.sendCommand(OFF);
 			} else {
 				yel_petro_ds_sw.sendCommand(ON);
 			}
 		}
-		case "DOUBLE_PRESSED": {
+		case "double": {
 			g_light_kg.sendCommand(OFF);
 		}
-		case "LONG_PRESSED": {
+		case "long": {
 			// g_kg_light.sendCommand(OFF);
 			
 			if (yel_petro_ds_brightness.state == 1) {
@@ -25,7 +26,7 @@ then
 				yel_petro_ds_brightness.sendCommand(1);
 			}
 		}
-		case "LONG_RELEASED": {
+		case "long_release": {
 			// <ACTION>
 		}
 	} 
