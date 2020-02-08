@@ -31,6 +31,7 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 	Thing topic zigbee-root {
 		Channels:
 			Type switch : pair [ stateTopic="zigbee2mqtt/bridge/config", transformationPattern="JSONPATH:$.permit_join", commandTopic="zigbee2mqtt/bridge/config/permit_join", on="true", off="false" ]
+			Type string : log [ stateTopic="zigbee2mqtt/bridge/log", trigger=true ]
 	}
 
 	// 0x00124b000b4ed5cc
@@ -56,7 +57,32 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
-	// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) 5e02
+	// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM)
+	Thing topic mi-sensor-cc22 {
+		Channels:
+			Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.temperature" ]
+			Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.humidity" ]
+			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.battery" ]
+			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-lowbatt.js" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+	Thing topic mi-sensor-9a6b {
+		Channels:
+			Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.temperature" ]
+			Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.humidity" ]
+			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.battery" ]
+			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-lowbatt.js" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+	Thing topic mi-sensor-5121 {
+		Channels:
+			Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.temperature" ]
+			Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.humidity" ]
+			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.battery" ]
+			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-lowbatt.js" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+	// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM)
 	Thing topic mi-sensor-5e02 {
 		Channels:
 			Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.temperature" ]
@@ -66,5 +92,22 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-lowbatt.js" ]
 			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.linkquality" ]
 	}
-
+	Thing topic mi-sensor-5fc4 {
+		Channels:
+			Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.temperature" ]
+			Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.humidity" ]
+			Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.pressure" ]
+			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.battery" ]
+			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-lowbatt.js" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+	Thing topic mi-sensor-5e08 {
+		Channels:
+			Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.temperature" ]
+			Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.humidity" ]
+			Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.pressure" ]
+			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.battery" ]
+			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-lowbatt.js" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.linkquality" ]
+	}
 }

@@ -1,0 +1,52 @@
+// -t 'zigbee2mqtt/bridge/log' -m '{"type":"device_connected","message":{"friendly_name":"0x00158d00029bf66a"}}'
+// -t 'zigbee2mqtt/bridge/log' -m '{"type":"pairing","message":"interview_started","meta":{"friendly_name":"0x00158d00029bf66a"}}'
+// -t 'zigbee2mqtt/bridge/log' -m '{"type":"pairing","message":"interview_failed","meta":{"friendly_name":"0x00158d00029bf66a"}}'
+// -t 'zigbee2mqtt/bridge/log' -m '{"type":"pairing","message":"interview_successful","meta":{"friendly_name":"0x00158d00029bf66a","model":"MFKZQ01LM","vendor":"Xiaomi","description":"Mi/Aqara smart home cube","supported":true}}'
+// -t 'zigbee2mqtt/bridge/log' -m '{"type":"device_removed","message":"left_network","meta":{"friendly_name":"0x00158d00029bf66a"}}'
+
+rule "Coordinator log"
+when
+    Channel "mqtt:topic:openhab:zigbee-root:log" triggered
+then
+	var json = receivedEvent.getEvent()
+	
+	logInfo("coordinator", "Coordinator log: " + json)
+
+	var type = transform("JSONPATH", "$.type", json)
+
+	logInfo("coordinator", "Log type: " + type)
+
+	if ("device_connected" == type)
+	{
+		var name = transform("JSONPATH", "$.message.friendly_name", json)
+		logInfo("coordinator", "ZigBee connecting: " + name)
+	}
+
+	if ("device_removed" == type)
+	{
+		var name = transform("JSONPATH", "$.meta.friendly_name", json)
+		logInfo("coordinator", "ZigBee removed: " + name)
+		sendBroadcastNotification("ZigBee left: " + name)
+	}
+
+	if ("pairing" == type)
+	{
+		var message = transform("JSONPATH", "$.message", json)
+		var name = transform("JSONPATH", "$.meta.friendly_name", json)
+		logInfo("coordinator", "Pairing: " + message)
+		if ("interview_started" == message)
+		{
+			sendBroadcastNotification("ZigBee started: " + name)
+		}
+		if ("interview_failed" == message)
+		{
+			sendBroadcastNotification("ZigBee failed: " + name)
+		}
+		if ("interview_successful" == message)
+		{
+			var device_vendor = transform("JSONPATH", "$.meta.vendor", json)
+			var device_description = transform("JSONPATH", "$.meta.description", json)
+			sendBroadcastNotification("ZigBee paired: " + name + ", " + device_vendor + " / " + device_description)
+		}
+	}
+end
