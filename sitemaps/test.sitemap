@@ -9,6 +9,9 @@ sitemap test label="ТЕСТ"
 		//Setpoint item=yel_petro_desktop_temp minValue=2700 maxValue=6500 step=100
 		Slider item=yel_petro_desktop_brightness
 		Slider item=yel_petro_desktop_temp
+
+		Switch item=ikea_led_ef9d_sw
+		Slider item=ikea_led_ef9d_brightness
 	}
 	
 	Frame label="Yeelight SL"{ 		

@@ -7,3 +7,10 @@ Number zigbee_cube_1_connection "ZB Cube 1 conn" { channel="mqtt:topic:openhab:z
 
 Number mi_button_5b2d_battery "MI BUT 5b2d Bat" { channel="mqtt:topic:openhab:mi-button-5b2d:battery" }
 Switch mi_button_5b2d_battery_low "MI BUT 5b2d Batlow" { channel="mqtt:topic:openhab:mi-button-5b2d:battery_low" }
+
+// Petr desktop
+Switch ikea_led_ef9d_sw "IKEA LED ef9d sw" { channel="mqtt:topic:openhab:ikea-led-ef9d:state" }
+Dimmer ikea_led_ef9d_brightness "IKEA LED ef9d br" { channel="mqtt:topic:openhab:ikea-led-ef9d:br" }
+
+Switch ikea_led_bfde_sw "IKEA LED bfde sw" { channel="mqtt:topic:openhab:ikea-led-bfde:state" }
+Dimmer ikea_led_bfde_brightness "IKEA LED bfde br" { channel="mqtt:topic:openhab:ikea-led-bfde:br" }

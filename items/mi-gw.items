@@ -1,16 +1,4 @@
 
-// Xiaomi Gateway
-Group gMiGw
-
-Switch miGwLight "Питание" <light> (gMiGw) { channel="mihome:gateway:7811dc6c95de:brightness" }
-Dimmer miGwBrightness <dimmablelight> (gMiGw) { channel="mihome:gateway:7811dc6c95de:brightness" }
-Color  miGwColor <rgb> (gMiGw) { channel="mihome:gateway:7811dc6c95de:color" }
-Dimmer miGwColorTemp <heating> (gMiGw) { channel="mihome:gateway:7811dc6c95de:colorTemperature" }
-Number miGwAmbientLight <sun> (gMiGw) { channel="mihome:gateway:7811dc6c95de:illumination" }
-Number miGwSound <soundvolume-0> (gMiGw) { channel="mihome:gateway:7811dc6c95de:sound" }
-Switch miGwSoundSwitch <soundvolume_mute> (gMiGw) { channel="mihome:gateway:7811dc6c95de:enableSound" }
-Dimmer miGwSoundVolume <soundvolume> (gMiGw) { channel="mihome:gateway:7811dc6c95de:volume" }
-
 Group gMiSensors
 Group gMiSensorsClimate (gMiSensors)
 
