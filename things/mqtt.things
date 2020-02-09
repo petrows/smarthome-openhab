@@ -41,6 +41,9 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 	}
 
 	// Xiaomi MiJia wireless switch (WXKG01LM)
+	// {"battery":100,"voltage":3002,"linkquality":28,"click":"single"}
+	// {"battery":100,"voltage":3002,"linkquality":28,"click":"long"}
+	// {"battery":100,"voltage":3002,"linkquality":28,"click":"long_release","duration":1227}
 	Thing topic mi-button-5b2d {
 		Channels:
 			Type string : click [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.click", trigger=true ]
@@ -127,19 +130,75 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type number : connection [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
+	// IKEA TRADFRI remote control (E1524/E1810)
+	// {"linkquality":49,"battery":100,"action":"toggle"}
+	// {"linkquality":52,"battery":100,"action":"brightness_down_click"}
+	// {"linkquality":47,"battery":100,"action":"brightness_up_click"}
+	// {"linkquality":21,"battery":100,"action":"arrow_left_click"}
+	// {"linkquality":31,"battery":100,"action":"arrow_right_click"}
+	// {"linkquality":49,"battery":100,"action":"brightness_up_hold"}
+	// {"linkquality":49,"battery":100,"action":"brightness_up_release"}
+	// {"linkquality":42,"battery":100,"action":"brightness_down_hold"}
+	// {"linkquality":44,"battery":100,"action":"brightness_down_release"}
+	// {"linkquality":39,"battery":100,"action":"arrow_left_hold"}
+	// {"linkquality":39,"battery":100,"action":"arrow_left_release","duration":1.82}
+	// {"linkquality":36,"battery":100,"action":"arrow_right_hold"}
+	// {"linkquality":39,"battery":100,"action":"arrow_right_release","duration":1.125}
+	Thing topic ikea-remote-2305 {
+		Channels:
+			Type string : click [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.action", trigger=true ]
+			Type number : battery [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.battery" ]
+			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JS:z2m-lowbatt.js" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+	Thing topic ikea-remote-357d {
+		Channels:
+			Type string : click [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.action", trigger=true ]
+			Type number : battery [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.battery" ]
+			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-lowbatt.js" ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+
 	// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)
 	Thing topic ikea-led-bfde {
 		Channels:
 			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", commandTopic="zigbee2mqtt/0xec1bbdfffe9abfde/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
-			// Type number : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe9abfde/set", transformationPatternOut="JSONPATH:$.brightness", min=0, max=255 ]
+			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe9abfde/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
 			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+	Thing topic ikea-led-95b5 {
+		Channels:
+			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", commandTopic="zigbee2mqtt/0xec1bbdfffe4695b5/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
+			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe4695b5/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9)
 	Thing topic ikea-led-ef9d {
 		Channels:
 			Type switch : state [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
-			Type dimmer : br [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
+			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
+			Type dimmer : temp [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=255, max=512 ]
 			Type number : connection [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+
+	// IKEA TRADFRI LED bulb E27 WW clear 250 lumen,dimmable (LED1842G3)
+	Thing topic ikea-led-2819 {
+		Channels:
+			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe972819", commandTopic="zigbee2mqtt/0xec1bbdfffe972819/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
+			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe972819", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe972819/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe972819", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+	Thing topic ikea-led-2203 {
+		Channels:
+			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe972203", commandTopic="zigbee2mqtt/0xec1bbdfffe972203/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
+			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe972203", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe972203/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe972203", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+	Thing topic ikea-led-007b {
+		Channels:
+			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe91007b", commandTopic="zigbee2mqtt/0xec1bbdfffe91007b/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
+			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe91007b", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe91007b/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
+			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe91007b", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 }
