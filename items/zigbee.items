@@ -1,10 +1,10 @@
 Switch zigbee_root_pair "ZB root pair" { channel="mqtt:topic:openhab:zigbee-root:pair", expire="15m,command=OFF" }
 
-Number zigbee_router_1_connection "ZB router 1 conn" { channel="mqtt:topic:openhab:zigbee-router-d5cc:connection" }
-Number zigbee_cube_1_battery "ZB Cube 1 batt" { channel="mqtt:topic:openhab:zigbee-cube-1:battery" }
-Switch zigbee_cube_1_battery_low "ZB Cube 1 batt" { channel="mqtt:topic:openhab:zigbee-cube-1:battery_low" }
-Number zigbee_cube_1_connection "ZB Cube 1 conn" { channel="mqtt:topic:openhab:zigbee-cube-1:connection" }
+Number zigbee_router_1_link "ZB router 1 link" { channel="mqtt:topic:openhab:zigbee-router-d5cc:link" }
 
-Number mi_button_5b2d_battery "MI BUT 5b2d Bat" { channel="mqtt:topic:openhab:mi-button-5b2d:battery" }
-Switch mi_button_5b2d_battery_low "MI BUT 5b2d Batlow" { channel="mqtt:topic:openhab:mi-button-5b2d:battery_low" }
+Number ikea_router_6a05 "Ikea router 1 link" { channel="mqtt:topic:openhab:zigbee-router-6a05:link" }
+Number ikea_sw_e111 "Ikea SW e111 link" { channel="mqtt:topic:openhab:ikea-sw-e111:link" }
+Number ikea_sw_92f3 "Ikea SW 92f3 link" { channel="mqtt:topic:openhab:ikea-sw-92f3:link" }
+Number ikea_remote_2305 "Ikea Remote 2305 link" { channel="mqtt:topic:openhab:ikea-remote-2305:link" }
+Number ikea_remote_357d "Ikea Remote 357d link" { channel="mqtt:topic:openhab:ikea-remote-357d:link" }
 

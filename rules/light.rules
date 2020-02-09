@@ -1,3 +1,6 @@
+var Timer dawnTimer = null
+var Timer dawnStarted = false
+
 rule "Light safe switch"
 when
 	Time cron "0 00 01,02,03,04 ? * *"
@@ -127,4 +130,39 @@ when
     Item snf_eg_bz_2 changed
 then
     g_light_eg_bz.members.forEach [s | s.sendCommand(snf_eg_bz_2.state) ]
+end
+
+// DAWN emulation
+rule "Dawn emulation start"
+when
+    Time cron "0 00 05 ? * MON-FRI"
+then
+    logWarn("light", "Dawn emulation started")
+
+    var currentBrightness = 0
+    var brightStep = 100 / 60
+
+    dawnStarted = false
+    
+    dawnTimer = createTimer(now, [ |
+
+        if (dawnStarted) {
+            if (g_light_eg_sz_night.state == OFF) {
+                logWarn("light", "Dawn emulation stopped: group switched off")
+                return
+            }
+        }
+
+        dawnStarted = true
+
+        if (currentBrightness < 100) {
+            logWarn("light", "Dawn set brightness: " + currentBrightness)
+            g_light_eg_sz_night_brightness.sendCommand(currentBrightness)
+            currentBrightness = currentBrightness + brightStep
+            dawnTimer.reschedule(now.plusMillis(60000))
+        } else {
+            logWarn("light", "Dawn process done")
+            dawnTimer = null
+        }
+    ])
 end

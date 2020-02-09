@@ -42,7 +42,7 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 	// 0x00124b000b4ed5cc
 	Thing topic zigbee-router-d5cc {
 		Channels:
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00124b000b4ed5cc", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00124b000b4ed5cc", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// Xiaomi MiJia wireless switch (WXKG01LM)
@@ -54,14 +54,14 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type string : click [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.click", trigger=true ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic mi-button-12b9 {
 		Channels:
 			Type string : click [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.click", trigger=true ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM)
@@ -71,7 +71,7 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.humidity" ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic mi-sensor-9a6b {
 		Channels:
@@ -79,7 +79,7 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.humidity" ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic mi-sensor-5121 {
 		Channels:
@@ -87,7 +87,7 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.humidity" ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM)
@@ -98,7 +98,7 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.pressure" ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic mi-sensor-5fc4 {
 		Channels:
@@ -107,7 +107,7 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.pressure" ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic mi-sensor-5e08 {
 		Channels:
@@ -116,7 +116,13 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.pressure" ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.linkquality" ]
+	}
+
+	// IKEA TRADFRI signal repeater (E1746)
+	Thing topic ikea-router-6a05 {
+		Channels:
+			Type number : link [ stateTopic="zigbee2mqtt/0x680ae2fffe3b6a05", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// IKEA TRADFRI ON/OFF switch (E1743)
@@ -125,14 +131,14 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type string : click [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.click", trigger=true ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic ikea-sw-92f3 {
 		Channels:
 			Type string : click [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.click", trigger=true ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// IKEA TRADFRI remote control (E1524/E1810)
@@ -154,14 +160,14 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type string : click [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.action", trigger=true ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic ikea-remote-357d {
 		Channels:
 			Type string : click [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.action", trigger=true ]
 			Type number : battery [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.battery" ]
 			Type switch : battery_low [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-lowbatt.js" ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)
@@ -169,13 +175,13 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 		Channels:
 			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", commandTopic="zigbee2mqtt/0xec1bbdfffe9abfde/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
 			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe9abfde/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic ikea-led-95b5 {
 		Channels:
 			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", commandTopic="zigbee2mqtt/0xec1bbdfffe4695b5/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
 			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe4695b5/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9)
@@ -184,7 +190,7 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type switch : state [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
 			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
 			Type dimmer : temp [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=255, max=512 ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 
 	// IKEA TRADFRI LED bulb E27 WW clear 250 lumen,dimmable (LED1842G3)
@@ -192,18 +198,18 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 		Channels:
 			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe972819", commandTopic="zigbee2mqtt/0xec1bbdfffe972819/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
 			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe972819", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe972819/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe972819", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0xec1bbdfffe972819", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic ikea-led-2203 {
 		Channels:
 			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe972203", commandTopic="zigbee2mqtt/0xec1bbdfffe972203/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
 			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe972203", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe972203/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe972203", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0xec1bbdfffe972203", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 	Thing topic ikea-led-007b {
 		Channels:
 			Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe91007b", commandTopic="zigbee2mqtt/0xec1bbdfffe91007b/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
 			Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe91007b", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe91007b/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
-			Type number : connection [ stateTopic="zigbee2mqtt/0xec1bbdfffe91007b", transformationPattern="JSONPATH:$.linkquality" ]
+			Type number : link [ stateTopic="zigbee2mqtt/0xec1bbdfffe91007b", transformationPattern="JSONPATH:$.linkquality" ]
 	}
 }

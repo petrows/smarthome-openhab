@@ -134,17 +134,35 @@ sitemap control label="KONTROL"
 		}
 		
 		Group item=gOnline label="Онлайн [MAP(online.map):%s]" icon=network {
-			Text	item=online_wlan_eg_1 icon=network
-			Text	item=online_wlan_eg_2 icon=network
-			Text	item=online_wlan_kg icon=network
-			Text	item=online_mi_gw icon=network
-			Text	item=online_mi_robot icon=network
-			Text	item=online_max_thermostat icon=network
-			Text	item=online_snf_kg_1 icon=network
-			Text	item=online_snf_kg_2 icon=network
-			Text	item=online_snf_eg_fs icon=network
-			Text	item=online_snf_eg_ns icon=network
-			Text	item=online_snf_eg_sz icon=network
+			Frame label="WLAN" {
+				Text	item=online_wlan_eg_1 icon=network
+				Text	item=online_wlan_eg_2 icon=network
+				Text	item=online_wlan_kg icon=network
+				Text	item=online_mi_robot icon=network
+				Text	item=online_max_thermostat icon=network
+				Text	item=online_snf_kg_1 icon=network
+				Text	item=online_snf_kg_2 icon=network
+				Text	item=online_snf_eg_fs icon=network
+				Text	item=online_snf_eg_ns icon=network
+				Text	item=online_snf_eg_sz icon=network
+				Text	item=online_snf_eg_bz icon=network
+			}
+			Frame label="ZigBee link" {
+				Text	item=zigbee_router_1_link icon=network
+				Text	item=ikea_router_6a05 icon=network
+				Text	item=ikea_sw_e111 icon=network
+				Text	item=ikea_sw_92f3 icon=network
+				Text	item=ikea_remote_2305 icon=network
+				Text	item=ikea_remote_357d icon=network
+				Text	item=mi_button_5b2d_link icon=network
+				Text	item=mi_button_12b9_link icon=network
+				Text	item=ikea_led_2819_link icon=network
+				Text	item=ikea_led_2203_link icon=network
+				Text	item=ikea_led_007b_link icon=network
+				Text	item=ikea_led_ef9d_link icon=network
+				Text	item=ikea_led_bfde_link icon=network
+				Text	item=ikea_led_95b5_link icon=network
+			}
 		}
 		
 		Group item=gPresent label="Присутствие [MAP(presence.map):%s]" icon=network {

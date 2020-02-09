@@ -52,8 +52,16 @@ Switch miSensorNsBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-se
 //Switch miButton1 <energy> { channel="mihome:sensor_switch:158d0001be5b2d:button" }
 //Switch miButton2 <energy> { channel="mihome:sensor_switch:158d0001e612b9:button" }
 
-Number miButton1Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001be5b2d:batteryLevel" }
-Number miButton2Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001e612b9:batterylevel" }
+// Number miButton1Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001be5b2d:batteryLevel" }
+// Number miButton2Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001e612b9:batterylevel" }
+
+Number mi_button_5b2d_link "MI BUT 5b2d Link" { channel="mqtt:topic:openhab:mi-button-5b2d:link" }
+Number mi_button_5b2d_battery "MI BUT 5b2d Bat" { channel="mqtt:topic:openhab:mi-button-5b2d:battery" }
+Switch mi_button_5b2d_battery_low "MI BUT 5b2d Batlow" { channel="mqtt:topic:openhab:mi-button-5b2d:battery_low" }
+
+Number mi_button_12b9_link "MI BUT 5b2d Link" { channel="mqtt:topic:openhab:mi-button-12b9:link" }
+Number mi_button_12b9_battery "MI BUT 12b9 Bat" { channel="mqtt:topic:openhab:mi-button-12b9:battery" }
+Switch mi_button_12b9_battery_low "MI BUT 12b9 Batlow" { channel="mqtt:topic:openhab:mi-button-12b9:battery_low" }
 
 // Cube Petro
 // Mijia & Aqara Cube Controller - see "xiaomi.rules" for action triggers
