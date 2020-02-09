@@ -1,6 +1,12 @@
 
 Group:Switch:OR(ON, OFF) g_light_all
 Group:Switch:OR(ON, OFF) g_light_eg
+
+Group:Switch:OR(ON, OFF) g_light_eg_bz
+
+Group:Switch:OR(ON, OFF) g_light_eg_sz_night
+Group:Dimmer:AVG g_light_eg_sz_night_brightness
+
 Group:Switch:OR(ON, OFF) g_light_kg
 Group:Switch:OR(ON, OFF) g_light_kg_ohne_desktop
 Group:Switch:OR(ON, OFF) g_light_treppe
@@ -15,16 +21,19 @@ Color	yel_rgb_color	"Цвет"
 Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
 Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
+Switch snf_eg_bz_1 "BAD Licht 1" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power1" }
+Switch snf_eg_bz_2 "BAD Licht 2" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power2" }
 
-Switch ikea_led_2819_sw "EG SZ Flame 1 sw" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:ikea-led-2819:state" }
-Dimmer ikea_led_2819_brightness "EG SZ Flame 1 br []" { channel="mqtt:topic:openhab:ikea-led-2819:brightness" }
+// Ikea filament lamps SZ
 
-Switch ikea_led_2203_sw "EG SZ Flame 2 sw" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:ikea-led-2203:state" }
-Dimmer ikea_led_2203_brightness "EG SZ Flame 2 br []" { channel="mqtt:topic:openhab:ikea-led-2203:brightness" }
+Switch ikea_led_2819_sw "EG SZ Flame 1 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2819:state" }
+Dimmer ikea_led_2819_brightness "EG SZ Flame 1 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2819:brightness" }
 
-Switch ikea_led_007b_sw "EG SZ Flame 3 sw" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:ikea-led-007b:state" }
-Dimmer ikea_led_007b_brightness "EG SZ Flame 3 br []" { channel="mqtt:topic:openhab:ikea-led-007b:brightness" }
+Switch ikea_led_2203_sw "EG SZ Flame 2 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2203:state" }
+Dimmer ikea_led_2203_brightness "EG SZ Flame 2 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2203:brightness" }
 
+Switch ikea_led_007b_sw "EG SZ Flame 3 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-007b:state" }
+Dimmer ikea_led_007b_brightness "EG SZ Flame 3 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-007b:brightness" }
 
 // ====== KG
 

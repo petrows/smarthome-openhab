@@ -80,15 +80,39 @@ then
             g_light_all.sendCommand(OFF)
         }
         case "brightness_down_click": {
-            yel_rgb_sw.sendCommand(ON)
-            yel_rgb_brightness.sendCommand(1)
+            if (0 == (g_light_eg_sz_night_brightness.state as Number) && ON == g_light_eg_sz_night.state) {
+                g_light_eg_sz_night.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_night_brightness.sendCommand(0)
+            }
         }
         case "brightness_up_click": {
-            yel_rgb_sw.sendCommand(ON)
-            yel_rgb_brightness.sendCommand(100)
+            if (100 == (g_light_eg_sz_night_brightness.state as Number) && ON == g_light_eg_sz_night.state) {
+                g_light_eg_sz_night.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_night_brightness.sendCommand(100)
+            }
+        }
+        case "arrow_right_click": {
+            g_light_eg_sz_night.sendCommand(OFF)
+            ikea_led_007b_brightness.sendCommand(0)
         }
         case "arrow_left_click": {
             if (snf_eg_fs.state == ON) { snf_eg_fs.sendCommand(OFF) } else { snf_eg_fs.sendCommand(ON) }
         }
     }
+end
+
+rule "BZ force both lights work together 1"
+when
+    Item snf_eg_bz_1 changed
+then
+    g_light_eg_bz.members.forEach [s | s.sendCommand(snf_eg_bz_1.state) ]
+end
+
+rule "BZ force both lights work together 2"
+when
+    Item snf_eg_bz_2 changed
+then
+    g_light_eg_bz.members.forEach [s | s.sendCommand(snf_eg_bz_2.state) ]
 end

@@ -41,14 +41,21 @@ sitemap control label="KONTROL"
 		Switch  	item=hz_sz_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 
 		Switch		item=snf_eg_sz label="Hauptlicht" icon="light"
-		Switch		item=yel_rgb_sw label="Nachtlampe" icon="light"
+		Switch		item=g_light_eg_sz_night label="Nachtlampe" icon="light"
+		Slider		item=g_light_eg_sz_night_brightness label="Nachtlampe DIM" icon="light"
 		
-		Group item=yel_rgb_sw label="Nachtlampe CFG" icon="light" {
-			Switch	item=yel_rgb_sw
-			Slider	item=yel_rgb_brightness label="Helligkeit [%d]"
-			Setpoint	item=yel_rgb_temp	label="Temperatur [%d K]" minValue=2000 maxValue=5000 step=500
-			Colorpicker	item=yel_rgb_color
+		Group item=g_light_eg_sz_night label="Nachtlampe CFG" icon="light" {
+			Switch item=ikea_led_2819_sw label="Lampe 1"
+			Slider item=ikea_led_2819_brightness label="Lampe 1 DIM"
+			Switch item=ikea_led_2203_sw label="Lampe 2"
+			Slider item=ikea_led_2203_brightness label="Lampe 1 DIM"
+			Switch item=ikea_led_007b_sw label="Lampe 3"
+			Slider item=ikea_led_007b_brightness label="Lampe 1 DIM"
 		}
+	}
+	
+	Frame label="Badzimmer" {
+		Switch		item=g_light_eg_bz label="Hauptlicht" icon="light"
 	}
 	
 	Frame label="Küche" icon="kitchen" {
