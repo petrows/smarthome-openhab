@@ -5,10 +5,9 @@ Group:Switch:OR(ON, OFF) g_light_eg
 Group:Switch:OR(ON, OFF) g_light_eg_bz
 
 Group:Switch:OR(ON, OFF) g_light_eg_sz_night
-Group:Dimmer:AVG g_light_eg_sz_night_brightness
+Group:Dimmer:MAX g_light_eg_sz_night_brightness
 
 Group:Switch:OR(ON, OFF) g_light_kg
-Group:Switch:OR(ON, OFF) g_light_kg_ohne_desktop
 Group:Switch:OR(ON, OFF) g_light_treppe
 
 // ====== EG
@@ -39,8 +38,8 @@ Dimmer ikea_led_007b_brightness "EG SZ Flame 3 br []" (g_light_eg_sz_night_brigh
 
 // Celling light
 
-Switch snf_kg_l1 "KG light main" <light> (g_light_all, g_light_kg, g_light_kg_ohne_desktop) { channel="mqtt:topic:openhab:snf-kg-1:power" }
-Switch snf_kg_l2 "KG light p1" <light> (g_light_all, g_light_kg, g_light_kg_ohne_desktop) { channel="mqtt:topic:openhab:snf-kg-2:power" }
+Switch snf_kg_l1 "KG light main" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:snf-kg-1:power" }
+Switch snf_kg_l2 "KG light p1" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:snf-kg-2:power" }
 
 // Desktop light
 
@@ -54,10 +53,10 @@ Dimmer ikea_led_ef9d_brightness "KG desktop br [%d]" { channel="mqtt:topic:openh
 Dimmer ikea_led_ef9d_temp "KG desktop color [%d]" { channel="mqtt:topic:openhab:ikea-led-ef9d:temp" }
 
 // Treppe oben
-Switch ikea_led_bfde_sw "Treppe oben sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_ohne_desktop) { channel="mqtt:topic:openhab:ikea-led-bfde:state", expire="1h,command=OFF" }
+Switch ikea_led_bfde_sw "Treppe oben sw" <light> (g_light_all, g_light_treppe, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-bfde:state", expire="1h,command=OFF" }
 Dimmer ikea_led_bfde_brightness "Treppe oben dim []" { channel="mqtt:topic:openhab:ikea-led-bfde:brightness" }
 
 // Treppe unten
-Switch ikea_led_95b5_sw "Treppe unten sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_ohne_desktop) { channel="mqtt:topic:openhab:ikea-led-95b5:state", expire="1h,command=OFF" }
+Switch ikea_led_95b5_sw "Treppe unten sw" <light> (g_light_all, g_light_treppe, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-95b5:state", expire="1h,command=OFF" }
 Dimmer ikea_led_95b5_brightness "Treppe unten dim []" { channel="mqtt:topic:openhab:ikea-led-95b5:brightness" }
 

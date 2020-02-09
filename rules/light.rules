@@ -62,10 +62,18 @@ then
             ikea_led_ef9d_brightness.sendCommand(0)
         }
         case "brightness_down_click": {
-            g_light_kg_ohne_desktop.sendCommand(OFF)
+            g_light_kg.members.forEach [s |
+                if (s != ikea_led_ef9d_sw) {
+                    s.sendCommand(OFF)
+                }
+            ]
         }
         case "brightness_up_click": {
-            g_light_kg_ohne_desktop.sendCommand(ON)
+            g_light_kg.members.forEach [s |
+                if (s != ikea_led_ef9d_sw) {
+                    s.sendCommand(ON)
+                }
+            ]
         }
     }
 end
@@ -94,7 +102,11 @@ then
             }
         }
         case "arrow_right_click": {
-            g_light_eg_sz_night.sendCommand(OFF)
+            g_light_eg_sz_night.members.forEach [s |
+                if (s != ikea_led_007b_sw) {
+                    s.sendCommand(OFF)
+                }
+            ]
             ikea_led_007b_brightness.sendCommand(0)
         }
         case "arrow_left_click": {
