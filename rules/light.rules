@@ -1,5 +1,6 @@
 var Timer dawnTimer = null
-var Timer dawnStarted = false
+var Boolean dawnStarted = false
+var Integer dawnBrightness = 0
 
 rule "Light safe switch"
 when
@@ -118,6 +119,29 @@ then
     }
 end
 
+rule "KU Arbeitlicht SW"
+when
+    Channel "mqtt:topic:openhab:mi-button-5b2d:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "single": {
+            if (snf_eg_ku_arbeit.state == ON) {
+                snf_eg_ku_arbeit.sendCommand(OFF)
+            } else {
+                snf_eg_ku_arbeit.sendCommand(ON)
+            }
+        }
+        case "long": {
+            if (snf_eg_ku_haupt.state == ON) {
+                snf_eg_ku_haupt.sendCommand(OFF)
+            } else {
+                snf_eg_ku_haupt.sendCommand(ON)
+            }
+        }
+    }
+end
+
 rule "BZ force both lights work together 1"
 when
     Item snf_eg_bz_1 changed
@@ -139,10 +163,8 @@ when
 then
     logWarn("light", "Dawn emulation started")
 
-    var currentBrightness = 0
-    var brightStep = 100 / 60
-
-    dawnStarted = false
+    dawnBrightness = 0;    
+    dawnStarted = false;
     
     dawnTimer = createTimer(now, [ |
 
@@ -153,13 +175,18 @@ then
             }
         }
 
-        dawnStarted = true
+        var brightStep = 1;        
+        // 1/100 from hour (3600 sec)
+        var brightPeriod = 3600000 / 100;
 
-        if (currentBrightness < 100) {
-            logWarn("light", "Dawn set brightness: " + currentBrightness)
-            g_light_eg_sz_night_brightness.sendCommand(currentBrightness)
-            currentBrightness = currentBrightness + brightStep
-            dawnTimer.reschedule(now.plusMillis(60000))
+        dawnStarted = true;
+
+        if (dawnBrightness < 100) {
+            logWarn("light", "Dawn set brightness: " + dawnBrightness)
+            g_light_eg_sz_night_brightness.sendCommand(dawnBrightness)
+            dawnBrightness = dawnBrightness + brightStep
+            dawnTimer.reschedule(now.plusMillis(brightPeriod))
+            //dawnTimer.reschedule(now.plusMillis(6000))
         } else {
             logWarn("light", "Dawn process done")
             dawnTimer = null

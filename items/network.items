@@ -13,3 +13,4 @@ Switch online_snf_eg_fs "Sonoff EG FS" (gOnline) { channel="network:pingdevice:s
 Switch online_snf_eg_ns "Sonoff EG NS" (gOnline) { channel="network:pingdevice:snf_eg_ns:online" }
 Switch online_snf_eg_sz "Sonoff EG SZ" (gOnline) { channel="network:pingdevice:snf_eg_sz:online" }
 Switch online_snf_eg_bz "Sonoff EG BZ" (gOnline) { channel="network:pingdevice:snf_eg_bz:online" }
+Switch online_snf_eg_ku "Sonoff EG KU" (gOnline) { channel="network:pingdevice:snf_eg_ku:online" }

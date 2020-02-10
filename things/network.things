@@ -20,3 +20,4 @@ Thing network:pingdevice:snf_eg_fs "Sonoff EG FS" [ hostname="snf-eg-fs.pws", re
 Thing network:pingdevice:snf_eg_ns "Sonoff EG NS" [ hostname="snf-eg-ns.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:snf_eg_sz "Sonoff EG SZ" [ hostname="snf-eg-sz.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:snf_eg_bz "Sonoff EG BZ" [ hostname="snf-eg-bz.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_eg_ku "Sonoff EG KU" [ hostname="snf-eg-ku.pws", retry=5, timeout=5000, refreshInterval=60000 ]

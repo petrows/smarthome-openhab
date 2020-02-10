@@ -22,6 +22,8 @@ Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg) { cha
 Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
 Switch snf_eg_bz_1 "BAD Licht 1" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power1" }
 Switch snf_eg_bz_2 "BAD Licht 2" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power2" }
+Switch snf_eg_ku_haupt "KU Haupt" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ku:power1" }
+Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ku:power2", expire="1h,command=OFF" }
 
 // Ikea filament lamps SZ
 
