@@ -106,12 +106,16 @@ then
             }
         }
         case "arrow_right_click": {
-            g_light_eg_sz_night.members.forEach [s |
-                if (s != ikea_led_007b_sw) {
-                    s.sendCommand(OFF)
-                }
-            ]
-            ikea_led_007b_brightness.sendCommand(0)
+            if (0 == (g_light_eg_sz_night_brightness.state as Number) && ON == g_light_eg_sz_night.state) {
+                g_light_eg_sz_night.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_night.members.forEach [s |
+                    if (s != ikea_led_007b_sw) {
+                        s.sendCommand(OFF)
+                    }
+                ]
+                ikea_led_007b_brightness.sendCommand(0)
+            }
         }
         case "arrow_left_click": {
             if (snf_eg_fs.state == ON) { snf_eg_fs.sendCommand(OFF) } else { snf_eg_fs.sendCommand(ON) }
@@ -175,7 +179,7 @@ then
             }
         }
 
-        var brightStep = 1;        
+        var brightStep = 1;
         // 1/100 from hour (3600 sec)
         var brightPeriod = 3600000 / 100;
 
@@ -186,7 +190,6 @@ then
             g_light_eg_sz_night_brightness.sendCommand(dawnBrightness)
             dawnBrightness = dawnBrightness + brightStep
             dawnTimer.reschedule(now.plusMillis(brightPeriod))
-            //dawnTimer.reschedule(now.plusMillis(6000))
         } else {
             logWarn("light", "Dawn process done")
             dawnTimer = null
