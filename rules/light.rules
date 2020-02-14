@@ -1,6 +1,57 @@
 var Timer dawnTimer = null
 var Boolean dawnStarted = false
 var Integer dawnBrightness = 0
+var Boolean nachtModeTest = false
+
+rule "Ligth master mode"
+when
+    Item light_all_mode received command
+then
+    switch (receivedCommand) {
+        case "ON": {
+            g_light_all.sendCommand(ON)
+        }
+        case "OFF": {
+            g_light_all.sendCommand(OFF)
+        }
+        case "N": {
+            g_light_all.members.forEach [s |
+                if (s != ikea_led_2819_sw) {
+                    s.sendCommand(OFF)
+                } else {
+                    s.sendCommand(ON)
+                }
+            ]
+        }
+    }
+end
+
+rule "Ligth master mode status"
+when
+    Item g_light_all received update
+then
+    switch (g_light_all.state) {
+        case OFF: {
+            light_all_mode.postUpdate("OFF")
+        }
+        case ON: {
+            nachtModeTest = true
+
+            // Check if any light is ON and NOT in night group -> no night mode
+            g_light_all.members.forEach [s |
+                if (s.state == ON && !s.getGroupNames.contains("g_light_eg_sz_night")) {
+                    nachtModeTest = false
+                }
+            ]
+
+            if (nachtModeTest) {
+                light_all_mode.postUpdate("N")
+            } else {
+                light_all_mode.postUpdate("ON")
+            }
+        }
+    }
+end
 
 rule "Light safe switch"
 when
