@@ -17,7 +17,7 @@ Group:Number:AVG g_hz_valve "Alle Ventil" <heatingt>
 
 // NS force fan
 Switch hz_ns_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF" }
-Switch hz_ns_fan "NS Heuzung Fan" <fan> (g_hz_all) { channel="mqtt:topic:openhab:snf-pow-1:power" }
+Switch hz_ns_fan "NS Heuzung Fan" <fan> { channel="mqtt:topic:openhab:snf-pow-1:power" }
 
 // Items to be controlled by Auto (sheduled heating)
 // Group g_hz_auto <heatingt>
