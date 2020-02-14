@@ -11,6 +11,10 @@ sitemap control label="KONTROL"
 		Text 		item=miSensorWeatherTemp
 		Text 		item=miSensorWeatherHum
 	}
+
+	Frame label="Flur" {
+		Switch 		item=snf_eg_fl
+	}
 	
 	Frame label="Nagel Studio" {
 		Text 		item=miSensorNsTemp

@@ -17,6 +17,7 @@ Dimmer	yel_rgb_brightness	"Яркость"
 Number	yel_rgb_temp	"Цветовая температура" <colorpicker>
 Color	yel_rgb_color	"Цвет"
 
+Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
 Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
 Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
