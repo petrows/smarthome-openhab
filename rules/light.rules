@@ -3,6 +3,8 @@ var Boolean dawnStarted = false
 var Integer dawnBrightness = 0
 var Boolean nachtModeTest = false
 
+var Timer verlassenTimer = null
+
 rule "Ligth master mode"
 when
     Item light_all_mode received command
@@ -64,8 +66,6 @@ end
 rule "Treppe licht OBEN btn"
 when
     Channel "mqtt:topic:openhab:ikea-sw-92f3:click" triggered
-    or
-    Channel "mqtt:topic:openhab:ikea-sw-e111:click" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {
@@ -76,6 +76,38 @@ then
             g_light_kg.sendCommand(OFF)
         }
     }
+end
+
+rule "House verlassen SW"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-e111:click" triggered
+then
+	var state = receivedEvent.getEvent()
+
+    logWarn("light", "Verlassen SW: " + state)
+
+    // Set all except treppe oben
+    g_light_all.members.forEach [s |
+        if (s == ikea_led_bfde_sw) {
+            s.sendCommand(ON)
+        } else {
+            s.sendCommand(OFF)
+        }
+    ]    
+
+    // switch(state) {
+    //     case "on": {
+    //         g_light_kg.sendCommand(ON)
+    //     }
+    //     case "off": {
+    //         g_light_kg.sendCommand(OFF)
+    //     }
+    // }
+
+    verlassenTimer = createTimer(now.plusMillis(20000), [ |
+        logWarn("light", "Verlassen all OFF")
+        g_light_all.sendCommand(OFF)
+    ])
 end
 
 rule "Treppe licht UNTEN btn"
