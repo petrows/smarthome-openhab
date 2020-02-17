@@ -86,6 +86,11 @@ then
 
     logWarn("light", "Verlassen SW: " + state)
 
+    verlassenTimer = createTimer(now.plusMillis(20000), [ |
+        logWarn("light", "Verlassen all OFF")
+        g_light_all.sendCommand(OFF)
+    ])
+
     // Set all except treppe oben
     g_light_all.members.forEach [s |
         if (s == ikea_led_bfde_sw) {
@@ -93,21 +98,11 @@ then
         } else {
             s.sendCommand(OFF)
         }
-    ]    
+    ]
 
-    // switch(state) {
-    //     case "on": {
-    //         g_light_kg.sendCommand(ON)
-    //     }
-    //     case "off": {
-    //         g_light_kg.sendCommand(OFF)
-    //     }
-    // }
-
-    verlassenTimer = createTimer(now.plusMillis(20000), [ |
-        logWarn("light", "Verlassen all OFF")
-        g_light_all.sendCommand(OFF)
-    ])
+    if (cfgHeatingEnable.state == ON) {
+        g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+    }  
 end
 
 rule "Treppe licht UNTEN btn"
