@@ -70,7 +70,7 @@ then
 	var state = receivedEvent.getEvent()
     switch(state) {
         case "on": {
-            g_light_kg.sendCommand(ON)
+            g_light_kg_auto.sendCommand(ON)
         }
         case "off": {
             g_light_kg.sendCommand(OFF)
@@ -122,7 +122,7 @@ then
             if (g_light_kg.state == ON) {
                 g_light_kg.sendCommand(OFF)
             } else {
-                g_light_kg.sendCommand(ON)
+                g_light_kg_auto.sendCommand(ON)
             }
         }
     }
@@ -151,7 +151,7 @@ then
             ]
         }
         case "brightness_up_click": {
-            g_light_kg.members.forEach [s |
+            g_light_kg_auto.members.forEach [s |
                 if (s != ikea_led_ef9d_sw) {
                     s.sendCommand(ON)
                 }

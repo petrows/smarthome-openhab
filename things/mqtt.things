@@ -33,13 +33,18 @@ Bridge mqtt:broker:openhab [ host="localhost", secure=false, username="openhabia
 			Type switch : power2  [ stateTopic="stat/snf-eg-ku/POWER2", commandTopic="cmnd/snf-eg-ku/POWER2", on="ON", off="OFF" ]
 	}
 	
-	Thing topic snf-kg-1 "snf-kg-1" {
+	Thing topic snf-kg-1 {
 		Channels:
 			Type switch : power  [ stateTopic="stat/snf-kg-1/POWER", commandTopic="cmnd/snf-kg-1/POWER", on="ON", off="OFF" ]
 	}
-	Thing topic snf-kg-2 "snf-kg-2" {
+	Thing topic snf-kg-2 {
 		Channels:
 			Type switch : power  [ stateTopic="stat/snf-kg-2/POWER", commandTopic="cmnd/snf-kg-2/POWER", on="ON", off="OFF" ]
+	}
+
+	Thing topic snf-kg-lg1 {
+		Channels:
+			Type switch : power  [ stateTopic="stat/snf-kg-lg1/POWER", commandTopic="cmnd/snf-kg-lg1/POWER", on="ON", off="OFF" ]
 	}
 
 	// 0x00124b000b4ed5cc
