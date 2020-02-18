@@ -1,3 +1,4 @@
 services/weather.cfg
+things/mqtt-broker.things
 .vscode
 
