@@ -1,0 +1,78 @@
+
+Group:Switch:OR(ON, OFF) g_light_all
+Group:Switch:OR(ON, OFF) g_light_eg
+
+Group:Switch:OR(ON, OFF) g_light_eg_bz
+
+
+Group:Switch:OR(ON, OFF) g_light_eg_sz
+Group:Switch:OR(ON, OFF) g_light_eg_ku
+
+Group:Switch:OR(ON, OFF) g_light_eg_sz_night
+Group:Dimmer:MAX g_light_eg_sz_night_brightness
+
+Group:Switch:OR(ON, OFF) g_light_kg
+Group:Switch:OR(ON, OFF) g_light_kg_auto // group has "auto-on" feature
+Group:Switch:OR(ON, OFF) g_light_treppe
+
+String light_all_mode "Light mode" <light>
+
+// ====== EG
+
+Switch	yel_rgb_sw	"Питание" (g_light_all, g_light_eg)
+Dimmer	yel_rgb_brightness	"Яркость"
+Number	yel_rgb_temp	"Цветовая температура" <colorpicker>
+Color	yel_rgb_color	"Цвет"
+
+Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
+Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_all, g_light_eg, g_light_eg_sz) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
+Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
+Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
+Switch snf_eg_bz_1 "BAD Licht 1" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power1" }
+Switch snf_eg_bz_2 "BAD Licht 2" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power2" }
+Switch snf_eg_ku_haupt "KU Haupt" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power1" }
+Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power2", expire="6h,command=OFF" }
+
+// Ikea filament lamps SZ
+
+Switch ikea_led_2819_sw "EG SZ Flame 1 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2819:state" }
+Dimmer ikea_led_2819_brightness "EG SZ Flame 1 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2819:brightness" }
+Number ikea_led_2819_link "EG SZ Flame 1 link" { channel="mqtt:topic:openhab:ikea-led-2819:link" }
+
+Switch ikea_led_2203_sw "EG SZ Flame 2 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2203:state" }
+Dimmer ikea_led_2203_brightness "EG SZ Flame 2 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2203:brightness" }
+Number ikea_led_2203_link "EG SZ Flame 2 link" { channel="mqtt:topic:openhab:ikea-led-2203:link" }
+
+Switch ikea_led_007b_sw "EG SZ Flame 3 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-007b:state" }
+Dimmer ikea_led_007b_brightness "EG SZ Flame 3 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-007b:brightness" }
+Number ikea_led_007b_link "EG SZ Flame 3 link" { channel="mqtt:topic:openhab:ikea-led-007b:link" }
+
+// ====== KG
+
+// Celling light
+
+Switch snf_kg_l1 "KG light main" <light> (g_light_all, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:snf-kg-1:power" }
+Switch snf_kg_l2 "KG light p1" <light> (g_light_all, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:snf-kg-2:power" }
+Switch snf_kg_lg1 "KG Lager 1" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:snf-kg-lg1:power" }
+
+// Desktop light
+
+// Switch yel_petro_ds_sw "Питание" <light> (g_light_kg)
+// Dimmer yel_petro_ds_brightness "Яркость" <light>
+// Switch yel_petro_ds_temp "Цветовая температура" <colorpicker>
+
+// Petr desktop
+Switch ikea_led_ef9d_sw "KG desktop sw" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-ef9d:state" }
+Dimmer ikea_led_ef9d_brightness "KG desktop br [%d]" { channel="mqtt:topic:openhab:ikea-led-ef9d:brightness" }
+Dimmer ikea_led_ef9d_temp "KG desktop color [%d]" { channel="mqtt:topic:openhab:ikea-led-ef9d:temp" }
+Number ikea_led_ef9d_link "KG desktop link" { channel="mqtt:topic:openhab:ikea-led-ef9d:link" }
+
+// Treppe oben
+Switch ikea_led_bfde_sw "Treppe oben sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-bfde:state", expire="1h,command=OFF" }
+Dimmer ikea_led_bfde_brightness "Treppe oben dim []" { channel="mqtt:topic:openhab:ikea-led-bfde:brightness" }
+Number ikea_led_bfde_link "Treppe oben link" { channel="mqtt:topic:openhab:ikea-led-bfde:link" }
+
+// Treppe unten
+Switch ikea_led_95b5_sw "Treppe unten sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-95b5:state", expire="1h,command=OFF" }
+Dimmer ikea_led_95b5_brightness "Treppe unten dim []" { channel="mqtt:topic:openhab:ikea-led-95b5:brightness" }
+Number ikea_led_95b5_link "Treppe unten link" { channel="mqtt:topic:openhab:ikea-led-95b5:link" }

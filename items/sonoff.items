@@ -1,1 +1,0 @@
-Switch snf_kg_l1 "KG light main" <light> { mqtt=">[mqtt:cmnd/snf-kg-1/POWER:command:*:default],<[mqtt:stat/snf-kg-1/POWER:state:default]" }

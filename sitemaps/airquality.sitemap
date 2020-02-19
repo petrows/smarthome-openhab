@@ -1,0 +1,42 @@
+sitemap airquality label="Air Quality" {
+    Frame {
+        Text item=Aqi_Level valuecolor=[
+                Aqi_Level=="-"="lightgray",
+                Aqi_Level>=300="#7e0023",
+                >=201="#660099",
+                >=151="#cc0033",
+                >=101="#ff9933",
+                >=51="#ffde33",
+                >=0="#009966"
+            ]
+        Text item=Aqi_Description valuecolor=[
+                Aqi_Description=="HAZARDOUS"="#7e0023",
+                =="VERY_UNHEALTHY"="#660099",
+                =="UNHEALTHY"="#cc0033",
+                =="UNHEALTHY_FOR_SENSITIVE"="#ff9933",
+                =="MODERATE"="#ffde33",
+                =="GOOD"="#009966"
+            ]
+    }
+
+    Frame {
+        Text item=Aqi_Pm25
+        Text item=Aqi_Pm10
+        Text item=Aqi_O3
+        Text item=Aqi_No2
+        Text item=Aqi_Co
+        Text item=Aqi_So2
+    }
+
+    Frame {
+        Text item=Aqi_LocationName
+        Text item=Aqi_ObservationTime
+        Text item=Aqi_Temperature
+        Text item=Aqi_Pressure
+        Text item=Aqi_Humidity
+    }
+
+    Frame label="Station Location" {
+        Mapview item=Aqi_StationGeo height=10
+    }
+}

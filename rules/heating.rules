@@ -3,10 +3,10 @@
 
 rule "Heating safe switch"
 when
-	Time cron "0 00 23,00,01,02,03,04 ? * *"
+	Time cron "0 00 01,02,03,04 ? * *"
 then
 	logWarn("heating", "Set safe off")
-	gHeatingOff.sendCommand(cfgHeatingTempOff.state as Number)
+	g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
 end
 
 // === TIME RULES ==========================================
@@ -17,7 +17,7 @@ when
 then
 	logWarn("heating", "Set NIGHT")
 	
-	heatingTempAuto.sendCommand(cfgHeatingTempOff.state as Number)
+	hz_temp_auto.sendCommand(cfgHeatingTempNight.state as Number)
 end
 
 rule "Heating MORNING"
@@ -26,7 +26,7 @@ when
 then
 	logWarn("heating", "Set MORNING")
 	
-	heatingTempAuto.sendCommand(cfgHeatingTempHeat.state as Number)
+	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
 end
 
 rule "Heating DAY"
@@ -35,7 +35,7 @@ when
 then
 	logWarn("heating", "Set DAY")
 	
-	heatingTempAuto.sendCommand(cfgHeatingTempIdle.state as Number)
+	hz_temp_auto.sendCommand(cfgHeatingTempDay.state as Number)
 end
 
 rule "Heating EVENING"
@@ -44,51 +44,58 @@ when
 then
 	logWarn("heating", "Set EVENING")
 	
-	heatingTempAuto.sendCommand(cfgHeatingTempIdle.state as Number)
+	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
 end
 
 // === RULE CONTROLS ==========================================
 
 rule "Auto command"
 when
-	Item heatingTempAuto changed
+	Item hz_temp_auto changed
 then
-	if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && heatingTempAuto.state != cfgHeatingTempOff.state)) {
+	if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && hz_temp_auto.state != cfgHeatingTempOff.state)) {
 		logInfo("heating", "Auto disabled")
 		return
 	}
 	
 	// Check perisstance only if setting temp != OFF
-	if (heatingTempAuto.state != cfgHeatingTempOff.state) {
+	if (hz_temp_auto.state != cfgHeatingTempOff.state) {
 		// Check that people are here
 		if (cfgHeatingPersistanceEnable.state == ON) {
 			if (presAll.state != ON) {
 				// Nobody at home, skip auto set
 				logInfo("heating", "Nobody at home, skip auto set")
-				gHeatingOff.sendCommand(cfgHeatingTempOff.state as Number)
+				g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
 				return
 			}
 		}
 	}
 	
-	logInfo("heating", "Auto temp -> " + heatingTempAuto.state)
-	gHeatingAuto.sendCommand(heatingTempAuto.state as Number)
-end
-
-rule "Bad heating switch"
-when
-	Item maxBathTimerShort changed
-then
-	logInfo("heating", "Bad heating timer: " + triggeringItem.state)
-	
-	if (ON == triggeringItem.state) {
-		maxBathTempSet.sendCommand(cfgHeatingTempHeat.state as Number)
-	} else {
-		maxBathTempSet.sendCommand(cfgHeatingTempOff.state as Number)
-	}
+	logInfo("heating", "Auto temp -> " + hz_temp_auto.state)
+	g_hz_auto.sendCommand(hz_temp_auto.state as Number)
 end
 
 // === HEATING SWITCHES =========================================
+
+rule "Heating NS boost switch"
+when
+	Item hz_ns_boost changed
+then
+	if (ON != cfgHeatingEnable.state) {
+		logInfo("heating", "Heating disabled")
+		return
+	}
+	
+	logInfo("heating", "Heating NS boost -> " + hz_ns_boost.state)
+
+	if (ON == hz_ns_boost.state) {
+		hz_ns_fan.sendCommand(ON)
+		hz_ns_mode.sendCommand("BOOST")
+	} else {
+        hz_ns_fan.sendCommand(OFF)
+		hz_ns_mode.sendCommand("MANUAL")
+	}
+end
 
 rule "Heating presense switch"
 when
@@ -107,9 +114,9 @@ then
 	logInfo("heating", "Heating switched by presence to " + presAll.state)
 	
 	if (presAll.state == ON) {
-		gHeatingAuto.sendCommand(heatingTempAuto.state as Number)
+		g_hz_all.sendCommand(hz_temp_auto.state as Number)
 	} else {
-		gHeatingOff.sendCommand(cfgHeatingTempOff.state as Number)
+		g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
 	}
 end
 
@@ -118,8 +125,8 @@ when
 	Item cfgHeatingEnable changed
 then
 	if (cfgHeatingEnable.state == ON) {
-		gHeatingAll.sendCommand(heatingTempAuto.state as Number)
+		g_hz_all.sendCommand(hz_temp_auto.state as Number)
 	} else {
-		gHeatingOff.sendCommand(cfgHeatingTempOff.state as Number)
+		g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
 	}
 end

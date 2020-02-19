@@ -1,53 +1,92 @@
-sitemap control label="УПРАВЛЕНИЕ"
+sitemap control label="KONTROL"
 {
-	Frame label="Улица" {
+	Frame label="Allgemeinsam" {
+		Switch  	item=g_light_eg label="Licht EG" icon="light"
+		Switch  	item=g_light_kg label="Licht KG" icon="light"
+		Switch  	item=g_hz_all label="Heizung []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Text		item=g_hz_valve label="Beheizung [%d %%]"
+	}
+	
+	Frame label="Draußen" {
 		Text 		item=miSensorWeatherTemp
 		Text 		item=miSensorWeatherHum
 	}
+
+	Frame label="Flur" {
+		Switch 		item=snf_eg_fl
+	}
 	
-	Frame label="Маникюрная" {
+	Frame label="Nagel Studio" {
 		Text 		item=miSensorNsTemp
 		Text 		item=miSensorNsHum
-		Text		item=maxNsValve
-		Setpoint	item=maxNsTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxNsTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Text		item=hz_ns_valve label="Beheizung [%d %%]"
+		Setpoint	item=hz_ns_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_ns_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch		item=hz_ns_boost label="Heizung BOOST" icon="fan"
+		Switch		item=hz_ns_fan label="Heizung Fan" icon="fan"
+		Switch		item=snf_eg_ns label="Hauptlicht" icon="light"
 	}
 
-	Frame label="Фотостудия" {
+	Frame label="Foto Studio" {
 		Text 		item=miSensorFsTemp
 		Text 		item=miSensorFsHum
-		Text		item=maxFsValve
-		Setpoint	item=maxFsTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxFsTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Text		item=hz_fs_valve label="Beheizung [%d %%]"
+		Setpoint	item=hz_fs_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_fs_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch		item=snf_eg_fs label="Hauptlicht" icon="light"
 	}
 
-	Frame label="Спальня" {
+	Frame label="Schlaffzimmer" {
 		Text 		item=miSensorSleepingTemp
 		Text 		item=miSensorSleepingHum
 
-		Text		item=maxSleepingValve
-		Setpoint	item=maxSleepingTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxSleepingTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Text		item=hz_sz_valve label="Beheizung [%d %%]"
+		Setpoint	item=hz_sz_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_sz_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+
+		Switch		item=snf_eg_sz label="Hauptlicht" icon="light"
+		Switch		item=g_light_eg_sz_night label="Nachtlampe" icon="light"
+		Slider		item=g_light_eg_sz_night_brightness label="Nachtlampe DIM" icon="light"
+		
+		Group item=g_light_eg_sz_night label="Nachtlampe CFG" icon="light" {
+			Switch item=ikea_led_2819_sw label="Lampe 1"
+			Slider item=ikea_led_2819_brightness label="Lampe 1 DIM"
+			Switch item=ikea_led_2203_sw label="Lampe 2"
+			Slider item=ikea_led_2203_brightness label="Lampe 1 DIM"
+			Switch item=ikea_led_007b_sw label="Lampe 3"
+			Slider item=ikea_led_007b_brightness label="Lampe 1 DIM"
+		}
 	}
 	
-	Frame label="Кухня" icon="kitchen" {
+	Frame label="Badzimmer" {
+		Switch		item=g_light_eg_bz label="Hauptlicht" icon="light"
+	}
+	
+	Frame label="Küche" icon="kitchen" {
 		Text 		item=miSensorKitchenTemp
 		Text 		item=miSensorKitchenHum
-		Text		item=maxKitchenValve
-		Setpoint	item=maxKitchenTempSet 	label="Термостат"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxKitchenTempSet label="Пресет []"  icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Text		item=hz_ku_valve label="Beheizung [%d %%]"
+		Setpoint	item=hz_ku_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_ku_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch		item=snf_eg_ku_haupt label="Hauptlicht" icon="light"
+		Switch		item=snf_eg_ku_arbeit label="Arbeitlicht" icon="light"
 	}
 	
 	Frame label="KG" {
 		Text 		item=miSensorKGTemp
 		Text 		item=miSensorKGHum
-		Switch  	item=snf_kg_l1 label="Свет главный" icon="light"
-		Text		item=maxKGValve
-		Setpoint	item=maxKGTempSet label="Термостат" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-		Switch  	item=maxKGTempSet label="Пресет []" icon="climate" mappings=["21.0"="☼", "17.0"="☾", "4.5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Switch 		item=g_light_treppe label="Treppe [%s]" icon="light"
+		Switch  	item=snf_kg_l1 label="Haupt [%s]" icon="light"
+		Switch  	item=snf_kg_l2 label="Flür [%s]" icon="light"
+		Switch  	item=ikea_led_ef9d_sw label="Tischlampe [%s]" icon="light"
+		Slider  	item=ikea_led_ef9d_brightness label="Tischlampe br [%d %%]" icon="light"
+		Slider  	item=ikea_led_ef9d_temp label="Tischlampe color [%d %%]" icon="light"
+		Text		item=hz_kg_valve label="Beheizung [%d %%]"
+		Setpoint	item=hz_kg_set label="Ziel" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+		Switch  	item=hz_kg_set label="Modus []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 	}
 	
-	Frame label="Робот" {
+	Frame label="Robotier" {
 		Switch 		item=miRobotMode icon="fan" mappings=[vacuum="►", pause="❚❚", dock="⏏"]
 		Switch 		item=miRobotFan mappings=[38="Silent", 60="Normal", 77="Power",90="Full"]
 		Default		item=miRobotStatusArea
@@ -65,43 +104,71 @@ sitemap control label="УПРАВЛЕНИЕ"
 				Switch	item=cfgHeatingEnable label="Включено"
 				Switch	item=cfgHeatingAutoEnable label="Прогрев по расписанию" visibility=[cfgHeatingEnable==ON]
 				Switch	item=cfgHeatingPersistanceEnable label="Прогрев при возврате домой" visibility=[cfgHeatingEnable==ON]
-				Setpoint	item=cfgHeatingTempOff label="Температура выкл." minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-				Setpoint	item=cfgHeatingTempIdle label="Температура день" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-				Setpoint	item=cfgHeatingTempHeat label="Температура тепло" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-				Text	item=heatingTempAuto label="Температура авто [%.1f °C]" icon=heatingt visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempOff minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempDay minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempNight minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Setpoint	item=cfgHeatingTempHeat minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+				Text	item=hz_temp_auto label="Температура авто [%.1f °C]" icon=heatingt visibility=[cfgHeatingEnable==ON]
 			}
 			Frame label="Присутствие" {
 				Switch	item=cfgPersistanceEnable
 			}
+			Frame label="ZigBee" {
+				Switch	item=zigbee_root_pair label="ZigBee pair Erlaubnis"
+			}
 		}
 		
 		Group item=gBattery label="Заряд батарей [MAP(lowbat.map):%s]" icon=lowbattery {
-			Frame label="Термостаты" icon=heating {
-				Text	item=maxCabinetBattLow label="Кабинет [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=maxKitchenBattLow label="Кухня [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=maxLivingBattLow label="Зал [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=maxSleepingBattLow label="Спальня [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=maxBathBattLow label="Ванная [MAP(lowbat.map):%s]" icon=lowbattery
+			Frame label="Thermostaten" icon=heating {
+				Text	item=hz_kg_lbatt label="KG [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=hz_ku_lbatt label="Küche [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=hz_fs_lbatt label="Foto Studio [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=hz_ns_lbatt label="Nagel Studio [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=hz_sz_lbatt label="Schlaffzimmer [MAP(lowbat.map):%s]" icon=lowbattery
 			}
-			Frame label="Mi датчики" icon=heating {
-				Text	item=miSensorWeatherBattLow label="Улица [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorNsBattLow label="Маникюрная [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorKGBattLow label="Кабинет [MAP(lowbat.map):%s]" icon=lowbattery
-				Text    item=miSensorKitchenBattLow label="Кухня [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorFsBattLow label="Фотостудия [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorSleepingBattLow label="Спальня [MAP(lowbat.map):%s]" icon=lowbattery
-				// Text	item=miSensorBadBattLow label="Ванная [MAP(lowbat.map):%s]" icon=lowbattery
+			Frame label="Mi Sensoren" icon=heating {
+				Text	item=miSensorWeatherBattLow label="Wetter [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorNsBattLow label="Nagel Studio [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorKGBattLow label="KG [MAP(lowbat.map):%s]" icon=lowbattery
+				Text    item=miSensorKitchenBattLow label="Küche [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorFsBattLow label="Foto Studio [MAP(lowbat.map):%s]" icon=lowbattery
+				Text	item=miSensorSleepingBattLow label="Schlaffzimmer [MAP(lowbat.map):%s]" icon=lowbattery
+			}
+			Frame label="Mi Andere" icon=heating {
+				Text	item=mi_button_5b2d_battery_low label="BTN KG Desktop [MAP(lowbat.map):%s]" icon=lowbattery
 			}
 		}
 		
 		Group item=gOnline label="Онлайн [MAP(online.map):%s]" icon=network {
-			Text	item=onlineClockBle1 icon=network
-			Text	item=onlineClockBle2 icon=network
-			Text	item=onlineClockBle3 icon=network
-			Text	item=onlineSonoff1 icon=network
-			Text	item=onlineWlanMain icon=network
-			Text	item=onlineWlanBalkon icon=network
-			Text	item=onlineWlanKeller icon=network
+			Frame label="WLAN" {
+				Text	item=online_wlan_eg_1 icon=network
+				Text	item=online_wlan_eg_2 icon=network
+				Text	item=online_wlan_kg icon=network
+				Text	item=online_mi_robot icon=network
+				Text	item=online_max_thermostat icon=network
+				Text	item=online_snf_kg_1 icon=network
+				Text	item=online_snf_kg_2 icon=network
+				Text	item=online_snf_eg_fs icon=network
+				Text	item=online_snf_eg_ns icon=network
+				Text	item=online_snf_eg_sz icon=network
+				Text	item=online_snf_eg_bz icon=network
+			}
+			Frame label="ZigBee link" {
+				Text	item=zigbee_router_1_link icon=network
+				Text	item=ikea_router_6a05 icon=network
+				Text	item=ikea_sw_e111 icon=network
+				Text	item=ikea_sw_92f3 icon=network
+				Text	item=ikea_remote_2305 icon=network
+				Text	item=ikea_remote_357d icon=network
+				Text	item=mi_button_5b2d_link icon=network
+				Text	item=mi_button_12b9_link icon=network
+				Text	item=ikea_led_2819_link icon=network
+				Text	item=ikea_led_2203_link icon=network
+				Text	item=ikea_led_007b_link icon=network
+				Text	item=ikea_led_ef9d_link icon=network
+				Text	item=ikea_led_bfde_link icon=network
+				Text	item=ikea_led_95b5_link icon=network
+			}
 		}
 		
 		Group item=gPresent label="Присутствие [MAP(presence.map):%s]" icon=network {

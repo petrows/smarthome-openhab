@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="600"
+   viewBox="-300 -300 600 600"
+   version="1.1"
+   id="svg9"
+   sodipodi:docname="rad.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs13" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2498"
+     inkscape:window-height="1411"
+     id="namedview11"
+     showgrid="false"
+     inkscape:zoom="1.5733333"
+     inkscape:cx="310.29007"
+     inkscape:cy="332.41892"
+     inkscape:window-x="62"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg9" />
+  <circle
+     r="43.080235"
+     id="circle2"
+     style="fill:none;fill-opacity:1;stroke:#ff7b00;stroke-width:20.67851257;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     cx="-0.31779635"
+     cy="0.95338959" />
+  <path
+     d="M75,0 A 75,75 0 0,0 37.5,-64.952 L 125,-216.506 A 250,250 0 0,1 250,0 z"
+     id="bld"
+     style="fill-opacity:0;fill:#ff7b00;stroke:#ff7b00;stroke-opacity:1;stroke-width:24;stroke-miterlimit:4;stroke-dasharray:none" />
+  <use
+     xlink:href="#bld"
+     transform="rotate(120)"
+     id="use5" />
+  <use
+     xlink:href="#bld"
+     transform="rotate(240)"
+     id="use7"
+     style="fill:#ff7b00;stroke:#000000;stroke-opacity:1;fill-opacity:0" />
+</svg>

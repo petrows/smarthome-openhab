@@ -1,0 +1,276 @@
+var Timer dawnTimer = null
+var Boolean dawnStarted = false
+var Integer dawnBrightness = 0
+var Boolean nachtModeTest = false
+
+var Timer verlassenTimer = null
+
+rule "Ligth master mode"
+when
+    Item light_all_mode received command
+then
+    switch (receivedCommand) {
+        case "ON": {
+            g_light_all.sendCommand(ON)
+        }
+        case "OFF": {
+            g_light_all.sendCommand(OFF)
+        }
+        case "N": {
+            g_light_all.members.forEach [s |
+                if (s != ikea_led_2819_sw) {
+                    s.sendCommand(OFF)
+                } else {
+                    s.sendCommand(ON)
+                }
+            ]
+        }
+    }
+end
+
+rule "Ligth master mode status"
+when
+    Item g_light_all received update
+then
+    switch (g_light_all.state) {
+        case OFF: {
+            light_all_mode.postUpdate("OFF")
+        }
+        case ON: {
+            nachtModeTest = true
+
+            // Check if any light is ON and NOT in night group -> no night mode
+            g_light_all.members.forEach [s |
+                if (s.state == ON && !s.getGroupNames.contains("g_light_eg_sz_night")) {
+                    nachtModeTest = false
+                }
+            ]
+
+            if (nachtModeTest) {
+                light_all_mode.postUpdate("N")
+            } else {
+                light_all_mode.postUpdate("ON")
+            }
+        }
+    }
+end
+
+rule "Light safe switch"
+when
+	Time cron "0 00 01,02,03,04 ? * *"
+then
+	logWarn("light", "Set safe off")
+	g_light_all.sendCommand(OFF)
+end
+
+rule "Treppe licht OBEN btn"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-92f3:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "on": {
+            g_light_kg_auto.sendCommand(ON)
+        }
+        case "off": {
+            g_light_kg.sendCommand(OFF)
+        }
+    }
+end
+
+rule "House verlassen SW"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-e111:click" triggered
+then
+	var state = receivedEvent.getEvent()
+
+    logWarn("light", "Verlassen SW: " + state)
+
+    verlassenTimer = createTimer(now.plusMillis(20000), [ |
+        logWarn("light", "Verlassen all OFF")
+        g_light_all.sendCommand(OFF)
+    ])
+
+    // Set all except treppe oben
+    g_light_all.members.forEach [s |
+        if (s == ikea_led_bfde_sw) {
+            s.sendCommand(ON)
+        } else {
+            s.sendCommand(OFF)
+        }
+    ]
+
+    if (cfgHeatingEnable.state == ON) {
+        g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+    }  
+end
+
+rule "Treppe licht UNTEN btn"
+when
+    Channel "mqtt:topic:openhab:mi-button-12b9:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "single": {
+            if (g_light_treppe.state == ON) {
+                g_light_treppe.sendCommand(OFF)
+            } else {
+                g_light_treppe.sendCommand(ON)
+            }
+        }
+        case "long": {
+            if (g_light_kg.state == ON) {
+                g_light_kg.sendCommand(OFF)
+            } else {
+                g_light_kg_auto.sendCommand(ON)
+            }
+        }
+    }
+end
+
+rule "KG remote sw (desktop)"
+when
+    Channel "mqtt:topic:openhab:ikea-remote-357d:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "toggle": {
+            if (ikea_led_ef9d_sw.state == ON) { ikea_led_ef9d_sw.sendCommand(OFF) } else { ikea_led_ef9d_sw.sendCommand(ON) }
+        }
+        case "arrow_right_click": {
+            ikea_led_ef9d_brightness.sendCommand(100)
+        }
+        case "arrow_left_click": {
+            ikea_led_ef9d_brightness.sendCommand(0)
+        }
+        case "brightness_down_click": {
+            g_light_kg.members.forEach [s |
+                if (s != ikea_led_ef9d_sw) {
+                    s.sendCommand(OFF)
+                }
+            ]
+        }
+        case "brightness_up_click": {
+            g_light_kg_auto.members.forEach [s |
+                if (s != ikea_led_ef9d_sw) {
+                    s.sendCommand(ON)
+                }
+            ]
+        }
+    }
+end
+
+rule "SZ remote sw"
+when
+    Channel "mqtt:topic:openhab:ikea-remote-2305:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "toggle": {
+            g_light_all.sendCommand(OFF)
+        }
+        case "brightness_down_click": {
+            if (0 == (g_light_eg_sz_night_brightness.state as Number) && ON == g_light_eg_sz_night.state) {
+                g_light_eg_sz_night.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_night_brightness.sendCommand(0)
+            }
+        }
+        case "brightness_up_click": {
+            if (100 == (g_light_eg_sz_night_brightness.state as Number) && ON == g_light_eg_sz_night.state) {
+                g_light_eg_sz_night.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_night_brightness.sendCommand(100)
+            }
+        }
+        case "arrow_right_click": {
+            if (0 == (g_light_eg_sz_night_brightness.state as Number) && ON == g_light_eg_sz_night.state) {
+                g_light_eg_sz_night.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_night.members.forEach [s |
+                    if (s != ikea_led_007b_sw) {
+                        s.sendCommand(OFF)
+                    }
+                ]
+                ikea_led_007b_brightness.sendCommand(0)
+            }
+        }
+        case "arrow_left_click": {
+            if (snf_eg_fs.state == ON) { snf_eg_fs.sendCommand(OFF) } else { snf_eg_fs.sendCommand(ON) }
+        }
+    }
+end
+
+rule "KU Arbeitlicht SW"
+when
+    Channel "mqtt:topic:openhab:mi-button-5b2d:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "single": {
+            if (snf_eg_ku_arbeit.state == ON) {
+                snf_eg_ku_arbeit.sendCommand(OFF)
+            } else {
+                snf_eg_ku_arbeit.sendCommand(ON)
+            }
+        }
+        case "long": {
+            if (snf_eg_ku_haupt.state == ON) {
+                snf_eg_ku_haupt.sendCommand(OFF)
+            } else {
+                snf_eg_ku_haupt.sendCommand(ON)
+            }
+        }
+    }
+end
+
+rule "BZ force both lights work together 1"
+when
+    Item snf_eg_bz_1 changed
+then
+    g_light_eg_bz.members.forEach [s | s.sendCommand(snf_eg_bz_1.state) ]
+end
+
+rule "BZ force both lights work together 2"
+when
+    Item snf_eg_bz_2 changed
+then
+    g_light_eg_bz.members.forEach [s | s.sendCommand(snf_eg_bz_2.state) ]
+end
+
+// DAWN emulation
+rule "Dawn emulation start"
+when
+    Time cron "0 00 05 ? * MON-FRI"
+then
+    logWarn("light", "Dawn emulation started")
+
+    dawnBrightness = 0;    
+    dawnStarted = false;
+    
+    dawnTimer = createTimer(now, [ |
+
+        if (dawnStarted) {
+            if (g_light_eg_sz_night.state == OFF) {
+                logWarn("light", "Dawn emulation stopped: group switched off")
+                return
+            }
+        }
+
+        var brightStep = 1;
+        // 1/100 from hour (3600 sec)
+        var brightPeriod = 3600000 / 100;
+
+        dawnStarted = true;
+
+        if (dawnBrightness < 100) {
+            logWarn("light", "Dawn set brightness: " + dawnBrightness)
+            g_light_eg_sz_night_brightness.sendCommand(dawnBrightness)
+            dawnBrightness = dawnBrightness + brightStep
+            dawnTimer.reschedule(now.plusMillis(brightPeriod))
+        } else {
+            logWarn("light", "Dawn process done")
+            dawnTimer = null
+        }
+    ])
+end

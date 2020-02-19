@@ -1,0 +1,10 @@
+Switch zigbee_root_pair "ZB root pair" { channel="mqtt:topic:openhab:zigbee-root:pair", expire="15m,command=OFF" }
+
+Number zigbee_router_1_link "ZB router 1 link" { channel="mqtt:topic:openhab:zigbee-router-d5cc:link" }
+
+Number ikea_router_6a05 "Ikea router 1 link" { channel="mqtt:topic:openhab:zigbee-router-6a05:link" }
+Number ikea_sw_e111 "Ikea SW e111 link" { channel="mqtt:topic:openhab:ikea-sw-e111:link" }
+Number ikea_sw_92f3 "Ikea SW 92f3 link" { channel="mqtt:topic:openhab:ikea-sw-92f3:link" }
+Number ikea_remote_2305 "Ikea Remote 2305 link" { channel="mqtt:topic:openhab:ikea-remote-2305:link" }
+Number ikea_remote_357d "Ikea Remote 357d link" { channel="mqtt:topic:openhab:ikea-remote-357d:link" }
+

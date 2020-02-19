@@ -1,0 +1,6 @@
+services/
+things/mqtt-broker.things
+things/weather.things
+bin/config.sh
+.vscode
+

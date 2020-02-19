@@ -1,0 +1,71 @@
+digraph G {
+node[shape=record];
+"0x00124b000b4ec6a4" [style="bold, filled", fillcolor="#e04e5d", fontcolor="#ffffff", label="{Coordinator|0x00124b000b4ec6a4 (0)|2020-02-08T21:43:47+01:00}"];
+"0x00124b000b4ec6a4" -> "0x00124b000b4ed5cc" [penwidth=0.5, weight=0, color="#994444", label="22"]
+"0x00124b000b4ec6a4" -> "0xec1bbdfffe4695b5" [penwidth=0.5, weight=0, color="#994444", label="176"]
+"0x00124b000b4ec6a4" -> "0xec1bbdfffe9abfde" [penwidth=0.5, weight=0, color="#994444", label="73"]
+"0x00124b000b4ec6a4" -> "0x680ae2fffe3b6a05" [penwidth=0.5, weight=0, color="#994444", label="147"]
+"0x00124b000b4ec6a4" -> "0xccccccfffed8ef9d" [penwidth=0.5, weight=0, color="#994444", label="155"]
+"0x00158d0001be5b2d" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x00158d0001be5b2d|0x00158d0001be5b2d (31756)|Xiaomi MiJia wireless switch (WXKG01LM)|2020-02-08T20:52:18+01:00}"];
+"0x00158d0001be5b2d" -> "0x00124b000b4ec6a4" [penwidth=1, weight=0, color="#994444", label="87"]
+"0x00124b000b4ed5cc" [style="rounded, filled", fillcolor="#4ea3e0", fontcolor="#ffffff", label="{0x00124b000b4ed5cc|0x00124b000b4ed5cc (13384)|Custom devices (DiY) [CC2530 router](http://ptvo.info/cc2530-based-zigbee-coordinator-and-router-112/) (CC2530.ROUTER)|2020-02-08T21:43:04+01:00}"];
+"0x00124b000b4ed5cc" -> "0x00124b000b4ec6a4" [penwidth=0.5, weight=0, color="#994444", label="21"]
+"0x00124b000b4ed5cc" -> "0xec1bbdfffe9abfde" [penwidth=0.5, weight=0, color="#994444", label="132"]
+"0x00124b000b4ed5cc" -> "0x680ae2fffe3b6a05" [penwidth=0.5, weight=0, color="#994444", label="70"]
+"0x00124b000b4ed5cc" -> "0xccccccfffed8ef9d" [penwidth=0.5, weight=0, color="#994444", label="67"]
+"0x00158d0001b95e02" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x00158d0001b95e02|0x00158d0001b95e02 (31483)|Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM)|2020-02-08T21:28:31+01:00}"];
+"0x00158d0001b95e02" -> "0x00124b000b4ec6a4" [penwidth=1, weight=0, color="#994444", label="119"]
+"0x14b457fffe7e2305" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x14b457fffe7e2305|0x14b457fffe7e2305 (18551)|IKEA TRADFRI remote control (E1524/E1810)|2020-02-08T20:24:56+01:00}"];
+"0x14b457fffe7e2305" -> "0x00124b000b4ec6a4" [penwidth=1, weight=0, color="#994444", label="50"]
+"0x14b457fffe7e2305" -> "0x00124b000b4ed5cc" [penwidth=1, weight=0, color="#994444", label="170"]
+"0x00158d0001b95e08" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x00158d0001b95e08|0x00158d0001b95e08 (658)|Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM)|2020-02-08T21:31:28+01:00}"];
+"0x00158d0001b95e08" -> "0x00124b000b4ed5cc" [penwidth=1, weight=0, color="#994444", label="97"]
+"0x00158d0001b95fc4" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x00158d0001b95fc4|0x00158d0001b95fc4 (61186)|Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM)|2020-02-08T21:41:46+01:00}"];
+"0x00158d0001b95fc4" -> "0x00124b000b4ed5cc" [penwidth=1, weight=0, color="#994444", label="49"]
+"0x00158d0001e612b9" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x00158d0001e612b9|0x00158d0001e612b9 (16485)|Xiaomi MiJia wireless switch (WXKG01LM)|2020-02-08T21:13:32+01:00}"];
+"0x00158d0001e612b9" -> "0x00124b000b4ed5cc" [penwidth=1, weight=0, color="#994444", label="92"]
+"0x00158d0001c19a6b" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x00158d0001c19a6b|0x00158d0001c19a6b (19514)|Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM)|2020-02-08T21:42:38+01:00}"];
+"0x00158d0001c19a6b" -> "0x00124b000b4ed5cc" [penwidth=1, weight=0, color="#994444", label="69"]
+"0x00158d0001c15121" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x00158d0001c15121|0x00158d0001c15121 (47104)|Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM)|2020-02-08T21:37:30+01:00}"];
+"0x00158d0001c15121" -> "0x00124b000b4ed5cc" [penwidth=1, weight=0, color="#994444", label="98"]
+"0x00158d0001c2cc22" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x00158d0001c2cc22|0x00158d0001c2cc22 (37960)|Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM)|2020-02-08T21:41:47+01:00}"];
+"0x00158d0001c2cc22" -> "0x00124b000b4ed5cc" [penwidth=1, weight=0, color="#994444", label="26"]
+"0x680ae2fffe16e111" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x680ae2fffe16e111|0x680ae2fffe16e111 (52234)|IKEA TRADFRI ON/OFF switch (E1743)|2020-02-08T21:05:38+01:00}"];
+"0x680ae2fffe16e111" -> "0x00124b000b4ec6a4" [penwidth=1, weight=0, color="#994444", label="47"]
+"0xec1bbdfffe4695b5" [style="rounded, filled", fillcolor="#4ea3e0", fontcolor="#ffffff", label="{0xec1bbdfffe4695b5|0xec1bbdfffe4695b5 (17902)|IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)|2020-02-08T18:07:39+01:00}"];
+"0xec1bbdfffe4695b5" -> "0x00124b000b4ec6a4" [penwidth=0.5, weight=0, color="#994444", label="94"]
+"0xec1bbdfffe4695b5" -> "0x00124b000b4ed5cc" [penwidth=0.5, weight=0, color="#994444", label="1"]
+"0xec1bbdfffe4695b5" -> "0xec1bbdfffe9abfde" [penwidth=0.5, weight=0, color="#994444", label="75"]
+"0xec1bbdfffe4695b5" -> "0x680ae2fffe3b6a05" [penwidth=0.5, weight=0, color="#994444", label="85"]
+"0xec1bbdfffe4695b5" -> "0xccccccfffed8ef9d" [penwidth=0.5, weight=0, color="#994444", label="95"]
+"0xec1bbdfffe9abfde" [style="rounded, filled", fillcolor="#4ea3e0", fontcolor="#ffffff", label="{0xec1bbdfffe9abfde|0xec1bbdfffe9abfde (39375)|IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)|2020-02-08T21:41:30+01:00}"];
+"0xec1bbdfffe9abfde" -> "0x00124b000b4ec6a4" [penwidth=0.5, weight=0, color="#994444", label="17"]
+"0xec1bbdfffe9abfde" -> "0x00124b000b4ed5cc" [penwidth=0.5, weight=0, color="#994444", label="63"]
+"0xec1bbdfffe9abfde" -> "0xec1bbdfffe4695b5" [penwidth=0.5, weight=0, color="#994444", label="65"]
+"0xec1bbdfffe9abfde" -> "0x680ae2fffe3b6a05" [penwidth=0.5, weight=0, color="#994444", label="45"]
+"0xec1bbdfffe9abfde" -> "0xccccccfffed8ef9d" [penwidth=0.5, weight=0, color="#994444", label="39"]
+"0x680ae2fffe3b6a05" [style="rounded, filled", fillcolor="#4ea3e0", fontcolor="#ffffff", label="{0x680ae2fffe3b6a05|0x680ae2fffe3b6a05 (56114)|IKEA TRADFRI signal repeater (E1746)|2020-02-08T19:06:19+01:00}"];
+"0x680ae2fffe3b6a05" -> "0x00124b000b4ec6a4" [penwidth=0.5, weight=0, color="#994444", label="84"]
+"0x680ae2fffe3b6a05" -> "0x00124b000b4ed5cc" [penwidth=0.5, weight=0, color="#994444", label="25"]
+"0x680ae2fffe3b6a05" -> "0xec1bbdfffe4695b5" [penwidth=0.5, weight=0, color="#994444", label="90"]
+"0x680ae2fffe3b6a05" -> "0xec1bbdfffe9abfde" [penwidth=0.5, weight=0, color="#994444", label="54"]
+"0x680ae2fffe3b6a05" -> "0xccccccfffed8ef9d" [penwidth=0.5, weight=0, color="#994444", label="216"]
+"0xec1bbdfffe91007b" [style="rounded, filled", fillcolor="#4ea3e0", fontcolor="#ffffff", label="{0xec1bbdfffe91007b|0xec1bbdfffe91007b (634)failed: lqi|IKEA TRADFRI LED bulb E27 WW clear 250 lumen,dimmable (LED1842G3)|2020-02-08T18:16:16+01:00}"];
+"0xec1bbdfffe91007b" -> "0x00124b000b4ed5cc" [penwidth=0.5, weight=0, color="#994444", label="0"]
+"0xec1bbdfffe972819" [style="rounded, filled", fillcolor="#4ea3e0", fontcolor="#ffffff", label="{0xec1bbdfffe972819|0xec1bbdfffe972819 (833)failed: lqi|IKEA TRADFRI LED bulb E27 WW clear 250 lumen,dimmable (LED1842G3)|2020-02-08T18:21:16+01:00}"];
+"0xec1bbdfffe972819" -> "0x00124b000b4ec6a4" [penwidth=0.5, weight=0, color="#994444", label="0"]
+"0xec1bbdfffe972819" -> "0x00124b000b4ed5cc" [penwidth=0.5, weight=0, color="#994444", label="0"]
+"0xec1bbdfffe972203" [style="rounded, filled", fillcolor="#4ea3e0", fontcolor="#ffffff", label="{0xec1bbdfffe972203|0xec1bbdfffe972203 (1568)failed: lqi|IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3)|2020-02-08T18:24:33+01:00}"];
+"0xec1bbdfffe972203" -> "0x00124b000b4ec6a4" [penwidth=0.5, weight=0, color="#994444", label="0"]
+"0xec1bbdfffe972203" -> "0x00124b000b4ed5cc" [penwidth=0.5, weight=0, color="#994444", label="0"]
+"0xccccccfffed8ef9d" [style="rounded, filled", fillcolor="#4ea3e0", fontcolor="#ffffff", label="{0xccccccfffed8ef9d|0xccccccfffed8ef9d (40708)|IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9)|2020-02-08T21:42:19+01:00}"];
+"0xccccccfffed8ef9d" -> "0x00124b000b4ec6a4" [penwidth=0.5, weight=0, color="#994444", label="93"]
+"0xccccccfffed8ef9d" -> "0x00124b000b4ed5cc" [penwidth=0.5, weight=0, color="#994444", label="4"]
+"0xccccccfffed8ef9d" -> "0xec1bbdfffe4695b5" [penwidth=0.5, weight=0, color="#994444", label="80"]
+"0xccccccfffed8ef9d" -> "0xec1bbdfffe9abfde" [penwidth=0.5, weight=0, color="#994444", label="37"]
+"0xccccccfffed8ef9d" -> "0x680ae2fffe3b6a05" [penwidth=0.5, weight=0, color="#994444", label="194"]
+"0x680ae2fffe1a92f3" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x680ae2fffe1a92f3|0x680ae2fffe1a92f3 (5092)|IKEA TRADFRI ON/OFF switch (E1743)|2020-02-08T21:05:39+01:00}"];
+"0x680ae2fffe1a92f3" -> "0x680ae2fffe3b6a05" [penwidth=1, weight=0, color="#994444", label="175"]
+"0x000d6ffffee8357d" [style="rounded, dashed, filled", fillcolor="#fff8ce", fontcolor="#000000", label="{0x000d6ffffee8357d|0x000d6ffffee8357d (38349)|IKEA TRADFRI remote control (E1524/E1810)|2020-02-08T20:25:00+01:00}"];
+"0x000d6ffffee8357d" -> "0xccccccfffed8ef9d" [penwidth=1, weight=0, color="#994444", label="0"]
+}

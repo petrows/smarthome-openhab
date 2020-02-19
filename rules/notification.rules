@@ -1,11 +1,3 @@
-rule "Washmachine notify"
-when
-	Item washMachinePower changed from ON to OFF
-then
-	sendCommand(miGwSoundVolume, 15)
-	sendCommand(miGwSound, 10003)
-	sendBroadcastNotification("Waschmachine: DONE")
-end
 
 rule "Online notify"
 when

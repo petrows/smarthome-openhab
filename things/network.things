@@ -4,16 +4,20 @@
 Thing network:pingdevice:petro_mobile "Петр телефон" [ hostname="petro-mobile.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:marina_mobile "Марина телефон" [ hostname="marina-mobile.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 
-// Important devices
-
-Thing network:pingdevice:clock_ble_1 "Сканер BLE (Часы)" [ hostname="clock-ble-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:clock_ble_2 "Сканер BLE (Спальня)" [ hostname="clock-ble-2.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:clock_ble_3 "Сканер BLE (Марина)" [ hostname="clock-ble-3.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:sonoff_1 "Стиральная машина" [ hostname="sonoff-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-
 // AP devices
 
-Thing network:pingdevice:wlan_main "WLAN Главный" [ hostname="wlan.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:wlan_balkon "WLAN Балкон" [ hostname="wlan-balkon.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:wlan_keller "WLAN Подвал" [ hostname="wlan-keller.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:wlan_eg_1 "WLAN EG 1" [ hostname="wlan-eg-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:wlan_eg_2 "WLAN EG 2" [ hostname="wlan-eg-2.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:wlan_kg "WLAN KG" [ hostname="wlan-kg.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 
+// Home devices
+
+Thing network:pingdevice:mi_robot "MI Robot" [ hostname="mi-robot.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:max_thermostat "Max thermostat GW" [ hostname="max-thermostat.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_kg_1 "Sonoff KG 1" [ hostname="snf-kg-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_kg_2 "Sonoff KG 2" [ hostname="snf-kg-2.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_eg_fs "Sonoff EG FS" [ hostname="snf-eg-fs.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_eg_ns "Sonoff EG NS" [ hostname="snf-eg-ns.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_eg_sz "Sonoff EG SZ" [ hostname="snf-eg-sz.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_eg_bz "Sonoff EG BZ" [ hostname="snf-eg-bz.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_eg_ku "Sonoff EG KU" [ hostname="snf-eg-ku.pws", retry=5, timeout=5000, refreshInterval=60000 ]
