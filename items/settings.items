@@ -12,5 +12,6 @@ Number cfgHeatingTempHeat "Температура тепло [%.1f °C]" <temper
 Switch cfgPersistanceEnable "Определение присутствия" <parents_1_1> (gSettings)
 
 Group:Switch:OR(ON,OFF) gBattery
-
+Group:Number:MIN g_battery_level
+Group:Number:MIN g_zigbee_link
 

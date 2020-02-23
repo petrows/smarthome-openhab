@@ -53,6 +53,7 @@ sitemap control2 label="KONTROL 2"
 			Switch item=g_light_treppe label="Treppe [%s]" icon="light"
 			Switch item=snf_kg_l1 label="Haupt [%s]" icon="light"
 			Switch item=snf_kg_l2 label="Flür [%s]" icon="light"
+			Switch item=snf_kg_lg1 label="Lager 1 [%s]" icon="light"
 			Switch item=ikea_led_ef9d_sw label="Desktop [%s]" icon="light"
 			Slider item=ikea_led_ef9d_brightness label="Desktop dim [%d]" icon="light"
 			Slider item=ikea_led_ef9d_temp label="Desktop farbe [%d %%]" icon="light"
@@ -157,6 +158,10 @@ sitemap control2 label="KONTROL 2"
 			Frame label="Mi Andere" icon=heating {
 				Text	item=mi_button_5b2d_battery_low label="BTN KG Desktop [MAP(lowbat.map):%s]" icon=lowbattery
 			}
+			Frame {
+				Chart item=g_battery_level period=w refresh=60
+				Group item=g_battery_level
+			}
 		}
 		
 		Group item=gOnline label="Online [MAP(online.map):%s]" icon=network {
@@ -174,20 +179,7 @@ sitemap control2 label="KONTROL 2"
 				Text	item=online_snf_eg_bz icon=network
 			}
 			Frame label="ZigBee link" {
-				Text	item=zigbee_router_1_link icon=network
-				Text	item=ikea_router_6a05 icon=network
-				Text	item=ikea_sw_e111 icon=network
-				Text	item=ikea_sw_92f3 icon=network
-				Text	item=ikea_remote_2305 icon=network
-				Text	item=ikea_remote_357d icon=network
-				Text	item=mi_button_5b2d_link icon=network
-				Text	item=mi_button_12b9_link icon=network
-				Text	item=ikea_led_2819_link icon=network
-				Text	item=ikea_led_2203_link icon=network
-				Text	item=ikea_led_007b_link icon=network
-				Text	item=ikea_led_ef9d_link icon=network
-				Text	item=ikea_led_bfde_link icon=network
-				Text	item=ikea_led_95b5_link icon=network
+				Group item=g_zigbee_link
 			}
 		}
 		

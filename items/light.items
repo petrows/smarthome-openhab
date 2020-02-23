@@ -37,15 +37,15 @@ Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg, g_light_eg
 
 Switch ikea_led_2819_sw "EG SZ Flame 1 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2819:state" }
 Dimmer ikea_led_2819_brightness "EG SZ Flame 1 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2819:brightness" }
-Number ikea_led_2819_link "EG SZ Flame 1 link" { channel="mqtt:topic:openhab:ikea-led-2819:link" }
+Number ikea_led_2819_link "EG SZ Flame 1 link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-2819:link" }
 
 Switch ikea_led_2203_sw "EG SZ Flame 2 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2203:state" }
 Dimmer ikea_led_2203_brightness "EG SZ Flame 2 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2203:brightness" }
-Number ikea_led_2203_link "EG SZ Flame 2 link" { channel="mqtt:topic:openhab:ikea-led-2203:link" }
+Number ikea_led_2203_link "EG SZ Flame 2 link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-2203:link" }
 
 Switch ikea_led_007b_sw "EG SZ Flame 3 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-007b:state" }
 Dimmer ikea_led_007b_brightness "EG SZ Flame 3 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-007b:brightness" }
-Number ikea_led_007b_link "EG SZ Flame 3 link" { channel="mqtt:topic:openhab:ikea-led-007b:link" }
+Number ikea_led_007b_link "EG SZ Flame 3 link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-007b:link" }
 
 // ====== KG
 
@@ -65,14 +65,14 @@ Switch snf_kg_lg1 "KG Lager 1" <light> (g_light_all, g_light_kg) { channel="mqtt
 Switch ikea_led_ef9d_sw "KG desktop sw" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-ef9d:state" }
 Dimmer ikea_led_ef9d_brightness "KG desktop br [%d]" { channel="mqtt:topic:openhab:ikea-led-ef9d:brightness" }
 Dimmer ikea_led_ef9d_temp "KG desktop color [%d]" { channel="mqtt:topic:openhab:ikea-led-ef9d:temp" }
-Number ikea_led_ef9d_link "KG desktop link" { channel="mqtt:topic:openhab:ikea-led-ef9d:link" }
+Number ikea_led_ef9d_link "KG desktop link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-ef9d:link" }
 
 // Treppe oben
 Switch ikea_led_bfde_sw "Treppe oben sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-bfde:state", expire="1h,command=OFF" }
 Dimmer ikea_led_bfde_brightness "Treppe oben dim []" { channel="mqtt:topic:openhab:ikea-led-bfde:brightness" }
-Number ikea_led_bfde_link "Treppe oben link" { channel="mqtt:topic:openhab:ikea-led-bfde:link" }
+Number ikea_led_bfde_link "Treppe oben link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-bfde:link" }
 
 // Treppe unten
 Switch ikea_led_95b5_sw "Treppe unten sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-95b5:state", expire="1h,command=OFF" }
 Dimmer ikea_led_95b5_brightness "Treppe unten dim []" { channel="mqtt:topic:openhab:ikea-led-95b5:brightness" }
-Number ikea_led_95b5_link "Treppe unten link" { channel="mqtt:topic:openhab:ikea-led-95b5:link" }
+Number ikea_led_95b5_link "Treppe unten link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-95b5:link" }

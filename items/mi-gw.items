@@ -5,40 +5,41 @@ Group gMiSensorsClimate (gMiSensors)
 // Sensor 1
 Number miSensorWeatherTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-cc22:temperature" }
 Number miSensorWeatherHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-cc22:humidity" }
-Number miSensorWeatherBatt <battery> { channel="mqtt:topic:openhab:mi-sensor-cc22:battery" }
+Number miSensorWeatherBatt <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-cc22:battery" }
 Switch miSensorWeatherBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-sensor-cc22:battery_low" }
+Number miSensorWeatherLink <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-sensor-cc22:link" }
 
 // Sensor 2 // Sleeping room
 Number miSensorSleepingTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-9a6b:temperature" }
 Number miSensorSleepingHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-9a6b:humidity" }
-Number miSensorSleepingBatt <battery> { channel="mqtt:topic:openhab:mi-sensor-9a6b:battery" }
+Number miSensorSleepingBatt <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-9a6b:battery" }
 Switch miSensorSleepingBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-sensor-9a6b:battery_low" }
 
 // Sensor 3 // Fotostudio
 Number miSensorFsTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5121:temperature" }
 Number miSensorFsHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5121:humidity" }
-Number miSensorFsBatt <battery> { channel="mqtt:topic:openhab:mi-sensor-5121:battery" }
+Number miSensorFsBatt <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-5121:battery" }
 Switch miSensorFsBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-sensor-5121:battery_low" }
 
 // Sensor 2.0 4 // KG
 Number miSensorKGTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:temperature" }
 Number miSensorKGHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:humidity" }
 Number miSensorKGPressure <pressure> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:pressure" }
-Number miSensorKGBatt <battery> { channel="mqtt:topic:openhab:mi-sensor-5e02:battery" }
+Number miSensorKGBatt <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-5e02:battery" }
 Switch miSensorKGBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-sensor-5e02:battery_low" }
 
 // Sensor 2.0 5 // Kitchen
 Number miSensorKitchenTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5fc4:temperature" }
 Number miSensorKitchenHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5fc4:humidity" }
 Number miSensorKitchenPressure <pressure> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5fc4:pressure" }
-Number miSensorKitchenBatt <battery> { channel="mqtt:topic:openhab:mi-sensor-5fc4:battery" }
+Number miSensorKitchenBatt <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-5fc4:battery" }
 Switch miSensorKitchenBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-sensor-5fc4:battery_low" }
 
 // Sensor 2.0 6 // Nails studio
 Number miSensorNsTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e08:temperature" }
 Number miSensorNsHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e08:humidity" }
 Number miSensorNsPressure <pressure> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e08:pressure" }
-Number miSensorNsBatt <battery> { channel="mqtt:topic:openhab:mi-sensor-5e08:battery" }
+Number miSensorNsBatt <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-5e08:battery" }
 Switch miSensorNsBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-sensor-5e08:battery_low" }
 
 // Sensor 2.0 7
@@ -55,18 +56,18 @@ Switch miSensorNsBattLow <energy> (gBattery) { channel="mqtt:topic:openhab:mi-se
 // Number miButton1Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001be5b2d:batteryLevel" }
 // Number miButton2Batt <energy> { channel="mihome:sensor_switch:7811dc6c95de:158d0001e612b9:batterylevel" }
 
-Number mi_button_5b2d_link "MI BUT 5b2d Link" { channel="mqtt:topic:openhab:mi-button-5b2d:link" }
-Number mi_button_5b2d_battery "MI BUT 5b2d Bat" { channel="mqtt:topic:openhab:mi-button-5b2d:battery" }
-Switch mi_button_5b2d_battery_low "MI BUT 5b2d Batlow" { channel="mqtt:topic:openhab:mi-button-5b2d:battery_low" }
+Number mi_button_5b2d_link "MI BUT KU Arbeitlicht Link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-button-5b2d:link" }
+Number mi_button_5b2d_battery "MI BUT KU Arbeitlicht Bat" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-button-5b2d:battery" }
+Switch mi_button_5b2d_battery_low "MI BUT KU Arbeitlicht Batlow" (gBattery) { channel="mqtt:topic:openhab:mi-button-5b2d:battery_low" }
 
-Number mi_button_12b9_link "MI BUT 12b9 Link" { channel="mqtt:topic:openhab:mi-button-12b9:link" }
-Number mi_button_12b9_battery "MI BUT 12b9 Bat" { channel="mqtt:topic:openhab:mi-button-12b9:battery" }
-Switch mi_button_12b9_battery_low "MI BUT 12b9 Batlow" { channel="mqtt:topic:openhab:mi-button-12b9:battery_low" }
+Number mi_button_12b9_link "MI BUT Treppe oben Link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-button-12b9:link" }
+Number mi_button_12b9_battery "MI BUT Treppe oben Bat" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-button-12b9:battery" }
+Switch mi_button_12b9_battery_low "MI BUT Treppe oben Batlow" <battery> (gBattery) { channel="mqtt:topic:openhab:mi-button-12b9:battery_low" }
 
 // Cube Petro
 // Mijia & Aqara Cube Controller - see "xiaomi.rules" for action triggers
 DateTime micube_petro_last_action "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:lastAction" }
 Number:Angle micube_petro_angle { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:rotationAngle" }
 Number:Time micube_petro_time { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:rotationTime" }
-Number micube_petro_batlevel <battery> { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:batteryLevel" }
-Switch micube_petro_batlow <energy> { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:lowBattery" }
+Number micube_petro_batlevel <battery> (g_battery_level) { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:batteryLevel" }
+Switch micube_petro_batlow <energy> (gBattery) { channel="mihome:sensor_cube:7811dc6c95de:158d00029bf66a:lowBattery" }
