@@ -118,7 +118,7 @@ sitemap control label="KONTROL"
 			}
 		}
 		
-		Group item=gBattery label="Заряд батарей [MAP(lowbat.map):%s]" icon=lowbattery {
+		Group item=g_battery_low label="Заряд батарей [MAP(lowbat.map):%s]" icon=lowbattery {
 			Frame label="Thermostaten" icon=heating {
 				Text	item=hz_kg_lbatt label="KG [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=hz_ku_lbatt label="Küche [MAP(lowbat.map):%s]" icon=lowbattery

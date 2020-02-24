@@ -23,7 +23,7 @@ end
 
 rule "LowBattery notify"
 when
-	Item gBattery changed from OFF to ON
+	Item g_battery_low changed from OFF to ON
 then
 	sendBroadcastNotification("Battery warning")
 end
