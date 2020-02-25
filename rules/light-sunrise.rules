@@ -1,0 +1,72 @@
+// Sinrise emulation
+
+var Timer sunriseTimer = null
+var Boolean sunriseStarted = false
+var Integer sunriseBrightness = 0
+var Integer sunriseModeValue = 0
+
+rule "Sinrise emulation start"
+when
+    // Time cron "0 00 05 ? * MON-FRI"
+    Item testSwSunrise changed
+then
+    logWarn("light", "Sunrise emulation started")
+
+    sunriseBrightness = 0;    
+    sunriseStarted = false;
+    
+    sunriseTimer = createTimer(now, [ |
+
+        if (sunriseStarted) {
+            if (g_light_eg_sz_night.state == OFF) {
+                logWarn("light", "Sunrise emulation stopped: group switched off")
+                return
+            }
+        }
+
+        sunriseStarted = true
+
+        // How long full programm runs (seconds)
+        var brightPeriod = 1 * 60
+        var brightPeriodStep = 10
+
+        // Items to set ON
+        // We do not use groups, we must have exact order of lamps defined
+        var lightGroupItems = newArrayList(yel_white_1_brightness, ikea_led_007b_brightness, ikea_led_2203_brightness, ikea_led_2819_brightness)
+
+        // 1/100 from hour (3600 sec)
+        var brightLoopSize = lightGroupItems.size
+
+        // Calculate timer
+        var brightTimerMs = (brightPeriod * 1000) / ( (100 / brightPeriodStep) * brightLoopSize)
+
+        sunriseModeValue = sunriseBrightness
+
+        lightGroupItems.forEach [s |
+
+            var setBright = sunriseModeValue
+            sunriseModeValue = sunriseModeValue - 100
+
+            if (setBright < 0) {
+                return
+            }
+
+            if (setBright > 100) {
+                return
+            }
+
+            logWarn("light", "Sunrise item " + s.label + " -> " + setBright)
+            s.sendCommand(setBright)
+        ]
+
+        // All items 100% ?
+        if (sunriseBrightness > (lightGroupItems.size * 100)) {
+            sunriseTimer = null
+            logWarn("light", "Sunrise emulation done")
+        } else {
+            // New timer loop
+            sunriseBrightness = sunriseBrightness + brightPeriodStep
+            sunriseTimer.reschedule(now.plusMillis(brightTimerMs))
+        }
+    ])
+end

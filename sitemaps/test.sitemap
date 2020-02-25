@@ -20,6 +20,8 @@ sitemap test label="ТЕСТ"
 		Switch item=yel_white_1_sw
 		Slider item=yel_white_1_brightness
 		Slider item=yel_white_1_temp minValue=2700 maxValue=6500 step=100
+
+		Switch item=testSwSunrise 
 	}
 		
 

@@ -33,6 +33,12 @@ Switch snf_eg_bz_2 "BAD Licht 2" <light> (g_light_all, g_light_eg, g_light_eg_bz
 Switch snf_eg_ku_haupt "KU Haupt" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power1" }
 Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power2", expire="6h,command=OFF" }
 
+// Yeelight (Night SZ)
+
+Switch yel_white_1_sw "YL Night" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night)
+Dimmer yel_white_1_brightness "YL Night dim" <light> (g_light_eg_sz_night_brightness)
+Number yel_white_1_temp "YL Night color [%d K]" <colorpicker>
+
 // Ikea filament lamps SZ
 
 Switch ikea_led_2819_sw "EG SZ Flame 1 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2819:state" }
@@ -55,11 +61,6 @@ Switch snf_kg_l1 "KG light main" <light> (g_light_all, g_light_kg, g_light_kg_au
 Switch snf_kg_l2 "KG light p1" <light> (g_light_all, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:snf-kg-2:power" }
 Switch snf_kg_lg1 "KG Lager 1" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:snf-kg-lg1:power" }
 
-// Desktop light
-
-Switch yel_white_1_sw "YL Night" <light> (g_light_kg)
-Dimmer yel_white_1_brightness "YL Night dim" <light>
-Number yel_white_1_temp "YL Night color [%d K]" <colorpicker>
 
 // Petr desktop
 Switch ikea_led_ef9d_sw "KG desktop sw" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-ef9d:state" }
