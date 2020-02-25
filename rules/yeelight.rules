@@ -39,26 +39,26 @@ then
 	yel_rgb_brightness.sendCommand(brightness)
 end
 
-rule "Yeelight 2 power"
+rule "mi-lamp-2.pws power"
 when
-    Item yel_petro_ds_sw changed
+    Item yel_white_1_sw received command
 then
-	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 turn " + yel_petro_ds_sw.state.toString.toLowerCase)
+	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 turn " + receivedCommand.toString.toLowerCase)
 end
 
-rule "Yeelight 2 brightness"
+rule "mi-lamp-2.pws brightness"
 when
-    Item yel_petro_ds_brightness changed
+    Item yel_white_1_brightness changed
 then
-	yel_petro_ds_sw.sendCommand(ON)
-	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 brightness " + (yel_petro_ds_brightness.state as DecimalType).intValue)
+	yel_white_1_sw.postUpdate(ON)
+	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 brightness " + (yel_white_1_brightness.state as DecimalType).intValue)
 end
 
-rule "Yeelight 1 color temp"
+rule "mi-lamp-2.pws color temp"
 when
-    Item yel_petro_ds_temp changed
+    Item yel_white_1_temp changed
 then
-	yel_petro_ds_sw.sendCommand(ON)
-	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 temperature " + (yel_petro_ds_temp.state as DecimalType).intValue)
+	yel_white_1_sw.postUpdate(ON)
+	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 temperature " + (yel_white_1_temp.state as DecimalType).intValue)
 end
 

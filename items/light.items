@@ -36,15 +36,15 @@ Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg, g_light_eg
 // Ikea filament lamps SZ
 
 Switch ikea_led_2819_sw "EG SZ Flame 1 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2819:state" }
-Dimmer ikea_led_2819_brightness "EG SZ Flame 1 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2819:brightness" }
+Dimmer ikea_led_2819_brightness "EG SZ Flame 1 dim []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2819:brightness" }
 Number ikea_led_2819_link "EG SZ Flame 1 link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-2819:link" }
 
 Switch ikea_led_2203_sw "EG SZ Flame 2 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-2203:state" }
-Dimmer ikea_led_2203_brightness "EG SZ Flame 2 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2203:brightness" }
+Dimmer ikea_led_2203_brightness "EG SZ Flame 2 dim []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-2203:brightness" }
 Number ikea_led_2203_link "EG SZ Flame 2 link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-2203:link" }
 
 Switch ikea_led_007b_sw "EG SZ Flame 3 sw" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night) { channel="mqtt:topic:openhab:ikea-led-007b:state" }
-Dimmer ikea_led_007b_brightness "EG SZ Flame 3 br []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-007b:brightness" }
+Dimmer ikea_led_007b_brightness "EG SZ Flame 3 dim []" (g_light_eg_sz_night_brightness) { channel="mqtt:topic:openhab:ikea-led-007b:brightness" }
 Number ikea_led_007b_link "EG SZ Flame 3 link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-007b:link" }
 
 // ====== KG
@@ -57,9 +57,9 @@ Switch snf_kg_lg1 "KG Lager 1" <light> (g_light_all, g_light_kg) { channel="mqtt
 
 // Desktop light
 
-// Switch yel_petro_ds_sw "Питание" <light> (g_light_kg)
-// Dimmer yel_petro_ds_brightness "Яркость" <light>
-// Switch yel_petro_ds_temp "Цветовая температура" <colorpicker>
+Switch yel_white_1_sw "YL Night" <light> (g_light_kg)
+Dimmer yel_white_1_brightness "YL Night dim" <light>
+Number yel_white_1_temp "YL Night color [%d K]" <colorpicker>
 
 // Petr desktop
 Switch ikea_led_ef9d_sw "KG desktop sw" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-ef9d:state" }

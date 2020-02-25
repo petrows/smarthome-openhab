@@ -16,6 +16,10 @@ sitemap test label="ТЕСТ"
 		Slider item=ikea_led_2203_brightness
 		Switch item=ikea_led_007b_sw
 		Slider item=ikea_led_007b_brightness
+
+		Switch item=yel_white_1_sw
+		Slider item=yel_white_1_brightness
+		Slider item=yel_white_1_temp minValue=2700 maxValue=6500 step=100
 	}
 		
 
