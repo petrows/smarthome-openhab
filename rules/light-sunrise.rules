@@ -7,8 +7,8 @@ var Integer sunriseModeValue = 0
 
 rule "Sinrise emulation start"
 when
-    // Time cron "0 00 05 ? * MON-FRI"
-    Item testSwSunrise changed
+    Time cron "0 00 05 ? * MON-FRI"
+    //Item testSwSunrise changed
 then
     logWarn("light", "Sunrise emulation started")
 
@@ -27,8 +27,8 @@ then
         sunriseStarted = true
 
         // How long full programm runs (seconds)
-        var brightPeriod = 1 * 60
-        var brightPeriodStep = 10
+        var brightPeriod = 60 * 60
+        var brightPeriodStep = 1
 
         // Items to set ON
         // We do not use groups, we must have exact order of lamps defined

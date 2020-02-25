@@ -48,17 +48,17 @@ end
 
 rule "mi-lamp-2.pws brightness"
 when
-    Item yel_white_1_brightness changed
+    Item yel_white_1_brightness received command
 then
 	yel_white_1_sw.postUpdate(ON)
-	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 brightness " + (yel_white_1_brightness.state as DecimalType).intValue)
+	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 brightness " + (receivedCommand as DecimalType).intValue)
 end
 
 rule "mi-lamp-2.pws color temp"
 when
-    Item yel_white_1_temp changed
+    Item yel_white_1_temp received command
 then
 	yel_white_1_sw.postUpdate(ON)
-	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 temperature " + (yel_white_1_temp.state as DecimalType).intValue)
+	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 temperature " + (receivedCommand as DecimalType).intValue)
 end
 
