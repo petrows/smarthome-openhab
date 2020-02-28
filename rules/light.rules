@@ -96,9 +96,22 @@ then
         }
     ]
 
-    if (cfgHeatingEnable.state == ON) {
-        g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
-    }  
+    // Diff by buttons
+    switch(state) {
+
+        // Someone in house?
+        case "on": {
+            // Do nothing
+        }
+
+        // Nobody in house
+        case "off": {
+            if (cfgHeatingEnable.state == ON) {
+                g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+            }
+        }
+    }
+      
 end
 
 rule "Treppe licht UNTEN btn"
@@ -166,17 +179,17 @@ then
             g_light_all.sendCommand(OFF)
         }
         case "brightness_down_click": {
-            if (0 == (g_light_eg_sz_night_brightness.state as Number) && ON == g_light_eg_sz_night.state) {
-                g_light_eg_sz_night.sendCommand(OFF)
+            if (0 == (g_light_eg_sz_decor_brightness.state as Number) && ON == g_light_eg_sz_decor.state) {
+                g_light_eg_sz_decor.sendCommand(OFF)
             } else {
-                g_light_eg_sz_night_brightness.sendCommand(0)
+                g_light_eg_sz_decor_brightness.sendCommand(0)
             }
         }
         case "brightness_up_click": {
-            if (100 == (g_light_eg_sz_night_brightness.state as Number) && ON == g_light_eg_sz_night.state) {
-                g_light_eg_sz_night.sendCommand(OFF)
+            if (100 == (g_light_eg_sz_decor_brightness.state as Number) && ON == g_light_eg_sz_decor.state) {
+                g_light_eg_sz_decor.sendCommand(OFF)
             } else {
-                g_light_eg_sz_night_brightness.sendCommand(100)
+                g_light_eg_sz_decor_brightness.sendCommand(100)
             }
         }
         case "arrow_right_click": {
