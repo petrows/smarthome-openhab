@@ -1,14 +1,28 @@
 // Sinrise emulation
 
+// === Configuration
+
+// How long full programm runs (seconds)
+
+val sunriseBrightPeriod = 60 * 60
+
+// Persentage to be change on each step
+// Inrease this value to reduce command traffic, decrease for better smooth
+
+val sunriseBrightPeriodStep = 1
+
+// === Configuration
+
+// Global vars
 var Timer sunriseTimer = null
-var Boolean sunriseStarted = false
-var Integer sunriseBrightness = 0
-var Integer sunriseModeValue = 0
+var sunriseStarted = false
+var sunriseBrightness = 0
+var sunriseModeValue = 0
 
 rule "Sinrise emulation start"
 when
     Time cron "0 00 05 ? * MON-FRI"
-    //Item testSwSunrise changed
+    // Item testSwSunrise changed
 then
     logWarn("light", "Sunrise emulation started")
 
@@ -26,19 +40,21 @@ then
 
         sunriseStarted = true
 
-        // How long full programm runs (seconds)
-        var brightPeriod = 60 * 60
-        var brightPeriodStep = 1
-
         // Items to set ON
-        // We do not use groups, we must have exact order of lamps defined
-        var lightGroupItems = newArrayList(yel_white_1_brightness, ikea_led_007b_brightness, ikea_led_2203_brightness, ikea_led_2819_brightness)
+        // Direct usage of group is problematic, because openHab do not keeps items order
+        // Option 1: use manual group (check that it is in sync of "stop-detection" group members)
+        // var lightGroupItems = newArrayList(yel_white_1_brightness, ikea_led_007b_brightness, ikea_led_2203_brightness, ikea_led_2819_brightness)
+        // Option 2: use group and sort it
+        // var lightGroupItems = java.util.Collections.sort(g_light_eg_sz_night.members.map(name))
 
-        // 1/100 from hour (3600 sec)
-        var brightLoopSize = lightGroupItems.size
+        // We do not use groups, we must have exact order of lamps defined
+        var lightGroupItems = newArrayList("yel_white_1_brightness", "ikea_led_007b_brightness", "ikea_led_2203_brightness", "ikea_led_2819_brightness")
+
+        // Sort items
+        // lightGroupItems = lightGroupItems.sortBy[1]
 
         // Calculate timer
-        var brightTimerMs = (brightPeriod * 1000) / ( (100 / brightPeriodStep) * brightLoopSize)
+        var brightTimerMs = (sunriseBrightPeriod * 1000) / ( (100 / sunriseBrightPeriodStep) * lightGroupItems.size)
 
         sunriseModeValue = sunriseBrightness
 
@@ -47,16 +63,13 @@ then
             var setBright = sunriseModeValue
             sunriseModeValue = sunriseModeValue - 100
 
-            if (setBright < 0) {
+            // If current bright position out of range - we should check other item
+            if (setBright < 0 || setBright > 100) {
                 return
             }
 
-            if (setBright > 100) {
-                return
-            }
-
-            logWarn("light", "Sunrise item " + s.label + " -> " + setBright)
-            s.sendCommand(setBright)
+            logWarn("light", "Sunrise item " + s + " -> " + setBright)
+            sendCommand(s, setBright.toString())
         ]
 
         // All items 100% ?
@@ -65,7 +78,7 @@ then
             logWarn("light", "Sunrise emulation done")
         } else {
             // New timer loop
-            sunriseBrightness = sunriseBrightness + brightPeriodStep
+            sunriseBrightness = sunriseBrightness + sunriseBrightPeriodStep
             sunriseTimer.reschedule(now.plusMillis(brightTimerMs))
         }
     ])
