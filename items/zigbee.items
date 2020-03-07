@@ -5,6 +5,7 @@ Number zigbee_router_1_link "ZB router 1 link" (g_zigbee_link) { channel="mqtt:t
 Number ikea_router_6a05 "Ikea router 1 link" (g_zigbee_link) { channel="mqtt:topic:openhab:zigbee-router-6a05:link" }
 Number ikea_sw_e111 "Ikea SW e111 link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-sw-e111:link" }
 Number ikea_sw_92f3 "Ikea SW 92f3 link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-sw-92f3:link" }
-Number ikea_remote_2305 "Ikea Remote 2305 link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-2305:link" }
-Number ikea_remote_357d "Ikea Remote 357d link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-357d:link" }
+Number ikea_remote_2305 "Ikea Remote SZ link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-2305:link" }
+Number ikea_remote_357d "Ikea Remote Petro DS link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-357d:link" }
+Number ikea_remote_9703 "Ikea Remote Marina DS link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-9703:link" }
 

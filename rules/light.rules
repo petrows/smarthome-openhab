@@ -169,6 +169,30 @@ then
     }
 end
 
+rule "Marina remote sw (desktop)"
+when
+    Channel "mqtt:topic:openhab:ikea-remote-9703:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "toggle": {
+            if (ikea_led_89d1_sw.state == ON) { ikea_led_89d1_sw.sendCommand(OFF) } else { ikea_led_89d1_sw.sendCommand(ON) }
+        }
+        case "arrow_right_click": {
+            ikea_led_89d1_brightness.sendCommand(100)
+        }
+        case "arrow_left_click": {
+            ikea_led_89d1_brightness.sendCommand(0)
+        }
+        case "brightness_down_click": {
+            snf_eg_fs.sendCommand(OFF)
+        }
+        case "brightness_up_click": {
+            snf_eg_fs.sendCommand(ON)
+        }
+    }
+end
+
 rule "SZ remote sw"
 when
     Channel "mqtt:topic:openhab:ikea-remote-2305:click" triggered

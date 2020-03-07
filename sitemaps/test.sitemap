@@ -22,6 +22,10 @@ sitemap test label="ТЕСТ"
 		Slider item=yel_white_1_temp minValue=2700 maxValue=6500 step=100
 
 		Switch item=testSwSunrise 
+
+		Switch item=ikea_led_89d1_sw 
+		Slider item=ikea_led_89d1_brightness 
+		Slider item=ikea_led_89d1_temp 
 	}
 		
 

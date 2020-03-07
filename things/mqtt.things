@@ -169,6 +169,7 @@ Thing mqtt:topic:openhab:ikea-sw-92f3 (mqtt:broker:openhab) {
 // (mqtt:broker:openhab) {"linkquality":39,"battery":100,"action":"arrow_left_release","duration":1.82}
 // (mqtt:broker:openhab) {"linkquality":36,"battery":100,"action":"arrow_right_hold"}
 // (mqtt:broker:openhab) {"linkquality":39,"battery":100,"action":"arrow_right_release","duration":1.125}
+// SZ
 Thing mqtt:topic:openhab:ikea-remote-2305 (mqtt:broker:openhab) {
 	Channels:
 		Type string : click [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.action", trigger=true ]
@@ -176,12 +177,21 @@ Thing mqtt:topic:openhab:ikea-remote-2305 (mqtt:broker:openhab) {
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.linkquality" ]
 }
+// Petro Desktop
 Thing mqtt:topic:openhab:ikea-remote-357d (mqtt:broker:openhab) {
 	Channels:
 		Type string : click [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.action", trigger=true ]
 		Type number : battery [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.linkquality" ]
+}
+// Marina Desktop
+Thing mqtt:topic:openhab:ikea-remote-9703 (mqtt:broker:openhab) {
+	Channels:
+		Type string : click [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.action", trigger=true ]
+		Type number : battery [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.battery" ]
+		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JS:z2m-lowbatt.js" ]
+		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.linkquality" ]
 }
 
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)
@@ -205,6 +215,15 @@ Thing mqtt:topic:openhab:ikea-led-ef9d (mqtt:broker:openhab) {
 		Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
 		Type dimmer : temp [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/0xccccccfffed8ef9d/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=255, max=512 ]
 		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.linkquality" ]
+}
+
+// TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11)
+Thing mqtt:topic:openhab:ikea-led-89d1 (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe1b89d1", commandTopic="zigbee2mqtt/0xec1bbdfffe1b89d1/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
+		Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe1b89d1", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe1b89d1/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
+		Type dimmer : temp [ stateTopic="zigbee2mqtt/0xec1bbdfffe1b89d1", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/0xec1bbdfffe1b89d1/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=255, max=512 ]
+		Type number : link [ stateTopic="zigbee2mqtt/0xec1bbdfffe1b89d1", transformationPattern="JSONPATH:$.linkquality" ]
 }
 
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen,dimmable (LED1842G3)

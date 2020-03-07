@@ -33,6 +33,9 @@ sitemap control2 label="KONTROL 2"
 		}
 		Group item=snf_eg_fs label="Foto Studio [%s]" icon="light" {
 			Switch item=snf_eg_fs label="Haupt [%s]" icon="light"
+			Switch item=ikea_led_89d1_sw label="Desktop [%s]" icon="light"
+			Slider item=ikea_led_89d1_brightness label="Desktop DIM [%d]" icon="light"
+			Slider item=ikea_led_89d1_temp label="Desktop temp [%d]" icon="colorpicker"
 		}
 		Group item=g_light_eg_sz label="Schlaffzimmer [%s]" icon="light" {
 			Frame {
