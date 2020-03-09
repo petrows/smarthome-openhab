@@ -31,7 +31,7 @@ sitemap control2 label="KONTROL 2"
 		Group item=snf_eg_ns label="Nagel Studio [%s]" icon="light" {
 			Switch item=snf_eg_ns label="Haupt [%s]" icon="light"
 		}
-		Group item=snf_eg_fs label="Foto Studio [%s]" icon="light" {
+		Group item=g_light_eg_fs label="Foto Studio [%s]" icon="light" {
 			Switch item=snf_eg_fs label="Haupt [%s]" icon="light"
 			Switch item=ikea_led_89d1_sw label="Desktop [%s]" icon="light"
 			Slider item=ikea_led_89d1_brightness label="Desktop DIM [%d]" icon="light"

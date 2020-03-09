@@ -3,8 +3,7 @@ Group:Switch:OR(ON, OFF) g_light_all
 Group:Switch:OR(ON, OFF) g_light_eg
 
 Group:Switch:OR(ON, OFF) g_light_eg_bz
-
-
+Group:Switch:OR(ON, OFF) g_light_eg_fs
 Group:Switch:OR(ON, OFF) g_light_eg_sz
 Group:Switch:OR(ON, OFF) g_light_eg_ku
 
@@ -27,7 +26,7 @@ Number	yel_rgb_temp	"Цветовая температура" <colorpicker>
 Color	yel_rgb_color	"Цвет"
 
 // Marina desktop
-Switch ikea_led_89d1_sw "Marina desktop sw" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:ikea-led-89d1:state" }
+Switch ikea_led_89d1_sw "Marina desktop sw" <light> (g_light_all, g_light_eg, g_light_eg_fs) { channel="mqtt:topic:openhab:ikea-led-89d1:state" }
 Dimmer ikea_led_89d1_brightness "Marina desktop dim [%d]" { channel="mqtt:topic:openhab:ikea-led-89d1:brightness" }
 Dimmer ikea_led_89d1_temp "Marina desktop color [%d]" <colorpicker> { channel="mqtt:topic:openhab:ikea-led-89d1:temp" }
 Number ikea_led_89d1_link "Marina desktop link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-89d1:link" }
@@ -35,7 +34,7 @@ Number ikea_led_89d1_link "Marina desktop link" <network> (g_zigbee_link) { chan
 Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
 Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_all, g_light_eg, g_light_eg_sz) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
-Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
+Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_fs) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
 Switch snf_eg_bz_1 "BAD Licht 1" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power1" }
 Switch snf_eg_bz_2 "BAD Licht 2" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power2" }
 Switch snf_eg_ku_haupt "KU Haupt" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power1" }
