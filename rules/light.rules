@@ -80,6 +80,17 @@ when
 then
 	var state = receivedEvent.getEvent()
 
+    // Temporary use only OFF button
+    // On button to swith mirror light
+    if (state != "off") {
+        if (snf_eg_fl_spiegel.state != ON) {
+            snf_eg_fl_spiegel.sendCommand(ON)
+        } else {
+            snf_eg_fl_spiegel.sendCommand(OFF)
+        }
+        return;
+     }
+
     logWarn("light", "Verlassen SW: " + state)
 
     verlassenTimer = createTimer(now.plusMillis(20000), [ |
