@@ -74,22 +74,49 @@ then
     }
 end
 
+rule "Spiegel control SW"
+when
+    Channel "mqtt:topic:openhab:ikea-remote-6b80:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "toggle": {
+            if (snf_eg_fl_spiegel.state != ON) {
+                snf_eg_fl_spiegel.sendCommand(ON)
+            } else {
+                snf_eg_fl_spiegel.sendCommand(OFF)
+            }
+        }
+        case "brightness_up_click": {
+            var brightness = snf_eg_fl_spiegel_brightness.getState as Number
+
+            brightness = brightness + 30;
+            if (brightness > 80) { brightness = 100; }
+
+            snf_eg_fl_spiegel_brightness.sendCommand(brightness)
+        }
+        case "brightness_down_click": {
+            var brightness = snf_eg_fl_spiegel_brightness.getState as Number
+
+            brightness = brightness - 30;
+            if (brightness < 10) { brightness = 1; }
+
+            snf_eg_fl_spiegel_brightness.sendCommand(brightness)
+        }
+        case "arrow_left_click": {
+            // g_light_kg.sendCommand(OFF)
+        }
+        case "arrow_right_click": {
+            // g_light_kg.sendCommand(OFF)
+        }
+    }
+end
+
 rule "House verlassen SW"
 when
     Channel "mqtt:topic:openhab:ikea-sw-e111:click" triggered
 then
 	var state = receivedEvent.getEvent()
-
-    // Temporary use only OFF button
-    // On button to swith mirror light
-    if (state != "off") {
-        if (snf_eg_fl_spiegel.state != ON) {
-            snf_eg_fl_spiegel.sendCommand(ON)
-        } else {
-            snf_eg_fl_spiegel.sendCommand(OFF)
-        }
-        return;
-     }
 
     logWarn("light", "Verlassen SW: " + state)
 

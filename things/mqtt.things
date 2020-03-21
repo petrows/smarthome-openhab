@@ -199,6 +199,14 @@ Thing mqtt:topic:openhab:ikea-remote-9703 (mqtt:broker:openhab) {
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.linkquality" ]
 }
+// Fleur Spiegel SW
+Thing mqtt:topic:openhab:ikea-remote-6b80 (mqtt:broker:openhab) {
+	Channels:
+		Type string : click [ stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.action", trigger=true ]
+		Type number : battery [ stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.battery" ]
+		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JS:z2m-lowbatt.js" ]
+		Type number : link [ stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.linkquality" ]
+}
 
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)
 Thing mqtt:topic:openhab:ikea-led-bfde (mqtt:broker:openhab) {
