@@ -1,3 +1,8 @@
+Thing mqtt:topic:openhab:weather-radiation (mqtt:broker:openhab) {
+	Channels:
+		Type number : level  [ stateTopic="weather/radiation" ]
+}
+
 Thing mqtt:topic:openhab:snf-pow-1 (mqtt:broker:openhab) {
 	Channels:
 		Type switch : power  [ stateTopic="stat/snf-pow-1/POWER", commandTopic="cmnd/snf-pow-1/POWER", on="ON", off="OFF" ]

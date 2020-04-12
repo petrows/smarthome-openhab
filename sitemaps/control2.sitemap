@@ -10,6 +10,46 @@ sitemap control2 label="KONTROL 2"
 				Webview label="Draußentemperatur" icon="temperature" height=8 url="https://stat.home.pws/d-solo/000000002/klimat?orgId=1&theme=dark&panelId=3&inactive=1"
 				Webview label="Raumtemperatur" icon="temperature" height=8 url="https://stat.home.pws/d-solo/000000002/klimat?orgId=1&theme=dark&panelId=1"
 			}
+			Frame label="Local Weather Station" {
+				Text item=localStationId
+				Text item=localStationName
+				Mapview item=localStationLocation
+			}
+			Frame label="Current local weather" {
+				Text item=localLastMeasurement
+				Text item=localCurrentCondition
+				Image item=localCurrentConditionIcon
+				Text item=localCurrentTemperature
+				Text item=localCurrentPressure
+				Text item=localCurrentHumidity
+				Text item=localCurrentWindSpeed
+				Text item=localCurrentWindDirection
+				Text item=localCurrentCloudiness
+				Text item=localCurrentRainVolume
+				Text item=localCurrentSnowVolume
+				Text item=localCurrentVisibility
+			}
+			Frame label="Local forecast for today" {
+				Text item=localDailyForecastTodayTimestamp
+				Text item=localDailyForecastTodayCondition
+				Image item=localDailyForecastTodayConditionIcon
+				Text item=localDailyForecastTodayMinTemperature
+				Text item=localDailyForecastTodayMaxTemperature
+				Text item=localDailyForecastTodayPressure
+				Text item=localDailyForecastTodayHumidity
+				Text item=localDailyForecastTodayWindSpeed
+				Text item=localDailyForecastTodayWindDirection
+				Text item=localDailyForecastTodayCloudiness
+				Text item=localDailyForecastTodayRainVolume
+				Text item=localDailyForecastTodaySnowVolume
+			}
+			Frame label="Local forecast for tomorrow" {
+				Text item=localDailyForecastTomorrowTimestamp
+				Text item=localDailyForecastTomorrowCondition
+				Image item=localDailyForecastTomorrowConditionIcon
+				Text item=localDailyForecastTomorrowMinTemperature
+				Text item=localDailyForecastTomorrowMaxTemperature
+			}
 		}
 	}
 

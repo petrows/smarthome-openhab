@@ -24,7 +24,7 @@ print(args)
 
 mqtt_auth = {'username':args.mqtt_user, 'password':args.mqtt_pass}
 
-page = requests.get('https://odlinfo.bfs.de/DE/aktuelles/messstelle/082151090.html')
+page = requests.get(args.url)
 tree = html.fromstring(page.content)
 
 mes = tree.xpath('//p[@class="aktmw"]/strong/text()')
