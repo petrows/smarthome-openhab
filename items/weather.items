@@ -43,7 +43,7 @@ Number weather_ext_temp_feel "Apparent temperature [%.0f °C]" <temperature>   {
 Number weather_ext_visibility "Visibility [%.1f km]"    <visibility>    { http="<[weatherConditions:420000:JSONPATH($.currently.visibility)]" }    
 Number weather_ext_ozone "Ozone [%.2f]" <ozone>  { http="<[weatherConditions:420000:JSONPATH($.currently.ozone)]" } 
 Number weather_ext_uv "UV Index [%.0f]" <uvi>  { http="<[weatherConditions:420000:JSONPATH($.currently.uvIndex)]" }
-String weather_ext_precip "hourly precipitation [%s mm]" <rain> { http="<[weatherConditions:420000:JSONPATH($.currently.precipIntensity)]" }
+Number weather_ext_precip "hourly precipitation [%s mm]" <rain> { http="<[weatherConditions:420000:JSONPATH($.currently.precipIntensity)]" }
 
 
 String localStationId "ID [%s]" { channel="openweathermap:weather-and-forecast:api:local:station#id" }

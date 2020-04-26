@@ -161,6 +161,12 @@ sitemap control2 label="KONTROL 2"
 			Group  item=gVacCons
 			Group  item=gVacHist
 		}
+		Group item=yel_rgb_sw label="RGB Lampe [%s]" icon="light" {
+			Switch 		item=yel_rgb_sw icon="light"
+			Colorpicker	item=yel_rgb_color
+			Slider	item=yel_rgb_brightness
+			
+		}
 	}
 	
 	Frame icon="bedroom" {

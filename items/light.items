@@ -32,7 +32,7 @@ Dimmer ikea_led_89d1_temp "Marina desktop color [%d]" <colorpicker> { channel="m
 Number ikea_led_89d1_link "Marina desktop link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-89d1:link" }
 
 Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
-Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power", expire="1h,command=OFF"}
+Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
 Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }
 Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_all, g_light_eg, g_light_eg_sz) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
@@ -40,7 +40,7 @@ Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg, g_ligh
 Switch snf_eg_bz_1 "BAD Licht 1" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power1" }
 Switch snf_eg_bz_2 "BAD Licht 2" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power2" }
 Switch snf_eg_ku_haupt "KU Haupt" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power1" }
-Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power2", expire="6h,command=OFF" }
+Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power2", expire="3h,command=OFF" }
 
 // Yeelight (Night SZ)
 
