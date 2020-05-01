@@ -12,8 +12,9 @@ Group:Switch:OR(ON, OFF) g_light_eg_sz_night
 Group:Dimmer:MAX g_light_eg_sz_night_brightness
 Group:Dimmer:MAX g_light_eg_sz_decor_brightness
 
-Group:Switch:OR(ON, OFF) g_light_kg
-Group:Switch:OR(ON, OFF) g_light_kg_auto // group has "auto-on" feature
+// KG and Treppe lamps
+Group:Switch:OR(ON, OFF) g_light_kg // All lamps in KG
+Group:Switch:OR(ON, OFF) g_light_kg_auto // Lamps to be on by "All ON"
 Group:Switch:OR(ON, OFF) g_light_treppe
 
 String light_all_mode "Light mode" <light>
@@ -66,7 +67,7 @@ Number ikea_led_007b_link "EG SZ Flame 3 link" <network> (g_zigbee_link) { chann
 
 // Celling light
 
-Switch snf_kg_l1 "KG light main" <light> (g_light_all, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:snf-kg-1:power" }
+Switch snf_kg_l1 "KG light main" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:snf-kg-1:power" }
 Switch snf_kg_l2 "KG light p1" <light> (g_light_all, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:snf-kg-2:power" }
 Switch snf_kg_lg1 "KG Lager 1" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:snf-kg-lg1:power" }
 
@@ -77,7 +78,7 @@ Dimmer ikea_led_ef9d_temp "KG desktop color [%d]" { channel="mqtt:topic:openhab:
 Number ikea_led_ef9d_link "KG desktop link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-ef9d:link" }
 
 // Treppe oben
-Switch ikea_led_bfde_sw "Treppe oben sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-bfde:state", expire="1h,command=OFF" }
+Switch ikea_led_bfde_sw "Treppe oben sw" <light> (g_light_all, g_light_treppe, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-bfde:state", expire="1h,command=OFF" }
 Dimmer ikea_led_bfde_brightness "Treppe oben dim []" { channel="mqtt:topic:openhab:ikea-led-bfde:brightness" }
 Number ikea_led_bfde_link "Treppe oben link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-bfde:link" }
 
