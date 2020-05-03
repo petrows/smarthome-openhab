@@ -65,6 +65,10 @@ when
 then
 	var state = receivedEvent.getEvent()
     switch(state) {
+        case "brightness_up": { // Long press UP
+            g_light_kg_auto.sendCommand(ON)
+            ikea_led_bfde_sw.sendCommand(ON) // Also on light oben (not triggered by defaul)
+        }
         case "on": {
             g_light_kg_auto.sendCommand(ON)
         }
@@ -149,7 +153,7 @@ then
             }
         }
     }
-      
+
 end
 
 rule "Treppe licht UNTEN btn"
@@ -255,14 +259,14 @@ then
             }
         }
         case "arrow_right_click": {
-            if (yel_white_1_sw.state == ON && yel_white_1_brightness.state == 100) { 
+            if (yel_white_1_sw.state == ON && yel_white_1_brightness.state == 100) {
                 yel_white_1_sw.sendCommand(OFF)
             } else {
                 yel_white_1_brightness.sendCommand(100)
             }
         }
         case "arrow_left_click": {
-            if (yel_white_1_sw.state == ON && yel_white_1_brightness.state == 0) { 
+            if (yel_white_1_sw.state == ON && yel_white_1_brightness.state == 0) {
                 yel_white_1_sw.sendCommand(OFF)
             } else {
                 yel_white_1_brightness.sendCommand(0)
