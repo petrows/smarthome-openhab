@@ -302,13 +302,15 @@ rule "BZ force both lights work together 1"
 when
     Item snf_eg_bz_1 changed
 then
-    g_light_eg_bz.members.forEach [s | s.sendCommand(snf_eg_bz_1.state) ]
+    var state = snf_eg_bz_1.state
+    if (snf_eg_bz_2.state != state) { sendCommand(snf_eg_bz_2, state) }
 end
 
 rule "BZ force both lights work together 2"
 when
     Item snf_eg_bz_2 changed
 then
-    g_light_eg_bz.members.forEach [s | s.sendCommand(snf_eg_bz_2.state) ]
+    var state = snf_eg_bz_2.state
+    if (snf_eg_bz_1.state != state) { sendCommand(snf_eg_bz_1, state) }
 end
 
