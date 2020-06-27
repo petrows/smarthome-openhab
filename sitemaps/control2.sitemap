@@ -57,7 +57,7 @@ sitemap control2 label="KONTROL 2"
 		Switch item=light_all_mode label="Alle" icon="light" mappings=["ON"="ON","N"="NACHT", OFF="OFF"]
 		Switch item=g_light_eg label="EG" icon="light" mappings=[ON="ON", OFF="OFF"]
 		Switch item=g_light_kg label="KG" icon="light" mappings=[ON="ON", OFF="OFF"]
-		
+
 		Group item=snf_eg_fl label="Flur [%s]" icon="light" {
 			Switch item=snf_eg_fl label="Haupt [%s]" icon="light"
 			Switch item=snf_eg_fl_spiegel label="Spiegel [%s]" icon="light"
@@ -165,12 +165,12 @@ sitemap control2 label="KONTROL 2"
 			Switch 		item=yel_rgb_sw icon="light"
 			Colorpicker	item=yel_rgb_color
 			Slider	item=yel_rgb_brightness
-			
 		}
+		Switch item=snf_kg_ks_power label="Bier Kühlschrank" icon="climate"
 	}
-	
+
 	Frame icon="bedroom" {
-	
+
 		Group item=gSettings label="Enstellungen" {
 			Frame label="Heuzung" {
 				Switch	item=cfgHeatingEnable label="Ein"
@@ -189,7 +189,7 @@ sitemap control2 label="KONTROL 2"
 				Switch	item=zigbee_root_pair label="ZigBee pair Erlaubnis"
 			}
 		}
-		
+
 		Group item=g_battery_low label="Battarein [MAP(lowbat.map):%s]" icon=lowbattery {
 			Frame label="Thermostaten" icon=heating {
 				Text	item=hz_kg_lbatt label="KG [MAP(lowbat.map):%s]" icon=lowbattery
@@ -214,7 +214,7 @@ sitemap control2 label="KONTROL 2"
 				Group item=g_battery_level
 			}
 		}
-		
+
 		Group item=gOnline label="Online [MAP(online.map):%s]" icon=network {
 			Frame label="WLAN" {
 				Text	item=online_wlan_eg_1 icon=network
@@ -224,6 +224,7 @@ sitemap control2 label="KONTROL 2"
 				Text	item=online_max_thermostat icon=network
 				Text	item=online_snf_kg_1 icon=network
 				Text	item=online_snf_kg_2 icon=network
+				Text	item=online_snf_kg_ks icon=network
 				Text	item=online_snf_eg_fs icon=network
 				Text	item=online_snf_eg_ns icon=network
 				Text	item=online_snf_eg_sz icon=network
@@ -233,7 +234,7 @@ sitemap control2 label="KONTROL 2"
 				Group item=g_zigbee_link
 			}
 		}
-		
+
 		Group item=gPresent label="Beisein [MAP(presence.map):%s]" icon=network {
 			Text	item=gPresentPeter label="Петр [MAP(presence.map):%s]" icon=network {
 				Text	item=presBlePeter label="Петр BLE" icon=network
@@ -244,6 +245,6 @@ sitemap control2 label="KONTROL 2"
 				Text	item=presMobileMarina label="Марина мобильный" icon=network
 			}
 		}
-		
+
 	}
 }

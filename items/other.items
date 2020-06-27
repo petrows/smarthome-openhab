@@ -1,0 +1,2 @@
+Switch snf_kg_ks_power "KG Kühlschrank power" { channel="mqtt:topic:openhab:snf-kg-ks:power" }
+

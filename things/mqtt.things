@@ -8,6 +8,11 @@ Thing mqtt:topic:openhab:snf-pow-1 (mqtt:broker:openhab) {
 		Type switch : power  [ stateTopic="stat/snf-pow-1/POWER", commandTopic="cmnd/snf-pow-1/POWER", on="ON", off="OFF" ]
 }
 
+Thing mqtt:topic:openhab:snf-kg-ks (mqtt:broker:openhab) {
+	Channels:
+		Type switch : power  [ stateTopic="stat/snf-kg-ks/POWER", commandTopic="cmnd/snf-kg-ks/POWER", on="ON", off="OFF" ]
+}
+
 Thing mqtt:topic:openhab:snf-eg-fl (mqtt:broker:openhab) {
 	Channels:
 		Type switch : power  [ stateTopic="stat/snf-eg-fl/POWER", commandTopic="cmnd/snf-eg-fl/POWER", on="ON", off="OFF" ]

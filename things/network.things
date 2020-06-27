@@ -16,6 +16,7 @@ Thing network:pingdevice:mi_robot "MI Robot" [ hostname="mi-robot.pws", retry=5,
 Thing network:pingdevice:max_thermostat "Max thermostat GW" [ hostname="max-thermostat.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:snf_kg_1 "Sonoff KG 1" [ hostname="snf-kg-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:snf_kg_2 "Sonoff KG 2" [ hostname="snf-kg-2.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+Thing network:pingdevice:snf_kg_ks "Sonoff KG Kühlschrank" [ hostname="snf-kg-ks.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:snf_eg_fs "Sonoff EG FS" [ hostname="snf-eg-fs.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:snf_eg_ns "Sonoff EG NS" [ hostname="snf-eg-ns.pws", retry=5, timeout=5000, refreshInterval=60000 ]
 Thing network:pingdevice:snf_eg_sz "Sonoff EG SZ" [ hostname="snf-eg-sz.pws", retry=5, timeout=5000, refreshInterval=60000 ]
