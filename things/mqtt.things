@@ -69,6 +69,13 @@ Thing mqtt:topic:openhab:zigbee-root (mqtt:broker:openhab) {
 		Type string : log [ stateTopic="zigbee2mqtt/bridge/log", trigger=true ]
 }
 
+// Aquara water-leak sensor
+Thing mqtt:topic:openhab:mi-water-leak-1 (mqtt:broker:openhab) {
+	Channels:
+		Type switch : leak [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.water_leak", on="true", off="false" ]
+		Type number : link [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.linkquality" ]
+}
+
 // 0x00124b000b4ed5cc
 Thing mqtt:topic:openhab:zigbee-router-d5cc (mqtt:broker:openhab) {
 	Channels:

@@ -1,2 +1,4 @@
 Switch snf_kg_ks_power "KG Kühlschrank power" { channel="mqtt:topic:openhab:snf-kg-ks:power" }
 
+// Aquara water leak
+Switch kg_water_leak_1 "KG Lecksucher 1" { channel="mqtt:topic:openhab:mi-water-leak-1:leak" }

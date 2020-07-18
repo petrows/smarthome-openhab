@@ -28,3 +28,10 @@ then
 	}
 end
 
+rule "Waterleak"
+when
+	Item kg_water_leak_1 changed to ON
+then
+	sendBroadcastNotification("WATER LEAK IN KG!")
+	logWarn("water-leak", "WATER LEAK IN KG!")
+end

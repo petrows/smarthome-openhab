@@ -9,3 +9,5 @@ Number ikea_remote_2305 "Ikea Remote SZ link" (g_zigbee_link) { channel="mqtt:to
 Number ikea_remote_357d "Ikea Remote Petro DS link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-357d:link" }
 Number ikea_remote_9703 "Ikea Remote Marina DS link" (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-9703:link" }
 
+Number kg_water_leak_1_link "KG Lecksucher 1 link" (g_zigbee_link) { channel="mqtt:topic:openhab:mi-water-leak-1:link" }
+

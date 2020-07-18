@@ -167,10 +167,10 @@ sitemap control2 label="KONTROL 2"
 			Slider	item=yel_rgb_brightness
 		}
 		Switch item=snf_kg_ks_power label="Bier Kühlschrank" icon="climate"
+		Switch item=kg_water_leak_1 label="Wasser Leck KG" icon="rain"
 	}
 
 	Frame icon="bedroom" {
-
 		Group item=gSettings label="Enstellungen" {
 			Frame label="Heuzung" {
 				Switch	item=cfgHeatingEnable label="Ein"
