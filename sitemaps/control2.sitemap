@@ -7,8 +7,8 @@ sitemap control2 label="KONTROL 2"
 				Text 		item=miSensorWeatherHum
 			}
 			Frame {
-				Webview label="Draußentemperatur" icon="temperature" height=8 url="https://stat.home.pws/d-solo/000000002/klimat?orgId=1&theme=dark&panelId=3&inactive=1"
-				Webview label="Raumtemperatur" icon="temperature" height=8 url="https://stat.home.pws/d-solo/000000002/klimat?orgId=1&theme=dark&panelId=1"
+				Webview label="Draußentemperatur" icon="temperature" height=8 url="https://stats.home.pws/d-solo/000000002/klimat?orgId=1&theme=dark&panelId=3&inactive=1"
+				Webview label="Raumtemperatur" icon="temperature" height=8 url="https://stats.home.pws/d-solo/000000002/klimat?orgId=1&theme=dark&panelId=1"
 			}
 			Frame label="Local Weather Station" {
 				Text item=localStationId
