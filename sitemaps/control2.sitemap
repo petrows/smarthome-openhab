@@ -84,6 +84,7 @@ sitemap control2 label="KONTROL 2"
 				Switch item=snf_eg_sz label="Haupt [%s]" icon="light"
 				Switch item=g_light_eg_sz_night label="Nacht [%s]" icon="light"
 				Slider item=g_light_eg_sz_night_brightness label="Nacht dim [%d]" icon="light"
+				Slider item=light_sunrise_enabled icon="light"
 			}
 			Frame label="Nachtlampe" {
 				Switch item=ikea_led_2819_sw label="Nacht 1 [%s]"
@@ -92,6 +93,8 @@ sitemap control2 label="KONTROL 2"
 				Slider item=ikea_led_2203_brightness label="Nacht 2 dim [%d %%]"
 				Switch item=ikea_led_007b_sw label="Nacht 3 [%s]"
 				Slider item=ikea_led_007b_brightness label="Nacht 3 dim [%d %%]"
+				Switch item=yel_white_1_sw label="Nacht white [%s]"
+				Slider item=yel_white_1_brightness label="Nacht white dim [%d %%]"
 			}
 		}
 		Group item=g_light_kg label="Keller [%s]" icon="light" {

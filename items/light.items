@@ -18,6 +18,7 @@ Group:Switch:OR(ON, OFF) g_light_kg_auto // Lamps to be on by "All ON"
 Group:Switch:OR(ON, OFF) g_light_treppe
 
 String light_all_mode "Light mode" <light>
+String light_sunrise_enabled "Sunrise enabled" <light>
 
 // ====== EG
 

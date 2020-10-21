@@ -26,9 +26,14 @@ when
 then
     logWarn("light", "Sunrise emulation started")
 
-    sunriseBrightness = 0;    
+    if (light_sunrise_enabled.state == OFF) {
+        logWarn("light", "Sunrise emulation disabled")
+        return
+    }
+
+    sunriseBrightness = 0;
     sunriseStarted = false;
-    
+
     sunriseTimer = createTimer(now, [ |
 
         if (sunriseStarted) {

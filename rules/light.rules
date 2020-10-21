@@ -16,10 +16,9 @@ then
             g_light_all.members.forEach [s |
                 if (s != ikea_led_2819_sw) {
                     s.sendCommand(OFF)
-                } else {
-                    s.sendCommand(ON)
                 }
             ]
+            ikea_led_2819_brightness.sendCommand(0)
         }
     }
 end
