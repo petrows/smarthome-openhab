@@ -84,7 +84,7 @@ sitemap control2 label="KONTROL 2"
 				Switch item=snf_eg_sz label="Haupt [%s]" icon="light"
 				Switch item=g_light_eg_sz_night label="Nacht [%s]" icon="light"
 				Slider item=g_light_eg_sz_night_brightness label="Nacht dim [%d]" icon="light"
-				Slider item=light_sunrise_enabled icon="light"
+				Switch item=light_sunrise_enabled icon="light"
 			}
 			Frame label="Nachtlampe" {
 				Switch item=ikea_led_2819_sw label="Nacht 1 [%s]"
