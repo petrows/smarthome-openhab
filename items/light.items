@@ -6,6 +6,7 @@ Group:Switch:OR(ON, OFF) g_light_eg_bz
 Group:Switch:OR(ON, OFF) g_light_eg_fs
 Group:Switch:OR(ON, OFF) g_light_eg_sz
 Group:Switch:OR(ON, OFF) g_light_eg_ku
+Group:Switch:OR(ON, OFF) g_light_eg_ns
 
 Group:Switch:OR(ON, OFF) g_light_eg_sz_decor
 Group:Switch:OR(ON, OFF) g_light_eg_sz_night
@@ -33,11 +34,13 @@ Dimmer ikea_led_89d1_brightness "Marina desktop dim [%d]" { channel="mqtt:topic:
 Dimmer ikea_led_89d1_temp "Marina desktop color [%d]" <colorpicker> { channel="mqtt:topic:openhab:ikea-led-89d1:temp" }
 Number ikea_led_89d1_link "Marina desktop link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-89d1:link" }
 
+Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
+Switch snf_eg_ns_table "NS Tisch" <energy> (g_light_all, g_light_eg,g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns-table:power" }
+
 Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
 Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
 Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }
 Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_all, g_light_eg, g_light_eg_sz) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
-Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
 Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_fs) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
 Switch snf_eg_bz_1 "BAD Licht 1" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power1" }
 Switch snf_eg_bz_2 "BAD Licht 2" <light> (g_light_all, g_light_eg, g_light_eg_bz) { channel="mqtt:topic:openhab:snf-eg-bz:power2" }
