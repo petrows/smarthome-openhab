@@ -182,6 +182,20 @@ Thing mqtt:topic:openhab:ikea-sw-92f3 (mqtt:broker:openhab) {
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.linkquality" ]
 }
+Thing mqtt:topic:openhab:ikea-sw-01f8 (mqtt:broker:openhab) {
+	Channels:
+		Type string : click [ stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.click", trigger=true ]
+		Type number : battery [ stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.battery" ]
+		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JS:z2m-lowbatt.js" ]
+		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.linkquality" ]
+}
+Thing mqtt:topic:openhab:ikea-sw-356e (mqtt:broker:openhab) {
+	Channels:
+		Type string : click [ stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.click", trigger=true ]
+		Type number : battery [ stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.battery" ]
+		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JS:z2m-lowbatt.js" ]
+		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.linkquality" ]
+}
 
 // IKEA TRADFRI remote control (E1524/E1810)
 // (mqtt:broker:openhab) {"linkquality":49,"battery":100,"action":"toggle"}

@@ -9,7 +9,7 @@ when
     Channel "mqtt:topic:openhab:zigbee-root:log" triggered
 then
 	var json = receivedEvent.getEvent()
-	
+
 	logInfo("coordinator", "Coordinator log: " + json)
 
 	var type = transform("JSONPATH", "$.type", json)

@@ -157,30 +157,16 @@ end
 
 rule "Treppe licht UNTEN btn"
 when
-    Channel "mqtt:topic:openhab:mi-button-12b9:click" triggered
+    Channel "mqtt:topic:openhab:ikea-sw-356e:click" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {
-        case "single": {
-            if (g_light_treppe.state == ON) {
-                // If light is on, but dim -> 100% power
-                if (g_dim_treppe.state != 100) {
-                    sendCommand(g_dim_treppe, 100)
-                } else {
-                    g_light_treppe.sendCommand(OFF)
-                }
-            } else {
-                // g_light_treppe.sendCommand(ON)
-                sendCommand(g_dim_treppe, 100)
-            }
+        case "on": {
+            sendCommand(g_dim_treppe, 100)
         }
-        case "long": {
-            if (g_light_kg.state == ON) {
-                g_light_kg.sendCommand(OFF)
-            } else {
-                g_light_kg_auto.sendCommand(ON)
-                sendCommand(g_dim_treppe, 100)
-            }
+        case "off": {
+            g_light_treppe.sendCommand(OFF)
+            sendCommand(ikea_led_345a_sw, OFF) // Lager licht also OFF
         }
     }
 end
@@ -210,6 +196,21 @@ then
     }
     if (state == ON && ikea_led_345a_sw.state == OFF) {
         sendCommand(ikea_led_345a_brightness, 30)
+    }
+end
+
+rule "KG Lager btn"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-01f8:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "on": {
+            sendCommand(ikea_led_345a_brightness, 100)
+        }
+        case "off": {
+            sendCommand(ikea_led_345a_sw, OFF)
+        }
     }
 end
 
