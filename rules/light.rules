@@ -52,7 +52,7 @@ end
 
 rule "Light safe switch"
 when
-	Time cron "0 00 01,02,03,04 ? * *"
+	Time cron "0 00 03,04 ? * *"
 then
 	logWarn("light", "Set safe off")
 	g_light_all.sendCommand(OFF)
