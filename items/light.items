@@ -17,6 +17,7 @@ Group:Dimmer:MAX g_light_eg_sz_decor_brightness
 Group:Switch:OR(ON, OFF) g_light_kg // All lamps in KG
 Group:Switch:OR(ON, OFF) g_light_kg_auto // Lamps to be on by "All ON"
 Group:Switch:OR(ON, OFF) g_light_treppe
+Group:Dimmer:MAX g_dim_treppe
 
 String light_all_mode "Light mode" <light>
 Switch light_sunrise_enabled "Sunrise enabled" <light>
@@ -83,10 +84,15 @@ Number ikea_led_ef9d_link "KG desktop link" <network> (g_zigbee_link) { channel=
 
 // Treppe oben
 Switch ikea_led_bfde_sw "Treppe oben sw" <light> (g_light_all, g_light_treppe, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-bfde:state", expire="1h,command=OFF" }
-Dimmer ikea_led_bfde_brightness "Treppe oben dim []" { channel="mqtt:topic:openhab:ikea-led-bfde:brightness" }
+Dimmer ikea_led_bfde_brightness "Treppe oben dim []" (g_dim_treppe) { channel="mqtt:topic:openhab:ikea-led-bfde:brightness" }
 Number ikea_led_bfde_link "Treppe oben link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-bfde:link" }
 
 // Treppe unten
 Switch ikea_led_95b5_sw "Treppe unten sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-95b5:state", expire="1h,command=OFF" }
-Dimmer ikea_led_95b5_brightness "Treppe unten dim []" { channel="mqtt:topic:openhab:ikea-led-95b5:brightness" }
+Dimmer ikea_led_95b5_brightness "Treppe unten dim []" (g_dim_treppe) { channel="mqtt:topic:openhab:ikea-led-95b5:brightness" }
 Number ikea_led_95b5_link "Treppe unten link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-95b5:link" }
+
+// Lager Flür
+Switch ikea_led_345a_sw "Lager Flür sw" <light> (g_light_all, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-345a:state", expire="1h,command=OFF" }
+Dimmer ikea_led_345a_brightness "Lager Flür dim []" { channel="mqtt:topic:openhab:ikea-led-345a:brightness" }
+Number ikea_led_345a_link "Lager Flür link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-345a:link" }

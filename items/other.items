@@ -2,3 +2,12 @@ Switch snf_kg_ks_power "KG Kühlschrank power" { channel="mqtt:topic:openhab:snf
 
 // Aquara water leak
 Switch kg_water_leak_1 "KG Lecksucher 1" { channel="mqtt:topic:openhab:mi-water-leak-1:leak" }
+
+// Tradfri motion sensors
+// Lager Flür
+Switch ikea_motion_2049_occupancy "KG Motion 1" { channel="mqtt:topic:openhab:ikea-motion-2049:occupancy" }
+Number ikea_motion_2049_link "KG Motion 1 link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-motion-2049:link" }
+
+// Lager Flür fern
+Switch ikea_motion_ca1e_occupancy "KG Motion 2" { channel="mqtt:topic:openhab:ikea-motion-ca1e:occupancy" }
+Number ikea_motion_ca1e_link "KG Motion 2 link" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-motion-ca1e:link" }

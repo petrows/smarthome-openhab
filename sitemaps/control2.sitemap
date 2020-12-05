@@ -100,12 +100,16 @@ sitemap control2 label="KONTROL 2"
 		}
 		Group item=g_light_kg label="Keller [%s]" icon="light" {
 			Switch item=g_light_treppe label="Treppe [%s]" icon="light"
+			Slider item=g_dim_treppe label="Treppe dim [%d]" icon="light"
 			Switch item=snf_kg_l1 label="Haupt [%s]" icon="light"
 			Switch item=snf_kg_l2 label="Flür [%s]" icon="light"
 			Switch item=snf_kg_lg1 label="Lager 1 [%s]" icon="light"
+			Switch item=ikea_led_345a_sw label="Lager Flür [%s]" icon="light"
 			Switch item=ikea_led_ef9d_sw label="Desktop [%s]" icon="light"
 			Slider item=ikea_led_ef9d_brightness label="Desktop dim [%d]" icon="light"
 			Slider item=ikea_led_ef9d_temp label="Desktop farbe [%d %%]" icon="light"
+			Text item=ikea_motion_2049_occupancy label="Motion 1 [%s]" icon="motion"
+			Text item=ikea_motion_ca1e_occupancy label="Motion 2 [%s]" icon="motion"
 		}
 	}
 

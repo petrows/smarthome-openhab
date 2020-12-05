@@ -163,9 +163,15 @@ then
     switch(state) {
         case "single": {
             if (g_light_treppe.state == ON) {
-                g_light_treppe.sendCommand(OFF)
+                // If light is on, but dim -> 100% power
+                if (g_dim_treppe.state != 100) {
+                    sendCommand(g_dim_treppe, 100)
+                } else {
+                    g_light_treppe.sendCommand(OFF)
+                }
             } else {
-                g_light_treppe.sendCommand(ON)
+                // g_light_treppe.sendCommand(ON)
+                sendCommand(g_dim_treppe, 100)
             }
         }
         case "long": {
@@ -173,8 +179,37 @@ then
                 g_light_kg.sendCommand(OFF)
             } else {
                 g_light_kg_auto.sendCommand(ON)
+                sendCommand(g_dim_treppe, 100)
             }
         }
+    }
+end
+
+// Motion detect in KG
+rule "KG Motion detect haupt"
+when
+    Item ikea_motion_2049_occupancy changed
+then
+    var state = ikea_motion_2049_occupancy.state
+    if (state == OFF) {
+        sendCommand(g_light_treppe, OFF)
+    }
+    if (state == ON && g_light_treppe.state == OFF) {
+        sendCommand(g_dim_treppe, 30)
+    }
+end
+
+// Motion detect in Lager Flür
+rule "KG Motion detect Lager"
+when
+    Item ikea_motion_ca1e_occupancy changed
+then
+    var state = ikea_motion_ca1e_occupancy.state
+    if (state == OFF) {
+        sendCommand(ikea_led_345a_sw, OFF)
+    }
+    if (state == ON && ikea_led_345a_sw.state == OFF) {
+        sendCommand(ikea_led_345a_brightness, 30)
     }
 end
 
@@ -312,4 +347,3 @@ then
     var state = snf_eg_bz_2.state
     if (snf_eg_bz_1.state != state) { sendCommand(snf_eg_bz_1, state) }
 end
-
