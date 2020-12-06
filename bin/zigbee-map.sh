@@ -18,8 +18,8 @@ mosquitto_pub -u $MQTT_USER -P $MQTT_PASS -t zigbee2mqtt/bridge/networkmap -m gr
 wait
 
 # generate graphic with graphviz (change to short texts with sed)
-cat ${file}.dot|sed -e 's/Xiaomi Aqara temperature, humidity and pressure sensor/AqaraTHP/g'|sed -e 's/Xiaomi Mi\/Aqara smart home cube/AqaraCube/g'|sed -e 's/Xiaomi Aqaradouble key wireless wall switch/AqaraDoubleSwitch/g'|circo -Tsvg  > ${file}${fechahora}.svg
+cat ${file}.dot|sed -e 's/Xiaomi Aqara temperature, humidity and pressure sensor/AqaraTHP/g'|sed -e 's/Xiaomi Mi\/Aqara smart home cube/AqaraCube/g'|sed -e 's/Xiaomi Aqaradouble key wireless wall switch/AqaraDoubleSwitch/g'|circo -Tsvg  > ${fechahora}.svg
 
 # display with imageMagick command
 # display ${file}${fechahora}.svg &
-echo "File: ${file}${fechahora}.svg"
+echo "File: ${fechahora}.svg"

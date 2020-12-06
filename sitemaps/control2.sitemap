@@ -199,8 +199,12 @@ sitemap control2 label="KONTROL 2"
 				Setpoint	item=cfgHeatingTempHeat minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
 				Text	item=hz_temp_auto label="Temperatur auto [%.1f °C]" icon=heatingt visibility=[cfgHeatingEnable==ON]
 			}
-			Frame label="Присутствие" {
+			Frame label="Beisein" {
 				Switch	item=cfgPersistanceEnable
+			}
+			Frame label="Licht" {
+				Switch	item=light_sunrise_enabled
+				Switch	item=light_astrocolor_enabled
 			}
 		}
 

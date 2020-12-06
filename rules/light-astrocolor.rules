@@ -1,0 +1,78 @@
+// Light color sunset emulation
+
+// === Configuration
+
+// How long full programm runs (seconds): 4 hrs from 18 to 22
+
+val astrocolorProgramPeriod = 4 * 60 * 60
+
+// Default color value to be set for DAY
+val astrocolorDaylight = 10
+
+// Persentage to be change on each step
+// Inrease this value to reduce command traffic, decrease for better smooth
+
+val astrocolorProgramPeriodStep = 1
+
+// === Configuration
+
+// Global vars
+var Timer astrocolorTimer = null
+var astrocolorSteps = 0.0
+var astrocolorValue = 0.0
+var astrocolorTimerMs = 0.0
+
+rule "Reset astrocolor state"
+when
+    Time cron "0 00 05 ? * *"
+then
+    logWarn("light", "Astrocolor reset")
+
+    light_astrocolor_enabled.sendCommand(ON)
+    g_light_astro_color.sendCommand(astrocolorDaylight) // Default color value for DAY
+end
+
+rule "Set lamps color according to daytime"
+when
+    Time cron "0 00 18 ? * *"
+    or Item test_sw_check_astrocolor received command
+then
+    logWarn("light", "Astrocolor emulation started")
+
+    if (light_astrocolor_enabled.state == OFF) {
+        logWarn("light", "Astrocolor emulation disabled")
+        return
+    }
+
+    // On start, read current value from group and use it as "start value"
+    // We dont want to start awlays from "very cold"
+    astrocolorValue = Math.round((g_light_astro_color.state as DecimalType).doubleValue)
+    // How much Persent we should move to reach 100%
+    astrocolorSteps = 100.0 - astrocolorValue
+    // Calculate timer
+    astrocolorTimerMs = ((astrocolorProgramPeriod as double) * 1000.0) / (astrocolorSteps / astrocolorProgramPeriodStep)
+
+    logInfo("light", "Astrocolor config: Initital value " + astrocolorValue + ", timer " + astrocolorTimerMs + " ms")
+
+    astrocolorTimer = createTimer(now, [ |
+
+        if (light_astrocolor_enabled.state == OFF) {
+            logWarn("light", "Astrocolor emulation disabled")
+            return
+        }
+
+        logInfo("light", "Astrocolor set color: " + astrocolorValue)
+
+        g_light_astro_color.sendCommand(astrocolorValue)
+
+        // All items 100% ?
+        if (astrocolorValue >= 100) {
+            astrocolorTimer = null
+            logWarn("light", "Astrocolor emulation done")
+        } else {
+            // New timer loop
+            astrocolorValue = astrocolorValue + astrocolorProgramPeriodStep
+            astrocolorTimer.reschedule(now.plusMillis(astrocolorTimerMs as int))
+        }
+    ])
+end

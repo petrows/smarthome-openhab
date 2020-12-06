@@ -5,4 +5,5 @@
 
 Switch testSw
 Switch testSwSunrise
+Switch test_sw_check_astrocolor
 Switch test_sw_check_activity
