@@ -215,6 +215,10 @@ sitemap control2 label="KONTROL 2"
 				Text	item=hz_ns_lbatt label="Nagel Studio [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=hz_sz_lbatt label="Schlaffzimmer [MAP(lowbat.map):%s]" icon=lowbattery
 			}
+			Frame label="Common status" {
+				Group item=g_battery_low icon=lowbattery label="Battery low [MAP(lowbat.map):%s]"
+				Group item=g_battery_level icon=battery label="Battery level [%d %%]"
+			}
 			Frame label="Mi Sensoren" icon=heating {
 				Text	item=miSensorWeatherBattLow label="Wetter [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=miSensorNsBattLow label="Nagel Studio [MAP(lowbat.map):%s]" icon=lowbattery
@@ -225,10 +229,6 @@ sitemap control2 label="KONTROL 2"
 			}
 			Frame label="Mi Andere" icon=heating {
 				Text	item=mi_button_5b2d_battery_low label="BTN KG Desktop [MAP(lowbat.map):%s]" icon=lowbattery
-			}
-			Frame {
-				Chart item=g_battery_level period=w refresh=60
-				Group item=g_battery_level
 			}
 		}
 

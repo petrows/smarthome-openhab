@@ -98,13 +98,14 @@ Thing mqtt:topic:openhab:mi-button-5b2d (mqtt:broker:openhab) {
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.linkquality" ]
 }
-Thing mqtt:topic:openhab:mi-button-12b9 (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.click", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.linkquality" ]
-}
+// Not used
+// Thing mqtt:topic:openhab:mi-button-12b9 (mqtt:broker:openhab) {
+// 	Channels:
+// 		Type string : click [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.click", trigger=true ]
+// 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.battery" ]
+// 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JS:z2m-lowbatt.js" ]
+// 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001e612b9", transformationPattern="JSONPATH:$.linkquality" ]
+// }
 
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM)
 Thing mqtt:topic:openhab:mi-sensor-cc22 (mqtt:broker:openhab) {
