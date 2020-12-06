@@ -9,7 +9,8 @@ Switch online_max_thermostat "Max thermostat GW" (gOnline) { channel="network:pi
 
 Switch online_snf_kg_1 "Sonoff KG 1" (gOnline) { channel="network:pingdevice:snf_kg_1:online" }
 Switch online_snf_kg_2 "Sonoff KG 2" (gOnline) { channel="network:pingdevice:snf_kg_2:online" }
-Switch online_snf_kg_ks "Sonoff KG Kühlschrank" (gOnline) { channel="network:pingdevice:snf_kg_ks:online" }
+// Broken
+// Switch online_snf_kg_ks "Sonoff KG Kühlschrank" (gOnline) { channel="network:pingdevice:snf_kg_ks:online" }
 Switch online_snf_eg_fs "Sonoff EG FS" (gOnline) { channel="network:pingdevice:snf_eg_fs:online" }
 Switch online_snf_eg_ns "Sonoff EG NS" (gOnline) { channel="network:pingdevice:snf_eg_ns:online" }
 Switch online_snf_eg_sz "Sonoff EG SZ" (gOnline) { channel="network:pingdevice:snf_eg_sz:online" }

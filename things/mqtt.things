@@ -117,6 +117,7 @@ Thing mqtt:topic:openhab:mi-sensor-cc22 (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-activity.js" ]
 }
 Thing mqtt:topic:openhab:mi-sensor-9a6b (mqtt:broker:openhab) {
 	Channels:
@@ -125,6 +126,7 @@ Thing mqtt:topic:openhab:mi-sensor-9a6b (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-activity.js" ]
 }
 Thing mqtt:topic:openhab:mi-sensor-5121 (mqtt:broker:openhab) {
 	Channels:
@@ -133,6 +135,7 @@ Thing mqtt:topic:openhab:mi-sensor-5121 (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-activity.js" ]
 }
 
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM)
@@ -233,7 +236,6 @@ Thing mqtt:topic:openhab:ikea-remote-357d (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-activity.js" ]
 }
 // Marina Desktop
 Thing mqtt:topic:openhab:ikea-remote-9703 (mqtt:broker:openhab) {
@@ -317,6 +319,7 @@ Thing mqtt:topic:openhab:ikea-motion-2049 (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JS:z2m-activity.js" ]
 }
 Thing mqtt:topic:openhab:ikea-motion-ca1e (mqtt:broker:openhab) {
 	Channels:
@@ -324,4 +327,5 @@ Thing mqtt:topic:openhab:ikea-motion-ca1e (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JS:z2m-activity.js" ]
 }

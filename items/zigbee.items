@@ -55,9 +55,31 @@ DateTime ikea_motion_ca1e_activity "Motion KG Lager [JS(display-activity.js):%s]
 // Xiaomi items
 
 // Mi button Kuche
-Number mi_button_5b2d_link "Arbeitlicht SW KU" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-button-5b2d:link" }
+Number mi_button_5b2d_link "Arbeitlicht SW KU [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-button-5b2d:link" }
 Number mi_button_5b2d_battery "Arbeitlicht SW KU [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-button-5b2d:battery" }
 Switch mi_button_5b2d_battery_low "Arbeitlicht SW KU [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-button-5b2d:battery_low" }
+
+// Sensor 1 // Outside
+Number miSensorWeatherTemp "MI Sens Weather [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-cc22:temperature" }
+Number miSensorWeatherHum "MI Sens Weather [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-cc22:humidity" }
+Number miSensorWeatherLink "MI Sens Weather [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-sensor-cc22:link" }
+Number miSensorWeatherBatt "MI Sens Weather [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-cc22:battery" }
+Switch miSensorWeatherBattLow "MI Sens Weather [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-sensor-cc22:battery_low" }
+DateTime mi_sens_weather_activity "MI Sens Weather [JS(display-activity.js):%s]" <time> (g_zigbee_activity) { channel="mqtt:topic:openhab:mi-sensor-cc22:activity" }
+
+// Sensor 2 // Sleeping room
+Number miSensorSleepingTemp "MI Sens SZ [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-9a6b:temperature" }
+Number miSensorSleepingHum "MI Sens SZ [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-9a6b:humidity" }
+Number miSensorSleepingBatt "MI Sens SZ [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-9a6b:battery" }
+Switch miSensorSleepingBattLow "MI Sens SZ [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-sensor-9a6b:battery_low" }
+DateTime mi_sens_sz_activity "MI Sens SZ [JS(display-activity.js):%s]" <time> (g_zigbee_activity) { channel="mqtt:topic:openhab:mi-sensor-9a6b:activity" }
+
+// Sensor 3 // Fotostudio
+Number miSensorFsTemp "MI Sens FS [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5121:temperature" }
+Number miSensorFsHum "MI Sens FS [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5121:humidity" }
+Number miSensorFsBatt "MI Sens FS [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-5121:battery" }
+Switch miSensorFsBattLow "MI Sens FS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-sensor-5121:battery_low" }
+DateTime mi_sens_fs_activity "MI Sens FS [JS(display-activity.js):%s]" <time> (g_zigbee_activity) { channel="mqtt:topic:openhab:mi-sensor-5121:activity" }
 
 // Sensor 2.0 4 // KG
 Number miSensorKGTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:temperature" }

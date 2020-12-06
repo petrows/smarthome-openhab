@@ -202,9 +202,6 @@ sitemap control2 label="KONTROL 2"
 			Frame label="Присутствие" {
 				Switch	item=cfgPersistanceEnable
 			}
-			Frame label="ZigBee" {
-				Switch	item=zigbee_root_pair label="ZigBee pair Erlaubnis"
-			}
 		}
 
 		Group item=g_battery_low label="Battarein [MAP(lowbat.map):%s]" icon=lowbattery {
@@ -219,16 +216,26 @@ sitemap control2 label="KONTROL 2"
 				Group item=g_battery_low icon=lowbattery label="Battery low [MAP(lowbat.map):%s]"
 				Group item=g_battery_level icon=battery label="Battery level [%d %%]"
 			}
-			Frame label="Mi Sensoren" icon=heating {
-				Text	item=miSensorWeatherBattLow label="Wetter [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorNsBattLow label="Nagel Studio [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorKGBattLow label="KG [MAP(lowbat.map):%s]" icon=lowbattery
-				Text    item=miSensorKitchenBattLow label="Küche [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorFsBattLow label="Foto Studio [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=miSensorSleepingBattLow label="Schlaffzimmer [MAP(lowbat.map):%s]" icon=lowbattery
+			// Frame label="Mi Sensoren" icon=heating {
+			// 	Text	item=miSensorWeatherBattLow label="Wetter [MAP(lowbat.map):%s]" icon=lowbattery
+			// 	Text	item=miSensorNsBattLow label="Nagel Studio [MAP(lowbat.map):%s]" icon=lowbattery
+			// 	Text	item=miSensorKGBattLow label="KG [MAP(lowbat.map):%s]" icon=lowbattery
+			// 	Text    item=miSensorKitchenBattLow label="Küche [MAP(lowbat.map):%s]" icon=lowbattery
+			// 	Text	item=miSensorFsBattLow label="Foto Studio [MAP(lowbat.map):%s]" icon=lowbattery
+			// 	Text	item=miSensorSleepingBattLow label="Schlaffzimmer [MAP(lowbat.map):%s]" icon=lowbattery
+			// }
+			// Frame label="Mi Andere" icon=heating {
+			// 	Text	item=mi_button_5b2d_battery_low label="BTN KG Desktop [MAP(lowbat.map):%s]" icon=lowbattery
+			// }
+		}
+
+		Group item=g_zigbee_link label="Zigbee" icon=network {
+			Frame label="ZigBee Config" {
+				Switch	item=zigbee_root_pair label="ZigBee pair Erlaubnis"
 			}
-			Frame label="Mi Andere" icon=heating {
-				Text	item=mi_button_5b2d_battery_low label="BTN KG Desktop [MAP(lowbat.map):%s]" icon=lowbattery
+			Frame label="ZigBee" {
+				Group item=g_zigbee_link label="ZigBee link"
+				Group item=g_zigbee_activity label="ZigBee activity"
 			}
 		}
 
@@ -241,28 +248,24 @@ sitemap control2 label="KONTROL 2"
 				Text	item=online_max_thermostat icon=network
 				Text	item=online_snf_kg_1 icon=network
 				Text	item=online_snf_kg_2 icon=network
-				Text	item=online_snf_kg_ks icon=network
+				//Text	item=online_snf_kg_ks icon=network
 				Text	item=online_snf_eg_fs icon=network
 				Text	item=online_snf_eg_ns icon=network
 				Text	item=online_snf_eg_sz icon=network
 				Text	item=online_snf_eg_bz icon=network
 			}
-			Frame label="ZigBee" {
-				Group item=g_zigbee_link label="ZigBee link"
-				Group item=g_zigbee_activity label="ZigBee activity"
-			}
 		}
 
-		Group item=gPresent label="Beisein [MAP(presence.map):%s]" icon=network {
-			Text	item=gPresentPeter label="Петр [MAP(presence.map):%s]" icon=network {
-				Text	item=presBlePeter label="Петр BLE" icon=network
-				Text	item=presMobilePeter label="Петр мобильный" icon=network
-			}
-			Text	item=gPresentMarina label="Марина [MAP(presence.map):%s]" icon=network {
-				Text	item=presBleMarina label="Марина BLE" icon=network
-				Text	item=presMobileMarina label="Марина мобильный" icon=network
-			}
-		}
+		// Group item=gPresent label="Beisein [MAP(presence.map):%s]" icon=network {
+		// 	Text	item=gPresentPeter label="Петр [MAP(presence.map):%s]" icon=network {
+		// 		Text	item=presBlePeter label="Петр BLE" icon=network
+		// 		Text	item=presMobilePeter label="Петр мобильный" icon=network
+		// 	}
+		// 	Text	item=gPresentMarina label="Марина [MAP(presence.map):%s]" icon=network {
+		// 		Text	item=presBleMarina label="Марина BLE" icon=network
+		// 		Text	item=presMobileMarina label="Марина мобильный" icon=network
+		// 	}
+		// }
 
 	}
 }
