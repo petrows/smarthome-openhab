@@ -1,4 +1,5 @@
-Group g_zigbee_activity <time>
+Group:Number:AVG g_zigbee_link "Zigbee Link [%d %%]" <network>
+Group:DateTime:EARLIEST g_zigbee_activity "Zigbee Activity [JS(display-activity.js):%s]" <time>
 
 Switch zigbee_root_pair "ZB root pair" { channel="mqtt:topic:openhab:zigbee-root:pair", expire="15m,command=OFF" }
 
@@ -6,6 +7,7 @@ Number zigbee_router_1_link "ZB router 1 [%d %%]" <network> (g_zigbee_link) { ch
 
 // Number ikea_router_6a05 "Ikea router 1" (g_zigbee_link) { channel="mqtt:topic:openhab:zigbee-router-6a05:link" }
 
+// Ikea ON/OFF switch
 Number ikea_sw_e111_link "Ikea SW Verlassen [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-sw-e111:link" }
 Number ikea_sw_e111_battery "Ikea SW Verlassen [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-sw-e111:battery" }
 Switch ikea_sw_e111_battery_low "Ikea SW Verlassen [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-sw-e111:battery_low" }
@@ -18,6 +20,7 @@ Number ikea_sw_356e_link "Ikea SW Treppe Unten [%d %%]" <network> (g_zigbee_link
 Number ikea_sw_356e_battery "Ikea SW Treppe Unten [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-sw-356e:battery" }
 Switch ikea_sw_356e_battery_low "Ikea SW Treppe Unten [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-sw-356e:battery_low" }
 
+// Ikea Tradfri remote
 Number ikea_remote_2305_link "Ikea Remote SZ [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-2305:link" }
 Number ikea_remote_2305_battery "Ikea Remote SZ [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-remote-2305:battery" }
 Switch ikea_remote_2305_battery_low "Ikea Remote SZ [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-remote-2305:battery_low" }

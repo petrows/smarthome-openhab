@@ -78,6 +78,8 @@ Thing mqtt:topic:openhab:zigbee-root (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:mi-water-leak-1 (mqtt:broker:openhab) {
 	Channels:
 		Type switch : leak [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.water_leak", on="true", off="false" ]
+		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.battery" ]
+		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.linkquality" ]
 		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JS:z2m-activity.js" ]
 }

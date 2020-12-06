@@ -13,5 +13,3 @@ Switch cfgPersistanceEnable "Определение присутствия" <par
 
 Group:Switch:OR(ON,OFF) g_battery_low
 Group:Number:MIN g_battery_level
-Group:Number:MIN g_zigbee_link
-

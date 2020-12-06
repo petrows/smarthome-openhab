@@ -35,3 +35,27 @@ then
 	sendBroadcastNotification("WATER LEAK IN KG!")
 	logWarn("water-leak", "WATER LEAK IN KG!")
 end
+
+// This rule send notifications if item was not updated within 24 hrs
+rule "Test devices responce time"
+when
+    Time cron "0 00 12 ? * *"
+	or Item test_sw_check_activity received command
+then
+	g_zigbee_activity.members.forEach [s |
+        if (s.state != NULL) {
+            val date_item = new DateTime(( s.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli)
+            val date_now = new DateTime()
+
+            var double diff_hours = (date_now.millis - date_item.millis) / 1000 / 60 / 60
+
+            logInfo("activity", "Item " + s.label + " last update: " + diff_hours)
+
+            if (diff_hours > 24) {
+                sendBroadcastNotification("Item " + s.label + " no activity for " + diff_hours + " h")
+            }
+        } else {
+            logInfo("activity", "Item " + s.label + " never updated")
+        }
+    ]
+end
