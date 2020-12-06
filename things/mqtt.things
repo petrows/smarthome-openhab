@@ -79,6 +79,7 @@ Thing mqtt:topic:openhab:mi-water-leak-1 (mqtt:broker:openhab) {
 	Channels:
 		Type switch : leak [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.water_leak", on="true", off="false" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JS:z2m-activity.js" ]
 }
 
 // 0x00124b000b4ed5cc
@@ -88,6 +89,7 @@ Thing mqtt:topic:openhab:zigbee-router-d5cc (mqtt:broker:openhab) {
 }
 
 // Xiaomi MiJia wireless switch (WXKG01LM)
+// https://www.zigbee2mqtt.io/devices/WXKG01LM.html
 // (mqtt:broker:openhab) {"battery":100,"voltage":3002,"linkquality":28,"click":"single"}
 // (mqtt:broker:openhab) {"battery":100,"voltage":3002,"linkquality":28,"click":"long"}
 // (mqtt:broker:openhab) {"battery":100,"voltage":3002,"linkquality":28,"click":"long_release","duration":1227}
@@ -142,6 +144,7 @@ Thing mqtt:topic:openhab:mi-sensor-5e02 (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-activity.js" ]
 }
 Thing mqtt:topic:openhab:mi-sensor-5fc4 (mqtt:broker:openhab) {
 	Channels:
@@ -151,6 +154,7 @@ Thing mqtt:topic:openhab:mi-sensor-5fc4 (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-activity.js" ]
 }
 Thing mqtt:topic:openhab:mi-sensor-5e08 (mqtt:broker:openhab) {
 	Channels:
@@ -160,6 +164,7 @@ Thing mqtt:topic:openhab:mi-sensor-5e08 (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-activity.js" ]
 }
 
 // IKEA TRADFRI signal repeater (E1746)
@@ -199,6 +204,7 @@ Thing mqtt:topic:openhab:ikea-sw-356e (mqtt:broker:openhab) {
 }
 
 // IKEA TRADFRI remote control (E1524/E1810)
+// https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 // (mqtt:broker:openhab) {"linkquality":49,"battery":100,"action":"toggle"}
 // (mqtt:broker:openhab) {"linkquality":52,"battery":100,"action":"brightness_down_click"}
 // (mqtt:broker:openhab) {"linkquality":47,"battery":100,"action":"brightness_up_click"}
@@ -227,6 +233,7 @@ Thing mqtt:topic:openhab:ikea-remote-357d (mqtt:broker:openhab) {
 		Type number : battery [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.linkquality" ]
+		Type datetime : activity [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-activity.js" ]
 }
 // Marina Desktop
 Thing mqtt:topic:openhab:ikea-remote-9703 (mqtt:broker:openhab) {
