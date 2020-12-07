@@ -206,10 +206,10 @@ then
 	var state = receivedEvent.getEvent()
     switch(state) {
         case "on": {
-            sendCommand(ikea_led_345a_brightness, 100)
+            sendCommand(g_dim_lager_auto, 100)
         }
         case "off": {
-            sendCommand(ikea_led_345a_sw, OFF)
+            sendCommand(g_light_lager_auto, OFF)
         }
     }
 end
