@@ -20,7 +20,9 @@ Group:Dimmer:AVG g_light_astro_color
 Group:Switch:OR(ON, OFF) g_light_kg // All lamps in KG
 Group:Switch:OR(ON, OFF) g_light_kg_auto // Lamps to be on by "All ON"
 Group:Switch:OR(ON, OFF) g_light_treppe
+Group:Switch:OR(ON, OFF) g_light_lager_auto
 Group:Dimmer:MAX g_dim_treppe
+Group:Dimmer:MAX g_dim_lager_auto
 
 String light_all_mode "Light mode" <light>
 Switch light_sunrise_enabled "Sunrise enabled [%s]" <light>
@@ -97,6 +99,11 @@ Dimmer ikea_led_95b5_brightness "Treppe unten dim []" (g_dim_treppe) { channel="
 Number ikea_led_95b5_link "Treppe unten [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-95b5:link" }
 
 // Lager Flür
-Switch ikea_led_345a_sw "Lager Flür sw" <light> (g_light_all, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-345a:state", expire="1h,command=OFF" }
-Dimmer ikea_led_345a_brightness "Lager Flür dim []" { channel="mqtt:topic:openhab:ikea-led-345a:brightness" }
+// 1
+Switch ikea_led_345a_sw "Lager Flür sw" <light> (g_light_all, g_light_kg, g_light_kg_auto, g_light_lager_auto) { channel="mqtt:topic:openhab:ikea-led-345a:state", expire="1h,command=OFF" }
+Dimmer ikea_led_345a_brightness "Lager Flür dim []" (g_dim_lager_auto) { channel="mqtt:topic:openhab:ikea-led-345a:brightness" }
 Number ikea_led_345a_link "Lager Flür [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-345a:link" }
+// 2
+Switch ikea_led_5314_sw "Lager 4 sw" <light> (g_light_all, g_light_kg, g_light_kg_auto, g_light_lager_auto) { channel="mqtt:topic:openhab:ikea-led-5314:state", expire="1h,command=OFF" }
+Dimmer ikea_led_5314_brightness "Lager 4 dim []" (g_dim_lager_auto) { channel="mqtt:topic:openhab:ikea-led-5314:brightness" }
+Number ikea_led_5314_link "Lager 4 [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-5314:link" }

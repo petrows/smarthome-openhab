@@ -110,8 +110,8 @@ sitemap control2 label="KONTROL 2"
 				Switch item=snf_kg_lg1 label="Lager 1 [%s]" icon="light"
 			}
 			Frame label="Lager" {
-				Switch item=ikea_led_345a_sw label="Lager Flür [%s]" icon="light"
-				Slider item=ikea_led_345a_brightness label="Lager dim [%d]" icon="light"
+				Switch item=g_light_lager_auto label="Lager Flür [%s]" icon="light"
+				Slider item=g_dim_lager_auto label="Lager dim [%d]" icon="light"
 				Text item=ikea_motion_ca1e_occupancy label="Motion Lager [%s]" icon="motion"
 			}
 			Frame label="Desktop" {

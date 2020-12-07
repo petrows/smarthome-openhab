@@ -275,6 +275,12 @@ Thing mqtt:topic:openhab:ikea-led-345a (mqtt:broker:openhab) {
 		Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xccccccfffedf345a", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xccccccfffedf345a/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
 		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffedf345a", transformationPattern="JSONPATH:$.linkquality" ]
 }
+Thing mqtt:topic:openhab:ikea-led-5314 (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [ stateTopic="zigbee2mqtt/0xccccccfffedf5314", commandTopic="zigbee2mqtt/0xccccccfffedf5314/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
+		Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xccccccfffedf5314", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xccccccfffedf5314/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
+		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffedf5314", transformationPattern="JSONPATH:$.linkquality" ]
+}
 
 // IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9)
 Thing mqtt:topic:openhab:ikea-led-ef9d (mqtt:broker:openhab) {

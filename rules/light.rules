@@ -192,10 +192,10 @@ when
 then
     var state = ikea_motion_ca1e_occupancy.state
     if (state == OFF) {
-        sendCommand(ikea_led_345a_sw, OFF)
+        sendCommand(g_light_lager_auto, OFF)
     }
-    if (state == ON && ikea_led_345a_sw.state == OFF) {
-        sendCommand(ikea_led_345a_brightness, 30)
+    if (state == ON && g_light_lager_auto.state == OFF) {
+        sendCommand(g_dim_lager_auto, 30)
     }
 end
 
