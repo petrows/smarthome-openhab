@@ -33,6 +33,10 @@ Number ikea_remote_9703 "Ikea Remote Marina DS [%d %%]" <network> (g_zigbee_link
 Number ikea_remote_9703_battery "Ikea Remote Marina DS [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-remote-9703:battery" }
 Switch ikea_remote_9703_battery_low "Ikea Remote Marina DS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-remote-9703:battery_low" }
 
+Number ikea_remote_spiegel "Ikea Remote Spiegel [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-6b80:link" }
+Number ikea_remote_spiegel_battery "Ikea Remote Spiegel [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-remote-6b80:battery" }
+Switch ikea_remote_spiegel_battery_low "Ikea Remote Spiegel [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-remote-6b80:battery_low" }
+
 // Aquara water leak
 Switch kg_water_leak_1 "Flood KG 1" { channel="mqtt:topic:openhab:mi-water-leak-1:leak" }
 Number kg_water_leak_1_link "Flood KG 1 [%d %%]nk" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-water-leak-1:link" }
