@@ -246,6 +246,14 @@ then
     }
 end
 
+// Temp can be changed by Astrocolor rule, so re-apply value on lamp start
+rule "KG Desktop apply color on ON"
+when
+    Item ikea_led_ef9d_sw changed to ON
+then
+	ikea_led_ef9d_temp.sendCommand(ikea_led_ef9d_temp.state)
+end
+
 rule "Marina remote sw (desktop)"
 when
     Channel "mqtt:topic:openhab:ikea-remote-9703:click" triggered
