@@ -58,25 +58,6 @@ then
 	g_light_all.sendCommand(OFF)
 end
 
-rule "Treppe licht OBEN btn"
-when
-    Channel "mqtt:topic:openhab:ikea-sw-92f3:click" triggered
-then
-	var state = receivedEvent.getEvent()
-    switch(state) {
-        case "brightness_up": { // Long press UP
-            g_light_kg_auto.sendCommand(ON)
-            ikea_led_bfde_sw.sendCommand(ON) // Also on light oben (not triggered by defaul)
-        }
-        case "on": {
-            g_light_kg_auto.sendCommand(ON)
-        }
-        case "off": {
-            g_light_kg.sendCommand(OFF)
-        }
-    }
-end
-
 rule "Spiegel control SW"
 when
     Channel "mqtt:topic:openhab:ikea-remote-6b80:click" triggered
@@ -155,7 +136,7 @@ then
 
 end
 
-rule "Treppe licht UNTEN btn"
+rule "KG Ladder BOTTOM btn"
 when
     Channel "mqtt:topic:openhab:ikea-sw-356e:click" triggered
 then
@@ -167,6 +148,28 @@ then
         case "off": {
             g_light_treppe.sendCommand(OFF)
             sendCommand(ikea_led_345a_sw, OFF) // Lager licht also OFF
+        }
+    }
+end
+
+rule "KG Ladder UP btn"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-92f3:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "brightness_up": { // Long press UP
+            g_light_kg_auto.sendCommand(ON)
+            ikea_led_bfde_sw.sendCommand(ON) // Also on light oben (not triggered by defaul)
+            sendCommand(g_dim_treppe, 100) // Full brightness for auto-light
+        }
+        case "on": {
+            g_light_kg_auto.sendCommand(ON)
+            sendCommand(g_dim_treppe, 100)
+        }
+        case "off": {
+            // Up button switches ALL light in KG
+            g_light_kg.sendCommand(OFF)
         }
     }
 end
