@@ -53,7 +53,7 @@ then
         // var lightGroupItems = java.util.Collections.sort(g_light_eg_sz_night.members.map(name))
 
         // We do not use groups, we must have exact order of lamps defined
-        var lightGroupItems = newArrayList("yel_white_1_brightness", "ikea_led_007b_brightness", "ikea_led_2203_brightness", "ikea_led_2819_brightness")
+        var lightGroupItems = newArrayList("snf_eg_fl_spiegel_brightness", "yel_white_1_brightness", "ikea_led_007b_brightness", "ikea_led_2203_brightness", "ikea_led_2819_brightness")
 
         // Sort items
         // lightGroupItems = lightGroupItems.sortBy[1]
