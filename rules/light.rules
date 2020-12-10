@@ -256,6 +256,12 @@ when
 then
 	ikea_led_ef9d_temp.sendCommand(ikea_led_ef9d_temp.state)
 end
+rule "Marina Desktop apply color on ON"
+when
+    Item ikea_led_89d1_sw changed to ON
+then
+	ikea_led_89d1_temp.sendCommand(ikea_led_89d1_temp.state)
+end
 
 rule "Marina remote sw (desktop)"
 when

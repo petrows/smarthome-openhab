@@ -38,7 +38,7 @@ Color	yel_rgb_color	"Цвет"
 // Marina desktop
 Switch ikea_led_89d1_sw "Marina desktop sw" <light> (g_light_all, g_light_eg, g_light_eg_fs) { channel="mqtt:topic:openhab:ikea-led-89d1:state" }
 Dimmer ikea_led_89d1_brightness "Marina desktop dim [%d]" { channel="mqtt:topic:openhab:ikea-led-89d1:brightness" }
-Dimmer ikea_led_89d1_temp "Marina desktop color [%d]" <colorpicker> { channel="mqtt:topic:openhab:ikea-led-89d1:temp" }
+Dimmer ikea_led_89d1_temp "Marina desktop color [%d]" <colorpicker> (g_light_astro_color) { channel="mqtt:topic:openhab:ikea-led-89d1:temp" }
 Number ikea_led_89d1_link "Marina desktop [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-89d1:link" }
 
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
