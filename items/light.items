@@ -45,7 +45,7 @@ Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg, g_lig
 Switch snf_eg_ns_table "NS Tisch" <energy> (g_light_all, g_light_eg,g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns-table:power" }
 
 Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
-Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
+Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg, g_light_eg_sz_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
 Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }
 Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_all, g_light_eg, g_light_eg_sz) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
 Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_fs) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
