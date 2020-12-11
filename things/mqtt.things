@@ -116,6 +116,7 @@ Thing mqtt:topic:openhab:mi-sensor-cc22 (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.temperature" ]
 		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.humidity" ]
+		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.voltage" ]
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.linkquality" ]
@@ -125,6 +126,7 @@ Thing mqtt:topic:openhab:mi-sensor-9a6b (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.temperature" ]
 		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.humidity" ]
+		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.voltage" ]
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.linkquality" ]
@@ -134,6 +136,7 @@ Thing mqtt:topic:openhab:mi-sensor-5121 (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.temperature" ]
 		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.humidity" ]
+		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.voltage" ]
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.linkquality" ]
@@ -146,6 +149,7 @@ Thing mqtt:topic:openhab:mi-sensor-5e02 (mqtt:broker:openhab) {
 		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.temperature" ]
 		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.humidity" ]
 		Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.pressure" ]
+		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.voltage" ]
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.linkquality" ]
@@ -156,6 +160,7 @@ Thing mqtt:topic:openhab:mi-sensor-5fc4 (mqtt:broker:openhab) {
 		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.temperature" ]
 		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.humidity" ]
 		Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.pressure" ]
+		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.voltage" ]
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.linkquality" ]
@@ -166,6 +171,7 @@ Thing mqtt:topic:openhab:mi-sensor-5e08 (mqtt:broker:openhab) {
 		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.temperature" ]
 		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.humidity" ]
 		Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.pressure" ]
+		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.voltage" ]
 		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.battery" ]
 		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-lowbatt.js" ]
 		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.linkquality" ]
