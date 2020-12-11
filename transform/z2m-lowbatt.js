@@ -2,7 +2,7 @@
     var data = JSON.parse(dataString);
     var batt = data['battery'];
 
-    if (batt <= 20) {
+    if (batt <= 10) {
         return "ON";
     }
 
