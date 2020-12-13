@@ -123,7 +123,7 @@ sitemap control2 label="KONTROL 2"
 	}
 
 	Frame {
-		Switch item=g_hz_all label="Heizung []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch item=g_hz_all label="Heizung [%d °C]"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		Text item=g_hz_valve label="Beheizung [%d %%]"
 
 		Group item=miSensorKitchenTemp label="Küche" {
