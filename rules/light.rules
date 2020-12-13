@@ -112,7 +112,9 @@ then
     // Set all except treppe oben
     g_light_all.members.forEach [s |
         if (s == ikea_led_bfde_sw) {
-            s.sendCommand(ON)
+            // s.sendCommand(ON)
+            // Set Ladder lamp ON and 100%
+            ikea_led_bfde_brightness.sendCommand(100)
         } else {
             s.sendCommand(OFF)
         }
