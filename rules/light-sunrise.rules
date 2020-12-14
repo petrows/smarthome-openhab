@@ -22,7 +22,7 @@ var sunriseModeValue = 0
 rule "Sinrise emulation start"
 when
     Time cron "0 00 05 ? * MON-FRI"
-    // Item testSwSunrise changed
+    or Item test_sw_check_sunrize received update
 then
     logWarn("light", "Sunrise emulation started")
 
@@ -39,6 +39,10 @@ then
         if (sunriseStarted) {
             if (g_light_eg_sz_night.state == OFF) {
                 logWarn("light", "Sunrise emulation stopped: group switched off")
+                return
+            }
+            if (light_sunrise_enabled.state == OFF) {
+                logWarn("light", "Sunrise emulation disabled")
                 return
             }
         }
