@@ -239,6 +239,7 @@ sitemap control2 label="KONTROL 2"
 			}
 			Frame label="ZigBee" {
 				Group item=g_zigbee_link
+				Group item=g_zigbee_ota
 				Group item=g_zigbee_activity
 			}
 		}

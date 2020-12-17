@@ -49,6 +49,9 @@ items = [
         'id': "desktop_petro_power",
         'zigbee_id': '0x7cb03eaa0a094bf2',
         'type': DEVICES.OSRAM_SMART_PLUG,
+        'groups': {
+            'sw': ['g_kg_power'],
+        }
     },
 ]
 
