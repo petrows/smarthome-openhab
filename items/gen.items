@@ -1,0 +1,5 @@
+// Petro Desktop power (0x7cb03eaa0a094bf2)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Switch desktop_petro_power_sw "Petro Desktop power" <power> {channel="mqtt:topic:openhab:zigbee-4bf2:state"}
+Number desktop_petro_power_link "Petro Desktop power [%d %%]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:zigbee-4bf2:link"}
+Switch desktop_petro_power_ota "Petro Desktop power [%s]" <settings> (g_zigbee_ota) {channel="mqtt:topic:openhab:zigbee-4bf2:ota"}
