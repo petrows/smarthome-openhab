@@ -4,3 +4,4 @@ things/weather.things
 bin/config.sh
 .vscode
 
+.Trash*
