@@ -2,7 +2,7 @@ var Timer verlassenTimer = null
 
 rule "Spiegel control SW"
 when
-    Channel "mqtt:topic:openhab:ikea-remote-6b80:click" triggered
+    Channel "mqtt:topic:openhab:mirror_remote:action" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {
@@ -132,9 +132,9 @@ then
     }
 end
 
-rule "KG remote sw (desktop)"
+rule "Petro desktop remote"
 when
-    Channel "mqtt:topic:openhab:ikea-remote-357d:click" triggered
+    Channel "mqtt:topic:openhab:desktop_petro_remote:action" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {
@@ -164,9 +164,9 @@ then
     }
 end
 
-rule "Marina remote sw (desktop)"
+rule "Marina desktop remote"
 when
-    Channel "mqtt:topic:openhab:ikea-remote-9703:click" triggered
+    Channel "mqtt:topic:openhab:desktop_marina_remote:action" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {
@@ -190,7 +190,7 @@ end
 
 rule "SZ remote sw"
 when
-    Channel "mqtt:topic:openhab:ikea-remote-2305:click" triggered
+    Channel "mqtt:topic:openhab:sz_remote:action" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {

@@ -11,6 +11,8 @@ import logging
 import argparse
 import numpy as np
 
+from codegen.devices import DEVICES
+
 logging.basicConfig(level=logging.DEBUG)
 
 ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -25,62 +27,15 @@ PREAMBULA = """
 """
 
 
-# Devices, used in this configuration
-class DEVICES:
-    # IKEA Lamps
-    IKEA_TRADFRI_LAMP_CLEAR_806 = {
-        'types': [
-            'zigbee',
-            'lamp',
-            'ikea',
-            'ct',
-        ],
-        'device_name': 'IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9)',
-        'device_url': 'https://www.zigbee2mqtt.io/devices/LED1736G9.html',
-    }
-    IKEA_TRADFRI_LAMP_CT_1000 = {
-        'types': [
-            'zigbee',
-            'lamp',
-            'ikea',
-            'ct',
-        ],
-        'device_name': 'IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11)',
-        'device_url': 'https://www.zigbee2mqtt.io/devices/LED1732G11.html',
-    }
-    IKEA_TRADFRI_LAMP_W_806 = {
-        'types': [
-            'zigbee',
-            'lamp',
-            'ikea',
-        ],
-        'device_name': 'IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)',
-        'device_url': 'https://www.zigbee2mqtt.io/devices/LED1836G9.html',
-    }
-    # IKEA Motion
-    IKEA_TRADFRI_MOTION_SENSOR = {
-        'types': [
-            'zigbee',
-            'motion',
-            'ikea',
-            'battery',
-        ],
-        'device_name': 'IKEA TRADFRI motion sensor (E1525/E1745)',
-        'device_url': 'https://www.zigbee2mqtt.io/devices/E1525_E1745.html',
-    }
-    # Sockets
-    OSRAM_SMART_PLUG = {
-        'types': [
-            'zigbee',
-            'plug',
-        ],
-        'device_name': 'OSRAM Smart+ plug',
-        'device_url': 'https://www.zigbee2mqtt.io/devices/AB3257001NJ.html',
-    }
-
-
 # Items defentition
 items = [
+    # EG (Corridor)
+    {
+        'name': "Mirror remote",
+        'id': "mirror_remote",
+        'zigbee_id': '0x680ae2fffeab6b80',
+        'type': DEVICES.IKEA_TRADFRI_REMOTE,
+    },
     # EG (Foto Studio)
     {
         'name': "Marina Desktop light",
@@ -91,6 +46,19 @@ items = [
             'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_fs'],
             'ct': ['g_light_astro_color'],
         }
+    },
+    {
+        'name': "Marina Desktop remote",
+        'id': "desktop_marina_remote",
+        'zigbee_id': '0xccccccfffeea9703',
+        'type': DEVICES.IKEA_TRADFRI_REMOTE,
+    },
+    # EG (Bedroom)
+    {
+        'name': "Bedroom remote",
+        'id': "sz_remote",
+        'zigbee_id': '0x14b457fffe7e2305',
+        'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
     # KG
     {
@@ -111,6 +79,12 @@ items = [
         'groups': {
             'sw': ['g_kg_power'],
         }
+    },
+    {
+        'name': "Petro Desktop remote",
+        'id': "desktop_petro_remote",
+        'zigbee_id': '0x000d6ffffee8357d',
+        'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
     {
         'name': "Treppe Up light",
@@ -233,6 +207,10 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-state.js\""
                     f"]"
                 )
+            # Device has remote option
+            if np.in1d(['remote'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType string : action [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.action\", trigger=true]")
             # Device has dimmer
             if np.in1d(['lamp'], item['type']['types']).any():
                 conf_str.append(
@@ -243,7 +221,7 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-brightness.js\", min=1, max=255"
                     f"]"
                 )
-            # Device has Colot Temp control
+            # Device has Color Temp control
             if np.in1d(['ct'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType dimmer : ct ["
@@ -257,14 +235,12 @@ if __name__ == "__main__":
             if np.in1d(['motion'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType switch : occupancy [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-occupancy.js\"]")
-
             # Some zigbee devices report battery
             if np.in1d(['battery'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\"]")
                 conf_str.append(
                     f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-lowbatt.js\"]")
-
             # All zigbee devices have Link Quality reported
             conf_str.append(
                 f"\t\tType number : link [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.linkquality\"]")
