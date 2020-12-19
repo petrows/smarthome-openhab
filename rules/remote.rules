@@ -40,7 +40,7 @@ end
 
 rule "House verlassen SW"
 when
-    Channel "mqtt:topic:openhab:ikea-sw-e111:click" triggered
+    Channel "mqtt:topic:openhab:eg_leave_switch:action" triggered
 then
 	var state = receivedEvent.getEvent()
 
@@ -82,7 +82,7 @@ end
 
 rule "KG Ladder BOTTOM btn"
 when
-    Channel "mqtt:topic:openhab:ikea-sw-356e:click" triggered
+    Channel "mqtt:topic:openhab:treppe_down_switch:action" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {
@@ -98,7 +98,7 @@ end
 
 rule "KG Ladder UP btn"
 when
-    Channel "mqtt:topic:openhab:ikea-sw-92f3:click" triggered
+    Channel "mqtt:topic:openhab:treppe_up_switch:action" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {
@@ -119,7 +119,7 @@ end
 
 rule "KG Lager btn"
 when
-    Channel "mqtt:topic:openhab:ikea-sw-01f8:click" triggered
+    Channel "mqtt:topic:openhab:kg_lager4_switch:action" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {

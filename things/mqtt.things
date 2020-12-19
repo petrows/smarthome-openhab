@@ -112,71 +112,10 @@ Thing mqtt:topic:openhab:mi-button-5b2d (mqtt:broker:openhab) {
 // }
 
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM)
-Thing mqtt:topic:openhab:mi-sensor-cc22 (mqtt:broker:openhab) {
-	Channels:
-		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.temperature" ]
-		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.humidity" ]
-		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.voltage" ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-activity.js" ]
-}
-Thing mqtt:topic:openhab:mi-sensor-9a6b (mqtt:broker:openhab) {
-	Channels:
-		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.temperature" ]
-		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.humidity" ]
-		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.voltage" ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-activity.js" ]
-}
-Thing mqtt:topic:openhab:mi-sensor-5121 (mqtt:broker:openhab) {
-	Channels:
-		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.temperature" ]
-		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.humidity" ]
-		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.voltage" ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-activity.js" ]
-}
+// Generated
 
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM)
-Thing mqtt:topic:openhab:mi-sensor-5e02 (mqtt:broker:openhab) {
-	Channels:
-		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.temperature" ]
-		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.humidity" ]
-		Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.pressure" ]
-		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.voltage" ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-activity.js" ]
-}
-Thing mqtt:topic:openhab:mi-sensor-5fc4 (mqtt:broker:openhab) {
-	Channels:
-		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.temperature" ]
-		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.humidity" ]
-		Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.pressure" ]
-		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.voltage" ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-activity.js" ]
-}
-Thing mqtt:topic:openhab:mi-sensor-5e08 (mqtt:broker:openhab) {
-	Channels:
-		Type number : temperature [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.temperature" ]
-		Type number : humidity [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.humidity" ]
-		Type number : pressure [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.pressure" ]
-		Type number : voltage [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.voltage" ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-activity.js" ]
-}
+// Generated
 
 // IKEA TRADFRI signal repeater (E1746)
 Thing mqtt:topic:openhab:ikea-router-6a05 (mqtt:broker:openhab) {
@@ -185,82 +124,10 @@ Thing mqtt:topic:openhab:ikea-router-6a05 (mqtt:broker:openhab) {
 }
 
 // IKEA TRADFRI ON/OFF switch (E1743)
-Thing mqtt:topic:openhab:ikea-sw-e111 (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.action", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.linkquality" ]
-}
-Thing mqtt:topic:openhab:ikea-sw-92f3 (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.action", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.linkquality" ]
-}
-Thing mqtt:topic:openhab:ikea-sw-01f8 (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.action", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.linkquality" ]
-}
-Thing mqtt:topic:openhab:ikea-sw-356e (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.action", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.linkquality" ]
-}
+// Generated
 
 // IKEA TRADFRI remote control (E1524/E1810)
-// https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-// (mqtt:broker:openhab) {"linkquality":49,"battery":100,"action":"toggle"}
-// (mqtt:broker:openhab) {"linkquality":52,"battery":100,"action":"brightness_down_click"}
-// (mqtt:broker:openhab) {"linkquality":47,"battery":100,"action":"brightness_up_click"}
-// (mqtt:broker:openhab) {"linkquality":21,"battery":100,"action":"arrow_left_click"}
-// (mqtt:broker:openhab) {"linkquality":31,"battery":100,"action":"arrow_right_click"}
-// (mqtt:broker:openhab) {"linkquality":49,"battery":100,"action":"brightness_up_hold"}
-// (mqtt:broker:openhab) {"linkquality":49,"battery":100,"action":"brightness_up_release"}
-// (mqtt:broker:openhab) {"linkquality":42,"battery":100,"action":"brightness_down_hold"}
-// (mqtt:broker:openhab) {"linkquality":44,"battery":100,"action":"brightness_down_release"}
-// (mqtt:broker:openhab) {"linkquality":39,"battery":100,"action":"arrow_left_hold"}
-// (mqtt:broker:openhab) {"linkquality":39,"battery":100,"action":"arrow_left_release","duration":1.82}
-// (mqtt:broker:openhab) {"linkquality":36,"battery":100,"action":"arrow_right_hold"}
-// (mqtt:broker:openhab) {"linkquality":39,"battery":100,"action":"arrow_right_release","duration":1.125}
-// SZ
-Thing mqtt:topic:openhab:ikea-remote-2305 (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.action", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.linkquality" ]
-}
-// Petro Desktop
-Thing mqtt:topic:openhab:ikea-remote-357d (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.action", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.linkquality" ]
-}
-// Marina Desktop
-Thing mqtt:topic:openhab:ikea-remote-9703 (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.action", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.linkquality" ]
-}
-// Fleur Spiegel SW
-Thing mqtt:topic:openhab:ikea-remote-6b80 (mqtt:broker:openhab) {
-	Channels:
-		Type string : click [ stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.action", trigger=true ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.linkquality" ]
-}
+// Generated
 
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)
 // Generated

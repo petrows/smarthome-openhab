@@ -8,36 +8,6 @@ Number zigbee_router_1_link "ZB router 1 [%d %%]" <network> (g_zigbee_link) { ch
 
 // Number ikea_router_6a05 "Ikea router 1" (g_zigbee_link) { channel="mqtt:topic:openhab:zigbee-router-6a05:link" }
 
-// Ikea ON/OFF switch
-Number ikea_sw_e111_link "Ikea SW Verlassen [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-sw-e111:link" }
-Number ikea_sw_e111_battery "Ikea SW Verlassen [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-sw-e111:battery" }
-Switch ikea_sw_e111_battery_low "Ikea SW Verlassen [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-sw-e111:battery_low" }
-
-Number ikea_sw_92f3_link "Ikea SW Treppe Oben [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-sw-92f3:link" }
-Number ikea_sw_92f3_battery "Ikea SW Treppe Oben [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-sw-92f3:battery" }
-Switch ikea_sw_92f3_battery_low "Ikea SW Treppe Oben [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-sw-92f3:battery_low" }
-
-Number ikea_sw_356e_link "Ikea SW Treppe Unten [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-sw-356e:link" }
-Number ikea_sw_356e_battery "Ikea SW Treppe Unten [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-sw-356e:battery" }
-Switch ikea_sw_356e_battery_low "Ikea SW Treppe Unten [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-sw-356e:battery_low" }
-
-// Ikea Tradfri remote
-Number ikea_remote_2305_link "Ikea Remote SZ [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-2305:link" }
-Number ikea_remote_2305_battery "Ikea Remote SZ [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-remote-2305:battery" }
-Switch ikea_remote_2305_battery_low "Ikea Remote SZ [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-remote-2305:battery_low" }
-
-Number ikea_remote_357d "Ikea Remote Petro DS [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-357d:link" }
-Number ikea_remote_357d_battery "Ikea Remote Petro DS [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-remote-357d:battery" }
-Switch ikea_remote_357d_battery_low "Ikea Remote Petro DS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-remote-357d:battery_low" }
-
-Number ikea_remote_9703 "Ikea Remote Marina DS [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-9703:link" }
-Number ikea_remote_9703_battery "Ikea Remote Marina DS [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-remote-9703:battery" }
-Switch ikea_remote_9703_battery_low "Ikea Remote Marina DS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-remote-9703:battery_low" }
-
-Number ikea_remote_spiegel "Ikea Remote Spiegel [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-remote-6b80:link" }
-Number ikea_remote_spiegel_battery "Ikea Remote Spiegel [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-remote-6b80:battery" }
-Switch ikea_remote_spiegel_battery_low "Ikea Remote Spiegel [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-remote-6b80:battery_low" }
-
 // Aquara water leak
 Switch kg_water_leak_1 "Flood KG 1" { channel="mqtt:topic:openhab:mi-water-leak-1:leak" }
 Number kg_water_leak_1_link "Flood KG 1 [%d %%]nk" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-water-leak-1:link" }
@@ -56,38 +26,15 @@ Number mi_button_5b2d_battery "Arbeitlicht SW KU [%d %%]" <battery> (g_battery_l
 Switch mi_button_5b2d_battery_low "Arbeitlicht SW KU [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-button-5b2d:battery_low" }
 
 // Sensor 1 // Outside
-Number miSensorWeatherTemp "MI Sens Weather [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-cc22:temperature" }
-Number miSensorWeatherHum "MI Sens Weather [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-cc22:humidity" }
-Number miSensorWeatherLink "MI Sens Weather [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-sensor-cc22:link" }
-Number miSensorWeatherBatt "MI Sens Weather [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-cc22:battery" }
-Switch miSensorWeatherBattLow "MI Sens Weather [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-sensor-cc22:battery_low" }
-DateTime    mi_sens_weather_activity    "MI Sens Weather [JS(display-activity.js):%s]"    <time>      (g_zigbee_activity)    {channel="mqtt:topic:openhab:mi-sensor-cc22:activity"}
-Number      mi_sens_weather_voltage     "MI Sens Weather [%d mV]"                         <energy>                           {channel="mqtt:topic:openhab:mi-sensor-cc22:voltage"}
+
 
 // Sensor 2 // Sleeping room
-Number miSensorSleepingTemp "MI Sens SZ [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-9a6b:temperature" }
-Number miSensorSleepingHum "MI Sens SZ [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-9a6b:humidity" }
-Number miSensorSleepingBatt "MI Sens SZ [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-9a6b:battery" }
-Switch miSensorSleepingBattLow "MI Sens SZ [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-sensor-9a6b:battery_low" }
-DateTime    mi_sens_sz_activity    "MI Sens SZ [JS(display-activity.js):%s]"    <time>      (g_zigbee_activity)    {channel="mqtt:topic:openhab:mi-sensor-9a6b:activity"}
-Number      mi_sens_sz_voltage     "MI Sens SZ [%d mV]"                         <energy>                           {channel="mqtt:topic:openhab:mi-sensor-9a6b:voltage"}
 
 // Sensor 3 // Fotostudio
-Number miSensorFsTemp "MI Sens FS [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5121:temperature" }
-Number miSensorFsHum "MI Sens FS [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5121:humidity" }
-Number miSensorFsBatt "MI Sens FS [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-5121:battery" }
-Switch miSensorFsBattLow "MI Sens FS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-sensor-5121:battery_low" }
-DateTime    mi_sens_fs_activity    "MI Sens FS [JS(display-activity.js):%s]"    <time>      (g_zigbee_activity)    {channel="mqtt:topic:openhab:mi-sensor-5121:activity"}
-Number      mi_sens_fs_voltage     "MI Sens FS [%d mV]"                         <energy>                           {channel="mqtt:topic:openhab:mi-sensor-5121:voltage"}
+
 
 // Sensor 2.0 4 // KG
-Number miSensorKGTemp "Temperatur [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:temperature" }
-Number miSensorKGHum "Feuchtigkeit [%d %%]" <humidity> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:humidity" }
-Number miSensorKGPressure <pressure> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5e02:pressure" }
-Number miSensorKGBatt "MI Sens KG [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-sensor-5e02:battery" }
-Switch miSensorKGBattLow "MI Sens KG [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-sensor-5e02:battery_low" }
-DateTime    mi_sens_kg_activity    "MI Sens KG [JS(display-activity.js):%s]"    <time>      (g_zigbee_activity)    {channel="mqtt:topic:openhab:mi-sensor-5e02:activity"}
-Number      mi_sens_kg_voltage     "MI Sens KG [%d mV]"                         <energy>                           {channel="mqtt:topic:openhab:mi-sensor-5e02:voltage"}
+// Generated
 
 // Sensor 2.0 5 // Kitchen
 Number miSensorKitchenTemp "MI Sens KU [%.1f °C]" <temperature> (gMiSensorsClimate) { channel="mqtt:topic:openhab:mi-sensor-5fc4:temperature" }

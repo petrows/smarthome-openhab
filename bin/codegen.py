@@ -29,6 +29,13 @@ PREAMBULA = """
 
 # Items defentition
 items = [
+    # External (outside)
+    {
+        'name': "Outside Climate",
+        'id': "ext_climate",
+        'zigbee_id': '0x00158d0001c2cc22',
+        'type': DEVICES.XIAOMI_AQARA_V1,
+    },
     # EG (Corridor)
     {
         'name': "Mirror remote",
@@ -36,7 +43,26 @@ items = [
         'zigbee_id': '0x680ae2fffeab6b80',
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
+    {
+        'name': "Leave switch",
+        'id': "eg_leave_switch",
+        'zigbee_id': '0x680ae2fffe16e111',
+        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+    },
+    # EG (Nagel Studio)
+    {
+        'name': "NS Climate",
+        'id': "ns_climate",
+        'zigbee_id': '0x00158d0001b95e08',
+        'type': DEVICES.XIAOMI_AQARA_V2,
+    },
     # EG (Foto Studio)
+    {
+        'name': "FS Climate",
+        'id': "fs_climate",
+        'zigbee_id': '0x00158d0001c15121',
+        'type': DEVICES.XIAOMI_AQARA_V1,
+    },
     {
         'name': "Marina Desktop light",
         'id': "desktop_marina_light",
@@ -55,12 +81,70 @@ items = [
     },
     # EG (Bedroom)
     {
+        'name': "SZ Climate",
+        'id': "sz_climate",
+        'zigbee_id': '0x00158d0001c19a6b',
+        'type': DEVICES.XIAOMI_AQARA_V1,
+    },
+    {
         'name': "Bedroom remote",
         'id': "sz_remote",
         'zigbee_id': '0x14b457fffe7e2305',
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
+    # EG (Kitchen)
+    {
+        'name': "KU Climate",
+        'id': "ku_climate",
+        'zigbee_id': '0x00158d0001b95fc4',
+        'type': DEVICES.XIAOMI_AQARA_V2,
+    },
+    # Ladded (Treppe)
+    {
+        'name': "Treppe Up switch",
+        'id': "treppe_up_switch",
+        'zigbee_id': '0x680ae2fffe1a92f3',
+        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+    },
+    {
+        'name': "Treppe Down switch",
+        'id': "treppe_down_switch",
+        'zigbee_id': '0xccccccfffef0356e',
+        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+    },
+    {
+        'name': "Treppe Up light",
+        'id': "treppe_up_light",
+        'zigbee_id': '0xec1bbdfffe9abfde',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
+            'dim': ['g_dim_treppe'],
+        }
+    },
+    {
+        'name': "Treppe Down light",
+        'id': "treppe_down_light",
+        'zigbee_id': '0xec1bbdfffe4695b5',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
+            'dim': ['g_dim_treppe'],
+        }
+    },
+    {
+        'name': "Treppe motion",
+        'id': "treppe_motion",
+        'zigbee_id': '0xbc33acfffe872049',
+        'type': DEVICES.IKEA_TRADFRI_MOTION_SENSOR,
+    },
     # KG
+    {
+        'name': "KG Climate",
+        'id': "kg_climate",
+        'zigbee_id': '0x00158d0001b95e02',
+        'type': DEVICES.XIAOMI_AQARA_V2,
+    },
     {
         'name': "Petro Desktop light",
         'id': "desktop_petro_light",
@@ -87,26 +171,6 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
     {
-        'name': "Treppe Up light",
-        'id': "treppe_up_light",
-        'zigbee_id': '0xec1bbdfffe9abfde',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
-        'groups': {
-            'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
-            'dim': ['g_dim_treppe'],
-        }
-    },
-    {
-        'name': "Treppe Down light",
-        'id': "treppe_down_light",
-        'zigbee_id': '0xec1bbdfffe4695b5',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
-        'groups': {
-            'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
-            'dim': ['g_dim_treppe'],
-        }
-    },
-    {
         'name': "KG Lager 4 (1)",
         'id': "kg_lager4_1_light",
         'zigbee_id': '0xccccccfffedf345a',
@@ -127,10 +191,10 @@ items = [
         }
     },
     {
-        'name': "KG Treppe motion",
-        'id': "treppe_motion",
-        'zigbee_id': '0xbc33acfffe872049',
-        'type': DEVICES.IKEA_TRADFRI_MOTION_SENSOR,
+        'name': "KG Lager switch",
+        'id': "kg_lager4_switch",
+        'zigbee_id': '0xccccccfffee401f8',
+        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
     },
     {
         'name': "KG Lager motion",
@@ -235,12 +299,30 @@ if __name__ == "__main__":
             if np.in1d(['motion'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType switch : occupancy [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-occupancy.js\"]")
+            # Device has Temp sensor
+            if np.in1d(['temperature'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType number : temperature [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.temperature\"]")
+            if np.in1d(['humidity'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType number : humidity [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.humidity\"]")
+            if np.in1d(['pressure'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType number : pressure [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.pressure\"]")
+            # Some zigbee devices needs to be monitored
+            if np.in1d(['activity'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType datetime : activity [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-activity.js\"]")
             # Some zigbee devices report battery
             if np.in1d(['battery'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\"]")
                 conf_str.append(
                     f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-lowbatt.js\"]")
+            # Some zigbee devices report battery voltage
+            if np.in1d(['voltage'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType number : voltage [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.voltage\"]")
             # All zigbee devices have Link Quality reported
             conf_str.append(
                 f"\t\tType number : link [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.linkquality\"]")
@@ -276,7 +358,6 @@ if __name__ == "__main__":
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state\"}}"
             )
             all_items.append(f"Switch item={item['id']}_sw")
-
         # Some devices have motion option
         if np.in1d(['motion'], item['type']['types']).any():
             device_icon = 'motion'
@@ -285,8 +366,31 @@ if __name__ == "__main__":
                 f"{device_groups(item,'occupancy')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:occupancy\"}}"
             )
-            all_items.append(f"Switch item={item['id']}_sw")
-
+        # Some devices have Temperature option
+        if np.in1d(['temperature'], item['type']['types']).any():
+            device_icon = 'temperature'
+            conf_str.append(
+                f"Number {item['id']}_temperature \"{item['name']} [%d °C]\" <{device_icon}>"
+                f"{device_groups(item,'temperature')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:temperature\"}}"
+            )
+        # Some devices have Humidity option
+        if np.in1d(['humidity'], item['type']['types']).any():
+            device_icon = 'humidity'
+            conf_str.append(
+                f"Number {item['id']}_humidity \"{item['name']} [%d %%]\" <{device_icon}>"
+                f"{device_groups(item,'humidity')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:humidity\"}}"
+            )
+        # Some devices have Pressure option
+        if np.in1d(['pressure'], item['type']['types']).any():
+            device_icon = 'pressure'
+            conf_str.append(
+                f"Number {item['id']}_pressure \"{item['name']} [%d hPa]\" <{device_icon}>"
+                f"{device_groups(item,'pressure')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:pressure\"}}"
+            )
+        # Special Zigbee things
         if np.in1d(['zigbee'], item['type']['types']).any():
             # All Zigbee lamps have dimmer built-in
             if np.in1d(['lamp'], item['type']['types']).any():
@@ -312,7 +416,7 @@ rule "{item['name']} apply color on ON"
 when
     Item {item['id']}_sw changed to ON
 then
-	{item['id']}_ct.sendCommand({item['id']}_ct.state)
+	{item['id']}_ct.sendCommand({item['id']}_ct.state as Number)
 end
 """
                 )
@@ -342,6 +446,13 @@ end
                     f" <lowbattery> (g_battery_low) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery_low\"}}"
                 )
                 # all_items.append(f"Switch item={item['id']}_battery_low")
+
+            # Some zigbee devices report activity
+            if 'activity' in item['type']['types']:
+                conf_str.append(
+                    f"DateTime {item['id']}_activity \"{item['name']} [%d %%]\""
+                    f" <time> (g_zigbee_activity) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:activity\"}}"
+                )
 
         conf_str.append('')
     # Write config

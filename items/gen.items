@@ -7,12 +7,50 @@
 // ==========================================
 
 
+// Outside Climate (0x00158d0001c2cc22)
+// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Number ext_climate_temperature "Outside Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:ext_climate:temperature"}
+Number ext_climate_humidity "Outside Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ext_climate:humidity"}
+Number ext_climate_link "Outside Climate [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:ext_climate:link"}
+Switch ext_climate_ota "Outside Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:ext_climate:ota"}
+Number ext_climate_battery "Outside Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ext_climate:battery"}
+Switch ext_climate_battery_low "Outside Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ext_climate:battery_low"}
+DateTime ext_climate_activity "Outside Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ext_climate:activity"}
+
 // Mirror remote (0x680ae2fffeab6b80)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Number mirror_remote_link "Mirror remote [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:mirror_remote:link"}
 Switch mirror_remote_ota "Mirror remote [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:mirror_remote:ota"}
 Number mirror_remote_battery "Mirror remote [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:mirror_remote:battery"}
 Switch mirror_remote_battery_low "Mirror remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:mirror_remote:battery_low"}
+
+// Leave switch (0x680ae2fffe16e111)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Number eg_leave_switch_link "Leave switch [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:eg_leave_switch:link"}
+Switch eg_leave_switch_ota "Leave switch [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:eg_leave_switch:ota"}
+Number eg_leave_switch_battery "Leave switch [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:eg_leave_switch:battery"}
+Switch eg_leave_switch_battery_low "Leave switch [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:eg_leave_switch:battery_low"}
+
+// NS Climate (0x00158d0001b95e08)
+// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+Number ns_climate_temperature "NS Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:ns_climate:temperature"}
+Number ns_climate_humidity "NS Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ns_climate:humidity"}
+Number ns_climate_pressure "NS Climate [%d hPa]" <pressure> {channel="mqtt:topic:openhab:ns_climate:pressure"}
+Number ns_climate_link "NS Climate [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:ns_climate:link"}
+Switch ns_climate_ota "NS Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:ns_climate:ota"}
+Number ns_climate_battery "NS Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ns_climate:battery"}
+Switch ns_climate_battery_low "NS Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ns_climate:battery_low"}
+DateTime ns_climate_activity "NS Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ns_climate:activity"}
+
+// FS Climate (0x00158d0001c15121)
+// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Number fs_climate_temperature "FS Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:fs_climate:temperature"}
+Number fs_climate_humidity "FS Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:fs_climate:humidity"}
+Number fs_climate_link "FS Climate [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:fs_climate:link"}
+Switch fs_climate_ota "FS Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:fs_climate:ota"}
+Number fs_climate_battery "FS Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:fs_climate:battery"}
+Switch fs_climate_battery_low "FS Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:fs_climate:battery_low"}
+DateTime fs_climate_activity "FS Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:fs_climate:activity"}
 
 // Marina Desktop light (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
@@ -29,12 +67,81 @@ Switch desktop_marina_remote_ota "Marina Desktop remote [%s]" <flowpipe> (g_zigb
 Number desktop_marina_remote_battery "Marina Desktop remote [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:desktop_marina_remote:battery"}
 Switch desktop_marina_remote_battery_low "Marina Desktop remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:desktop_marina_remote:battery_low"}
 
+// SZ Climate (0x00158d0001c19a6b)
+// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Number sz_climate_temperature "SZ Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:sz_climate:temperature"}
+Number sz_climate_humidity "SZ Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:sz_climate:humidity"}
+Number sz_climate_link "SZ Climate [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_climate:link"}
+Switch sz_climate_ota "SZ Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_climate:ota"}
+Number sz_climate_battery "SZ Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_climate:battery"}
+Switch sz_climate_battery_low "SZ Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_climate:battery_low"}
+DateTime sz_climate_activity "SZ Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:sz_climate:activity"}
+
 // Bedroom remote (0x14b457fffe7e2305)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Number sz_remote_link "Bedroom remote [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_remote:link"}
 Switch sz_remote_ota "Bedroom remote [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_remote:ota"}
 Number sz_remote_battery "Bedroom remote [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_remote:battery"}
 Switch sz_remote_battery_low "Bedroom remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_remote:battery_low"}
+
+// KU Climate (0x00158d0001b95fc4)
+// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+Number ku_climate_temperature "KU Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:ku_climate:temperature"}
+Number ku_climate_humidity "KU Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ku_climate:humidity"}
+Number ku_climate_pressure "KU Climate [%d hPa]" <pressure> {channel="mqtt:topic:openhab:ku_climate:pressure"}
+Number ku_climate_link "KU Climate [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_climate:link"}
+Switch ku_climate_ota "KU Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_climate:ota"}
+Number ku_climate_battery "KU Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_climate:battery"}
+Switch ku_climate_battery_low "KU Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_climate:battery_low"}
+DateTime ku_climate_activity "KU Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ku_climate:activity"}
+
+// Treppe Up switch (0x680ae2fffe1a92f3)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Number treppe_up_switch_link "Treppe Up switch [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_up_switch:link"}
+Switch treppe_up_switch_ota "Treppe Up switch [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_up_switch:ota"}
+Number treppe_up_switch_battery "Treppe Up switch [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_up_switch:battery"}
+Switch treppe_up_switch_battery_low "Treppe Up switch [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:treppe_up_switch:battery_low"}
+
+// Treppe Down switch (0xccccccfffef0356e)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Number treppe_down_switch_link "Treppe Down switch [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_down_switch:link"}
+Switch treppe_down_switch_ota "Treppe Down switch [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_down_switch:ota"}
+Number treppe_down_switch_battery "Treppe Down switch [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_down_switch:battery"}
+Switch treppe_down_switch_battery_low "Treppe Down switch [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:treppe_down_switch:battery_low"}
+
+// Treppe Up light (0xec1bbdfffe9abfde)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch treppe_up_light_sw "Treppe Up light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_up_light:state"}
+Dimmer treppe_up_light_dim "Treppe Up light DIM [%d %%]" <light> (g_dim_treppe) {channel="mqtt:topic:openhab:treppe_up_light:dim"}
+Number treppe_up_light_link "Treppe Up light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_up_light:link"}
+Switch treppe_up_light_ota "Treppe Up light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_up_light:ota"}
+
+// Treppe Down light (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch treppe_down_light_sw "Treppe Down light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_down_light:state"}
+Dimmer treppe_down_light_dim "Treppe Down light DIM [%d %%]" <light> (g_dim_treppe) {channel="mqtt:topic:openhab:treppe_down_light:dim"}
+Number treppe_down_light_link "Treppe Down light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_down_light:link"}
+Switch treppe_down_light_ota "Treppe Down light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_down_light:ota"}
+
+// Treppe motion (0xbc33acfffe872049)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Switch treppe_motion_occupancy "Treppe motion" <motion> {channel="mqtt:topic:openhab:treppe_motion:occupancy"}
+Number treppe_motion_link "Treppe motion [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_motion:link"}
+Switch treppe_motion_ota "Treppe motion [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_motion:ota"}
+Number treppe_motion_battery "Treppe motion [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_motion:battery"}
+Switch treppe_motion_battery_low "Treppe motion [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:treppe_motion:battery_low"}
+DateTime treppe_motion_activity "Treppe motion [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:treppe_motion:activity"}
+
+// KG Climate (0x00158d0001b95e02)
+// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+Number kg_climate_temperature "KG Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:kg_climate:temperature"}
+Number kg_climate_humidity "KG Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:kg_climate:humidity"}
+Number kg_climate_pressure "KG Climate [%d hPa]" <pressure> {channel="mqtt:topic:openhab:kg_climate:pressure"}
+Number kg_climate_link "KG Climate [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_climate:link"}
+Switch kg_climate_ota "KG Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_climate:ota"}
+Number kg_climate_battery "KG Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_climate:battery"}
+Switch kg_climate_battery_low "KG Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_climate:battery_low"}
+DateTime kg_climate_activity "KG Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:kg_climate:activity"}
 
 // Petro Desktop light (0xccccccfffed8ef9d)
 // IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
@@ -57,20 +164,6 @@ Switch desktop_petro_remote_ota "Petro Desktop remote [%s]" <flowpipe> (g_zigbee
 Number desktop_petro_remote_battery "Petro Desktop remote [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:desktop_petro_remote:battery"}
 Switch desktop_petro_remote_battery_low "Petro Desktop remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:desktop_petro_remote:battery_low"}
 
-// Treppe Up light (0xec1bbdfffe9abfde)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch treppe_up_light_sw "Treppe Up light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_up_light:state"}
-Dimmer treppe_up_light_dim "Treppe Up light DIM [%d %%]" <light> (g_dim_treppe) {channel="mqtt:topic:openhab:treppe_up_light:dim"}
-Number treppe_up_light_link "Treppe Up light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_up_light:link"}
-Switch treppe_up_light_ota "Treppe Up light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_up_light:ota"}
-
-// Treppe Down light (0xec1bbdfffe4695b5)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch treppe_down_light_sw "Treppe Down light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_down_light:state"}
-Dimmer treppe_down_light_dim "Treppe Down light DIM [%d %%]" <light> (g_dim_treppe) {channel="mqtt:topic:openhab:treppe_down_light:dim"}
-Number treppe_down_light_link "Treppe Down light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_down_light:link"}
-Switch treppe_down_light_ota "Treppe Down light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_down_light:ota"}
-
 // KG Lager 4 (1) (0xccccccfffedf345a)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:state"}
@@ -85,13 +178,12 @@ Dimmer kg_lager4_2_light_dim "KG Lager 4 (2) DIM [%d %%]" <light> (g_dim_lager_a
 Number kg_lager4_2_light_link "KG Lager 4 (2) [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_2_light:link"}
 Switch kg_lager4_2_light_ota "KG Lager 4 (2) [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_2_light:ota"}
 
-// KG Treppe motion (0xbc33acfffe872049)
-// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Switch treppe_motion_occupancy "KG Treppe motion" <motion> {channel="mqtt:topic:openhab:treppe_motion:occupancy"}
-Number treppe_motion_link "KG Treppe motion [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_motion:link"}
-Switch treppe_motion_ota "KG Treppe motion [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_motion:ota"}
-Number treppe_motion_battery "KG Treppe motion [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_motion:battery"}
-Switch treppe_motion_battery_low "KG Treppe motion [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:treppe_motion:battery_low"}
+// KG Lager switch (0xccccccfffee401f8)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Number kg_lager4_switch_link "KG Lager switch [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_switch:link"}
+Switch kg_lager4_switch_ota "KG Lager switch [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_switch:ota"}
+Number kg_lager4_switch_battery "KG Lager switch [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_lager4_switch:battery"}
+Switch kg_lager4_switch_battery_low "KG Lager switch [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_lager4_switch:battery_low"}
 
 // KG Lager motion (0xbc33acfffe84ca1e)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
@@ -100,3 +192,4 @@ Number kg_lager4_motion_link "KG Lager motion [%d]" <network> (g_zigbee_link) {c
 Switch kg_lager4_motion_ota "KG Lager motion [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_motion:ota"}
 Number kg_lager4_motion_battery "KG Lager motion [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_lager4_motion:battery"}
 Switch kg_lager4_motion_battery_low "KG Lager motion [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_lager4_motion:battery_low"}
+DateTime kg_lager4_motion_activity "KG Lager motion [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:kg_lager4_motion:activity"}

@@ -1,10 +1,11 @@
 sitemap control2 label="KONTROL 2"
 {
 	Frame {
-		Group item=miSensorWeatherTemp label="Draußen" {
+		Group item=ext_climate_temperature label="Draußen" {
 			Frame {
-				Text 		item=miSensorWeatherTemp
-				Text 		item=miSensorWeatherHum
+				Text 		item=ext_climate_temperature label="Temperature [%d °C]"
+				Text 		item=ext_climate_humidity label="Humidity [%d %%]"
+				Text 		item=ns_climate_pressure label="Pressure [%d hPa]"
 			}
 			Frame {
 				Webview label="Draußentemperatur" icon="temperature" height=8 url="https://stats.home.pws/d-solo/000000002/klimat?orgId=1&theme=dark&panelId=3&inactive=1"
@@ -126,41 +127,40 @@ sitemap control2 label="KONTROL 2"
 		Switch item=g_hz_all label="Heizung [%d °C]"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		Text item=g_hz_valve label="Beheizung [%d %%]"
 
-		Group item=miSensorKitchenTemp label="Küche" {
-			Text 		item=miSensorKitchenTemp
-			Text 		item=miSensorKitchenHum
+		Group item=ku_climate_temperature label="Küche" {
+			Text 		item=ku_climate_temperature label="Temperature [%d °C]"
+			Text 		item=ku_climate_humidity label="Humidity [%d %%]"
 			Text		item=hz_ku_valve label="Beheizung [%d %%]"
 			Setpoint	item=hz_ku_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=hz_ku_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		}
 
-		Group item=miSensorNsTemp label="Nagel Studio" {
-			Text 		item=miSensorNsTemp
-			Text 		item=miSensorNsHum
+		Group item=ns_climate_temperature label="Nagel Studio" {
+			Text 		item=ns_climate_temperature label="Temperature [%d °C]"
+			Text 		item=ns_climate_humidity label="Humidity [%d %%]"
 			Text		item=hz_ns_valve label="Beheizung [%d %%]"
 			Setpoint	item=hz_ns_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=hz_ns_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 			Switch		item=hz_ns_boost label="Heizung BOOST" icon="fan"
 			Switch		item=hz_ns_fan label="Heizung Fan" icon="fan"
 		}
-		Group item=miSensorFsTemp label="Foto Studio" {
-			Text 		item=miSensorFsTemp
-			Text 		item=miSensorFsHum
+		Group item=fs_climate_temperature label="Foto Studio" {
+			Text 		item=fs_climate_temperature label="Temperature [%d °C]"
+			Text 		item=fs_climate_humidity label="Humidity [%d %%]"
 			Text		item=hz_fs_valve label="Beheizung [%d %%]"
 			Setpoint	item=hz_fs_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=hz_fs_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		}
-		Group item=miSensorSleepingTemp label="Schlaffzimmer" {
-			Text 		item=miSensorSleepingTemp
-			Text 		item=miSensorSleepingHum
-
+		Group item=sz_climate_temperature label="Schlaffzimmer" {
+			Text 		item=sz_climate_temperature label="Temperature [%d °C]"
+			Text 		item=sz_climate_humidity label="Humidity [%d %%]"
 			Text		item=hz_sz_valve label="Beheizung [%d %%]"
 			Setpoint	item=hz_sz_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=hz_sz_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		}
-		Group item=miSensorKGTemp label="KG" {
-			Text 		item=miSensorKGTemp
-			Text 		item=miSensorKGHum
+		Group item=kg_climate_temperature label="KG" {
+			Text 		item=kg_climate_temperature label="Temperature [%d °C]"
+			Text 		item=kg_climate_humidity label="Humidity [%d %%]"
 			Text		item=hz_kg_valve label="Beheizung [%d %%]"
 			Setpoint	item=hz_kg_set label="Ziel" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
 			Switch  	item=hz_kg_set label="Modus []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "4.5"="AUS"]	visibility=[cfgHeatingEnable==ON]
