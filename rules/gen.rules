@@ -1,5 +1,14 @@
 
-# Device should apply saved color temp when ON
+// ==========================================
+// THIS FILE IS AUTO GENERATED
+// Do not edit by hands
+// Use this command to regenerate:
+// python3 ./bin/codegen.py
+// ==========================================
+
+
+
+// Device should apply saved color temp when ON
 rule "Marina Desktop light apply color on ON"
 when
     Item desktop_marina_light_sw changed to ON
@@ -8,7 +17,7 @@ then
 end
 
 
-# Device should apply saved color temp when ON
+// Device should apply saved color temp when ON
 rule "Petro Desktop light apply color on ON"
 when
     Item desktop_petro_light_sw changed to ON

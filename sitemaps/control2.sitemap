@@ -76,9 +76,9 @@ sitemap control2 label="KONTROL 2"
 		}
 		Group item=g_light_eg_fs label="Foto Studio [%s]" icon="light" {
 			Switch item=snf_eg_fs label="Haupt [%s]" icon="light"
-			Switch item=ikea_led_89d1_sw label="Desktop [%s]" icon="light"
-			Slider item=ikea_led_89d1_brightness label="Desktop DIM [%d]" icon="light"
-			Slider item=ikea_led_89d1_temp label="Desktop temp [%d]" icon="colorpicker"
+			Switch item=desktop_marina_light_sw label="Desktop [%s]"
+			Slider item=desktop_marina_light_dim label="Desktop DIM [%d %%]"
+			Slider item=desktop_marina_light_ct label="Desktop CT [JS(display-mired.js):%s]"
 		}
 		Group item=g_light_eg_sz label="Schlaffzimmer [%s]" icon="light" {
 			Frame {
@@ -115,9 +115,9 @@ sitemap control2 label="KONTROL 2"
 				Text item=ikea_motion_ca1e_occupancy label="Motion Lager [%s]" icon="motion"
 			}
 			Frame label="Desktop" {
-				Switch item=ikea_led_ef9d_sw label="Desktop [%s]" icon="light"
-				Slider item=ikea_led_ef9d_brightness label="Desktop dim [%d]" icon="light"
-				Slider item=ikea_led_ef9d_temp label="Desktop farbe [%d %%]" icon="light"
+				Switch item=desktop_petro_light_sw label="Desktop [%s]"
+				Slider item=desktop_petro_light_dim label="Desktop DIM [%d %%]"
+				Slider item=desktop_petro_light_ct label="Desktop CT [JS(display-mired.js):%s]"
 			}
 		}
 	}

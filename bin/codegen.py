@@ -14,9 +14,20 @@ import numpy as np
 logging.basicConfig(level=logging.DEBUG)
 
 ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+PREAMBULA = """
+// ==========================================
+// THIS FILE IS AUTO GENERATED
+// Do not edit by hands
+// Use this command to regenerate:
+// python3 ./bin/codegen.py
+// ==========================================
+
+"""
 
 
+# Devices, used in this configuration
 class DEVICES:
+    # IKEA Lamps
     IKEA_TRADFRI_LAMP_CLEAR_806 = {
         'types': [
             'zigbee',
@@ -46,6 +57,7 @@ class DEVICES:
         'device_name': 'IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/LED1836G9.html',
     }
+    # Sockets
     OSRAM_SMART_PLUG = {
         'types': [
             'zigbee',
@@ -56,6 +68,7 @@ class DEVICES:
     }
 
 
+# Items defentition
 items = [
     # EG (Foto Studio)
     {
@@ -86,6 +99,26 @@ items = [
         'type': DEVICES.OSRAM_SMART_PLUG,
         'groups': {
             'sw': ['g_kg_power'],
+        }
+    },
+    {
+        'name': "Treppe Up light",
+        'id': "treppe_up_light",
+        'zigbee_id': '0xec1bbdfffe9abfde',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
+            'dim': ['g_dim_treppe'],
+        }
+    },
+    {
+        'name': "Treppe Down light",
+        'id': "treppe_down_light",
+        'zigbee_id': '0xec1bbdfffe4695b5',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
+            'dim': ['g_dim_treppe'],
         }
     },
     {
@@ -158,7 +191,7 @@ if __name__ == "__main__":
             zigbee_ids.append(items[x]['zigbee_short'])
 
     # Generate THINGS
-    conf_str = []
+    conf_str = [PREAMBULA]
     for item in items:
         # Zigbee2mqtt device?
         if 'zigbee' in item['type']['types']:
@@ -217,9 +250,9 @@ if __name__ == "__main__":
         f.close()
 
     # Generate ITEMS
-    conf_str = []
+    conf_str = [PREAMBULA]
     all_items = []
-    gen_rules = []  # Special rules for devices
+    gen_rules = [PREAMBULA]  # Special rules for devices
     for item in items:
         conf_str.extend(device_comment(item))
         # Some devices have switch option
@@ -247,14 +280,14 @@ if __name__ == "__main__":
             # Zigbee color temperature
             if np.in1d(['ct'], item['type']['types']).any():
                 conf_str.append(
-                    f"Dimmer {item['id']}_ct \"{item['name']} CT [JS(display-mired.js):%s]\" <{device_icon}>"
+                    f"Dimmer {item['id']}_ct \"{item['name']} CT [JS(display-mired.js):%s]\" <colorwheel>"
                     f"{device_groups(item,'ct')}"
                     f"{{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:ct\"}}"
                 )
                 all_items.append(f"Slider item={item['id']}_ct")
                 gen_rules.append(
                     f"""
-# Device should apply saved color temp when ON
+// Device should apply saved color temp when ON
 rule "{item['name']} apply color on ON"
 when
     Item {item['id']}_sw changed to ON
@@ -296,7 +329,7 @@ end
         f.close()
 
     # Write test sitemap
-    test_sitemap = """
+    test_sitemap = PREAMBULA + """
 sitemap gen label="GEN ITEMS"
 {
     Frame {

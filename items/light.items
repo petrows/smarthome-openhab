@@ -35,12 +35,6 @@ Dimmer	yel_rgb_brightness	"Яркость"
 Number	yel_rgb_temp	"Цветовая температура" <colorpicker>
 Color	yel_rgb_color	"Цвет"
 
-// Marina desktop
-Switch ikea_led_89d1_sw "Marina desktop sw" <light> (g_light_all, g_light_eg, g_light_eg_fs) { channel="mqtt:topic:openhab:ikea-led-89d1:state" }
-Dimmer ikea_led_89d1_brightness "Marina desktop dim [%d]" { channel="mqtt:topic:openhab:ikea-led-89d1:brightness" }
-Dimmer ikea_led_89d1_temp "Marina desktop color [%d]" <colorpicker> (g_light_astro_color) { channel="mqtt:topic:openhab:ikea-led-89d1:temp" }
-Number ikea_led_89d1_link "Marina desktop [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-89d1:link" }
-
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
 Switch snf_eg_ns_table "NS Tisch" <energy> (g_light_all, g_light_eg,g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns-table:power" }
 
@@ -81,29 +75,3 @@ Number ikea_led_007b_link "EG SZ Flame 3 [%d %%]" <network> (g_zigbee_link) { ch
 Switch snf_kg_l1 "KG light main" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:snf-kg-1:power" }
 Switch snf_kg_l2 "KG light p1" <light> (g_light_all, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:snf-kg-2:power" }
 Switch snf_kg_lg1 "KG Lager 1" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:snf-kg-lg1:power" }
-
-// Petr desktop
-Switch ikea_led_ef9d_sw "KG desktop sw" <light> (g_light_all, g_light_kg) { channel="mqtt:topic:openhab:ikea-led-ef9d:state" }
-Dimmer ikea_led_ef9d_brightness "KG desktop br [%d]" { channel="mqtt:topic:openhab:ikea-led-ef9d:brightness" }
-Dimmer ikea_led_ef9d_temp "KG desktop color [%d]" (g_light_astro_color) { channel="mqtt:topic:openhab:ikea-led-ef9d:temp" }
-Number ikea_led_ef9d_link "KG desktop [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-ef9d:link" }
-
-// Treppe oben
-Switch ikea_led_bfde_sw "Treppe oben sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-bfde:state", expire="1h,command=OFF" }
-Dimmer ikea_led_bfde_brightness "Treppe oben dim []" (g_dim_treppe) { channel="mqtt:topic:openhab:ikea-led-bfde:brightness" }
-Number ikea_led_bfde_link "Treppe oben [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-bfde:link" }
-
-// Treppe unten
-Switch ikea_led_95b5_sw "Treppe unten sw" <light> (g_light_all, g_light_treppe, g_light_kg, g_light_kg_auto) { channel="mqtt:topic:openhab:ikea-led-95b5:state", expire="1h,command=OFF" }
-Dimmer ikea_led_95b5_brightness "Treppe unten dim []" (g_dim_treppe) { channel="mqtt:topic:openhab:ikea-led-95b5:brightness" }
-Number ikea_led_95b5_link "Treppe unten [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-95b5:link" }
-
-// Lager Flür
-// 1
-Switch ikea_led_345a_sw "Lager Flür sw" <light> (g_light_all, g_light_kg, g_light_kg_auto, g_light_lager_auto) { channel="mqtt:topic:openhab:ikea-led-345a:state", expire="1h,command=OFF" }
-Dimmer ikea_led_345a_brightness "Lager Flür dim []" (g_dim_lager_auto) { channel="mqtt:topic:openhab:ikea-led-345a:brightness" }
-Number ikea_led_345a_link "Lager Flür [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-345a:link" }
-// 2
-Switch ikea_led_5314_sw "Lager 4 sw" <light> (g_light_all, g_light_kg, g_light_kg_auto, g_light_lager_auto) { channel="mqtt:topic:openhab:ikea-led-5314:state", expire="1h,command=OFF" }
-Dimmer ikea_led_5314_brightness "Lager 4 dim []" (g_dim_lager_auto) { channel="mqtt:topic:openhab:ikea-led-5314:brightness" }
-Number ikea_led_5314_link "Lager 4 [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-led-5314:link" }

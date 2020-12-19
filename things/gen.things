@@ -1,3 +1,12 @@
+
+// ==========================================
+// THIS FILE IS AUTO GENERATED
+// Do not edit by hands
+// Use this command to regenerate:
+// python3 ./bin/codegen.py
+// ==========================================
+
+
 // Marina Desktop light (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Thing mqtt:topic:openhab:desktop_marina_light (mqtt:broker:openhab) {
@@ -27,6 +36,26 @@ Thing mqtt:topic:openhab:desktop_petro_power (mqtt:broker:openhab) {
 		Type switch : state [stateTopic="zigbee2mqtt/0x7cb03eaa0a094bf2", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x7cb03eaa0a094bf2/set", transformationPatternOut="JS:z2m-command-state.js"]
 		Type number : link [stateTopic="zigbee2mqtt/0x7cb03eaa0a094bf2", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a094bf2", transformationPattern="JS:z2m-ota.js"]
+}
+
+// Treppe Up light (0xec1bbdfffe9abfde)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Thing mqtt:topic:openhab:treppe_up_light (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0xec1bbdfffe9abfde/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe9abfde/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type number : link [stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0xec1bbdfffe9abfde", transformationPattern="JS:z2m-ota.js"]
+}
+
+// Treppe Down light (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Thing mqtt:topic:openhab:treppe_down_light (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0xec1bbdfffe4695b5/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe4695b5/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type number : link [stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JS:z2m-ota.js"]
 }
 
 // KG Lager 4 (1) (0xccccccfffedf345a)

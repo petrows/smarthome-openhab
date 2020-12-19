@@ -1,8 +1,17 @@
+
+// ==========================================
+// THIS FILE IS AUTO GENERATED
+// Do not edit by hands
+// Use this command to regenerate:
+// python3 ./bin/codegen.py
+// ==========================================
+
+
 // Marina Desktop light (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Switch desktop_marina_light_sw "Marina Desktop light" <light> (g_light_all,g_light_eg,g_light_eg_fs){channel="mqtt:topic:openhab:desktop_marina_light:state"}
 Dimmer desktop_marina_light_dim "Marina Desktop light DIM [%d %%]"  <light>{channel="mqtt:topic:openhab:desktop_marina_light:dim"}
-Dimmer desktop_marina_light_ct "Marina Desktop light CT [JS(display-mired.js):%s]" <light> (g_light_astro_color){channel="mqtt:topic:openhab:desktop_marina_light:ct"}
+Dimmer desktop_marina_light_ct "Marina Desktop light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color){channel="mqtt:topic:openhab:desktop_marina_light:ct"}
 Number desktop_marina_light_link "Marina Desktop light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_marina_light:link"}
 Switch desktop_marina_light_ota "Marina Desktop light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_marina_light:ota"}
 
@@ -10,7 +19,7 @@ Switch desktop_marina_light_ota "Marina Desktop light [%s]" <flowpipe> (g_zigbee
 // IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
 Switch desktop_petro_light_sw "Petro Desktop light" <light> (g_light_all,g_light_kg){channel="mqtt:topic:openhab:desktop_petro_light:state"}
 Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]"  <light>{channel="mqtt:topic:openhab:desktop_petro_light:dim"}
-Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(display-mired.js):%s]" <light> (g_light_astro_color){channel="mqtt:topic:openhab:desktop_petro_light:ct"}
+Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color){channel="mqtt:topic:openhab:desktop_petro_light:ct"}
 Number desktop_petro_light_link "Petro Desktop light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_light:link"}
 Switch desktop_petro_light_ota "Petro Desktop light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_light:ota"}
 
@@ -19,6 +28,20 @@ Switch desktop_petro_light_ota "Petro Desktop light [%s]" <flowpipe> (g_zigbee_o
 Switch desktop_petro_power_sw "Petro Desktop power" <switch> (g_kg_power){channel="mqtt:topic:openhab:desktop_petro_power:state"}
 Number desktop_petro_power_link "Petro Desktop power [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_power:link"}
 Switch desktop_petro_power_ota "Petro Desktop power [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_power:ota"}
+
+// Treppe Up light (0xec1bbdfffe9abfde)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch treppe_up_light_sw "Treppe Up light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto){channel="mqtt:topic:openhab:treppe_up_light:state"}
+Dimmer treppe_up_light_dim "Treppe Up light DIM [%d %%]"  <light> (g_dim_treppe){channel="mqtt:topic:openhab:treppe_up_light:dim"}
+Number treppe_up_light_link "Treppe Up light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_up_light:link"}
+Switch treppe_up_light_ota "Treppe Up light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_up_light:ota"}
+
+// Treppe Down light (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch treppe_down_light_sw "Treppe Down light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto){channel="mqtt:topic:openhab:treppe_down_light:state"}
+Dimmer treppe_down_light_dim "Treppe Down light DIM [%d %%]"  <light> (g_dim_treppe){channel="mqtt:topic:openhab:treppe_down_light:dim"}
+Number treppe_down_light_link "Treppe Down light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_down_light:link"}
+Switch treppe_down_light_ota "Treppe Down light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_down_light:ota"}
 
 // KG Lager 4 (1) (0xccccccfffedf345a)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html

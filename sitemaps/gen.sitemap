@@ -1,4 +1,12 @@
 
+// ==========================================
+// THIS FILE IS AUTO GENERATED
+// Do not edit by hands
+// Use this command to regenerate:
+// python3 ./bin/codegen.py
+// ==========================================
+
+
 sitemap gen label="GEN ITEMS"
 {
     Frame {
@@ -9,6 +17,10 @@ sitemap gen label="GEN ITEMS"
         Slider item=desktop_petro_light_dim
         Slider item=desktop_petro_light_ct
         Switch item=desktop_petro_power_sw
+        Switch item=treppe_up_light_sw
+        Slider item=treppe_up_light_dim
+        Switch item=treppe_down_light_sw
+        Slider item=treppe_down_light_dim
         Switch item=kg_lager4_1_light_sw
         Slider item=kg_lager4_1_light_dim
         Switch item=kg_lager4_2_light_sw
