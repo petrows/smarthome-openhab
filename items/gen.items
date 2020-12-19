@@ -1,5 +1,35 @@
+// Marina Desktop light (0xec1bbdfffe1b89d1)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Switch desktop_marina_light_sw "Marina Desktop light" <light> (g_light_all,g_light_eg,g_light_eg_fs){channel="mqtt:topic:openhab:desktop_marina_light:state"}
+Dimmer desktop_marina_light_dim "Marina Desktop light DIM [%d %%]"  <light>{channel="mqtt:topic:openhab:desktop_marina_light:dim"}
+Dimmer desktop_marina_light_ct "Marina Desktop light CT [JS(display-mired.js):%s]" <light> (g_light_astro_color){channel="mqtt:topic:openhab:desktop_marina_light:ct"}
+Number desktop_marina_light_link "Marina Desktop light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_marina_light:link"}
+Switch desktop_marina_light_ota "Marina Desktop light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_marina_light:ota"}
+
+// Petro Desktop light (0xccccccfffed8ef9d)
+// IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
+Switch desktop_petro_light_sw "Petro Desktop light" <light> (g_light_all,g_light_kg){channel="mqtt:topic:openhab:desktop_petro_light:state"}
+Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]"  <light>{channel="mqtt:topic:openhab:desktop_petro_light:dim"}
+Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(display-mired.js):%s]" <light> (g_light_astro_color){channel="mqtt:topic:openhab:desktop_petro_light:ct"}
+Number desktop_petro_light_link "Petro Desktop light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_light:link"}
+Switch desktop_petro_light_ota "Petro Desktop light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_light:ota"}
+
 // Petro Desktop power (0x7cb03eaa0a094bf2)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch desktop_petro_power_sw "Petro Desktop power" <power> {channel="mqtt:topic:openhab:zigbee-4bf2:state"}
-Number desktop_petro_power_link "Petro Desktop power [%d %%]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:zigbee-4bf2:link"}
-Switch desktop_petro_power_ota "Petro Desktop power [%s]" <settings> (g_zigbee_ota) {channel="mqtt:topic:openhab:zigbee-4bf2:ota"}
+Switch desktop_petro_power_sw "Petro Desktop power" <switch> (g_kg_power){channel="mqtt:topic:openhab:desktop_petro_power:state"}
+Number desktop_petro_power_link "Petro Desktop power [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_power:link"}
+Switch desktop_petro_power_ota "Petro Desktop power [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_power:ota"}
+
+// KG Lager 4 (1) (0xccccccfffedf345a)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto){channel="mqtt:topic:openhab:kg_lager4_1_light:state"}
+Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]"  <light> (g_dim_lager_auto){channel="mqtt:topic:openhab:kg_lager4_1_light:dim"}
+Number kg_lager4_1_light_link "KG Lager 4 (1) [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_1_light:link"}
+Switch kg_lager4_1_light_ota "KG Lager 4 (1) [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_1_light:ota"}
+
+// KG Lager 4 (2) (0xccccccfffedf5314)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto){channel="mqtt:topic:openhab:kg_lager4_2_light:state"}
+Dimmer kg_lager4_2_light_dim "KG Lager 4 (2) DIM [%d %%]"  <light> (g_dim_lager_auto){channel="mqtt:topic:openhab:kg_lager4_2_light:dim"}
+Number kg_lager4_2_light_link "KG Lager 4 (2) [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_2_light:link"}
+Switch kg_lager4_2_light_ota "KG Lager 4 (2) [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_2_light:ota"}

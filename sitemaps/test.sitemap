@@ -1,6 +1,6 @@
 sitemap test label="ТЕСТ"
-{	
-	Frame label="Ikea LEDs"{ 
+{
+	Frame label="Ikea LEDs"{
 		Switch item=ikea_led_ef9d_sw
 		Slider item=ikea_led_ef9d_brightness
 
@@ -21,12 +21,14 @@ sitemap test label="ТЕСТ"
 		Slider item=yel_white_1_brightness
 		Slider item=yel_white_1_temp minValue=2700 maxValue=6500 step=100
 
-		Switch item=testSwSunrise 
+		Switch item=testSwSunrise
 
-		Switch item=ikea_led_89d1_sw 
-		Slider item=ikea_led_89d1_brightness 
-		Slider item=ikea_led_89d1_temp 
+		Switch item=ikea_led_89d1_sw
+		Slider item=ikea_led_89d1_brightness
+		Slider item=ikea_led_89d1_temp
+
+        Switch item=desktop_petro_power_sw
 	}
-		
+
 
 }

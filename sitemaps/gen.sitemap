@@ -1,0 +1,18 @@
+
+sitemap gen label="GEN ITEMS"
+{
+    Frame {
+        Switch item=desktop_marina_light_sw
+        Slider item=desktop_marina_light_dim
+        Slider item=desktop_marina_light_ct
+        Switch item=desktop_petro_light_sw
+        Slider item=desktop_petro_light_dim
+        Slider item=desktop_petro_light_ct
+        Switch item=desktop_petro_power_sw
+        Switch item=kg_lager4_1_light_sw
+        Slider item=kg_lager4_1_light_dim
+        Switch item=kg_lager4_2_light_sw
+        Slider item=kg_lager4_2_light_dim
+    }
+}
+    

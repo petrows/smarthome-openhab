@@ -1,0 +1,17 @@
+
+# Device should apply saved color temp when ON
+rule "Marina Desktop light apply color on ON"
+when
+    Item desktop_marina_light_sw changed to ON
+then
+	desktop_marina_light_ct.sendCommand(desktop_marina_light_ct.state)
+end
+
+
+# Device should apply saved color temp when ON
+rule "Petro Desktop light apply color on ON"
+when
+    Item desktop_petro_light_sw changed to ON
+then
+	desktop_petro_light_ct.sendCommand(desktop_petro_light_ct.state)
+end
