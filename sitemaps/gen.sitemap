@@ -25,6 +25,8 @@ sitemap gen label="GEN ITEMS"
         Slider item=kg_lager4_1_light_dim
         Switch item=kg_lager4_2_light_sw
         Slider item=kg_lager4_2_light_dim
+        Switch item=treppe_motion_sw
+        Switch item=kg_lager4_motion_sw
     }
 }
     

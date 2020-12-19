@@ -57,6 +57,17 @@ class DEVICES:
         'device_name': 'IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/LED1836G9.html',
     }
+    # IKEA Motion
+    IKEA_TRADFRI_MOTION_SENSOR = {
+        'types': [
+            'zigbee',
+            'motion',
+            'ikea',
+            'battery',
+        ],
+        'device_name': 'IKEA TRADFRI motion sensor (E1525/E1745)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/E1525_E1745.html',
+    }
     # Sockets
     OSRAM_SMART_PLUG = {
         'types': [
@@ -141,6 +152,18 @@ items = [
             'dim': ['g_dim_lager_auto'],
         }
     },
+    {
+        'name': "KG Treppe motion",
+        'id': "treppe_motion",
+        'zigbee_id': '0xbc33acfffe872049',
+        'type': DEVICES.IKEA_TRADFRI_MOTION_SENSOR,
+    },
+    {
+        'name': "KG Lager motion",
+        'id': "kg_lager4_motion",
+        'zigbee_id': '0xbc33acfffe84ca1e',
+        'type': DEVICES.IKEA_TRADFRI_MOTION_SENSOR,
+    },
 ]
 
 
@@ -158,7 +181,7 @@ def device_comment(item):
 
 
 def device_groups(item, typ):
-    if typ in item['groups']:
+    if 'groups' in item and typ in item['groups']:
         return ' (' + ','.join(item['groups'][typ])+')'
     return ''
 
@@ -200,7 +223,7 @@ if __name__ == "__main__":
                 f"Thing mqtt:topic:openhab:{item['mqtt_topic']} (mqtt:broker:openhab) {{")
             conf_str.append(
                 f"\tChannels:")
-            # Device have switch option
+            # Device has switch option
             if np.in1d(['lamp', 'plug'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType switch : state ["
@@ -210,7 +233,7 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-state.js\""
                     f"]"
                 )
-            # Device have dimmer
+            # Device has dimmer
             if np.in1d(['lamp'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType dimmer : dim ["
@@ -220,7 +243,7 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-brightness.js\", min=1, max=255"
                     f"]"
                 )
-            # Device have Colot Temp control
+            # Device has Colot Temp control
             if np.in1d(['ct'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType dimmer : ct ["
@@ -230,6 +253,17 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-color_temp.js\", min=150, max=500"
                     f"]"
                 )
+            # Device has Motion sensor
+            if np.in1d(['motion'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType switch : occupancy [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-occupancy.js\"]")
+
+            # Some zigbee devices report battery
+            if np.in1d(['battery'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\"]")
+                conf_str.append(
+                    f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-lowbatt.js\"]")
 
             # All zigbee devices have Link Quality reported
             conf_str.append(
@@ -263,7 +297,17 @@ if __name__ == "__main__":
             conf_str.append(
                 f"Switch {item['id']}_sw \"{item['name']}\" <{device_icon}>"
                 f"{device_groups(item,'sw')}"
-                f"{{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state\"}}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state\"}}"
+            )
+            all_items.append(f"Switch item={item['id']}_sw")
+
+        # Some devices have motion option
+        if np.in1d(['motion'], item['type']['types']).any():
+            device_icon = 'motion'
+            conf_str.append(
+                f"Switch {item['id']}_occupancy \"{item['name']}\" <{device_icon}>"
+                f"{device_groups(item,'occupancy')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:occupancy\"}}"
             )
             all_items.append(f"Switch item={item['id']}_sw")
 
@@ -271,9 +315,9 @@ if __name__ == "__main__":
             # All Zigbee lamps have dimmer built-in
             if np.in1d(['lamp'], item['type']['types']).any():
                 conf_str.append(
-                    f"Dimmer {item['id']}_dim \"{item['name']} DIM [%d %%]\"  <{device_icon}>"
+                    f"Dimmer {item['id']}_dim \"{item['name']} DIM [%d %%]\" <{device_icon}>"
                     f"{device_groups(item,'dim')}"
-                    f"{{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:dim\"}}"
+                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:dim\"}}"
                 )
                 all_items.append(f"Slider item={item['id']}_dim")
 
@@ -282,7 +326,7 @@ if __name__ == "__main__":
                 conf_str.append(
                     f"Dimmer {item['id']}_ct \"{item['name']} CT [JS(display-mired.js):%s]\" <colorwheel>"
                     f"{device_groups(item,'ct')}"
-                    f"{{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:ct\"}}"
+                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:ct\"}}"
                 )
                 all_items.append(f"Slider item={item['id']}_ct")
                 gen_rules.append(
@@ -313,6 +357,10 @@ end
 
             # Some zigbee devices report battery
             if 'battery' in item['type']['types']:
+                conf_str.append(
+                    f"Number {item['id']}_battery \"{item['name']} [%d %%]\""
+                    f" <battery> (g_battery_level) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery\"}}"
+                )
                 conf_str.append(
                     f"Switch {item['id']}_battery_low \"{item['name']} [MAP(lowbat.map):%s]\""
                     f" <lowbattery> (g_battery_low) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery_low\"}}"

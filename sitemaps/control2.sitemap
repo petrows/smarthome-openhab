@@ -102,7 +102,7 @@ sitemap control2 label="KONTROL 2"
 			Frame label="Treppe" {
 				Switch item=g_light_treppe label="Treppe [%s]" icon="light"
 				Slider item=g_dim_treppe label="Treppe dim [%d]" icon="light"
-				Text item=ikea_motion_2049_occupancy label="Motion Treppe [%s]" icon="motion"
+				Text item=treppe_motion_occupancy label="Motion Treppe [%s]"
 			}
 			Frame label="Haupt" {
 				Switch item=snf_kg_l1 label="Haupt [%s]" icon="light"
@@ -112,7 +112,7 @@ sitemap control2 label="KONTROL 2"
 			Frame label="Lager" {
 				Switch item=g_light_lager_auto label="Lager Flür [%s]" icon="light"
 				Slider item=g_dim_lager_auto label="Lager dim [%d]" icon="light"
-				Text item=ikea_motion_ca1e_occupancy label="Motion Lager [%s]" icon="motion"
+				Text item=kg_lager4_motion_occupancy label="Motion Lager [%s]"
 			}
 			Frame label="Desktop" {
 				Switch item=desktop_petro_light_sw label="Desktop [%s]"

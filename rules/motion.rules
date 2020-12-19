@@ -1,0 +1,28 @@
+
+// Motion detect in KG
+rule "KG Motion detect haupt"
+when
+    Item treppe_motion_occupancy changed
+then
+    var state = treppe_motion_occupancy.state
+    if (state == OFF) {
+        sendCommand(g_light_treppe, OFF)
+    }
+    if (state == ON && g_light_treppe.state == OFF) {
+        sendCommand(g_dim_treppe, 30)
+    }
+end
+
+// Motion detect in Lager Flür
+rule "KG Motion detect Lager"
+when
+    Item kg_lager4_motion_occupancy changed
+then
+    var state = kg_lager4_motion_occupancy.state
+    if (state == OFF) {
+        sendCommand(g_light_lager_auto, OFF)
+    }
+    if (state == ON && g_light_lager_auto.state == OFF) {
+        sendCommand(g_dim_lager_auto, 30)
+    }
+end

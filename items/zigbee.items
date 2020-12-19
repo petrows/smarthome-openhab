@@ -46,19 +46,7 @@ Switch kg_water_leak_1_battery_low "Flood KG 1 [MAP(lowbat.map):%s]" <lowbattery
 DateTime kg_water_leak_1_activity "Flood KG 1 [JS(display-activity.js):%s]" <time> (g_zigbee_activity) { channel="mqtt:topic:openhab:mi-water-leak-1:activity" }
 
 // Tradfri motion sensors
-// Lager Flür
-Switch ikea_motion_2049_occupancy "Motion KG Treppe" { channel="mqtt:topic:openhab:ikea-motion-2049:occupancy" }
-Number ikea_motion_2049_link "Motion KG Treppe [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-motion-2049:link" }
-Number ikea_motion_2049_battery "Motion KG Treppe [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-motion-2049:battery" }
-Switch ikea_motion_2049_battery_low "Motion KG Treppe [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-motion-2049:battery_low" }
-DateTime ikea_motion_2049_activity "Motion KG Treppe [JS(display-activity.js):%s]" <time> (g_zigbee_activity) { channel="mqtt:topic:openhab:ikea-motion-2049:activity" }
-
-// Lager Flür fern
-Switch ikea_motion_ca1e_occupancy "Motion KG Lager" { channel="mqtt:topic:openhab:ikea-motion-ca1e:occupancy" }
-Number ikea_motion_ca1e_link "Motion KG Lager [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:ikea-motion-ca1e:link" }
-Number ikea_motion_ca1e_battery "Motion KG Lager [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:ikea-motion-ca1e:battery" }
-Switch ikea_motion_ca1e_battery_low "Motion KG Lager [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:ikea-motion-ca1e:battery_low" }
-DateTime ikea_motion_ca1e_activity "Motion KG Lager [JS(display-activity.js):%s]" <time> (g_zigbee_activity) { channel="mqtt:topic:openhab:ikea-motion-ca1e:activity" }
+// Generated
 
 // Xiaomi items
 

@@ -9,50 +9,66 @@
 
 // Marina Desktop light (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Switch desktop_marina_light_sw "Marina Desktop light" <light> (g_light_all,g_light_eg,g_light_eg_fs){channel="mqtt:topic:openhab:desktop_marina_light:state"}
-Dimmer desktop_marina_light_dim "Marina Desktop light DIM [%d %%]"  <light>{channel="mqtt:topic:openhab:desktop_marina_light:dim"}
-Dimmer desktop_marina_light_ct "Marina Desktop light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color){channel="mqtt:topic:openhab:desktop_marina_light:ct"}
+Switch desktop_marina_light_sw "Marina Desktop light" <light> (g_light_all,g_light_eg,g_light_eg_fs) {channel="mqtt:topic:openhab:desktop_marina_light:state"}
+Dimmer desktop_marina_light_dim "Marina Desktop light DIM [%d %%]" <light> {channel="mqtt:topic:openhab:desktop_marina_light:dim"}
+Dimmer desktop_marina_light_ct "Marina Desktop light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color) {channel="mqtt:topic:openhab:desktop_marina_light:ct"}
 Number desktop_marina_light_link "Marina Desktop light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_marina_light:link"}
 Switch desktop_marina_light_ota "Marina Desktop light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_marina_light:ota"}
 
 // Petro Desktop light (0xccccccfffed8ef9d)
 // IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
-Switch desktop_petro_light_sw "Petro Desktop light" <light> (g_light_all,g_light_kg){channel="mqtt:topic:openhab:desktop_petro_light:state"}
-Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]"  <light>{channel="mqtt:topic:openhab:desktop_petro_light:dim"}
-Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color){channel="mqtt:topic:openhab:desktop_petro_light:ct"}
+Switch desktop_petro_light_sw "Petro Desktop light" <light> (g_light_all,g_light_kg) {channel="mqtt:topic:openhab:desktop_petro_light:state"}
+Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]" <light> {channel="mqtt:topic:openhab:desktop_petro_light:dim"}
+Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color) {channel="mqtt:topic:openhab:desktop_petro_light:ct"}
 Number desktop_petro_light_link "Petro Desktop light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_light:link"}
 Switch desktop_petro_light_ota "Petro Desktop light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_light:ota"}
 
 // Petro Desktop power (0x7cb03eaa0a094bf2)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch desktop_petro_power_sw "Petro Desktop power" <switch> (g_kg_power){channel="mqtt:topic:openhab:desktop_petro_power:state"}
+Switch desktop_petro_power_sw "Petro Desktop power" <switch> (g_kg_power) {channel="mqtt:topic:openhab:desktop_petro_power:state"}
 Number desktop_petro_power_link "Petro Desktop power [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_power:link"}
 Switch desktop_petro_power_ota "Petro Desktop power [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_power:ota"}
 
 // Treppe Up light (0xec1bbdfffe9abfde)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch treppe_up_light_sw "Treppe Up light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto){channel="mqtt:topic:openhab:treppe_up_light:state"}
-Dimmer treppe_up_light_dim "Treppe Up light DIM [%d %%]"  <light> (g_dim_treppe){channel="mqtt:topic:openhab:treppe_up_light:dim"}
+Switch treppe_up_light_sw "Treppe Up light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_up_light:state"}
+Dimmer treppe_up_light_dim "Treppe Up light DIM [%d %%]" <light> (g_dim_treppe) {channel="mqtt:topic:openhab:treppe_up_light:dim"}
 Number treppe_up_light_link "Treppe Up light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_up_light:link"}
 Switch treppe_up_light_ota "Treppe Up light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_up_light:ota"}
 
 // Treppe Down light (0xec1bbdfffe4695b5)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch treppe_down_light_sw "Treppe Down light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto){channel="mqtt:topic:openhab:treppe_down_light:state"}
-Dimmer treppe_down_light_dim "Treppe Down light DIM [%d %%]"  <light> (g_dim_treppe){channel="mqtt:topic:openhab:treppe_down_light:dim"}
+Switch treppe_down_light_sw "Treppe Down light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_down_light:state"}
+Dimmer treppe_down_light_dim "Treppe Down light DIM [%d %%]" <light> (g_dim_treppe) {channel="mqtt:topic:openhab:treppe_down_light:dim"}
 Number treppe_down_light_link "Treppe Down light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_down_light:link"}
 Switch treppe_down_light_ota "Treppe Down light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_down_light:ota"}
 
 // KG Lager 4 (1) (0xccccccfffedf345a)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto){channel="mqtt:topic:openhab:kg_lager4_1_light:state"}
-Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]"  <light> (g_dim_lager_auto){channel="mqtt:topic:openhab:kg_lager4_1_light:dim"}
+Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:state"}
+Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]" <light> (g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim"}
 Number kg_lager4_1_light_link "KG Lager 4 (1) [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_1_light:link"}
 Switch kg_lager4_1_light_ota "KG Lager 4 (1) [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_1_light:ota"}
 
 // KG Lager 4 (2) (0xccccccfffedf5314)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto){channel="mqtt:topic:openhab:kg_lager4_2_light:state"}
-Dimmer kg_lager4_2_light_dim "KG Lager 4 (2) DIM [%d %%]"  <light> (g_dim_lager_auto){channel="mqtt:topic:openhab:kg_lager4_2_light:dim"}
+Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:state"}
+Dimmer kg_lager4_2_light_dim "KG Lager 4 (2) DIM [%d %%]" <light> (g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:dim"}
 Number kg_lager4_2_light_link "KG Lager 4 (2) [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_2_light:link"}
 Switch kg_lager4_2_light_ota "KG Lager 4 (2) [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_2_light:ota"}
+
+// KG Treppe motion (0xbc33acfffe872049)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Switch treppe_motion_occupancy "KG Treppe motion" <motion> {channel="mqtt:topic:openhab:treppe_motion:occupancy"}
+Number treppe_motion_link "KG Treppe motion [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_motion:link"}
+Switch treppe_motion_ota "KG Treppe motion [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_motion:ota"}
+Number treppe_motion_battery "KG Treppe motion [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_motion:battery"}
+Switch treppe_motion_battery_low "KG Treppe motion [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:treppe_motion:battery_low"}
+
+// KG Lager motion (0xbc33acfffe84ca1e)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Switch kg_lager4_motion_occupancy "KG Lager motion" <motion> {channel="mqtt:topic:openhab:kg_lager4_motion:occupancy"}
+Number kg_lager4_motion_link "KG Lager motion [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_motion:link"}
+Switch kg_lager4_motion_ota "KG Lager motion [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_motion:ota"}
+Number kg_lager4_motion_battery "KG Lager motion [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_lager4_motion:battery"}
+Switch kg_lager4_motion_battery_low "KG Lager motion [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_lager4_motion:battery_low"}

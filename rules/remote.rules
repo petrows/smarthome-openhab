@@ -1,0 +1,252 @@
+var Timer verlassenTimer = null
+
+rule "Spiegel control SW"
+when
+    Channel "mqtt:topic:openhab:ikea-remote-6b80:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "toggle": {
+            if (snf_eg_fl_spiegel.state != ON) {
+                snf_eg_fl_spiegel.sendCommand(ON)
+            } else {
+                snf_eg_fl_spiegel.sendCommand(OFF)
+            }
+        }
+        case "brightness_up_click": {
+            var brightness = snf_eg_fl_spiegel_brightness.getState as Number
+
+            brightness = brightness + 30;
+            if (brightness > 80) { brightness = 100; }
+
+            snf_eg_fl_spiegel_brightness.sendCommand(brightness)
+        }
+        case "brightness_down_click": {
+            var brightness = snf_eg_fl_spiegel_brightness.getState as Number
+
+            brightness = brightness - 30;
+            if (brightness < 10) { brightness = 1; }
+
+            snf_eg_fl_spiegel_brightness.sendCommand(brightness)
+        }
+        case "arrow_left_click": {
+            // g_light_kg.sendCommand(OFF)
+        }
+        case "arrow_right_click": {
+            // g_light_kg.sendCommand(OFF)
+        }
+    }
+end
+
+rule "House verlassen SW"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-e111:click" triggered
+then
+	var state = receivedEvent.getEvent()
+
+    logWarn("light", "Verlassen SW: " + state)
+
+    verlassenTimer = createTimer(now.plusMillis(20000), [ |
+        logWarn("light", "Verlassen all OFF")
+        g_light_all.sendCommand(OFF)
+    ])
+
+    // Set all except treppe oben
+    g_light_all.members.forEach [s |
+        if (s == treppe_up_light_sw) {
+            // s.sendCommand(ON)
+            // Set Ladder lamp ON and 100%
+            treppe_up_light_dim.sendCommand(100)
+        } else {
+            s.sendCommand(OFF)
+        }
+    ]
+
+    // Diff by buttons
+    switch(state) {
+
+        // Someone in house?
+        case "on": {
+            // Do nothing
+        }
+
+        // Nobody in house
+        case "off": {
+            if (cfgHeatingEnable.state == ON) {
+                g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+            }
+        }
+    }
+
+end
+
+rule "KG Ladder BOTTOM btn"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-356e:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "on": {
+            g_dim_treppe.sendCommand(100)
+        }
+        case "off": {
+            g_light_treppe.sendCommand(OFF)
+            g_light_lager_auto.sendCommand(OFF) // Lager licht also OFF
+        }
+    }
+end
+
+rule "KG Ladder UP btn"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-92f3:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "brightness_up": { // Long press UP
+            g_light_kg_auto.sendCommand(ON)
+            g_dim_treppe.sendCommand(100) // Full brightness for auto-light
+        }
+        case "on": {
+            g_light_kg_auto.sendCommand(ON)
+            g_dim_treppe.sendCommand(100)
+        }
+        case "off": {
+            // Up button switches ALL light in KG
+            g_light_kg.sendCommand(OFF)
+        }
+    }
+end
+
+rule "KG Lager btn"
+when
+    Channel "mqtt:topic:openhab:ikea-sw-01f8:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "on": {
+            sendCommand(g_dim_lager_auto, 100)
+        }
+        case "off": {
+            sendCommand(g_light_lager_auto, OFF)
+        }
+    }
+end
+
+rule "KG remote sw (desktop)"
+when
+    Channel "mqtt:topic:openhab:ikea-remote-357d:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "toggle": {
+            if (desktop_petro_light_sw.state == ON) { desktop_petro_light_sw.sendCommand(OFF) } else { desktop_petro_light_sw.sendCommand(ON) }
+        }
+        case "arrow_right_click": {
+            desktop_petro_light_dim.sendCommand(100)
+        }
+        case "arrow_left_click": {
+            desktop_petro_light_dim.sendCommand(0)
+        }
+        case "brightness_down_click": {
+            g_light_kg.members.forEach [s |
+                if (s != desktop_petro_light_sw) {
+                    s.sendCommand(OFF)
+                }
+            ]
+        }
+        case "brightness_up_click": {
+            g_light_kg_auto.members.forEach [s |
+                if (s != desktop_petro_light_sw) {
+                    s.sendCommand(ON)
+                }
+            ]
+        }
+    }
+end
+
+rule "Marina remote sw (desktop)"
+when
+    Channel "mqtt:topic:openhab:ikea-remote-9703:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "toggle": {
+            if (desktop_marina_light_sw.state == ON) { desktop_marina_light_sw.sendCommand(OFF) } else { desktop_marina_light_sw.sendCommand(ON) }
+        }
+        case "arrow_right_click": {
+            desktop_marina_light_dim.sendCommand(100)
+        }
+        case "arrow_left_click": {
+            desktop_marina_light_dim.sendCommand(0)
+        }
+        case "brightness_down_click": {
+            snf_eg_fs.sendCommand(OFF)
+        }
+        case "brightness_up_click": {
+            snf_eg_fs.sendCommand(ON)
+        }
+    }
+end
+
+rule "SZ remote sw"
+when
+    Channel "mqtt:topic:openhab:ikea-remote-2305:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "toggle": {
+            g_light_all.sendCommand(OFF)
+        }
+        case "brightness_down_click": {
+            if (0 == (g_light_eg_sz_decor_brightness.state as Number) && ON == g_light_eg_sz_decor.state) {
+                g_light_eg_sz_decor.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_decor_brightness.sendCommand(0)
+            }
+        }
+        case "brightness_up_click": {
+            if (100 == (g_light_eg_sz_decor_brightness.state as Number) && ON == g_light_eg_sz_decor.state) {
+                g_light_eg_sz_decor.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_decor_brightness.sendCommand(100)
+            }
+        }
+        case "arrow_right_click": {
+            if (yel_white_1_sw.state == ON && yel_white_1_brightness.state == 100) {
+                yel_white_1_sw.sendCommand(OFF)
+            } else {
+                yel_white_1_brightness.sendCommand(100)
+            }
+        }
+        case "arrow_left_click": {
+            if (yel_white_1_sw.state == ON && yel_white_1_brightness.state == 0) {
+                yel_white_1_sw.sendCommand(OFF)
+            } else {
+                yel_white_1_brightness.sendCommand(0)
+            }
+        }
+    }
+end
+
+rule "KU Arbeitlicht SW"
+when
+    Channel "mqtt:topic:openhab:mi-button-5b2d:click" triggered
+then
+	var state = receivedEvent.getEvent()
+    switch(state) {
+        case "single": {
+            if (snf_eg_ku_arbeit.state == ON) {
+                snf_eg_ku_arbeit.sendCommand(OFF)
+            } else {
+                snf_eg_ku_arbeit.sendCommand(ON)
+            }
+        }
+        case "long": {
+            if (snf_eg_ku_haupt.state == ON) {
+                snf_eg_ku_haupt.sendCommand(OFF)
+            } else {
+                snf_eg_ku_haupt.sendCommand(ON)
+            }
+        }
+    }
+end

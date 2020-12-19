@@ -266,13 +266,7 @@ Thing mqtt:topic:openhab:ikea-remote-6b80 (mqtt:broker:openhab) {
 // Generated
 
 // TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11)
-Thing mqtt:topic:openhab:ikea-led-89d1 (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [ stateTopic="zigbee2mqtt/0xec1bbdfffe1b89d1", commandTopic="zigbee2mqtt/0xec1bbdfffe1b89d1/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:z2m-command-state.js" ]
-		Type dimmer : brightness [ stateTopic="zigbee2mqtt/0xec1bbdfffe1b89d1", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe1b89d1/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255 ]
-		Type dimmer : temp [ stateTopic="zigbee2mqtt/0xec1bbdfffe1b89d1", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/0xec1bbdfffe1b89d1/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=255, max=512 ]
-		Type number : link [ stateTopic="zigbee2mqtt/0xec1bbdfffe1b89d1", transformationPattern="JSONPATH:$.linkquality" ]
-}
+// Generated
 
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen,dimmable (LED1842G3)
 Thing mqtt:topic:openhab:ikea-led-2819 (mqtt:broker:openhab) {
@@ -295,19 +289,4 @@ Thing mqtt:topic:openhab:ikea-led-007b (mqtt:broker:openhab) {
 }
 
 // IKEA TRADFRI motion sensor (E1525/E1745)
-Thing mqtt:topic:openhab:ikea-motion-2049 (mqtt:broker:openhab) {
-	Channels:
-		Type switch : occupancy [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JS:z2m-occupancy.js" ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JS:z2m-activity.js" ]
-}
-Thing mqtt:topic:openhab:ikea-motion-ca1e (mqtt:broker:openhab) {
-	Channels:
-		Type switch : occupancy [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JS:z2m-occupancy.js" ]
-		Type number : battery [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.battery" ]
-		Type switch : battery_low [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JS:z2m-lowbatt.js" ]
-		Type number : link [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.linkquality" ]
-		Type datetime : activity [ stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JS:z2m-activity.js" ]
-}
+// Generated
