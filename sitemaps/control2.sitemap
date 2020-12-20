@@ -249,17 +249,5 @@ sitemap control2 label="KONTROL 2"
 				Text	item=online_snf_eg_bz icon=network
 			}
 		}
-
-		// Group item=gPresent label="Beisein [MAP(presence.map):%s]" icon=network {
-		// 	Text	item=gPresentPeter label="Петр [MAP(presence.map):%s]" icon=network {
-		// 		Text	item=presBlePeter label="Петр BLE" icon=network
-		// 		Text	item=presMobilePeter label="Петр мобильный" icon=network
-		// 	}
-		// 	Text	item=gPresentMarina label="Марина [MAP(presence.map):%s]" icon=network {
-		// 		Text	item=presBleMarina label="Марина BLE" icon=network
-		// 		Text	item=presMobileMarina label="Марина мобильный" icon=network
-		// 	}
-		// }
-
 	}
 }

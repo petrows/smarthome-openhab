@@ -32,6 +32,11 @@ Switch eg_leave_switch_ota "Leave switch [%s]" <flowpipe> (g_zigbee_ota) {channe
 Number eg_leave_switch_battery "Leave switch [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:eg_leave_switch:battery"}
 Switch eg_leave_switch_battery_low "Leave switch [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:eg_leave_switch:battery_low"}
 
+// EG Router (0x00124b000b4ed5cc)
+// CC2530.ROUTER - Custom devices (DiY) / https://www.zigbee2mqtt.io/devices/CC2530.ROUTER.html
+Number eg_router_link "EG Router [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:eg_router:link"}
+Switch eg_router_ota "EG Router [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:eg_router:ota"}
+
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Number ns_climate_temperature "NS Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:ns_climate:temperature"}

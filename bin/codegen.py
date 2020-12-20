@@ -49,6 +49,12 @@ items = [
         'zigbee_id': '0x680ae2fffe16e111',
         'type': DEVICES.IKEA_TRADFRI_ON_OFF,
     },
+    {
+        'name': "EG Router",
+        'id': "eg_router",
+        'zigbee_id': '0x00124b000b4ed5cc',
+        'type': DEVICES.DIY_CC2540_ROUTER,
+    },
     # EG (Nagel Studio)
     {
         'name': "NS Climate",

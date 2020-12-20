@@ -1,16 +1,5 @@
-Group:Number:AVG g_zigbee_link "Zigbee Link [%d %%]" <network>
+Group:Number:AVG g_zigbee_link "Zigbee Link [%d]" <network>
 Group:Switch:OR(ON, OFF) g_zigbee_ota "Zigbee OTA [%s]" <network>
 Group:DateTime:EARLIEST g_zigbee_activity "Zigbee Activity [JS(display-activity.js):%s]" <time>
 
 Switch zigbee_root_pair "ZB root pair" { channel="mqtt:topic:openhab:zigbee-root:pair", expire="15m,command=OFF" }
-
-Number zigbee_router_1_link "ZB router 1 [%d %%]" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:zigbee-router-d5cc:link" }
-
-// Number ikea_router_6a05 "Ikea router 1" (g_zigbee_link) { channel="mqtt:topic:openhab:zigbee-router-6a05:link" }
-
-// Aquara water leak
-Switch kg_water_leak_1 "Flood KG 1" { channel="mqtt:topic:openhab:mi-water-leak-1:leak" }
-Number kg_water_leak_1_link "Flood KG 1 [%d %%]nk" <network> (g_zigbee_link) { channel="mqtt:topic:openhab:mi-water-leak-1:link" }
-Number kg_water_leak_1_battery "Flood KG 1 [%d %%]" <battery> (g_battery_level) { channel="mqtt:topic:openhab:mi-water-leak-1:battery" }
-Switch kg_water_leak_1_battery_low "Flood KG 1 [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) { channel="mqtt:topic:openhab:mi-water-leak-1:battery_low" }
-DateTime kg_water_leak_1_activity "Flood KG 1 [JS(display-activity.js):%s]" <time> (g_zigbee_activity) { channel="mqtt:topic:openhab:mi-water-leak-1:activity" }
