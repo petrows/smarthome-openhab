@@ -426,14 +426,12 @@ end
                 f"Number {item['id']}_link \"{item['name']} [%d]\""
                 f" <network> (g_zigbee_link) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:link\"}}"
             )
-            # all_items.append(f"Text item={item['id']}_link")
 
             # All zigbee devices probably have some OTA updates reported
             conf_str.append(
                 f"Switch {item['id']}_ota \"{item['name']} [%s]\""
                 f" <flowpipe> (g_zigbee_ota) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:ota\"}}"
             )
-            # all_items.append(f"Switch item={item['id']}_ota")
 
             # Some zigbee devices report battery
             if 'battery' in item['type']['types']:
@@ -445,7 +443,13 @@ end
                     f"Switch {item['id']}_battery_low \"{item['name']} [MAP(lowbat.map):%s]\""
                     f" <lowbattery> (g_battery_low) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery_low\"}}"
                 )
-                # all_items.append(f"Switch item={item['id']}_battery_low")
+
+            # ... and it's voltage
+            if 'voltage' in item['type']['types']:
+                conf_str.append(
+                    f"Number {item['id']}_voltage \"{item['name']} [%d mV]\""
+                    f" <energy> {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:voltage\"}}"
+                )
 
             # Some zigbee devices report activity
             if 'activity' in item['type']['types']:

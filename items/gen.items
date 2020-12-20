@@ -15,6 +15,7 @@ Number ext_climate_link "Outside Climate [%d]" <network> (g_zigbee_link) {channe
 Switch ext_climate_ota "Outside Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:ext_climate:ota"}
 Number ext_climate_battery "Outside Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ext_climate:battery"}
 Switch ext_climate_battery_low "Outside Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ext_climate:battery_low"}
+Number ext_climate_voltage "Outside Climate [%d mV]" <energy> {channel="mqtt:topic:openhab:ext_climate:voltage"}
 DateTime ext_climate_activity "Outside Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ext_climate:activity"}
 
 // Mirror remote (0x680ae2fffeab6b80)
@@ -40,6 +41,7 @@ Number ns_climate_link "NS Climate [%d]" <network> (g_zigbee_link) {channel="mqt
 Switch ns_climate_ota "NS Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:ns_climate:ota"}
 Number ns_climate_battery "NS Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ns_climate:battery"}
 Switch ns_climate_battery_low "NS Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ns_climate:battery_low"}
+Number ns_climate_voltage "NS Climate [%d mV]" <energy> {channel="mqtt:topic:openhab:ns_climate:voltage"}
 DateTime ns_climate_activity "NS Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ns_climate:activity"}
 
 // FS Climate (0x00158d0001c15121)
@@ -50,6 +52,7 @@ Number fs_climate_link "FS Climate [%d]" <network> (g_zigbee_link) {channel="mqt
 Switch fs_climate_ota "FS Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:fs_climate:ota"}
 Number fs_climate_battery "FS Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:fs_climate:battery"}
 Switch fs_climate_battery_low "FS Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:fs_climate:battery_low"}
+Number fs_climate_voltage "FS Climate [%d mV]" <energy> {channel="mqtt:topic:openhab:fs_climate:voltage"}
 DateTime fs_climate_activity "FS Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:fs_climate:activity"}
 
 // Marina Desktop light (0xec1bbdfffe1b89d1)
@@ -75,6 +78,7 @@ Number sz_climate_link "SZ Climate [%d]" <network> (g_zigbee_link) {channel="mqt
 Switch sz_climate_ota "SZ Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_climate:ota"}
 Number sz_climate_battery "SZ Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_climate:battery"}
 Switch sz_climate_battery_low "SZ Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_climate:battery_low"}
+Number sz_climate_voltage "SZ Climate [%d mV]" <energy> {channel="mqtt:topic:openhab:sz_climate:voltage"}
 DateTime sz_climate_activity "SZ Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:sz_climate:activity"}
 
 // Bedroom remote (0x14b457fffe7e2305)
@@ -93,6 +97,7 @@ Number ku_climate_link "KU Climate [%d]" <network> (g_zigbee_link) {channel="mqt
 Switch ku_climate_ota "KU Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_climate:ota"}
 Number ku_climate_battery "KU Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_climate:battery"}
 Switch ku_climate_battery_low "KU Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_climate:battery_low"}
+Number ku_climate_voltage "KU Climate [%d mV]" <energy> {channel="mqtt:topic:openhab:ku_climate:voltage"}
 DateTime ku_climate_activity "KU Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ku_climate:activity"}
 
 // Treppe Up switch (0x680ae2fffe1a92f3)
@@ -141,6 +146,7 @@ Number kg_climate_link "KG Climate [%d]" <network> (g_zigbee_link) {channel="mqt
 Switch kg_climate_ota "KG Climate [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_climate:ota"}
 Number kg_climate_battery "KG Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_climate:battery"}
 Switch kg_climate_battery_low "KG Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_climate:battery_low"}
+Number kg_climate_voltage "KG Climate [%d mV]" <energy> {channel="mqtt:topic:openhab:kg_climate:voltage"}
 DateTime kg_climate_activity "KG Climate [%d %%]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:kg_climate:activity"}
 
 // Petro Desktop light (0xccccccfffed8ef9d)
