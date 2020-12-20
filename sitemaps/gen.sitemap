@@ -10,6 +10,8 @@
 sitemap gen label="GEN ITEMS"
 {
     Frame {
+        Switch item=ns_power_2_sw
+        Switch item=ns_boost_power_sw
         Switch item=desktop_marina_light_sw
         Slider item=desktop_marina_light_dim
         Slider item=desktop_marina_light_ct

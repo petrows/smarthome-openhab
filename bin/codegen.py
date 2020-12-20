@@ -62,6 +62,18 @@ items = [
         'zigbee_id': '0x00158d0001b95e08',
         'type': DEVICES.XIAOMI_AQARA_V2,
     },
+    {
+        'name': "NS Power 2",
+        'id': "ns_power_2",
+        'zigbee_id': '0x7cb03eaa0a093a8b',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+    },
+    {
+        'name': "NS Boost power",
+        'id': "ns_boost_power",
+        'zigbee_id': '0x7cb03eaa0a0a1103',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+    },
     # EG (Foto Studio)
     {
         'name': "FS Climate",

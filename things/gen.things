@@ -66,6 +66,24 @@ Thing mqtt:topic:openhab:ns_climate (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// NS Power 2 (0x7cb03eaa0a093a8b)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:ns_power_2 (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0x7cb03eaa0a093a8b", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x7cb03eaa0a093a8b/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0x7cb03eaa0a093a8b", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a093a8b", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// NS Boost power (0x7cb03eaa0a0a1103)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:ns_boost_power (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0x7cb03eaa0a0a1103", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x7cb03eaa0a0a1103/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0x7cb03eaa0a0a1103", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a0a1103", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:fs_climate (mqtt:broker:openhab) {

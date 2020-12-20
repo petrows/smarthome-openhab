@@ -3,3 +3,4 @@ Group:Switch:OR(ON, OFF) g_zigbee_ota "Zigbee OTA [%s]" <network>
 Group:DateTime:EARLIEST g_zigbee_activity "Zigbee Activity [JS(display-activity.js):%s]" <time>
 
 Switch zigbee_root_pair "ZB root pair" { channel="mqtt:topic:openhab:zigbee-root:pair", expire="15m,command=OFF" }
+
