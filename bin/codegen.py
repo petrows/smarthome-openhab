@@ -92,6 +92,36 @@ items = [
         'zigbee_id': '0x14b457fffe7e2305',
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
+    {
+        'name': "SZ Decor lamp 1",
+        'id': "sz_declamp_1",
+        'zigbee_id': '0xec1bbdfffe972819',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_250,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz', 'g_light_eg_sz_night', 'g_light_eg_sz_decor'],
+            'dim': ['g_light_eg_sz_night_brightness', 'g_light_eg_sz_decor_brightness'],
+        }
+    },
+    {
+        'name': "SZ Decor lamp 2",
+        'id': "sz_declamp_2",
+        'zigbee_id': '0xec1bbdfffe972203',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_250,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz', 'g_light_eg_sz_night', 'g_light_eg_sz_decor'],
+            'dim': ['g_light_eg_sz_night_brightness', 'g_light_eg_sz_decor_brightness'],
+        }
+    },
+    {
+        'name': "SZ Decor lamp 3",
+        'id': "sz_declamp_3",
+        'zigbee_id': '0xec1bbdfffe91007b',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_250,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz', 'g_light_eg_sz_night', 'g_light_eg_sz_decor'],
+            'dim': ['g_light_eg_sz_night_brightness', 'g_light_eg_sz_decor_brightness'],
+        }
+    },
     # EG (Kitchen)
     {
         'name': "KU Climate",
@@ -99,7 +129,13 @@ items = [
         'zigbee_id': '0x00158d0001b95fc4',
         'type': DEVICES.XIAOMI_AQARA_V2,
     },
-    # Ladded (Treppe)
+    {
+        'name': "KU Light Button",
+        'id': "ku_light_button",
+        'zigbee_id': '0x00158d0001be5b2d',
+        'type': DEVICES.XIAOMI_BUTTON,
+    },
+    # Ladder (Treppe)
     {
         'name': "Treppe Up switch",
         'id': "treppe_up_switch",
@@ -202,6 +238,12 @@ items = [
         'zigbee_id': '0xbc33acfffe84ca1e',
         'type': DEVICES.IKEA_TRADFRI_MOTION_SENSOR,
     },
+    {
+        'name': "KG Lager 4 leak",
+        'id': "kg_lager4_leak",
+        'zigbee_id': '0x00158d000488052c',
+        'type': DEVICES.XIAOMI_AQARA_LEAK_V1,
+    },
 ]
 
 
@@ -298,7 +340,11 @@ if __name__ == "__main__":
             # Device has Motion sensor
             if np.in1d(['motion'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType switch : occupancy [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-occupancy.js\"]")
+                    f"\t\tType switch : occupancy [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.occupancy\", on=\"true\", off=\"false\"]")
+            # Device has Leak sensor
+            if np.in1d(['leak'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType switch : leak [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.water_leak\", on=\"true\", off=\"false\"]")
             # Device has Temp sensor
             if np.in1d(['temperature'], item['type']['types']).any():
                 conf_str.append(
@@ -328,7 +374,7 @@ if __name__ == "__main__":
                 f"\t\tType number : link [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.linkquality\"]")
             # All zigbee devices probably have some OTA updates reported
             conf_str.append(
-                f"\t\tType switch : ota [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-ota.js\"]")
+                f"\t\tType switch : ota [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.update_available\", on=\"true\", off=\"false\"]")
             conf_str.append(
                 f"}}")
 
@@ -365,6 +411,14 @@ if __name__ == "__main__":
                 f"Switch {item['id']}_occupancy \"{item['name']}\" <{device_icon}>"
                 f"{device_groups(item,'occupancy')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:occupancy\"}}"
+            )
+        # Some devices have leak option
+        if np.in1d(['leak'], item['type']['types']).any():
+            device_icon = 'flow'
+            conf_str.append(
+                f"Switch {item['id']}_leak \"{item['name']}\" <{device_icon}>"
+                f"{device_groups(item,'leak')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:leak\"}}"
             )
         # Some devices have Temperature option
         if np.in1d(['temperature'], item['type']['types']).any():
@@ -454,7 +508,7 @@ end
             # Some zigbee devices report activity
             if 'activity' in item['type']['types']:
                 conf_str.append(
-                    f"DateTime {item['id']}_activity \"{item['name']} [%d %%]\""
+                    f"DateTime {item['id']}_activity \"{item['name']} [JS(display-activity.js):%s]\""
                     f" <time> (g_zigbee_activity) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:activity\"}}"
                 )
 

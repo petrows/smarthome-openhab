@@ -39,7 +39,7 @@ end
 // This rule send notifications if item was not updated within 24 hrs
 rule "Test devices responce time"
 when
-    Time cron "0 00 12 ? * *"
+    Time cron "0 00 13 ? * *"
 	or Item test_sw_check_activity received command
 then
 	g_zigbee_activity.members.forEach [s |

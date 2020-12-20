@@ -230,7 +230,7 @@ end
 
 rule "KU Arbeitlicht SW"
 when
-    Channel "mqtt:topic:openhab:mi-button-5b2d:click" triggered
+    Channel "mqtt:topic:openhab:ku_light_button:action" triggered
 then
 	var state = receivedEvent.getEvent()
     switch(state) {

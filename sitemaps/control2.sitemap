@@ -85,16 +85,16 @@ sitemap control2 label="KONTROL 2"
 			Frame {
 				Switch item=snf_eg_sz label="Haupt [%s]" icon="light"
 				Switch item=g_light_eg_sz_night label="Nacht [%s]" icon="light"
-				Slider item=g_light_eg_sz_night_brightness label="Nacht dim [%d]" icon="light"
+				Slider item=g_light_eg_sz_night_brightness label="Nacht dim [%d %%]" icon="light"
 				Switch item=light_sunrise_enabled icon="light"
 			}
 			Frame label="Nachtlampe" {
-				Switch item=ikea_led_2819_sw label="Nacht 1 [%s]"
-				Slider item=ikea_led_2819_brightness label="Nacht 1 dim [%d %%]"
-				Switch item=ikea_led_2203_sw label="Nacht 2 [%s]"
-				Slider item=ikea_led_2203_brightness label="Nacht 2 dim [%d %%]"
-				Switch item=ikea_led_007b_sw label="Nacht 3 [%s]"
-				Slider item=ikea_led_007b_brightness label="Nacht 3 dim [%d %%]"
+				Switch item=sz_declamp_1_sw label="Nacht 1 [%s]"
+				Slider item=sz_declamp_1_dim label="Nacht 1 dim [%d %%]"
+				Switch item=sz_declamp_2_sw label="Nacht 2 [%s]"
+				Slider item=sz_declamp_2_dim label="Nacht 2 dim [%d %%]"
+				Switch item=sz_declamp_3_sw label="Nacht 3 [%s]"
+				Slider item=sz_declamp_3_dim label="Nacht 3 dim [%d %%]"
 				Switch item=yel_white_1_sw label="Nacht white [%s]"
 				Slider item=yel_white_1_brightness label="Nacht white dim [%d %%]"
 			}
@@ -220,17 +220,6 @@ sitemap control2 label="KONTROL 2"
 				Group item=g_battery_low icon=lowbattery label="Battery low [MAP(lowbat.map):%s]"
 				Group item=g_battery_level icon=battery label="Battery level [%d %%]"
 			}
-			// Frame label="Mi Sensoren" icon=heating {
-			// 	Text	item=miSensorWeatherBattLow label="Wetter [MAP(lowbat.map):%s]" icon=lowbattery
-			// 	Text	item=miSensorNsBattLow label="Nagel Studio [MAP(lowbat.map):%s]" icon=lowbattery
-			// 	Text	item=miSensorKGBattLow label="KG [MAP(lowbat.map):%s]" icon=lowbattery
-			// 	Text    item=miSensorKitchenBattLow label="Küche [MAP(lowbat.map):%s]" icon=lowbattery
-			// 	Text	item=miSensorFsBattLow label="Foto Studio [MAP(lowbat.map):%s]" icon=lowbattery
-			// 	Text	item=miSensorSleepingBattLow label="Schlaffzimmer [MAP(lowbat.map):%s]" icon=lowbattery
-			// }
-			// Frame label="Mi Andere" icon=heating {
-			// 	Text	item=mi_button_5b2d_battery_low label="BTN KG Desktop [MAP(lowbat.map):%s]" icon=lowbattery
-			// }
 		}
 
 		Group item=g_zigbee_activity label="Zigbee" icon=network {
@@ -253,7 +242,7 @@ sitemap control2 label="KONTROL 2"
 				Text	item=online_max_thermostat icon=network
 				Text	item=online_snf_kg_1 icon=network
 				Text	item=online_snf_kg_2 icon=network
-				//Text	item=online_snf_kg_ks icon=network
+				Text	item=online_snf_kg_ks icon=network
 				Text	item=online_snf_eg_fs icon=network
 				Text	item=online_snf_eg_ns icon=network
 				Text	item=online_snf_eg_sz icon=network

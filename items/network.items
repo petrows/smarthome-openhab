@@ -1,18 +1,17 @@
 Group:Switch:AND(ON, OFF) gOnline <present>
 
-Switch online_wlan_eg_1 "WLAN EG 1" (gOnline) { channel="network:pingdevice:wlan_eg_1:online" }
-Switch online_wlan_eg_2 "WLAN EG 2" (gOnline) { channel="network:pingdevice:wlan_eg_2:online" }
-Switch online_wlan_kg "WLAN KG" (gOnline) { channel="network:pingdevice:wlan_kg:online" }
+Switch online_wlan_eg_1 "WLAN EG 1 [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:wlan_eg_1:online" }
+Switch online_wlan_eg_2 "WLAN EG 2 [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:wlan_eg_2:online" }
+Switch online_wlan_kg "WLAN KG [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:wlan_kg:online" }
 
-Switch online_mi_robot "MI Robot" (gOnline) { channel="network:pingdevice:mi_robot:online" }
-Switch online_max_thermostat "Max thermostat GW" (gOnline) { channel="network:pingdevice:max_thermostat:online" }
+Switch online_mi_robot "MI Robot [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:mi_robot:online" }
+Switch online_max_thermostat "Max thermostat GW [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:max_thermostat:online" }
 
-Switch online_snf_kg_1 "Sonoff KG 1" (gOnline) { channel="network:pingdevice:snf_kg_1:online" }
-Switch online_snf_kg_2 "Sonoff KG 2" (gOnline) { channel="network:pingdevice:snf_kg_2:online" }
-// Broken
-// Switch online_snf_kg_ks "Sonoff KG Kühlschrank" (gOnline) { channel="network:pingdevice:snf_kg_ks:online" }
-Switch online_snf_eg_fs "Sonoff EG FS" (gOnline) { channel="network:pingdevice:snf_eg_fs:online" }
-Switch online_snf_eg_ns "Sonoff EG NS" (gOnline) { channel="network:pingdevice:snf_eg_ns:online" }
-Switch online_snf_eg_sz "Sonoff EG SZ" (gOnline) { channel="network:pingdevice:snf_eg_sz:online" }
-Switch online_snf_eg_bz "Sonoff EG BZ" (gOnline) { channel="network:pingdevice:snf_eg_bz:online" }
-Switch online_snf_eg_ku "Sonoff EG KU" (gOnline) { channel="network:pingdevice:snf_eg_ku:online" }
+Switch online_snf_kg_1 "Sonoff KG 1 [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:snf_kg_1:online" }
+Switch online_snf_kg_2 "Sonoff KG 2 [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:snf_kg_2:online" }
+Switch online_snf_kg_ks "Sonoff KG Kühlschrank [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:snf_kg_ks:online" }
+Switch online_snf_eg_fs "Sonoff EG FS [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:snf_eg_fs:online" }
+Switch online_snf_eg_ns "Sonoff EG NS [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:snf_eg_ns:online" }
+Switch online_snf_eg_sz "Sonoff EG SZ [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:snf_eg_sz:online" }
+Switch online_snf_eg_bz "Sonoff EG BZ [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:snf_eg_bz:online" }
+Switch online_snf_eg_ku "Sonoff EG KU [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:snf_eg_ku:online" }

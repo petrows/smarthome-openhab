@@ -111,3 +111,33 @@ class DEVICES:
         'device_name': 'Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html',
     }
+    XIAOMI_AQARA_LEAK_V1 = {
+        'types': [
+            'zigbee',
+            'leak',
+            'activity',
+            'battery',
+            'voltage',
+        ],
+        'device_name': 'Xiaomi Aqara water leak sensor (SJCGQ11LM)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html',
+    }
+    # The possible values are: single, double, tripple, quadruple, hold, release
+    XIAOMI_BUTTON = {
+        'types': [
+            'zigbee',
+            'remote',
+            'battery',
+            'voltage',
+        ],
+        'device_name': 'Xiaomi MiJia wireless switch (WXKG01LM)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/WXKG01LM.html',
+    }
+    # DIY
+    DIY_CC2540_ROUTER = {
+        'types': [
+            'zigbee',
+        ],
+        'device_name': 'CC2530.ROUTER - Custom devices (DiY)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/CC2530.ROUTER.html',
+    }
