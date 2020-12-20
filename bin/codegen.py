@@ -288,15 +288,20 @@ if __name__ == "__main__":
     logging.info(f"Processing {len(items)} devices")
 
     # Generate some common values
+    item_ids = []
     zigbee_ids = []
     for x, item in enumerate(items):
+        if item['id'] in item_ids:
+            raise Exception(f"Device ID {item['id']} is not unique!")
+        item_ids.append(item['id'])
+
         if np.in1d(['zigbee'], item['type']['types']).any():
             # Add to all Zigbee items generated MQTT topic like "zigbee-XXXX"
             items[x]['zigbee_short'] = device_short_id(item['zigbee_id'])
             items[x]['mqtt_topic'] = f"{items[x]['id']}"
             # Add ids to check conflicts
             if items[x]['zigbee_short'] in zigbee_ids:
-                raise Exception("Device ID is not unique!")
+                raise Exception(f"Device ID {item['id']} is not unique!")
             zigbee_ids.append(items[x]['zigbee_short'])
 
     # Generate THINGS
