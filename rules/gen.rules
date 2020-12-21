@@ -9,6 +9,24 @@
 
 
 // Device should apply saved color temp when ON
+rule "Balkon light 1 apply color on ON"
+when
+    Item balkon_light_1_sw changed to ON
+then
+	balkon_light_1_ct.sendCommand(balkon_light_1_ct.state as Number)
+end
+
+
+// Device should apply saved color temp when ON
+rule "Balkon light 2 apply color on ON"
+when
+    Item balkon_light_2_sw changed to ON
+then
+	balkon_light_2_ct.sendCommand(balkon_light_2_ct.state as Number)
+end
+
+
+// Device should apply saved color temp when ON
 rule "Marina Desktop light apply color on ON"
 when
     Item desktop_marina_light_sw changed to ON

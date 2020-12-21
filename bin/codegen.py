@@ -35,6 +35,30 @@ items = [
         'id': "ext_climate",
         'zigbee_id': '0x00158d0001c2cc22',
         'type': DEVICES.XIAOMI_AQARA_V1,
+        'groups': {
+            'sw': ['g_light_all'],
+            'ct': ['g_light_astro_color'],
+        }
+    },
+    {
+        'name': "Balkon light 1",
+        'id': "balkon_light_1",
+        'zigbee_id': '0x588e81fffe507b40',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
+        'groups': {
+            'sw': ['g_light_all'],
+            'ct': ['g_light_astro_color'],
+        }
+    },
+    {
+        'name': "Balkon light 2",
+        'id': "balkon_light_2",
+        'zigbee_id': '0xd0cf5efffee892b0',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
+        'groups': {
+            'sw': ['g_light_all'],
+            'ct': ['g_light_astro_color'],
+        }
     },
     # EG (Corridor)
     {
