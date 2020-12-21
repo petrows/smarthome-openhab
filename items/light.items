@@ -22,6 +22,7 @@ Group:Switch:OR(ON, OFF) g_light_kg_auto // Lamps to be on by "All ON"
 Group:Switch:OR(ON, OFF) g_light_treppe
 Group:Switch:OR(ON, OFF) g_light_lager_auto
 Group:Dimmer:MAX g_dim_treppe
+Group:Dimmer:MAX g_ct_treppe
 Group:Dimmer:MAX g_dim_lager_auto
 
 String light_all_mode "Light mode" <light>

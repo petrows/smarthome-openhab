@@ -16,7 +16,7 @@ when
 	Time cron "0 00 22 ? * *"
 then
 	logWarn("heating", "Set NIGHT")
-	
+
 	hz_temp_auto.sendCommand(cfgHeatingTempNight.state as Number)
 end
 
@@ -25,7 +25,7 @@ when
 	Time cron "0 00 5 ? * *"
 then
 	logWarn("heating", "Set MORNING")
-	
+
 	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
 end
 
@@ -34,7 +34,7 @@ when
 	Time cron "0 00 7 ? * *"
 then
 	logWarn("heating", "Set DAY")
-	
+
 	hz_temp_auto.sendCommand(cfgHeatingTempDay.state as Number)
 end
 
@@ -43,7 +43,7 @@ when
 	Time cron "0 00 18 ? * *"
 then
 	logWarn("heating", "Set EVENING")
-	
+
 	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
 end
 
@@ -57,7 +57,7 @@ then
 		logInfo("heating", "Auto disabled")
 		return
 	}
-	
+
 	// Check perisstance only if setting temp != OFF
 	if (hz_temp_auto.state != cfgHeatingTempOff.state) {
 		// Check that people are here
@@ -70,7 +70,7 @@ then
 			}
 		}
 	}
-	
+
 	logInfo("heating", "Auto temp -> " + hz_temp_auto.state)
 	g_hz_auto.sendCommand(hz_temp_auto.state as Number)
 end
@@ -85,14 +85,14 @@ then
 		logInfo("heating", "Heating disabled")
 		return
 	}
-	
+
 	logInfo("heating", "Heating NS boost -> " + hz_ns_boost.state)
 
 	if (ON == hz_ns_boost.state) {
-		hz_ns_fan.sendCommand(ON)
+		ns_boost_power_sw.sendCommand(ON)
 		hz_ns_mode.sendCommand("BOOST")
 	} else {
-        hz_ns_fan.sendCommand(OFF)
+        ns_boost_power_sw.sendCommand(OFF)
 		hz_ns_mode.sendCommand("MANUAL")
 	}
 end
@@ -110,9 +110,9 @@ then
 		logInfo("heating", "Return-heat is disabled")
 		return
 	}
-	
+
 	logInfo("heating", "Heating switched by presence to " + presAll.state)
-	
+
 	if (presAll.state == ON) {
 		g_hz_all.sendCommand(hz_temp_auto.state as Number)
 	} else {

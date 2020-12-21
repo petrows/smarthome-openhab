@@ -103,7 +103,8 @@ sitemap control2 label="KONTROL 2"
 		Group item=g_light_kg label="Keller [%s]" icon="light" {
 			Frame label="Treppe" {
 				Switch item=g_light_treppe label="Treppe [%s]" icon="light"
-				Slider item=g_dim_treppe label="Treppe dim [%d]" icon="light"
+				Slider item=g_dim_treppe label="Treppe DIM [%d %%]" icon="light"
+				Slider item=g_ct_treppe label="Treppe CT [JS(display-mired.js):%s]" icon="colorwheel"
 				Text item=treppe_motion_occupancy label="Motion Treppe [%s]"
 			}
 			Frame label="Haupt" {

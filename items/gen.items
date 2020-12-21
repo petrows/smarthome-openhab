@@ -164,7 +164,7 @@ Switch treppe_down_switch_battery_low "Treppe Down switch [MAP(lowbat.map):%s]" 
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Switch treppe_up_light_sw "Treppe Up light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_up_light:state", expire="1h,command=OFF"}
 Dimmer treppe_up_light_dim "Treppe Up light DIM [%d %%]" <light> (g_dim_treppe) {channel="mqtt:topic:openhab:treppe_up_light:dim"}
-Dimmer treppe_up_light_ct "Treppe Up light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color) {channel="mqtt:topic:openhab:treppe_up_light:ct"}
+Dimmer treppe_up_light_ct "Treppe Up light CT [JS(display-mired.js):%s]" <colorwheel> (g_ct_treppe,g_light_astro_color) {channel="mqtt:topic:openhab:treppe_up_light:ct"}
 Number treppe_up_light_link "Treppe Up light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_up_light:link"}
 Switch treppe_up_light_ota "Treppe Up light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_up_light:ota"}
 
@@ -172,7 +172,7 @@ Switch treppe_up_light_ota "Treppe Up light [%s]" <flowpipe> (g_zigbee_ota) {cha
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Switch treppe_down_light_sw "Treppe Down light" <light> (g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_down_light:state", expire="1h,command=OFF"}
 Dimmer treppe_down_light_dim "Treppe Down light DIM [%d %%]" <light> (g_dim_treppe) {channel="mqtt:topic:openhab:treppe_down_light:dim"}
-Dimmer treppe_down_light_ct "Treppe Down light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color) {channel="mqtt:topic:openhab:treppe_down_light:ct"}
+Dimmer treppe_down_light_ct "Treppe Down light CT [JS(display-mired.js):%s]" <colorwheel> (g_ct_treppe,g_light_astro_color) {channel="mqtt:topic:openhab:treppe_down_light:ct"}
 Number treppe_down_light_link "Treppe Down light [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_down_light:link"}
 Switch treppe_down_light_ota "Treppe Down light [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_down_light:ota"}
 

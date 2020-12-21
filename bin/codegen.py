@@ -200,7 +200,7 @@ items = [
         'groups': {
             'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
             'dim': ['g_dim_treppe'],
-            'ct': ['g_light_astro_color'],
+            'ct': ['g_ct_treppe', 'g_light_astro_color'],
         }
     },
     {
@@ -212,7 +212,7 @@ items = [
         'groups': {
             'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
             'dim': ['g_dim_treppe'],
-            'ct': ['g_light_astro_color'],
+            'ct': ['g_ct_treppe', 'g_light_astro_color'],
         }
     },
     {
