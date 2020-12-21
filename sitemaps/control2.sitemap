@@ -73,7 +73,8 @@ sitemap control2 label="KONTROL 2"
 		}
 		Group item=g_light_eg_ns label="Nagel Studio [%s]" icon="light" {
 			Switch item=snf_eg_ns label="Haupt [%s]" icon="light"
-			Switch item=snf_eg_ns_table label="Arbeittisch [%s]" icon="light"
+			Switch item=snf_eg_ns_table label="Arbeittisch [%s]" icon="switch"
+			Switch item=ns_power_2_sw label="Steckdose 2 [%s]" icon="switch"
 		}
 		Group item=g_light_eg_fs label="Foto Studio [%s]" icon="light" {
 			Switch item=snf_eg_fs label="Haupt [%s]" icon="light"
@@ -119,6 +120,7 @@ sitemap control2 label="KONTROL 2"
 				Switch item=desktop_petro_light_sw label="Desktop [%s]"
 				Slider item=desktop_petro_light_dim label="Desktop DIM [%d %%]"
 				Slider item=desktop_petro_light_ct label="Desktop CT [JS(display-mired.js):%s]"
+				Switch item=desktop_petro_power_sw label="Desktop power [%s]"
 			}
 		}
 	}
@@ -235,6 +237,7 @@ sitemap control2 label="KONTROL 2"
 
 		Group item=gOnline label="Online [MAP(online.map):%s]" icon=network {
 			Frame label="WLAN" {
+				Text	item=online_petro_pc icon=network
 				Text	item=online_wlan_eg_1 icon=network
 				Text	item=online_wlan_eg_2 icon=network
 				Text	item=online_wlan_kg icon=network

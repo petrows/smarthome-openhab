@@ -1,8 +1,12 @@
 
 // Our phones
 
-Thing network:pingdevice:petro_mobile "Петр телефон" [ hostname="petro-mobile.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:marina_mobile "Марина телефон" [ hostname="marina-mobile.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+// Thing network:pingdevice:petro_mobile "Петр телефон" [ hostname="petro-mobile.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+// Thing network:pingdevice:marina_mobile "Марина телефон" [ hostname="marina-mobile.pws", retry=5, timeout=5000, refreshInterval=60000 ]
+
+// PC
+Thing network:pingdevice:petro_pc "Petro PC" [ hostname="petro-pc.pws" ]
+
 
 // AP devices
 
