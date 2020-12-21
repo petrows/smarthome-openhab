@@ -115,7 +115,7 @@ then
             g_light_kg.sendCommand(OFF)
             // Check that PC is off and turn off also sockets there
             if (online_petro_pc.state == OFF) {
-                desktop_petro_power_sw.sendCommand(ON)
+                desktop_petro_power_sw.sendCommand(OFF)
             }
         }
     }
