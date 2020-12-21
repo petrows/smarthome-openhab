@@ -62,6 +62,13 @@ then
     }
 end
 
+rule "NS follow table power"
+when
+    Item snf_eg_ns_table changed
+then
+    ns_power_2_sw.sendCommand(newState)
+end
+
 rule "BZ force both lights work together 1"
 when
     Item snf_eg_bz_1 changed
