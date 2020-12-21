@@ -73,6 +73,7 @@ items = [
         'id': "ns_boost_power",
         'zigbee_id': '0x7cb03eaa0a0a1103',
         'type': DEVICES.OSRAM_SMART_PLUG,
+        'expire': '1h'
     },
     # EG (Foto Studio)
     {
@@ -171,6 +172,7 @@ items = [
         'id': "treppe_up_light",
         'zigbee_id': '0xec1bbdfffe9abfde',
         'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'expire': '1h',
         'groups': {
             'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
             'dim': ['g_dim_treppe'],
@@ -181,6 +183,7 @@ items = [
         'id': "treppe_down_light",
         'zigbee_id': '0xec1bbdfffe4695b5',
         'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'expire': '1h',
         'groups': {
             'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
             'dim': ['g_dim_treppe'],
@@ -229,6 +232,7 @@ items = [
         'id': "kg_lager4_1_light",
         'zigbee_id': '0xccccccfffedf345a',
         'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'expire': '1h',
         'groups': {
             'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_auto', 'g_light_lager_auto'],
             'dim': ['g_dim_lager_auto'],
@@ -239,6 +243,7 @@ items = [
         'id': "kg_lager4_2_light",
         'zigbee_id': '0xccccccfffedf5314',
         'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'expire': '1h',
         'groups': {
             'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_auto', 'g_light_lager_auto'],
             'dim': ['g_dim_lager_auto'],
@@ -421,10 +426,13 @@ if __name__ == "__main__":
             device_icon = 'switch'
             if 'lamp' in item['type']['types']:
                 device_icon = 'light'
+            device_timout = ''
+            if 'expire' in item:
+                device_timout = f", expire=\"{item['expire']},command=OFF\""
             conf_str.append(
                 f"Switch {item['id']}_sw \"{item['name']}\" <{device_icon}>"
                 f"{device_groups(item,'sw')}"
-                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state\"}}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state\"{device_timout}}}"
             )
             all_items.append(f"Switch item={item['id']}_sw")
         # Some devices have motion option
