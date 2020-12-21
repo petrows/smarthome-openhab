@@ -13,11 +13,11 @@ then
         }
         case "N": {
             g_light_all.members.forEach [s |
-                if (s != ikea_led_2819_sw) {
+                if (s != sz_declamp_1_sw) {
                     s.sendCommand(OFF)
                 }
             ]
-            ikea_led_2819_brightness.sendCommand(0)
+            sz_declamp_1_dim.sendCommand(0)
         }
     }
 end
@@ -55,8 +55,12 @@ when
 then
 	logWarn("light", "Set safe off")
 	g_light_all.sendCommand(OFF)
-end
 
+    // Check that PC is off and turn off also sockets there
+    if (online_petro_pc.state == OFF) {
+        desktop_petro_power_sw.sendCommand(ON)
+    }
+end
 
 rule "BZ force both lights work together 1"
 when

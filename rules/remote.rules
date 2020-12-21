@@ -113,6 +113,10 @@ then
         case "off": {
             // Up button switches ALL light in KG
             g_light_kg.sendCommand(OFF)
+            // Check that PC is off and turn off also sockets there
+            if (online_petro_pc.state == OFF) {
+                desktop_petro_power_sw.sendCommand(ON)
+            }
         }
     }
 end
@@ -137,6 +141,10 @@ when
     Channel "mqtt:topic:openhab:desktop_petro_remote:action" triggered
 then
 	var state = receivedEvent.getEvent()
+
+    // any evebt turs on table power
+    desktop_petro_power_sw.sendCommand(ON)
+
     switch(state) {
         case "toggle": {
             if (desktop_petro_light_sw.state == ON) { desktop_petro_light_sw.sendCommand(OFF) } else { desktop_petro_light_sw.sendCommand(ON) }
