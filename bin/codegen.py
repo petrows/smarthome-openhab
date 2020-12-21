@@ -40,26 +40,26 @@ items = [
             'ct': ['g_light_astro_color'],
         }
     },
-    {
-        'name': "Balkon light 1",
-        'id': "balkon_light_1",
-        'zigbee_id': '0x588e81fffe507b40',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
-        'groups': {
-            'sw': ['g_light_all'],
-            'ct': ['g_light_astro_color'],
-        }
-    },
-    {
-        'name': "Balkon light 2",
-        'id': "balkon_light_2",
-        'zigbee_id': '0xd0cf5efffee892b0',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
-        'groups': {
-            'sw': ['g_light_all'],
-            'ct': ['g_light_astro_color'],
-        }
-    },
+    # {
+    #     'name': "Balkon light 1",
+    #     'id': "balkon_light_1",
+    #     'zigbee_id': '0x588e81fffe507b40',
+    #     'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
+    #     'groups': {
+    #         'sw': ['g_light_all'],
+    #         'ct': ['g_light_astro_color'],
+    #     }
+    # },
+    # {
+    #     'name': "Balkon light 2",
+    #     'id': "balkon_light_2",
+    #     'zigbee_id': '0xd0cf5efffee892b0',
+    #     'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
+    #     'groups': {
+    #         'sw': ['g_light_all'],
+    #         'ct': ['g_light_astro_color'],
+    #     }
+    # },
     # EG (Corridor)
     {
         'name': "Mirror remote",
@@ -194,23 +194,25 @@ items = [
     {
         'name': "Treppe Up light",
         'id': "treppe_up_light",
-        'zigbee_id': '0xec1bbdfffe9abfde',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'zigbee_id': '0xd0cf5efffee892b0',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
         'expire': '1h',
         'groups': {
             'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
             'dim': ['g_dim_treppe'],
+            'ct': ['g_light_astro_color'],
         }
     },
     {
         'name': "Treppe Down light",
         'id': "treppe_down_light",
-        'zigbee_id': '0xec1bbdfffe4695b5',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'zigbee_id': '0x588e81fffe507b40',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
         'expire': '1h',
         'groups': {
             'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],
             'dim': ['g_dim_treppe'],
+            'ct': ['g_light_astro_color'],
         }
     },
     {

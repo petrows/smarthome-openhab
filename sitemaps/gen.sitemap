@@ -10,12 +10,6 @@
 sitemap gen label="GEN ITEMS"
 {
     Frame {
-        Switch item=balkon_light_1_sw
-        Slider item=balkon_light_1_dim
-        Slider item=balkon_light_1_ct
-        Switch item=balkon_light_2_sw
-        Slider item=balkon_light_2_dim
-        Slider item=balkon_light_2_ct
         Switch item=ns_power_2_sw
         Switch item=ns_boost_power_sw
         Switch item=desktop_marina_light_sw
@@ -29,8 +23,10 @@ sitemap gen label="GEN ITEMS"
         Slider item=sz_declamp_3_dim
         Switch item=treppe_up_light_sw
         Slider item=treppe_up_light_dim
+        Slider item=treppe_up_light_ct
         Switch item=treppe_down_light_sw
         Slider item=treppe_down_light_dim
+        Slider item=treppe_down_light_ct
         Switch item=desktop_petro_light_sw
         Slider item=desktop_petro_light_dim
         Slider item=desktop_petro_light_ct
