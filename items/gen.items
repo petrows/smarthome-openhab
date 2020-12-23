@@ -251,14 +251,14 @@ Switch desktop_petro_remote_battery_low "Petro Desktop remote [MAP(lowbat.map):%
 
 // KG Lager 4 (1) (0xccccccfffedf345a)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:state", expire="1h,command=OFF"}
+Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_light_all,g_light_kg,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:state", expire="1h,command=OFF"}
 Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]" <light> (g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim"}
 Number kg_lager4_1_light_link "KG Lager 4 (1) [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_1_light:link"}
 Switch kg_lager4_1_light_ota "KG Lager 4 (1) [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_1_light:ota"}
 
 // KG Lager 4 (2) (0xccccccfffedf5314)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_light_all,g_light_kg,g_light_kg_auto,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:state", expire="1h,command=OFF"}
+Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_light_all,g_light_kg,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:state", expire="1h,command=OFF"}
 Dimmer kg_lager4_2_light_dim "KG Lager 4 (2) DIM [%d %%]" <light> (g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:dim"}
 Number kg_lager4_2_light_link "KG Lager 4 (2) [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_2_light:link"}
 Switch kg_lager4_2_light_ota "KG Lager 4 (2) [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_2_light:ota"}

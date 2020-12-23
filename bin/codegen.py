@@ -449,13 +449,16 @@ if __name__ == "__main__":
             if np.in1d(['activity'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType datetime : activity [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-activity.js\"]")
-            # Some zigbee devices report battery
+            # Some zigbee devices report battery OR battery_low signal
             if np.in1d(['battery'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\"]")
-            if np.in1d(['battery', 'battery_low'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery_low\", on=\"true\", off=\"false\"]")
+                    f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-lowbatt.js\"]")
+            else:
+                if np.in1d(['battery_low'], item['type']['types']).any():
+                    conf_str.append(
+                        f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery_low\", on=\"true\", off=\"false\"]")
             # Some zigbee devices report battery voltage
             if np.in1d(['voltage'], item['type']['types']).any():
                 conf_str.append(
