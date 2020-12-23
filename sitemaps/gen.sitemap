@@ -10,6 +10,8 @@
 sitemap gen label="GEN ITEMS"
 {
     Frame {
+        Switch item=balkon_light_1_sw
+        Slider item=balkon_light_1_dim
         Switch item=ns_power_2_sw
         Switch item=ns_boost_power_sw
         Switch item=ns_projector_power_sw

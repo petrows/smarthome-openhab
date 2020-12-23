@@ -21,6 +21,16 @@ Thing mqtt:topic:openhab:ext_climate (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// Balkon light 1 (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Thing mqtt:topic:openhab:balkon_light_1 (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0xec1bbdfffe4695b5/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0xec1bbdfffe4695b5/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type number : link [stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0xec1bbdfffe4695b5", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // Mirror remote (0x680ae2fffeab6b80)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Thing mqtt:topic:openhab:mirror_remote (mqtt:broker:openhab) {

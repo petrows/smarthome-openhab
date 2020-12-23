@@ -18,6 +18,13 @@ Switch ext_climate_battery_low "Outside Climate [MAP(lowbat.map):%s]" <lowbatter
 Number ext_climate_voltage "Outside Climate [%d mV]" <energy> {channel="mqtt:topic:openhab:ext_climate:voltage"}
 DateTime ext_climate_activity "Outside Climate [JS(display-activity.js):%s]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ext_climate:activity"}
 
+// Balkon light 1 (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch balkon_light_1_sw "Balkon light 1" <light> (g_light_all,g_light_balkon) {channel="mqtt:topic:openhab:balkon_light_1:state"}
+Dimmer balkon_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (g_dim_balkon) {channel="mqtt:topic:openhab:balkon_light_1:dim"}
+Number balkon_light_1_link "Balkon light 1 [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:balkon_light_1:link"}
+Switch balkon_light_1_ota "Balkon light 1 [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:balkon_light_1:ota"}
+
 // Mirror remote (0x680ae2fffeab6b80)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Number mirror_remote_link "Mirror remote [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:mirror_remote:link"}
