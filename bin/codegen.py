@@ -289,7 +289,7 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
         'expire': '1h',
         'groups': {
-            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_auto', 'g_light_lager_auto'],
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_lager_auto'],
             'dim': ['g_dim_lager_auto'],
         }
     },
@@ -300,7 +300,7 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
         'expire': '1h',
         'groups': {
-            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_auto', 'g_light_lager_auto'],
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_lager_auto'],
             'dim': ['g_dim_lager_auto'],
         }
     },
