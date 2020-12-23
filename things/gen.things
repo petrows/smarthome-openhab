@@ -84,6 +84,24 @@ Thing mqtt:topic:openhab:ns_boost_power (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a0a1103", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// NS Projector (0x7cb03eaa0a094d1d)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:ns_projector_power (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0x7cb03eaa0a094d1d", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x7cb03eaa0a094d1d/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0x7cb03eaa0a094d1d", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a094d1d", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// NS Christmas light (0x7cb03eaa0a09e7bc)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:ns_christmas_light (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0x7cb03eaa0a09e7bc", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x7cb03eaa0a09e7bc/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0x7cb03eaa0a09e7bc", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a09e7bc", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:fs_climate (mqtt:broker:openhab) {
@@ -118,6 +136,15 @@ Thing mqtt:topic:openhab:desktop_marina_remote (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JS:z2m-lowbatt.js"]
 		Type number : link [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// FS Christmas light (0x7cb03eaa0a09ad23)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:fs_christmas_light (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0x7cb03eaa0a09ad23", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x7cb03eaa0a09ad23/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0x7cb03eaa0a09ad23", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a09ad23", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
 
 // SZ Climate (0x00158d0001c19a6b)
@@ -284,13 +311,22 @@ Thing mqtt:topic:openhab:desktop_petro_light (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0xccccccfffed8ef9d", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// Petro Desktop power (0x7cb03eaa0a094bf2)
+// Petro Desktop AUX (0x7cb03eaa0a094bf2)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:desktop_petro_power (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:desktop_petro_aux_power (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/0x7cb03eaa0a094bf2", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x7cb03eaa0a094bf2/set", transformationPatternOut="JS:z2m-command-state.js"]
 		Type number : link [stateTopic="zigbee2mqtt/0x7cb03eaa0a094bf2", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a094bf2", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// Petro Desktop PC (0x7cb03eaa0a094303)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:desktop_petro_pc_power (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0x7cb03eaa0a094303", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x7cb03eaa0a094303/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0x7cb03eaa0a094303", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x7cb03eaa0a094303", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
 
 // Petro Desktop remote (0x000d6ffffee8357d)

@@ -91,6 +91,9 @@ items = [
         'id': "ns_power_2",
         'zigbee_id': '0x7cb03eaa0a093a8b',
         'type': DEVICES.OSRAM_SMART_PLUG,
+        'groups': {
+            'sw': ['g_light_christmas'], # FIXME only for holidays!!!
+        }
     },
     {
         'name': "NS Boost power",
@@ -98,6 +101,21 @@ items = [
         'zigbee_id': '0x7cb03eaa0a0a1103',
         'type': DEVICES.OSRAM_SMART_PLUG,
         'expire': '1h'
+    },
+    {
+        'name': "NS Projector",
+        'id': "ns_projector_power",
+        'zigbee_id': '0x7cb03eaa0a094d1d',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+    },
+    {
+        'name': "NS Christmas light",
+        'id': "ns_christmas_light",
+        'zigbee_id': '0x7cb03eaa0a09e7bc',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+        'groups': {
+            'sw': ['g_light_christmas'],
+        }
     },
     # EG (Foto Studio)
     {
@@ -121,6 +139,15 @@ items = [
         'id': "desktop_marina_remote",
         'zigbee_id': '0xccccccfffeea9703',
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
+    },
+    {
+        'name': "FS Christmas light",
+        'id': "fs_christmas_light",
+        'zigbee_id': '0x7cb03eaa0a09ad23',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+        'groups': {
+            'sw': ['g_light_christmas'],
+        }
     },
     # EG (Bedroom)
     {
@@ -239,13 +266,16 @@ items = [
         }
     },
     {
-        'name': "Petro Desktop power",
-        'id': "desktop_petro_power",
+        'name': "Petro Desktop AUX",
+        'id': "desktop_petro_aux_power",
         'zigbee_id': '0x7cb03eaa0a094bf2',
         'type': DEVICES.OSRAM_SMART_PLUG,
-        'groups': {
-            'sw': ['g_kg_power'],
-        }
+    },
+    {
+        'name': "Petro Desktop PC",
+        'id': "desktop_petro_pc_power",
+        'zigbee_id': '0x7cb03eaa0a094303',
+        'type': DEVICES.OSRAM_SMART_PLUG,
     },
     {
         'name': "Petro Desktop remote",

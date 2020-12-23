@@ -114,9 +114,7 @@ then
             // Up button switches ALL light in KG
             g_light_kg.sendCommand(OFF)
             // Check that PC is off and turn off also sockets there
-            if (online_petro_pc.state == OFF) {
-                desktop_petro_power_sw.sendCommand(OFF)
-            }
+            desktop_petro_power_try.sendCommand(OFF)
         }
     }
 end
@@ -143,7 +141,7 @@ then
 	var state = receivedEvent.getEvent()
 
     // any evebt turs on table power
-    desktop_petro_power_sw.sendCommand(ON)
+    desktop_petro_power_try.sendCommand(ON)
 
     switch(state) {
         case "toggle": {

@@ -121,7 +121,8 @@ sitemap control2 label="KONTROL 2"
 				Switch item=desktop_petro_light_sw label="Desktop [%s]"
 				Slider item=desktop_petro_light_dim label="Desktop DIM [%d %%]"
 				Slider item=desktop_petro_light_ct label="Desktop CT [JS(display-mired.js):%s]"
-				Switch item=desktop_petro_power_sw label="Desktop power [%s]"
+				Switch item=desktop_petro_aux_power_sw label="Desktop power AUX [%s]"
+				Switch item=desktop_petro_pc_power_sw label="Desktop power PC [%s]"
 			}
 		}
 	}
@@ -188,6 +189,7 @@ sitemap control2 label="KONTROL 2"
 		}
 		Switch item=snf_kg_ks_power label="Bier Kühlschrank" icon="climate"
 		Switch item=kg_lager4_leak_leak
+		Switch item=g_light_christmas
 	}
 
 	Frame icon="bedroom" {
