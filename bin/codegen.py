@@ -322,6 +322,13 @@ items = [
         'zigbee_id': '0x00158d000488052c',
         'type': DEVICES.XIAOMI_AQARA_LEAK_V1,
     },
+    # Heating
+    {
+        'name': "KG heating",
+        'id': "kg_heating",
+        'zigbee_id': '0x5c0272fffec9d557',
+        'type': DEVICES.TUYA_THERMOSTAT_VALVE,
+    },
 ]
 
 
@@ -446,8 +453,9 @@ if __name__ == "__main__":
             if np.in1d(['battery'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\"]")
+            if np.in1d(['battery', 'battery_low'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-lowbatt.js\"]")
+                    f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery_low\", on=\"true\", off=\"false\"]")
             # Some zigbee devices report battery voltage
             if np.in1d(['voltage'], item['type']['types']).any():
                 conf_str.append(
@@ -579,6 +587,7 @@ end
                     f"Number {item['id']}_battery \"{item['name']} [%d %%]\""
                     f" <battery> (g_battery_level) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery\"}}"
                 )
+            if np.in1d(['battery', 'battery_low'], item['type']['types']).any():
                 conf_str.append(
                     f"Switch {item['id']}_battery_low \"{item['name']} [MAP(lowbat.map):%s]\""
                     f" <lowbattery> (g_battery_low) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery_low\"}}"

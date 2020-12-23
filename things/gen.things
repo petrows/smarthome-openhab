@@ -15,7 +15,7 @@ Thing mqtt:topic:openhab:ext_climate (mqtt:broker:openhab) {
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.humidity"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.voltage"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
@@ -37,7 +37,7 @@ Thing mqtt:topic:openhab:mirror_remote (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x680ae2fffeab6b80", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -48,7 +48,7 @@ Thing mqtt:topic:openhab:eg_leave_switch (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x680ae2fffe16e111", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -70,7 +70,7 @@ Thing mqtt:topic:openhab:ns_climate (mqtt:broker:openhab) {
 		Type number : pressure [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.pressure"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.voltage"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
@@ -120,7 +120,7 @@ Thing mqtt:topic:openhab:fs_climate (mqtt:broker:openhab) {
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.humidity"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.voltage"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
@@ -143,7 +143,7 @@ Thing mqtt:topic:openhab:desktop_marina_remote (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0xccccccfffeea9703", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -165,7 +165,7 @@ Thing mqtt:topic:openhab:sz_climate (mqtt:broker:openhab) {
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.humidity"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.voltage"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
@@ -177,7 +177,7 @@ Thing mqtt:topic:openhab:sz_remote (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x14b457fffe7e2305", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -221,7 +221,7 @@ Thing mqtt:topic:openhab:ku_climate (mqtt:broker:openhab) {
 		Type number : pressure [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.pressure"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.voltage"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
@@ -233,7 +233,7 @@ Thing mqtt:topic:openhab:ku_light_button (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.voltage"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
@@ -245,7 +245,7 @@ Thing mqtt:topic:openhab:treppe_up_switch (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x680ae2fffe1a92f3", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -256,7 +256,7 @@ Thing mqtt:topic:openhab:treppe_down_switch (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0xccccccfffef0356e", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -290,7 +290,7 @@ Thing mqtt:topic:openhab:treppe_motion (mqtt:broker:openhab) {
 		Type switch : occupancy [stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.occupancy", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -304,7 +304,7 @@ Thing mqtt:topic:openhab:kg_climate (mqtt:broker:openhab) {
 		Type number : pressure [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.pressure"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.voltage"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
@@ -345,7 +345,7 @@ Thing mqtt:topic:openhab:desktop_petro_remote (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -376,7 +376,7 @@ Thing mqtt:topic:openhab:kg_lager4_switch (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0xccccccfffee401f8", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -388,7 +388,7 @@ Thing mqtt:topic:openhab:kg_lager4_motion (mqtt:broker:openhab) {
 		Type switch : occupancy [stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.occupancy", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0xbc33acfffe84ca1e", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -400,8 +400,17 @@ Thing mqtt:topic:openhab:kg_lager4_leak (mqtt:broker:openhab) {
 		Type switch : leak [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.water_leak", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JS:z2m-lowbatt.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.voltage"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// KG heating (0x5c0272fffec9d557)
+// TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
+Thing mqtt:topic:openhab:kg_heating (mqtt:broker:openhab) {
+	Channels:
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
+		Type number : link [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }

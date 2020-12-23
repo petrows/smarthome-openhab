@@ -133,6 +133,16 @@ class DEVICES:
         'device_name': 'Xiaomi MiJia wireless switch (WXKG01LM)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/WXKG01LM.html',
     }
+    # Tuya
+    TUYA_THERMOSTAT_VALVE = {
+        'types': [
+            'zigbee',
+            'thermostat',
+            'battery_low',
+        ],
+        'device_name': 'TuYa Radiator valve with thermostat (TS0601_thermostat)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html',
+    }
     # DIY
     DIY_CC2540_ROUTER = {
         'types': [
