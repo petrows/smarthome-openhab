@@ -138,6 +138,9 @@ class DEVICES:
         'types': [
             'zigbee',
             'thermostat',
+            'temperature',
+            'position',
+            'activity',
             'battery_low',
         ],
         'device_name': 'TuYa Radiator valve with thermostat (TS0601_thermostat)',

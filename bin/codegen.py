@@ -324,10 +324,14 @@ items = [
     },
     # Heating
     {
-        'name': "KG heating",
-        'id': "kg_heating",
+        'name': "SZ heating",
+        'id': "sz_heating",
         'zigbee_id': '0x5c0272fffec9d557',
         'type': DEVICES.TUYA_THERMOSTAT_VALVE,
+        'groups': {
+            'thermostat': ['g_hz_all', 'g_hz_eg'],
+            'position': ['g_hz_valve'],
+        }
     },
 ]
 
@@ -427,6 +431,22 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-color_temp.js\", min=150, max=500"
                     f"]"
                 )
+            # Device has Thermostat control
+            if np.in1d(['thermostat'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType number : thermostat ["
+                    f"stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\""
+                    f", transformationPattern=\"JSONPATH:$.current_heating_setpoint\""
+                    f", commandTopic=\"zigbee2mqtt/{item['zigbee_id']}/set\""
+                    f", transformationPatternOut=\"JS:z2m-command-thermostat-setpoint.js\""
+                    f"]"
+                )
+
+            # Device has Position sensor
+            if np.in1d(['position'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType number : position [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.position\"]")
+
             # Device has Motion sensor
             if np.in1d(['motion'], item['type']['types']).any():
                 conf_str.append(
@@ -438,7 +458,8 @@ if __name__ == "__main__":
             # Device has Temp sensor
             if np.in1d(['temperature'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : temperature [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.temperature\"]")
+                    f"\t\tType number : temperature [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-temperature.js\"]") # Could be different fields,sudo detect here
+
             if np.in1d(['humidity'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType number : humidity [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.humidity\"]")
@@ -501,6 +522,28 @@ if __name__ == "__main__":
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state\"{device_timout}}}"
             )
             all_items.append(f"Switch item={item['id']}_sw")
+        # Some devices have thermostat
+        if np.in1d(['thermostat'], item['type']['types']).any():
+            device_icon = 'heating'
+            conf_str.append(
+                f"Number {item['id']}_thermostat \"{item['name']} SET [%d °C]\" <{device_icon}>"
+                f"{device_groups(item,'thermostat')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:thermostat\"}}"
+            )
+            all_items.append(
+                f"Setpoint item={item['id']}_thermostat minValue=5 maxValue=30 step=1")
+
+        # Some devices have position option
+        if np.in1d(['position'], item['type']['types']).any():
+            device_icon = 'heating'
+            conf_str.append(
+                f"Number {item['id']}_position \"{item['name']} POS [%d %%]\" <{device_icon}>"
+                f"{device_groups(item,'position')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:position\"}}"
+            )
+            all_items.append(
+                f"Text item={item['id']}_position")
+
         # Some devices have motion option
         if np.in1d(['motion'], item['type']['types']).any():
             device_icon = 'motion'
@@ -509,6 +552,8 @@ if __name__ == "__main__":
                 f"{device_groups(item,'occupancy')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:occupancy\"}}"
             )
+            all_items.append(f"Text item={item['id']}_occupancy")
+
         # Some devices have leak option
         if np.in1d(['leak'], item['type']['types']).any():
             device_icon = 'flow'
@@ -525,6 +570,8 @@ if __name__ == "__main__":
                 f"{device_groups(item,'temperature')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:temperature\"}}"
             )
+            all_items.append(f"Text item={item['id']}_temperature")
+
         # Some devices have Humidity option
         if np.in1d(['humidity'], item['type']['types']).any():
             device_icon = 'humidity'

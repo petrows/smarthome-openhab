@@ -37,11 +37,12 @@ Number hz_ku_valve "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1
 
 // Schlaffzimmer
 Number hz_sz_temp_auto
-Switch hz_sz_lbatt "HZ SZ [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:MEQ1775184:battery_low"}
-String hz_sz_mode "Modus []" {channel="max:thermostat:NEQ1442869:MEQ1775184:mode"}
-Number hz_sz_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:MEQ1775184:actual_temp"}
-Number hz_sz_set "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_eg) {channel="max:thermostat:NEQ1442869:MEQ1775184:set_temp"}
-Number hz_sz_valve "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:MEQ1775184:valve"}
+// MAX! Thermostat decomission
+// Switch hz_sz_lbatt "HZ SZ [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:MEQ1775184:battery_low"}
+// String hz_sz_mode "Modus []" {channel="max:thermostat:NEQ1442869:MEQ1775184:mode"}
+// Number hz_sz_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:MEQ1775184:actual_temp"}
+// Number hz_sz_set "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_eg) {channel="max:thermostat:NEQ1442869:MEQ1775184:set_temp"}
+// Number hz_sz_valve "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:MEQ1775184:valve"}
 
 // Foto Studio
 Number hz_fs_temp_auto

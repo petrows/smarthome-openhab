@@ -289,8 +289,12 @@ Switch kg_lager4_leak_battery_low "KG Lager 4 leak [MAP(lowbat.map):%s]" <lowbat
 Number kg_lager4_leak_voltage "KG Lager 4 leak [%d mV]" <energy> {channel="mqtt:topic:openhab:kg_lager4_leak:voltage"}
 DateTime kg_lager4_leak_activity "KG Lager 4 leak [JS(display-activity.js):%s]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:kg_lager4_leak:activity"}
 
-// KG heating (0x5c0272fffec9d557)
+// SZ heating (0x5c0272fffec9d557)
 // TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
-Number kg_heating_link "KG heating [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_heating:link"}
-Switch kg_heating_ota "KG heating [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_heating:ota"}
-Switch kg_heating_battery_low "KG heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_heating:battery_low"}
+Number sz_heating_thermostat "SZ heating SET [%d °C]" <heating> (g_hz_all,g_hz_eg) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
+Number sz_heating_position "SZ heating POS [%d %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:sz_heating:position"}
+Number sz_heating_temperature "SZ heating [%d °C]" <temperature> {channel="mqtt:topic:openhab:sz_heating:temperature"}
+Number sz_heating_link "SZ heating [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_heating:link"}
+Switch sz_heating_ota "SZ heating [%s]" <flowpipe> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
+Switch sz_heating_battery_low "SZ heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_heating:battery_low"}
+DateTime sz_heating_activity "SZ heating [JS(display-activity.js):%s]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:sz_heating:activity"}

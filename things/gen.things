@@ -11,7 +11,7 @@
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:ext_climate (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.temperature"]
+		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-temperature.js"]
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.humidity"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001c2cc22", transformationPattern="JSONPATH:$.battery"]
@@ -65,7 +65,7 @@ Thing mqtt:topic:openhab:eg_router (mqtt:broker:openhab) {
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:ns_climate (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.temperature"]
+		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-temperature.js"]
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.humidity"]
 		Type number : pressure [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JSONPATH:$.pressure"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001b95e08", transformationPattern="JS:z2m-activity.js"]
@@ -116,7 +116,7 @@ Thing mqtt:topic:openhab:ns_christmas_light (mqtt:broker:openhab) {
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:fs_climate (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.temperature"]
+		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-temperature.js"]
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.humidity"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001c15121", transformationPattern="JSONPATH:$.battery"]
@@ -161,7 +161,7 @@ Thing mqtt:topic:openhab:fs_christmas_light (mqtt:broker:openhab) {
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:sz_climate (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.temperature"]
+		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-temperature.js"]
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.humidity"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001c19a6b", transformationPattern="JSONPATH:$.battery"]
@@ -216,7 +216,7 @@ Thing mqtt:topic:openhab:sz_declamp_3 (mqtt:broker:openhab) {
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:ku_climate (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.temperature"]
+		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-temperature.js"]
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.humidity"]
 		Type number : pressure [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JSONPATH:$.pressure"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="JS:z2m-activity.js"]
@@ -299,7 +299,7 @@ Thing mqtt:topic:openhab:treppe_motion (mqtt:broker:openhab) {
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:kg_climate (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.temperature"]
+		Type number : temperature [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-temperature.js"]
 		Type number : humidity [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.humidity"]
 		Type number : pressure [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JSONPATH:$.pressure"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/0x00158d0001b95e02", transformationPattern="JS:z2m-activity.js"]
@@ -406,10 +406,14 @@ Thing mqtt:topic:openhab:kg_lager4_leak (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d000488052c", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// KG heating (0x5c0272fffec9d557)
+// SZ heating (0x5c0272fffec9d557)
 // TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
-Thing mqtt:topic:openhab:kg_heating (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:sz_heating (mqtt:broker:openhab) {
 	Channels:
+		Type number : thermostat [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/0x5c0272fffec9d557/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint.js"]
+		Type number : position [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JSONPATH:$.position"]
+		Type number : temperature [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JS:z2m-temperature.js"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JS:z2m-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x5c0272fffec9d557", transformationPattern="JSONPATH:$.update_available", on="true", off="false"]
