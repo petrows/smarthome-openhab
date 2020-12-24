@@ -291,7 +291,7 @@ DateTime kg_lager4_leak_activity "KG Lager 4 leak [JS(display-activity.js):%s]" 
 
 // SZ heating (0x5c0272fffec9d557)
 // TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
-Number sz_heating_thermostat "SZ heating SET [%d °C]" <heating> (g_hz_all,g_hz_eg) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
+Number sz_heating_thermostat "SZ heating SET [%d °C]" <heatingt> (g_hz_all,g_hz_eg) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
 Number sz_heating_position "SZ heating POS [%d %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:sz_heating:position"}
 Number sz_heating_temperature "SZ heating [%d °C]" <temperature> {channel="mqtt:topic:openhab:sz_heating:temperature"}
 Number sz_heating_link "SZ heating [%d]" <network> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_heating:link"}

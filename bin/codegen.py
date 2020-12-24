@@ -524,7 +524,7 @@ if __name__ == "__main__":
             all_items.append(f"Switch item={item['id']}_sw")
         # Some devices have thermostat
         if np.in1d(['thermostat'], item['type']['types']).any():
-            device_icon = 'heating'
+            device_icon = 'heatingt'
             conf_str.append(
                 f"Number {item['id']}_thermostat \"{item['name']} SET [%d °C]\" <{device_icon}>"
                 f"{device_groups(item,'thermostat')}"

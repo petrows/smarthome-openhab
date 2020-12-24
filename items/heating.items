@@ -3,9 +3,9 @@
 Number hz_temp_auto
 
 // Groups define
-Group:Number:EQUALITY g_hz_all <heatingt>
+Group:Number:AVG g_hz_all <heatingt>
 // Heaters which are affected by time-program
-Group:Number:EQUALITY g_hz_auto <heatingt>
+Group:Number:AVG g_hz_auto <heatingt>
 
 // Heaters in KG
 Group g_hz_kg <heating>
@@ -14,7 +14,7 @@ Group g_hz_kg <heating>
 Group g_hz_eg <heating>
 
 // AVG valve
-Group:Number:AVG g_hz_valve "Alle Ventil" <heatingt>
+Group:Number:AVG g_hz_valve "Alle Ventil" <heating>
 
 // NS force fan
 Switch hz_ns_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF" }
