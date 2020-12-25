@@ -105,7 +105,7 @@ end
 // Christmas lights auto
 rule "Sunset Rule"
 when
-    Channel 'astro:sun:home:civilDuskt#event' triggered START
+    Channel "astro:sun:home:civilDusk#event" triggered START
 then
     logWarn("light", "Sunset Rule")
     g_light_christmas.sendCommand(ON)

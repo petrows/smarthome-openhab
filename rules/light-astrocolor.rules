@@ -7,7 +7,7 @@
 val astrocolorProgramPeriod = 4 * 60 * 60
 
 // Default color value to be set for DAY
-val astrocolorDaylight = 10
+val astrocolorDaylight = 30
 
 // Persentage to be change on each step
 // Inrease this value to reduce command traffic, decrease for better smooth

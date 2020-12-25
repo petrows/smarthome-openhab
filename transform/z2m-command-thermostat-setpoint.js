@@ -5,6 +5,7 @@
     if (x > 30) { x = 30 }
 
     result = "{ \"system_mode\": \"manual\", \"current_heating_setpoint\": " + x + " }";
+    //result = "{ \"current_heating_setpoint\": " + x + " }";
 
     return result;
 })(input)

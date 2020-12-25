@@ -224,7 +224,6 @@ sitemap control2 label="KONTROL 2"
 				Text	item=hz_ku_lbatt label="Küche [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=hz_fs_lbatt label="Foto Studio [MAP(lowbat.map):%s]" icon=lowbattery
 				Text	item=hz_ns_lbatt label="Nagel Studio [MAP(lowbat.map):%s]" icon=lowbattery
-				Text	item=hz_sz_lbatt label="Schlaffzimmer [MAP(lowbat.map):%s]" icon=lowbattery
 			}
 			Frame label="Common status" {
 				Group item=g_battery_low icon=lowbattery label="Battery low [MAP(lowbat.map):%s]"

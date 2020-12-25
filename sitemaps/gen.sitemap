@@ -9,49 +9,195 @@
 
 sitemap gen label="GEN ITEMS"
 {
-    Frame {
-        Text item=ext_climate_temperature
-        Switch item=balkon_light_1_sw
-        Slider item=balkon_light_1_dim
-        Text item=ns_climate_temperature
-        Switch item=ns_power_2_sw
-        Switch item=ns_boost_power_sw
-        Switch item=ns_projector_power_sw
-        Switch item=ns_christmas_light_sw
-        Text item=fs_climate_temperature
-        Switch item=desktop_marina_light_sw
-        Slider item=desktop_marina_light_dim
-        Slider item=desktop_marina_light_ct
-        Switch item=fs_christmas_light_sw
-        Text item=sz_climate_temperature
-        Switch item=sz_declamp_1_sw
-        Slider item=sz_declamp_1_dim
-        Switch item=sz_declamp_2_sw
-        Slider item=sz_declamp_2_dim
-        Switch item=sz_declamp_3_sw
-        Slider item=sz_declamp_3_dim
-        Text item=ku_climate_temperature
-        Switch item=treppe_up_light_sw
-        Slider item=treppe_up_light_dim
-        Slider item=treppe_up_light_ct
-        Switch item=treppe_down_light_sw
-        Slider item=treppe_down_light_dim
-        Slider item=treppe_down_light_ct
-        Text item=treppe_motion_occupancy
-        Text item=kg_climate_temperature
-        Switch item=desktop_petro_light_sw
-        Slider item=desktop_petro_light_dim
-        Slider item=desktop_petro_light_ct
-        Switch item=desktop_petro_aux_power_sw
-        Switch item=desktop_petro_pc_power_sw
-        Switch item=kg_lager4_1_light_sw
-        Slider item=kg_lager4_1_light_dim
-        Switch item=kg_lager4_2_light_sw
-        Slider item=kg_lager4_2_light_dim
-        Text item=kg_lager4_motion_occupancy
-        Setpoint item=sz_heating_thermostat minValue=5 maxValue=30 step=1
-        Text item=sz_heating_position
-        Text item=sz_heating_temperature
-    }
+Frame label="Outside Climate (0x00158d0001c2cc22)" {
+Text item=ext_climate_temperature
+Text item=ext_climate_link icon="linkz"
+Text item=ext_climate_ota icon="fire"
 }
-    
+Frame label="Balkon light 1 (0xec1bbdfffe4695b5)" {
+Switch item=balkon_light_1_sw
+Slider item=balkon_light_1_dim
+Text item=balkon_light_1_link icon="linkz"
+Text item=balkon_light_1_ota icon="fire"
+}
+Frame label="Mirror remote (0x680ae2fffeab6b80)" {
+Text item=mirror_remote_link icon="linkz"
+Text item=mirror_remote_ota icon="fire"
+}
+Frame label="Leave switch (0x680ae2fffe16e111)" {
+Text item=eg_leave_switch_link icon="linkz"
+Text item=eg_leave_switch_ota icon="fire"
+}
+Frame label="EG Router (0x00124b000b4ed5cc)" {
+Text item=eg_router_link icon="linkz"
+Text item=eg_router_ota icon="fire"
+}
+Frame label="NS Climate (0x00158d0001b95e08)" {
+Text item=ns_climate_temperature
+Text item=ns_climate_link icon="linkz"
+Text item=ns_climate_ota icon="fire"
+}
+Frame label="NS Power 2 (0x7cb03eaa0a093a8b)" {
+Switch item=ns_power_2_sw
+Text item=ns_power_2_link icon="linkz"
+Text item=ns_power_2_ota icon="fire"
+}
+Frame label="NS Boost power (0x7cb03eaa0a0a1103)" {
+Switch item=ns_boost_power_sw
+Text item=ns_boost_power_link icon="linkz"
+Text item=ns_boost_power_ota icon="fire"
+}
+Frame label="NS Projector (0x7cb03eaa0a094d1d)" {
+Switch item=ns_projector_power_sw
+Text item=ns_projector_power_link icon="linkz"
+Text item=ns_projector_power_ota icon="fire"
+}
+Frame label="NS Christmas light (0x7cb03eaa0a09e7bc)" {
+Switch item=ns_christmas_light_sw
+Text item=ns_christmas_light_link icon="linkz"
+Text item=ns_christmas_light_ota icon="fire"
+}
+Frame label="FS Climate (0x00158d0001c15121)" {
+Text item=fs_climate_temperature
+Text item=fs_climate_link icon="linkz"
+Text item=fs_climate_ota icon="fire"
+}
+Frame label="Marina Desktop light (0xec1bbdfffe1b89d1)" {
+Switch item=desktop_marina_light_sw
+Slider item=desktop_marina_light_dim
+Slider item=desktop_marina_light_ct
+Text item=desktop_marina_light_link icon="linkz"
+Text item=desktop_marina_light_ota icon="fire"
+}
+Frame label="Marina Desktop remote (0xccccccfffeea9703)" {
+Text item=desktop_marina_remote_link icon="linkz"
+Text item=desktop_marina_remote_ota icon="fire"
+}
+Frame label="FS Christmas light (0x7cb03eaa0a09ad23)" {
+Switch item=fs_christmas_light_sw
+Text item=fs_christmas_light_link icon="linkz"
+Text item=fs_christmas_light_ota icon="fire"
+}
+Frame label="SZ Climate (0x00158d0001c19a6b)" {
+Text item=sz_climate_temperature
+Text item=sz_climate_link icon="linkz"
+Text item=sz_climate_ota icon="fire"
+}
+Frame label="Bedroom remote (0x14b457fffe7e2305)" {
+Text item=sz_remote_link icon="linkz"
+Text item=sz_remote_ota icon="fire"
+}
+Frame label="SZ Decor lamp 1 (0xec1bbdfffe972819)" {
+Switch item=sz_declamp_1_sw
+Slider item=sz_declamp_1_dim
+Text item=sz_declamp_1_link icon="linkz"
+Text item=sz_declamp_1_ota icon="fire"
+}
+Frame label="SZ Decor lamp 2 (0xec1bbdfffe972203)" {
+Switch item=sz_declamp_2_sw
+Slider item=sz_declamp_2_dim
+Text item=sz_declamp_2_link icon="linkz"
+Text item=sz_declamp_2_ota icon="fire"
+}
+Frame label="SZ Decor lamp 3 (0xec1bbdfffe91007b)" {
+Switch item=sz_declamp_3_sw
+Slider item=sz_declamp_3_dim
+Text item=sz_declamp_3_link icon="linkz"
+Text item=sz_declamp_3_ota icon="fire"
+}
+Frame label="KU Climate (0x00158d0001b95fc4)" {
+Text item=ku_climate_temperature
+Text item=ku_climate_link icon="linkz"
+Text item=ku_climate_ota icon="fire"
+}
+Frame label="KU Light Button (0x00158d0001be5b2d)" {
+Text item=ku_light_button_link icon="linkz"
+Text item=ku_light_button_ota icon="fire"
+}
+Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
+Text item=treppe_up_switch_link icon="linkz"
+Text item=treppe_up_switch_ota icon="fire"
+}
+Frame label="Treppe Down switch (0xccccccfffef0356e)" {
+Text item=treppe_down_switch_link icon="linkz"
+Text item=treppe_down_switch_ota icon="fire"
+}
+Frame label="Treppe Up light (0xd0cf5efffee892b0)" {
+Switch item=treppe_up_light_sw
+Slider item=treppe_up_light_dim
+Slider item=treppe_up_light_ct
+Text item=treppe_up_light_link icon="linkz"
+Text item=treppe_up_light_ota icon="fire"
+}
+Frame label="Treppe Down light (0x588e81fffe507b40)" {
+Switch item=treppe_down_light_sw
+Slider item=treppe_down_light_dim
+Slider item=treppe_down_light_ct
+Text item=treppe_down_light_link icon="linkz"
+Text item=treppe_down_light_ota icon="fire"
+}
+Frame label="Treppe motion (0xbc33acfffe872049)" {
+Text item=treppe_motion_occupancy
+Text item=treppe_motion_link icon="linkz"
+Text item=treppe_motion_ota icon="fire"
+}
+Frame label="KG Climate (0x00158d0001b95e02)" {
+Text item=kg_climate_temperature
+Text item=kg_climate_link icon="linkz"
+Text item=kg_climate_ota icon="fire"
+}
+Frame label="Petro Desktop light (0xccccccfffed8ef9d)" {
+Switch item=desktop_petro_light_sw
+Slider item=desktop_petro_light_dim
+Slider item=desktop_petro_light_ct
+Text item=desktop_petro_light_link icon="linkz"
+Text item=desktop_petro_light_ota icon="fire"
+}
+Frame label="Petro Desktop AUX (0x7cb03eaa0a094bf2)" {
+Switch item=desktop_petro_aux_power_sw
+Text item=desktop_petro_aux_power_link icon="linkz"
+Text item=desktop_petro_aux_power_ota icon="fire"
+}
+Frame label="Petro Desktop PC (0x7cb03eaa0a094303)" {
+Switch item=desktop_petro_pc_power_sw
+Text item=desktop_petro_pc_power_link icon="linkz"
+Text item=desktop_petro_pc_power_ota icon="fire"
+}
+Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {
+Text item=desktop_petro_remote_link icon="linkz"
+Text item=desktop_petro_remote_ota icon="fire"
+}
+Frame label="KG Lager 4 (1) (0xccccccfffedf345a)" {
+Switch item=kg_lager4_1_light_sw
+Slider item=kg_lager4_1_light_dim
+Text item=kg_lager4_1_light_link icon="linkz"
+Text item=kg_lager4_1_light_ota icon="fire"
+}
+Frame label="KG Lager 4 (2) (0xccccccfffedf5314)" {
+Switch item=kg_lager4_2_light_sw
+Slider item=kg_lager4_2_light_dim
+Text item=kg_lager4_2_light_link icon="linkz"
+Text item=kg_lager4_2_light_ota icon="fire"
+}
+Frame label="KG Lager switch (0xccccccfffee401f8)" {
+Text item=kg_lager4_switch_link icon="linkz"
+Text item=kg_lager4_switch_ota icon="fire"
+}
+Frame label="KG Lager motion (0xbc33acfffe84ca1e)" {
+Text item=kg_lager4_motion_occupancy
+Text item=kg_lager4_motion_link icon="linkz"
+Text item=kg_lager4_motion_ota icon="fire"
+}
+Frame label="KG Lager 4 leak (0x00158d000488052c)" {
+Text item=kg_lager4_leak_link icon="linkz"
+Text item=kg_lager4_leak_ota icon="fire"
+}
+Frame label="SZ heating (0x5c0272fffec9d557)" {
+Setpoint item=sz_heating_thermostat minValue=5 maxValue=30 step=1
+Text item=sz_heating_position
+Text item=sz_heating_temperature
+Text item=sz_heating_link icon="linkz"
+Text item=sz_heating_ota icon="fire"
+}
+
+}

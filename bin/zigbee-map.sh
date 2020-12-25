@@ -11,8 +11,8 @@ ROOT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 source "$ROOT_PATH/config.sh"
 
-mosquitto_sub -u $MQTT_USER -P $MQTT_PASS -t zigbee2mqtt/bridge/networkmap/graphviz -C 1 >${file}.dot &
-mosquitto_pub -u $MQTT_USER -P $MQTT_PASS -t zigbee2mqtt/bridge/networkmap -m graphviz
+mosquitto_sub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -t zigbee2mqtt/bridge/networkmap/graphviz -C 1 >${file}.dot &
+mosquitto_pub -h $MQTT_HOST -u $MQTT_USER -P $MQTT_PASS -t zigbee2mqtt/bridge/networkmap/routes -m graphviz
 
 # wait until mosquitto_sub ends
 wait

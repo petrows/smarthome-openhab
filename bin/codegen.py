@@ -91,7 +91,7 @@ items = [
         'zigbee_id': '0x7cb03eaa0a093a8b',
         'type': DEVICES.OSRAM_SMART_PLUG,
         'groups': {
-            'sw': ['g_light_christmas'], # FIXME only for holidays!!!
+            'sw': ['g_light_christmas'],  # FIXME only for holidays!!!
         }
     },
     {
@@ -336,12 +336,16 @@ items = [
 ]
 
 
-def device_comment(item):
+def device_label(item):
     device_id = ''
     if np.in1d(['zigbee'], item['type']['types']).any():
         device_id = item['zigbee_id']
+    return f"{item['name']} ({device_id})"
+
+
+def device_comment(item):
     conf_str = []
-    conf_str.append(f"// {item['name']} ({device_id})")
+    conf_str.append(f"// {device_label(item)}")
     conf_str.append(
         f"// {item['type']['device_name']}"
         f" / {item['type']['device_url']}"
@@ -458,7 +462,7 @@ if __name__ == "__main__":
             # Device has Temp sensor
             if np.in1d(['temperature'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : temperature [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-temperature.js\"]") # Could be different fields,sudo detect here
+                    f"\t\tType number : temperature [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-temperature.js\"]")  # Could be different fields,sudo detect here
 
             if np.in1d(['humidity'], item['type']['types']).any():
                 conf_str.append(
@@ -508,6 +512,11 @@ if __name__ == "__main__":
     gen_rules = [PREAMBULA]  # Special rules for devices
     for item in items:
         conf_str.extend(device_comment(item))
+        device_items = {
+            'item': item,
+            'items': []
+        }
+        all_items.append(device_items)
         # Some devices have switch option
         if np.in1d(['lamp', 'plug'], item['type']['types']).any():
             device_icon = 'switch'
@@ -521,7 +530,7 @@ if __name__ == "__main__":
                 f"{device_groups(item,'sw')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state\"{device_timout}}}"
             )
-            all_items.append(f"Switch item={item['id']}_sw")
+            device_items['items'].append(f"Switch item={item['id']}_sw")
         # Some devices have thermostat
         if np.in1d(['thermostat'], item['type']['types']).any():
             device_icon = 'heatingt'
@@ -530,7 +539,7 @@ if __name__ == "__main__":
                 f"{device_groups(item,'thermostat')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:thermostat\"}}"
             )
-            all_items.append(
+            device_items['items'].append(
                 f"Setpoint item={item['id']}_thermostat minValue=5 maxValue=30 step=1")
 
         # Some devices have position option
@@ -541,7 +550,7 @@ if __name__ == "__main__":
                 f"{device_groups(item,'position')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:position\"}}"
             )
-            all_items.append(
+            device_items['items'].append(
                 f"Text item={item['id']}_position")
 
         # Some devices have motion option
@@ -552,7 +561,7 @@ if __name__ == "__main__":
                 f"{device_groups(item,'occupancy')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:occupancy\"}}"
             )
-            all_items.append(f"Text item={item['id']}_occupancy")
+            device_items['items'].append(f"Text item={item['id']}_occupancy")
 
         # Some devices have leak option
         if np.in1d(['leak'], item['type']['types']).any():
@@ -570,7 +579,7 @@ if __name__ == "__main__":
                 f"{device_groups(item,'temperature')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:temperature\"}}"
             )
-            all_items.append(f"Text item={item['id']}_temperature")
+            device_items['items'].append(f"Text item={item['id']}_temperature")
 
         # Some devices have Humidity option
         if np.in1d(['humidity'], item['type']['types']).any():
@@ -597,7 +606,7 @@ if __name__ == "__main__":
                     f"{device_groups(item,'dim')}"
                     f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:dim\"}}"
                 )
-                all_items.append(f"Slider item={item['id']}_dim")
+                device_items['items'].append(f"Slider item={item['id']}_dim")
 
             # Zigbee color temperature
             if np.in1d(['ct'], item['type']['types']).any():
@@ -606,7 +615,7 @@ if __name__ == "__main__":
                     f"{device_groups(item,'ct')}"
                     f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:ct\"}}"
                 )
-                all_items.append(f"Slider item={item['id']}_ct")
+                device_items['items'].append(f"Slider item={item['id']}_ct")
                 gen_rules.append(
                     f"""
 // Device should apply saved color temp when ON
@@ -621,15 +630,19 @@ end
 
             # All zigbee devices have Link Quality reported
             conf_str.append(
-                f"Number {item['id']}_link \"{item['name']} [%d]\""
-                f" <network> (g_zigbee_link) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:link\"}}"
+                f"Number {item['id']}_link \"{item['name']} LINK [%d]\""
+                f" <linkz> (g_zigbee_link) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:link\"}}"
             )
+            device_items['items'].append(
+                f"Text item={item['id']}_link icon=\"linkz\"")
 
             # All zigbee devices probably have some OTA updates reported
             conf_str.append(
-                f"Switch {item['id']}_ota \"{item['name']} [%s]\""
-                f" <flowpipe> (g_zigbee_ota) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:ota\"}}"
+                f"Switch {item['id']}_ota \"{item['name']} OTA [%s]\""
+                f" <fire> (g_zigbee_ota) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:ota\"}}"
             )
+            device_items['items'].append(
+                f"Text item={item['id']}_ota icon=\"fire\"")
 
             # Some zigbee devices report battery
             if 'battery' in item['type']['types']:
@@ -666,15 +679,24 @@ end
         f.write(conf_str)
         f.close()
 
+    print(all_items)
+
     # Write test sitemap
     test_sitemap = PREAMBULA + """
 sitemap gen label="GEN ITEMS"
 {
-    Frame {
-        """ + "\n        ".join(all_items) + """
-    }
+"""
+    for gen_item in all_items:
+        if not gen_item['items']:
+            continue
+        test_sitemap += f"Frame label=\"{device_label(gen_item['item'])}\" {{\n"
+        test_sitemap += "\n".join(gen_item['items'])
+        test_sitemap += "\n}\n"
+
+    test_sitemap += """
 }
-    """
+"""
+
     print(test_sitemap)
     if args.write:
         f = open(os.path.join(ROOT_PATH, 'sitemaps', 'gen.sitemap'), 'w')
