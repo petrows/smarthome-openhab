@@ -21,14 +21,14 @@ Number:Temperature  Aqi_Temperature     "Temperature" <temperature> (AirQuality)
 Number:Pressure     Aqi_Pressure        "Pressure" <pressure> (AirQuality) { channel="airquality:aqi:home:pressure" }
 Number:Dimensionless Aqi_Humidity        "Humidity" <humidity> (AirQuality) { channel="airquality:aqi:home:humidity" }
 
-DateTime         Sunrise_Time       "Sunrise [%1$tH:%1$tM]"                   { channel="astro:sun:home:rise#start" }
-DateTime         Sunset_Time        "Sunset [%1$tH:%1$tM]"                    { channel="astro:sun:home:set#start" }
-Number:Angle     Azimuth            "Azimuth"                                 { channel="astro:sun:home:position#azimuth" }
-Number:Angle     Elevation          "Elevation"                               { channel="astro:sun:home:position#elevation" }
-String           MoonPhase          "MoonPhase"                               { channel="astro:moon:home:phase#name" }
-Number:Length    MoonDistance       "MoonDistance [%.1f %unit%]"              { channel="astro:moon:home:distance#distance" }
-Number:Intensity Total_Radiation    "Radiation [%.2f %unit%]"                 { channel="astro:sun:home:radiation#total" }
-Number:Intensity Diffuse_Radiation  "Diffuse Radiation [%.2f %unit%]"         { channel="astro:sun:home:radiation#diffuse" }
+DateTime astro_sun_rise "Sunrise [%1$tH:%1$tM]" { channel="astro:sun:home:rise#start" }
+DateTime astro_sun_set "Sunset [%1$tH:%1$tM]" { channel="astro:sun:home:set#start" }
+Number:Angle astro_sun_az "Azimuth [%d %unit%]" { channel="astro:sun:home:position#azimuth" }
+Number:Angle astro_sun_el "Elevation [%d %unit%]" { channel="astro:sun:home:position#elevation" }
+String astro_moon_phase "Moon Phase" { channel="astro:moon:home:phase#name" }
+Number:Length astro_moon_dst "Moon Distance [%.1f %unit%]" { channel="astro:moon:home:distance#distance" }
+Number:Intensity astro_radiation "Radiation [%.2f %unit%]" { channel="astro:sun:home:radiation#total" }
+Number:Intensity astro_radiation_diff "Diffuse Radiation [%.2f %unit%]" { channel="astro:sun:home:radiation#diffuse" }
 
 
 Number:Temperature weather_ext_temp "Outside Temperature [%.1f °C]"   <temperature>    { http="<[weatherConditions:420000:JSONPATH($.currently.temperature)]" }
