@@ -11,6 +11,7 @@ sitemap gen label="GEN ITEMS"
 {
 Frame label="Outside Climate (0x00158d0001c2cc22)" {
 Text item=ext_climate_temperature
+Text item=ext_climate_humidity
 Text item=ext_climate_link icon="linkz"
 Text item=ext_climate_ota icon="fire"
 }
@@ -34,6 +35,8 @@ Text item=eg_router_ota icon="fire"
 }
 Frame label="NS Climate (0x00158d0001b95e08)" {
 Text item=ns_climate_temperature
+Text item=ns_climate_humidity
+Text item=ns_climate_pressure
 Text item=ns_climate_link icon="linkz"
 Text item=ns_climate_ota icon="fire"
 }
@@ -59,6 +62,7 @@ Text item=ns_christmas_light_ota icon="fire"
 }
 Frame label="FS Climate (0x00158d0001c15121)" {
 Text item=fs_climate_temperature
+Text item=fs_climate_humidity
 Text item=fs_climate_link icon="linkz"
 Text item=fs_climate_ota icon="fire"
 }
@@ -80,6 +84,7 @@ Text item=fs_christmas_light_ota icon="fire"
 }
 Frame label="SZ Climate (0x00158d0001c19a6b)" {
 Text item=sz_climate_temperature
+Text item=sz_climate_humidity
 Text item=sz_climate_link icon="linkz"
 Text item=sz_climate_ota icon="fire"
 }
@@ -107,6 +112,8 @@ Text item=sz_declamp_3_ota icon="fire"
 }
 Frame label="KU Climate (0x00158d0001b95fc4)" {
 Text item=ku_climate_temperature
+Text item=ku_climate_humidity
+Text item=ku_climate_pressure
 Text item=ku_climate_link icon="linkz"
 Text item=ku_climate_ota icon="fire"
 }
@@ -143,6 +150,8 @@ Text item=treppe_motion_ota icon="fire"
 }
 Frame label="KG Climate (0x00158d0001b95e02)" {
 Text item=kg_climate_temperature
+Text item=kg_climate_humidity
+Text item=kg_climate_pressure
 Text item=kg_climate_link icon="linkz"
 Text item=kg_climate_ota icon="fire"
 }

@@ -462,14 +462,14 @@ if __name__ == "__main__":
             # Device has Temp sensor
             if np.in1d(['temperature'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : temperature [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-temperature.js\"]")  # Could be different fields,sudo detect here
+                    f"\t\tType number : temperature [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-temperature.js\",unit=\"°C\"]")  # Could be different fields,sudo detect here
 
             if np.in1d(['humidity'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType number : humidity [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.humidity\"]")
             if np.in1d(['pressure'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : pressure [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.pressure\"]")
+                    f"\t\tType number : pressure [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.pressure\",unit=\"hPa\"]")
             # Some zigbee devices needs to be monitored
             if np.in1d(['activity'], item['type']['types']).any():
                 conf_str.append(
@@ -477,7 +477,7 @@ if __name__ == "__main__":
             # Some zigbee devices report battery OR battery_low signal
             if np.in1d(['battery'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\"]")
+                    f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\",unit=\"%\"]")
                 conf_str.append(
                     f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-lowbatt.js\"]")
             else:
@@ -575,7 +575,7 @@ if __name__ == "__main__":
         if np.in1d(['temperature'], item['type']['types']).any():
             device_icon = 'temperature'
             conf_str.append(
-                f"Number {item['id']}_temperature \"{item['name']} [%d °C]\" <{device_icon}>"
+                f"Number:Temperature {item['id']}_temperature \"{item['name']} [%d %unit%]\" <{device_icon}>"
                 f"{device_groups(item,'temperature')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:temperature\"}}"
             )
@@ -585,18 +585,21 @@ if __name__ == "__main__":
         if np.in1d(['humidity'], item['type']['types']).any():
             device_icon = 'humidity'
             conf_str.append(
-                f"Number {item['id']}_humidity \"{item['name']} [%d %%]\" <{device_icon}>"
+                f"Number:Dimensionless {item['id']}_humidity \"{item['name']} [%d %%]\" <{device_icon}>"
                 f"{device_groups(item,'humidity')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:humidity\"}}"
             )
+            device_items['items'].append(f"Text item={item['id']}_humidity")
         # Some devices have Pressure option
         if np.in1d(['pressure'], item['type']['types']).any():
             device_icon = 'pressure'
             conf_str.append(
-                f"Number {item['id']}_pressure \"{item['name']} [%d hPa]\" <{device_icon}>"
+                f"Number:Pressure {item['id']}_pressure \"{item['name']} [%d %unit%]\" <{device_icon}>"
                 f"{device_groups(item,'pressure')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:pressure\"}}"
             )
+            device_items['items'].append(f"Text item={item['id']}_pressure")
+
         # Special Zigbee things
         if np.in1d(['zigbee'], item['type']['types']).any():
             # All Zigbee lamps have dimmer built-in

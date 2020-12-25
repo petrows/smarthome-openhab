@@ -9,8 +9,8 @@
 
 // Outside Climate (0x00158d0001c2cc22)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Number ext_climate_temperature "Outside Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:ext_climate:temperature"}
-Number ext_climate_humidity "Outside Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ext_climate:humidity"}
+Number:Temperature ext_climate_temperature "Outside Climate [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:ext_climate:temperature"}
+Number:Dimensionless ext_climate_humidity "Outside Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ext_climate:humidity"}
 Number ext_climate_link "Outside Climate LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ext_climate:link"}
 Switch ext_climate_ota "Outside Climate OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ext_climate:ota"}
 Number ext_climate_battery "Outside Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ext_climate:battery"}
@@ -46,9 +46,9 @@ Switch eg_router_ota "EG Router OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:t
 
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
-Number ns_climate_temperature "NS Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:ns_climate:temperature"}
-Number ns_climate_humidity "NS Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ns_climate:humidity"}
-Number ns_climate_pressure "NS Climate [%d hPa]" <pressure> {channel="mqtt:topic:openhab:ns_climate:pressure"}
+Number:Temperature ns_climate_temperature "NS Climate [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:ns_climate:temperature"}
+Number:Dimensionless ns_climate_humidity "NS Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ns_climate:humidity"}
+Number:Pressure ns_climate_pressure "NS Climate [%d %unit%]" <pressure> {channel="mqtt:topic:openhab:ns_climate:pressure"}
 Number ns_climate_link "NS Climate LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ns_climate:link"}
 Switch ns_climate_ota "NS Climate OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ns_climate:ota"}
 Number ns_climate_battery "NS Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ns_climate:battery"}
@@ -82,8 +82,8 @@ Switch ns_christmas_light_ota "NS Christmas light OTA [%s]" <fire> (g_zigbee_ota
 
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Number fs_climate_temperature "FS Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:fs_climate:temperature"}
-Number fs_climate_humidity "FS Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:fs_climate:humidity"}
+Number:Temperature fs_climate_temperature "FS Climate [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:fs_climate:temperature"}
+Number:Dimensionless fs_climate_humidity "FS Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:fs_climate:humidity"}
 Number fs_climate_link "FS Climate LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:fs_climate:link"}
 Switch fs_climate_ota "FS Climate OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:fs_climate:ota"}
 Number fs_climate_battery "FS Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:fs_climate:battery"}
@@ -114,8 +114,8 @@ Switch fs_christmas_light_ota "FS Christmas light OTA [%s]" <fire> (g_zigbee_ota
 
 // SZ Climate (0x00158d0001c19a6b)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Number sz_climate_temperature "SZ Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:sz_climate:temperature"}
-Number sz_climate_humidity "SZ Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:sz_climate:humidity"}
+Number:Temperature sz_climate_temperature "SZ Climate [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:sz_climate:temperature"}
+Number:Dimensionless sz_climate_humidity "SZ Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:sz_climate:humidity"}
 Number sz_climate_link "SZ Climate LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_climate:link"}
 Switch sz_climate_ota "SZ Climate OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_climate:ota"}
 Number sz_climate_battery "SZ Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_climate:battery"}
@@ -153,9 +153,9 @@ Switch sz_declamp_3_ota "SZ Decor lamp 3 OTA [%s]" <fire> (g_zigbee_ota) {channe
 
 // KU Climate (0x00158d0001b95fc4)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
-Number ku_climate_temperature "KU Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:ku_climate:temperature"}
-Number ku_climate_humidity "KU Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ku_climate:humidity"}
-Number ku_climate_pressure "KU Climate [%d hPa]" <pressure> {channel="mqtt:topic:openhab:ku_climate:pressure"}
+Number:Temperature ku_climate_temperature "KU Climate [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:ku_climate:temperature"}
+Number:Dimensionless ku_climate_humidity "KU Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:ku_climate:humidity"}
+Number:Pressure ku_climate_pressure "KU Climate [%d %unit%]" <pressure> {channel="mqtt:topic:openhab:ku_climate:pressure"}
 Number ku_climate_link "KU Climate LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_climate:link"}
 Switch ku_climate_ota "KU Climate OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_climate:ota"}
 Number ku_climate_battery "KU Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_climate:battery"}
@@ -212,9 +212,9 @@ DateTime treppe_motion_activity "Treppe motion [JS(display-activity.js):%s]" <ti
 
 // KG Climate (0x00158d0001b95e02)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
-Number kg_climate_temperature "KG Climate [%d °C]" <temperature> {channel="mqtt:topic:openhab:kg_climate:temperature"}
-Number kg_climate_humidity "KG Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:kg_climate:humidity"}
-Number kg_climate_pressure "KG Climate [%d hPa]" <pressure> {channel="mqtt:topic:openhab:kg_climate:pressure"}
+Number:Temperature kg_climate_temperature "KG Climate [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:kg_climate:temperature"}
+Number:Dimensionless kg_climate_humidity "KG Climate [%d %%]" <humidity> {channel="mqtt:topic:openhab:kg_climate:humidity"}
+Number:Pressure kg_climate_pressure "KG Climate [%d %unit%]" <pressure> {channel="mqtt:topic:openhab:kg_climate:pressure"}
 Number kg_climate_link "KG Climate LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_climate:link"}
 Switch kg_climate_ota "KG Climate OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_climate:ota"}
 Number kg_climate_battery "KG Climate [%d %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_climate:battery"}
@@ -293,7 +293,7 @@ DateTime kg_lager4_leak_activity "KG Lager 4 leak [JS(display-activity.js):%s]" 
 // TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
 Number sz_heating_thermostat "SZ heating SET [%d °C]" <heatingt> (g_hz_all,g_hz_eg) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
 Number sz_heating_position "SZ heating POS [%d %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:sz_heating:position"}
-Number sz_heating_temperature "SZ heating [%d °C]" <temperature> {channel="mqtt:topic:openhab:sz_heating:temperature"}
+Number:Temperature sz_heating_temperature "SZ heating [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:sz_heating:temperature"}
 Number sz_heating_link "SZ heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_heating:link"}
 Switch sz_heating_ota "SZ heating OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
 Switch sz_heating_battery_low "SZ heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_heating:battery_low"}

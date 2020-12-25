@@ -31,19 +31,19 @@ Number:Intensity Total_Radiation    "Radiation [%.2f %unit%]"                 { 
 Number:Intensity Diffuse_Radiation  "Diffuse Radiation [%.2f %unit%]"         { channel="astro:sun:home:radiation#diffuse" }
 
 
-Number weather_ext_temp "Outside Temperature [%.1f °C]"   <temperature>    { http="<[weatherConditions:420000:JSONPATH($.currently.temperature)]" }
-String weather_ext_summary "Current weatherr [%s]"  <sun_clouds>   { http="<[weatherConditions:420000:JSONPATH($.currently.summary)]" }    
+Number:Temperature weather_ext_temp "Outside Temperature [%.1f °C]"   <temperature>    { http="<[weatherConditions:420000:JSONPATH($.currently.temperature)]" }
+String weather_ext_summary "Current weatherr [%s]"  <sun_clouds>   { http="<[weatherConditions:420000:JSONPATH($.currently.summary)]" }
 Number weather_ext_hum "Humidity [%s]"   <humidity>   { http="<[weatherConditions:420000:JSONPATH($.currently.humidity)]" }
-Number weather_ext_pres "Airpressure [%.1f Hp]"   <line>    { http="<[weatherConditions:420000:JSONPATH($.currently.pressure)]" }
-Number weather_ext_wind_dir "Wind direction [%.0f °]" <windrose>   { http="<[weatherConditions:420000:JSONPATH($.currently.windBearing)]" }
-Number weather_ext_wind_speed "Wind speed [%.1f m/s]" <wind>   { http="<[weatherConditions:420000:JSONPATH($.currently.windSpeed)]" }
-Number weather_ext_wind_gust "Wind gusts [%.1f m/s]" <wind>      { http="<[weatherConditions:420000:JSONPATH($.currently.windGust)]" }
-Number weather_ext_dewpoint "Dewpoint [%.1f °C]"   <dewpoint>  { http="<[weatherConditions:420000:JSONPATH($.currently.dewPoint)]" }
-Number weather_ext_temp_feel "Apparent temperature [%.0f °C]" <temperature>   { http="<[weatherConditions:420000:JSONPATH($.currently.apparentTemperature)]" }
-Number weather_ext_visibility "Visibility [%.1f km]"    <visibility>    { http="<[weatherConditions:420000:JSONPATH($.currently.visibility)]" }    
-Number weather_ext_ozone "Ozone [%.2f]" <ozone>  { http="<[weatherConditions:420000:JSONPATH($.currently.ozone)]" } 
+Number:Pressure weather_ext_pres "Airpressure [%.1f hPa]"   <line>    { http="<[weatherConditions:420000:JSONPATH($.currently.pressure)]" }
+Number:Angle weather_ext_wind_dir "Wind direction [%.0f °]" <windrose>   { http="<[weatherConditions:420000:JSONPATH($.currently.windBearing)]" }
+Number:Speed weather_ext_wind_speed "Wind speed [%.1f m/s]" <wind>   { http="<[weatherConditions:420000:JSONPATH($.currently.windSpeed)]" }
+Number:Speed weather_ext_wind_gust "Wind gusts [%.1f m/s]" <wind>      { http="<[weatherConditions:420000:JSONPATH($.currently.windGust)]" }
+Number:Temperature weather_ext_dewpoint "Dewpoint [%.1f °C]"   <dewpoint>  { http="<[weatherConditions:420000:JSONPATH($.currently.dewPoint)]" }
+Number:Temperature weather_ext_temp_feel "Apparent temperature [%.0f °C]" <temperature>   { http="<[weatherConditions:420000:JSONPATH($.currently.apparentTemperature)]" }
+Number:Length weather_ext_visibility "Visibility [%.1f km]"    <visibility>    { http="<[weatherConditions:420000:JSONPATH($.currently.visibility)]" }
+Number weather_ext_ozone "Ozone [%.2f]" <ozone>  { http="<[weatherConditions:420000:JSONPATH($.currently.ozone)]" }
 Number weather_ext_uv "UV Index [%.0f]" <uvi>  { http="<[weatherConditions:420000:JSONPATH($.currently.uvIndex)]" }
-Number weather_ext_precip "hourly precipitation [%s mm]" <rain> { http="<[weatherConditions:420000:JSONPATH($.currently.precipIntensity)]" }
+Number:Length weather_ext_precip "hourly precipitation [%s mm]" <rain> { http="<[weatherConditions:420000:JSONPATH($.currently.precipIntensity)]" }
 
 
 String localStationId "ID [%s]" { channel="openweathermap:weather-and-forecast:api:local:station#id" }
