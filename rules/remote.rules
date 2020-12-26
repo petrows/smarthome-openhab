@@ -246,7 +246,7 @@ then
                 snf_eg_ku_arbeit.sendCommand(ON)
             }
         }
-        case "long": {
+        case "hold": {
             if (snf_eg_ku_haupt.state == ON) {
                 snf_eg_ku_haupt.sendCommand(OFF)
             } else {

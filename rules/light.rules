@@ -86,20 +86,14 @@ then
     ns_power_2_sw.sendCommand(newState)
 end
 
-rule "BZ force both lights work together 1"
+rule "BZ force both lights work together"
 when
-    Item snf_eg_bz_1 changed
+       Item snf_eg_bz_1 changed
+    or Item snf_eg_bz_2 changed
 then
-    var state = snf_eg_bz_1.state
-    if (snf_eg_bz_2.state != state) { sendCommand(snf_eg_bz_2, state) }
-end
-
-rule "BZ force both lights work together 2"
-when
-    Item snf_eg_bz_2 changed
-then
-    var state = snf_eg_bz_2.state
-    if (snf_eg_bz_1.state != state) { sendCommand(snf_eg_bz_1, state) }
+    // newState
+    // logWarn("light-bz", "newState = " + newState)
+    g_light_eg_bz.sendCommand(newState.toString())
 end
 
 // Christmas lights auto
