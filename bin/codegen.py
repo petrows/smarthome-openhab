@@ -443,6 +443,7 @@ if __name__ == "__main__":
                     f", transformationPattern=\"JSONPATH:$.current_heating_setpoint\""
                     f", commandTopic=\"zigbee2mqtt/{item['zigbee_id']}/set\""
                     f", transformationPatternOut=\"JS:z2m-command-thermostat-setpoint.js\""
+                    f", unit=\"°C\""
                     f"]"
                 )
 
@@ -477,7 +478,7 @@ if __name__ == "__main__":
             # Some zigbee devices report battery OR battery_low signal
             if np.in1d(['battery'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\",unit=\"%\"]")
+                    f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\"]")
                 conf_str.append(
                     f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-lowbatt.js\"]")
             else:
@@ -535,7 +536,7 @@ if __name__ == "__main__":
         if np.in1d(['thermostat'], item['type']['types']).any():
             device_icon = 'heatingt'
             conf_str.append(
-                f"Number {item['id']}_thermostat \"{item['name']} SET [%d °C]\" <{device_icon}>"
+                f"Number:Temperature {item['id']}_thermostat \"{item['name']} SET [%d %unit%]\" <{device_icon}>"
                 f"{device_groups(item,'thermostat')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:thermostat\"}}"
             )
