@@ -4,7 +4,7 @@ rule "Spiegel control SW"
 when
     Channel "mqtt:topic:openhab:mirror_remote:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
     switch(state) {
         case "toggle": {
             if (snf_eg_fl_spiegel.state != ON) {
@@ -42,7 +42,7 @@ rule "House verlassen SW"
 when
     Channel "mqtt:topic:openhab:eg_leave_switch:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
 
     logWarn("light", "Verlassen SW: " + state)
 
@@ -84,7 +84,7 @@ rule "KG Ladder BOTTOM btn"
 when
     Channel "mqtt:topic:openhab:treppe_down_switch:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
     switch(state) {
         case "on": {
             g_dim_treppe.sendCommand(100)
@@ -100,7 +100,7 @@ rule "KG Ladder UP btn"
 when
     Channel "mqtt:topic:openhab:treppe_up_switch:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
     switch(state) {
         case "brightness_up": { // Long press UP
             g_light_kg_auto.sendCommand(ON)
@@ -122,7 +122,7 @@ rule "KG Lager btn"
 when
     Channel "mqtt:topic:openhab:kg_lager4_switch:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
     switch(state) {
         case "on": {
             sendCommand(g_dim_lager_auto, 100)
@@ -137,7 +137,7 @@ rule "Petro desktop remote"
 when
     Channel "mqtt:topic:openhab:desktop_petro_remote:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
 
     // any evebt turs on table power
     desktop_petro_power_try.sendCommand(ON)
@@ -173,7 +173,7 @@ rule "Marina desktop remote"
 when
     Channel "mqtt:topic:openhab:desktop_marina_remote:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
     switch(state) {
         case "toggle": {
             if (desktop_marina_light_sw.state == ON) { desktop_marina_light_sw.sendCommand(OFF) } else { desktop_marina_light_sw.sendCommand(ON) }
@@ -197,7 +197,7 @@ rule "SZ remote sw"
 when
     Channel "mqtt:topic:openhab:sz_remote:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
     switch(state) {
         case "toggle": {
             g_light_all.sendCommand(OFF)
@@ -237,7 +237,7 @@ rule "KU Arbeitlicht SW"
 when
     Channel "mqtt:topic:openhab:ku_light_button:action" triggered
 then
-	var state = receivedEvent.getEvent()
+	var state = receivedEvent
     switch(state) {
         case "single": {
             if (snf_eg_ku_arbeit.state == ON) {

@@ -398,7 +398,7 @@ if __name__ == "__main__":
         if 'zigbee' in item['type']['types']:
             conf_str.extend(device_comment(item))
             conf_str.append(
-                f"Thing mqtt:topic:openhab:{item['mqtt_topic']} (mqtt:broker:openhab) {{")
+                f"Thing mqtt:topic:openhab:{item['mqtt_topic']} \"{item['name']}\" (mqtt:broker:openhab) {{")
             conf_str.append(
                 f"\tChannels:")
             # Device has switch option
@@ -488,7 +488,7 @@ if __name__ == "__main__":
             # Some zigbee devices report battery voltage
             if np.in1d(['voltage'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : voltage [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.voltage\"]")
+                    f"\t\tType number : voltage [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.voltage\",unit=\"mV\"]")
             # All zigbee devices have Link Quality reported
             conf_str.append(
                 f"\t\tType number : link [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.linkquality\"]")
@@ -547,7 +547,7 @@ if __name__ == "__main__":
         if np.in1d(['position'], item['type']['types']).any():
             device_icon = 'heating'
             conf_str.append(
-                f"Number {item['id']}_position \"{item['name']} POS [%d %%]\" <{device_icon}>"
+                f"Number:Dimensionless {item['id']}_position \"{item['name']} POS [%d %%]\" <{device_icon}>"
                 f"{device_groups(item,'position')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:position\"}}"
             )
@@ -634,7 +634,7 @@ end
 
             # All zigbee devices have Link Quality reported
             conf_str.append(
-                f"Number {item['id']}_link \"{item['name']} LINK [%d]\""
+                f"Number:Dimensionless {item['id']}_link \"{item['name']} LINK [%d]\""
                 f" <linkz> (g_zigbee_link) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:link\"}}"
             )
             device_items['items'].append(
@@ -651,7 +651,7 @@ end
             # Some zigbee devices report battery
             if 'battery' in item['type']['types']:
                 conf_str.append(
-                    f"Number {item['id']}_battery \"{item['name']} [%d %%]\""
+                    f"Number:Dimensionless {item['id']}_battery \"{item['name']} [%d %%]\""
                     f" <battery> (g_battery_level) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery\"}}"
                 )
             if np.in1d(['battery', 'battery_low'], item['type']['types']).any():
@@ -663,7 +663,7 @@ end
             # ... and it's voltage
             if 'voltage' in item['type']['types']:
                 conf_str.append(
-                    f"Number {item['id']}_voltage \"{item['name']} [%d mV]\""
+                    f"Number:ElectricPotential {item['id']}_voltage \"{item['name']} [%d %unit%]\""
                     f" <energy> {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:voltage\"}}"
                 )
 

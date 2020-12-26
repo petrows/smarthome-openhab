@@ -1,6 +1,10 @@
 services/
+# MQTT cred is secret
 things/mqtt-broker.things
+# Weather API token is secret
 things/weather.things
+# Device token is secret
+things/mi-robot.things
 bin/config.sh
 .vscode
 
