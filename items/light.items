@@ -33,7 +33,7 @@ Group:Dimmer:MAX g_dim_lager_auto
 Switch desktop_petro_power_try "Petro desktop power gracefull [%s]"
 
 // Holydays: exterrior light
-Group:Switch:OR(ON, OFF) g_light_christmas "Christmas light [%s]" <light>
+Group:Switch:AND(ON, OFF) g_light_christmas "Christmas light [%s]" <light>
 
 String light_all_mode "Light mode" <light>
 Switch light_sunrise_enabled "Sunrise enabled [%s]" <light>

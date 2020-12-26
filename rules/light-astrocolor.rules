@@ -3,8 +3,9 @@
 // === Configuration
 
 // How long full programm runs (seconds): 4 hrs from 18 to 22
+// Update: 2 hrs from Sunset
 
-val astrocolorProgramPeriod = 4 * 60 * 60
+val astrocolorProgramPeriod = 2 * 60 * 60
 
 // Default color value to be set for DAY
 val astrocolorDaylight = 30
@@ -34,7 +35,9 @@ end
 
 rule "Set lamps color according to daytime"
 when
-    Time cron "0 00 18 ? * *"
+    // Time cron "0 00 18 ? * *"
+    // Sunset (early)
+    Channel "astro:sun:home:set#event" triggered START
     or Item test_sw_check_astrocolor received command
 then
     logWarn("light", "Astrocolor emulation started")
