@@ -1,11 +1,16 @@
 
 // Motion detect in KG
-rule "KG Motion detect haupt"
+rule "KG Motion detect treppe"
 when
     Item treppe_motion_occupancy changed
 then
     var state = treppe_motion_occupancy.state
     if (state == OFF) {
+        // If light is triggered manually, does not stop it
+        if (kg_treppe_manual_sw.state == ON) {
+            logWarn("light", "KG Motion treppe OFF ignored by manual override")
+            return
+        }
         sendCommand(g_light_treppe, OFF)
     }
     if (state == ON && g_light_treppe.state == OFF) {
@@ -20,6 +25,11 @@ when
 then
     var state = kg_lager4_motion_occupancy.state
     if (state == OFF) {
+        // If light is triggered manually, does not stop it
+        if (kg_lager4_manual_sw.state == ON) {
+            logWarn("light", "KG Motion lager OFF ignored by manual override")
+            return
+        }
         sendCommand(g_light_lager_auto, OFF)
     }
     if (state == ON && g_light_lager_auto.state == OFF) {

@@ -83,7 +83,7 @@ rule "NS follow table power"
 when
     Item snf_eg_ns_table changed
 then
-    ns_power_2_sw.sendCommand(newState)
+    ns_power_2_sw.sendCommand(newState.toString())
 end
 
 rule "BZ force both lights work together"
@@ -91,6 +91,7 @@ when
        Item snf_eg_bz_1 changed
     or Item snf_eg_bz_2 changed
 then
+    logWarn("light", "BZ -> " + newState)
     g_light_eg_bz.sendCommand(newState.toString())
 end
 
@@ -131,5 +132,27 @@ then
             desktop_petro_pc_power_sw.sendCommand(OFF)
         ])
         return
+    }
+end
+
+// KG light hooks
+
+rule "KG Treppe light changed"
+when
+    Item g_light_treppe changed
+then
+    // If KG Treppe light is OFF -> Stop manual override (if active)
+    if (newState == OFF) {
+        kg_treppe_manual_sw.sendCommand(OFF)
+    }
+end
+
+rule "KG Lager light changed"
+when
+    Item g_light_lager_auto changed
+then
+    // If KG Lager light is OFF -> Stop manual override (if active)
+    if (newState == OFF) {
+        kg_lager4_manual_sw.sendCommand(OFF)
     }
 end

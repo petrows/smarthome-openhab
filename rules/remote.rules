@@ -87,6 +87,7 @@ then
 	var state = receivedEvent
     switch(state) {
         case "on": {
+            kg_treppe_manual_sw.sendCommand(ON)
             g_dim_treppe.sendCommand(100)
         }
         case "off": {
@@ -104,9 +105,11 @@ then
     switch(state) {
         case "brightness_up": { // Long press UP
             g_light_kg_auto.sendCommand(ON)
+            kg_treppe_manual_sw.sendCommand(ON)
             g_dim_treppe.sendCommand(100) // Full brightness for auto-light
         }
         case "on": {
+            kg_treppe_manual_sw.sendCommand(ON)
             g_dim_treppe.sendCommand(100)
         }
         case "off": {
@@ -125,6 +128,7 @@ then
 	var state = receivedEvent
     switch(state) {
         case "on": {
+            kg_lager4_manual_sw.sendCommand(ON)
             sendCommand(g_dim_lager_auto, 100)
         }
         case "off": {
