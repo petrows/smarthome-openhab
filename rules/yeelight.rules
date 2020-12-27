@@ -26,15 +26,15 @@ when
     Item yel_rgb_color changed
 then
 	logInfo("LED", "Color changing: " + yel_rgb_color.state)
-		
+
 	var hsbValue = yel_rgb_color.state as HSBType
-	
+
 	var redValue   = String.format("%02X", (hsbValue.red.floatValue * 2.55) as int)
 	var greenValue = String.format("%02X", (hsbValue.green.floatValue * 2.55) as int)
 	var blueValue  = String.format("%02X", (hsbValue.blue.floatValue * 2.55) as int)
-	
+
 	executeCommandLine("yeecli --ip mi-lamp-1.pws -e smooth -d 500 rgb " + redValue + greenValue + blueValue)
-	
+
 	val brightness = hsbValue.brightness.intValue
 	yel_rgb_brightness.sendCommand(brightness)
 end
@@ -51,7 +51,12 @@ when
     Item yel_white_1_brightness received command
 then
 	yel_white_1_sw.postUpdate(ON)
-	executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 brightness " + (receivedCommand as DecimalType).intValue)
+	// executeCommandLine("yeecli --ip mi-lamp-2.pws -e smooth -d 500 brightness " + (receivedCommand as DecimalType).intValue)
+	//var res = executeCommandLine("/usr/bin/printenv", "123")
+    //logInfo("LED", res)
+
+    val results = executeCommandLine("/bin/echo")
+    logInfo("execTest", results)
 end
 
 rule "mi-lamp-2.pws color temp"

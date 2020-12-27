@@ -26,6 +26,8 @@ PREAMBULA = """
 
 """
 
+# Reserve:
+# 0xec1bbdfffe9abfde - Ikea WW 860
 
 # Items defentition
 items = [

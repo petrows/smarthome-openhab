@@ -23,7 +23,7 @@ var astrocolorSteps = 0.0
 var astrocolorValue = 0.0
 var astrocolorTimerMs = 0.0
 
-rule "Reset astrocolor state"
+rule "Astrocolor: Reset lamps state"
 when
     Time cron "0 00 05 ? * *"
 then
@@ -33,7 +33,7 @@ then
     g_light_astro_color.sendCommand(astrocolorDaylight) // Default color value for DAY
 end
 
-rule "Set lamps color according to daytime"
+rule "Astrocolor: Set lamps color according to daytime"
 when
     // Time cron "0 00 18 ? * *"
     // Sunset (early)
