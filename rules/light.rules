@@ -91,8 +91,6 @@ when
        Item snf_eg_bz_1 changed
     or Item snf_eg_bz_2 changed
 then
-    // newState
-    // logWarn("light-bz", "newState = " + newState)
     g_light_eg_bz.sendCommand(newState.toString())
 end
 

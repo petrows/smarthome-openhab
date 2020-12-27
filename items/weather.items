@@ -23,8 +23,8 @@ Number:Dimensionless Aqi_Humidity        "Humidity" <humidity> (AirQuality) { ch
 
 DateTime astro_sun_rise "Sunrise [%1$tH:%1$tM]" { channel="astro:sun:home:rise#start" }
 DateTime astro_sun_set "Sunset [%1$tH:%1$tM]" { channel="astro:sun:home:set#start" }
-Number:Angle astro_sun_az "Azimuth [%d %unit%]" { channel="astro:sun:home:position#azimuth" }
-Number:Angle astro_sun_el "Elevation [%d %unit%]" { channel="astro:sun:home:position#elevation" }
+Number:Angle astro_sun_az "Azimuth [%.2f %unit%]" { channel="astro:sun:home:position#azimuth" }
+Number:Angle astro_sun_el "Elevation [%.2f %unit%]" { channel="astro:sun:home:position#elevation" }
 String astro_moon_phase "Moon Phase" { channel="astro:moon:home:phase#name" }
 Number:Length astro_moon_dst "Moon Distance [%.1f %unit%]" { channel="astro:moon:home:distance#distance" }
 Number:Intensity astro_radiation "Radiation [%.2f %unit%]" { channel="astro:sun:home:radiation#total" }

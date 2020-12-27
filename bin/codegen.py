@@ -488,7 +488,7 @@ if __name__ == "__main__":
             # Some zigbee devices report battery voltage
             if np.in1d(['voltage'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : voltage [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.voltage\",unit=\"mV\"]")
+                    f"\t\tType number : voltage [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-batt-mv.js\",unit=\"V\"]")
             # All zigbee devices have Link Quality reported
             conf_str.append(
                 f"\t\tType number : link [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.linkquality\"]")
@@ -536,7 +536,7 @@ if __name__ == "__main__":
         if np.in1d(['thermostat'], item['type']['types']).any():
             device_icon = 'heatingt'
             conf_str.append(
-                f"Number:Temperature {item['id']}_thermostat \"{item['name']} SET [%d %unit%]\" <{device_icon}>"
+                f"Number:Temperature {item['id']}_thermostat \"{item['name']} SET [%.0f %unit%]\" <{device_icon}>"
                 f"{device_groups(item,'thermostat')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:thermostat\"}}"
             )
@@ -547,7 +547,7 @@ if __name__ == "__main__":
         if np.in1d(['position'], item['type']['types']).any():
             device_icon = 'heating'
             conf_str.append(
-                f"Number:Dimensionless {item['id']}_position \"{item['name']} POS [%d %%]\" <{device_icon}>"
+                f"Number:Dimensionless {item['id']}_position \"{item['name']} POS [%.0f %%]\" <{device_icon}>"
                 f"{device_groups(item,'position')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:position\"}}"
             )
@@ -576,7 +576,7 @@ if __name__ == "__main__":
         if np.in1d(['temperature'], item['type']['types']).any():
             device_icon = 'temperature'
             conf_str.append(
-                f"Number:Temperature {item['id']}_temperature \"{item['name']} [%d %unit%]\" <{device_icon}>"
+                f"Number:Temperature {item['id']}_temperature \"{item['name']} [%.0f %unit%]\" <{device_icon}>"
                 f"{device_groups(item,'temperature')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:temperature\"}}"
             )
@@ -586,7 +586,7 @@ if __name__ == "__main__":
         if np.in1d(['humidity'], item['type']['types']).any():
             device_icon = 'humidity'
             conf_str.append(
-                f"Number:Dimensionless {item['id']}_humidity \"{item['name']} [%d %%]\" <{device_icon}>"
+                f"Number:Dimensionless {item['id']}_humidity \"{item['name']} [%.0f %%]\" <{device_icon}>"
                 f"{device_groups(item,'humidity')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:humidity\"}}"
             )
@@ -595,7 +595,7 @@ if __name__ == "__main__":
         if np.in1d(['pressure'], item['type']['types']).any():
             device_icon = 'pressure'
             conf_str.append(
-                f"Number:Pressure {item['id']}_pressure \"{item['name']} [%d %unit%]\" <{device_icon}>"
+                f"Number:Pressure {item['id']}_pressure \"{item['name']} [%.0f %unit%]\" <{device_icon}>"
                 f"{device_groups(item,'pressure')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:pressure\"}}"
             )
@@ -651,7 +651,7 @@ end
             # Some zigbee devices report battery
             if 'battery' in item['type']['types']:
                 conf_str.append(
-                    f"Number:Dimensionless {item['id']}_battery \"{item['name']} [%d %%]\""
+                    f"Number:Dimensionless {item['id']}_battery \"{item['name']} [%.0f %%]\""
                     f" <battery> (g_battery_level) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery\"}}"
                 )
             if np.in1d(['battery', 'battery_low'], item['type']['types']).any():
@@ -663,7 +663,7 @@ end
             # ... and it's voltage
             if 'voltage' in item['type']['types']:
                 conf_str.append(
-                    f"Number:ElectricPotential {item['id']}_voltage \"{item['name']} [%d %unit%]\""
+                    f"Number:ElectricPotential {item['id']}_voltage \"{item['name']} [%.0f mV]\""
                     f" <energy> {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:voltage\"}}"
                 )
 
