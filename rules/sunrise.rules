@@ -14,7 +14,7 @@ val sunriseBrightPeriodStep = 1
 // === Configuration
 
 // Global vars
-var Timer sunriseTimer = null
+var Timer sunriseTimer
 var sunriseStarted = false
 var sunriseBrightness = 0
 var sunriseModeValue = 0

@@ -17,8 +17,9 @@ val astrocolorProgramPeriodStep = 1
 
 // === Configuration
 
+
 // Global vars
-var Timer astrocolorTimer = null
+var Timer astrocolorTimer
 var astrocolorSteps = 0.0
 var astrocolorValue = 0.0
 var astrocolorTimerMs = 0.0

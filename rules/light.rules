@@ -100,7 +100,7 @@ then
     lock.lock()
     try {
         logWarn("light", "BZ -> " + newState)
-        g_light_eg_bz.sendCommand(newState.toString())
+        // g_light_eg_bz.sendCommand(newState.toString())
         Thread::sleep(1000)
     } finally{
         in_bz_rule = false
