@@ -108,7 +108,7 @@ then
         } else {
             // New timer loop
             sunriseBrightness = sunriseBrightness + sunriseBrightPeriodStep
-            sunriseTimer.reschedule(now.plusMillis(brightTimerMs))
+            sunriseTimer.reschedule(now.plusNanos(brightTimerMs * 1000000))
         }
     ])
 end

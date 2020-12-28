@@ -33,6 +33,8 @@ Group:Dimmer:MAX g_dim_lager_auto
 Switch kg_treppe_manual_sw "KG Treppe manual SW" <light> { expire="3h,command=OFF" }
 Switch kg_lager4_manual_sw "KG Lager 4 manual SW" <light> { expire="3h,command=OFF" }
 
+// Switch to debounce BZ
+
 // Petro desktop gracefull power control
 Switch desktop_petro_power_try "Petro desktop power gracefull [%s]"
 

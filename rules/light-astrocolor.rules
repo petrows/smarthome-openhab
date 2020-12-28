@@ -75,7 +75,7 @@ then
         } else {
             // New timer loop
             astrocolorValue = astrocolorValue + astrocolorProgramPeriodStep
-            astrocolorTimer.reschedule(now.plusMillis(astrocolorTimerMs as int))
+            astrocolorTimer.reschedule(now.plusNanos(astrocolorTimerMs as long * 1000000))
         }
     ])
 end
