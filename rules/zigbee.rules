@@ -8,7 +8,7 @@ rule "Coordinator log"
 when
     Channel "mqtt:topic:openhab:zigbee-root:log" triggered
 then
-	var json = receivedEvent.getEvent()
+	var json = receivedEvent
 
 	logInfo("coordinator", "Coordinator log: " + json)
 
