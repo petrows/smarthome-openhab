@@ -508,7 +508,7 @@ if __name__ == "__main__":
     conf_str = '\n'.join(conf_str)
     print(conf_str)
     if args.write:
-        f = open(os.path.join(ROOT_PATH, 'things', 'gen.things'), 'w')
+        f = open(os.path.join(ROOT_PATH, 'things', 'gen_things.things'), 'w')
         f.write(conf_str)
         f.close()
 
@@ -684,7 +684,7 @@ end
     conf_str = '\n'.join(conf_str)
     print(conf_str)
     if args.write:
-        f = open(os.path.join(ROOT_PATH, 'items', 'gen.items'), 'w')
+        f = open(os.path.join(ROOT_PATH, 'items', 'gen_items.items'), 'w')
         f.write(conf_str)
         f.close()
 
@@ -716,6 +716,6 @@ sitemap gen label="GEN ITEMS"
     gen_rules = '\n'.join(gen_rules)
     print(gen_rules)
     if args.write:
-        f = open(os.path.join(ROOT_PATH, 'rules', 'gen.rules'), 'w')
+        f = open(os.path.join(ROOT_PATH, 'rules', 'gen_auto.rules'), 'w')
         f.write(gen_rules)
         f.close()
