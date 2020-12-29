@@ -19,7 +19,7 @@ Group:Dimmer:MAX g_light_eg_sz_night_brightness
 Group:Dimmer:MAX g_light_eg_sz_decor_brightness
 
 // Group of lamps to set auto color depending on daytime
-Group:Dimmer:AVG g_light_astro_color
+Group:Dimmer:AVG g_light_astro_color "Astrocolor CT [%d %%]" <light>
 
 // KG and Treppe lamps
 Group:Switch:OR(ON, OFF) g_light_kg // All lamps in KG

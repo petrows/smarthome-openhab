@@ -256,6 +256,7 @@ sitemap control2 label="KONTROL 2"
 			Frame label="Licht" {
 				Switch	item=light_sunrise_enabled
 				Switch	item=light_astrocolor_enabled
+				Slider	item=g_light_astro_color
 			}
 		}
 
