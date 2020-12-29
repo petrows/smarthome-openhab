@@ -483,9 +483,9 @@ if __name__ == "__main__":
             # Some zigbee devices report battery OR battery_low signal
             if np.in1d(['battery'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery\"]")
+                    f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"REGEX:(.*battery.*)∩JSONPATH:$.battery\"]")
                 conf_str.append(
-                    f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-lowbatt.js\"]")
+                    f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"REGEX:(.*battery.*)∩JS:z2m-lowbatt.js\"]")
             else:
                 if np.in1d(['battery_low'], item['type']['types']).any():
                     conf_str.append(
@@ -496,10 +496,10 @@ if __name__ == "__main__":
                     f"\t\tType number : voltage [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-batt-mv.js\",unit=\"V\"]")
             # All zigbee devices have Link Quality reported
             conf_str.append(
-                f"\t\tType number : link [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.linkquality\"]")
+                f"\t\tType number : link [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality\"]")
             # All zigbee devices probably have some OTA updates reported
             conf_str.append(
-                f"\t\tType switch : ota [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.update_available\", on=\"true\", off=\"false\"]")
+                f"\t\tType switch : ota [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"REGEX:(.*update_available.*)∩JSONPATH:$.update_available\", on=\"true\", off=\"false\"]")
             conf_str.append(
                 f"}}")
 
