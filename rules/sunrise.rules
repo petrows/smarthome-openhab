@@ -103,7 +103,6 @@ then
 
         // All items 100% ?
         if (sunriseBrightness > (lightGroupItems.size * 100)) {
-            sunriseTimer = null
             logWarn("light", "Sunrise emulation done")
         } else {
             // New timer loop

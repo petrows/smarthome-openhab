@@ -71,7 +71,6 @@ then
 
         // All items 100% ?
         if (astrocolorValue >= 100) {
-            astrocolorTimer = null
             logWarn("light", "Astrocolor emulation done")
         } else {
             // New timer loop
