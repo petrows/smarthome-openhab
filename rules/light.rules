@@ -67,6 +67,7 @@ then
     desktop_petro_power_try.sendCommand(OFF)
 end
 
+
 rule "KG safe switch"
 when
 	Time cron "0 00 00,01,02 ? * *"

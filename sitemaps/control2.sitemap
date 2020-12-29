@@ -102,7 +102,7 @@ sitemap control2 label="KONTROL 2"
 			Switch item=g_light_balkon label="Haupt [%s]" icon="light"
 			Slider item=g_dim_balkon label="Haupt DIM [%d %%]" icon="light"
 		}
-		Group item=snf_eg_fl label="Flur [%s]" icon="light" {
+		Group item=g_light_eg_flur label="Flur [%s]" icon="light" {
 			Switch item=snf_eg_fl label="Haupt [%s]" icon="light"
 			Switch item=snf_eg_fl_spiegel label="Spiegel [%s]" icon="light"
 			Slider item=snf_eg_fl_spiegel_brightness label="Spiegel DIM [%d %%]" icon="light"
