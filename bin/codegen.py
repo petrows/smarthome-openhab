@@ -27,7 +27,10 @@ PREAMBULA = """
 """
 
 # Reserve:
-# 0xec1bbdfffe9abfde - Ikea WW 860
+# 0xec1bbdfffe9abfde - Ikea WW 860 (offline shop)
+# 0x14b457fffe6383e5 - TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay)
+# 0x000d6ffffe12e11b - Ikea CT 1000 (ebay)
+# 0x14b457fffe399241 - Ikea CT 1000 (ebay)
 
 # Items defentition
 items = [
