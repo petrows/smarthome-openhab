@@ -37,3 +37,10 @@ Network controlled by [DIY CC2530 zigbee2mqtt coordinator](https://www.zigbee2mq
 * IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9)
 * TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11)
 * IKEA TRADFRI LED bulb E27 WW clear 250 lumen,dimmable (LED1842G3)
+
+# 3rd party software
+
+## Dark sky weather animated icons
+
+Used package from https://github.com/basmilius/weather-icons
+
