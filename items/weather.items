@@ -33,68 +33,36 @@ Number:Intensity astro_radiation_diff "Diffuse Radiation [%.2f %unit%]" { channe
 // Dark Sky weather
 
 DateTime weather_ext_time "Timestamp of last measurement [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS]" <temperature> { channel="darksky:weather-and-forecast:api:local:current#time-stamp" }
-Number:Temperature weather_ext_temp "Outside Temperature [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:current#temperature" }
 String weather_ext_summary "Current weather [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:current#condition" }
 Image weather_ext_image "Current weather image [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:current#icon" }
 String weather_ext_icon "Current weather icon [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:current#icon-id" }
-Number weather_ext_hum "Humidity [%s]" <humidity> { channel="darksky:weather-and-forecast:api:local:current#humidity" }
+Number:Temperature weather_ext_temp "Outside Temperature [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:current#temperature" }
+Number weather_ext_hum "Humidity [%d %%]" <humidity> { channel="darksky:weather-and-forecast:api:local:current#humidity" }
 Number:Pressure weather_ext_pres "Airpressure [%.1f hPa]" <line> { channel="darksky:weather-and-forecast:api:local:current#pressure" }
-Number:Angle weather_ext_wind_dir "Wind direction [%.0f °]" <windrose> { channel="darksky:weather-and-forecast:api:local:current#wind-direction" }
+Number:Angle weather_ext_wind_dir "Wind direction [%.0f °]" <wind> { channel="darksky:weather-and-forecast:api:local:current#wind-direction" }
 Number:Speed weather_ext_wind_speed "Wind speed [%.1f m/s]" <wind> { channel="darksky:weather-and-forecast:api:local:current#wind-speed" }
 Number:Speed weather_ext_wind_gust "Wind gusts [%.1f m/s]" <wind> { channel="darksky:weather-and-forecast:api:local:current#gust-speed" }
 Number:Temperature weather_ext_temp_feel "Apparent temperature [%.0f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:current#apparent-temperature" }
 Number:Length weather_ext_visibility "Visibility [%.1f km]" <visibility> { channel="darksky:weather-and-forecast:api:local:current#visibility" }
-Number:ArealDensity weather_ext_ozone "Ozone [%.2f]" <ozone> { channel="darksky:weather-and-forecast:api:local:current#ozone" }
-Number weather_ext_uv "UV Index [%.0f]" <uvi> { channel="darksky:weather-and-forecast:api:local:current#uvindex" }
+Number:ArealDensity weather_ext_ozone "Ozone [%.2f]" <sun> { channel="darksky:weather-and-forecast:api:local:current#ozone" }
+Number weather_ext_uv "UV Index [%.0f]" <sun> { channel="darksky:weather-and-forecast:api:local:current#uvindex" }
 Number:Speed weather_ext_precip "Hourly precipitation [%s mm]" <rain> { channel="darksky:weather-and-forecast:api:local:current#precip-intensity" }
+String weather_ext_precip_type "Precipitation type [%s]" <rain> { channel="darksky:weather-and-forecast:api:local:current#precip-type" }
+Number:Speed weather_ext_rain "Hourly rain [%s mm]" <rain> { channel="darksky:weather-and-forecast:api:local:current#rain" }
 
 // Forecast for hours
+
 DateTime weather_fc_1h_time "Forecast 1h time [%1$tY-%1$tm-%1$td]" <time> { channel="darksky:weather-and-forecast:api:local:forecastHours01#time-stamp" }
 Number:Temperature weather_fc_1h_temp "Forecast 1h [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastHours01#temperature" }
 String weather_fc_1h_icon "Forecast 1h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours01#icon-id" }
-DateTime weather_fc_3h_time "Forecast 1h time [%s]" <time> { channel="darksky:weather-and-forecast:api:local:forecastHours04#time-stamp" }
+String weather_fc_1h_summary "Summary 1h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours01#condition" }
+
+DateTime weather_fc_3h_time "Forecast 3h time [%s]" <time> { channel="darksky:weather-and-forecast:api:local:forecastHours04#time-stamp" }
 Number:Temperature weather_fc_3h_temp "Forecast 3h [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastHours04#temperature" }
 String weather_fc_3h_icon "Forecast 3h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours04#icon-id" }
-DateTime weather_fc_6h_time "Forecast 1h time [%s]" <time> { channel="darksky:weather-and-forecast:api:local:forecastHours07#time-stamp" }
+String weather_fc_3h_summary "Summary 3h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours04#condition" }
+
+DateTime weather_fc_6h_time "Forecast 6h time [%s]" <time> { channel="darksky:weather-and-forecast:api:local:forecastHours07#time-stamp" }
 Number:Temperature weather_fc_6h_temp "Forecast 6h [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastHours07#temperature" }
 String weather_fc_6h_icon "Forecast 6h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours07#icon-id" }
-
-// open Weather map
-
-String localStationId "ID [%s]" { channel="openweathermap:weather-and-forecast:api:local:station#id" }
-String localStationName "Name [%s]" { channel="openweathermap:weather-and-forecast:api:local:station#name" }
-Location localStationLocation "Location [%2$s°N %3$s°E]" <location> { channel="openweathermap:weather-and-forecast:api:local:station#location" }
-
-DateTime localLastMeasurement "Timestamp of last measurement [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS]" <time> { channel="openweathermap:weather-and-forecast:api:local:current#time-stamp" }
-String localCurrentCondition "Current condition [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:current#condition" }
-Image localCurrentConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:api:local:current#icon" }
-Number:Temperature localCurrentTemperature "Current temperature [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:current#temperature" }
-Number:Pressure localCurrentPressure "Current barometric pressure [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:api:local:current#pressure" }
-Number:Dimensionless localCurrentHumidity "Current atmospheric humidity [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
-Number:Speed localCurrentWindSpeed "Current wind speed [%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:api:local:current#wind-speed" }
-Number:Angle localCurrentWindDirection "Current wind direction [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:api:local:current#wind-direction" }
-Number:Dimensionless localCurrentCloudiness "Current cloudiness [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:api:local:current#cloudiness" }
-Number:Length localCurrentRainVolume "Current rain volume [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:current#rain" }
-Number:Length localCurrentSnowVolume "Current snow volume [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:api:local:current#snow" }
-Number:Length localCurrentVisibility "Current visibility [%.1f km]" <visibility> { channel="openweathermap:weather-and-forecast:api:local:current#visibility" }
-
-String localHourForecastCondition "Current condition [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#condition" }
-
-DateTime localDailyForecastTodayTimestamp "Timestamp of forecast [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#time-stamp" }
-String localDailyForecastTodayCondition "Condition for today [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#condition" }
-Image localDailyForecastTodayConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:api:local:forecastToday#icon" }
-Number:Temperature localDailyForecastTodayMinTemperature "Minimum temperature for today [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#min-temperature" }
-Number:Temperature localDailyForecastTodayMaxTemperature "Maximum temperature for today [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#max-temperature" }
-Number:Pressure localDailyForecastTodayPressure "Barometric pressure for today [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#pressure" }
-Number:Dimensionless localDailyForecastTodayHumidity "Atmospheric humidity for today [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#humidity" }
-Number:Speed localDailyForecastTodayWindSpeed "Wind speed for today [%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#wind-speed" }
-Number:Angle localDailyForecastTodayWindDirection "Wind direction for today [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#wind-direction" }
-Number:Dimensionless localDailyForecastTodayCloudiness "Cloudiness for today [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#cloudiness" }
-Number:Length localDailyForecastTodayRainVolume "Rain volume for today [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#rain" }
-Number:Length localDailyForecastTodaySnowVolume "Snow volume for today [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#snow" }
-
-DateTime localDailyForecastTomorrowTimestamp "Timestamp of forecast [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastTomorrow#time-stamp" }
-String localDailyForecastTomorrowCondition "Condition for tomorrow [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastTomorrow#condition" }
-Image localDailyForecastTomorrowConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:api:local:forecastTomorrow#icon" }
-Number:Temperature localDailyForecastTomorrowMinTemperature "Minimum temperature for tomorrow [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastTomorrow#min-temperature" }
-Number:Temperature localDailyForecastTomorrowMaxTemperature "Maximum temperature for tomorrow [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastTomorrow#max-temperature" }
+String weather_fc_6h_summary "Summary 6h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours07#condition" }

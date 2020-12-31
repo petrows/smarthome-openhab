@@ -27,18 +27,17 @@ sitemap control2 label="KONTROL 2"
 			// 	Mapview item=localStationLocation
 			// }
 			Frame label="Current local weather" {
-				Text item=localLastMeasurement
-				Text item=localCurrentCondition
-				Image item=localCurrentConditionIcon
-				Text item=localCurrentTemperature
-				Text item=localCurrentPressure
-				Text item=localCurrentHumidity
-				Text item=localCurrentWindSpeed label="Wind speed [%d m/s]"
-				Text item=localCurrentWindDirection
-				Text item=localCurrentCloudiness
-				Text item=localCurrentRainVolume
-				Text item=localCurrentSnowVolume
-				Text item=localCurrentVisibility
+				Text item=weather_ext_time
+				Text item=weather_ext_summary
+				Image item=weather_ext_image
+				Text item=weather_ext_temp
+				Text item=weather_ext_pres
+				Text item=weather_ext_hum
+				Text item=weather_ext_wind_speed
+				Text item=weather_ext_wind_dir
+				Text item=weather_ext_ozone
+				Text item=weather_ext_uv
+				Text item=weather_ext_precip
 			}
 		}
 
