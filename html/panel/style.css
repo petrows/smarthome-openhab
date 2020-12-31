@@ -1,6 +1,9 @@
 .pws-value {
 	color: red;
 }
+.unit {
+    font-size: smaller;
+}
 #clock-table {
 	width: 100%;
 }
@@ -9,7 +12,7 @@
 	width: 50%;
 }
 #clock-table-date-row {
-	
+
 	text-align: center;
 	width: 50%;
 	text-transform: uppercase;
@@ -22,4 +25,9 @@
 }
 .weather-outside-value {
 	font-size: 20pt;
+}
+.weather-forecast-temp td {
+    padding-top: 5pt;
+    font-size: larger;
+    font-weight: bold;
 }
