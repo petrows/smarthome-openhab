@@ -1,0 +1,27 @@
+Thing mqtt:topic:openhab:kvv_timetable "KVV Timetable" (mqtt:broker:openhab) {
+	Channels:
+		Type string : r0_route [stateTopic="kvv-timetable/route-0", transformationPattern="JSONPATH:$.route"]
+		Type string : r0_dst [stateTopic="kvv-timetable/route-0", transformationPattern="JSONPATH:$.destination"]
+		Type string : r0_time_str [stateTopic="kvv-timetable/route-0", transformationPattern="JSONPATH:$.time"]
+		Type datetime : r0_time [stateTopic="kvv-timetable/route-0", transformationPattern="JSONPATH:$.tms"]
+		Type string : r0_summary_text [stateTopic="kvv-timetable/route-0", transformationPattern="JSONPATH:$.summary_text"]
+
+		Type string : r1_route [stateTopic="kvv-timetable/route-1", transformationPattern="JSONPATH:$.route"]
+		Type string : r1_dst [stateTopic="kvv-timetable/route-1", transformationPattern="JSONPATH:$.destination"]
+		Type string : r1_time_str [stateTopic="kvv-timetable/route-1", transformationPattern="JSONPATH:$.time"]
+		Type datetime : r1_time [stateTopic="kvv-timetable/route-1", transformationPattern="JSONPATH:$.tms"]
+        Type string : r1_summary_text [stateTopic="kvv-timetable/route-1", transformationPattern="JSONPATH:$.summary_text"]
+
+		Type string : r2_route [stateTopic="kvv-timetable/route-2", transformationPattern="JSONPATH:$.route"]
+		Type string : r2_dst [stateTopic="kvv-timetable/route-2", transformationPattern="JSONPATH:$.destination"]
+		Type string : r2_time_str [stateTopic="kvv-timetable/route-2", transformationPattern="JSONPATH:$.time"]
+		Type datetime : r2_time [stateTopic="kvv-timetable/route-2", transformationPattern="JSONPATH:$.tms"]
+        Type string : r2_summary_text [stateTopic="kvv-timetable/route-2", transformationPattern="JSONPATH:$.summary_text"]
+
+		Type string : r3_route [stateTopic="kvv-timetable/route-3", transformationPattern="JSONPATH:$.route"]
+		Type string : r3_dst [stateTopic="kvv-timetable/route-3", transformationPattern="JSONPATH:$.destination"]
+		Type string : r3_time_str [stateTopic="kvv-timetable/route-3", transformationPattern="JSONPATH:$.time"]
+		Type datetime : r3_time [stateTopic="kvv-timetable/route-3", transformationPattern="JSONPATH:$.tms"]
+        Type string : r3_summary_text [stateTopic="kvv-timetable/route-3", transformationPattern="JSONPATH:$.summary_text"]
+
+}

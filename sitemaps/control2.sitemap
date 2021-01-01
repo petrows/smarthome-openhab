@@ -90,6 +90,13 @@ sitemap control2 label="KONTROL 2"
             //     Mapview item=Aqi_StationGeo height=10
             // }
         }
+
+        Group item=timetable_0_summary_text label="Trains" icon="calendar" {
+            Text item=timetable_0_summary_text label="" icon="calendar"
+            Text item=timetable_1_summary_text label="" icon="calendar"
+            Text item=timetable_2_summary_text label="" icon="calendar"
+            Text item=timetable_3_summary_text label="" icon="calendar"
+        }
 	}
 
 	Frame {

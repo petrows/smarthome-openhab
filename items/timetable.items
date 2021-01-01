@@ -1,0 +1,26 @@
+// This file defines Railroad and other time-table information
+
+String timetable_0_route { channel="mqtt:topic:openhab:kvv_timetable:r0_route" }
+String timetable_0_dst { channel="mqtt:topic:openhab:kvv_timetable:r0_dst" }
+String timetable_0_summary_text { channel="mqtt:topic:openhab:kvv_timetable:r0_summary_text" }
+DateTime timetable_0_time { channel="mqtt:topic:openhab:kvv_timetable:r0_time" }
+String timetable_0_time_str { channel="mqtt:topic:openhab:kvv_timetable:r0_time_str" }
+
+String timetable_1_route { channel="mqtt:topic:openhab:kvv_timetable:r1_route" }
+String timetable_1_dst { channel="mqtt:topic:openhab:kvv_timetable:r1_dst" }
+String timetable_1_summary_text { channel="mqtt:topic:openhab:kvv_timetable:r1_summary_text" }
+DateTime timetable_1_time { channel="mqtt:topic:openhab:kvv_timetable:r1_time" }
+String timetable_1_time_str { channel="mqtt:topic:openhab:kvv_timetable:r1_time_str" }
+
+String timetable_2_route { channel="mqtt:topic:openhab:kvv_timetable:r2_route" }
+String timetable_2_dst { channel="mqtt:topic:openhab:kvv_timetable:r2_dst" }
+String timetable_2_summary_text { channel="mqtt:topic:openhab:kvv_timetable:r2_summary_text" }
+DateTime timetable_2_time { channel="mqtt:topic:openhab:kvv_timetable:r2_time" }
+String timetable_2_time_str { channel="mqtt:topic:openhab:kvv_timetable:r2_time_str" }
+
+String timetable_3_route { channel="mqtt:topic:openhab:kvv_timetable:r3_route" }
+String timetable_3_dst { channel="mqtt:topic:openhab:kvv_timetable:r3_dst" }
+String timetable_3_summary_text { channel="mqtt:topic:openhab:kvv_timetable:r3_summary_text" }
+DateTime timetable_3_time { channel="mqtt:topic:openhab:kvv_timetable:r3_time" }
+String timetable_3_time_str { channel="mqtt:topic:openhab:kvv_timetable:r3_time_str" }
+
