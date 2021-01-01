@@ -31,3 +31,7 @@
     font-size: larger;
     font-weight: bold;
 }
+
+.timetable td {
+    font-size: 15pt;
+}
