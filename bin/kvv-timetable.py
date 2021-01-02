@@ -7,8 +7,6 @@ import logging
 import json
 import dateparser
 
-rad_level = 0.0136
-
 parser = argparse.ArgumentParser(description='Parse KVV app for timetable')
 
 parser.add_argument(
@@ -51,8 +49,11 @@ for idx, route in enumerate(data['departures']):
     if route['time'] == '0':
         route['time'] = 'now'
     route['tms'] = dateparser.parse('in ' + route['time']).isoformat()
+    route['destination_city'] = \
+        'KA → ' + route['destination'] if route['direction'] == '1' \
+        else route['destination']
     route['direction_text'] = '→KA' if route['direction'] == '1' else '←KA'
-    route['summary_text'] = f"{route['destination']}{route['direction_text']} | {route['time']}"
+    route['summary_text'] = f"{route['destination_city']} | {route['time']}"
 
     payload = json.dumps(route)
 
