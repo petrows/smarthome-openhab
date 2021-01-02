@@ -57,6 +57,7 @@ mqtt_auth = {'username': args.mqtt_user, 'password': args.mqtt_pass}
 # Find amount
 trains = []
 request_time = datetime.datetime.now()
+request_time -= datetime.timedelta(hours=1)
 
 for x in range(20):
     if len(trains) >= args.size:
@@ -81,8 +82,6 @@ for x in range(20):
         data = requests.get(api_url, headers=headers).content.decode('UTF-8')
 
         cache.set(cache_id, data, expire=86400)
-
-        print(data)
 
     else:
         logging.debug(f"Cache used")
@@ -116,9 +115,6 @@ for x in range(20):
         except:
             pass
 
-        if train_exists:
-            continue
-
         train = {}
         train['id'] = train_id
         train['type'] = el_train.getAttribute('c')
@@ -129,7 +125,12 @@ for x in range(20):
         train['tms'] = datetime.datetime.fromtimestamp(time.mktime(time.strptime(
             el_depart.getAttribute("pt"), '%y%m%d%H%M')))
 
-        trains.append(train)
+        # Skip trains from the past
+        time_delta = train['tms'] - datetime.datetime.now()
+        time_delta_past = time_delta.total_seconds() < 0
+
+        if not time_delta_past and not train_exists:
+            trains.append(train)
 
         logging.debug(train)
 
@@ -139,10 +140,33 @@ for x in range(20):
 # Sort data
 trains.sort(key=lambda x: x.get('tms'), reverse=False)
 
+logging.debug(f"Total trains: {len(trains)}")
+
+# If we have less trains as requested, fill DB array with N/A values
+if len(trains) < args.size:
+    for x in range(args.size - len(trains)):
+        train = {}
+        train['id'] = 'N/A'
+        train['type'] = 'N/A'
+        train['number'] = 'N/A'
+        train['route'] = 'N/A'
+        train['path'] = []
+        train['destination_city'] = 'N/A'
+        train['tms'] = datetime.datetime.now()
+
+        trains.append(train)
+
 # Publish trains
 for idx, train in enumerate(trains):
 
-    train['time'] = train['tms'].strftime('%H:%M')
+    # Human-nice time
+    time_diff = train['tms'] - datetime.datetime.now()
+    time_diff = time_diff.total_seconds() // 60
+    if (time_diff < 10):
+        train['time'] = f"{time_diff:.0f} min"
+    else:
+        train['time'] = train['tms'].strftime('%H:%M')
+
     train['tms'] = train['tms'].isoformat()
 
     train['summary_text'] = f"{train['route']} {train['destination_city']} | {train['time']}"
