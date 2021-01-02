@@ -63,6 +63,9 @@ then
     // Stop decorative lights
     g_light_christmas.sendCommand(OFF)
 
+    // Stop projector
+    ns_projector_power_sw.sendCommand(OFF)
+
     // Check that PC is off and turn off also sockets there
     desktop_petro_power_try.sendCommand(OFF)
 end
