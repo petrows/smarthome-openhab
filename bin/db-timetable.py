@@ -11,11 +11,6 @@ import dateparser
 import xml.dom.minidom
 from diskcache import Cache
 
-
-def cache_get(station, date):
-    filename = '/tmp/db-'+station+'-'+date.isoformat()+'.xml'
-
-
 parser = argparse.ArgumentParser(description='Parse DB timetable')
 
 parser.add_argument(
@@ -57,7 +52,6 @@ mqtt_auth = {'username': args.mqtt_user, 'password': args.mqtt_pass}
 # Find amount
 trains = []
 request_time = datetime.datetime.now()
-request_time -= datetime.timedelta(hours=1)
 
 for x in range(20):
     if len(trains) >= args.size:
@@ -85,6 +79,9 @@ for x in range(20):
 
     else:
         logging.debug(f"Cache used")
+
+    # Next hour
+    request_time += datetime.timedelta(hours=1)
 
     doc = xml.dom.minidom.parseString(data)
     doc_trains = doc.getElementsByTagName("s")
@@ -134,8 +131,6 @@ for x in range(20):
 
         logging.debug(train)
 
-        # Next hour
-        request_time += datetime.timedelta(hours=1)
 
 # Sort data
 trains.sort(key=lambda x: x.get('tms'), reverse=False)
