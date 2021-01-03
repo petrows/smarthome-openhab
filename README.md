@@ -1,5 +1,5 @@
 # Peter's Smart Home
-My smart home configuration, based on [OpenHAB 2](https://www.openhab.org/)
+My smart home configuration, based on [OpenHAB 3](https://www.openhab.org/)
 
 # Features
 
@@ -12,6 +12,7 @@ My smart home configuration, based on [OpenHAB 2](https://www.openhab.org/)
 # Control panel
 
 ![Panel screenshot 1](docs/screenshot-panel1.jpg)
+![Panel screenshot 2](docs/screenshot-panel2.png)
 
 # Used devices
 
@@ -19,9 +20,9 @@ I have 2 general groups of devices. Main light in rooms mostly controlled by WiF
 
 ## Zigbee
 
-Network controlled by [DIY CC2530 zigbee2mqtt coordinator](https://www.zigbee2mqtt.io/information/supported_adapters.html).
+Network controlled by [Electrolama zig-a-zig-ah! (zzh!)](https://www.zigbee2mqtt.io/information/supported_adapters.html).
 
-![Panel screenshot 1](docs/zigbeee-coordinator.jpg)
+![Electrolama zig-a-zig-ah! (zzh!)](docs/zzh-pcba-green.jpg)
 
 ### Sensors
 
