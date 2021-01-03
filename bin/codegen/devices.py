@@ -154,3 +154,47 @@ class DEVICES:
         'device_name': 'CC2530.ROUTER - Custom devices (DiY)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/CC2530.ROUTER.html',
     }
+    # Sonoff-tasmota
+    TASMOTA_SONOFF_MINI = {
+        'types': [
+            'tasmota',
+        ],
+        'device_name': 'Sonoff Mini Switch',
+        'device_url': 'https://templates.blakadder.com/sonoff_mini.html',
+        'tasmota_channels': [
+            {
+                'type': 'switch',
+                'id': 'POWER',
+            }
+        ]
+    }
+    TASMOTA_SONOFF_TOUCH_EU1 = {
+        'types': [
+            'tasmota',
+        ],
+        'device_name': 'Sonoff Touch EU Switch (1 gang)',
+        'device_url': 'https://templates.blakadder.com/sonoff_touch_eu.html',
+        'tasmota_channels': [
+            {
+                'type': 'switch',
+                'id': 'POWER',
+            }
+        ]
+    }
+    TASMOTA_SONOFF_TOUCH_EU2 = {
+        'types': [
+            'tasmota',
+        ],
+        'device_name': 'Sonoff Touch EU Switch (2 gang)',
+        'device_url': 'https://templates.blakadder.com/sonoff_touch_eu.html',
+        'tasmota_channels': [
+            {
+                'type': 'switch',
+                'id': 'POWER1',
+            },
+            {
+                'type': 'switch',
+                'id': 'POWER2',
+            }
+        ]
+    }

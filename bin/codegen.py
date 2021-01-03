@@ -66,6 +66,11 @@ items = [
     # },
     # EG (Corridor)
     {
+        'name': "Corridor main light",
+        'id': "flur_light",
+        'type': DEVICES.TASMOTA_SONOFF_MINI,
+    },
+    {
         'name': "Mirror remote",
         'id': "mirror_remote",
         'zigbee_id': '0x680ae2fffeab6b80',
@@ -386,11 +391,10 @@ if __name__ == "__main__":
         if item['id'] in item_ids:
             raise Exception(f"Device ID {item['id']} is not unique!")
         item_ids.append(item['id'])
-
+        items[x]['mqtt_topic'] = f"{items[x]['id']}"
         if np.in1d(['zigbee'], item['type']['types']).any():
             # Add to all Zigbee items generated MQTT topic like "zigbee-XXXX"
             items[x]['zigbee_short'] = device_short_id(item['zigbee_id'])
-            items[x]['mqtt_topic'] = f"{items[x]['id']}"
             # Add ids to check conflicts
             if items[x]['zigbee_short'] in zigbee_ids:
                 raise Exception(f"Device ID {item['id']} is not unique!")
@@ -399,6 +403,52 @@ if __name__ == "__main__":
     # Generate THINGS
     conf_str = [PREAMBULA]
     for item in items:
+        # tasmota-wifi device?
+        if 'tasmota' in item['type']['types']:
+            conf_str.extend(device_comment(item))
+            conf_str.append(
+                f"Thing mqtt:topic:openhab:{item['mqtt_topic']} \"{item['name']}\" (mqtt:broker:openhab) {{")
+            conf_str.append(
+                f"\tChannels:")
+
+            # Iterate through avaliable channels
+            for channel in item['type']['tasmota_channels']:
+                command_opts = ''
+                if 'switch' == channel['type']:
+                    command_opts = ", on=\"ON\", off=\"OFF\""
+                if 'dimmer' == channel['type']:
+                    command_opts = ", min=1, max=100"
+                conf_str.append(
+                    f"\t\tType {channel['type']} : {channel['id']} ["
+                    f"stateTopic=\"stat/{item['id']}/RESULT\""
+                    f", transformationPattern=\"JSONPATH:$.{channel['id']}\""
+                    f", commandTopic=\"cmnd/{item['id']}/{channel['id']}\""
+                    f"{command_opts}"
+                    f"]"
+                )
+
+            # Standard signal values
+            conf_str.append(
+                f"\t\tType number : rssi ["
+                f"stateTopic=\"stat/{item['id']}/STATE\""
+                f", transformationPattern=\"JSONPATH:$.Wifi.RSSI\""
+                f"]"
+            )
+            conf_str.append(
+                f"\t\tType string : bssid ["
+                f"stateTopic=\"stat/{item['id']}/STATE\""
+                f", transformationPattern=\"JSONPATH:$.Wifi.BSSId\""
+                f"]"
+            )
+            conf_str.append(
+                f"\t\tType number : la ["
+                f"stateTopic=\"stat/{item['id']}/STATE\""
+                f", transformationPattern=\"JSONPATH:$.LoadAvg\""
+                f"]"
+            )
+
+            conf_str.append(f"}}")
+
         # Zigbee2mqtt device?
         if 'zigbee' in item['type']['types']:
             conf_str.extend(device_comment(item))
