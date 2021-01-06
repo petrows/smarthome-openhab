@@ -45,3 +45,6 @@ Network controlled by [Electrolama zig-a-zig-ah! (zzh!)](https://www.zigbee2mqtt
 
 Used package from https://github.com/basmilius/weather-icons
 
+## Player icons
+
+Part of FontAwesome project: https://fontawesome.com/license
