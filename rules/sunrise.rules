@@ -6,14 +6,12 @@ import java.time.temporal.ChronoUnit
 
 // How long full programm runs (seconds)
 
-val sunriseBrightPeriod = 5 * 60
-// val sunriseBrightPeriod = 60 * 60
+val sunriseBrightPeriod = 60 * 60
 
 // Persentage to be change on each step
 // Inrease this value to reduce command traffic, decrease for better smooth
 
-//val sunriseBrightPeriodStep = 1
-val sunriseBrightPeriodStep = 10
+val sunriseBrightPeriodStep = 1
 
 // === Configuration
 
