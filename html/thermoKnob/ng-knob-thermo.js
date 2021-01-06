@@ -392,19 +392,23 @@
       this.valueArc.endAngle(radians);
       d3.select(this.element).select('#valueArc').attr('d', this.valueArc);
       if(this.options.displayInput) {
-        var v = this.value;
-        if (typeof this.options.inputFormatter === "function"){
-          v = this.options.inputFormatter(v);
+            var v = this.value;
+          if (v > 5) {
+            if (typeof this.options.inputFormatter === "function"){
+            v = this.options.inputFormatter(v);
+            }
+            d3.select(this.element).select('#text').text(v + this.options.unit || "");
+        } else {
+            d3.select(this.element).select('#text').text("OFF");
         }
-        d3.select(this.element).select('#text').text(v + this.options.unit || "");
       }
     }
   };
   Knob.prototype.setCurrent = function(v) {
-	  this.current=parseFloat(v);
+      this.current = parseInt(v);
   }
   Knob.prototype.setHeating = function(v) {
-	  if( v=='ON' || parseInt(v)==1 ) this.heating=1; else this.heating=0;
+      if (v == 'ON' || parseInt(v) > 0) this.heating = 1; else this.heating = 0;
   }
 
   ui.Knob = Knob;
