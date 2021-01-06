@@ -214,24 +214,24 @@ then
             }
         }
         case "brightness_up_click": {
-            if (100 == (g_light_eg_sz_decor_brightness.state as Number) && ON == g_light_eg_sz_decor.state) {
+            if (ON == g_light_eg_sz_decor.state) {
                 g_light_eg_sz_decor.sendCommand(OFF)
             } else {
                 g_light_eg_sz_decor_brightness.sendCommand(100)
             }
         }
         case "arrow_right_click": {
-            if (yel_white_1_sw.state == ON && yel_white_1_brightness.state == 100) {
-                yel_white_1_sw.sendCommand(OFF)
+            if (50 < (sz_night_lamp_dim.state as Number) && sz_night_lamp_sw.state == ON) {
+                sz_night_lamp_sw.sendCommand(OFF)
             } else {
-                yel_white_1_brightness.sendCommand(100)
+                sz_night_lamp_dim.sendCommand(100)
             }
         }
         case "arrow_left_click": {
-            if (yel_white_1_sw.state == ON && yel_white_1_brightness.state == 0) {
-                yel_white_1_sw.sendCommand(OFF)
+            if (50 > (sz_night_lamp_dim.state as Number) && sz_night_lamp_sw.state == ON) {
+                sz_night_lamp_sw.sendCommand(OFF)
             } else {
-                yel_white_1_brightness.sendCommand(0)
+                sz_night_lamp_dim.sendCommand(0)
             }
         }
     }

@@ -1,5 +1,7 @@
 // Light color sunset emulation
 
+import java.time.temporal.ChronoUnit
+
 // === Configuration
 
 // How long full programm runs (seconds): 4 hrs from 18 to 22
@@ -39,7 +41,6 @@ when
     // Time cron "0 00 18 ? * *"
     // Sunset (early)
     Channel "astro:sun:home:set#event" triggered START
-    or Item test_sw_check_astrocolor received command
 then
     logWarn("light", "Astrocolor emulation started")
 
@@ -75,7 +76,7 @@ then
         } else {
             // New timer loop
             astrocolorValue = astrocolorValue + astrocolorProgramPeriodStep
-            astrocolorTimer.reschedule(now.plusNanos(astrocolorTimerMs as long * 1000000))
+            astrocolorTimer.reschedule(ZonedDateTime.now.plus(astrocolorTimerMs as Long, ChronoUnit.MILLIS))
         }
     ])
 end

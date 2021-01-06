@@ -1,3 +1,5 @@
+import java.time.temporal.ChronoUnit
+
 rule "System started"
 when
     System started
@@ -44,10 +46,10 @@ when
 then
 	g_zigbee_activity.members.forEach [s |
         if (s.state != NULL) {
-            val date_item = new DateTime(( s.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli)
-            val date_now = new DateTime()
+            val date_item = ( s.state as DateTimeType).zonedDateTime
+            val date_now = ZonedDateTime.now
 
-            var double diff_hours = (date_now.millis - date_item.millis) / 1000 / 60 / 60
+            var double diff_hours = ChronoUnit.HOURS.between(date_item, date_now)
 
             logInfo("activity", "Item " + s.label + " last update: " + diff_hours)
 
