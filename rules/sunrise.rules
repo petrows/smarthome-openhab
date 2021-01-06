@@ -1,15 +1,19 @@
 // Sinrise emulation
 
+import java.time.temporal.ChronoUnit
+
 // === Configuration
 
 // How long full programm runs (seconds)
 
-val sunriseBrightPeriod = 60 * 60
+val sunriseBrightPeriod = 5 * 60
+// val sunriseBrightPeriod = 60 * 60
 
 // Persentage to be change on each step
 // Inrease this value to reduce command traffic, decrease for better smooth
 
-val sunriseBrightPeriodStep = 1
+//val sunriseBrightPeriodStep = 1
+val sunriseBrightPeriodStep = 10
 
 // === Configuration
 
@@ -19,7 +23,7 @@ var sunriseStarted = false
 var sunriseBrightness = 0
 var sunriseModeValue = 0
 
-rule "Sinrise emulation auto off"
+rule "Sunrise emulation auto off"
 when
     Channel "astro:sun:home:daylight#event" triggered START
 then
@@ -33,7 +37,7 @@ then
     g_light_eg_sz_night.sendCommand(OFF)
 end
 
-rule "Sinrise emulation start"
+rule "Sunrise emulation start"
 when
     Time cron "0 00 05 ? * MON-FRI"
     or Item test_sw_check_sunrize received update
@@ -73,7 +77,7 @@ then
         // We do not use groups, we must have exact order of lamps defined
         var lightGroupItems = newArrayList(
             "snf_eg_fl_spiegel_brightness",
-            "yel_white_1_brightness",
+            "sz_night_lamp_dim",
             "sz_declamp_3_dim",
             "sz_declamp_2_dim",
             "sz_declamp_1_dim"
@@ -107,7 +111,7 @@ then
         } else {
             // New timer loop
             sunriseBrightness = sunriseBrightness + sunriseBrightPeriodStep
-            sunriseTimer.reschedule(now.plusNanos(brightTimerMs * 1000000))
+            sunriseTimer.reschedule(ZonedDateTime.now.plus(brightTimerMs, ChronoUnit.MILLIS))
         }
     ])
 end

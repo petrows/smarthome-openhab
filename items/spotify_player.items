@@ -1,0 +1,12 @@
+Player spotify_petro_track_player   "Player"               {channel="spotify:player:petro:trackPlayer"}
+String spotify_petro_devices       "Active device [%s]"   {channel="spotify:player:petro:devices"}
+Switch spotify_petro_device_shuffle "Shuffle mode"         {channel="spotify:player:petro:deviceShuffle"}
+String spotify_petro_track_repeat   "Repeat mode: [%s]"    {channel="spotify:player:petro:trackRepeat"}
+String spotify_petro_track_progress "Track progress: [%s]" {channel="spotify:player:petro:trackProgress"}
+String spotify_petro_track_duration "Track duration: [%s]" {channel="spotify:player:petro:trackDuration"}
+String spotify_petro_track_name     "Track Name: [%s]"     {channel="spotify:player:petro:trackName"}
+String spotify_petro_album_name     "Album Name: [%s]"     {channel="spotify:player:petro:albumName"}
+String spotify_petro_artist_name    "Artist Name: [%s]"    {channel="spotify:player:petro:artistName"}
+Image  spotify_petro_album_image    "Album Art"            {channel="spotify:player:petro:albumImage"}
+String spotify_petro_playlists     "Playlists [%s]"       {channel="spotify:player:petro:playlists"}
+String spotify_petro_playname      "Playlist [%s]"        {channel="spotify:player:petro:playlistName"}

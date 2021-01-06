@@ -1,0 +1,18 @@
+sitemap music label="MUSIC"
+{
+	Frame label="Spotify Player Info" {
+    Selection item=spotify_petro_devices       label="Active device [%s]"
+    Default   item=spotify_petro_track_player   label="Player"
+    Switch    item=spotify_petro_device_shuffle label="Shuffle mode:"
+    Text      item=spotify_petro_track_repeat   label="Repeat mode: [%s]"
+    Text      item=spotify_petro_track_progress label="Track progress: [%s]"
+    Text      item=spotify_petro_track_duration label="Track duration: [%s]"
+    Text      item=spotify_petro_track_name     label="Track Name: [%s]"
+    Image     item=spotify_petro_album_image    label="Album Art"
+    Text      item=spotify_petro_album_name     label="Currently Played Album Name: [%s]"
+    Text      item=spotify_petro_artist_name    label="Currently Played Artist Name: [%s]"
+    Selection item=spotify_petro_playlists     label="Playlist" icon="music"
+  }
+
+
+}

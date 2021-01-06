@@ -156,8 +156,8 @@ sitemap control2 label="KONTROL 2"
 				Slider item=sz_declamp_2_dim label="Nacht 2 DIM [%d %%]"
 				Switch item=sz_declamp_3_sw label="Nacht 3 [%s]"
 				Slider item=sz_declamp_3_dim label="Nacht 3 DIM [%d %%]"
-				Switch item=yel_white_1_sw label="Nacht white [%s]"
-				Slider item=yel_white_1_brightness label="Nacht white DIM [%d %%]"
+				Switch item=sz_night_lamp_sw label="Nacht white [%s]"
+				Slider item=sz_night_lamp_dim label="Nacht white DIM [%d %%]"
 			}
 		}
 		Group item=g_light_kg label="Keller [%s]" icon="light" {

@@ -26,10 +26,16 @@
 .weather-outside-value {
 	font-size: 20pt;
 }
+.weather-forecast td {
+    padding: 3pt;
+}
 .weather-forecast-temp td {
-    padding-top: 5pt;
+    padding-bottom: 1pt;
     font-size: larger;
     font-weight: bold;
+}
+.weather-forecast-icon td {
+    padding-top: 0pt;
 }
 
 .timetable td {
@@ -38,4 +44,16 @@
 
 .nagel-clima {
     font-size: 25pt;
+}
+
+.music-artist {
+    padding: 0pt 15pt 5pt 15pt;
+    text-align: left;
+    font-weight: bold;
+    font-size: larger;
+}
+.music-track {
+    padding: 0pt 15pt 5pt 15pt;
+    text-align: left;
+    font-size: medium;
 }

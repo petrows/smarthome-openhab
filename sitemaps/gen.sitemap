@@ -92,6 +92,12 @@ Frame label="Bedroom remote (0x14b457fffe7e2305)" {
 Text item=sz_remote_link icon="linkz"
 Text item=sz_remote_ota icon="fire"
 }
+Frame label="SZ Night lamp (0xec1bbdfffe9abfde)" {
+Switch item=sz_night_lamp_sw
+Slider item=sz_night_lamp_dim
+Text item=sz_night_lamp_link icon="linkz"
+Text item=sz_night_lamp_ota icon="fire"
+}
 Frame label="SZ Decor lamp 1 (0xec1bbdfffe972819)" {
 Switch item=sz_declamp_1_sw
 Slider item=sz_declamp_1_dim

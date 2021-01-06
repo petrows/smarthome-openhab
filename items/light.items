@@ -68,9 +68,9 @@ Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg, g_light_eg
 
 // Yeelight (Night SZ)
 
-Switch yel_white_1_sw "YL Night" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night)
-Dimmer yel_white_1_brightness "YL Night dim" <light> (g_light_eg_sz_night_brightness)
-Number yel_white_1_temp "YL Night color [%d K]" <colorpicker>
+// Switch yel_white_1_sw "YL Night" <light> (g_light_all, g_light_eg, g_light_eg_sz, g_light_eg_sz_night)
+// Dimmer yel_white_1_brightness "YL Night dim" <light> (g_light_eg_sz_night_brightness)
+// Number yel_white_1_temp "YL Night color [%d K]" <colorpicker>
 
 // ====== KG
 

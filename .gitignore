@@ -5,6 +5,9 @@ things/mqtt-broker.things
 things/weather.things
 # Device token is secret
 things/mi-robot.things
+# Spotify token is secret
+things/spotify.things
+
 bin/config.sh
 .vscode
 

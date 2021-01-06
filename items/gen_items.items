@@ -25,6 +25,9 @@ Dimmer balkon_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (g_dim_balkon) {c
 Number:Dimensionless balkon_light_1_link "Balkon light 1 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:balkon_light_1:link"}
 Switch balkon_light_1_ota "Balkon light 1 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:balkon_light_1:ota"}
 
+// Corridor main light ()
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+
 // Mirror remote (0x680ae2fffeab6b80)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Number:Dimensionless mirror_remote_link "Mirror remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:mirror_remote:link"}
@@ -129,6 +132,13 @@ Number:Dimensionless sz_remote_link "Bedroom remote LINK [%d]" <linkz> (g_zigbee
 Switch sz_remote_ota "Bedroom remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_remote:ota"}
 Number:Dimensionless sz_remote_battery "Bedroom remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_remote:battery"}
 Switch sz_remote_battery_low "Bedroom remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_remote:battery_low"}
+
+// SZ Night lamp (0xec1bbdfffe9abfde)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch sz_night_lamp_sw "SZ Night lamp" <light> (g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night) {channel="mqtt:topic:openhab:sz_night_lamp:state"}
+Dimmer sz_night_lamp_dim "SZ Night lamp DIM [%d %%]" <light> (g_light_eg_sz_night_brightness) {channel="mqtt:topic:openhab:sz_night_lamp:dim"}
+Number:Dimensionless sz_night_lamp_link "SZ Night lamp LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_night_lamp:link"}
+Switch sz_night_lamp_ota "SZ Night lamp OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_night_lamp:ota"}
 
 // SZ Decor lamp 1 (0xec1bbdfffe972819)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html

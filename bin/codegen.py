@@ -54,16 +54,6 @@ items = [
             'dim': ['g_dim_balkon'],
         }
     },
-    # {
-    #     'name': "Balkon light 2",
-    #     'id': "balkon_light_2",
-    #     'zigbee_id': '0xd0cf5efffee892b0',
-    #     'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
-    #     'groups': {
-    #         'sw': ['g_light_all'],
-    #         'ct': ['g_light_astro_color'],
-    #     }
-    # },
     # EG (Corridor)
     {
         'name': "Corridor main light",
@@ -170,6 +160,16 @@ items = [
         'id': "sz_remote",
         'zigbee_id': '0x14b457fffe7e2305',
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
+    },
+    {
+        'name': "SZ Night lamp",
+        'id': "sz_night_lamp",
+        'zigbee_id': '0xec1bbdfffe9abfde',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz', 'g_light_eg_sz_night'],
+            'dim': ['g_light_eg_sz_night_brightness'],
+        }
     },
     {
         'name': "SZ Decor lamp 1",
