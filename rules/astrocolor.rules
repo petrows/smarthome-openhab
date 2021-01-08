@@ -76,7 +76,7 @@ then
         } else {
             // New timer loop
             astrocolorValue = astrocolorValue + astrocolorProgramPeriodStep
-            astrocolorTimer.reschedule(ZonedDateTime.now.plus(astrocolorTimerMs as Long, ChronoUnit.MILLIS))
+            astrocolorTimer.reschedule(ZonedDateTime.now.plus(astrocolorTimerMs.intValue, ChronoUnit.MILLIS))
         }
     ])
 end
