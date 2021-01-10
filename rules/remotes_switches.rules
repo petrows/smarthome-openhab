@@ -46,7 +46,7 @@ then
 
     logWarn("light", "Verlassen SW: " + state)
 
-    verlassenTimer = createTimer(now.plusNanos(20000 * 1000000), [ |
+    verlassenTimer = createTimer(now.plusSeconds(20), [ |
         logWarn("light", "Verlassen all OFF")
         g_light_all.sendCommand(OFF)
     ])
