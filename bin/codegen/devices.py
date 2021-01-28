@@ -146,6 +146,16 @@ class DEVICES:
         'device_name': 'TuYa Radiator valve with thermostat (TS0601_thermostat)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html',
     }
+    TUYA_WINDOW_SENSOR = {
+        'types': [
+            'zigbee',
+            'contact',
+            'battery',
+            'voltage',
+        ],
+        'device_name': 'TuYa Rechargeable Zigbee contact sensor (SNTZ007)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/SNTZ007.html',
+    }
     # DIY
     DIY_CC2540_ROUTER = {
         'types': [

@@ -160,7 +160,7 @@ when
 then
     // If KG Treppe light is OFF -> Stop manual override (if active)
     if (newState == OFF) {
-        kg_treppe_manual_sw.sendCommand(OFF)
+        treppe_manual_sw.sendCommand(OFF)
     }
 end
 

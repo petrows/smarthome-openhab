@@ -127,6 +127,11 @@ Frame label="KU Light Button (0x00158d0001be5b2d)" {
 Text item=ku_light_button_link icon="linkz"
 Text item=ku_light_button_ota icon="fire"
 }
+Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
+Text item=treppe_door_sensor_contact
+Text item=treppe_door_sensor_link icon="linkz"
+Text item=treppe_door_sensor_ota icon="fire"
+}
 Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
 Text item=treppe_up_switch_link icon="linkz"
 Text item=treppe_up_switch_ota icon="fire"

@@ -1,0 +1,9 @@
+
+
+// Door contact in treppe UP
+rule "Trepp door UP"
+when
+    Item treppe_door_sensor_contact changed from CLOSED to OPEN
+then
+    treppe_motion_occupancy.sendCommand(ON)
+end

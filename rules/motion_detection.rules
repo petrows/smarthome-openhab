@@ -7,7 +7,7 @@ then
     var state = treppe_motion_occupancy.state
     if (state == OFF) {
         // If light is triggered manually, does not stop it
-        if (kg_treppe_manual_sw.state == ON) {
+        if (treppe_manual_sw.state == ON) {
             logWarn("light", "KG Motion treppe OFF ignored by manual override")
             return
         }

@@ -31,6 +31,8 @@ PREAMBULA = """
 # 0x14b457fffe6383e5 - TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay)
 # 0x000d6ffffe12e11b - Ikea CT 1000 (ebay)
 # 0x14b457fffe399241 - Ikea CT 1000 (ebay)
+#  - TuYa Rechargeable Zigbee contact sensor (SNTZ007)
+# 0xccccccfffed82ba3 - TuYa Rechargeable Zigbee contact sensor (SNTZ007)
 
 # Items defentition
 items = [
@@ -215,6 +217,12 @@ items = [
         'type': DEVICES.XIAOMI_BUTTON,
     },
     # Ladder (Treppe)
+    {
+        'name': "Treppe Door sensor",
+        'id': "treppe_door_sensor",
+        'zigbee_id': '0xccccccfffed82b91',
+        'type': DEVICES.TUYA_WINDOW_SENSOR,
+    },
     {
         'name': "Treppe Up switch",
         'id': "treppe_up_switch",
@@ -507,6 +515,11 @@ if __name__ == "__main__":
                 conf_str.append(
                     f"\t\tType number : position [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.position\"]")
 
+            # Device has Contact sensor (inverse OPEN/CLOSE logic)
+            if np.in1d(['contact'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType contact : contact [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.contact\", on=\"false\", off=\"true\"]")
+
             # Device has Motion sensor
             if np.in1d(['motion'], item['type']['types']).any():
                 conf_str.append(
@@ -608,6 +621,17 @@ if __name__ == "__main__":
             )
             device_items['items'].append(
                 f"Text item={item['id']}_position")
+
+        # Some devices have contact option
+        if np.in1d(['contact'], item['type']['types']).any():
+            device_icon = 'door'
+            conf_str.append(
+                f"Contact {item['id']}_contact \"{item['name']} contact [%s]\" <{device_icon}>"
+                f"{device_groups(item,'contact')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:contact\"}}"
+            )
+            device_items['items'].append(
+                f"Text item={item['id']}_contact")
 
         # Some devices have motion option
         if np.in1d(['motion'], item['type']['types']).any():
