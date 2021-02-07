@@ -131,7 +131,7 @@ then
     if (newState == ON) {
         desktop_petro_aux_power_sw.sendCommand(ON)
         // Start PC with some delay
-        Thread::sleep(100)
+        Thread::sleep(1000)
         desktop_petro_pc_power_sw.sendCommand(ON)
         return
     }
