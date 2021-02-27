@@ -338,6 +338,18 @@ Thing mqtt:topic:openhab:treppe_motion "Treppe motion" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0xbc33acfffe872049", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// KG Window 1 (0xccccccfffed82ba3)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="zigbee2mqtt/0xccccccfffed82ba3", transformationPattern="JSONPATH:$.contact", on="false", off="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/0xccccccfffed82ba3", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0xccccccfffed82ba3", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : voltage [stateTopic="zigbee2mqtt/0xccccccfffed82ba3", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
+		Type number : link [stateTopic="zigbee2mqtt/0xccccccfffed82ba3", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0xccccccfffed82ba3", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // KG Climate (0x00158d0001b95e02)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:kg_climate "KG Climate" (mqtt:broker:openhab) {
