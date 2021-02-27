@@ -141,15 +141,25 @@ then
             // Nothing
         }
 
+        // Apply final state?
+        var set_item = false
+
         if (room_heating_enabled) {
             if (room_sensors_enabled) {
-                logWarn("heating", "Set room " + room_name + " -> " + hz_temp_auto.state)
-                s.sendCommand(hz_temp_auto.state as Number)
+                set_item = true
             } else {
-                logWarn("heating", "Set room " + room_name + " -> sensors disabled")
+                logWarn("heating", "Set room " + room_name + " -> disabled (sensors)")
             }
         } else {
-            logWarn("heating", "Set room " + room_name + " -> disabled")
+            logWarn("heating", "Set room " + room_name + " -> disabled (switched off)")
+        }
+
+        if (set_item) {
+            logWarn("heating", "Set room " + room_name + " -> " + hz_temp_auto.state)
+            s.sendCommand(hz_temp_auto.state as Number)
+        } else {
+            logWarn("heating", "Set room " + room_name + " -> OFF")
+            s.sendCommand(cfgHeatingTempOff.state as Number)
         }
     ]
 end
