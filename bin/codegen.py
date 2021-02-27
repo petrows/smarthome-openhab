@@ -105,7 +105,7 @@ items = [
     },
     {
         'name': "NS Boost power",
-        'id': "ns_boost_power",
+        'id': "ns_heating_boost_power",
         'zigbee_id': '0x7cb03eaa0a0a1103',
         'type': DEVICES.OSRAM_SMART_PLUG,
         'expire': '1h'

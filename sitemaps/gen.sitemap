@@ -53,9 +53,9 @@ Text item=ns_power_2_link icon="linkz"
 Text item=ns_power_2_ota icon="fire"
 }
 Frame label="NS Boost power (0x7cb03eaa0a0a1103)" {
-Switch item=ns_boost_power_sw
-Text item=ns_boost_power_link icon="linkz"
-Text item=ns_boost_power_ota icon="fire"
+Switch item=ns_heating_boost_power_sw
+Text item=ns_heating_boost_power_link icon="linkz"
+Text item=ns_heating_boost_power_ota icon="fire"
 }
 Frame label="NS Projector (0x7cb03eaa0a094d1d)" {
 Switch item=ns_projector_power_sw

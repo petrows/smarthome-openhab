@@ -194,24 +194,24 @@ sitemap control2 label="KONTROL 2"
 		Group item=ku_climate_temperature label="Küche" {
 			Text 		item=ku_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ku_climate_humidity label="Humidity [%d %%]"
-			Text		item=hz_ku_valve label="Beheizung [%d %%]"
-			Setpoint	item=hz_ku_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=hz_ku_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+			Text		item=ku_heating_position label="Beheizung [%d %%]"
+			Setpoint	item=ku_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=ku_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		}
 
 		Group item=ns_climate_temperature label="Nagel Studio" {
 			Text 		item=ns_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ns_climate_humidity label="Humidity [%d %%]"
-			Text		item=hz_ns_valve label="Beheizung [%d %%]"
-			Setpoint	item=hz_ns_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=hz_ns_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
-			Switch		item=hz_ns_boost label="Heizung BOOST" icon="fan"
-			Switch		item=ns_boost_power_sw label="Heizung Fan" icon="fan"
+			Text		item=ns_heating_position label="Beheizung [%d %%]"
+			Setpoint	item=ns_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=ns_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+			Switch		item=ns_heating_boost label="Heizung BOOST" icon="fan"
+			Switch		item=ns_heating_boost_power_sw label="Heizung Fan" icon="fan"
 		}
 		Group item=fs_climate_temperature label="Foto Studio" {
 			Text 		item=fs_climate_temperature label="Temperature [%d °C]"
 			Text 		item=fs_climate_humidity label="Humidity [%d %%]"
-			Text		item=hz_fs_valve label="Beheizung [%d %%]"
+			Text		item=fs_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=hz_fs_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=hz_fs_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
 		}
@@ -226,9 +226,9 @@ sitemap control2 label="KONTROL 2"
 		Group item=kg_climate_temperature label="KG" {
 			Text 		item=kg_climate_temperature label="Temperature [%d °C]"
 			Text 		item=kg_climate_humidity label="Humidity [%d %%]"
-			Text		item=hz_kg_valve label="Beheizung [%d %%]"
-			Setpoint	item=hz_kg_set label="Ziel" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-			Switch  	item=hz_kg_set label="Modus []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+			Text		item=kg_heating_position label="Beheizung [%d %%]"
+			Setpoint	item=kg_heating_thermostat label="Ziel" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
+			Switch  	item=kg_heating_thermostat label="Modus []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=kg_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
             Text        item=kg_windows label="Windows [%s]" visibility=[cfgHeatingEnable==ON]
 		}

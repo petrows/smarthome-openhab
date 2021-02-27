@@ -54,7 +54,7 @@ when
 then
 	g_hz_auto.members.forEach [s |
         logWarn("heating", "Item: " + s.name + " = " + s.state)
-        val room_name = transform("REGEX", "hz_(.*)_set", s.name.toString)
+        val room_name = transform("REGEX", "(.*)_heating_thermostat", s.name.toString)
         logWarn("heating", "Item room: " + room_name)
 
         val room_heating_enabled = true
@@ -138,21 +138,21 @@ end
 
 rule "Heating NS boost switch"
 when
-	Item hz_ns_boost changed
+	Item ns_heating_boost changed
 then
 	if (ON != cfgHeatingEnable.state) {
 		logInfo("heating", "Heating disabled")
 		return
 	}
 
-	logInfo("heating", "Heating NS boost -> " + hz_ns_boost.state)
+	logInfo("heating", "Heating NS boost -> " + ns_heating_boost.state)
 
-	if (ON == hz_ns_boost.state) {
-		ns_boost_power_sw.sendCommand(ON)
-		hz_ns_mode.sendCommand("BOOST")
+	if (ON == ns_heating_boost.state) {
+		ns_heating_boost_power_sw.sendCommand(ON)
+		ns_heating_mode.sendCommand("BOOST")
 	} else {
-        ns_boost_power_sw.sendCommand(OFF)
-		hz_ns_mode.sendCommand("MANUAL")
+        ns_heating_boost_power_sw.sendCommand(OFF)
+		ns_heating_mode.sendCommand("MANUAL")
 	}
 end
 
