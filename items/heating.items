@@ -13,8 +13,11 @@ Group g_hz_kg <heating>
 // Heaters in EG
 Group g_hz_eg <heating>
 
+// All sensors
+Group:Contact:AND(CLOSED, OPEN) all_windows "All windows [%s]" <window>
+
 // Groups of sensors, enabeling heating
-Group:Contact kg_windows "KG windows [%s]" <window>
+Group:Contact:AND(CLOSED, OPEN) kg_windows "KG windows [%s]" <window> (all_windows)
 
 // AVG valve
 Group:Number:AVG g_hz_valve "Alle Ventil" <heating>

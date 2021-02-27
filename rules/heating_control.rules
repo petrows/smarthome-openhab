@@ -48,17 +48,71 @@ then
 	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
 end
 
-rule "Heating TEST"
+// This rule is fired if any window open/closed
+// Will stop heating on open
+rule "Windows state changed"
+when
+	Item all_windows received update or
+	Item all_windows received command or
+    Item all_windows changed
+then
+    if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && hz_temp_auto.state != cfgHeatingTempOff.state)) {
+		logInfo("heating", "Windows: Auto disabled")
+		return
+	}
+    logInfo("heating", "Windows state changed")
+	all_windows.members.forEach [sensor_group |
+        val room_name = transform("REGEX", "(.*)_windows", sensor_group.name.toString)
+
+        if (sensor_group.state == OPEN) {
+            // Stop heating
+            logInfo("heating", "Windows: Room " + room_name + " window is open, stop heating")
+            // Check that we have heating for this room
+            try {
+                val NumberItem room_hz = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_heating_thermostat") as NumberItem
+                room_hz.sendCommand(cfgHeatingTempOff.state as Number)
+            } catch(Throwable t) {
+                // Nothing
+                logInfo("heating", "Windows: Not found heating for room " + room_name)
+            }
+        }
+    ]
+end
+
+// === RULE CONTROLS ==========================================
+
+rule "Heating Auto command"
 when
 	Item hz_temp_auto changed
 then
-	g_hz_auto.members.forEach [s |
-        logWarn("heating", "Item: " + s.name + " = " + s.state)
+	if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && hz_temp_auto.state != cfgHeatingTempOff.state)) {
+		logInfo("heating", "Auto disabled")
+		return
+	}
+
+	// Check perisstance only if setting temp != OFF
+	if (hz_temp_auto.state != cfgHeatingTempOff.state) {
+		// Check that people are here
+		if (cfgHeatingPersistanceEnable.state == ON) {
+			if (presAll.state != ON) {
+				// Nobody at home, skip auto set
+				logInfo("heating", "Nobody at home, skip auto set")
+				g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+				return
+			}
+		}
+	}
+
+	logInfo("heating", "Auto temp -> " + hz_temp_auto.state)
+	// g_hz_auto.sendCommand(hz_temp_auto.state as Number)
+
+    // Now we can apply new temp to members
+    g_hz_auto.members.forEach [s |
         val room_name = transform("REGEX", "(.*)_heating_thermostat", s.name.toString)
         logWarn("heating", "Item room: " + room_name)
 
-        val room_heating_enabled = true
-        val room_sensors_enabled = true
+        var room_heating_enabled = true
+        var room_sensors_enabled = true
 
         // Check that we have master-switch for this room
         try {
@@ -89,48 +143,14 @@ then
 
         if (room_heating_enabled) {
             if (room_sensors_enabled) {
-                logWarn("heating", "Set room " + room_name + " -> ")
+                logWarn("heating", "Set room " + room_name + " -> " + hz_temp_auto.state)
+                s.sendCommand(hz_temp_auto.state as Number)
             } else {
                 logWarn("heating", "Set room " + room_name + " -> sensors disabled")
             }
         } else {
             logWarn("heating", "Set room " + room_name + " -> disabled")
         }
-    ]
-end
-
-
-
-// === RULE CONTROLS ==========================================
-
-rule "Auto command"
-when
-	Item hz_temp_auto changed
-then
-	if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && hz_temp_auto.state != cfgHeatingTempOff.state)) {
-		logInfo("heating", "Auto disabled")
-		return
-	}
-
-	// Check perisstance only if setting temp != OFF
-	if (hz_temp_auto.state != cfgHeatingTempOff.state) {
-		// Check that people are here
-		if (cfgHeatingPersistanceEnable.state == ON) {
-			if (presAll.state != ON) {
-				// Nobody at home, skip auto set
-				logInfo("heating", "Nobody at home, skip auto set")
-				g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
-				return
-			}
-		}
-	}
-
-	logInfo("heating", "Auto temp -> " + hz_temp_auto.state)
-	// g_hz_auto.sendCommand(hz_temp_auto.state as Number)
-
-    // Now we can apply new temp to members
-    g_hz_auto.members.forEach [s |
-        s.sendCommand(hz_temp_auto.state as Number)
     ]
 end
 
