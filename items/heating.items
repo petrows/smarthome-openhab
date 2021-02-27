@@ -14,7 +14,7 @@ Group g_hz_kg <heating>
 Group g_hz_eg <heating>
 
 // Groups of sensors, enabeling heating
-Group:Contact kg_heating_sensors "HZ KG sensor [%s]" <switch>
+Group:Contact kg_windows "KG windows [%s]" <window>
 
 // AVG valve
 Group:Number:AVG g_hz_valve "Alle Ventil" <heating>

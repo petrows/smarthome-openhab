@@ -74,7 +74,7 @@ then
         }
         // Check that we have window-sensors for this room
         try {
-            val GroupItem room_sensors = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_heating_sensors") as GroupItem
+            val GroupItem room_sensors = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_windows") as GroupItem
             room_sensors.members.forEach [sensor |
                 if (room_sensors_enabled) {
                     if (sensor.state == OFF || sensor.state == OPEN) {

@@ -279,7 +279,7 @@ items = [
         'zigbee_id': '0xccccccfffed82ba3',
         'type': DEVICES.TUYA_WINDOW_SENSOR,
         'groups': {
-            'contact': ['kg_heating_sensors'],
+            'contact': ['kg_windows'],
         }
     },
     {
