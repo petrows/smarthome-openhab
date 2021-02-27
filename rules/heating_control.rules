@@ -1,3 +1,4 @@
+import org.openhab.core.model.script.ScriptServiceUtil
 
 // === MISC RULES ==========================================
 
@@ -47,6 +48,59 @@ then
 	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
 end
 
+rule "Heating TEST"
+when
+	Item hz_temp_auto changed
+then
+	g_hz_auto.members.forEach [s |
+        logWarn("heating", "Item: " + s.name + " = " + s.state)
+        val room_name = transform("REGEX", "hz_(.*)_set", s.name.toString)
+        logWarn("heating", "Item room: " + room_name)
+
+        val room_heating_enabled = true
+        val room_sensors_enabled = true
+
+        // Check that we have master-switch for this room
+        try {
+            val SwitchItem room_switch = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_heating_enabled") as SwitchItem
+            // If we have
+            // logWarn("heating", "Item room sw: " + room_switch)
+            if (room_switch.state == OFF) {
+                logWarn("heating", "Room " + room_name + " switch " + room_switch.name + " is " + room_switch.state)
+                room_heating_enabled = false
+            }
+        } catch(Throwable t) {
+            // Nothing
+        }
+        // Check that we have window-sensors for this room
+        try {
+            val GroupItem room_sensors = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_heating_sensors") as GroupItem
+            room_sensors.members.forEach [sensor |
+                if (room_sensors_enabled) {
+                    if (sensor.state == OFF || sensor.state == OPEN) {
+                        logWarn("heating", "Room " + room_name + " sensor " + sensor.name + " is " + sensor.state)
+                        room_sensors_enabled = false
+                    }
+                }
+            ]
+        } catch(Throwable t) {
+            // Nothing
+        }
+
+        if (room_heating_enabled) {
+            if (room_sensors_enabled) {
+                logWarn("heating", "Set room " + room_name + " -> ")
+            } else {
+                logWarn("heating", "Set room " + room_name + " -> sensors disabled")
+            }
+        } else {
+            logWarn("heating", "Set room " + room_name + " -> disabled")
+        }
+    ]
+end
+
+
+
 // === RULE CONTROLS ==========================================
 
 rule "Auto command"
@@ -72,7 +126,12 @@ then
 	}
 
 	logInfo("heating", "Auto temp -> " + hz_temp_auto.state)
-	g_hz_auto.sendCommand(hz_temp_auto.state as Number)
+	// g_hz_auto.sendCommand(hz_temp_auto.state as Number)
+
+    // Now we can apply new temp to members
+    g_hz_auto.members.forEach [s |
+        s.sendCommand(hz_temp_auto.state as Number)
+    ]
 end
 
 // === HEATING SWITCHES =========================================
