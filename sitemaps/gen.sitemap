@@ -9,6 +9,13 @@
 
 sitemap gen label="GEN ITEMS"
 {
+Frame label="Aldi light 1 (0x60a423fffe4b9138)" {
+Switch item=test_aldi_light_1_sw
+Slider item=test_aldi_light_1_dim
+Slider item=test_aldi_light_1_ct
+Text item=test_aldi_light_1_link icon="linkz"
+Text item=test_aldi_light_1_ota icon="fire"
+}
 Frame label="Outside Climate (0x00158d0001c2cc22)" {
 Text item=ext_climate_temperature
 Text item=ext_climate_humidity

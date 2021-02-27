@@ -7,6 +7,17 @@
 // ==========================================
 
 
+// Aldi light 1 (0x60a423fffe4b9138)
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
+Thing mqtt:topic:openhab:test_aldi_light_1 "Aldi light 1" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0x60a423fffe4b9138", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x60a423fffe4b9138/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/0x60a423fffe4b9138", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/0x60a423fffe4b9138/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/0x60a423fffe4b9138", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/0x60a423fffe4b9138/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=150, max=500]
+		Type number : link [stateTopic="zigbee2mqtt/0x60a423fffe4b9138", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x60a423fffe4b9138", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // Outside Climate (0x00158d0001c2cc22)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {

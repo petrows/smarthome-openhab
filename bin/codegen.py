@@ -31,11 +31,18 @@ PREAMBULA = """
 # 0x14b457fffe6383e5 - TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay)
 # 0x000d6ffffe12e11b - Ikea CT 1000 (ebay)
 # 0x14b457fffe399241 - Ikea CT 1000 (ebay)
-#  - TuYa Rechargeable Zigbee contact sensor (SNTZ007)
 # 0xccccccfffed82ba3 - TuYa Rechargeable Zigbee contact sensor (SNTZ007)
+# 0x60a423fffe4b9138 - Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) (offline shop)
 
 # Items defentition
 items = [
+    # Reserve
+    {
+        'name': "Aldi light 1",
+        'id': "test_aldi_light_1",
+        'zigbee_id': '0x60a423fffe4b9138',
+        'type': DEVICES.ALDI_FILAMENT,
+    },
     # External (outside)
     {
         'name': "Outside Climate",

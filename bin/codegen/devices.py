@@ -133,6 +133,17 @@ class DEVICES:
         'device_name': 'Xiaomi MiJia wireless switch (WXKG01LM)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/WXKG01LM.html',
     }
+    # Aldi
+    ALDI_FILAMENT = {
+        'types': [
+            'zigbee',
+            'lamp',
+            'aldi',
+            'ct',
+        ],
+        'device_name': 'Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W)',
+        'device_url': '?',
+    }
     # Tuya
     TUYA_THERMOSTAT_VALVE = {
         'types': [
