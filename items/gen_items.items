@@ -239,7 +239,7 @@ DateTime treppe_motion_activity "Treppe motion [JS(display-activity.js):%s]" <ti
 
 // KG Window 1 (0xccccccfffed82ba3)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Contact kg_window_1_contact "KG Window 1 contact [%s]" <door> {channel="mqtt:topic:openhab:kg_window_1:contact"}
+Contact kg_window_1_contact "KG Window 1 contact [%s]" <door> (g_hz_kg_sensors) {channel="mqtt:topic:openhab:kg_window_1:contact"}
 Number:Dimensionless kg_window_1_link "KG Window 1 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_window_1:link"}
 Switch kg_window_1_ota "KG Window 1 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_window_1:ota"}
 Number:Dimensionless kg_window_1_battery "KG Window 1 [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_window_1:battery"}

@@ -278,6 +278,9 @@ items = [
         'id': "kg_window_1",
         'zigbee_id': '0xccccccfffed82ba3',
         'type': DEVICES.TUYA_WINDOW_SENSOR,
+        'groups': {
+            'contact': ['g_hz_kg_sensors'],
+        }
     },
     {
         'name': "KG Climate",
