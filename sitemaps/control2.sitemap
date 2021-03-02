@@ -112,9 +112,10 @@ sitemap control2 label="KONTROL 2"
 		Switch item=g_light_eg label="EG" icon="light" mappings=[ON="ON", OFF="OFF"]
 		Switch item=g_light_kg label="KG" icon="light" mappings=[ON="ON", OFF="OFF"]
 
-		Group item=g_light_balkon label="Balkon [%s]" icon="light" {
-			Switch item=g_light_balkon label="Haupt [%s]" icon="light"
-			Slider item=g_dim_balkon label="Haupt DIM [%d %%]" icon="light"
+		Group item=balkon_light label="Balkon [%s]" icon="light" {
+			Switch item=balkon_light label="Haupt [%s]" icon="light"
+			Slider item=balkon_light_dim label="Haupt DIM [%d %%]" icon="light"
+            Slider item=balkon_light_ct label="Haupt CT [JS(display-mired.js):%s]"
 		}
 		Group item=g_light_eg_flur label="Flur [%s]" icon="light" {
 			Switch item=snf_eg_fl label="Haupt [%s]" icon="light"

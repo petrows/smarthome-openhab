@@ -31,18 +31,13 @@ PREAMBULA = """
 # 0x14b457fffe6383e5 - TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay)
 # 0x000d6ffffe12e11b - Ikea CT 1000 (ebay)
 # 0x14b457fffe399241 - Ikea CT 1000 (ebay)
-#  - TuYa Rechargeable Zigbee contact sensor (SNTZ007)
-# 0x60a423fffe4b9138 - Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) (offline shop)
+# 0xec1bbdfffe4695b5 - Ikea WW 806 (ebay)
+# 0x60a423fffe4b9138 - Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) (Aldi 2020-02-27)
+# 0x60a423fffe4b91cf - Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) (Aldi 2020-03-02)
+
 
 # Items defentition
 items = [
-    # Reserve
-    {
-        'name': "Aldi light 1",
-        'id': "test_aldi_light_1",
-        'zigbee_id': '0x60a423fffe4b9138',
-        'type': DEVICES.ALDI_FILAMENT,
-    },
     # External (outside)
     {
         'name': "Outside Climate",
@@ -56,11 +51,12 @@ items = [
     {
         'name': "Balkon light 1",
         'id': "balkon_light_1",
-        'zigbee_id': '0xec1bbdfffe4695b5',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'zigbee_id': '0x60a423fffe4b9138',
+        'type': DEVICES.ALDI_FILAMENT,
         'groups': {
-            'sw': ['g_light_all', 'g_light_balkon'],
-            'dim': ['g_dim_balkon'],
+            'sw': ['g_light_all', 'balkon_light'],
+            'dim': ['balkon_light_dim'],
+            'ct': ['balkon_light_ct'],
         }
     },
     # EG (Corridor)

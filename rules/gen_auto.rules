@@ -9,11 +9,11 @@
 
 
 // Device should apply saved color temp when ON
-rule "Aldi light 1 apply color on ON"
+rule "Balkon light 1 apply color on ON"
 when
-    Item test_aldi_light_1_sw changed to ON
+    Item balkon_light_1_sw changed to ON
 then
-	test_aldi_light_1_ct.sendCommand(test_aldi_light_1_ct.state as Number)
+	balkon_light_1_ct.sendCommand(balkon_light_1_ct.state as Number)
 end
 
 

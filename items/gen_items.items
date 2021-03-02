@@ -7,14 +7,6 @@
 // ==========================================
 
 
-// Aldi light 1 (0x60a423fffe4b9138)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
-Switch test_aldi_light_1_sw "Aldi light 1" <light> {channel="mqtt:topic:openhab:test_aldi_light_1:state"}
-Dimmer test_aldi_light_1_dim "Aldi light 1 DIM [%d %%]" <light> {channel="mqtt:topic:openhab:test_aldi_light_1:dim"}
-Dimmer test_aldi_light_1_ct "Aldi light 1 CT [JS(display-mired.js):%s]" <colorwheel> {channel="mqtt:topic:openhab:test_aldi_light_1:ct"}
-Number:Dimensionless test_aldi_light_1_link "Aldi light 1 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:test_aldi_light_1:link"}
-Switch test_aldi_light_1_ota "Aldi light 1 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:test_aldi_light_1:ota"}
-
 // Outside Climate (0x00158d0001c2cc22)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Number:Temperature ext_climate_temperature "Outside Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ext_climate:temperature"}
@@ -26,10 +18,11 @@ Switch ext_climate_battery_low "Outside Climate [MAP(lowbat.map):%s]" <lowbatter
 Number:ElectricPotential ext_climate_voltage "Outside Climate [%.0f mV]" <energy> {channel="mqtt:topic:openhab:ext_climate:voltage"}
 DateTime ext_climate_activity "Outside Climate [JS(display-activity.js):%s]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ext_climate:activity"}
 
-// Balkon light 1 (0xec1bbdfffe4695b5)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch balkon_light_1_sw "Balkon light 1" <light> (g_light_all,g_light_balkon) {channel="mqtt:topic:openhab:balkon_light_1:state"}
-Dimmer balkon_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (g_dim_balkon) {channel="mqtt:topic:openhab:balkon_light_1:dim"}
+// Balkon light 1 (0x60a423fffe4b9138)
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
+Switch balkon_light_1_sw "Balkon light 1" <light> (g_light_all,balkon_light) {channel="mqtt:topic:openhab:balkon_light_1:state"}
+Dimmer balkon_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (balkon_light_dim) {channel="mqtt:topic:openhab:balkon_light_1:dim"}
+Dimmer balkon_light_1_ct "Balkon light 1 CT [JS(display-mired.js):%s]" <colorwheel> (balkon_light_ct) {channel="mqtt:topic:openhab:balkon_light_1:ct"}
 Number:Dimensionless balkon_light_1_link "Balkon light 1 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:balkon_light_1:link"}
 Switch balkon_light_1_ota "Balkon light 1 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:balkon_light_1:ota"}
 

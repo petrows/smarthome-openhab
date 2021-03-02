@@ -3,8 +3,9 @@ Group:Switch:OR(ON, OFF) g_light_all
 Group:Switch:OR(ON, OFF) g_light_eg
 
 // Balkon light
-Group:Switch:OR(ON, OFF) g_light_balkon "Balkon light [%s]" <light>
-Group:Dimmer:MAX g_dim_balkon "Balkon DIM [%d %%]" <light>
+Group:Switch:OR(ON, OFF) balkon_light "Balkon light [%s]" <light>
+Group:Dimmer:MAX balkon_light_dim "Balkon DIM [%d %%]" <light>
+Group:Dimmer:MAX balkon_light_ct "Balkon CT [%d %%]" <light>
 
 Group:Switch:OR(ON, OFF) g_light_eg_flur <light>
 Group:Switch:OR(ON, OFF) g_light_eg_bz <light>
