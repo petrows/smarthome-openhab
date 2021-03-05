@@ -53,6 +53,16 @@ then
     }
 end
 
+rule "Christmas lights off"
+when
+	Time cron "0 00 22 ? * *"
+then
+	logWarn("light", "Christmas off")
+
+    // Stop decorative lights
+    g_light_christmas.sendCommand(OFF)
+end
+
 rule "Light safe switch"
 when
 	Time cron "0 00 03,04 ? * *"
