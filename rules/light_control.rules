@@ -183,3 +183,10 @@ then
         kg_lager4_manual_sw.sendCommand(OFF)
     }
 end
+
+rule "KU Arbeitlicht switch"
+when
+    Item snf_eg_ku_arbeit received update
+then
+    ku_light_arbeitplatte_sw.sendCommand(newState)
+end

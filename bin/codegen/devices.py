@@ -167,6 +167,15 @@ class DEVICES:
         'device_name': 'TuYa Rechargeable Zigbee contact sensor (SNTZ007)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/SNTZ007.html',
     }
+    # Lidl smart home - Silvercrest
+    SILVERCREST_SMART_PLUG = {
+        'types': [
+            'zigbee',
+            'plug',
+        ],
+        'device_name': 'Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/HG06337.html',
+    }
     # DIY
     DIY_CC2540_ROUTER = {
         'types': [

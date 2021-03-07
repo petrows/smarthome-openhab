@@ -248,9 +248,9 @@ Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001b95fc4", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// KU Light Button (0x00158d0001be5b2d)
+// KU Light Button (Spüle) (0x00158d0001be5b2d)
 // Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
-Thing mqtt:topic:openhab:ku_light_button "KU Light Button" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spüle)" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JSONPATH:$.action", trigger=true]
 		Type number : battery [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
@@ -258,6 +258,26 @@ Thing mqtt:topic:openhab:ku_light_button "KU Light Button" (mqtt:broker:openhab)
 		Type number : voltage [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
 		Type number : link [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00158d0001be5b2d", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// KU Light Button (Kochfield) (0x680ae2fffeaf18d4)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Thing mqtt:topic:openhab:ku_light_switch_kochfeld "KU Light Button (Kochfield)" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/0x680ae2fffeaf18d4", transformationPattern="JSONPATH:$.action", trigger=true]
+		Type number : battery [stateTopic="zigbee2mqtt/0x680ae2fffeaf18d4", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/0x680ae2fffeaf18d4", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0x680ae2fffeaf18d4", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x680ae2fffeaf18d4", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// KU Light Arbeit (0xec1bbdfffea37757)
+// Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html
+Thing mqtt:topic:openhab:ku_light_arbeitplatte "KU Light Arbeit" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0xec1bbdfffea37757", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0xec1bbdfffea37757/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0xec1bbdfffea37757", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0xec1bbdfffea37757", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
 // Treppe Door sensor (0xccccccfffed82b91)

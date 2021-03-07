@@ -174,13 +174,26 @@ Switch ku_climate_battery_low "KU Climate [MAP(lowbat.map):%s]" <lowbattery> (g_
 Number:ElectricPotential ku_climate_voltage "KU Climate [%.0f mV]" <energy> {channel="mqtt:topic:openhab:ku_climate:voltage"}
 DateTime ku_climate_activity "KU Climate [JS(display-activity.js):%s]" <time> (g_zigbee_activity) {channel="mqtt:topic:openhab:ku_climate:activity"}
 
-// KU Light Button (0x00158d0001be5b2d)
+// KU Light Button (Spüle) (0x00158d0001be5b2d)
 // Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
-Number:Dimensionless ku_light_button_link "KU Light Button LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_button:link"}
-Switch ku_light_button_ota "KU Light Button OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_button:ota"}
-Number:Dimensionless ku_light_button_battery "KU Light Button [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_light_button:battery"}
-Switch ku_light_button_battery_low "KU Light Button [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_light_button:battery_low"}
-Number:ElectricPotential ku_light_button_voltage "KU Light Button [%.0f mV]" <energy> {channel="mqtt:topic:openhab:ku_light_button:voltage"}
+Number:Dimensionless ku_light_switch_spule_link "KU Light Button (Spüle) LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_switch_spule:link"}
+Switch ku_light_switch_spule_ota "KU Light Button (Spüle) OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_switch_spule:ota"}
+Number:Dimensionless ku_light_switch_spule_battery "KU Light Button (Spüle) [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_light_switch_spule:battery"}
+Switch ku_light_switch_spule_battery_low "KU Light Button (Spüle) [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_light_switch_spule:battery_low"}
+Number:ElectricPotential ku_light_switch_spule_voltage "KU Light Button (Spüle) [%.0f mV]" <energy> {channel="mqtt:topic:openhab:ku_light_switch_spule:voltage"}
+
+// KU Light Button (Kochfield) (0x680ae2fffeaf18d4)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Number:Dimensionless ku_light_switch_kochfeld_link "KU Light Button (Kochfield) LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:link"}
+Switch ku_light_switch_kochfeld_ota "KU Light Button (Kochfield) OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:ota"}
+Number:Dimensionless ku_light_switch_kochfeld_battery "KU Light Button (Kochfield) [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:battery"}
+Switch ku_light_switch_kochfeld_battery_low "KU Light Button (Kochfield) [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:battery_low"}
+
+// KU Light Arbeit (0xec1bbdfffea37757)
+// Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html
+Switch ku_light_arbeitplatte_sw "KU Light Arbeit" <switch> {channel="mqtt:topic:openhab:ku_light_arbeitplatte:state"}
+Number:Dimensionless ku_light_arbeitplatte_link "KU Light Arbeit LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:link"}
+Switch ku_light_arbeitplatte_ota "KU Light Arbeit OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:ota"}
 
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html

@@ -237,9 +237,9 @@ then
     }
 end
 
-rule "KU Arbeitlicht SW"
+rule "KU Arbeitlicht SW (Spule)"
 when
-    Channel "mqtt:topic:openhab:ku_light_button:action" triggered
+    Channel "mqtt:topic:openhab:ku_light_switch_spule:action" triggered
 then
 	var state = receivedEvent
     switch(state) {
@@ -256,6 +256,28 @@ then
             } else {
                 snf_eg_ku_haupt.sendCommand(ON)
             }
+        }
+    }
+end
+
+rule "KU Arbeitlicht SW (Kochfeld)"
+when
+    Channel "mqtt:topic:openhab:ku_light_switch_kochfeld:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "toggle": {
+            if (snf_eg_ku_arbeit.state == ON) {
+                snf_eg_ku_arbeit.sendCommand(OFF)
+            } else {
+                snf_eg_ku_arbeit.sendCommand(ON)
+            }
+        }
+        case "brightness_up_click": {
+            snf_eg_ku_haupt.sendCommand(ON)
+        }
+        case "brightness_down_click": {
+            snf_eg_ku_haupt.sendCommand(OFF)
         }
     }
 end

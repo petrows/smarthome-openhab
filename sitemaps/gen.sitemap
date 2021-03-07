@@ -124,9 +124,18 @@ Text item=ku_climate_pressure
 Text item=ku_climate_link icon="linkz"
 Text item=ku_climate_ota icon="fire"
 }
-Frame label="KU Light Button (0x00158d0001be5b2d)" {
-Text item=ku_light_button_link icon="linkz"
-Text item=ku_light_button_ota icon="fire"
+Frame label="KU Light Button (Spüle) (0x00158d0001be5b2d)" {
+Text item=ku_light_switch_spule_link icon="linkz"
+Text item=ku_light_switch_spule_ota icon="fire"
+}
+Frame label="KU Light Button (Kochfield) (0x680ae2fffeaf18d4)" {
+Text item=ku_light_switch_kochfeld_link icon="linkz"
+Text item=ku_light_switch_kochfeld_ota icon="fire"
+}
+Frame label="KU Light Arbeit (0xec1bbdfffea37757)" {
+Switch item=ku_light_arbeitplatte_sw
+Text item=ku_light_arbeitplatte_link icon="linkz"
+Text item=ku_light_arbeitplatte_ota icon="fire"
 }
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 Text item=treppe_door_sensor_contact

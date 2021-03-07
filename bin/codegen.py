@@ -214,10 +214,26 @@ items = [
         'type': DEVICES.XIAOMI_AQARA_V2,
     },
     {
-        'name': "KU Light Button",
-        'id': "ku_light_button",
+        'name': "KU Light Button (Spüle)",
+        'id': "ku_light_switch_spule",
         'zigbee_id': '0x00158d0001be5b2d',
         'type': DEVICES.XIAOMI_BUTTON,
+    },
+    {
+        'name': "KU Light Button (Kochfield)",
+        'id': "ku_light_switch_kochfeld",
+        'zigbee_id': '0x680ae2fffeaf18d4',
+        'type': DEVICES.IKEA_TRADFRI_REMOTE,
+    },
+    {
+        'name': "KU Light Arbeit",
+        'id': "ku_light_arbeitplatte",
+        'zigbee_id': '0xec1bbdfffea37757',
+        'type': DEVICES.SILVERCREST_SMART_PLUG,
+        'expire': '3h',
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_kg_ku'],
+        }
     },
     # Ladder (Treppe)
     {
