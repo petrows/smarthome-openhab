@@ -172,6 +172,7 @@ sitemap control2 label="KONTROL 2"
 				Switch item=snf_kg_l1 label="Haupt [%s]" icon="light"
 				Switch item=snf_kg_l2 label="Flür [%s]" icon="light"
 				Switch item=snf_kg_lg1 label="Lager 1 [%s]" icon="light"
+                Switch item=kg_lager4_main_light label="Lager 4 [%s]" icon="light"
 			}
 			Frame label="Lager" {
 				Switch item=g_light_lager_auto label="Lager Flür [%s]" icon="light"

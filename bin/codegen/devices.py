@@ -188,6 +188,9 @@ class DEVICES:
     TASMOTA_SONOFF_MINI = {
         'types': [
             'tasmota',
+            'rssi',
+            'bssid',
+            'la',
         ],
         'device_name': 'Sonoff Mini Switch',
         'device_url': 'https://templates.blakadder.com/sonoff_mini.html',

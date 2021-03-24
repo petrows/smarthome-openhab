@@ -32,16 +32,6 @@ Thing mqtt:topic:openhab:balkon_light_1 "Balkon light 1" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0x60a423fffe4b9138", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// Corridor main light ()
-// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Thing mqtt:topic:openhab:flur_light "Corridor main light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : POWER [stateTopic="stat/flur_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/flur_light/POWER", on="ON", off="OFF"]
-		Type number : rssi [stateTopic="stat/flur_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
-		Type string : bssid [stateTopic="stat/flur_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
-		Type number : la [stateTopic="stat/flur_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
-}
-
 // Mirror remote (0x680ae2fffeab6b80)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Thing mqtt:topic:openhab:mirror_remote "Mirror remote" (mqtt:broker:openhab) {
@@ -413,6 +403,16 @@ Thing mqtt:topic:openhab:desktop_petro_remote "Petro Desktop remote" (mqtt:broke
 		Type switch : battery_low [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
 		Type number : link [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// KG Lager 4 (main) ()
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Thing mqtt:topic:openhab:kg_lager4_main_light "KG Lager 4 (main)" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : POWER [stateTopic="stat/kg_lager4_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager4_main_light/POWER", on="ON", off="OFF"]
+		Type number : rssi [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 }
 
 // KG Lager 4 (1) (0xccccccfffedf345a)

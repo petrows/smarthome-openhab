@@ -60,11 +60,11 @@ items = [
         }
     },
     # EG (Corridor)
-    {
-        'name': "Corridor main light",
-        'id': "flur_light",
-        'type': DEVICES.TASMOTA_SONOFF_MINI,
-    },
+    # {
+    #     'name': "Corridor main light",
+    #     'id': "flur_light",
+    #     'type': DEVICES.TASMOTA_SONOFF_MINI,
+    # },
     {
         'name': "Mirror remote",
         'id': "mirror_remote",
@@ -329,6 +329,20 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
     {
+        'name': "KG Lager 4 (main)",
+        'id': "kg_lager4_main_light",
+        'type': DEVICES.TASMOTA_SONOFF_MINI,
+        'groups': {
+            'POWER': ['g_light_all', 'g_light_kg'],
+        },
+        'channels': {
+            'POWER': {
+                'id': 'kg_lager4_main_light',
+                'name': 'KG Lager 4 (main)',
+            }
+        }
+    },
+    {
         'name': "KG Lager 4 (1)",
         'id': "kg_lager4_1_light",
         'zigbee_id': '0xccccccfffedf345a',
@@ -466,19 +480,19 @@ if __name__ == "__main__":
             # Standard signal values
             conf_str.append(
                 f"\t\tType number : rssi ["
-                f"stateTopic=\"stat/{item['id']}/STATE\""
+                f"stateTopic=\"tele/{item['id']}/STATE\""
                 f", transformationPattern=\"JSONPATH:$.Wifi.RSSI\""
                 f"]"
             )
             conf_str.append(
                 f"\t\tType string : bssid ["
-                f"stateTopic=\"stat/{item['id']}/STATE\""
+                f"stateTopic=\"tele/{item['id']}/STATE\""
                 f", transformationPattern=\"JSONPATH:$.Wifi.BSSId\""
                 f"]"
             )
             conf_str.append(
                 f"\t\tType number : la ["
-                f"stateTopic=\"stat/{item['id']}/STATE\""
+                f"stateTopic=\"tele/{item['id']}/STATE\""
                 f", transformationPattern=\"JSONPATH:$.LoadAvg\""
                 f"]"
             )
@@ -614,6 +628,24 @@ if __name__ == "__main__":
             'items': []
         }
         all_items.append(device_items)
+
+        # Tasmota devices
+        if np.in1d(['tasmota'], item['type']['types']).any():
+            # Iterate through avaliable channels
+            for channel in item['type']['tasmota_channels']:
+                channel_cfg = item['channels'][channel['id']]
+                device_icon = channel_cfg.get('icon', 'switch')
+                if 'expire' in channel_cfg:
+                    device_timout = f", expire=\"{channel_cfg['expire']},command=OFF\""
+                conf_str.append(
+                    f"Switch {channel_cfg['id']} \"{channel_cfg['name']}\" <{device_icon}>"
+                    f"{device_groups(item, channel['id'])}"
+                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:{channel['id']}\"{device_timout}}}"
+                )
+                device_items['items'].append(f"Switch item={item['id']}")
+
+        # Generic devices
+
         # Some devices have switch option
         if np.in1d(['lamp', 'plug'], item['type']['types']).any():
             device_icon = 'switch'
@@ -707,6 +739,34 @@ if __name__ == "__main__":
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:pressure\"}}"
             )
             device_items['items'].append(f"Text item={item['id']}_pressure")
+
+        # Special WiFi things
+        if np.in1d(['rssi'], item['type']['types']).any():
+            device_icon = 'network'
+            conf_str.append(
+                f"Number:Dimensionless {item['id']}_rssi \"{item['name']} RSSI [%.0f %unit%]\" <{device_icon}>"
+                f"{device_groups(item,'rssi')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:rssi\"}}"
+            )
+            device_items['items'].append(f"Text item={item['id']}_rssi")
+
+        if np.in1d(['bssid'], item['type']['types']).any():
+            device_icon = 'network'
+            conf_str.append(
+                f"String {item['id']}_bssid \"{item['name']} BSSID [%s]\" <{device_icon}>"
+                f"{device_groups(item,'bssid')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:bssid\"}}"
+            )
+            device_items['items'].append(f"Text item={item['id']}_bssid")
+
+        if np.in1d(['la'], item['type']['types']).any():
+            device_icon = 'energy'
+            conf_str.append(
+                f"Number:Dimensionless {item['id']}_la \"{item['name']} LA [%d]\" <{device_icon}>"
+                f"{device_groups(item,'la')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:la\"}}"
+            )
+            device_items['items'].append(f"Text item={item['id']}_la")
 
         # Special Zigbee things
         if np.in1d(['zigbee'], item['type']['types']).any():
