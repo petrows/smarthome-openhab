@@ -1,3 +1,5 @@
+Group:DateTime:EARLIEST g_device_activity "Device Activity [JS(display-activity.js):%s]" <time>
+
 Switch snf_kg_ks_power "KG Kühlschrank power" { channel="mqtt:topic:openhab:snf-kg-ks:power" }
 
 

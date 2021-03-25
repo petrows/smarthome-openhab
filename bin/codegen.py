@@ -810,7 +810,7 @@ if __name__ == "__main__":
         if 'activity' in item['type']['types']:
             conf_str.append(
                 f"DateTime {item['id']}_activity \"{item['name']} [JS(display-activity.js):%s]\""
-                f" <time> (g_zigbee_activity) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:activity\"}}"
+                f" <time> (g_device_activity) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:activity\"}}"
             )
 
         # Special Zigbee things

@@ -305,6 +305,8 @@ sitemap control2 label="KONTROL 2"
 			}
 		}
 
+        Group item=g_device_activity
+
 		Group item=gOnline label="Online [MAP(online.map):%s]" icon=network {
 			Frame label="WLAN" {
 				Text	item=online_petro_pc icon=network
