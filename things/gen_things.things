@@ -413,6 +413,7 @@ Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (main)" (mqtt:broker:openh
 		Type number : rssi [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
 		Type string : bssid [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
 // KG Lager 3 (main) (kg_lager3_main_light)
@@ -423,6 +424,7 @@ Thing mqtt:topic:openhab:kg_lager3_main_light "KG Lager 3 (main)" (mqtt:broker:o
 		Type number : rssi [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
 		Type string : bssid [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
 // KG Lager 4 (main) (kg_lager4_main_light)
@@ -433,6 +435,7 @@ Thing mqtt:topic:openhab:kg_lager4_main_light "KG Lager 4 (main)" (mqtt:broker:o
 		Type number : rssi [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
 		Type string : bssid [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
 // KG Lager 4 (1) (0xccccccfffedf345a)

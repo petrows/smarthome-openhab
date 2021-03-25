@@ -188,6 +188,7 @@ class DEVICES:
     TASMOTA_SONOFF_MINI = {
         'types': [
             'tasmota',
+            'activity',
             'rssi',
             'bssid',
             'la',
@@ -204,6 +205,10 @@ class DEVICES:
     TASMOTA_SONOFF_TOUCH_EU1 = {
         'types': [
             'tasmota',
+            'activity',
+            'rssi',
+            'bssid',
+            'la',
         ],
         'device_name': 'Sonoff Touch EU Switch (1 gang)',
         'device_url': 'https://templates.blakadder.com/sonoff_touch_eu.html',
@@ -217,6 +222,10 @@ class DEVICES:
     TASMOTA_SONOFF_TOUCH_EU2 = {
         'types': [
             'tasmota',
+            'activity',
+            'rssi',
+            'bssid',
+            'la',
         ],
         'device_name': 'Sonoff Touch EU Switch (2 gang)',
         'device_url': 'https://templates.blakadder.com/sonoff_touch_eu.html',

@@ -530,6 +530,11 @@ if __name__ == "__main__":
                 f"]"
             )
 
+            # Some wifi devices needs to be monitored
+            if np.in1d(['activity'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType datetime : activity [stateTopic=\"tele/{item['id']}/STATE\", transformationPattern=\"JS:z2m-activity.js\"]")
+
             conf_str.append(f"}}")
 
         # Zigbee2mqtt device?
@@ -801,6 +806,13 @@ if __name__ == "__main__":
             )
             device_items['items'].append(f"Text item={item['id']}_la")
 
+        # Some devices report activity
+        if 'activity' in item['type']['types']:
+            conf_str.append(
+                f"DateTime {item['id']}_activity \"{item['name']} [JS(display-activity.js):%s]\""
+                f" <time> (g_zigbee_activity) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:activity\"}}"
+            )
+
         # Special Zigbee things
         if np.in1d(['zigbee'], item['type']['types']).any():
             # All Zigbee lamps have dimmer built-in
@@ -865,13 +877,6 @@ end
                 conf_str.append(
                     f"Number:ElectricPotential {item['id']}_voltage \"{item['name']} [%.0f mV]\""
                     f" <energy> {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:voltage\"}}"
-                )
-
-            # Some zigbee devices report activity
-            if 'activity' in item['type']['types']:
-                conf_str.append(
-                    f"DateTime {item['id']}_activity \"{item['name']} [JS(display-activity.js):%s]\""
-                    f" <time> (g_zigbee_activity) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:activity\"}}"
                 )
 
         conf_str.append('')
