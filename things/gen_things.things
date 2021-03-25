@@ -416,6 +416,17 @@ Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (main)" (mqtt:broker:openh
 		Type datetime : activity [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
+// KG Lager 1 (main) (kg_lager1_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (main)" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : POWER [stateTopic="stat/kg_lager1_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager1_main_light/POWER", on="ON", off="OFF"]
+		Type number : rssi [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
+}
+
 // KG Lager 3 (main) (kg_lager3_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Thing mqtt:topic:openhab:kg_lager3_main_light "KG Lager 3 (main)" (mqtt:broker:openhab) {

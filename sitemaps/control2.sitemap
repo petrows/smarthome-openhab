@@ -171,7 +171,7 @@ sitemap control2 label="KONTROL 2"
 			Frame label="Haupt" {
 				Switch item=snf_kg_l1 label="Haupt [%s]" icon="light"
 				Switch item=snf_kg_l2 label="Flür [%s]" icon="light"
-				Switch item=snf_kg_lg1 label="Lager 1 [%s]" icon="light"
+				Switch item=kg_lager1_main_light label="Lager 1 [%s]" icon="light"
                 Switch item=kg_lager3_main_light label="Lager 3 [%s]" icon="light"
                 Switch item=kg_lager4_main_light label="Lager 4 [%s]" icon="light"
                 Switch item=kg_hz_main_light label="Lager Heuzung [%s]" icon="light"
@@ -315,13 +315,6 @@ sitemap control2 label="KONTROL 2"
 				Text	item=online_wlan_kg icon=network
 				Text	item=online_mi_robot icon=network
 				Text	item=online_max_thermostat icon=network
-				Text	item=online_snf_kg_1 icon=network
-				Text	item=online_snf_kg_2 icon=network
-				Text	item=online_snf_kg_ks icon=network
-				Text	item=online_snf_eg_fs icon=network
-				Text	item=online_snf_eg_ns icon=network
-				Text	item=online_snf_eg_sz icon=network
-				Text	item=online_snf_eg_bz icon=network
 			}
 		}
 	}

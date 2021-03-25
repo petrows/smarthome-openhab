@@ -296,6 +296,14 @@ String kg_hz_main_light_bssid "KG Heuzung (main) BSSID [%s]" <network> {channel=
 Number:Dimensionless kg_hz_main_light_la "KG Heuzung (main) LA [%d]" <energy> {channel="mqtt:topic:openhab:kg_hz_main_light:la"}
 DateTime kg_hz_main_light_activity "KG Heuzung (main) [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_hz_main_light:activity"}
 
+// KG Lager 1 (main) (kg_lager1_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch kg_lager1_main_light "KG Lager 1 (main)" <light> (g_light_all,g_light_kg) {channel="mqtt:topic:openhab:kg_lager1_main_light:POWER", expire="1h,command=OFF"}
+Number:Dimensionless kg_lager1_main_light_rssi "KG Lager 1 (main) RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:kg_lager1_main_light:rssi"}
+String kg_lager1_main_light_bssid "KG Lager 1 (main) BSSID [%s]" <network> {channel="mqtt:topic:openhab:kg_lager1_main_light:bssid"}
+Number:Dimensionless kg_lager1_main_light_la "KG Lager 1 (main) LA [%d]" <energy> {channel="mqtt:topic:openhab:kg_lager1_main_light:la"}
+DateTime kg_lager1_main_light_activity "KG Lager 1 (main) [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_lager1_main_light:activity"}
+
 // KG Lager 3 (main) (kg_lager3_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_lager3_main_light "KG Lager 3 (main)" <light> (g_light_all,g_light_kg) {channel="mqtt:topic:openhab:kg_lager3_main_light:POWER", expire="1h,command=OFF"}

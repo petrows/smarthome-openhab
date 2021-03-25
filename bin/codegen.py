@@ -344,6 +344,21 @@ items = [
         }
     },
     {
+        'name': "KG Lager 1 (main)",
+        'id': "kg_lager1_main_light",
+        'type': DEVICES.TASMOTA_SONOFF_MINI,
+        'groups': {
+            'POWER': ['g_light_all', 'g_light_kg'],
+        },
+        'channels': {
+            'POWER': {
+                'id': 'kg_lager1_main_light',
+                'name': 'KG Lager 1 (main)',
+                'expire': '1h',
+            }
+        }
+    },
+    {
         'name': "KG Lager 3 (main)",
         'id': "kg_lager3_main_light",
         'type': DEVICES.TASMOTA_SONOFF_MINI,
