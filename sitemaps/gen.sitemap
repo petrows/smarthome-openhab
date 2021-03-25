@@ -202,25 +202,37 @@ Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {
 Text item=desktop_petro_remote_link icon="linkz"
 Text item=desktop_petro_remote_ota icon="fire"
 }
-Frame label="KG Heuzung (main) (kg_hz_main_light)" {
+Frame label="KG Hobbyraum (Flür) (kg_main1_light)" {
+Switch item=kg_main1_light
+Text item=kg_main1_light_rssi
+Text item=kg_main1_light_bssid
+Text item=kg_main1_light_la
+}
+Frame label="KG Hobbyraum (Haupt) (kg_main2_light)" {
+Switch item=kg_main2_light
+Text item=kg_main2_light_rssi
+Text item=kg_main2_light_bssid
+Text item=kg_main2_light_la
+}
+Frame label="KG Heuzung (Haupt) (kg_hz_main_light)" {
 Switch item=kg_hz_main_light
 Text item=kg_hz_main_light_rssi
 Text item=kg_hz_main_light_bssid
 Text item=kg_hz_main_light_la
 }
-Frame label="KG Lager 1 (main) (kg_lager1_main_light)" {
+Frame label="KG Lager 1 (Haupt) (kg_lager1_main_light)" {
 Switch item=kg_lager1_main_light
 Text item=kg_lager1_main_light_rssi
 Text item=kg_lager1_main_light_bssid
 Text item=kg_lager1_main_light_la
 }
-Frame label="KG Lager 3 (main) (kg_lager3_main_light)" {
+Frame label="KG Lager 3 (Haupt) (kg_lager3_main_light)" {
 Switch item=kg_lager3_main_light
 Text item=kg_lager3_main_light_rssi
 Text item=kg_lager3_main_light_bssid
 Text item=kg_lager3_main_light_la
 }
-Frame label="KG Lager 4 (main) (kg_lager4_main_light)" {
+Frame label="KG Lager 4 (Haupt) (kg_lager4_main_light)" {
 Switch item=kg_lager4_main_light
 Text item=kg_lager4_main_light_rssi
 Text item=kg_lager4_main_light_bssid

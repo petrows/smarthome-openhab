@@ -405,9 +405,31 @@ Thing mqtt:topic:openhab:desktop_petro_remote "Petro Desktop remote" (mqtt:broke
 		Type switch : ota [stateTopic="zigbee2mqtt/0x000d6ffffee8357d", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// KG Heuzung (main) (kg_hz_main_light)
+// KG Hobbyraum (Flür) (kg_main1_light)
+// Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
+Thing mqtt:topic:openhab:kg_main1_light "KG Hobbyraum (Flür)" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : POWER [stateTopic="stat/kg_main1_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_main1_light/POWER", on="ON", off="OFF"]
+		Type number : rssi [stateTopic="tele/kg_main1_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/kg_main1_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/kg_main1_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/kg_main1_light/STATE", transformationPattern="JS:z2m-activity.js"]
+}
+
+// KG Hobbyraum (Haupt) (kg_main2_light)
+// Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
+Thing mqtt:topic:openhab:kg_main2_light "KG Hobbyraum (Haupt)" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : POWER [stateTopic="stat/kg_main2_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_main2_light/POWER", on="ON", off="OFF"]
+		Type number : rssi [stateTopic="tele/kg_main2_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/kg_main2_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/kg_main2_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/kg_main2_light/STATE", transformationPattern="JS:z2m-activity.js"]
+}
+
+// KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (main)" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (Haupt)" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : POWER [stateTopic="stat/kg_hz_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_hz_main_light/POWER", on="ON", off="OFF"]
 		Type number : rssi [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
@@ -416,9 +438,9 @@ Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (main)" (mqtt:broker:openh
 		Type datetime : activity [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
-// KG Lager 1 (main) (kg_lager1_main_light)
+// KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (main)" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (Haupt)" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : POWER [stateTopic="stat/kg_lager1_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager1_main_light/POWER", on="ON", off="OFF"]
 		Type number : rssi [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
@@ -427,9 +449,9 @@ Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (main)" (mqtt:broker:o
 		Type datetime : activity [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
-// KG Lager 3 (main) (kg_lager3_main_light)
+// KG Lager 3 (Haupt) (kg_lager3_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Thing mqtt:topic:openhab:kg_lager3_main_light "KG Lager 3 (main)" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:kg_lager3_main_light "KG Lager 3 (Haupt)" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : POWER [stateTopic="stat/kg_lager3_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager3_main_light/POWER", on="ON", off="OFF"]
 		Type number : rssi [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
@@ -438,9 +460,9 @@ Thing mqtt:topic:openhab:kg_lager3_main_light "KG Lager 3 (main)" (mqtt:broker:o
 		Type datetime : activity [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
-// KG Lager 4 (main) (kg_lager4_main_light)
+// KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Thing mqtt:topic:openhab:kg_lager4_main_light "KG Lager 4 (main)" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:kg_lager4_main_light "KG Lager 4 (Haupt)" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : POWER [stateTopic="stat/kg_lager4_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager4_main_light/POWER", on="ON", off="OFF"]
 		Type number : rssi [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]

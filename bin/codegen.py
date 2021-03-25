@@ -328,8 +328,38 @@ items = [
         'zigbee_id': '0x000d6ffffee8357d',
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
+    # Hobby Raum (Flür)
     {
-        'name': "KG Heuzung (main)",
+        'name': "KG Hobbyraum (Flür)",
+        'id': "kg_main1_light",
+        'type': DEVICES.TASMOTA_SONOFF_TOUCH_EU1,
+        'groups': {
+            'POWER': ['g_light_all', 'g_light_kg', 'g_light_kg_auto'],
+        },
+        'channels': {
+            'POWER': {
+                'id': 'kg_main1_light',
+                'name': 'KG Hobbyraum (Flür)',
+            }
+        }
+    },
+    # Hobby Raum (Haupt)
+    {
+        'name': "KG Hobbyraum (Haupt)",
+        'id': "kg_main2_light",
+        'type': DEVICES.TASMOTA_SONOFF_TOUCH_EU1,
+        'groups': {
+            'POWER': ['g_light_all', 'g_light_kg'],
+        },
+        'channels': {
+            'POWER': {
+                'id': 'kg_main2_light',
+                'name': 'KG Hobbyraum (Haupt)',
+            }
+        }
+    },
+    {
+        'name': "KG Heuzung (Haupt)",
         'id': "kg_hz_main_light",
         'type': DEVICES.TASMOTA_SONOFF_MINI,
         'groups': {
@@ -338,13 +368,13 @@ items = [
         'channels': {
             'POWER': {
                 'id': 'kg_hz_main_light',
-                'name': 'KG Heuzung (main)',
+                'name': 'KG Heuzung (Haupt)',
                 'expire': '1h',
             }
         }
     },
     {
-        'name': "KG Lager 1 (main)",
+        'name': "KG Lager 1 (Haupt)",
         'id': "kg_lager1_main_light",
         'type': DEVICES.TASMOTA_SONOFF_MINI,
         'groups': {
@@ -353,13 +383,13 @@ items = [
         'channels': {
             'POWER': {
                 'id': 'kg_lager1_main_light',
-                'name': 'KG Lager 1 (main)',
+                'name': 'KG Lager 1 (Haupt)',
                 'expire': '1h',
             }
         }
     },
     {
-        'name': "KG Lager 3 (main)",
+        'name': "KG Lager 3 (Haupt)",
         'id': "kg_lager3_main_light",
         'type': DEVICES.TASMOTA_SONOFF_MINI,
         'groups': {
@@ -368,13 +398,13 @@ items = [
         'channels': {
             'POWER': {
                 'id': 'kg_lager3_main_light',
-                'name': 'KG Lager 3 (main)',
+                'name': 'KG Lager 3 (Haupt)',
                 'expire': '1h',
             }
         }
     },
     {
-        'name': "KG Lager 4 (main)",
+        'name': "KG Lager 4 (Haupt)",
         'id': "kg_lager4_main_light",
         'type': DEVICES.TASMOTA_SONOFF_MINI,
         'groups': {
@@ -383,7 +413,7 @@ items = [
         'channels': {
             'POWER': {
                 'id': 'kg_lager4_main_light',
-                'name': 'KG Lager 4 (main)',
+                'name': 'KG Lager 4 (Haupt)',
                 'expire': '1h',
             }
         }

@@ -169,12 +169,12 @@ sitemap control2 label="KONTROL 2"
 				Text item=treppe_motion_occupancy label="Motion Treppe [%s]"
 			}
 			Frame label="Haupt" {
-				Switch item=snf_kg_l1 label="Haupt [%s]" icon="light"
-				Switch item=snf_kg_l2 label="Flür [%s]" icon="light"
+				Switch item=kg_main2_light label="Haupt [%s]" icon="light"
+				Switch item=kg_main1_light label="Flür [%s]" icon="light"
 				Switch item=kg_lager1_main_light label="Lager 1 [%s]" icon="light"
                 Switch item=kg_lager3_main_light label="Lager 3 [%s]" icon="light"
                 Switch item=kg_lager4_main_light label="Lager 4 [%s]" icon="light"
-                Switch item=kg_hz_main_light label="Lager Heuzung [%s]" icon="light"
+                Switch item=kg_hz_main_light label="Heuzung [%s]" icon="light"
 			}
 			Frame label="Lager" {
 				Switch item=g_light_lager_auto label="Lager Flür [%s]" icon="light"
