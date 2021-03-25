@@ -329,6 +329,36 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
     {
+        'name': "KG Heuzung (main)",
+        'id': "kg_hz_main_light",
+        'type': DEVICES.TASMOTA_SONOFF_MINI,
+        'groups': {
+            'POWER': ['g_light_all', 'g_light_kg'],
+        },
+        'channels': {
+            'POWER': {
+                'id': 'kg_hz_main_light',
+                'name': 'KG Heuzung (main)',
+                'expire': '1h',
+            }
+        }
+    },
+    {
+        'name': "KG Lager 3 (main)",
+        'id': "kg_lager3_main_light",
+        'type': DEVICES.TASMOTA_SONOFF_MINI,
+        'groups': {
+            'POWER': ['g_light_all', 'g_light_kg'],
+        },
+        'channels': {
+            'POWER': {
+                'id': 'kg_lager3_main_light',
+                'name': 'KG Lager 3 (main)',
+                'expire': '1h',
+            }
+        }
+    },
+    {
         'name': "KG Lager 4 (main)",
         'id': "kg_lager4_main_light",
         'type': DEVICES.TASMOTA_SONOFF_MINI,
@@ -339,6 +369,7 @@ items = [
             'POWER': {
                 'id': 'kg_lager4_main_light',
                 'name': 'KG Lager 4 (main)',
+                'expire': '1h',
             }
         }
     },
@@ -400,6 +431,8 @@ def device_label(item):
     device_id = ''
     if np.in1d(['zigbee'], item['type']['types']).any():
         device_id = item['zigbee_id']
+    else:
+        device_id = item['id']
     return f"{item['name']} ({device_id})"
 
 
@@ -634,7 +667,7 @@ if __name__ == "__main__":
             # Iterate through avaliable channels
             for channel in item['type']['tasmota_channels']:
                 channel_cfg = item['channels'][channel['id']]
-                device_icon = channel_cfg.get('icon', 'switch')
+                device_icon = channel_cfg.get('icon', 'light')
                 if 'expire' in channel_cfg:
                     device_timout = f", expire=\"{channel_cfg['expire']},command=OFF\""
                 conf_str.append(
@@ -744,7 +777,7 @@ if __name__ == "__main__":
         if np.in1d(['rssi'], item['type']['types']).any():
             device_icon = 'network'
             conf_str.append(
-                f"Number:Dimensionless {item['id']}_rssi \"{item['name']} RSSI [%.0f %unit%]\" <{device_icon}>"
+                f"Number:Dimensionless {item['id']}_rssi \"{item['name']} RSSI [%.0f]\" <{device_icon}>"
                 f"{device_groups(item,'rssi')}"
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:rssi\"}}"
             )

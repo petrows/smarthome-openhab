@@ -288,10 +288,24 @@ Switch desktop_petro_remote_ota "Petro Desktop remote OTA [%s]" <fire> (g_zigbee
 Number:Dimensionless desktop_petro_remote_battery "Petro Desktop remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:desktop_petro_remote:battery"}
 Switch desktop_petro_remote_battery_low "Petro Desktop remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:desktop_petro_remote:battery_low"}
 
-// KG Lager 4 (main) ()
+// KG Heuzung (main) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_lager4_main_light "KG Lager 4 (main)" <switch> (g_light_all,g_light_kg) {channel="mqtt:topic:openhab:kg_lager4_main_light:POWER"}
-Number:Dimensionless kg_lager4_main_light_rssi "KG Lager 4 (main) RSSI [%.0f %unit%]" <network> {channel="mqtt:topic:openhab:kg_lager4_main_light:rssi"}
+Switch kg_hz_main_light "KG Heuzung (main)" <light> (g_light_all,g_light_kg) {channel="mqtt:topic:openhab:kg_hz_main_light:POWER", expire="1h,command=OFF"}
+Number:Dimensionless kg_hz_main_light_rssi "KG Heuzung (main) RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:kg_hz_main_light:rssi"}
+String kg_hz_main_light_bssid "KG Heuzung (main) BSSID [%s]" <network> {channel="mqtt:topic:openhab:kg_hz_main_light:bssid"}
+Number:Dimensionless kg_hz_main_light_la "KG Heuzung (main) LA [%d]" <energy> {channel="mqtt:topic:openhab:kg_hz_main_light:la"}
+
+// KG Lager 3 (main) (kg_lager3_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch kg_lager3_main_light "KG Lager 3 (main)" <light> (g_light_all,g_light_kg) {channel="mqtt:topic:openhab:kg_lager3_main_light:POWER", expire="1h,command=OFF"}
+Number:Dimensionless kg_lager3_main_light_rssi "KG Lager 3 (main) RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:kg_lager3_main_light:rssi"}
+String kg_lager3_main_light_bssid "KG Lager 3 (main) BSSID [%s]" <network> {channel="mqtt:topic:openhab:kg_lager3_main_light:bssid"}
+Number:Dimensionless kg_lager3_main_light_la "KG Lager 3 (main) LA [%d]" <energy> {channel="mqtt:topic:openhab:kg_lager3_main_light:la"}
+
+// KG Lager 4 (main) (kg_lager4_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch kg_lager4_main_light "KG Lager 4 (main)" <light> (g_light_all,g_light_kg) {channel="mqtt:topic:openhab:kg_lager4_main_light:POWER", expire="1h,command=OFF"}
+Number:Dimensionless kg_lager4_main_light_rssi "KG Lager 4 (main) RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:kg_lager4_main_light:rssi"}
 String kg_lager4_main_light_bssid "KG Lager 4 (main) BSSID [%s]" <network> {channel="mqtt:topic:openhab:kg_lager4_main_light:bssid"}
 Number:Dimensionless kg_lager4_main_light_la "KG Lager 4 (main) LA [%d]" <energy> {channel="mqtt:topic:openhab:kg_lager4_main_light:la"}
 
