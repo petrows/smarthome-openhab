@@ -133,6 +133,9 @@ then
         }
         case "off": {
             sendCommand(g_light_lager_auto, OFF)
+            sendCommand(kg_lager1_main_light, OFF)
+            sendCommand(kg_lager3_main_light, OFF)
+            sendCommand(kg_lager4_main_light, OFF)
         }
     }
 end
