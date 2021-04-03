@@ -144,6 +144,17 @@ class DEVICES:
         'device_name': 'Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W)',
         'device_url': '?',
     }
+    # Heiman
+    HEIMAN_SW_1_GANG = {
+        'types': [
+            'zigbee',
+            'plug',
+            'heiman',
+            'device_temperature',
+        ],
+        'device_name': 'HEIMAN Smart switch - 1 gang with neutral wire (HS2SW1A/HS2SW1A-N)',
+        'device_url': 'https://zigbee.blakadder.com/Heiman_HS2SW1A.html',
+    }
     # Tuya
     TUYA_THERMOSTAT_VALVE = {
         'types': [

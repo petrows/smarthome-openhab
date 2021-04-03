@@ -45,6 +45,12 @@ Switch eg_leave_switch_battery_low "Leave switch [MAP(lowbat.map):%s]" <lowbatte
 Number:Dimensionless eg_router_link "EG Router LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:eg_router:link"}
 Switch eg_router_ota "EG Router OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:eg_router:ota"}
 
+// BZ Light (0x086bd7fffefb619a)
+// HEIMAN Smart switch - 1 gang with neutral wire (HS2SW1A/HS2SW1A-N) / https://zigbee.blakadder.com/Heiman_HS2SW1A.html
+Switch bz_light_sw "BZ Light" <switch> (g_light_all,g_light_eg,g_light_eg_bz) {channel="mqtt:topic:openhab:bz_light:state"}
+Number:Dimensionless bz_light_link "BZ Light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light:link"}
+Switch bz_light_ota "BZ Light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light:ota"}
+
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Number:Temperature ns_climate_temperature "NS Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ns_climate:temperature"}

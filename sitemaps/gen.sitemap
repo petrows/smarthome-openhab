@@ -34,6 +34,11 @@ Frame label="EG Router (0x00124b000b4ed5cc)" {
 Text item=eg_router_link icon="linkz"
 Text item=eg_router_ota icon="fire"
 }
+Frame label="BZ Light (0x086bd7fffefb619a)" {
+Switch item=bz_light_sw
+Text item=bz_light_link icon="linkz"
+Text item=bz_light_ota icon="fire"
+}
 Frame label="NS Climate (0x00158d0001b95e08)" {
 Text item=ns_climate_temperature
 Text item=ns_climate_humidity

@@ -83,6 +83,16 @@ items = [
         'zigbee_id': '0x00124b000b4ed5cc',
         'type': DEVICES.DIY_CC2540_ROUTER,
     },
+    # EG (Closet)
+    {
+        'name': "BZ Light",
+        'id': "bz_light",
+        'zigbee_id': '0x086bd7fffefb619a',
+        'type': DEVICES.HEIMAN_SW_1_GANG,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz'],
+        }
+    },
     # EG (Nagel Studio)
     {
         'name': "NS Climate",

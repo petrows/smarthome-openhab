@@ -62,6 +62,15 @@ Thing mqtt:topic:openhab:eg_router "EG Router" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/0x00124b000b4ed5cc", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// BZ Light (0x086bd7fffefb619a)
+// HEIMAN Smart switch - 1 gang with neutral wire (HS2SW1A/HS2SW1A-N) / https://zigbee.blakadder.com/Heiman_HS2SW1A.html
+Thing mqtt:topic:openhab:bz_light "BZ Light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/0x086bd7fffefb619a", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/0x086bd7fffefb619a/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/0x086bd7fffefb619a", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/0x086bd7fffefb619a", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {
