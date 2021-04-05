@@ -1,3 +1,4 @@
+import org.openhab.core.types.State
 import java.util.concurrent.locks.ReentrantLock
 val ReentrantLock lock  = new ReentrantLock()
 
@@ -104,24 +105,6 @@ then
     ns_power_2_sw.sendCommand(newState.toString())
 end
 
-rule "BZ force both lights work together"
-when
-       Item snf_eg_bz_1 changed
-    or Item snf_eg_bz_2 changed
-then
-    if (in_bz_rule) { return }
-    in_bz_rule = true
-    lock.lock()
-    try {
-        logWarn("light", "BZ -> " + newState)
-        // g_light_eg_bz.sendCommand(newState.toString())
-        Thread::sleep(1000)
-    } finally{
-        in_bz_rule = false
-        lock.unlock()
-    }
-end
-
 // Christmas lights auto
 rule "Sunset Rule"
 when
@@ -188,5 +171,5 @@ rule "KU Arbeitlicht switch"
 when
     Item snf_eg_ku_arbeit received update
 then
-    ku_light_arbeitplatte_sw.sendCommand(newState)
+    ku_light_arbeitplatte_sw.sendCommand(newState.toString())
 end
