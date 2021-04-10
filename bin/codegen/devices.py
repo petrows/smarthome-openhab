@@ -178,6 +178,16 @@ class DEVICES:
         'device_name': 'TuYa Rechargeable Zigbee contact sensor (SNTZ007)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/SNTZ007.html',
     }
+    TUYA_WALL_RELAY = {
+        'types': [
+            'zigbee',
+            'contact',
+            'battery',
+            'voltage',
+        ],
+        'device_name': 'TuYa Wall switch module (WHD02)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/WHD02.html',
+    }
     # Lidl smart home - Silvercrest
     SILVERCREST_SMART_PLUG = {
         'types': [

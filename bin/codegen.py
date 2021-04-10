@@ -10,6 +10,8 @@ import os
 import logging
 import argparse
 import numpy as np
+import yaml
+from pprint import pp
 
 from codegen.devices import DEVICES
 
@@ -34,6 +36,7 @@ PREAMBULA = """
 # 0xec1bbdfffe4695b5 - Ikea WW 806 (ebay)
 # 0x60a423fffe4b9138 - Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) (Aldi 2020-02-27)
 # 0x60a423fffe4b91cf - Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) (Aldi 2020-03-02)
+# 0x847127fffe0c873b - TuYa Wall switch module (WHD02) (aliexpress 2020-04-09)
 
 
 # Items defentition
@@ -525,6 +528,7 @@ if __name__ == "__main__":
     # Generate some common values
     item_ids = []
     zigbee_ids = []
+    zigbee_devices_list = {}
     for x, item in enumerate(items):
         if item['id'] in item_ids:
             raise Exception(f"Device ID {item['id']} is not unique!")
@@ -537,6 +541,7 @@ if __name__ == "__main__":
             if items[x]['zigbee_short'] in zigbee_ids:
                 raise Exception(f"Device ID {item['id']} is not unique!")
             zigbee_ids.append(items[x]['zigbee_short'])
+            zigbee_devices_list[item['zigbee_id']] = item['id']
 
     # Generate THINGS
     conf_str = [PREAMBULA]
@@ -599,27 +604,28 @@ if __name__ == "__main__":
                 f"Thing mqtt:topic:openhab:{item['mqtt_topic']} \"{item['name']}\" (mqtt:broker:openhab) {{")
             conf_str.append(
                 f"\tChannels:")
+            zigbe_mqtt_topic = f"zigbee2mqtt/{item['id']}"
             # Device has switch option
             if np.in1d(['lamp', 'plug'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType switch : state ["
-                    f"stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\""
+                    f"stateTopic=\"{zigbe_mqtt_topic}\""
                     f", transformationPattern=\"JSONPATH:$.state\""
-                    f", commandTopic=\"zigbee2mqtt/{item['zigbee_id']}/set\""
+                    f", commandTopic=\"{zigbe_mqtt_topic}/set\""
                     f", transformationPatternOut=\"JS:z2m-command-state.js\""
                     f"]"
                 )
             # Device has remote option
             if np.in1d(['remote'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType string : action [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.action\", trigger=true]")
+                    f"\t\tType string : action [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.action\", trigger=true]")
             # Device has dimmer
             if np.in1d(['lamp'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType dimmer : dim ["
-                    f"stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\""
+                    f"stateTopic=\"{zigbe_mqtt_topic}\""
                     f", transformationPattern=\"JSONPATH:$.brightness\""
-                    f", commandTopic=\"zigbee2mqtt/{item['zigbee_id']}/set\""
+                    f", commandTopic=\"{zigbe_mqtt_topic}/set\""
                     f", transformationPatternOut=\"JS:z2m-command-brightness.js\", min=1, max=255"
                     f"]"
                 )
@@ -627,9 +633,9 @@ if __name__ == "__main__":
             if np.in1d(['ct'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType dimmer : ct ["
-                    f"stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\""
+                    f"stateTopic=\"{zigbe_mqtt_topic}\""
                     f", transformationPattern=\"JSONPATH:$.color_temp\""
-                    f", commandTopic=\"zigbee2mqtt/{item['zigbee_id']}/set\""
+                    f", commandTopic=\"{zigbe_mqtt_topic}/set\""
                     f", transformationPatternOut=\"JS:z2m-command-color_temp.js\", min=150, max=500"
                     f"]"
                 )
@@ -637,9 +643,9 @@ if __name__ == "__main__":
             if np.in1d(['thermostat'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType number : thermostat ["
-                    f"stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\""
+                    f"stateTopic=\"{zigbe_mqtt_topic}\""
                     f", transformationPattern=\"JSONPATH:$.current_heating_setpoint\""
-                    f", commandTopic=\"zigbee2mqtt/{item['zigbee_id']}/set\""
+                    f", commandTopic=\"{zigbe_mqtt_topic}/set\""
                     f", transformationPatternOut=\"JS:z2m-command-thermostat-setpoint.js\""
                     f", unit=\"°C\""
                     f"]"
@@ -648,56 +654,56 @@ if __name__ == "__main__":
             # Device has Position sensor
             if np.in1d(['position'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : position [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.position\"]")
+                    f"\t\tType number : position [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.position\"]")
 
             # Device has Contact sensor (inverse OPEN/CLOSE logic)
             if np.in1d(['contact'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType contact : contact [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.contact\", on=\"false\", off=\"true\"]")
+                    f"\t\tType contact : contact [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.contact\", on=\"false\", off=\"true\"]")
 
             # Device has Motion sensor
             if np.in1d(['motion'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType switch : occupancy [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.occupancy\", on=\"true\", off=\"false\"]")
+                    f"\t\tType switch : occupancy [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.occupancy\", on=\"true\", off=\"false\"]")
             # Device has Leak sensor
             if np.in1d(['leak'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType switch : leak [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.water_leak\", on=\"true\", off=\"false\"]")
+                    f"\t\tType switch : leak [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.water_leak\", on=\"true\", off=\"false\"]")
             # Device has Temp sensor
             if np.in1d(['temperature'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : temperature [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-temperature.js\",unit=\"°C\"]")  # Could be different fields,sudo detect here
+                    f"\t\tType number : temperature [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JS:z2m-temperature.js\",unit=\"°C\"]")  # Could be different fields,sudo detect here
 
             if np.in1d(['humidity'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : humidity [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.humidity\"]")
+                    f"\t\tType number : humidity [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.humidity\"]")
             if np.in1d(['pressure'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : pressure [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.pressure\",unit=\"hPa\"]")
+                    f"\t\tType number : pressure [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.pressure\",unit=\"hPa\"]")
             # Some zigbee devices needs to be monitored
             if np.in1d(['activity'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType datetime : activity [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-activity.js\"]")
+                    f"\t\tType datetime : activity [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JS:z2m-activity.js\"]")
             # Some zigbee devices report battery OR battery_low signal
             if np.in1d(['battery'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : battery [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"REGEX:(.*battery.*)∩JSONPATH:$.battery\"]")
+                    f"\t\tType number : battery [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"REGEX:(.*battery.*)∩JSONPATH:$.battery\"]")
                 conf_str.append(
-                    f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"REGEX:(.*battery.*)∩JS:z2m-lowbatt.js\"]")
+                    f"\t\tType switch : battery_low [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"REGEX:(.*battery.*)∩JS:z2m-lowbatt.js\"]")
             else:
                 if np.in1d(['battery_low'], item['type']['types']).any():
                     conf_str.append(
-                        f"\t\tType switch : battery_low [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JSONPATH:$.battery_low\", on=\"true\", off=\"false\"]")
+                        f"\t\tType switch : battery_low [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.battery_low\", on=\"true\", off=\"false\"]")
             # Some zigbee devices report battery voltage
             if np.in1d(['voltage'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : voltage [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"JS:z2m-batt-mv.js\",unit=\"V\"]")
+                    f"\t\tType number : voltage [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JS:z2m-batt-mv.js\",unit=\"V\"]")
             # All zigbee devices have Link Quality reported
             conf_str.append(
-                f"\t\tType number : link [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality\"]")
+                f"\t\tType number : link [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality\"]")
             # All zigbee devices probably have some OTA updates reported
             conf_str.append(
-                f"\t\tType switch : ota [stateTopic=\"zigbee2mqtt/{item['zigbee_id']}\", transformationPattern=\"REGEX:(.*update_available.*)∩JSONPATH:$.update_available\", on=\"true\", off=\"false\"]")
+                f"\t\tType switch : ota [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"REGEX:(.*update_available.*)∩JSONPATH:$.update_available\", on=\"true\", off=\"false\"]")
             conf_str.append(
                 f"}}")
 
@@ -974,3 +980,25 @@ sitemap gen label="GEN ITEMS"
         f = open(os.path.join(ROOT_PATH, 'rules', 'gen_auto.rules'), 'w')
         f.write(gen_rules)
         f.close()
+
+    # (re)Generate Zigbee devices list
+    if args.write:
+        # Load old devices config
+        device_yaml = yaml.load(
+            open(
+                os.path.join(ROOT_PATH, 'devices.yaml'),
+                'r'
+            ),
+            Loader=yaml.FullLoader
+        )
+        for zigbee_id, zigbee_name in zigbee_devices_list.items():
+            if zigbee_id in device_yaml:
+                device_yaml[zigbee_id]['friendly_name'] = zigbee_name
+
+        yaml.dump(
+            device_yaml,
+            open(
+                os.path.join(ROOT_PATH, 'devices.yaml'),
+                'w'
+            )
+        )
