@@ -275,5 +275,11 @@ Text item=sz_heating_temperature
 Text item=sz_heating_link icon="linkz"
 Text item=sz_heating_ota icon="fire"
 }
+Frame label="Tuya test 1 (0x842e14fffe1267fb)" {
+Switch item=mt_test_1_sw
+Switch item=mt_test_2_sw
+Text item=tuya_test_1_link icon="linkz"
+Text item=tuya_test_1_ota icon="fire"
+}
 
 }

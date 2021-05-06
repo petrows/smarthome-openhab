@@ -391,3 +391,10 @@ DateTime sz_heating_activity "SZ heating [JS(display-activity.js):%s]" <time> (g
 Number:Dimensionless sz_heating_link "SZ heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_heating:link"}
 Switch sz_heating_ota "SZ heating OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
 Switch sz_heating_battery_low "SZ heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_heating:battery_low"}
+
+// Tuya test 1 (0x842e14fffe1267fb)
+// TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
+Switch mt_test_1_sw "MT Test SW 1" <light> (g_light_all,g_light_eg) {channel="mqtt:topic:openhab:tuya_test_1:state_l1", expire="1s,command=OFF"}
+Switch mt_test_2_sw "MT Test SW 2" <light> {channel="mqtt:topic:openhab:tuya_test_1:state_l2"}
+Number:Dimensionless tuya_test_1_link "Tuya test 1 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:tuya_test_1:link"}
+Switch tuya_test_1_ota "Tuya test 1 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:tuya_test_1:ota"}

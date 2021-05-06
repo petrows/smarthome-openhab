@@ -482,6 +482,27 @@ items = [
             'position': ['g_hz_valve'],
         }
     },
+    # New devices
+    {
+        'name': "Tuya test 1",
+        'id': "tuya_test_1",
+        'zigbee_id': '0x842e14fffe1267fb',
+        'type': DEVICES.TUYA_WALL_SWITCH_TS0601,
+        'channels': {
+            'l1': {
+                'id': 'mt_test_1',
+                'expire': '1s',
+                'name': 'MT Test SW 1',
+                'groups': {
+                    'sw': ['g_light_all', 'g_light_eg'],
+                }
+            },
+            'l2': {
+                'id': 'mt_test_2',
+                'name': 'MT Test SW 2',
+            },
+        }
+    },
 ]
 
 
@@ -615,6 +636,18 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-state.js\""
                     f"]"
                 )
+            # Device has switch (multi-gang) option
+            if np.in1d(['plug_mt'], item['type']['types']).any():
+                # Iterate through avaliable channels
+                for channel_id, channel in item['channels'].items():
+                    conf_str.append(
+                        f"\t\tType switch : state_{channel_id} ["
+                        f"stateTopic=\"{zigbe_mqtt_topic}\""
+                        f", transformationPattern=\"JSONPATH:$.state_{channel_id}\""
+                        f", commandTopic=\"{zigbe_mqtt_topic}/set\""
+                        f", formatBeforePublish=\"{{\\\"state_{channel_id}\\\":\\\"%s\\\"}}\""
+                        f"]"
+                    )
             # Device has remote option
             if np.in1d(['remote'], item['type']['types']).any():
                 conf_str.append(
@@ -744,6 +777,23 @@ if __name__ == "__main__":
                 device_items['items'].append(f"Switch item={item['id']}")
 
         # Generic devices
+
+        # SOme device have switch (multi-gang) option
+        if np.in1d(['plug_mt'], item['type']['types']).any():
+            # Iterate through avaliable channels
+            for channel_id, channel in item['channels'].items():
+                device_icon = 'light'
+                if 'icon' in channel:
+                    device_icon = channel['icon']
+                device_timout = ''
+                if 'expire' in channel:
+                    device_timout = f", expire=\"{channel['expire']},command=OFF\""
+                conf_str.append(
+                    f"Switch {channel['id']}_sw \"{channel['name']}\" <{device_icon}>"
+                    f"{device_groups(channel,'sw')}"
+                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state_{channel_id}\"{device_timout}}}"
+                )
+                device_items['items'].append(f"Switch item={channel['id']}_sw")
 
         # Some devices have switch option
         if np.in1d(['lamp', 'plug'], item['type']['types']).any():

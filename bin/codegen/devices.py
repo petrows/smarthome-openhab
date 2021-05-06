@@ -188,6 +188,14 @@ class DEVICES:
         'device_name': 'TuYa Wall switch module (WHD02)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/WHD02.html',
     }
+    TUYA_WALL_SWITCH_TS0601 = {
+        'types': [
+            'zigbee',
+            'plug_mt',
+        ],
+        'device_name': 'TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/TS0601_switch.html',
+    }
     # Lidl smart home - Silvercrest
     SILVERCREST_SMART_PLUG = {
         'types': [
