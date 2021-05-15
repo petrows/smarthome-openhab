@@ -15,7 +15,7 @@ Text item=ext_climate_humidity
 Text item=ext_climate_link icon="linkz"
 Text item=ext_climate_ota icon="fire"
 }
-Frame label="Balkon light 1 (0x60a423fffe4b9138)" {
+Frame label="Balkon light 1 (0x14b457fffe399241)" {
 Switch item=balkon_light_1_sw
 Slider item=balkon_light_1_dim
 Slider item=balkon_light_1_ct

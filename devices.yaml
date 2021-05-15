@@ -25,7 +25,7 @@
 '0x086bd7fffefb619a':
   friendly_name: bz_light
 '0x14b457fffe399241':
-  friendly_name: '0x14b457fffe399241'
+  friendly_name: balkon_light_1
 '0x14b457fffe6383e5':
   friendly_name: '0x14b457fffe6383e5'
 '0x14b457fffe7e2305':
@@ -34,8 +34,6 @@
   friendly_name: treppe_down_light
 '0x5c0272fffec9d557':
   friendly_name: sz_heating
-'0x60a423fffe4b9138':
-  friendly_name: balkon_light_1
 '0x60a423fffe4b91cf':
   friendly_name: '0x60a423fffe4b91cf'
 '0x680ae2fffe16e111':

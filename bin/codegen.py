@@ -54,8 +54,8 @@ items = [
     {
         'name': "Balkon light 1",
         'id': "balkon_light_1",
-        'zigbee_id': '0x60a423fffe4b9138',
-        'type': DEVICES.ALDI_FILAMENT,
+        'zigbee_id': '0x14b457fffe399241',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
         'groups': {
             'sw': ['g_light_all', 'balkon_light'],
             'dim': ['balkon_light_dim'],

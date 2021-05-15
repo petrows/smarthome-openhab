@@ -21,8 +21,8 @@ Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// Balkon light 1 (0x60a423fffe4b9138)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
+// Balkon light 1 (0x14b457fffe399241)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Thing mqtt:topic:openhab:balkon_light_1 "Balkon light 1" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/balkon_light_1", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/balkon_light_1/set", transformationPatternOut="JS:z2m-command-state.js"]

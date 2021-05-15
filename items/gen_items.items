@@ -18,8 +18,8 @@ Number:Dimensionless ext_climate_battery "Outside Climate [%.0f %%]" <battery> (
 Switch ext_climate_battery_low "Outside Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ext_climate:battery_low"}
 Number:ElectricPotential ext_climate_voltage "Outside Climate [%.0f mV]" <energy> {channel="mqtt:topic:openhab:ext_climate:voltage"}
 
-// Balkon light 1 (0x60a423fffe4b9138)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
+// Balkon light 1 (0x14b457fffe399241)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Switch balkon_light_1_sw "Balkon light 1" <light> (g_light_all,balkon_light) {channel="mqtt:topic:openhab:balkon_light_1:state"}
 Dimmer balkon_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (balkon_light_dim) {channel="mqtt:topic:openhab:balkon_light_1:dim"}
 Dimmer balkon_light_1_ct "Balkon light 1 CT [JS(display-mired.js):%s]" <colorwheel> (balkon_light_ct) {channel="mqtt:topic:openhab:balkon_light_1:ct"}
