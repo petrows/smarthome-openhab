@@ -69,3 +69,9 @@ DateTime weather_fc_6h_time "Forecast 6h time [%s]" <time> { channel="darksky:we
 Number:Temperature weather_fc_6h_temp "Forecast 6h [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastHours07#temperature" }
 String weather_fc_6h_icon "Forecast 6h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours07#icon-id" }
 String weather_fc_6h_summary "Summary 6h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours07#condition" }
+
+// Forecast today
+
+DateTime weather_fc_today_time "Forecast today time [%1$tY-%1$tm-%1$td]" <time> { channel="darksky:weather-and-forecast:api:local:forecastToday#time-stamp" }
+Number:Temperature weather_fc_today_temp_max "Forecast today max [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastToday#max-temperature" }
+Number:Speed weather_fc_today_precip_intensity "Forecast today precip intens [%.2f mm/h]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastToday#precip-intensity" }
