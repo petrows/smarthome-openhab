@@ -158,15 +158,6 @@ Thing mqtt:topic:openhab:desktop_marina_remote "Marina Desktop remote" (mqtt:bro
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// FS Christmas light (0x7cb03eaa0a09ad23)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:fs_christmas_light "FS Christmas light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/fs_christmas_light/set", transformationPatternOut="JS:z2m-command-state.js"]
-		Type number : link [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-
 // SZ Climate (0x00158d0001c19a6b)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
@@ -455,6 +446,15 @@ Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (Haupt)" (mqtt:broker:open
 		Type string : bssid [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
+}
+
+// Garten wasser (0x7cb03eaa0a09ad23)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:garten_wasser "Garten wasser" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/garten_wasser", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/garten_wasser/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/garten_wasser", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/garten_wasser", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
 // KG Lager 1 (Haupt) (kg_lager1_main_light)

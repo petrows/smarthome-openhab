@@ -113,12 +113,6 @@ Switch desktop_marina_remote_ota "Marina Desktop remote OTA [%s]" <fire> (g_zigb
 Number:Dimensionless desktop_marina_remote_battery "Marina Desktop remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:desktop_marina_remote:battery"}
 Switch desktop_marina_remote_battery_low "Marina Desktop remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:desktop_marina_remote:battery_low"}
 
-// FS Christmas light (0x7cb03eaa0a09ad23)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch fs_christmas_light_sw "FS Christmas light" <switch> (g_light_christmas) {channel="mqtt:topic:openhab:fs_christmas_light:state"}
-Number:Dimensionless fs_christmas_light_link "FS Christmas light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:fs_christmas_light:link"}
-Switch fs_christmas_light_ota "FS Christmas light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:fs_christmas_light:ota"}
-
 // SZ Climate (0x00158d0001c19a6b)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Number:Temperature sz_climate_temperature "SZ Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:sz_climate:temperature"}
@@ -324,6 +318,12 @@ Number:Dimensionless kg_hz_main_light_rssi "KG Heuzung (Haupt) RSSI [%.0f]" <net
 String kg_hz_main_light_bssid "KG Heuzung (Haupt) BSSID [%s]" <network> {channel="mqtt:topic:openhab:kg_hz_main_light:bssid"}
 Number:Dimensionless kg_hz_main_light_la "KG Heuzung (Haupt) LA [%d]" <energy> {channel="mqtt:topic:openhab:kg_hz_main_light:la"}
 DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_hz_main_light:activity"}
+
+// Garten wasser (0x7cb03eaa0a09ad23)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Switch garten_wasser_sw "Garten wasser" <switch> {channel="mqtt:topic:openhab:garten_wasser:state", expire="15m,command=OFF"}
+Number:Dimensionless garten_wasser_link "Garten wasser LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:garten_wasser:link"}
+Switch garten_wasser_ota "Garten wasser OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:garten_wasser:ota"}
 
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html

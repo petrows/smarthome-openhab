@@ -83,11 +83,6 @@ Frame label="Marina Desktop remote (0xccccccfffeea9703)" {
 Text item=desktop_marina_remote_link icon="linkz"
 Text item=desktop_marina_remote_ota icon="fire"
 }
-Frame label="FS Christmas light (0x7cb03eaa0a09ad23)" {
-Switch item=fs_christmas_light_sw
-Text item=fs_christmas_light_link icon="linkz"
-Text item=fs_christmas_light_ota icon="fire"
-}
 Frame label="SZ Climate (0x00158d0001c19a6b)" {
 Text item=sz_climate_temperature
 Text item=sz_climate_humidity
@@ -230,6 +225,11 @@ Switch item=kg_hz_main_light
 Text item=kg_hz_main_light_rssi
 Text item=kg_hz_main_light_bssid
 Text item=kg_hz_main_light_la
+}
+Frame label="Garten wasser (0x7cb03eaa0a09ad23)" {
+Switch item=garten_wasser_sw
+Text item=garten_wasser_link icon="linkz"
+Text item=garten_wasser_ota icon="fire"
 }
 Frame label="KG Lager 1 (Haupt) (kg_lager1_main_light)" {
 Switch item=kg_lager1_main_light

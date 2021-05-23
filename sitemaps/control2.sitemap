@@ -257,6 +257,7 @@ sitemap control2 label="KONTROL 2"
 		Switch item=snf_kg_ks_power label="Bier Kühlschrank" icon="climate"
 		Switch item=kg_lager4_leak_leak
 		Switch item=g_light_christmas
+		Switch item=garten_wasser_sw
 	}
 
 	Frame icon="bedroom" {
