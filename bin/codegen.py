@@ -406,7 +406,7 @@ items = [
         'id': "garten_wasser",
         'zigbee_id': '0x7cb03eaa0a09ad23',
         'type': DEVICES.OSRAM_SMART_PLUG,
-        'expire': '15m',
+        'expire': '20m',
     },
     # Lagere
     {

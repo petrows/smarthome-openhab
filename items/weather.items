@@ -1,5 +1,8 @@
 Number  weather_radiation { channel="mqtt:topic:openhab:weather-radiation:level" }
 
+Number:Temperature weather_today_temp_min "Temperature today min [%.0f %unit%]" <temperature>
+Number:Temperature weather_today_temp_max "Temperature today max [%.0f %unit%]" <temperature>
+
 Group AirQuality <flow>
 
 Number   Aqi_Level           "Air Quality Index" <flow> (AirQuality) { channel="airquality:aqi:home:aqiLevel" }

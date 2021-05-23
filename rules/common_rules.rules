@@ -80,6 +80,29 @@ then
 	snf_kg_ks_power.sendCommand(OFF)
 end
 
+// Temperature logging
+rule "Climate: today stat reset"
+when
+    Time cron "0 00 00 ? * *"
+then
+    logInfo("common", "Reset today climate vars")
+	weather_today_temp_max.sendCommand(ext_climate_temperature.state as Number)
+	weather_today_temp_min.sendCommand(ext_climate_temperature.state as Number)
+end
+
+rule "Climate: today stat set"
+when
+    Item ext_climate_temperature changed
+then
+    val Number tempCurrent = ext_climate_temperature.state as Number
+    if (weather_today_temp_max.state < tempCurrent) {
+	    weather_today_temp_max.sendCommand(tempCurrent)
+    }
+    if (weather_today_temp_min.state > tempCurrent) {
+	    weather_today_temp_min.sendCommand(tempCurrent)
+    }
+end
+
 // Garten water
 rule "Garten water on"
 when
@@ -116,7 +139,7 @@ then
         }
     }
     // Start it
-    logInfo("common", "Garten wasser start, time is " + workTimeMinutes)
+    logInfo("common", "Garten wasser start, time is {}", workTimeMinutes)
 	garten_wasser_sw.sendCommand(ON)
     // Plan stop
     gartenTimer = createTimer(now.plusMinutes(workTimeMinutes), [ |
@@ -124,7 +147,23 @@ then
         garten_wasser_sw.sendCommand(OFF)
         Thread::sleep(1000)
         garten_wasser_sw.sendCommand(OFF)
-        gartenTimer = null // cancel the timer
+    ])
+end
+
+rule "Garten water on (everning)"
+when
+    Time cron "0 00 21 ? * *"
+then
+    if (weather_today_temp_max.state < 30) {
+        logInfo("common", "Garten wasser everning not required, max temp was {}", weather_today_temp_max.state)
+        return
+    }
+    logInfo("common", "Garten wasser everning is required, max temp was {}", weather_today_temp_max.state)
+    gartenTimer = createTimer(now.plusMinutes(10), [ |
+        logInfo("common", "Garten wasser stop")
+        garten_wasser_sw.sendCommand(OFF)
+        Thread::sleep(1000)
+        garten_wasser_sw.sendCommand(OFF)
     ])
 end
 
