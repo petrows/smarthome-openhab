@@ -142,6 +142,12 @@ Switch item=ku_light_arbeitplatte_sw
 Text item=ku_light_arbeitplatte_link icon="linkz"
 Text item=ku_light_arbeitplatte_ota icon="fire"
 }
+Frame label="KU Light SW (0x842e14fffe1267fb)" {
+Switch item=ku_light_switch_haupt_sw
+Switch item=ku_light_switch_arbeit_sw
+Text item=ku_light_switch_link icon="linkz"
+Text item=ku_light_switch_ota icon="fire"
+}
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 Text item=treppe_door_sensor_contact
 Text item=treppe_door_sensor_link icon="linkz"
@@ -274,12 +280,6 @@ Text item=sz_heating_position
 Text item=sz_heating_temperature
 Text item=sz_heating_link icon="linkz"
 Text item=sz_heating_ota icon="fire"
-}
-Frame label="Tuya test 1 (0x842e14fffe1267fb)" {
-Switch item=mt_test_1_sw
-Switch item=mt_test_2_sw
-Text item=tuya_test_1_link icon="linkz"
-Text item=tuya_test_1_ota icon="fire"
 }
 
 }

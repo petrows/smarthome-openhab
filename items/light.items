@@ -62,8 +62,7 @@ Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg, g_l
 Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }
 Switch snf_eg_sz "EG Schlaffzimmer Licht" <light> (g_light_all, g_light_eg, g_light_eg_sz) { channel="mqtt:topic:openhab:snf-eg-sz:power" }
 Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_fs) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
-Switch snf_eg_ku_haupt "KU Haupt" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power1" }
-Switch snf_eg_ku_arbeit "KU Arbeit" <light> (g_light_all, g_light_eg, g_light_eg_ku) { channel="mqtt:topic:openhab:snf-eg-ku:power2", expire="3h,command=OFF" }
+
 
 // Yeelight (Night SZ)
 

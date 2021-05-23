@@ -157,15 +157,6 @@ items = [
         'zigbee_id': '0xccccccfffeea9703',
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
-    {
-        'name': "FS Christmas light",
-        'id': "fs_christmas_light",
-        'zigbee_id': '0x7cb03eaa0a09ad23',
-        'type': DEVICES.OSRAM_SMART_PLUG,
-        'groups': {
-            'sw': ['g_light_christmas'],
-        }
-    },
     # EG (Bedroom)
     {
         'name': "SZ Climate",
@@ -246,6 +237,29 @@ items = [
         'expire': '3h',
         'groups': {
             'sw': ['g_light_all', 'g_light_eg', 'g_light_kg_ku'],
+        }
+    },
+    {
+        'name': "KU Light SW",
+        'id': "ku_light_switch",
+        'zigbee_id': '0x842e14fffe1267fb',
+        'type': DEVICES.TUYA_WALL_SWITCH_TS0601,
+        'channels': {
+            'l1': {
+                'id': 'ku_light_switch_haupt',
+                'name': 'KU Light Haupt (Wall SW)',
+                'groups': {
+                    'sw': ['g_light_all', 'g_light_eg', 'g_light_ku'],
+                }
+            },
+            'l2': {
+                'id': 'ku_light_switch_arbeit',
+                'name': 'KU Light Arbeit (Wall SW)',
+                'expire': '3h',
+                'groups': {
+                    'sw': ['g_light_all', 'g_light_eg', 'g_light_ku'],
+                }
+            },
         }
     },
     # Ladder (Treppe)
@@ -386,6 +400,15 @@ items = [
             }
         }
     },
+    # Garten wassering
+    {
+        'name': "Garten wasser",
+        'id': "garten_wasser",
+        'zigbee_id': '0x7cb03eaa0a09ad23',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+        'expire': '15m',
+    },
+    # Lagere
     {
         'name': "KG Lager 1 (Haupt)",
         'id': "kg_lager1_main_light",
@@ -483,26 +506,7 @@ items = [
         }
     },
     # New devices
-    {
-        'name': "Tuya test 1",
-        'id': "tuya_test_1",
-        'zigbee_id': '0x842e14fffe1267fb',
-        'type': DEVICES.TUYA_WALL_SWITCH_TS0601,
-        'channels': {
-            'l1': {
-                'id': 'mt_test_1',
-                'expire': '1s',
-                'name': 'MT Test SW 1',
-                'groups': {
-                    'sw': ['g_light_all', 'g_light_eg'],
-                }
-            },
-            'l2': {
-                'id': 'mt_test_2',
-                'name': 'MT Test SW 2',
-            },
-        }
-    },
+
 ]
 
 

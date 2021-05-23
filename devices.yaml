@@ -53,13 +53,13 @@
 '0x7cb03eaa0a094d1d':
   friendly_name: ns_projector_power
 '0x7cb03eaa0a09ad23':
-  friendly_name: fs_christmas_light
+  friendly_name: garten_wasser
 '0x7cb03eaa0a09e7bc':
   friendly_name: ns_christmas_light
 '0x7cb03eaa0a0a1103':
   friendly_name: ns_heating_boost_power
 '0x842e14fffe1267fb':
-  friendly_name: tuya_test_1
+  friendly_name: ku_light_switch
 '0x847127fffe0c873b':
   friendly_name: '0x847127fffe0c873b'
 '0xbc33acfffe84ca1e':

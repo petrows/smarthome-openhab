@@ -247,17 +247,17 @@ then
 	var state = receivedEvent
     switch(state) {
         case "single": {
-            if (snf_eg_ku_arbeit.state == ON) {
-                snf_eg_ku_arbeit.sendCommand(OFF)
+            if (ku_light_switch_arbeit_sw.state == ON) {
+                ku_light_switch_arbeit_sw.sendCommand(OFF)
             } else {
-                snf_eg_ku_arbeit.sendCommand(ON)
+                ku_light_switch_arbeit_sw.sendCommand(ON)
             }
         }
         case "hold": {
-            if (snf_eg_ku_haupt.state == ON) {
-                snf_eg_ku_haupt.sendCommand(OFF)
+            if (ku_light_switch_haupt_sw.state == ON) {
+                ku_light_switch_haupt_sw.sendCommand(OFF)
             } else {
-                snf_eg_ku_haupt.sendCommand(ON)
+                ku_light_switch_haupt_sw.sendCommand(ON)
             }
         }
     }
@@ -270,17 +270,17 @@ then
 	var state = receivedEvent
     switch(state) {
         case "toggle": {
-            if (snf_eg_ku_arbeit.state == ON) {
-                snf_eg_ku_arbeit.sendCommand(OFF)
+            if (ku_light_switch_arbeit_sw.state == ON) {
+                ku_light_switch_arbeit_sw.sendCommand(OFF)
             } else {
-                snf_eg_ku_arbeit.sendCommand(ON)
+                ku_light_switch_arbeit_sw.sendCommand(ON)
             }
         }
         case "brightness_up_click": {
-            snf_eg_ku_haupt.sendCommand(ON)
+            ku_light_switch_haupt_sw.sendCommand(ON)
         }
         case "brightness_down_click": {
-            snf_eg_ku_haupt.sendCommand(OFF)
+            ku_light_switch_haupt_sw.sendCommand(OFF)
         }
     }
 end

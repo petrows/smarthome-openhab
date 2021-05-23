@@ -279,6 +279,16 @@ Thing mqtt:topic:openhab:ku_light_arbeitplatte "KU Light Arbeit" (mqtt:broker:op
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_arbeitplatte", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// KU Light SW (0x842e14fffe1267fb)
+// TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
+Thing mqtt:topic:openhab:ku_light_switch "KU Light SW" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state_l1 [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="JSONPATH:$.state_l1", commandTopic="zigbee2mqtt/ku_light_switch/set", formatBeforePublish="{\"state_l1\":\"%s\"}"]
+		Type switch : state_l2 [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="JSONPATH:$.state_l2", commandTopic="zigbee2mqtt/ku_light_switch/set", formatBeforePublish="{\"state_l2\":\"%s\"}"]
+		Type number : link [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:treppe_door_sensor "Treppe Door sensor" (mqtt:broker:openhab) {
@@ -547,14 +557,4 @@ Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-
-// Tuya test 1 (0x842e14fffe1267fb)
-// TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
-Thing mqtt:topic:openhab:tuya_test_1 "Tuya test 1" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state_l1 [stateTopic="zigbee2mqtt/tuya_test_1", transformationPattern="JSONPATH:$.state_l1", commandTopic="zigbee2mqtt/tuya_test_1/set", formatBeforePublish="{\"state_l1\":\"%s\"}"]
-		Type switch : state_l2 [stateTopic="zigbee2mqtt/tuya_test_1", transformationPattern="JSONPATH:$.state_l2", commandTopic="zigbee2mqtt/tuya_test_1/set", formatBeforePublish="{\"state_l2\":\"%s\"}"]
-		Type number : link [stateTopic="zigbee2mqtt/tuya_test_1", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/tuya_test_1", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
