@@ -7,6 +7,8 @@ things/weather.things
 things/mi-robot.things
 # Spotify token is secret
 things/spotify.things
+# Telegram token is secret
+things/telegram.things
 
 bin/config.sh
 .vscode

@@ -38,6 +38,9 @@ when
 then
 	sendBroadcastNotification("WATER LEAK IN KG!")
 	logWarn("water-leak", "WATER LEAK IN KG!")
+
+    val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
+    telegramAction.sendTelegram("WATER LEAK IN KG!")
 end
 
 // This rule send notifications if item was not updated within 24 hrs
@@ -56,6 +59,9 @@ then
 
             if (diff_hours > 24) {
                 sendBroadcastNotification("Item " + s.label + " no activity for " + diff_hours + " h")
+
+                val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
+                telegramAction.sendTelegram("Item " + s.label + " no activity for " + diff_hours + " h")
             }
         } else {
             logInfo("activity", "Item " + s.label + " never updated")
