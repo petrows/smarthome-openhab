@@ -448,13 +448,15 @@ Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (Haupt)" (mqtt:broker:open
 		Type datetime : activity [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
-// Garten wasser (0x7cb03eaa0a09ad23)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:garten_wasser "Garten wasser" (mqtt:broker:openhab) {
+// Garten wasser (garten_wasser_sw)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Thing mqtt:topic:openhab:garten_wasser_sw "Garten wasser" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/garten_wasser", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/garten_wasser/set", transformationPatternOut="JS:z2m-command-state.js"]
-		Type number : link [stateTopic="zigbee2mqtt/garten_wasser", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/garten_wasser", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type switch : POWER [stateTopic="stat/garten_wasser_sw/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/garten_wasser_sw/POWER", on="ON", off="OFF"]
+		Type number : rssi [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
 // KG Lager 1 (Haupt) (kg_lager1_main_light)

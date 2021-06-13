@@ -129,13 +129,13 @@ then
         case 4,
         case 5: {
             // Spring
-            workTimeMinutes = 10
+            workTimeMinutes = 20
         }
         case 6,
         case 7,
         case 8: {
             // Summer
-            workTimeMinutes = 15
+            workTimeMinutes = 25
         }
         case 9,
         case 10,
@@ -160,23 +160,16 @@ rule "Garten water on (everning)"
 when
     Time cron "0 00 21 ? * *"
 then
-    if (weather_today_temp_max.state < 30) {
+    if (weather_today_temp_max.state < 25 | "°C") {
         logInfo("common", "Garten wasser everning not required, max temp was {}", weather_today_temp_max.state)
         return
     }
     logInfo("common", "Garten wasser everning is required, max temp was {}", weather_today_temp_max.state)
+    garten_wasser_sw.sendCommand(ON)
     gartenTimer = createTimer(now.plusMinutes(10), [ |
         logInfo("common", "Garten wasser stop")
         garten_wasser_sw.sendCommand(OFF)
         Thread::sleep(1000)
         garten_wasser_sw.sendCommand(OFF)
     ])
-end
-
-rule "Garten water off"
-when
-    Time cron "0 30 * ? * *"
-then
-    logInfo("common", "Garten wasser safe off")
-	garten_wasser_sw.sendCommand(OFF)
 end

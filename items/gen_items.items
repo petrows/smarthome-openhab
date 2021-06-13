@@ -319,11 +319,13 @@ String kg_hz_main_light_bssid "KG Heuzung (Haupt) BSSID [%s]" <network> {channel
 Number:Dimensionless kg_hz_main_light_la "KG Heuzung (Haupt) LA [%d]" <energy> {channel="mqtt:topic:openhab:kg_hz_main_light:la"}
 DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_hz_main_light:activity"}
 
-// Garten wasser (0x7cb03eaa0a09ad23)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch garten_wasser_sw "Garten wasser" <switch> {channel="mqtt:topic:openhab:garten_wasser:state", expire="30m,command=OFF"}
-Number:Dimensionless garten_wasser_link "Garten wasser LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:garten_wasser:link"}
-Switch garten_wasser_ota "Garten wasser OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:garten_wasser:ota"}
+// Garten wasser (garten_wasser_sw)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch garten_wasser_sw "Garten wasser" <light> {channel="mqtt:topic:openhab:garten_wasser_sw:POWER", expire="1h,command=OFF"}
+Number:Dimensionless garten_wasser_sw_rssi "Garten wasser RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:garten_wasser_sw:rssi"}
+String garten_wasser_sw_bssid "Garten wasser BSSID [%s]" <network> {channel="mqtt:topic:openhab:garten_wasser_sw:bssid"}
+Number:Dimensionless garten_wasser_sw_la "Garten wasser LA [%d]" <energy> {channel="mqtt:topic:openhab:garten_wasser_sw:la"}
+DateTime garten_wasser_sw_activity "Garten wasser [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:garten_wasser_sw:activity"}
 
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html

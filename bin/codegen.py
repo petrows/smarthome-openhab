@@ -403,10 +403,15 @@ items = [
     # Garten wassering
     {
         'name': "Garten wasser",
-        'id': "garten_wasser",
-        'zigbee_id': '0x7cb03eaa0a09ad23',
-        'type': DEVICES.OSRAM_SMART_PLUG,
-        'expire': '30m',
+        'id': "garten_wasser_sw",
+        'type': DEVICES.TASMOTA_SONOFF_MINI,
+        'channels': {
+            'POWER': {
+                'id': 'garten_wasser_sw',
+                'name': 'Garten wasser',
+                'expire': '1h',
+            }
+        }
     },
     # Lagere
     {
