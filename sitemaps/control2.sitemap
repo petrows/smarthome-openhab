@@ -290,14 +290,13 @@ sitemap control2 label="KONTROL 2"
 			}
 		}
 
-		Group item=g_zigbee_activity label="Zigbee" icon=network {
+		Group item=g_zigbee_link label="Zigbee" icon=linkz {
 			Frame label="ZigBee Config" {
 				Switch	item=zigbee_root_pair label="ZigBee pair Erlaubnis"
 			}
 			Frame label="ZigBee" {
 				Group item=g_zigbee_link
 				Group item=g_zigbee_ota icon="fire"
-				Group item=g_zigbee_activity
 			}
 		}
 
