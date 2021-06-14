@@ -284,3 +284,18 @@ then
         }
     }
 end
+
+rule "Garten wasser remote"
+when
+    Channel "mqtt:topic:openhab:garten_wasser_remote:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "on": {
+            garten_wasser_sw.sendCommand(ON)
+        }
+        case "off": {
+            garten_wasser_sw.sendCommand(OFF)
+        }
+    }
+end

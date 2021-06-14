@@ -62,6 +62,12 @@ items = [
             'ct': ['balkon_light_ct'],
         }
     },
+    {
+        'name': "Garten wasser remote",
+        'id': "garten_wasser_remote",
+        'zigbee_id': '0xccccccfffe58f1c3',
+        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+    },
     # EG (Corridor)
     # {
     #     'name': "Corridor main light",

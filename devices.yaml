@@ -66,6 +66,8 @@
   friendly_name: kg_lager4_motion
 '0xbc33acfffe872049':
   friendly_name: treppe_motion
+'0xccccccfffe58f1c3':
+  friendly_name: garten_wasser_remote
 '0xccccccfffed82b91':
   friendly_name: treppe_door_sensor
 '0xccccccfffed82ba3':

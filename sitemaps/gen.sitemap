@@ -22,6 +22,10 @@ Slider item=balkon_light_1_ct
 Text item=balkon_light_1_link icon="linkz"
 Text item=balkon_light_1_ota icon="fire"
 }
+Frame label="Garten wasser remote (0xccccccfffe58f1c3)" {
+Text item=garten_wasser_remote_link icon="linkz"
+Text item=garten_wasser_remote_ota icon="fire"
+}
 Frame label="Mirror remote (0x680ae2fffeab6b80)" {
 Text item=mirror_remote_link icon="linkz"
 Text item=mirror_remote_ota icon="fire"

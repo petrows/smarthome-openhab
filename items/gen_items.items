@@ -26,6 +26,13 @@ Dimmer balkon_light_1_ct "Balkon light 1 CT [JS(display-mired.js):%s]" <colorwhe
 Number:Dimensionless balkon_light_1_link "Balkon light 1 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:balkon_light_1:link"}
 Switch balkon_light_1_ota "Balkon light 1 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:balkon_light_1:ota"}
 
+// Garten wasser remote (0xccccccfffe58f1c3)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Number:Dimensionless garten_wasser_remote_link "Garten wasser remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:garten_wasser_remote:link"}
+Switch garten_wasser_remote_ota "Garten wasser remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:garten_wasser_remote:ota"}
+Number:Dimensionless garten_wasser_remote_battery "Garten wasser remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:garten_wasser_remote:battery"}
+Switch garten_wasser_remote_battery_low "Garten wasser remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:garten_wasser_remote:battery_low"}
+
 // Mirror remote (0x680ae2fffeab6b80)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Number:Dimensionless mirror_remote_link "Mirror remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:mirror_remote:link"}
