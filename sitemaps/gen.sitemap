@@ -236,6 +236,10 @@ Text item=garten_wasser_sw_rssi
 Text item=garten_wasser_sw_bssid
 Text item=garten_wasser_sw_la
 }
+Frame label="Garten wasser leak (0x00158d0006b7aa81)" {
+Text item=garten_wasser_leak_link icon="linkz"
+Text item=garten_wasser_leak_ota icon="fire"
+}
 Frame label="KG Lager 1 (Haupt) (kg_lager1_main_light)" {
 Switch item=kg_lager1_main_light
 Text item=kg_lager1_main_light_rssi
@@ -285,6 +289,13 @@ Text item=sz_heating_position
 Text item=sz_heating_temperature
 Text item=sz_heating_link icon="linkz"
 Text item=sz_heating_ota icon="fire"
+}
+Frame label="KG heating (0x5c0272fffedc2f41)" {
+Setpoint item=kg_heating_thermostat minValue=5 maxValue=30 step=1
+Text item=kg_heating_position
+Text item=kg_heating_temperature
+Text item=kg_heating_link icon="linkz"
+Text item=kg_heating_ota icon="fire"
 }
 
 }

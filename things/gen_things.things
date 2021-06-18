@@ -470,6 +470,19 @@ Thing mqtt:topic:openhab:garten_wasser_sw "Garten wasser" (mqtt:broker:openhab) 
 		Type datetime : activity [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
+// Garten wasser leak (0x00158d0006b7aa81)
+// Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
+Thing mqtt:topic:openhab:garten_wasser_leak "Garten wasser leak" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : leak [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="JSONPATH:$.water_leak", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="JS:z2m-activity.js"]
+		Type number : battery [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : voltage [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
+		Type number : link [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (Haupt)" (mqtt:broker:openhab) {
@@ -570,4 +583,17 @@ Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// KG heating (0x5c0272fffedc2f41)
+// TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
+Thing mqtt:topic:openhab:kg_heating "KG heating" (mqtt:broker:openhab) {
+	Channels:
+		Type number : thermostat [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/kg_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint.js", unit="°C"]
+		Type number : position [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JSONPATH:$.position"]
+		Type number : temperature [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:z2m-temperature.js",unit="°C"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:z2m-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
+		Type number : link [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }

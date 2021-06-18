@@ -37,6 +37,8 @@ PREAMBULA = """
 # 0x60a423fffe4b9138 - Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) (Aldi 2020-02-27)
 # 0x60a423fffe4b91cf - Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) (Aldi 2020-03-02)
 # 0x847127fffe0c873b - TuYa Wall switch module (WHD02) (aliexpress 2020-04-09)
+# 0x00158d0006b7aa81 - Xiaomi Aqara water leak sensor (SJCGQ11LM) (aliexpress 2020-06-18)
+# 0x5c0272fffedc2f41 - TuYa Radiator valve with thermostat (TS0601_thermostat) (aliexpress 2020-06-18)
 
 
 # Items defentition
@@ -419,6 +421,12 @@ items = [
             }
         }
     },
+    {
+        'name': "Garten wasser leak",
+        'id': "garten_wasser_leak",
+        'zigbee_id': '0x00158d0006b7aa81',
+        'type': DEVICES.XIAOMI_AQARA_LEAK_V1,
+    },
     # Lagere
     {
         'name': "KG Lager 1 (Haupt)",
@@ -513,6 +521,16 @@ items = [
         'type': DEVICES.TUYA_THERMOSTAT_VALVE,
         'groups': {
             'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_eg'],
+            'position': ['g_hz_valve'],
+        }
+    },
+    {
+        'name': "KG heating",
+        'id': "kg_heating",
+        'zigbee_id': '0x5c0272fffedc2f41',
+        'type': DEVICES.TUYA_THERMOSTAT_VALVE,
+        'groups': {
+            'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_kg'],
             'position': ['g_hz_valve'],
         }
     },
@@ -1059,6 +1077,8 @@ sitemap gen label="GEN ITEMS"
         for zigbee_id, zigbee_name in zigbee_devices_list.items():
             if zigbee_id in device_yaml:
                 device_yaml[zigbee_id]['friendly_name'] = zigbee_name
+            else:
+                device_yaml[zigbee_id] = {'friendly_name': zigbee_name}
 
         yaml.dump(
             device_yaml,

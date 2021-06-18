@@ -27,11 +27,11 @@ Switch ns_heating_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF"
 
 // KG
 Switch kg_heating_enabled "HZ KG enable [%s]"
-Switch kg_heating_lbatt "HZ KG [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1208573:battery_low"}
-String kg_heating_mode "Modus []" {channel="max:thermostat:NEQ1442869:OEQ1208573:mode"}
-Number kg_heating_sensor "Sens [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1208573:actual_temp"}
-Number kg_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_kg) {channel="max:thermostat:NEQ1442869:OEQ1208573:set_temp"}
-Number kg_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ1208573:valve"}
+// Switch kg_heating_lbatt "HZ KG [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1208573:battery_low"}
+// String kg_heating_mode "Modus []" {channel="max:thermostat:NEQ1442869:OEQ1208573:mode"}
+// Number kg_heating_sensor "Sens [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1208573:actual_temp"}
+// Number kg_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_kg) {channel="max:thermostat:NEQ1442869:OEQ1208573:set_temp"}
+// Number kg_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ1208573:valve"}
 
 // Kuche
 Switch ku_heating_lbatt "HZ KU [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ2037329:battery_low"}

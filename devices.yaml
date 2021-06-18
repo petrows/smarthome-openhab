@@ -22,6 +22,8 @@
   friendly_name: ext_climate
 '0x00158d000488052c':
   friendly_name: kg_lager4_leak
+'0x00158d0006b7aa81':
+  friendly_name: garten_wasser_leak
 '0x086bd7fffefb619a':
   friendly_name: bz_light
 '0x14b457fffe399241':
@@ -34,6 +36,8 @@
   friendly_name: treppe_down_light
 '0x5c0272fffec9d557':
   friendly_name: sz_heating
+'0x5c0272fffedc2f41':
+  friendly_name: kg_heating
 '0x60a423fffe4b91cf':
   friendly_name: '0x60a423fffe4b91cf'
 '0x680ae2fffe16e111':
