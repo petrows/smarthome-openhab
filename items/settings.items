@@ -13,5 +13,7 @@ Switch cfgPersistanceEnable "Определение присутствия" <par
 
 Switch cfg_christmas_lights_enable "Christmas Licht [%s]" <light> (gSettings)
 
+Switch cfg_wassering_auto_enable "Wasserung auto [%s]" <faucet> (gSettings)
+
 Group:Switch:OR(ON,OFF) g_battery_low
 Group:Number:MIN g_battery_level

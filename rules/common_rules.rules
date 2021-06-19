@@ -32,15 +32,30 @@ then
 	}
 end
 
-rule "Waterleak"
+rule "Waterleak LG 4"
 when
-	Item kg_water_leak_1 changed to ON
+	Item kg_lager4_leak_leak changed to ON
 then
-	sendBroadcastNotification("WATER LEAK IN KG!")
-	logWarn("water-leak", "WATER LEAK IN KG!")
+	sendBroadcastNotification("WATER LEAK IN KG 4!")
+	logWarn("water-leak", "WATER LEAK IN KG 4!")
 
     val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
-    telegramAction.sendTelegram("WATER LEAK IN KG!")
+    telegramAction.sendTelegram("WATER LEAK IN KG 4!")
+end
+
+rule "Waterleak LG 3"
+when
+	Item garten_wasser_leak_leak changed to ON
+then
+	sendBroadcastNotification("WATER LEAK IN KG 2!")
+	logWarn("water-leak", "WATER LEAK IN KG 2!")
+
+    // Disable auto wasser
+    cfg_wassering_auto_enable.sendCommand(OFF)
+    garten_wasser_sw.sendCommand(OFF)
+
+    val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
+    telegramAction.sendTelegram("WATER LEAK IN KG 2!")
 end
 
 // This rule send notifications if item was not updated within 24 hrs
@@ -114,6 +129,12 @@ rule "Garten water on"
 when
     Time cron "0 00 05 ? * *"
 then
+    // Master switch
+    if (cfg_wassering_auto_enable.state == OFF) {
+        logInfo("common", "Garten wasser disabled")
+        return
+    }
+
     // Decide wassering time from month number
     val currMonth = now.getMonthValue()
     var workTimeMinutes = 10
@@ -160,6 +181,12 @@ rule "Garten water on (everning)"
 when
     Time cron "0 00 21 ? * *"
 then
+    // Master switch
+    if (cfg_wassering_auto_enable.state == OFF) {
+        logInfo("common", "Garten wasser disabled")
+        return
+    }
+
     if (weather_today_temp_max.state < 25 | "°C") {
         logInfo("common", "Garten wasser everning not required, max temp was {}", weather_today_temp_max.state)
         return
