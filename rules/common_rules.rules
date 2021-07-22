@@ -179,7 +179,7 @@ end
 
 rule "Garten water on (everning)"
 when
-    Time cron "0 00 21 ? * *"
+    Time cron "0 00 23 ? * *"
 then
     // Master switch
     if (cfg_wassering_auto_enable.state == OFF) {
@@ -187,7 +187,7 @@ then
         return
     }
 
-    if (weather_today_temp_max.state < 25 | "°C") {
+    if (weather_today_temp_max.state < 30 | "°C") {
         logInfo("common", "Garten wasser everning not required, max temp was {}", weather_today_temp_max.state)
         return
     }
