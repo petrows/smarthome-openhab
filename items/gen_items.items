@@ -195,14 +195,14 @@ Switch ku_light_switch_kochfeld_battery_low "KU Light Button (Kochfield) [MAP(lo
 
 // KU Light Arbeit (0xec1bbdfffea37757)
 // Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html
-Switch ku_light_arbeitplatte_sw "KU Light Arbeit" <switch> (g_light_all,g_light_eg,g_light_kg_ku) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:state", expire="3h,command=OFF"}
+Switch ku_light_arbeitplatte_sw "KU Light Arbeit" <switch> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:state", expire="3h,command=OFF"}
 Number:Dimensionless ku_light_arbeitplatte_link "KU Light Arbeit LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:link"}
 Switch ku_light_arbeitplatte_ota "KU Light Arbeit OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:ota"}
 
 // KU Light SW (0x842e14fffe1267fb)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
-Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_light_all,g_light_eg,g_light_ku) {channel="mqtt:topic:openhab:ku_light_switch:state_l1"}
-Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_light_all,g_light_eg,g_light_ku) {channel="mqtt:topic:openhab:ku_light_switch:state_l2", expire="3h,command=OFF"}
+Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_switch:state_l1"}
+Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_switch:state_l2", expire="3h,command=OFF"}
 Number:Dimensionless ku_light_switch_link "KU Light SW LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_switch:link"}
 Switch ku_light_switch_ota "KU Light SW OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_switch:ota"}
 

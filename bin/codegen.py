@@ -244,7 +244,7 @@ items = [
         'type': DEVICES.SILVERCREST_SMART_PLUG,
         'expire': '3h',
         'groups': {
-            'sw': ['g_light_all', 'g_light_eg', 'g_light_kg_ku'],
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
         }
     },
     {
@@ -257,7 +257,7 @@ items = [
                 'id': 'ku_light_switch_haupt',
                 'name': 'KU Light Haupt (Wall SW)',
                 'groups': {
-                    'sw': ['g_light_all', 'g_light_eg', 'g_light_ku'],
+                    'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
                 }
             },
             'l2': {
@@ -265,7 +265,7 @@ items = [
                 'name': 'KU Light Arbeit (Wall SW)',
                 'expire': '3h',
                 'groups': {
-                    'sw': ['g_light_all', 'g_light_eg', 'g_light_ku'],
+                    'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
                 }
             },
         }
