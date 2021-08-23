@@ -102,13 +102,6 @@ then
     desktop_petro_power_try.sendCommand(OFF)
 end
 
-rule "NS follow table power"
-when
-    Item snf_eg_ns_table changed
-then
-    ns_power_2_sw.sendCommand(newState.toString())
-end
-
 // Christmas lights auto
 rule "Sunset Rule"
 when

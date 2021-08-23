@@ -55,7 +55,6 @@ Number	yel_rgb_temp	"Цветовая температура" <colorpicker>
 Color	yel_rgb_color	"Цвет"
 
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
-Switch snf_eg_ns_table "NS Tisch" <energy> (g_light_all, g_light_eg,g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns-table:power" }
 
 Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg, g_light_eg_flur) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
 Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg, g_light_eg_flur, g_light_eg_sz_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
