@@ -87,6 +87,7 @@ when
 then
 	if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && hz_temp_auto.state != cfgHeatingTempOff.state)) {
 		logInfo("heating", "Auto disabled")
+        g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
 		return
 	}
 
