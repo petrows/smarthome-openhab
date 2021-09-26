@@ -17,3 +17,4 @@ Switch cfg_wassering_auto_enable "Wasserung auto [%s]" <faucet> (gSettings)
 
 Group:Switch:OR(ON,OFF) g_battery_low
 Group:Number:MIN g_battery_level
+Group:Number:MIN g_battery_voltage

@@ -1020,7 +1020,7 @@ end
             if 'voltage' in item['type']['types']:
                 conf_str.append(
                     f"Number:ElectricPotential {item['id']}_voltage \"{item['name']} [%.0f mV]\""
-                    f" <energy> {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:voltage\"}}"
+                    f" <energy> (g_battery_voltage) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:voltage\"}}"
                 )
 
         conf_str.append('')
