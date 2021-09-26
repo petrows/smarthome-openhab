@@ -38,7 +38,7 @@ Switch ku_heating_lbatt "HZ KU [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low
 String ku_heating_mode "Modus []" {channel="max:thermostat:NEQ1442869:OEQ2037329:mode"}
 Number ku_heating_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ2037329:actual_temp"}
 Number ku_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="max:thermostat:NEQ1442869:OEQ2037329:set_temp"}
-Number ku_heating_valve "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ2037329:valve"}
+Number ku_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ2037329:valve"}
 
 // Schlaffzimmer
 Switch sz_heating_enabled "HZ SZ enable [%s]"
