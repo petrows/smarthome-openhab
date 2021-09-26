@@ -6,7 +6,5 @@ Strategies {
 }
 
 Items {
-	* : strategy = everyChange, restoreOnStartup
-	gMiSensorsClimate* : strategy = everyChange, everyMinute
-	gMax* : strategy = everyChange, everyHour
+	* : strategy = everyChange, restoreOnStartup, everyHour
 }
