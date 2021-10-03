@@ -163,7 +163,7 @@ class DEVICES:
             'temperature',
             'position',
             'activity',
-            'battery_low',
+            # 'battery_low', # For using akkus - invalid battery level reporting
         ],
         'device_name': 'TuYa Radiator valve with thermostat (TS0601_thermostat)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html',

@@ -580,7 +580,6 @@ Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 		Type number : position [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JSONPATH:$.position"]
 		Type number : temperature [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:z2m-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -593,7 +592,6 @@ Thing mqtt:topic:openhab:kg_heating "KG heating" (mqtt:broker:openhab) {
 		Type number : position [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JSONPATH:$.position"]
 		Type number : temperature [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:z2m-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
