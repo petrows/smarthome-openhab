@@ -42,24 +42,5 @@ function hslToRgb(h, s, l) {
     hsbValues[2] = parseFloat(hsbValues[2]) / 100.0
     var rgbValue = hslToRgb(hsbValues[0], hsbValues[1], hsbValues[2])
 
-    var_R = Math.pow(rgbValue[0], 2.19921875);
-    var_G = Math.pow(rgbValue[1], 2.19921875);
-    var_B = Math.pow(rgbValue[2], 2.19921875);
-
-    var_R = var_R * 100;
-    var_G = var_G * 100;
-    var_B = var_B * 100;
-
-    var X = var_R * 0.7161046 + var_G * 0.1009296 + var_B * 0.1471858;
-    var Y = var_R * 0.2581874 + var_G * 0.7249378 + var_B * 0.0168748;
-    var Z = var_R * 0.0000000 + var_G * 0.0517813 + var_B * 0.7734287;
-
-    color_x = 0.0
-    color_y = 0.0
-
-    if ((X + Y + Z) > 0) {
-        color_x = X / (X + Y + Z);
-        color_y = Y / (X + Y + Z);
-    }
-    return "{\"color\":{\"x\":" + color_x + ",\"y\":" + color_y + "}}"
+    return "{\"color\":{\"r\":" + rgbValue[0] + ",\"g\":" + rgbValue[1] + ",\"b\":" + rgbValue[2] + "}}"
 })(input)
