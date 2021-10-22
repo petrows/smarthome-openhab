@@ -38,7 +38,7 @@ function hslToRgb(h, s, l) {
 (function(x) {
     var hsbValues = x.split(',');
     hsbValues[0] = parseFloat(hsbValues[0]) / 360.0
-    hsbValues[1] = parseFloat(hsbValues[2]) / 100.0
+    hsbValues[1] = parseFloat(hsbValues[1]) / 100.0
     hsbValues[2] = parseFloat(hsbValues[2]) / 100.0
     var rgbValue = hslToRgb(hsbValues[0], hsbValues[1], hsbValues[2])
 
