@@ -148,6 +148,11 @@ sitemap control2 label="KONTROL 2"
 				Slider item=g_light_eg_sz_night_brightness label="Nacht dim [%d %%]" icon="light"
 				Switch item=light_sunrise_enabled icon="light"
 			}
+			Frame label="Bed" {
+				Switch item=sz_bed_bottom_lamp_sw label="Color lamp [%s]"
+				Slider item=sz_bed_bottom_lamp_dim label="Color DIM [%d %%]"
+				Colorpicker item=sz_bed_bottom_lamp_color label="Color"
+			}
 			Frame label="Nachtlampe" {
 				Switch item=sz_declamp_1_sw label="Nacht 1 [%s]"
 				Slider item=sz_declamp_1_dim label="Nacht 1 DIM [%d %%]"
