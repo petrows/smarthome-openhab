@@ -194,6 +194,17 @@ Thing mqtt:topic:openhab:sz_remote "Bedroom remote" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// SZ Bad bottom lamp (0x14b457fffe6383e5)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
+Thing mqtt:topic:openhab:sz_bed_bottom_lamp "SZ Bad bottom lamp" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/sz_bed_bottom_lamp", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/sz_bed_bottom_lamp/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bed_bottom_lamp", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/sz_bed_bottom_lamp/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type color : color [, commandTopic="zigbee2mqtt/sz_bed_bottom_lamp/set", transformationPatternOut="JS:z2m-command-color_xy.js"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_bed_bottom_lamp", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_bottom_lamp", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // SZ Night lamp (0xec1bbdfffe9abfde)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Thing mqtt:topic:openhab:sz_night_lamp "SZ Night lamp" (mqtt:broker:openhab) {

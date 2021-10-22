@@ -179,6 +179,15 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
     {
+        'name': "SZ Bad bottom lamp",
+        'id': "sz_bed_bottom_lamp",
+        'zigbee_id': '0x14b457fffe6383e5',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_COLOR_600,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz'],
+        }
+    },
+    {
         'name': "SZ Night lamp",
         'id': "sz_night_lamp",
         'zigbee_id': '0xec1bbdfffe9abfde',
@@ -705,6 +714,16 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-color_temp.js\", min=150, max=500"
                     f"]"
                 )
+            # Device has Color control
+            if np.in1d(['color'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType color : color ["
+                    # f"stateTopic=\"{zigbe_mqtt_topic}\""
+                    # f", transformationPattern=\"JSONPATH:$.color_xy\""
+                    f", commandTopic=\"{zigbe_mqtt_topic}/set\""
+                    f", transformationPatternOut=\"JS:z2m-command-color_xy.js\""
+                    f"]"
+                )
             # Device has Thermostat control
             if np.in1d(['thermostat'], item['type']['types']).any():
                 conf_str.append(
@@ -987,6 +1006,14 @@ then
 end
 """
                 )
+            # Zigbee color
+            if np.in1d(['color'], item['type']['types']).any():
+                conf_str.append(
+                    f"Color {item['id']}_color \"{item['name']} Color\" <colorwheel>"
+                    f"{device_groups(item,'color')}"
+                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:color\"}}"
+                )
+                device_items['items'].append(f"Colorpicker item={item['id']}_color")
 
             # All zigbee devices have Link Quality reported
             conf_str.append(

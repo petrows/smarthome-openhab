@@ -41,6 +41,16 @@ class DEVICES:
         'device_name': 'IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/LED1842G3.html',
     }
+    IKEA_TRADFRI_LAMP_COLOR_600 = {
+        'types': [
+            'zigbee',
+            'lamp',
+            'ikea',
+            'color',
+        ],
+        'device_name': 'TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/LED1624G9.html',
+    }
     # IKEA Motion
     IKEA_TRADFRI_MOTION_SENSOR = {
         'types': [
