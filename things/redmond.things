@@ -1,0 +1,7 @@
+// r4s/e895fabc219e/rsp/json {"prog":0,"mode":0,"temp":100,"sethours":0,"setmins":30,"state":4,"hours":0,"mins":6,"warm":1}
+
+Thing mqtt:topic:openhab:m800s (mqtt:broker:openhab) {
+	Channels:
+		Type string : state  [ stateTopic="r4s/e895fabc219e/rsp/json", transformationPattern="JS:r4s-state.js" ]
+		Type string : time  [ stateTopic="r4s/e895fabc219e/rsp/json", transformationPattern="JS:r4s-time.js" ]
+}

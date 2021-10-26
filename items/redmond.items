@@ -1,0 +1,3 @@
+// Switch m800s_switch "M800S switch [%s]" <power> {channel="mqtt:topic:openhab:m800s:power"}
+String m800s_state "M800S state [%s]" <kitchen> {channel="mqtt:topic:openhab:m800s:state"}
+String m800s_time "M800S time [%s]" <time> {channel="mqtt:topic:openhab:m800s:time"}
