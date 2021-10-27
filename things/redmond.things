@@ -2,6 +2,8 @@
 
 Thing mqtt:topic:openhab:m800s (mqtt:broker:openhab) {
 	Channels:
+		Type string : state  [ stateTopic="r4s/e895fabc219e/rsp/json", transformationPattern="JS:r4s-state.js", commandTopic="r4s/e895fabc219e/cmd/state" ]
+		Type string : program  [ stateTopic="r4s/e895fabc219e/rsp/json", transformationPattern="JSONPATH:$.prog", commandTopic="r4s/e895fabc219e/cmd/program" ]
 		Type string : state  [ stateTopic="r4s/e895fabc219e/rsp/json", transformationPattern="JS:r4s-state.js" ]
 		Type string : time  [ stateTopic="r4s/e895fabc219e/rsp/json", transformationPattern="JS:r4s-time.js" ]
 }

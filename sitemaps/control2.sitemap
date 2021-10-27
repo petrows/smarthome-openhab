@@ -242,9 +242,10 @@ sitemap control2 label="KONTROL 2"
 	}
 
 	Frame {
-        Group item=m800s_state label="Multicooker [%s]" {
+        Group item=m800s_state_grp label="Multicooker [%s]" {
             Text item=m800s_state
             Text item=m800s_time
+            Switch item=m800s_state_command label="Command []" mappings=["OFF"="OFF", "WARM"="WARM", "ON"="START"]
 		}
 		Group item=miRobotMode label="Robotier [%s]" {
 			Switch 		item=miRobotMode icon="fan" mappings=[vacuum="►", pause="❚❚", dock="⏏"]
