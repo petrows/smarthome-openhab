@@ -1,0 +1,8 @@
+Thing mqtt:topic:openhab:snf-ns-ir (mqtt:broker:openhab) {
+	Channels:
+		Type switch : stb_power [ commandTopic="cmnd/ns_ir/IRsend", formatBeforePublish="{\"Protocol\":\"NEC\",\"Bits\":32,\"Data\":\"0x1FE8A75\",\"DataLSB\":\"0x807F51AE\",\"Repeat\":0}", stateTopic="stat/ns_ir/RESULT", transformationPattern="JS:irsend.js" ]
+
+		Type switch : audio_power [ commandTopic="cmnd/ns_ir/IRsend", formatBeforePublish="{\"Protocol\":\"PIONEER\",\"Bits\":64,\"Data\":\"0xA55A38C7A55A38C7\",\"DataLSB\":\"0xA55A1CE3A55A1CE3\",\"Repeat\":1}", stateTopic="stat/ns_ir/RESULT", transformationPattern="JS:irsend.js" ]
+
+        Type switch : projector_power [ commandTopic="cmnd/ns_ir/IRsend", formatBeforePublish="{\"Protocol\":\"NEC\",\"Bits\":32,\"Data\":\"0x10686D92\",\"DataLSB\":\"0x816B649\",\"Repeat\":0}", stateTopic="stat/ns_ir/RESULT", transformationPattern="JS:irsend.js" ]
+}

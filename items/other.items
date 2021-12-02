@@ -3,3 +3,6 @@ Group:DateTime:EARLIEST g_device_activity "Device Activity [JS(display-activity.
 Switch snf_kg_ks_power "KG Kühlschrank power" { channel="mqtt:topic:openhab:snf-kg-ks:power" }
 
 
+Switch ir_projector_power { channel="mqtt:topic:openhab:snf-ns-ir:projector_power" }
+Switch ir_stb_power { channel="mqtt:topic:openhab:snf-ns-ir:stb_power" }
+Switch ir_audio_power { channel="mqtt:topic:openhab:snf-ns-ir:audio_power" }

@@ -1,0 +1,39 @@
+rule "M800s read command"
+when
+    Item m800s_state_command received command
+then
+    logWarn("m800s", "State: " + receivedCommand)
+    switch (receivedCommand) {
+        case "OFF": {
+            logWarn("m800s", "Send OFF")
+            m800s_state.sendCommand("0")
+        }
+        case "WARM": {
+            logWarn("m800s", "Send WARM")
+            m800s_program.sendCommand("0")
+            m800s_state.sendCommand("1")
+        }
+    }
+end
+
+rule "M800s read status"
+when
+    Item m800s_state received update
+then
+    m800s_state_command.postUpdate(newState)
+end
+
+rule "M800s update group status"
+when
+    Item m800s_state received update
+    or Item m800s_time received update
+then
+    var status = m800s_state.state.toString
+
+    if ("WARM" == status || "ON" == status) {
+        status = status + " (" + m800s_time.state + ")"
+    }
+
+    m800s_state_grp.postUpdate(status)
+end
+

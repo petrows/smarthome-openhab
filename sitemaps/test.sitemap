@@ -28,6 +28,10 @@ sitemap test label="ТЕСТ"
 		Slider item=ikea_led_89d1_temp
 
         Switch item=desktop_petro_power_sw
+
+        Switch item=ir_projector_power
+        Switch item=ir_stb_power
+        Switch item=ir_audio_power
 	}
 
 
