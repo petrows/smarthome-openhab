@@ -1,0 +1,51 @@
+
+rule "Cinema ON"
+when
+	Item cinema_mode changed to ON
+then
+	logWarn("cinema", "Cinema mode: ON")
+
+    // Turn ON master power
+    ns_projector_power_sw.sendCommand(ON)
+    // Turn OFF light except Kino
+    g_light_all.members.forEach [s |
+        if (s == ns_night_lamp_sw) {
+            ns_night_lamp_dim.sendCommand(1)
+        } else {
+            s.sendCommand(OFF)
+        }
+    ]
+    // Turn on devices
+    Thread::sleep(10000)
+    ir_projector_power.sendCommand(ON)
+    ir_audio_power.sendCommand(ON)
+    // ir_stb_power.sendCommand(ON) // STB stay on on power
+
+    // When all ON, we can finally turn off all lights
+    Thread::sleep(10000)
+    g_light_all.sendCommand(OFF)
+end
+
+rule "Cinema OFF"
+when
+	Item cinema_mode changed to OFF
+then
+	logWarn("cinema", "Cinema mode: OFF")
+
+    // Turn on light
+    ns_night_lamp_dim.sendCommand(10)
+
+    // Turn off devices
+    Thread::sleep(1000)
+    ir_projector_power.sendCommand(ON)
+    Thread::sleep(1000)
+    ir_projector_power.sendCommand(ON) // "Press again to turn off"
+
+    ir_audio_power.sendCommand(ON)
+    ir_stb_power.sendCommand(ON)
+
+    Thread::sleep(20000)
+    // Turn OFF master power
+    ns_projector_power_sw.sendCommand(OFF)
+end
+

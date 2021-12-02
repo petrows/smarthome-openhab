@@ -128,6 +128,15 @@ items = [
         'expire': '1h'
     },
     {
+        'name': "NS Night lamp",
+        'id': "ns_night_lamp",
+        'zigbee_id': '0xec1bbdfffe9abfde',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ns'],
+        }
+    },
+    {
         'name': "NS Projector",
         'id': "ns_projector_power",
         'zigbee_id': '0x7cb03eaa0a094d1d',
@@ -185,16 +194,6 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_LAMP_COLOR_600,
         'groups': {
             'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz'],
-        }
-    },
-    {
-        'name': "SZ Night lamp",
-        'id': "sz_night_lamp",
-        'zigbee_id': '0xec1bbdfffe9abfde',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
-        'groups': {
-            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz', 'g_light_eg_sz_night'],
-            'dim': ['g_light_eg_sz_night_brightness'],
         }
     },
     {

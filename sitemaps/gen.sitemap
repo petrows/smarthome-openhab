@@ -60,6 +60,12 @@ Switch item=ns_heating_boost_power_sw
 Text item=ns_heating_boost_power_link icon="linkz"
 Text item=ns_heating_boost_power_ota icon="fire"
 }
+Frame label="NS Night lamp (0xec1bbdfffe9abfde)" {
+Switch item=ns_night_lamp_sw
+Slider item=ns_night_lamp_dim
+Text item=ns_night_lamp_link icon="linkz"
+Text item=ns_night_lamp_ota icon="fire"
+}
 Frame label="NS Projector (0x7cb03eaa0a094d1d)" {
 Switch item=ns_projector_power_sw
 Text item=ns_projector_power_link icon="linkz"
@@ -103,12 +109,6 @@ Slider item=sz_bed_bottom_lamp_dim
 Colorpicker item=sz_bed_bottom_lamp_color
 Text item=sz_bed_bottom_lamp_link icon="linkz"
 Text item=sz_bed_bottom_lamp_ota icon="fire"
-}
-Frame label="SZ Night lamp (0xec1bbdfffe9abfde)" {
-Switch item=sz_night_lamp_sw
-Slider item=sz_night_lamp_dim
-Text item=sz_night_lamp_link icon="linkz"
-Text item=sz_night_lamp_ota icon="fire"
 }
 Frame label="SZ Decor lamp 1 (0xec1bbdfffe972819)" {
 Switch item=sz_declamp_1_sw
