@@ -112,8 +112,8 @@ items = [
         'type': DEVICES.XIAOMI_AQARA_V2,
     },
     {
-        'name': "NS Power 2",
-        'id': "ns_power_2",
+        'name': "FS Christmas light",
+        'id': "fs_christmas_light",
         'zigbee_id': '0x7cb03eaa0a093a8b',
         'type': DEVICES.OSRAM_SMART_PLUG,
         'groups': {
