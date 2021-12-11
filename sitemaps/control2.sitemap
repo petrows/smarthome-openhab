@@ -111,7 +111,7 @@ sitemap control2 label="KONTROL 2"
 		Switch item=light_all_mode label="Alle" icon="light" mappings=["ON"="ON","N"="NACHT", OFF="OFF"]
 		Switch item=g_light_eg label="EG" icon="light" mappings=[ON="ON", OFF="OFF"]
 		Switch item=g_light_kg label="KG" icon="light" mappings=[ON="ON", OFF="OFF"]
-        Switch item=cinema_mode label="Cinemo mode [%s]" icon="projector" mappings=[ON="ON", OFF="OFF"]
+        Switch item=cinema_mode label="Cinemo mode" icon="projector" mappings=[ON="ON", OFF="OFF"]
 
 		Group item=balkon_light label="Balkon [%s]" icon="light" {
 			Switch item=balkon_light label="Haupt [%s]" icon="light"
@@ -219,6 +219,7 @@ sitemap control2 label="KONTROL 2"
 			Text		item=ku_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=ku_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=ku_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+            Switch      item=ku_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
 		}
 
 		Group item=ns_climate_temperature label="Nagel Studio" {
@@ -227,6 +228,7 @@ sitemap control2 label="KONTROL 2"
 			Text		item=ns_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=ns_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=ns_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+            Switch      item=ns_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
 			Switch		item=ns_heating_boost label="Heizung BOOST" icon="fan"
 			Switch		item=ns_heating_boost_power_sw label="Heizung Fan" icon="fan"
 		}
@@ -234,8 +236,9 @@ sitemap control2 label="KONTROL 2"
 			Text 		item=fs_climate_temperature label="Temperature [%d °C]"
 			Text 		item=fs_climate_humidity label="Humidity [%d %%]"
 			Text		item=fs_heating_position label="Beheizung [%d %%]"
-			Setpoint	item=hz_fs_set 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=hz_fs_set label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+			Setpoint	item=fs_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=fs_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+            Switch      item=fs_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
 		}
 		Group item=sz_climate_temperature label="Schlaffzimmer" {
 			Text 		item=sz_climate_temperature label="Temperature [%d °C]"
