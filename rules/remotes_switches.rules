@@ -246,22 +246,20 @@ when
 then
 	var state = receivedEvent
     switch(state) {
-        // Button seems to be defect, sends only hold
-        // case "single": {
-        case "hold": {
+        case "single": {
             if (ku_light_switch_arbeit_sw.state == ON) {
                 ku_light_switch_arbeit_sw.sendCommand(OFF)
             } else {
                 ku_light_switch_arbeit_sw.sendCommand(ON)
             }
         }
-        // case "hold": {
-        //     if (ku_light_switch_haupt_sw.state == ON) {
-        //         ku_light_switch_haupt_sw.sendCommand(OFF)
-        //     } else {
-        //         ku_light_switch_haupt_sw.sendCommand(ON)
-        //     }
-        // }
+        case "hold": {
+            if (ku_light_switch_haupt_sw.state == ON) {
+                ku_light_switch_haupt_sw.sendCommand(OFF)
+            } else {
+                ku_light_switch_haupt_sw.sendCommand(ON)
+            }
+        }
     }
 end
 
