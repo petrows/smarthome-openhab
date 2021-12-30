@@ -416,6 +416,17 @@ Number:Dimensionless kg_lager4_leak_battery "KG Lager 4 leak [%.0f %%]" <battery
 Switch kg_lager4_leak_battery_low "KG Lager 4 leak [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_lager4_leak:battery_low"}
 Number:ElectricPotential kg_lager4_leak_voltage "KG Lager 4 leak [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:kg_lager4_leak:voltage"}
 
+// KU heating (0x0c4314fffe73bf1f)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
+Number:Temperature ku_heating_thermostat "KU heating SET [%.0f %unit%]" <heatingt> (g_hz_all,g_hz_auto,g_hz_ku) {channel="mqtt:topic:openhab:ku_heating:thermostat"}
+Number:Dimensionless ku_heating_position "KU heating POS [%.0f %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:ku_heating:position"}
+Number:Temperature ku_heating_temperature "KU heating [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ku_heating:temperature"}
+DateTime ku_heating_activity "KU heating [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:ku_heating:activity"}
+Number:Dimensionless ku_heating_link "KU heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_heating:link"}
+Switch ku_heating_ota "KU heating OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_heating:ota"}
+Switch ku_heating_battery_low "KU heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_heating:battery_low"}
+Number:ElectricPotential ku_heating_voltage "KU heating [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:ku_heating:voltage"}
+
 // SZ heating (0x5c0272fffec9d557)
 // TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
 Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="mqtt:topic:openhab:sz_heating:thermostat"}

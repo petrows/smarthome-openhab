@@ -290,6 +290,13 @@ Frame label="KG Lager 4 leak (0x00158d000488052c)" {
 Text item=kg_lager4_leak_link icon="linkz"
 Text item=kg_lager4_leak_ota icon="fire"
 }
+Frame label="KU heating (0x0c4314fffe73bf1f)" {
+Setpoint item=ku_heating_thermostat minValue=5 maxValue=30 step=1
+Text item=ku_heating_position
+Text item=ku_heating_temperature
+Text item=ku_heating_link icon="linkz"
+Text item=ku_heating_ota icon="fire"
+}
 Frame label="SZ heating (0x5c0272fffec9d557)" {
 Setpoint item=sz_heating_thermostat minValue=5 maxValue=30 step=1
 Text item=sz_heating_position

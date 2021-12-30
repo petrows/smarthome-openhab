@@ -524,6 +524,16 @@ items = [
     },
     # Heating
     {
+        'name': "KU heating",
+        'id': "ku_heating",
+        'zigbee_id': '0x0c4314fffe73bf1f',
+        'type': DEVICES.SILVERCREST_THERMOSTAT_368308_2010,
+        'groups': {
+            'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_ku'],
+            'position': ['g_hz_valve'],
+        }
+    },
+    {
         'name': "SZ heating",
         'id': "sz_heating",
         'zigbee_id': '0x5c0272fffec9d557',
