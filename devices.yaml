@@ -26,6 +26,8 @@
   friendly_name: garten_wasser_leak
 '0x086bd7fffefb619a':
   friendly_name: bz_light
+'0x0c4314fffe62f090':
+  friendly_name: ns_heating
 '0x0c4314fffe73bf1f':
   friendly_name: ku_heating
 '0x14b457fffe399241':

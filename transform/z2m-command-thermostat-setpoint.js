@@ -9,7 +9,7 @@
     mode = "auto"
     // if (x == 5) { mode = "off" }
 
-    result = "{ \"preset\": \"manual\", \"system_mode\": \"" + mode + "\", \"current_heating_setpoint\": " + x + " }";
+    result = "{ \"preset\": \"manual\", \"current_heating_setpoint\": " + x + " }";
     //result = "{ \"current_heating_setpoint\": " + x + " }";
 
     return result;

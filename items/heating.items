@@ -60,8 +60,8 @@ Number fs_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermos
 
 // Nagel Studio
 Switch ns_heating_enabled "HZ NS enable [%s]"
-Switch ns_heating_lbatt "HZ NS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1037125:battery_low"}
-String ns_heating_mode    "Modus []" {channel="max:thermostat:NEQ1442869:OEQ1037125:mode"}
-Number ns_heating_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1037125:actual_temp"}
-Number ns_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="max:thermostat:NEQ1442869:OEQ1037125:set_temp"}
-Number ns_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ1037125:valve"}
+// Switch ns_heating_lbatt "HZ NS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1037125:battery_low"}
+// String ns_heating_mode    "Modus []" {channel="max:thermostat:NEQ1442869:OEQ1037125:mode"}
+// Number ns_heating_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1037125:actual_temp"}
+// Number ns_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="max:thermostat:NEQ1442869:OEQ1037125:set_temp"}
+// Number ns_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ1037125:valve"}
