@@ -279,3 +279,17 @@ class DEVICES:
             }
         ]
     }
+    SILVERCREST_THERMOSTAT_368308_2010 = {
+        'types': [
+            'zigbee',
+            'thermostat',
+            'temperature',
+            'position',
+            'activity',
+            'voltage',
+            'battery_voltage',
+        ],
+        'batt_type': '1xAA', # Device reports value seems to be 'per element' (it has 2xAA)
+        'device_name': 'Silvercrest radiator valve with thermostat',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/368308_2010.html',
+    }

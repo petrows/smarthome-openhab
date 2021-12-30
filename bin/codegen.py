@@ -39,6 +39,7 @@ PREAMBULA = """
 # 0x847127fffe0c873b - TuYa Wall switch module (WHD02) (aliexpress 2020-04-09)
 # 0x00158d0006b7aa81 - Xiaomi Aqara water leak sensor (SJCGQ11LM) (aliexpress 2020-06-18)
 # 0x5c0272fffedc2f41 - TuYa Radiator valve with thermostat (TS0601_thermostat) (aliexpress 2020-06-18)
+# 0x0c4314fffe73bf1f - Silvercerst thermostat (ebay 2021-12-30)
 
 
 # Items defentition
@@ -778,6 +779,11 @@ if __name__ == "__main__":
                 if np.in1d(['battery_low'], item['type']['types']).any():
                     conf_str.append(
                         f"\t\tType switch : battery_low [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.battery_low\", on=\"true\", off=\"false\"]")
+            # Some zigbee devices want custom battery signal
+            if np.in1d(['battery_voltage'], item['type']['types']).any():
+                batt_type = item['type']['batt_type']
+                conf_str.append(
+                    f"\t\tType switch : battery_low [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"REGEX:(.*battery.*)∩JS:z2m-batt-low-{batt_type}.js\"]")
             # Some zigbee devices report battery voltage
             if np.in1d(['voltage'], item['type']['types']).any():
                 conf_str.append(
@@ -1036,7 +1042,7 @@ end
                     f"Number:Dimensionless {item['id']}_battery \"{item['name']} [%.0f %%]\""
                     f" <battery> (g_battery_level) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery\"}}"
                 )
-            if np.in1d(['battery', 'battery_low'], item['type']['types']).any():
+            if np.in1d(['battery', 'battery_low', 'battery_voltage'], item['type']['types']).any():
                 conf_str.append(
                     f"Switch {item['id']}_battery_low \"{item['name']} [MAP(lowbat.map):%s]\""
                     f" <lowbattery> (g_battery_low) {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:battery_low\"}}"
