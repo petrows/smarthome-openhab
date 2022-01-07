@@ -30,6 +30,8 @@
   friendly_name: ns_heating
 '0x0c4314fffe73bf1f':
   friendly_name: ku_heating
+'0x0c4314fffe73c43f':
+  friendly_name: fs_heating
 '0x14b457fffe399241':
   friendly_name: balkon_light_1
 '0x14b457fffe6383e5':

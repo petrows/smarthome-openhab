@@ -41,6 +41,7 @@ PREAMBULA = """
 # 0x5c0272fffedc2f41 - TuYa Radiator valve with thermostat (TS0601_thermostat) (aliexpress 2020-06-18)
 # 0x0c4314fffe73bf1f - Silvercerst thermostat (ebay 2021-12-30)
 # 0x0c4314fffe62f090 - Silvercerst thermostat (ebay 2021-12-30)
+# 0x0c4314fffe73c43f - Silvercerst thermostat (ebay 2022-01-07)
 
 
 # Items defentition
@@ -525,6 +526,16 @@ items = [
     },
     # Heating
     {
+        'name': "FS heating",
+        'id': "fs_heating",
+        'zigbee_id': '0x0c4314fffe73c43f',
+        'type': DEVICES.SILVERCREST_THERMOSTAT_368308_2010,
+        'groups': {
+            'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_fs'],
+            'position': ['g_hz_valve'],
+        }
+    },
+    {
         'name': "NS heating",
         'id': "ns_heating",
         'zigbee_id': '0x0c4314fffe62f090',
@@ -564,8 +575,6 @@ items = [
             'position': ['g_hz_valve'],
         }
     },
-    # New devices
-
 ]
 
 
