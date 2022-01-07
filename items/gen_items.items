@@ -419,7 +419,6 @@ Number:ElectricPotential kg_lager4_leak_voltage "KG Lager 4 leak [%.0f mV]" <ene
 // FS heating (0x0c4314fffe73c43f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature fs_heating_thermostat "FS heating SET [%.0f %unit%]" <heatingt> (g_hz_all,g_hz_auto,g_hz_fs) {channel="mqtt:topic:openhab:fs_heating:thermostat"}
-Number:Dimensionless fs_heating_position "FS heating POS [%.0f %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:fs_heating:position"}
 Number:Temperature fs_heating_temperature "FS heating [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:fs_heating:temperature"}
 DateTime fs_heating_activity "FS heating [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:fs_heating:activity"}
 Number:Dimensionless fs_heating_link "FS heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:fs_heating:link"}
@@ -430,7 +429,6 @@ Number:ElectricPotential fs_heating_voltage "FS heating [%.0f mV]" <energy> (g_b
 // NS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature ns_heating_thermostat "NS heating SET [%.0f %unit%]" <heatingt> (g_hz_all,g_hz_auto,g_hz_ns) {channel="mqtt:topic:openhab:ns_heating:thermostat"}
-Number:Dimensionless ns_heating_position "NS heating POS [%.0f %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:ns_heating:position"}
 Number:Temperature ns_heating_temperature "NS heating [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ns_heating:temperature"}
 DateTime ns_heating_activity "NS heating [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:ns_heating:activity"}
 Number:Dimensionless ns_heating_link "NS heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ns_heating:link"}
@@ -441,7 +439,6 @@ Number:ElectricPotential ns_heating_voltage "NS heating [%.0f mV]" <energy> (g_b
 // KU heating (0x0c4314fffe73bf1f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature ku_heating_thermostat "KU heating SET [%.0f %unit%]" <heatingt> (g_hz_all,g_hz_auto,g_hz_ku) {channel="mqtt:topic:openhab:ku_heating:thermostat"}
-Number:Dimensionless ku_heating_position "KU heating POS [%.0f %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:ku_heating:position"}
 Number:Temperature ku_heating_temperature "KU heating [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ku_heating:temperature"}
 DateTime ku_heating_activity "KU heating [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:ku_heating:activity"}
 Number:Dimensionless ku_heating_link "KU heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_heating:link"}

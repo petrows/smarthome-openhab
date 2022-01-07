@@ -211,12 +211,12 @@ sitemap control2 label="KONTROL 2"
 
 	Frame {
 		Switch item=g_hz_all label="Heating [%.1f °C]" mappings=["23.0"="☼", "17.0"="☾", "5.0"="AUS"]	visibility=[cfgHeatingEnable==ON]
-		Text item=g_hz_valve label="Heating valve [%d %%]"
+		//Text item=g_hz_valve label="Heating valve [%d %%]"
 
 		Group item=ku_climate_temperature label="Küche" {
 			Text 		item=ku_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ku_climate_humidity label="Humidity [%d %%]"
-			Text		item=ku_heating_position label="Beheizung [%d %%]"
+			//ext		item=ku_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=ku_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=ku_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ku_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
@@ -225,7 +225,7 @@ sitemap control2 label="KONTROL 2"
 		Group item=ns_climate_temperature label="Nagel Studio" {
 			Text 		item=ns_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ns_climate_humidity label="Humidity [%d %%]"
-			Text		item=ns_heating_position label="Beheizung [%d %%]"
+			//Text		item=ns_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=ns_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=ns_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ns_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
@@ -235,7 +235,7 @@ sitemap control2 label="KONTROL 2"
 		Group item=fs_climate_temperature label="Foto Studio" {
 			Text 		item=fs_climate_temperature label="Temperature [%d °C]"
 			Text 		item=fs_climate_humidity label="Humidity [%d %%]"
-			Text		item=fs_heating_position label="Beheizung [%d %%]"
+			//Text		item=fs_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=fs_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=fs_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=fs_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
@@ -243,7 +243,7 @@ sitemap control2 label="KONTROL 2"
 		Group item=sz_climate_temperature label="Schlaffzimmer" {
 			Text 		item=sz_climate_temperature label="Temperature [%d °C]"
 			Text 		item=sz_climate_humidity label="Humidity [%d %%]"
-			Text		item=sz_heating_position label="Beheizung [%d %%]"
+			//Text		item=sz_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=sz_heating_thermostat 	label="Ziel"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=sz_heating_thermostat label="Modus []"  icon="climate" mappings=["23.0 °C"="☼", "17.0 °C"="☾", "5.0 °C"="AUS"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=sz_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
@@ -251,7 +251,7 @@ sitemap control2 label="KONTROL 2"
 		Group item=kg_climate_temperature label="KG" {
 			Text 		item=kg_climate_temperature label="Temperature [%d °C]"
 			Text 		item=kg_climate_humidity label="Humidity [%d %%]"
-			Text		item=kg_heating_position label="Beheizung [%d %%]"
+			//Text		item=kg_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=kg_heating_thermostat label="Ziel" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
 			Switch  	item=kg_heating_thermostat label="Modus []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=kg_heating_enabled label="Heizung auto [%s]" visibility=[cfgHeatingEnable==ON]
@@ -334,11 +334,6 @@ sitemap control2 label="KONTROL 2"
 		Group item=gOnline label="Online [MAP(online.map):%s]" icon=network {
 			Frame label="WLAN" {
 				Text	item=online_petro_pc icon=network
-				Text	item=online_wlan_eg_1 icon=network
-				Text	item=online_wlan_eg_2 icon=network
-				Text	item=online_wlan_kg icon=network
-				Text	item=online_mi_robot icon=network
-				Text	item=online_max_thermostat icon=network
 			}
 		}
 	}

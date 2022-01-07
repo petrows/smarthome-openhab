@@ -284,7 +284,6 @@ class DEVICES:
             'zigbee',
             'thermostat',
             'temperature',
-            'position',
             'activity',
             'voltage',
             'battery_voltage',
