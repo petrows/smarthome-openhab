@@ -1,10 +1,3 @@
 Group:Switch:AND(ON, OFF) gOnline <present>
 
 Switch online_petro_pc "Petro PC [MAP(online.map):%s]" {channel="network:pingdevice:petro_pc:online"}
-
-Switch online_wlan_eg_1 "WLAN EG 1 [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:wlan_eg_1:online" }
-Switch online_wlan_eg_2 "WLAN EG 2 [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:wlan_eg_2:online" }
-Switch online_wlan_kg "WLAN KG [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:wlan_kg:online" }
-
-Switch online_mi_robot "MI Robot [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:mi_robot:online" }
-Switch online_max_thermostat "Max thermostat GW [MAP(online.map):%s]" (gOnline) { channel="network:pingdevice:max_thermostat:online" }

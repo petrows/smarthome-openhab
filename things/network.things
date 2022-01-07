@@ -6,15 +6,3 @@
 
 // PC
 Thing network:pingdevice:petro_pc "Petro PC" [ hostname="petro-pc.pws" ]
-
-
-// AP devices
-
-Thing network:pingdevice:wlan_eg_1 "WLAN EG 1" [ hostname="wlan-eg-1.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:wlan_eg_2 "WLAN EG 2" [ hostname="wlan-eg-2.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:wlan_kg "WLAN KG" [ hostname="wlan-kg.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-
-// Home devices
-
-Thing network:pingdevice:mi_robot "MI Robot (ping)" [ hostname="mi-robot.pws", retry=5, timeout=5000, refreshInterval=60000 ]
-Thing network:pingdevice:max_thermostat "Max thermostat GW" [ hostname="max-thermostat.pws", retry=5, timeout=5000, refreshInterval=60000 ]
