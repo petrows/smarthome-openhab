@@ -131,8 +131,8 @@ then
 
     if (newState == OFF) {
         createTimer(now.plusSeconds(60), [|
-            logWarn("light", "Petro delayed power off check, PC status is " + online_petro_pc.state)
-            if (online_petro_pc.state == ON) {
+            logWarn("light", "Petro delayed power off check, PC status is " + g_online_petro.state)
+            if (g_online_petro.state == ON) {
                 desktop_petro_power_try.setState(ON) // Decline state change
                 return
             }

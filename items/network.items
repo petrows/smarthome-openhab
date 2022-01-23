@@ -1,4 +1,4 @@
-Group:Switch:AND(OFF, ON) g_online <present>
+Group:Switch:AND(OFF, ON) g_online_petro <present>
 
-Switch online_petro_pc "Petro PC [MAP(online.map):%s]" (g_online) {channel="network:pingdevice:petro_pc:online"}
-Switch online_petro_nb "Petro NB [MAP(online.map):%s]" (g_online) {channel="network:pingdevice:petro_nb:online"}
+Switch online_petro_pc "Petro PC [MAP(online.map):%s]" (g_online_petro) {channel="network:pingdevice:petro_pc:online"}
+Switch online_petro_nb "Petro NB [MAP(online.map):%s]" (g_online_petro) {channel="network:pingdevice:petro_nb:online"}
