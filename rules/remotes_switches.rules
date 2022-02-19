@@ -94,6 +94,10 @@ then
             g_light_treppe.sendCommand(OFF)
             g_light_lager_auto.sendCommand(OFF) // Lager licht also OFF
         }
+        // Turn OFF EG light
+        case "brightness_move_down": { // Long press DOWN
+            g_light_eg.sendCommand(OFF)
+        }
     }
 end
 
@@ -103,10 +107,14 @@ when
 then
 	var state = receivedEvent
     switch(state) {
-        case "brightness_up": { // Long press UP
+        case "brightness_move_up": { // Long press UP
             g_light_kg_auto.sendCommand(ON)
             treppe_manual_sw.sendCommand(ON)
             g_dim_treppe.sendCommand(100) // Full brightness for auto-light
+        }
+        // Turn OFF EG light
+        case "brightness_move_down": { // Long press DOWN
+            g_light_eg.sendCommand(OFF)
         }
         case "on": {
             treppe_manual_sw.sendCommand(ON)
