@@ -159,13 +159,17 @@ then
 
     switch(state) {
         case "toggle": {
-            if (desktop_petro_light_sw.state == ON) { desktop_petro_light_sw.sendCommand(OFF) } else { desktop_petro_light_sw.sendCommand(ON) }
+            if (g_light_kg_desktop.state == ON) {
+                g_light_kg_desktop.sendCommand(OFF)
+            } else {
+                g_light_kg_desktop.sendCommand(ON)
+            }
         }
         case "arrow_right_click": {
-            desktop_petro_light_dim.sendCommand(100)
+            g_light_kg_desktop_dim.sendCommand(100)
         }
         case "arrow_left_click": {
-            desktop_petro_light_dim.sendCommand(0)
+            g_light_kg_desktop_dim.sendCommand(25)
         }
         case "brightness_down_click": {
             g_light_kg.members.forEach [s |

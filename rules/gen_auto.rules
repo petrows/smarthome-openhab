@@ -45,6 +45,33 @@ end
 
 
 // Device should apply saved color temp when ON
+rule "Petro Desktop up light 1 apply color on ON"
+when
+    Item desktop_petro_up_light_1_sw changed to ON
+then
+	desktop_petro_up_light_1_ct.sendCommand(desktop_petro_up_light_1_ct.state as Number)
+end
+
+
+// Device should apply saved color temp when ON
+rule "Petro Desktop up light 2 apply color on ON"
+when
+    Item desktop_petro_up_light_2_sw changed to ON
+then
+	desktop_petro_up_light_2_ct.sendCommand(desktop_petro_up_light_2_ct.state as Number)
+end
+
+
+// Device should apply saved color temp when ON
+rule "Petro Desktop up light 3 apply color on ON"
+when
+    Item desktop_petro_up_light_3_sw changed to ON
+then
+	desktop_petro_up_light_3_ct.sendCommand(desktop_petro_up_light_3_ct.state as Number)
+end
+
+
+// Device should apply saved color temp when ON
 rule "Petro Desktop light apply color on ON"
 when
     Item desktop_petro_light_sw changed to ON

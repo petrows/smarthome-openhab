@@ -397,6 +397,39 @@ Thing mqtt:topic:openhab:kg_climate "KG Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// Petro Desktop up light 1 (0x04cd15fffe35e43a)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Thing mqtt:topic:openhab:desktop_petro_up_light_1 "Petro Desktop up light 1" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/desktop_petro_up_light_1/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/desktop_petro_up_light_1/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/desktop_petro_up_light_1/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=150, max=500]
+		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// Petro Desktop up light 2 (0x04cd15fffe6bf002)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Thing mqtt:topic:openhab:desktop_petro_up_light_2 "Petro Desktop up light 2" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/desktop_petro_up_light_2/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/desktop_petro_up_light_2/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/desktop_petro_up_light_2/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=150, max=500]
+		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// Petro Desktop up light 3 (0x000d6ffffe12e11b)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Thing mqtt:topic:openhab:desktop_petro_up_light_3 "Petro Desktop up light 3" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/desktop_petro_up_light_3/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/desktop_petro_up_light_3/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/desktop_petro_up_light_3/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=150, max=500]
+		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // Petro Desktop light (0xccccccfffed8ef9d)
 // IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
 Thing mqtt:topic:openhab:desktop_petro_light "Petro Desktop light" (mqtt:broker:openhab) {

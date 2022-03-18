@@ -31,6 +31,11 @@ Group:Dimmer:MAX g_dim_treppe
 Group:Dimmer:MAX g_ct_treppe
 Group:Dimmer:MAX g_dim_lager_auto
 
+// KG desktop new setup
+Group:Switch:OR(ON, OFF) g_light_kg_desktop
+Group:Dimmer:AVG g_light_kg_desktop_dim
+Group:Dimmer:AVG g_light_kg_desktop_color
+
 // Switches to control: manual override for auto light
 Switch treppe_manual_sw "KG Treppe manual SW" <light> { expire="3h,command=OFF" }
 Switch kg_lager4_manual_sw "KG Lager 4 manual SW" <light> { expire="3h,command=OFF" }

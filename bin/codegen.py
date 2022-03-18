@@ -42,6 +42,8 @@ PREAMBULA = """
 # 0x0c4314fffe73bf1f - Silvercerst thermostat (ebay 2021-12-30)
 # 0x0c4314fffe62f090 - Silvercerst thermostat (ebay 2021-12-30)
 # 0x0c4314fffe73c43f - Silvercerst thermostat (ebay 2022-01-07)
+# 0x04cd15fffe6bf002 - Ikea 1055 lm (IKEA 2022-03-18)
+# 0x04cd15fffe35e43a - Ikea 1055 lm (IKEA 2022-03-18)
 
 
 # Items defentition
@@ -347,13 +349,47 @@ items = [
         'type': DEVICES.XIAOMI_AQARA_V2,
     },
     {
+        'name': "Petro Desktop up light 1",
+        'id': "desktop_petro_up_light_1",
+        'zigbee_id': '0x04cd15fffe35e43a',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
+            'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
+            'dim': ['g_light_kg_desktop_dim'],
+        }
+    },
+    {
+        'name': "Petro Desktop up light 2",
+        'id': "desktop_petro_up_light_2",
+        'zigbee_id': '0x04cd15fffe6bf002',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
+            'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
+            'dim': ['g_light_kg_desktop_dim'],
+        }
+    },
+    {
+        'name': "Petro Desktop up light 3",
+        'id': "desktop_petro_up_light_3",
+        'zigbee_id': '0x000d6ffffe12e11b',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
+            'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
+            'dim': ['g_light_kg_desktop_dim'],
+        }
+    },
+    {
         'name': "Petro Desktop light",
         'id': "desktop_petro_light",
         'zigbee_id': '0xccccccfffed8ef9d',
         'type': DEVICES.IKEA_TRADFRI_LAMP_CLEAR_806,
         'groups': {
-            'sw': ['g_light_all', 'g_light_kg'],
-            'ct': ['g_light_astro_color'],
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
+            'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
+            'dim': ['g_light_kg_desktop_dim'],
         }
     },
     {

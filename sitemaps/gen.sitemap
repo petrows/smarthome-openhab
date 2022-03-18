@@ -198,6 +198,27 @@ Text item=kg_climate_pressure
 Text item=kg_climate_link icon="linkz"
 Text item=kg_climate_ota icon="fire"
 }
+Frame label="Petro Desktop up light 1 (0x04cd15fffe35e43a)" {
+Switch item=desktop_petro_up_light_1_sw
+Slider item=desktop_petro_up_light_1_dim
+Slider item=desktop_petro_up_light_1_ct
+Text item=desktop_petro_up_light_1_link icon="linkz"
+Text item=desktop_petro_up_light_1_ota icon="fire"
+}
+Frame label="Petro Desktop up light 2 (0x04cd15fffe6bf002)" {
+Switch item=desktop_petro_up_light_2_sw
+Slider item=desktop_petro_up_light_2_dim
+Slider item=desktop_petro_up_light_2_ct
+Text item=desktop_petro_up_light_2_link icon="linkz"
+Text item=desktop_petro_up_light_2_ota icon="fire"
+}
+Frame label="Petro Desktop up light 3 (0x000d6ffffe12e11b)" {
+Switch item=desktop_petro_up_light_3_sw
+Slider item=desktop_petro_up_light_3_dim
+Slider item=desktop_petro_up_light_3_ct
+Text item=desktop_petro_up_light_3_link icon="linkz"
+Text item=desktop_petro_up_light_3_ota icon="fire"
+}
 Frame label="Petro Desktop light (0xccccccfffed8ef9d)" {
 Switch item=desktop_petro_light_sw
 Slider item=desktop_petro_light_dim

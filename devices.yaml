@@ -1,7 +1,7 @@
 '0x000b57fffe2d34f5':
   friendly_name: '0x000b57fffe2d34f5'
 '0x000d6ffffe12e11b':
-  friendly_name: '0x000d6ffffe12e11b'
+  friendly_name: desktop_petro_up_light_3
 '0x000d6ffffee8357d':
   friendly_name: desktop_petro_remote
 '0x00124b000b4ed5cc':
@@ -24,6 +24,10 @@
   friendly_name: kg_lager4_leak
 '0x00158d0006b7aa81':
   friendly_name: garten_wasser_leak
+'0x04cd15fffe35e43a':
+  friendly_name: desktop_petro_up_light_1
+'0x04cd15fffe6bf002':
+  friendly_name: desktop_petro_up_light_2
 '0x086bd7fffefb619a':
   friendly_name: bz_light
 '0x0c4314fffe62f090':
