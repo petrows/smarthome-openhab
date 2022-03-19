@@ -9,6 +9,10 @@
 
 sitemap gen label="GEN ITEMS"
 {
+Frame label="Sturbar test (0x04cd15fffe6d57dc)" {
+Text item=sturbar_test_link icon="linkz"
+Text item=sturbar_test_ota icon="fire"
+}
 Frame label="Outside Climate (0x00158d0001c2cc22)" {
 Text item=ext_climate_temperature
 Text item=ext_climate_humidity
@@ -198,7 +202,7 @@ Text item=kg_climate_pressure
 Text item=kg_climate_link icon="linkz"
 Text item=kg_climate_ota icon="fire"
 }
-Frame label="Petro Desktop up light 1 (0x04cd15fffe35e43a)" {
+Frame label="Petro Desktop up light 1 (0x04cd15fffe35f24e)" {
 Switch item=desktop_petro_up_light_1_sw
 Slider item=desktop_petro_up_light_1_dim
 Slider item=desktop_petro_up_light_1_ct
@@ -212,7 +216,7 @@ Slider item=desktop_petro_up_light_2_ct
 Text item=desktop_petro_up_light_2_link icon="linkz"
 Text item=desktop_petro_up_light_2_ota icon="fire"
 }
-Frame label="Petro Desktop up light 3 (0x000d6ffffe12e11b)" {
+Frame label="Petro Desktop up light 3 (0x04cd15fffe73ecb6)" {
 Switch item=desktop_petro_up_light_3_sw
 Slider item=desktop_petro_up_light_3_dim
 Slider item=desktop_petro_up_light_3_ct

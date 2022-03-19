@@ -7,6 +7,13 @@
 // ==========================================
 
 
+// Sturbar test (0x04cd15fffe6d57dc)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Number:Dimensionless sturbar_test_link "Sturbar test LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sturbar_test:link"}
+Switch sturbar_test_ota "Sturbar test OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sturbar_test:ota"}
+Number:Dimensionless sturbar_test_battery "Sturbar test [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sturbar_test:battery"}
+Switch sturbar_test_battery_low "Sturbar test [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sturbar_test:battery_low"}
+
 // Outside Climate (0x00158d0001c2cc22)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Number:Temperature ext_climate_temperature "Outside Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ext_climate:temperature"}
@@ -283,7 +290,7 @@ Number:Dimensionless kg_climate_battery "KG Climate [%.0f %%]" <battery> (g_batt
 Switch kg_climate_battery_low "KG Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_climate:battery_low"}
 Number:ElectricPotential kg_climate_voltage "KG Climate [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:kg_climate:voltage"}
 
-// Petro Desktop up light 1 (0x04cd15fffe35e43a)
+// Petro Desktop up light 1 (0x04cd15fffe35f24e)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Switch desktop_petro_up_light_1_sw "Petro Desktop up light 1" <light> (g_light_all,g_light_kg,g_light_kg_desktop) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:state"}
 Dimmer desktop_petro_up_light_1_dim "Petro Desktop up light 1 DIM [%d %%]" <light> (g_light_kg_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim"}
@@ -299,7 +306,7 @@ Dimmer desktop_petro_up_light_2_ct "Petro Desktop up light 2 CT [JS(display-mire
 Number:Dimensionless desktop_petro_up_light_2_link "Petro Desktop up light 2 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:link"}
 Switch desktop_petro_up_light_2_ota "Petro Desktop up light 2 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:ota"}
 
-// Petro Desktop up light 3 (0x000d6ffffe12e11b)
+// Petro Desktop up light 3 (0x04cd15fffe73ecb6)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Switch desktop_petro_up_light_3_sw "Petro Desktop up light 3" <light> (g_light_all,g_light_kg,g_light_kg_desktop) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:state"}
 Dimmer desktop_petro_up_light_3_dim "Petro Desktop up light 3 DIM [%d %%]" <light> (g_light_kg_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:dim"}

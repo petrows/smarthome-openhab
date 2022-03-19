@@ -43,11 +43,21 @@ PREAMBULA = """
 # 0x0c4314fffe62f090 - Silvercerst thermostat (ebay 2021-12-30)
 # 0x0c4314fffe73c43f - Silvercerst thermostat (ebay 2022-01-07)
 # 0x04cd15fffe6bf002 - Ikea 1055 lm (IKEA 2022-03-18)
-# 0x04cd15fffe35e43a - Ikea 1055 lm (IKEA 2022-03-18)
-
+# 0x04cd15fffe35e43a - Ikea 1055 lm (IKEA 2022-03-18) - defekt (noise) - return to Ikea 2022-03-19
+# 0x04cd15fffe6d57dc - Ikea styrbar (IKEA 2022-03-18)
+# 0x04cd15fffe73ecb6 - Ikea 1055 lm (IKEA 2022-03-19)
+# 0x04cd15fffe35f24e - Ikea 1055 lm (IKEA 2022-03-19)
+# 0x04cd15fffe75c518 - Ikea styrbar (IKEA 2022-03-19)
 
 # Items defentition
 items = [
+    # Test
+    {
+        'name': "Sturbar test",
+        'id': "sturbar_test",
+        'zigbee_id': '0x04cd15fffe6d57dc',
+        'type': DEVICES.IKEA_TRADFRI_STYRBAR,
+    },
     # External (outside)
     {
         'name': "Outside Climate",
@@ -351,7 +361,7 @@ items = [
     {
         'name': "Petro Desktop up light 1",
         'id': "desktop_petro_up_light_1",
-        'zigbee_id': '0x04cd15fffe35e43a',
+        'zigbee_id': '0x04cd15fffe35f24e',
         'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
         'groups': {
             'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
@@ -373,7 +383,7 @@ items = [
     {
         'name': "Petro Desktop up light 3",
         'id': "desktop_petro_up_light_3",
-        'zigbee_id': '0x000d6ffffe12e11b',
+        'zigbee_id': '0x04cd15fffe73ecb6',
         'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
         'groups': {
             'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
