@@ -25,6 +25,7 @@ Group:Dimmer:AVG g_light_astro_color "Astrocolor CT [%d %%]" <light>
 // KG and Treppe lamps
 Group:Switch:OR(ON, OFF) g_light_kg // All lamps in KG
 Group:Switch:OR(ON, OFF) g_light_kg_auto // Lamps to be on by "All ON"
+Group:Switch:OR(ON, OFF) g_light_kg_hobbyraum // All lights in "rooms" KG
 Group:Switch:OR(ON, OFF) g_light_treppe
 Group:Switch:OR(ON, OFF) g_light_lager_auto
 Group:Dimmer:MAX g_dim_treppe

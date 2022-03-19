@@ -167,7 +167,7 @@ Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
 Text item=treppe_up_switch_link icon="linkz"
 Text item=treppe_up_switch_ota icon="fire"
 }
-Frame label="Treppe Down switch (0xccccccfffef0356e)" {
+Frame label="Treppe Down switch (0x04cd15fffe75c518)" {
 Text item=treppe_down_switch_link icon="linkz"
 Text item=treppe_down_switch_ota icon="fire"
 }

@@ -94,6 +94,15 @@ then
             g_light_treppe.sendCommand(OFF)
             g_light_lager_auto.sendCommand(OFF) // Lager licht also OFF
         }
+        // Left arrow: turn off all light in KG rooms
+        case "arrow_left_click": {
+            g_light_kg_hobbyraum.sendCommand(OFF)
+        }
+        // Right arrow: turn on desktop (+pc)
+        case "arrow_right_click": {
+            g_light_kg_desktop.sendCommand(ON)
+            desktop_petro_power_try.sendCommand(ON)
+        }
         // Turn OFF EG light
         case "brightness_move_down": { // Long press DOWN
             g_light_eg.sendCommand(OFF)

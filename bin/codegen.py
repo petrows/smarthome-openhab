@@ -364,7 +364,7 @@ items = [
         'zigbee_id': '0x04cd15fffe35f24e',
         'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
         'groups': {
-            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_hobbyraum', 'g_light_kg_desktop'],
             'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
             'dim': ['g_light_kg_desktop_dim'],
         }
@@ -375,7 +375,7 @@ items = [
         'zigbee_id': '0x04cd15fffe6bf002',
         'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
         'groups': {
-            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_hobbyraum', 'g_light_kg_desktop'],
             'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
             'dim': ['g_light_kg_desktop_dim'],
         }
@@ -386,7 +386,7 @@ items = [
         'zigbee_id': '0x04cd15fffe73ecb6',
         'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
         'groups': {
-            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_hobbyraum', 'g_light_kg_desktop'],
             'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
             'dim': ['g_light_kg_desktop_dim'],
         }
@@ -397,7 +397,7 @@ items = [
         'zigbee_id': '0xccccccfffed8ef9d',
         'type': DEVICES.IKEA_TRADFRI_LAMP_CLEAR_806,
         'groups': {
-            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_desktop'],
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_hobbyraum', 'g_light_kg_desktop'],
             'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
             'dim': ['g_light_kg_desktop_dim'],
         }
@@ -426,7 +426,7 @@ items = [
         'id': "kg_main1_light",
         'type': DEVICES.TASMOTA_SONOFF_TOUCH_EU1,
         'groups': {
-            'POWER': ['g_light_all', 'g_light_kg', 'g_light_kg_auto'],
+            'POWER': ['g_light_all', 'g_light_kg', 'g_light_kg_hobbyraum', 'g_light_kg_auto'],
         },
         'channels': {
             'POWER': {
@@ -441,7 +441,7 @@ items = [
         'id': "kg_main2_light",
         'type': DEVICES.TASMOTA_SONOFF_TOUCH_EU1,
         'groups': {
-            'POWER': ['g_light_all', 'g_light_kg'],
+            'POWER': ['g_light_all', 'g_light_kg', 'g_light_kg_hobbyraum'],
         },
         'channels': {
             'POWER': {
