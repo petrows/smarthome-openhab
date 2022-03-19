@@ -309,8 +309,8 @@ items = [
     {
         'name': "Treppe Down switch",
         'id': "treppe_down_switch",
-        'zigbee_id': '0xccccccfffef0356e',
-        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+        'zigbee_id': '0x04cd15fffe75c518',
+        'type': DEVICES.IKEA_TRADFRI_STYRBAR,
     },
     {
         'name': "Treppe Up light",
@@ -1174,14 +1174,18 @@ sitemap gen label="GEN ITEMS"
 
     # (re)Generate Zigbee devices list
     if args.write:
+        device_yaml = {}
         # Load old devices config
-        device_yaml = yaml.load(
-            open(
-                os.path.join(ROOT_PATH, 'devices.yaml'),
-                'r'
-            ),
-            Loader=yaml.FullLoader
-        )
+        # Don not load enymore. Build our own new from config
+        # device_yaml = yaml.load(
+        #     open(
+        #         os.path.join(ROOT_PATH, 'devices.yaml'),
+        #         'r'
+        #     ),
+        #     Loader=yaml.FullLoader
+        # )
+
+        # Check existing list
         for zigbee_id, zigbee_name in zigbee_devices_list.items():
             if zigbee_id in device_yaml:
                 device_yaml[zigbee_id]['friendly_name'] = zigbee_name
