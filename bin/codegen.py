@@ -397,9 +397,8 @@ items = [
         'zigbee_id': '0xccccccfffed8ef9d',
         'type': DEVICES.IKEA_TRADFRI_LAMP_CLEAR_806,
         'groups': {
-            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_hobbyraum', 'g_light_kg_desktop'],
-            'ct': ['g_light_astro_color', 'g_light_kg_desktop_color'],
-            'dim': ['g_light_kg_desktop_dim'],
+            'sw': ['g_light_all', 'g_light_kg', 'g_light_kg_hobbyraum'],
+            'ct': ['g_light_astro_color'],
         }
     },
     {

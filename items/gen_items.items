@@ -316,9 +316,9 @@ Switch desktop_petro_up_light_3_ota "Petro Desktop up light 3 OTA [%s]" <fire> (
 
 // Petro Desktop light (0xccccccfffed8ef9d)
 // IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
-Switch desktop_petro_light_sw "Petro Desktop light" <light> (g_light_all,g_light_kg,g_light_kg_hobbyraum,g_light_kg_desktop) {channel="mqtt:topic:openhab:desktop_petro_light:state"}
-Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]" <light> (g_light_kg_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_light:dim"}
-Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color,g_light_kg_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_light:ct"}
+Switch desktop_petro_light_sw "Petro Desktop light" <light> (g_light_all,g_light_kg,g_light_kg_hobbyraum) {channel="mqtt:topic:openhab:desktop_petro_light:state"}
+Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]" <light> {channel="mqtt:topic:openhab:desktop_petro_light:dim"}
+Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color) {channel="mqtt:topic:openhab:desktop_petro_light:ct"}
 Number:Dimensionless desktop_petro_light_link "Petro Desktop light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_light:link"}
 Switch desktop_petro_light_ota "Petro Desktop light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_light:ota"}
 
