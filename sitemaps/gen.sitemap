@@ -340,9 +340,8 @@ Text item=sz_heating_temperature
 Text item=sz_heating_link icon="linkz"
 Text item=sz_heating_ota icon="fire"
 }
-Frame label="KG heating (0x5c0272fffedc2f41)" {
+Frame label="KG heating (0x0c4314fffe5c6913)" {
 Setpoint item=kg_heating_thermostat minValue=5 maxValue=30 step=1
-Text item=kg_heating_position
 Text item=kg_heating_temperature
 Text item=kg_heating_link icon="linkz"
 Text item=kg_heating_ota icon="fire"

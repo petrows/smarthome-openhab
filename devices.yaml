@@ -32,6 +32,8 @@
   friendly_name: treppe_down_switch
 '0x086bd7fffefb619a':
   friendly_name: bz_light
+'0x0c4314fffe5c6913':
+  friendly_name: kg_heating
 '0x0c4314fffe62f090':
   friendly_name: ns_heating
 '0x0c4314fffe73bf1f':
@@ -48,8 +50,6 @@
   friendly_name: treppe_down_light
 '0x5c0272fffec9d557':
   friendly_name: sz_heating
-'0x5c0272fffedc2f41':
-  friendly_name: kg_heating
 '0x680ae2fffe16e111':
   friendly_name: eg_leave_switch
 '0x680ae2fffe1a92f3':

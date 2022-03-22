@@ -486,11 +486,12 @@ DateTime sz_heating_activity "SZ heating [JS(display-activity.js):%s]" <time> (g
 Number:Dimensionless sz_heating_link "SZ heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_heating:link"}
 Switch sz_heating_ota "SZ heating OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
 
-// KG heating (0x5c0272fffedc2f41)
-// TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
+// KG heating (0x0c4314fffe5c6913)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature kg_heating_thermostat "KG heating SET [%.0f %unit%]" <heatingt> (g_hz_all,g_hz_auto,g_hz_kg) {channel="mqtt:topic:openhab:kg_heating:thermostat"}
-Number:Dimensionless kg_heating_position "KG heating POS [%.0f %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:kg_heating:position"}
 Number:Temperature kg_heating_temperature "KG heating [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:kg_heating:temperature"}
 DateTime kg_heating_activity "KG heating [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_heating:activity"}
 Number:Dimensionless kg_heating_link "KG heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_heating:link"}
 Switch kg_heating_ota "KG heating OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_heating:ota"}
+Switch kg_heating_battery_low "KG heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_heating:battery_low"}
+Number:ElectricPotential kg_heating_voltage "KG heating [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:kg_heating:voltage"}

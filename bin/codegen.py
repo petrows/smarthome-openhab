@@ -48,6 +48,7 @@ PREAMBULA = """
 # 0x04cd15fffe73ecb6 - Ikea 1055 lm (IKEA 2022-03-19)
 # 0x04cd15fffe35f24e - Ikea 1055 lm (IKEA 2022-03-19)
 # 0x04cd15fffe75c518 - Ikea styrbar (IKEA 2022-03-19)
+# 0x0c4314fffe5c6913 - Silvercerst thermostat (ebay 2022-03-22)
 
 # Items defentition
 items = [
@@ -613,8 +614,8 @@ items = [
     {
         'name': "KG heating",
         'id': "kg_heating",
-        'zigbee_id': '0x5c0272fffedc2f41',
-        'type': DEVICES.TUYA_THERMOSTAT_VALVE,
+        'zigbee_id': '0x0c4314fffe5c6913',
+        'type': DEVICES.SILVERCREST_THERMOSTAT_368308_2010,
         'groups': {
             'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_kg'],
             'position': ['g_hz_valve'],
