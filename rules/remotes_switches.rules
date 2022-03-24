@@ -210,7 +210,7 @@ then
             desktop_marina_light_dim.sendCommand(100)
         }
         case "arrow_left_click": {
-            desktop_marina_light_dim.sendCommand(0)
+            desktop_marina_light_dim.sendCommand(1)
         }
         case "brightness_down_click": {
             snf_eg_fs.sendCommand(OFF)
@@ -255,7 +255,7 @@ then
             if (50 > (sz_night_lamp_dim.state as Number) && sz_night_lamp_sw.state == ON) {
                 sz_night_lamp_sw.sendCommand(OFF)
             } else {
-                sz_night_lamp_dim.sendCommand(0)
+                sz_night_lamp_dim.sendCommand(1)
             }
         }
     }

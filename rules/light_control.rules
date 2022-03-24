@@ -21,7 +21,7 @@ then
                     s.sendCommand(OFF)
                 }
             ]
-            sz_declamp_1_dim.sendCommand(0)
+            sz_declamp_1_dim.sendCommand(1)
         }
     }
 end
