@@ -1,30 +1,12 @@
-Group  gVac     "Xiaomi Robot"      <fan>
-Group  gVacStat "Статус"           <status> (gVac)
-Group  gVacHist "История"         <calendar> (gVac)
-Group  gVacCons "Расходники"        <line-increase> (gVac)
+Group G_vacuum "ROIDMI EVE vacuum" <status>
 
-String miRobotStatus    "Статус [%s]"  <status>  (gVacStat) {channel="miio:vacuum:03DBC3C3:status#state"}
-Number miRobotStatusArea    "Площадь [%1.0fm²]" <zoom>   (gVac,gVacStat) {channel="miio:vacuum:03DBC3C3:status#clean_area" }
-Number miRobotStatusTime    "Время [%1.0f']" <time>   (gVac,gVacStat) {channel="miio:vacuum:03DBC3C3:status#clean_time" }
-String  miRobotStatusError    "Ошибка [%s]"  <error>  (gVac,gVacStat) {channel="miio:vacuum:03DBC3C3:status#error_code" }
-Number miRobotStatusFanPow    "Мощность [%1.0f %%]"  <signal>   (gVacStat) {channel="miio:vacuum:03DBC3C3:status#fan_power" } 
-Number miRobotStatusClean    "Статус чистки [%1.0f]"   <switch>  (gVacStat) {channel="miio:vacuum:03DBC3C3:status#in_cleaning" }
-Switch miRobotStatusDND    "DND Activated"    (gVacStat) {channel="miio:vacuum:03DBC3C3:status#dnd_enabled" }
-
-
-String miRobotMode "Режим []" <fan> {channel="miio:vacuum:03DBC3C3:actions#control"}
-Number miRobotFan "Мощность []" <pressure> {channel="miio:vacuum:03DBC3C3:actions#fan" }
-Number miRobotBattery "Заряд" <battery> {channel="miio:vacuum:03DBC3C3:status#battery"}
-
-Number miRobotHistoryArea "Площадь [%1.0fm²]" <zoom> (gVacHist) {channel="miio:vacuum:03DBC3C3:history#total_clean_area"}
-Number miRobotHistoryTime "Время [%1.0f']" <time> (gVacHist) {channel="miio:vacuum:03DBC3C3:history#total_clean_time"}
-Number miRobotHistoryCount "Итого уборок [%1.0f]" <office> (gVacHist) {channel="miio:vacuum:03DBC3C3:history#total_clean_count"}
-
-// Number miRobotConsumableMainT    "Main Brush [%1.0f]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#main_brush_time"}
-Number miRobotConsumableMainP    "Main Brush [%1.0f%%]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#main_brush_percent"}
-//Number miRobotConsumableSideT    "Side Brush [%1.0f]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#side_brush_time"}
-Number miRobotConsumableSideP    "Side Brush [%1.0f%%]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#side_brush_percent"}
-//Number miRobotConsumableFilterT    "Filter Time[%1.0f]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#filter_time" }
-Number miRobotConsumableFilterP    "Filter Time[%1.0f%%]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#filter_percent" }
-//Number miRobotConsumableSensorT    "Sensor [%1.0f]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#sensor_dirt_time"}
-Number miRobotConsumableSensorP    "Sensor [%1.0f%%]"    (gVacCons) {channel="miio:vacuum:03DBC3C3:consumables#sensor_dirt_percent"}
+String robot_actions "Actions" (G_vacuum) {channel="miio:basic:eve:actions"}
+Number robot_status "Robot Cleaner - Status" (G_vacuum) {channel="miio:basic:eve:status"}
+Number robot_fault "Robot Cleaner - Device Fault" (G_vacuum) {channel="miio:basic:eve:fault"}
+Number robot_mode "Robot Cleaner - Mode" (G_vacuum) {channel="miio:basic:eve:mode"}
+Number robot_sweep_type "Robot Cleaner - Sweep Type" (G_vacuum) {channel="miio:basic:eve:sweep_type"}
+Number robot_on "Robot Cleaner - Switch Status" (G_vacuum) {channel="miio:basic:eve:on"}
+Number:Dimensionless robot_battery_level "Battery - Battery Level" (G_vacuum) {channel="miio:basic:eve:battery_level"}
+Number robot_charging_state "Battery - Charging State" (G_vacuum) {channel="miio:basic:eve:charging_state"}
+Number:Dimensionless robot_volume "Speaker - Volume" (G_vacuum) {channel="miio:basic:eve:volume"}
+Switch robot_mute "Speaker - Mute" (G_vacuum) {channel="miio:basic:eve:mute"}
