@@ -1,5 +1,7 @@
 Group g_robot "ROIDMI EVE vacuum" <status>
 
+String robot_custom_command "Custom command" (g_robot)
+
 String robot_actions "Actions" (g_robot) {channel="miio:basic:eve:actions"}
 Number robot_status "Robot Cleaner - Status" (g_robot) {channel="miio:basic:eve:status"}
 Number robot_fault "Robot Cleaner - Device Fault" (g_robot) {channel="miio:basic:eve:fault"}

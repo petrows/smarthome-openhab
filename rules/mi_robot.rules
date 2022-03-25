@@ -1,0 +1,14 @@
+rule "Robot custom command"
+when
+	Item robot_custom_command received command
+then
+	logWarn("MI Robot", "Custom command: " + receivedCommand)
+
+    switch (receivedCommand) {
+        case "FIND": {
+            robot_actions.sendCommand("custom-find-robot")
+        }
+    }
+    // Reset button status to empty
+    robot_custom_command.postUpdate("")
+end

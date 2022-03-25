@@ -270,19 +270,24 @@ sitemap control2 label="KONTROL 2"
             Switch item=m800s_state_command label="Command []" mappings=["OFF"="OFF", "WARM"="WARM", "ON"="START"]
 		}
 		Group item=robot_status icon="pump" label="Robotier [MAP(eve_status.map):%s]" {
-            Text item=robot_status label="Status [MAP(eve_status.map):%s]"
-            Text item=robot_charging_state label="Charging [MAP(eve_charging.map):%s]"
-            Text item=robot_fault label="Fault [MAP(eve_fault.map):%s]"
-            Text item=robot_battery_level label="Battery [%d %%]"
-            Text item=robot_total_clean_time label="Clean time [%1$tj days %1$tH:%1$tM]"
-            Text item=robot_clean_counts label="Cleans [%d]"
-            Selection item=robot_actions label="Command []" mappings=["vacuum-start-sweep"="Start", "custom-pause"="Pause", "vacuum-stop-sweeping"="Stop+Charge", "custom-find-robot"="Find"]
-            // Selection item=robot_actions label="Command 2 []" mappings=["vacuum-start-sweep"="Vacuum Start Sweep","vacuum-stop-sweeping"="Vacuum Stop Sweeping","vacuum-start-room-sweep"="Vacuum Start Room Sweep","battery-start-charge"="Battery Start Charge","filter-reset-filter-life"="Filter Reset Filter Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","custom-find-robot"="Custom Find Robot","custom-stop-find-charge"="Custom Stop Find Charge","custom-continue-sweep"="Custom Continue Sweep","custom-start-dust"="Custom Start Dust","custom-pause"="Custom Pause","custom-pause-find-charge"="Custom Pause Find Charge","custom-continue-find-charge"="Custom Continue Find Charge","custom-update-audio"="Custom Update Audio","custom-set-voice"="Custom Set Voice","map-request-path"="Map Request Path","map-change-area-name"="Map Change Area Name","map-set-auto-area"="Map Set Auto Area","map-local-map"="Map Local Map","map-area-custom"="Map Area Custom","map-area-order"="Map Area Order","sweep-start-sweep"="Sweep Start Sweep"]
-            Switch item=robot_mode label="Mode []" mappings=["1"="25%","2"="50%","3"="75%","4"="100%","0"="Sweep"]
-            Switch item=robot_sweep_type label="Sweep []" mappings=["0"="Sweep","1"="Mop","2"="Mop+Sweep"]
-            Switch item=robot_water_level label="Water []" mappings=["1"="1","2"="2","3"="3","4"="4","0"="NONE"]
-            Switch item=robot_double_clean label="Double clean [%s]"
-            Slider	item=robot_volume
+            Frame label="Status" {
+                Text item=robot_status label="Status [MAP(eve_status.map):%s]"
+                Text item=robot_charging_state label="Charging [MAP(eve_charging.map):%s]"
+                Text item=robot_fault label="Fault [MAP(eve_fault.map):%s]"
+                Text item=robot_battery_level label="Battery [%d %%]"
+                Text item=robot_total_clean_time label="Clean time [%1$tj days %1$tH:%1$tM]"
+                Text item=robot_clean_counts label="Cleans [%d]"
+            }
+            Frame label="Control" {
+                Switch item=robot_actions icon="" label="Command []" mappings=["vacuum-start-sweep"="Start", "custom-pause"="Pause", "vacuum-stop-sweeping"="Stop"]
+                // Selection item=robot_actions label="Command 2 []" mappings=["vacuum-start-sweep"="Vacuum Start Sweep","vacuum-stop-sweeping"="Vacuum Stop Sweeping","vacuum-start-room-sweep"="Vacuum Start Room Sweep","battery-start-charge"="Battery Start Charge","filter-reset-filter-life"="Filter Reset Filter Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","custom-find-robot"="Custom Find Robot","custom-stop-find-charge"="Custom Stop Find Charge","custom-continue-sweep"="Custom Continue Sweep","custom-start-dust"="Custom Start Dust","custom-pause"="Custom Pause","custom-pause-find-charge"="Custom Pause Find Charge","custom-continue-find-charge"="Custom Continue Find Charge","custom-update-audio"="Custom Update Audio","custom-set-voice"="Custom Set Voice","map-request-path"="Map Request Path","map-change-area-name"="Map Change Area Name","map-set-auto-area"="Map Set Auto Area","map-local-map"="Map Local Map","map-area-custom"="Map Area Custom","map-area-order"="Map Area Order","sweep-start-sweep"="Sweep Start Sweep"]
+                Switch item=robot_mode label="Mode []" mappings=["1"="25%","2"="50%","3"="75%","4"="100%","0"="Sweep"]
+                Switch item=robot_sweep_type label="Sweep []" mappings=["0"="Sweep","1"="Mop","2"="Mop+Sweep"]
+                Switch item=robot_water_level label="Water []" mappings=["1"="1","2"="2","3"="3","4"="4","0"="NONE"]
+                Switch item=robot_double_clean icon="" label="Double clean []" mappings=["OFF"="OFF", "ON"="ON"]
+                Switch item=robot_custom_command icon="" label="Find []" mappings=["FIND"="FIND"]
+                Slider item=robot_volume
+            }
         }
 		Group item=yel_rgb_sw label="RGB Lampe [%s]" icon="light" {
 			Switch 		item=yel_rgb_sw icon="light"
