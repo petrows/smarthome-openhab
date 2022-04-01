@@ -72,6 +72,8 @@
   friendly_name: ns_heating_boost_power
 '0x842e14fffe1267fb':
   friendly_name: ku_light_switch
+'0xa4c1383cc92cbbd2':
+  friendly_name: treppe_climate
 '0xbc33acfffe84ca1e':
   friendly_name: kg_lager4_motion
 '0xbc33acfffe872049':

@@ -190,6 +190,12 @@ Text item=treppe_motion_occupancy
 Text item=treppe_motion_link icon="linkz"
 Text item=treppe_motion_ota icon="fire"
 }
+Frame label="Treppe climate (0xa4c1383cc92cbbd2)" {
+Text item=treppe_climate_temperature
+Text item=treppe_climate_humidity
+Text item=treppe_climate_link icon="linkz"
+Text item=treppe_climate_ota icon="fire"
+}
 Frame label="KG Window 1 (0xccccccfffed82ba3)" {
 Text item=kg_window_1_contact
 Text item=kg_window_1_link icon="linkz"

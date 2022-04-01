@@ -381,6 +381,20 @@ Thing mqtt:topic:openhab:treppe_motion "Treppe motion" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// Treppe climate (0xa4c1383cc92cbbd2)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
+Thing mqtt:topic:openhab:treppe_climate "Treppe climate" (mqtt:broker:openhab) {
+	Channels:
+		Type number : temperature [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="JS:z2m-temperature.js",unit="°C"]
+		Type number : humidity [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="JSONPATH:$.humidity"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="JS:z2m-activity.js"]
+		Type number : battery [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : voltage [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
+		Type number : link [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // KG Window 1 (0xccccccfffed82ba3)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {

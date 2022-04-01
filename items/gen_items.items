@@ -269,6 +269,17 @@ Switch treppe_motion_ota "Treppe motion OTA [%s]" <fire> (g_zigbee_ota) {channel
 Number:Dimensionless treppe_motion_battery "Treppe motion [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_motion:battery"}
 Switch treppe_motion_battery_low "Treppe motion [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:treppe_motion:battery_low"}
 
+// Treppe climate (0xa4c1383cc92cbbd2)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
+Number:Temperature treppe_climate_temperature "Treppe climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:treppe_climate:temperature"}
+Number:Dimensionless treppe_climate_humidity "Treppe climate [%.0f %%]" <humidity> {channel="mqtt:topic:openhab:treppe_climate:humidity"}
+DateTime treppe_climate_activity "Treppe climate [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:treppe_climate:activity"}
+Number:Dimensionless treppe_climate_link "Treppe climate LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_climate:link"}
+Switch treppe_climate_ota "Treppe climate OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_climate:ota"}
+Number:Dimensionless treppe_climate_battery "Treppe climate [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_climate:battery"}
+Switch treppe_climate_battery_low "Treppe climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:treppe_climate:battery_low"}
+Number:ElectricPotential treppe_climate_voltage "Treppe climate [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:treppe_climate:voltage"}
+
 // KG Window 1 (0xccccccfffed82ba3)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Contact kg_window_1_contact "KG Window 1 contact [%s]" <door> (kg_windows) {channel="mqtt:topic:openhab:kg_window_1:contact"}

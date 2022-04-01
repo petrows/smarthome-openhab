@@ -49,6 +49,9 @@ PREAMBULA = """
 # 0x04cd15fffe35f24e - Ikea 1055 lm (IKEA 2022-03-19)
 # 0x04cd15fffe75c518 - Ikea styrbar (IKEA 2022-03-19)
 # 0x0c4314fffe5c6913 - Silvercerst thermostat (ebay 2022-03-22)
+# 0xa4c138f5460e22dd - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
+# 0xa4c1383cc92cbbd2 - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
+# 0xa4c1386df39045f6 - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
 
 # Items defentition
 items = [
@@ -342,6 +345,12 @@ items = [
         'id': "treppe_motion",
         'zigbee_id': '0xbc33acfffe872049',
         'type': DEVICES.IKEA_TRADFRI_MOTION_SENSOR,
+    },
+    {
+        'name': "Treppe climate",
+        'id': "treppe_climate",
+        'zigbee_id': '0xa4c1383cc92cbbd2',
+        'type': DEVICES.TUYA_TEMPERATURE_SENSOR_TS0201,
     },
     # KG
     {
