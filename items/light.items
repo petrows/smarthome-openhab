@@ -12,6 +12,7 @@ Group:Switch:OR(ON, OFF) g_light_eg_bz <light>
 Group:Switch:OR(ON, OFF) g_light_eg_fs <light>
 Group:Switch:OR(ON, OFF) g_light_eg_sz <light>
 Group:Switch:OR(ON, OFF) g_light_eg_ku <light>
+Group:Switch:OR(ON, OFF) g_light_eg_ku_main <light>
 Group:Switch:OR(ON, OFF) g_light_eg_ns <light>
 
 Group:Switch:OR(ON, OFF) g_light_eg_sz_decor

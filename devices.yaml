@@ -26,10 +26,15 @@
   friendly_name: desktop_petro_up_light_2
 '0x04cd15fffe6d57dc':
   friendly_name: sturbar_test
+  simulated_brightness: []
 '0x04cd15fffe73ecb6':
   friendly_name: desktop_petro_up_light_3
 '0x04cd15fffe75c518':
   friendly_name: treppe_down_switch
+  simulated_brightness: []
+'0x04cd15fffe789098':
+  friendly_name: ku_light_table_switch
+  simulated_brightness: []
 '0x086bd7fffefb619a':
   friendly_name: bz_light
 '0x0c4314fffe5c6913':

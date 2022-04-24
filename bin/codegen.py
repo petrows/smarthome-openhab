@@ -48,6 +48,7 @@ PREAMBULA = """
 # 0x04cd15fffe73ecb6 - Ikea 1055 lm (IKEA 2022-03-19)
 # 0x04cd15fffe35f24e - Ikea 1055 lm (IKEA 2022-03-19)
 # 0x04cd15fffe75c518 - Ikea styrbar (IKEA 2022-03-19)
+# 0x04cd15fffe789098 - Ikea styrbar (IKEA 2022-03-19)
 # 0x0c4314fffe5c6913 - Silvercerst thermostat (ebay 2022-03-22)
 # 0xa4c138f5460e22dd - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
 # 0xa4c1383cc92cbbd2 - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
@@ -271,8 +272,14 @@ items = [
         'type': DEVICES.SILVERCREST_SMART_PLUG,
         'expire': '3h',
         'groups': {
-            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku', 'g_light_eg_ku_main'],
         }
+    },
+    {
+        'name': "KU Light Table SW",
+        'id': "ku_light_table_switch",
+        'zigbee_id': '0x04cd15fffe789098',
+        'type': DEVICES.IKEA_TRADFRI_STYRBAR,
     },
     {
         'name': "KU Light Table",
@@ -293,7 +300,7 @@ items = [
                 'id': 'ku_light_switch_haupt',
                 'name': 'KU Light Haupt (Wall SW)',
                 'groups': {
-                    'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
+                    'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku', 'g_light_eg_ku_main'],
                 }
             },
             'l2': {
@@ -301,7 +308,7 @@ items = [
                 'name': 'KU Light Arbeit (Wall SW)',
                 'expire': '3h',
                 'groups': {
-                    'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
+                    'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku', 'g_light_eg_ku_main'],
                 }
             },
         }
@@ -698,7 +705,10 @@ if __name__ == "__main__":
             if items[x]['zigbee_short'] in zigbee_ids:
                 raise Exception(f"Device ID {item['id']} is not unique!")
             zigbee_ids.append(items[x]['zigbee_short'])
-            zigbee_devices_list[item['zigbee_id']] = item['id']
+            zigbee_devices_yaml = {'friendly_name': item['id']}
+            if 'simulated_brightness' in item['type']['types']:
+                zigbee_devices_yaml['simulated_brightness'] = list()
+            zigbee_devices_list[item['zigbee_id']] = zigbee_devices_yaml
 
     # Generate THINGS
     conf_str = [PREAMBULA]
@@ -788,6 +798,10 @@ if __name__ == "__main__":
             if np.in1d(['remote'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType string : action [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.action\", trigger=true]")
+            if np.in1d(['simulated_brightness'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType dimmer : dim [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.brightness\", min=1, max=255]")
+
             # Device has dimmer
             if np.in1d(['lamp'], item['type']['types']).any():
                 conf_str.append(
@@ -960,6 +974,18 @@ if __name__ == "__main__":
                 f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:state\"{device_timout}}}"
             )
             device_items['items'].append(f"Switch item={item['id']}_sw")
+
+        # Somde devices simulate brightness
+        if np.in1d(['simulated_brightness'], item['type']['types']).any():
+            device_icon = 'light'
+            conf_str.append(
+                f"Dimmer {item['id']}_dim \"{item['name']} DIM [%.0f %%]\" <{device_icon}>"
+                f"{device_groups(item,'dim')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:dim\"}}"
+            )
+            device_items['items'].append(
+                f"Text item={item['id']}_dim")
+
         # Some devices have thermostat
         if np.in1d(['thermostat'], item['type']['types']).any():
             device_icon = 'heatingt'
@@ -1203,15 +1229,8 @@ sitemap gen label="GEN ITEMS"
         #     Loader=yaml.FullLoader
         # )
 
-        # Check existing list
-        for zigbee_id, zigbee_name in zigbee_devices_list.items():
-            if zigbee_id in device_yaml:
-                device_yaml[zigbee_id]['friendly_name'] = zigbee_name
-            else:
-                device_yaml[zigbee_id] = {'friendly_name': zigbee_name}
-
         yaml.dump(
-            device_yaml,
+            zigbee_devices_list,
             open(
                 os.path.join(ROOT_PATH, 'devices.yaml'),
                 'w'

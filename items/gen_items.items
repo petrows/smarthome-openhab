@@ -9,6 +9,7 @@
 
 // Sturbar test (0x04cd15fffe6d57dc)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer sturbar_test_dim "Sturbar test DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:sturbar_test:dim"}
 Number:Dimensionless sturbar_test_link "Sturbar test LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sturbar_test:link"}
 Switch sturbar_test_ota "Sturbar test OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sturbar_test:ota"}
 Number:Dimensionless sturbar_test_battery "Sturbar test [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sturbar_test:battery"}
@@ -210,9 +211,17 @@ Switch ku_light_switch_kochfeld_battery_low "KU Light Button (Kochfield) [MAP(lo
 
 // KU Light Arbeit (0xec1bbdfffea37757)
 // Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html
-Switch ku_light_arbeitplatte_sw "KU Light Arbeit" <switch> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:state", expire="3h,command=OFF"}
+Switch ku_light_arbeitplatte_sw "KU Light Arbeit" <switch> (g_light_all,g_light_eg,g_light_eg_ku,g_light_eg_ku_main) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:state", expire="3h,command=OFF"}
 Number:Dimensionless ku_light_arbeitplatte_link "KU Light Arbeit LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:link"}
 Switch ku_light_arbeitplatte_ota "KU Light Arbeit OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:ota"}
+
+// KU Light Table SW (0x04cd15fffe789098)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer ku_light_table_switch_dim "KU Light Table SW DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:ku_light_table_switch:dim"}
+Number:Dimensionless ku_light_table_switch_link "KU Light Table SW LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_table_switch:link"}
+Switch ku_light_table_switch_ota "KU Light Table SW OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_table_switch:ota"}
+Number:Dimensionless ku_light_table_switch_battery "KU Light Table SW [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_light_table_switch:battery"}
+Switch ku_light_table_switch_battery_low "KU Light Table SW [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_light_table_switch:battery_low"}
 
 // KU Light Table (0xec1bbdfffe4695b5)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
@@ -223,8 +232,8 @@ Switch ku_light_table_ota "KU Light Table OTA [%s]" <fire> (g_zigbee_ota) {chann
 
 // KU Light SW (0x842e14fffe1267fb)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
-Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_switch:state_l1"}
-Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_switch:state_l2", expire="3h,command=OFF"}
+Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_light_all,g_light_eg,g_light_eg_ku,g_light_eg_ku_main) {channel="mqtt:topic:openhab:ku_light_switch:state_l1"}
+Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_light_all,g_light_eg,g_light_eg_ku,g_light_eg_ku_main) {channel="mqtt:topic:openhab:ku_light_switch:state_l2", expire="3h,command=OFF"}
 Number:Dimensionless ku_light_switch_link "KU Light SW LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_switch:link"}
 Switch ku_light_switch_ota "KU Light SW OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_switch:ota"}
 
@@ -246,6 +255,7 @@ Switch treppe_up_switch_battery_low "Treppe Up switch [MAP(lowbat.map):%s]" <low
 
 // Treppe Down switch (0x04cd15fffe75c518)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer treppe_down_switch_dim "Treppe Down switch DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:treppe_down_switch:dim"}
 Number:Dimensionless treppe_down_switch_link "Treppe Down switch LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_down_switch:link"}
 Switch treppe_down_switch_ota "Treppe Down switch OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_down_switch:ota"}
 Number:Dimensionless treppe_down_switch_battery "Treppe Down switch [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_down_switch:battery"}

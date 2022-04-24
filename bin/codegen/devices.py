@@ -91,6 +91,7 @@ class DEVICES:
         'types': [
             'zigbee',
             'remote',
+            'simulated_brightness',
             'ikea',
             'battery',
         ],

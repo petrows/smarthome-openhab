@@ -10,6 +10,7 @@
 sitemap gen label="GEN ITEMS"
 {
 Frame label="Sturbar test (0x04cd15fffe6d57dc)" {
+Text item=sturbar_test_dim
 Text item=sturbar_test_link icon="linkz"
 Text item=sturbar_test_ota icon="fire"
 }
@@ -152,6 +153,11 @@ Switch item=ku_light_arbeitplatte_sw
 Text item=ku_light_arbeitplatte_link icon="linkz"
 Text item=ku_light_arbeitplatte_ota icon="fire"
 }
+Frame label="KU Light Table SW (0x04cd15fffe789098)" {
+Text item=ku_light_table_switch_dim
+Text item=ku_light_table_switch_link icon="linkz"
+Text item=ku_light_table_switch_ota icon="fire"
+}
 Frame label="KU Light Table (0xec1bbdfffe4695b5)" {
 Switch item=ku_light_table_sw
 Slider item=ku_light_table_dim
@@ -174,6 +180,7 @@ Text item=treppe_up_switch_link icon="linkz"
 Text item=treppe_up_switch_ota icon="fire"
 }
 Frame label="Treppe Down switch (0x04cd15fffe75c518)" {
+Text item=treppe_down_switch_dim
 Text item=treppe_down_switch_link icon="linkz"
 Text item=treppe_down_switch_ota icon="fire"
 }

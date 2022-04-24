@@ -306,6 +306,47 @@ then
     }
 end
 
+
+rule "KU table dimmer"
+when
+    Item ku_light_table_switch_dim received update
+then
+    if (ku_light_table_sw.state == ON) {
+        ku_light_table_dim.sendCommand(newState.toString())
+    }
+end
+
+rule "KU table switch"
+when
+    Channel "mqtt:topic:openhab:ku_light_table_switch:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "on": {
+            ku_light_table_sw.sendCommand(ON)
+        }
+        case "off": {
+            ku_light_table_sw.sendCommand(OFF)
+        }
+        case "arrow_left_click": {
+            if (balkon_light.state == OFF) {
+                balkon_light.sendCommand(ON)
+                balkon_light_dim.sendCommand(100)
+            } else {
+                balkon_light.sendCommand(OFF)
+            }
+        }
+        case "arrow_right_click": {
+            if (g_light_eg_ku_main.state == OFF) {
+                ku_light_switch_haupt_sw.sendCommand(ON)
+            } else {
+                g_light_eg_ku_main.sendCommand(OFF)
+            }
+        }
+    }
+end
+
+
 rule "Garten wasser remote"
 when
     Channel "mqtt:topic:openhab:garten_wasser_remote:action" triggered
