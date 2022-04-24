@@ -303,6 +303,16 @@ Thing mqtt:topic:openhab:ku_light_arbeitplatte "KU Light Arbeit" (mqtt:broker:op
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_arbeitplatte", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// KU Light Table (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Thing mqtt:topic:openhab:ku_light_table "KU Light Table" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/ku_light_table/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/ku_light_table/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type number : link [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // KU Light SW (0x842e14fffe1267fb)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
 Thing mqtt:topic:openhab:ku_light_switch "KU Light SW" (mqtt:broker:openhab) {

@@ -214,6 +214,13 @@ Switch ku_light_arbeitplatte_sw "KU Light Arbeit" <switch> (g_light_all,g_light_
 Number:Dimensionless ku_light_arbeitplatte_link "KU Light Arbeit LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:link"}
 Switch ku_light_arbeitplatte_ota "KU Light Arbeit OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:ota"}
 
+// KU Light Table (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Switch ku_light_table_sw "KU Light Table" <light> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_table:state"}
+Dimmer ku_light_table_dim "KU Light Table DIM [%d %%]" <light> {channel="mqtt:topic:openhab:ku_light_table:dim"}
+Number:Dimensionless ku_light_table_link "KU Light Table LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_table:link"}
+Switch ku_light_table_ota "KU Light Table OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_table:ota"}
+
 // KU Light SW (0x842e14fffe1267fb)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
 Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_switch:state_l1"}

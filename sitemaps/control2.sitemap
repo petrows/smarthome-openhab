@@ -129,6 +129,8 @@ sitemap control2 label="KONTROL 2"
 		Group item=g_light_eg_ku label="Küche [%s]" icon="light" {
 			Switch item=ku_light_switch_haupt_sw label="Hauptlicht" icon="light"
 			Switch item=ku_light_switch_arbeit_sw label="Arbeitlicht" icon="light"
+			Switch item=ku_light_table_sw label="Table [%s]" icon="light"
+			Slider item=ku_light_table_dim label="Table DIM [%d %%]" icon="light"
 		}
 		Group item=g_light_eg_ns label="Nagel Studio [%s]" icon="light" {
             Frame {

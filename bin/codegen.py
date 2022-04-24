@@ -275,6 +275,15 @@ items = [
         }
     },
     {
+        'name': "KU Light Table",
+        'id': "ku_light_table",
+        'zigbee_id': '0xec1bbdfffe4695b5',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
+        }
+    },
+    {
         'name': "KU Light SW",
         'id': "ku_light_switch",
         'zigbee_id': '0x842e14fffe1267fb',

@@ -152,6 +152,12 @@ Switch item=ku_light_arbeitplatte_sw
 Text item=ku_light_arbeitplatte_link icon="linkz"
 Text item=ku_light_arbeitplatte_ota icon="fire"
 }
+Frame label="KU Light Table (0xec1bbdfffe4695b5)" {
+Switch item=ku_light_table_sw
+Slider item=ku_light_table_dim
+Text item=ku_light_table_link icon="linkz"
+Text item=ku_light_table_ota icon="fire"
+}
 Frame label="KU Light SW (0x842e14fffe1267fb)" {
 Switch item=ku_light_switch_haupt_sw
 Switch item=ku_light_switch_arbeit_sw
