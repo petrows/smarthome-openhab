@@ -341,6 +341,7 @@ Thing mqtt:topic:openhab:ku_light_switch "KU Light SW" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:treppe_door_sensor "Treppe Door sensor" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="JSONPATH:$.contact", on="false", off="true"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
 		Type number : voltage [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
@@ -424,6 +425,7 @@ Thing mqtt:topic:openhab:treppe_climate "Treppe climate" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JSONPATH:$.contact", on="false", off="true"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
 		Type number : voltage [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JS:z2m-batt-mv.js",unit="V"]

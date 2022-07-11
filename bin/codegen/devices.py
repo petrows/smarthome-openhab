@@ -194,6 +194,7 @@ class DEVICES:
         'types': [
             'zigbee',
             'contact',
+            'activity',
             'battery',
             'voltage',
         ],

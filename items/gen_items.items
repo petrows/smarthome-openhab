@@ -240,6 +240,7 @@ Switch ku_light_switch_ota "KU Light SW OTA [%s]" <fire> (g_zigbee_ota) {channel
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Contact treppe_door_sensor_contact "Treppe Door sensor contact [%s]" <door> {channel="mqtt:topic:openhab:treppe_door_sensor:contact"}
+DateTime treppe_door_sensor_activity "Treppe Door sensor [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:treppe_door_sensor:activity"}
 Number:Dimensionless treppe_door_sensor_link "Treppe Door sensor LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_door_sensor:link"}
 Switch treppe_door_sensor_ota "Treppe Door sensor OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_door_sensor:ota"}
 Number:Dimensionless treppe_door_sensor_battery "Treppe Door sensor [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_door_sensor:battery"}
@@ -300,6 +301,7 @@ Number:ElectricPotential treppe_climate_voltage "Treppe climate [%.0f mV]" <ener
 // KG Window 1 (0xccccccfffed82ba3)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Contact kg_window_1_contact "KG Window 1 contact [%s]" <door> (kg_windows) {channel="mqtt:topic:openhab:kg_window_1:contact"}
+DateTime kg_window_1_activity "KG Window 1 [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_window_1:activity"}
 Number:Dimensionless kg_window_1_link "KG Window 1 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_window_1:link"}
 Switch kg_window_1_ota "KG Window 1 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_window_1:ota"}
 Number:Dimensionless kg_window_1_battery "KG Window 1 [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_window_1:battery"}
