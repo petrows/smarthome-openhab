@@ -10,7 +10,6 @@
 // Sturbar test (0x04cd15fffe6d57dc)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Dimmer sturbar_test_dim "Sturbar test DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:sturbar_test:dim"}
-DateTime sturbar_test_activity "Sturbar test [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:sturbar_test:activity"}
 Number:Dimensionless sturbar_test_link "Sturbar test LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sturbar_test:link"}
 Switch sturbar_test_ota "Sturbar test OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sturbar_test:ota"}
 Number:Dimensionless sturbar_test_battery "Sturbar test [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sturbar_test:battery"}
@@ -37,7 +36,6 @@ Switch balkon_light_1_ota "Balkon light 1 OTA [%s]" <fire> (g_zigbee_ota) {chann
 
 // Garten wasser remote (0xccccccfffe58f1c3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-DateTime garten_wasser_remote_activity "Garten wasser remote [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:garten_wasser_remote:activity"}
 Number:Dimensionless garten_wasser_remote_link "Garten wasser remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:garten_wasser_remote:link"}
 Switch garten_wasser_remote_ota "Garten wasser remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:garten_wasser_remote:ota"}
 Number:Dimensionless garten_wasser_remote_battery "Garten wasser remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:garten_wasser_remote:battery"}
@@ -45,7 +43,6 @@ Switch garten_wasser_remote_battery_low "Garten wasser remote [MAP(lowbat.map):%
 
 // Mirror remote (0x680ae2fffeab6b80)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-DateTime mirror_remote_activity "Mirror remote [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:mirror_remote:activity"}
 Number:Dimensionless mirror_remote_link "Mirror remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:mirror_remote:link"}
 Switch mirror_remote_ota "Mirror remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:mirror_remote:ota"}
 Number:Dimensionless mirror_remote_battery "Mirror remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:mirror_remote:battery"}
@@ -53,7 +50,6 @@ Switch mirror_remote_battery_low "Mirror remote [MAP(lowbat.map):%s]" <lowbatter
 
 // Leave switch (0x680ae2fffe16e111)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-DateTime eg_leave_switch_activity "Leave switch [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:eg_leave_switch:activity"}
 Number:Dimensionless eg_leave_switch_link "Leave switch LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:eg_leave_switch:link"}
 Switch eg_leave_switch_ota "Leave switch OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:eg_leave_switch:ota"}
 Number:Dimensionless eg_leave_switch_battery "Leave switch [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:eg_leave_switch:battery"}
@@ -134,7 +130,6 @@ Switch desktop_marina_light_ota "Marina Desktop light OTA [%s]" <fire> (g_zigbee
 
 // Marina Desktop remote (0xccccccfffeea9703)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-DateTime desktop_marina_remote_activity "Marina Desktop remote [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:desktop_marina_remote:activity"}
 Number:Dimensionless desktop_marina_remote_link "Marina Desktop remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_marina_remote:link"}
 Switch desktop_marina_remote_ota "Marina Desktop remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_marina_remote:ota"}
 Number:Dimensionless desktop_marina_remote_battery "Marina Desktop remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:desktop_marina_remote:battery"}
@@ -153,7 +148,6 @@ Number:ElectricPotential sz_climate_voltage "SZ Climate [%.0f mV]" <energy> (g_b
 
 // Bedroom remote (0x14b457fffe7e2305)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-DateTime sz_remote_activity "Bedroom remote [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:sz_remote:activity"}
 Number:Dimensionless sz_remote_link "Bedroom remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_remote:link"}
 Switch sz_remote_ota "Bedroom remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_remote:ota"}
 Number:Dimensionless sz_remote_battery "Bedroom remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_remote:battery"}
@@ -210,7 +204,6 @@ Number:ElectricPotential ku_light_switch_spule_voltage "KU Light Button (Spüle)
 
 // KU Light Button (Kochfield) (0x680ae2fffeaf18d4)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-DateTime ku_light_switch_kochfeld_activity "KU Light Button (Kochfield) [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:activity"}
 Number:Dimensionless ku_light_switch_kochfeld_link "KU Light Button (Kochfield) LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:link"}
 Switch ku_light_switch_kochfeld_ota "KU Light Button (Kochfield) OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:ota"}
 Number:Dimensionless ku_light_switch_kochfeld_battery "KU Light Button (Kochfield) [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:battery"}
@@ -225,7 +218,6 @@ Switch ku_light_arbeitplatte_ota "KU Light Arbeit OTA [%s]" <fire> (g_zigbee_ota
 // KU Light Table SW (0x04cd15fffe789098)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Dimmer ku_light_table_switch_dim "KU Light Table SW DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:ku_light_table_switch:dim"}
-DateTime ku_light_table_switch_activity "KU Light Table SW [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:ku_light_table_switch:activity"}
 Number:Dimensionless ku_light_table_switch_link "KU Light Table SW LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_table_switch:link"}
 Switch ku_light_table_switch_ota "KU Light Table SW OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_table_switch:ota"}
 Number:Dimensionless ku_light_table_switch_battery "KU Light Table SW [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_light_table_switch:battery"}
@@ -256,7 +248,6 @@ Number:ElectricPotential treppe_door_sensor_voltage "Treppe Door sensor [%.0f mV
 
 // Treppe Up switch (0x680ae2fffe1a92f3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-DateTime treppe_up_switch_activity "Treppe Up switch [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:treppe_up_switch:activity"}
 Number:Dimensionless treppe_up_switch_link "Treppe Up switch LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_up_switch:link"}
 Switch treppe_up_switch_ota "Treppe Up switch OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_up_switch:ota"}
 Number:Dimensionless treppe_up_switch_battery "Treppe Up switch [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_up_switch:battery"}
@@ -265,7 +256,6 @@ Switch treppe_up_switch_battery_low "Treppe Up switch [MAP(lowbat.map):%s]" <low
 // Treppe Down switch (0x04cd15fffe75c518)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Dimmer treppe_down_switch_dim "Treppe Down switch DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:treppe_down_switch:dim"}
-DateTime treppe_down_switch_activity "Treppe Down switch [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:treppe_down_switch:activity"}
 Number:Dimensionless treppe_down_switch_link "Treppe Down switch LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:treppe_down_switch:link"}
 Switch treppe_down_switch_ota "Treppe Down switch OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:treppe_down_switch:ota"}
 Number:Dimensionless treppe_down_switch_battery "Treppe Down switch [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:treppe_down_switch:battery"}
@@ -374,7 +364,6 @@ Switch desktop_petro_pc_power_ota "Petro Desktop PC OTA [%s]" <fire> (g_zigbee_o
 
 // Petro Desktop remote (0x000d6ffffee8357d)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-DateTime desktop_petro_remote_activity "Petro Desktop remote [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:desktop_petro_remote:activity"}
 Number:Dimensionless desktop_petro_remote_link "Petro Desktop remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:desktop_petro_remote:link"}
 Switch desktop_petro_remote_ota "Petro Desktop remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:desktop_petro_remote:ota"}
 Number:Dimensionless desktop_petro_remote_battery "Petro Desktop remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:desktop_petro_remote:battery"}
@@ -462,7 +451,6 @@ Switch kg_lager4_2_light_ota "KG Lager 4 (2) OTA [%s]" <fire> (g_zigbee_ota) {ch
 
 // KG Lager switch (0xccccccfffee401f8)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-DateTime kg_lager4_switch_activity "KG Lager switch [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_lager4_switch:activity"}
 Number:Dimensionless kg_lager4_switch_link "KG Lager switch LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_lager4_switch:link"}
 Switch kg_lager4_switch_ota "KG Lager switch OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_lager4_switch:ota"}
 Number:Dimensionless kg_lager4_switch_battery "KG Lager switch [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_lager4_switch:battery"}
