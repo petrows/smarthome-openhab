@@ -492,17 +492,8 @@ Thing mqtt:topic:openhab:desktop_petro_light "Petro Desktop light" (mqtt:broker:
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// Petro Desktop AUX (0x7cb03eaa0a094bf2)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:desktop_petro_aux_power "Petro Desktop AUX" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_aux_power", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/desktop_petro_aux_power/set", transformationPatternOut="JS:z2m-command-state.js"]
-		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_aux_power", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_aux_power", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-
-// Petro Desktop PC (0x7cb03eaa0a094303)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+// Petro Desktop PC (0x847127fffe0c873b)
+// Wall switch module / https://www.zigbee2mqtt.io/devices/WHD02.html#tuya-whd02
 Thing mqtt:topic:openhab:desktop_petro_pc_power "Petro Desktop PC" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_pc_power", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/desktop_petro_pc_power/set", transformationPatternOut="JS:z2m-command-state.js"]

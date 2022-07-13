@@ -249,12 +249,7 @@ Slider item=desktop_petro_light_ct
 Text item=desktop_petro_light_link icon="linkz"
 Text item=desktop_petro_light_ota icon="fire"
 }
-Frame label="Petro Desktop AUX (0x7cb03eaa0a094bf2)" {
-Switch item=desktop_petro_aux_power_sw
-Text item=desktop_petro_aux_power_link icon="linkz"
-Text item=desktop_petro_aux_power_ota icon="fire"
-}
-Frame label="Petro Desktop PC (0x7cb03eaa0a094303)" {
+Frame label="Petro Desktop PC (0x847127fffe0c873b)" {
 Switch item=desktop_petro_pc_power_sw
 Text item=desktop_petro_pc_power_link icon="linkz"
 Text item=desktop_petro_pc_power_ota icon="fire"

@@ -428,16 +428,10 @@ items = [
         }
     },
     {
-        'name': "Petro Desktop AUX",
-        'id': "desktop_petro_aux_power",
-        'zigbee_id': '0x7cb03eaa0a094bf2',
-        'type': DEVICES.OSRAM_SMART_PLUG,
-    },
-    {
         'name': "Petro Desktop PC",
         'id': "desktop_petro_pc_power",
-        'zigbee_id': '0x7cb03eaa0a094303',
-        'type': DEVICES.OSRAM_SMART_PLUG,
+        'zigbee_id': '0x847127fffe0c873b',
+        'type': DEVICES.TUYA_SWITCH_TS0001,
     },
     {
         'name': "Petro Desktop remote",
