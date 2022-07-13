@@ -1,7 +1,5 @@
 Group:DateTime:EARLIEST g_device_activity "Device Activity [JS(display-activity.js):%s]" <time>
 
-Switch snf_kg_ks_power "KG Kühlschrank power" { channel="mqtt:topic:openhab:snf-kg-ks:power" }
-
 Switch cinema_mode "Cinema modus"
 Switch ir_projector_power { channel="mqtt:topic:openhab:snf-ns-ir:projector_power" }
 Switch ir_stb_power { channel="mqtt:topic:openhab:snf-ns-ir:stb_power" }

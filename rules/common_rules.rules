@@ -84,23 +84,6 @@ then
     ]
 end
 
-// Control Fridge for beer
-rule "Fridge start at friday"
-when
-    Time cron "0 00 00 ? * FRI"
-then
-    logInfo("common", "Beer Fridge start")
-	snf_kg_ks_power.sendCommand(ON)
-end
-
-rule "Fridge stop at sunday"
-when
-    Time cron "0 00 00 ? * SUN"
-then
-    logInfo("common", "Beer Fridge stop")
-	snf_kg_ks_power.sendCommand(OFF)
-end
-
 // Temperature logging
 rule "Climate: today stat reset"
 when
