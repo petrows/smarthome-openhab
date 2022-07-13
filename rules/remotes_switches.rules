@@ -252,18 +252,10 @@ then
             }
         }
         case "arrow_right_click": {
-            if (50 < (sz_night_lamp_dim.state as Number) && sz_night_lamp_sw.state == ON) {
-                sz_night_lamp_sw.sendCommand(OFF)
-            } else {
-                sz_night_lamp_dim.sendCommand(100)
-            }
+
         }
         case "arrow_left_click": {
-            if (50 > (sz_night_lamp_dim.state as Number) && sz_night_lamp_sw.state == ON) {
-                sz_night_lamp_sw.sendCommand(OFF)
-            } else {
-                sz_night_lamp_dim.sendCommand(1)
-            }
+
         }
     }
 end

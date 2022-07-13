@@ -75,7 +75,6 @@ then
         // We do not use groups, we must have exact order of lamps defined
         var lightGroupItems = newArrayList(
             "snf_eg_fl_spiegel_brightness",
-            "sz_night_lamp_dim",
             "sz_declamp_3_dim",
             "sz_declamp_2_dim",
             "sz_declamp_1_dim"
