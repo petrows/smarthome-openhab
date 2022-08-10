@@ -14,7 +14,8 @@ then
         sendCommand(g_light_treppe, OFF)
     }
     if (astro_is_night.state == OFF) {
-        logWarn("light", "KG Motion skipped at night")
+        logWarn("light", "KG Motion skipped at day")
+        return
     }
     if (state == ON && g_light_treppe.state == OFF) {
         sendCommand(g_dim_treppe, 30)
@@ -36,7 +37,8 @@ then
         sendCommand(g_light_lager_auto, OFF)
     }
     if (astro_is_night.state == OFF) {
-        logWarn("light", "KG Motion lager skipped at night")
+        logWarn("light", "KG Motion lager skipped at day")
+        return
     }
     if (state == ON && g_light_lager_auto.state == OFF) {
         sendCommand(g_dim_lager_auto, 30)
