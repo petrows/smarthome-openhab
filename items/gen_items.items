@@ -60,6 +60,13 @@ Switch eg_leave_switch_battery_low "Leave switch [MAP(lowbat.map):%s]" <lowbatte
 Number:Dimensionless eg_router_link "EG Router LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:eg_router:link"}
 Switch eg_router_ota "EG Router OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:eg_router:ota"}
 
+// EG Decor light (0x9035eafffe20e847)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Switch eg_decoration_light_sw "EG Decor light" <light> (g_light_all,g_light_eg,g_light_eg_auto) {channel="mqtt:topic:openhab:eg_decoration_light:state"}
+Dimmer eg_decoration_light_dim "EG Decor light DIM [%d %%]" <light> (g_dim_eg_auto) {channel="mqtt:topic:openhab:eg_decoration_light:dim"}
+Number:Dimensionless eg_decoration_light_link "EG Decor light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:eg_decoration_light:link"}
+Switch eg_decoration_light_ota "EG Decor light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:eg_decoration_light:ota"}
+
 // BZ Light (0x086bd7fffefb619a)
 // HEIMAN Smart switch - 1 gang with neutral wire (HS2SW1A/HS2SW1A-N) / https://zigbee.blakadder.com/Heiman_HS2SW1A.html
 Switch bz_light_sw "BZ Light" <switch> (g_light_all,g_light_eg,g_light_eg_bz) {channel="mqtt:topic:openhab:bz_light:state"}

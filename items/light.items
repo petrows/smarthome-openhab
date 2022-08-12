@@ -20,6 +20,10 @@ Group:Switch:OR(ON, OFF) g_light_eg_sz_night
 Group:Dimmer:MAX g_light_eg_sz_night_brightness
 Group:Dimmer:MAX g_light_eg_sz_decor_brightness
 
+// EG auto lights
+Group:Switch:OR(ON, OFF) g_light_eg_auto
+Group:Dimmer:MAX g_dim_eg_auto
+
 // Group of lamps to set auto color depending on daytime
 Group:Dimmer:AVG g_light_astro_color "Astrocolor CT [%d %%]" <light>
 

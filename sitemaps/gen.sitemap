@@ -43,6 +43,12 @@ Frame label="EG Router (0x00124b000b4ed5cc)" {
 Text item=eg_router_link icon="linkz"
 Text item=eg_router_ota icon="fire"
 }
+Frame label="EG Decor light (0x9035eafffe20e847)" {
+Switch item=eg_decoration_light_sw
+Slider item=eg_decoration_light_dim
+Text item=eg_decoration_light_link icon="linkz"
+Text item=eg_decoration_light_ota icon="fire"
+}
 Frame label="BZ Light (0x086bd7fffefb619a)" {
 Switch item=bz_light_sw
 Text item=bz_light_link icon="linkz"

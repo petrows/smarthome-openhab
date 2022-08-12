@@ -75,6 +75,8 @@
   friendly_name: ku_light_switch
 '0x847127fffe0c873b':
   friendly_name: desktop_petro_pc_power
+'0x9035eafffe20e847':
+  friendly_name: eg_decoration_light
 '0xa4c1383cc92cbbd2':
   friendly_name: treppe_climate
 '0xbc33acfffe84ca1e':

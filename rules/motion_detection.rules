@@ -9,16 +9,23 @@ then
         // If light is triggered manually, does not stop it
         if (treppe_manual_sw.state == ON) {
             logWarn("light", "KG Motion treppe OFF ignored by manual override")
-            return
+        } else {
+            sendCommand(g_light_treppe, OFF)
         }
-        sendCommand(g_light_treppe, OFF)
+        sendCommand(g_light_eg_auto, OFF)
+        return
     }
     if (astro_is_night.state == OFF) {
         logWarn("light", "KG Motion skipped at day")
         return
     }
-    if (state == ON && g_light_treppe.state == OFF) {
-        sendCommand(g_dim_treppe, 30)
+    if (state == ON) {
+        if (g_light_treppe.state == OFF) {
+            sendCommand(g_dim_treppe, 30)
+        }
+        if (g_light_eg_auto.state == OFF) {
+            sendCommand(g_dim_eg_auto, 15)
+        }
     }
 end
 

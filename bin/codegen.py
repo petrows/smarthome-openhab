@@ -53,6 +53,8 @@ PREAMBULA = """
 # 0xa4c138f5460e22dd - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
 # 0xa4c1383cc92cbbd2 - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
 # 0xa4c1386df39045f6 - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
+# 0x9035eafffe20e847 - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
+# 0x9035eafffe1b9fcc - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
 
 # Items defentition
 items = [
@@ -113,6 +115,16 @@ items = [
         'id': "eg_router",
         'zigbee_id': '0x00124b000b4ed5cc',
         'type': DEVICES.DIY_CC2540_ROUTER,
+    },
+    {
+        'name': "EG Decor light",
+        'id': "eg_decoration_light",
+        'zigbee_id': '0x9035eafffe20e847',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_250,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_auto'],
+            'dim': ['g_dim_eg_auto'],
+        }
     },
     # EG (Closet)
     {

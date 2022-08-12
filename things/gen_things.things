@@ -85,6 +85,16 @@ Thing mqtt:topic:openhab:eg_router "EG Router" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/eg_router", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// EG Decor light (0x9035eafffe20e847)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Thing mqtt:topic:openhab:eg_decoration_light "EG Decor light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/eg_decoration_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/eg_decoration_light/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/eg_decoration_light", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/eg_decoration_light/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type number : link [stateTopic="zigbee2mqtt/eg_decoration_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/eg_decoration_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // BZ Light (0x086bd7fffefb619a)
 // HEIMAN Smart switch - 1 gang with neutral wire (HS2SW1A/HS2SW1A-N) / https://zigbee.blakadder.com/Heiman_HS2SW1A.html
 Thing mqtt:topic:openhab:bz_light "BZ Light" (mqtt:broker:openhab) {
