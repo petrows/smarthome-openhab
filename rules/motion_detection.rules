@@ -43,10 +43,6 @@ then
         }
         sendCommand(g_light_lager_auto, OFF)
     }
-    if (astro_is_night.state == OFF) {
-        logWarn("light", "KG Motion lager skipped at day")
-        return
-    }
     if (state == ON && g_light_lager_auto.state == OFF) {
         sendCommand(g_dim_lager_auto, 30)
     }
