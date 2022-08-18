@@ -114,12 +114,17 @@ Frame label="Bedroom remote (0x14b457fffe7e2305)" {
 Text item=sz_remote_link icon="linkz"
 Text item=sz_remote_ota icon="fire"
 }
-Frame label="SZ Bad bottom lamp (0x14b457fffe6383e5)" {
-Switch item=sz_bed_bottom_lamp_sw
-Slider item=sz_bed_bottom_lamp_dim
-Colorpicker item=sz_bed_bottom_lamp_color
-Text item=sz_bed_bottom_lamp_link icon="linkz"
-Text item=sz_bed_bottom_lamp_ota icon="fire"
+Frame label="SZ Bed 1 (0x04cd15fffe7a35b5)" {
+Switch item=sz_bed_light_1_sw
+Slider item=sz_bed_light_1_dim
+Text item=sz_bed_light_1_link icon="linkz"
+Text item=sz_bed_light_1_ota icon="fire"
+}
+Frame label="SZ Bed 2 (0x9035eafffe1b9fcc)" {
+Switch item=sz_bed_light_2_sw
+Slider item=sz_bed_light_2_dim
+Text item=sz_bed_light_2_link icon="linkz"
+Text item=sz_bed_light_2_ota icon="fire"
 }
 Frame label="SZ Decor lamp 1 (0xec1bbdfffe972819)" {
 Switch item=sz_declamp_1_sw

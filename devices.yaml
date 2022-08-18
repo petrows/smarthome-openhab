@@ -35,6 +35,8 @@
 '0x04cd15fffe789098':
   friendly_name: ku_light_table_switch
   simulated_brightness: []
+'0x04cd15fffe7a35b5':
+  friendly_name: sz_bed_light_1
 '0x086bd7fffefb619a':
   friendly_name: bz_light
 '0x0c4314fffe5c6913':
@@ -47,8 +49,6 @@
   friendly_name: fs_heating
 '0x14b457fffe399241':
   friendly_name: balkon_light_1
-'0x14b457fffe6383e5':
-  friendly_name: sz_bed_bottom_lamp
 '0x14b457fffe7e2305':
   friendly_name: sz_remote
 '0x588e81fffe507b40':
@@ -75,6 +75,8 @@
   friendly_name: ku_light_switch
 '0x847127fffe0c873b':
   friendly_name: desktop_petro_pc_power
+'0x9035eafffe1b9fcc':
+  friendly_name: sz_bed_light_2
 '0x9035eafffe20e847':
   friendly_name: eg_decoration_light
 '0xa4c1383cc92cbbd2':

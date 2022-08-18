@@ -55,6 +55,7 @@ PREAMBULA = """
 # 0xa4c1386df39045f6 - Tuya temperature sensor TS0201 (aliexpress 2022-03-31)
 # 0x9035eafffe20e847 - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
 # 0x9035eafffe1b9fcc - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
+# 0x04cd15fffe7a35b5 - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
 
 # Items defentition
 items = [
@@ -220,12 +221,23 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
     {
-        'name': "SZ Bad bottom lamp",
-        'id': "sz_bed_bottom_lamp",
-        'zigbee_id': '0x14b457fffe6383e5',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_COLOR_600,
+        'name': "SZ Bed 1",
+        'id': "sz_bed_light_1",
+        'zigbee_id': '0x04cd15fffe7a35b5',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_250,
         'groups': {
-            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz'],
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz', 'sz_bed_light'],
+            'dim': ['sz_bed_light_dim'],
+        }
+    },
+    {
+        'name': "SZ Bed 2",
+        'id': "sz_bed_light_2",
+        'zigbee_id': '0x9035eafffe1b9fcc',
+        'type': DEVICES.IKEA_TRADFRI_LAMP_W_250,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_sz', 'sz_bed_light'],
+            'dim': ['sz_bed_light_dim'],
         }
     },
     {

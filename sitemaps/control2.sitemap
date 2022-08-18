@@ -120,6 +120,8 @@ sitemap control2 label="KONTROL 2"
 		}
 		Group item=g_light_eg_flur label="Flur [%s]" icon="light" {
 			Switch item=snf_eg_fl label="Haupt [%s]" icon="light"
+			Switch item=eg_decoration_light_sw label="Decor [%s]" icon="light"
+            Slider item=eg_decoration_light_dim label="Decor DIM [%d %%]"
 			Switch item=snf_eg_fl_spiegel label="Spiegel [%s]" icon="light"
 			Slider item=snf_eg_fl_spiegel_brightness label="Spiegel DIM [%d %%]" icon="light"
 		}
@@ -166,9 +168,8 @@ sitemap control2 label="KONTROL 2"
 				Switch item=light_sunrise_enabled icon="light"
 			}
 			Frame label="Bed" {
-				Switch item=sz_bed_bottom_lamp_sw label="Color lamp [%s]"
-				Slider item=sz_bed_bottom_lamp_dim label="Color DIM [%d %%]"
-				Colorpicker item=sz_bed_bottom_lamp_color label="Color"
+				Switch item=sz_bed_light label="Bed light [%s]" icon="light"
+				Slider item=sz_bed_light_dim label="Bed light DIM [%d %%]" icon="light"
 			}
 			Frame label="Nachtlampe" {
 				Switch item=sz_declamp_1_sw label="Nacht 1 [%s]"

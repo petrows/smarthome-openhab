@@ -19,6 +19,8 @@ Group:Switch:OR(ON, OFF) g_light_eg_sz_decor
 Group:Switch:OR(ON, OFF) g_light_eg_sz_night
 Group:Dimmer:MAX g_light_eg_sz_night_brightness
 Group:Dimmer:MAX g_light_eg_sz_decor_brightness
+Group:Switch:OR(ON, OFF) sz_bed_light
+Group:Dimmer:MAX sz_bed_light_dim
 
 // EG auto lights
 Group:Switch:OR(ON, OFF) g_light_eg_auto
@@ -59,11 +61,6 @@ Switch light_sunrise_enabled "Sunrise enabled [%s]" <light>
 Switch light_astrocolor_enabled "Astrocolor enabled [%s]" <light>
 
 // ====== EG
-
-Switch	yel_rgb_sw	"Питание" (g_light_all, g_light_eg)
-Dimmer	yel_rgb_brightness	"Яркость"
-Number	yel_rgb_temp	"Цветовая температура" <colorpicker>
-Color	yel_rgb_color	"Цвет"
 
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
 

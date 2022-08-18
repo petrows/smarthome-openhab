@@ -160,13 +160,19 @@ Switch sz_remote_ota "Bedroom remote OTA [%s]" <fire> (g_zigbee_ota) {channel="m
 Number:Dimensionless sz_remote_battery "Bedroom remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_remote:battery"}
 Switch sz_remote_battery_low "Bedroom remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_remote:battery_low"}
 
-// SZ Bad bottom lamp (0x14b457fffe6383e5)
-// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
-Switch sz_bed_bottom_lamp_sw "SZ Bad bottom lamp" <light> (g_light_all,g_light_eg,g_light_eg_sz) {channel="mqtt:topic:openhab:sz_bed_bottom_lamp:state"}
-Dimmer sz_bed_bottom_lamp_dim "SZ Bad bottom lamp DIM [%d %%]" <light> {channel="mqtt:topic:openhab:sz_bed_bottom_lamp:dim"}
-Color sz_bed_bottom_lamp_color "SZ Bad bottom lamp Color" <colorwheel> {channel="mqtt:topic:openhab:sz_bed_bottom_lamp:color"}
-Number:Dimensionless sz_bed_bottom_lamp_link "SZ Bad bottom lamp LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_bed_bottom_lamp:link"}
-Switch sz_bed_bottom_lamp_ota "SZ Bad bottom lamp OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_bed_bottom_lamp:ota"}
+// SZ Bed 1 (0x04cd15fffe7a35b5)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Switch sz_bed_light_1_sw "SZ Bed 1" <light> (g_light_all,g_light_eg,g_light_eg_sz,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_1:state"}
+Dimmer sz_bed_light_1_dim "SZ Bed 1 DIM [%d %%]" <light> (sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_1:dim"}
+Number:Dimensionless sz_bed_light_1_link "SZ Bed 1 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_bed_light_1:link"}
+Switch sz_bed_light_1_ota "SZ Bed 1 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_bed_light_1:ota"}
+
+// SZ Bed 2 (0x9035eafffe1b9fcc)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Switch sz_bed_light_2_sw "SZ Bed 2" <light> (g_light_all,g_light_eg,g_light_eg_sz,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_2:state"}
+Dimmer sz_bed_light_2_dim "SZ Bed 2 DIM [%d %%]" <light> (sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_2:dim"}
+Number:Dimensionless sz_bed_light_2_link "SZ Bed 2 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_bed_light_2:link"}
+Switch sz_bed_light_2_ota "SZ Bed 2 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_bed_light_2:ota"}
 
 // SZ Decor lamp 1 (0xec1bbdfffe972819)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
