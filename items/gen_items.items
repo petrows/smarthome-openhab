@@ -67,6 +67,16 @@ Dimmer eg_decoration_light_dim "EG Decor light DIM [%d %%]" <light> (g_dim_eg_au
 Number:Dimensionless eg_decoration_light_link "EG Decor light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:eg_decoration_light:link"}
 Switch eg_decoration_light_ota "EG Decor light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:eg_decoration_light:ota"}
 
+// Entrance Door sensor (0xa4c138182f60d651)
+// TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
+Contact eg_main_door_contact "Entrance Door sensor contact [%s]" <door> {channel="mqtt:topic:openhab:eg_main_door:contact"}
+DateTime eg_main_door_activity "Entrance Door sensor [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:eg_main_door:activity"}
+Number:Dimensionless eg_main_door_link "Entrance Door sensor LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:eg_main_door:link"}
+Switch eg_main_door_ota "Entrance Door sensor OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:eg_main_door:ota"}
+Number:Dimensionless eg_main_door_battery "Entrance Door sensor [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:eg_main_door:battery"}
+Switch eg_main_door_battery_low "Entrance Door sensor [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:eg_main_door:battery_low"}
+Number:ElectricPotential eg_main_door_voltage "Entrance Door sensor [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:eg_main_door:voltage"}
+
 // BZ Light (0x086bd7fffefb619a)
 // HEIMAN Smart switch - 1 gang with neutral wire (HS2SW1A/HS2SW1A-N) / https://zigbee.blakadder.com/Heiman_HS2SW1A.html
 Switch bz_light_sw "BZ Light" <switch> (g_light_all,g_light_eg,g_light_eg_bz) {channel="mqtt:topic:openhab:bz_light:state"}

@@ -127,6 +127,12 @@ items = [
             'dim': ['g_dim_eg_auto'],
         }
     },
+    {
+        'name': "Entrance Door sensor",
+        'id': "eg_main_door",
+        'zigbee_id': '0xa4c138182f60d651',
+        'type': DEVICES.TUYA_WINDOW_SENSOR_TS0203,
+    },
     # EG (Closet)
     {
         'name': "BZ Light",

@@ -201,6 +201,17 @@ class DEVICES:
         'device_name': 'TuYa Rechargeable Zigbee contact sensor (SNTZ007)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/SNTZ007.html',
     }
+    TUYA_WINDOW_SENSOR_TS0203 = {
+        'types': [
+            'zigbee',
+            'contact',
+            'activity',
+            'battery',
+            'voltage',
+        ],
+        'device_name': 'TuYa Rechargeable Zigbee contact sensor (TS0203)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203',
+    }
     TUYA_TEMPERATURE_SENSOR_TS0201 = {
         'types': [
             'zigbee',

@@ -124,6 +124,7 @@ sitemap control2 label="KONTROL 2"
             Slider item=eg_decoration_light_dim label="Decor DIM [%d %%]"
 			Switch item=snf_eg_fl_spiegel label="Spiegel [%s]" icon="light"
 			Slider item=snf_eg_fl_spiegel_brightness label="Spiegel DIM [%d %%]" icon="light"
+			Text item=eg_main_door_contact label="Main door [%s]"
 		}
 		Group item=g_light_eg_bz label="Badzimmer [%s]" icon="light" {
 			Switch item=g_light_eg_bz label="Hauptlicht" icon="light"

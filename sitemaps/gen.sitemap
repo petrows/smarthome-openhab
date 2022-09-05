@@ -49,6 +49,11 @@ Slider item=eg_decoration_light_dim
 Text item=eg_decoration_light_link icon="linkz"
 Text item=eg_decoration_light_ota icon="fire"
 }
+Frame label="Entrance Door sensor (0xa4c138182f60d651)" {
+Text item=eg_main_door_contact
+Text item=eg_main_door_link icon="linkz"
+Text item=eg_main_door_ota icon="fire"
+}
 Frame label="BZ Light (0x086bd7fffefb619a)" {
 Switch item=bz_light_sw
 Text item=bz_light_link icon="linkz"
