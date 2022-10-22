@@ -276,6 +276,7 @@ sitemap control2 label="KONTROL 2"
             Text item=m800s_time
             Switch item=m800s_state_command label="Command []" mappings=["OFF"="OFF", "WARM"="WARM", "ON"="START"]
 		}
+        Text label="Dryer time [%1$tH:%1$tM]" item=dryer_time
 		Group item=robot_status icon="pump" label="Robotier [MAP(eve_status.map):%s]" {
             Frame label="Status" {
                 Text item=robot_status label="Status [MAP(eve_status.map):%s]"

@@ -1,0 +1,8 @@
+// Dryer Siemens
+Contact dryer_door_state "Door State" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:door_state" }
+String dryer_operation_state "State" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:operation_state" }
+String dryer_active_program "Program" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:active_program_state" }
+String dryer_dry_target "Dry target" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:dryer_drying_target" }
+Number:Time dryer_time "Remain time" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:remaining_program_time_state" }
+String dryer_time_str "Remain time [%s]" <time>
+Number:Dimensionless dryer_progress "Progress" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:program_progress_state" }

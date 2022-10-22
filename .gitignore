@@ -9,6 +9,8 @@ things/mi-robot.things
 things/spotify.things
 # Telegram token is secret
 things/telegram.things
+# HomeConnect token is secret
+things/homeconnect.things
 
 bin/config.sh
 .vscode
