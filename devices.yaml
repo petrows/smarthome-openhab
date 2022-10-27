@@ -37,6 +37,8 @@
   simulated_brightness: []
 '0x04cd15fffe7a35b5':
   friendly_name: sz_bed_light_1
+'0x04cd15fffe873cb7':
+  friendly_name: kg_lager3_motion
 '0x086bd7fffefb619a':
   friendly_name: bz_light
 '0x0c4314fffe5c6913':

@@ -56,6 +56,7 @@ PREAMBULA = """
 # 0x9035eafffe20e847 - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
 # 0x9035eafffe1b9fcc - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
 # 0x04cd15fffe7a35b5 - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
+# 0x04cd15fffe873cb7 - Ikea move sensor
 
 # Items defentition
 items = [
@@ -548,6 +549,12 @@ items = [
                 'expire': '1h',
             }
         }
+    },
+    {
+        'name': "KG Lager 3 motion",
+        'id': "kg_lager3_motion",
+        'zigbee_id': '0x04cd15fffe873cb7',
+        'type': DEVICES.IKEA_TRADFRI_MOTION_SENSOR,
     },
     {
         'name': "KG Lager 3 (Haupt)",

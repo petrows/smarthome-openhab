@@ -47,3 +47,16 @@ then
         sendCommand(g_dim_lager_auto, 30)
     }
 end
+
+// Motion detect in Laundry
+rule "KG Motion detect Laundry"
+when
+    Item kg_lager3_motion_occupancy changed
+then
+    var state = kg_lager3_motion_occupancy.state
+    if (state == OFF) {
+        sendCommand(kg_lager3_main_light, OFF)
+    } else {
+        sendCommand(kg_lager3_main_light, ON)
+    }
+end
