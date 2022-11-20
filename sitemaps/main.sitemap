@@ -8,8 +8,8 @@ sitemap main label="MAIN"
 				Text 		item=ns_climate_pressure label="Pressure [%d hPa]"
 			}
 			Frame {
-				Webview label="Draußentemperatur" icon="temperature" height=8 url="https://stats.home.pws/d-solo/openhab_climate/climate?orgId=1&refresh=10s&theme=dark&panelId=3"
-				Webview label="Raumtemperatur" icon="temperature" height=8 url="https://stats.home.pws/d-solo/openhab_climate/climate?orgId=1&refresh=10s&theme=dark&panelId=1"
+				Webview label="External" icon="temperature" height=8 url="https://stats.home.pws/d-solo/openhab_climate/climate?orgId=1&refresh=10s&theme=dark&panelId=3"
+				Webview label="Rooms" icon="temperature" height=8 url="https://stats.home.pws/d-solo/openhab_climate/climate?orgId=1&refresh=10s&theme=dark&panelId=1"
 			}
 			Frame label="Sun" icon="sun" {
 				Text item=astro_sun_rise icon="sunrise"
@@ -96,8 +96,10 @@ sitemap main label="MAIN"
 		Switch item=light_all_mode label="All" icon="light" mappings=["ON"="ON","N"="NIGHT", OFF="OFF"]
 		Switch item=g_light_eg label="EG" icon="light" mappings=[ON="ON", OFF="OFF"]
 		Switch item=g_light_kg label="KG" icon="light" mappings=[ON="ON", OFF="OFF"]
+        Switch item=g_light_christmas label="Christmas []" icon="light" mappings=[ON="ON", OFF="OFF"]
         Switch item=cinema_mode label="Cinemo mode" icon="projector" mappings=[ON="ON", OFF="OFF"]
-
+    }
+    Frame {
 		Group item=balkon_light label="Balkon [%s]" icon="light" {
 			Switch item=balkon_light label="Main [%s]" icon="light"
 			Slider item=balkon_light_dim label="Main DIM [%d %%]" icon="light"
@@ -202,24 +204,24 @@ sitemap main label="MAIN"
 	}
 
 	Frame {
-		Switch item=g_hz_all label="Heating [%.1f °C]" mappings=["23.0"="☼", "17.0"="☾", "5.0"="AUS"]	visibility=[cfgHeatingEnable==ON]
+		Switch item=g_hz_all label="Heating [%.1f °C]" mappings=["23.0"="☼", "17.0"="☾", "5.0"="OFF"]	visibility=[cfgHeatingEnable==ON]
 		//Text item=g_hz_valve label="Heating valve [%d %%]"
 
-		Group item=ku_climate_temperature label="Küche" {
+		Group item=ku_climate_temperature label="Kitchen" {
 			Text 		item=ku_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ku_climate_humidity label="Humidity [%d %%]"
 			//ext		item=ku_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=ku_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=ku_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=ku_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ku_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
 		}
 
-		Group item=ns_climate_temperature label="Nagel Studio" {
+		Group item=ns_climate_temperature label="Theater" {
 			Text 		item=ns_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ns_climate_humidity label="Humidity [%d %%]"
 			//Text		item=ns_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=ns_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=ns_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=ns_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ns_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
 			Switch		item=ns_heating_boost label="Heizung BOOST" icon="fan"
 			Switch		item=ns_heating_boost_power_sw label="Heizung Fan" icon="fan"
@@ -229,15 +231,15 @@ sitemap main label="MAIN"
 			Text 		item=fs_climate_humidity label="Humidity [%d %%]"
 			//Text		item=fs_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=fs_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=fs_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=fs_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=fs_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
 		}
-		Group item=sz_climate_temperature label="Schlaffzimmer" {
+		Group item=sz_climate_temperature label="Bedroom" {
 			Text 		item=sz_climate_temperature label="Temperature [%d °C]"
 			Text 		item=sz_climate_humidity label="Humidity [%d %%]"
 			//Text		item=sz_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=sz_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0 °C"="☼", "17.0 °C"="☾", "5.0 °C"="AUS"]	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0 °C"="☼", "17.0 °C"="☾", "5.0 °C"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=sz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
 		}
 		Group item=kg_climate_temperature label="KG" {
@@ -250,7 +252,7 @@ sitemap main label="MAIN"
                 Text 		item=kg_climate_humidity label="Humidity [%d %%]"
                 //Text		item=kg_heating_position label="Beheizung [%d %%]"
                 Setpoint	item=kg_heating_thermostat label="Set" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-                Switch  	item=kg_heating_thermostat label="Mode []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="AUS"]	visibility=[cfgHeatingEnable==ON]
+                Switch  	item=kg_heating_thermostat label="Mode []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
                 Switch      item=kg_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
                 Text        item=kg_windows label="Windows [%s]" visibility=[cfgHeatingEnable==ON]
             }
@@ -283,10 +285,13 @@ sitemap main label="MAIN"
                 Slider item=robot_volume
             }
         }
-		Switch item=kg_lager4_leak_leak
-		Switch item=g_light_christmas
 		Switch item=garten_wasser_sw
 	}
+
+    Frame icon="flow" {
+        Text item=garten_wasser_leak_leak
+        Text item=kg_lager4_leak_leak
+    }
 
 	Frame icon="bedroom" {
 		Group item=gSettings label="Settings" {

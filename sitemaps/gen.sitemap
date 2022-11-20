@@ -282,13 +282,13 @@ Text item=kg_hz_main_light_rssi
 Text item=kg_hz_main_light_bssid
 Text item=kg_hz_main_light_la
 }
-Frame label="Garten wasser (garten_wasser_sw)" {
+Frame label="Garden water (garten_wasser_sw)" {
 Switch item=garten_wasser_sw
 Text item=garten_wasser_sw_rssi
 Text item=garten_wasser_sw_bssid
 Text item=garten_wasser_sw_la
 }
-Frame label="Garten wasser leak (0x00158d0006b7aa81)" {
+Frame label="Warehouse 3 leak (0x00158d0006b7aa81)" {
 Text item=garten_wasser_leak_link icon="linkz"
 Text item=garten_wasser_leak_ota icon="fire"
 }
@@ -336,7 +336,7 @@ Text item=kg_lager4_motion_occupancy
 Text item=kg_lager4_motion_link icon="linkz"
 Text item=kg_lager4_motion_ota icon="fire"
 }
-Frame label="KG Lager 4 leak (0x00158d000488052c)" {
+Frame label="Warehouse 4 leak (0x00158d000488052c)" {
 Text item=kg_lager4_leak_link icon="linkz"
 Text item=kg_lager4_leak_ota icon="fire"
 }

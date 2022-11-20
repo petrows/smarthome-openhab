@@ -559,9 +559,9 @@ Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (Haupt)" (mqtt:broker:open
 		Type datetime : activity [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
-// Garten wasser (garten_wasser_sw)
+// Garden water (garten_wasser_sw)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Thing mqtt:topic:openhab:garten_wasser_sw "Garten wasser" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:garten_wasser_sw "Garden water" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : POWER [stateTopic="stat/garten_wasser_sw/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/garten_wasser_sw/POWER", on="ON", off="OFF"]
 		Type number : rssi [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
@@ -570,9 +570,9 @@ Thing mqtt:topic:openhab:garten_wasser_sw "Garten wasser" (mqtt:broker:openhab) 
 		Type datetime : activity [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
-// Garten wasser leak (0x00158d0006b7aa81)
+// Warehouse 3 leak (0x00158d0006b7aa81)
 // Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
-Thing mqtt:topic:openhab:garten_wasser_leak "Garten wasser leak" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:garten_wasser_leak "Warehouse 3 leak" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : leak [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="JSONPATH:$.water_leak", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="JS:z2m-activity.js"]
@@ -671,9 +671,9 @@ Thing mqtt:topic:openhab:kg_lager4_motion "KG Lager motion" (mqtt:broker:openhab
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// KG Lager 4 leak (0x00158d000488052c)
+// Warehouse 4 leak (0x00158d000488052c)
 // Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
-Thing mqtt:topic:openhab:kg_lager4_leak "KG Lager 4 leak" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : leak [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JSONPATH:$.water_leak", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JS:z2m-activity.js"]

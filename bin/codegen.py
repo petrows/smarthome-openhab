@@ -500,19 +500,19 @@ items = [
     },
     # Garten wassering
     {
-        'name': "Garten wasser",
+        'name': "Garden water",
         'id': "garten_wasser_sw",
         'type': DEVICES.TASMOTA_SONOFF_MINI,
         'channels': {
             'POWER': {
                 'id': 'garten_wasser_sw',
-                'name': 'Garten wasser',
+                'name': 'Garden water',
                 'expire': '1h',
             }
         }
     },
     {
-        'name': "Garten wasser leak",
+        'name': "Warehouse 3 leak",
         'id': "garten_wasser_leak",
         'zigbee_id': '0x00158d0006b7aa81',
         'type': DEVICES.XIAOMI_AQARA_LEAK_V1,
@@ -604,7 +604,7 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_MOTION_SENSOR,
     },
     {
-        'name': "KG Lager 4 leak",
+        'name': "Warehouse 4 leak",
         'id': "kg_lager4_leak",
         'zigbee_id': '0x00158d000488052c',
         'type': DEVICES.XIAOMI_AQARA_LEAK_V1,
