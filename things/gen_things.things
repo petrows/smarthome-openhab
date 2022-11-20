@@ -132,15 +132,6 @@ Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// FS Christmas light (0x7cb03eaa0a093a8b)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:fs_christmas_light "FS Christmas light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/fs_christmas_light/set", transformationPatternOut="JS:z2m-command-state.js"]
-		Type number : link [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-
 // NS Boost power (0x7cb03eaa0a0a1103)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
 Thing mqtt:topic:openhab:ns_heating_boost_power "NS Boost power" (mqtt:broker:openhab) {
@@ -167,15 +158,6 @@ Thing mqtt:topic:openhab:ns_projector_power "NS Projector" (mqtt:broker:openhab)
 		Type switch : state [stateTopic="zigbee2mqtt/ns_projector_power", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/ns_projector_power/set", transformationPatternOut="JS:z2m-command-state.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ns_projector_power", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_projector_power", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-
-// NS Christmas light (0x7cb03eaa0a09e7bc)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:ns_christmas_light "NS Christmas light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ns_christmas_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/ns_christmas_light/set", transformationPatternOut="JS:z2m-command-state.js"]
-		Type number : link [stateTopic="zigbee2mqtt/ns_christmas_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ns_christmas_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
 // FS Climate (0x00158d0001c15121)
@@ -764,4 +746,31 @@ Thing mqtt:topic:openhab:kg_heating "KG heating" (mqtt:broker:openhab) {
 		Type number : voltage [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// FS Christmas light (0x7cb03eaa0a093a8b)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:fs_christmas_light "FS Christmas light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/fs_christmas_light/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/fs_christmas_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// NS Christmas light (0x7cb03eaa0a094303)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:ns_christmas_light "NS Christmas light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/ns_christmas_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/ns_christmas_light/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/ns_christmas_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ns_christmas_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// Balkon Christmas light (0x7cb03eaa0a094bf2)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:balkon_christmas_light "Balkon Christmas light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/balkon_christmas_light/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type number : link [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }

@@ -95,12 +95,6 @@ Number:Dimensionless ns_climate_battery "NS Climate [%.0f %%]" <battery> (g_batt
 Switch ns_climate_battery_low "NS Climate [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ns_climate:battery_low"}
 Number:ElectricPotential ns_climate_voltage "NS Climate [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:ns_climate:voltage"}
 
-// FS Christmas light (0x7cb03eaa0a093a8b)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch fs_christmas_light_sw "FS Christmas light" <switch> (g_light_christmas) {channel="mqtt:topic:openhab:fs_christmas_light:state"}
-Number:Dimensionless fs_christmas_light_link "FS Christmas light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:fs_christmas_light:link"}
-Switch fs_christmas_light_ota "FS Christmas light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:fs_christmas_light:ota"}
-
 // NS Boost power (0x7cb03eaa0a0a1103)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
 Switch ns_heating_boost_power_sw "NS Boost power" <switch> {channel="mqtt:topic:openhab:ns_heating_boost_power:state", expire="1h,command=OFF"}
@@ -119,12 +113,6 @@ Switch ns_night_lamp_ota "NS Night lamp OTA [%s]" <fire> (g_zigbee_ota) {channel
 Switch ns_projector_power_sw "NS Projector" <switch> {channel="mqtt:topic:openhab:ns_projector_power:state"}
 Number:Dimensionless ns_projector_power_link "NS Projector LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ns_projector_power:link"}
 Switch ns_projector_power_ota "NS Projector OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ns_projector_power:ota"}
-
-// NS Christmas light (0x7cb03eaa0a09e7bc)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch ns_christmas_light_sw "NS Christmas light" <switch> (g_light_christmas) {channel="mqtt:topic:openhab:ns_christmas_light:state"}
-Number:Dimensionless ns_christmas_light_link "NS Christmas light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ns_christmas_light:link"}
-Switch ns_christmas_light_ota "NS Christmas light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ns_christmas_light:ota"}
 
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
@@ -551,3 +539,21 @@ Number:Dimensionless kg_heating_link "KG heating LINK [%d]" <linkz> (g_zigbee_li
 Switch kg_heating_ota "KG heating OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_heating:ota"}
 Switch kg_heating_battery_low "KG heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_heating:battery_low"}
 Number:ElectricPotential kg_heating_voltage "KG heating [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:kg_heating:voltage"}
+
+// FS Christmas light (0x7cb03eaa0a093a8b)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Switch fs_christmas_light_sw "FS Christmas light" <switch> (g_light_christmas) {channel="mqtt:topic:openhab:fs_christmas_light:state"}
+Number:Dimensionless fs_christmas_light_link "FS Christmas light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:fs_christmas_light:link"}
+Switch fs_christmas_light_ota "FS Christmas light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:fs_christmas_light:ota"}
+
+// NS Christmas light (0x7cb03eaa0a094303)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Switch ns_christmas_light_sw "NS Christmas light" <switch> (g_light_christmas) {channel="mqtt:topic:openhab:ns_christmas_light:state"}
+Number:Dimensionless ns_christmas_light_link "NS Christmas light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ns_christmas_light:link"}
+Switch ns_christmas_light_ota "NS Christmas light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ns_christmas_light:ota"}
+
+// Balkon Christmas light (0x7cb03eaa0a094bf2)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Switch balkon_christmas_light_sw "Balkon Christmas light" <switch> (g_light_christmas) {channel="mqtt:topic:openhab:balkon_christmas_light:state"}
+Number:Dimensionless balkon_christmas_light_link "Balkon Christmas light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:balkon_christmas_light:link"}
+Switch balkon_christmas_light_ota "Balkon Christmas light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:balkon_christmas_light:ota"}

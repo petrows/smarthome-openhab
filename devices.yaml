@@ -67,10 +67,12 @@
   friendly_name: ku_light_switch_kochfeld
 '0x7cb03eaa0a093a8b':
   friendly_name: fs_christmas_light
+'0x7cb03eaa0a094303':
+  friendly_name: ns_christmas_light
+'0x7cb03eaa0a094bf2':
+  friendly_name: balkon_christmas_light
 '0x7cb03eaa0a094d1d':
   friendly_name: ns_projector_power
-'0x7cb03eaa0a09e7bc':
-  friendly_name: ns_christmas_light
 '0x7cb03eaa0a0a1103':
   friendly_name: ns_heating_boost_power
 '0x842e14fffe1267fb':

@@ -151,15 +151,7 @@ items = [
         'zigbee_id': '0x00158d0001b95e08',
         'type': DEVICES.XIAOMI_AQARA_V2,
     },
-    {
-        'name': "FS Christmas light",
-        'id': "fs_christmas_light",
-        'zigbee_id': '0x7cb03eaa0a093a8b',
-        'type': DEVICES.OSRAM_SMART_PLUG,
-        'groups': {
-            'sw': ['g_light_christmas'],  # FIXME only for holidays!!!
-        }
-    },
+
     {
         'name': "NS Boost power",
         'id': "ns_heating_boost_power",
@@ -181,15 +173,6 @@ items = [
         'id': "ns_projector_power",
         'zigbee_id': '0x7cb03eaa0a094d1d',
         'type': DEVICES.OSRAM_SMART_PLUG,
-    },
-    {
-        'name': "NS Christmas light",
-        'id': "ns_christmas_light",
-        'zigbee_id': '0x7cb03eaa0a09e7bc',
-        'type': DEVICES.OSRAM_SMART_PLUG,
-        'groups': {
-            'sw': ['g_light_christmas'],
-        }
     },
     # EG (Foto Studio)
     {
@@ -675,6 +658,36 @@ items = [
         'groups': {
             'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_kg'],
             'position': ['g_hz_valve'],
+        }
+    },
+
+    # Christmas lights
+    # Set group g_light_christmas - only for holidays!!!
+    {
+        'name': "FS Christmas light",
+        'id': "fs_christmas_light",
+        'zigbee_id': '0x7cb03eaa0a093a8b',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+        'groups': {
+            'sw': ['g_light_christmas'],
+        }
+    },
+    {
+        'name': "NS Christmas light",
+        'id': "ns_christmas_light",
+        'zigbee_id': '0x7cb03eaa0a094303',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+        'groups': {
+            'sw': ['g_light_christmas'],
+        }
+    },
+    {
+        'name': "Balkon Christmas light",
+        'id': "balkon_christmas_light",
+        'zigbee_id': '0x7cb03eaa0a094bf2',
+        'type': DEVICES.OSRAM_SMART_PLUG,
+        'groups': {
+            'sw': ['g_light_christmas'],
         }
     },
 ]
