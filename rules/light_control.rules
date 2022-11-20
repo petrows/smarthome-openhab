@@ -55,7 +55,7 @@ end
 
 rule "Christmas lights off"
 when
-	Time cron "0 00 22 ? * *"
+	Time cron "0 00 00 ? * *"
 then
     logWarn("light", "Decorative light off")
 
