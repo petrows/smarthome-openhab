@@ -521,7 +521,7 @@ Switch ku_heating_ota "KU heating OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt
 Switch ku_heating_battery_low "KU heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_heating:battery_low"}
 Number:ElectricPotential ku_heating_voltage "KU heating [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:ku_heating:voltage"}
 
-// SZ heating (0x5c0272fffec9d557)
+// SZ heating (0x5c0272fffedc2f41)
 // TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
 Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
 Number:Dimensionless sz_heating_position "SZ heating POS [%.0f %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:sz_heating:position"}

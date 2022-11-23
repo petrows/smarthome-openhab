@@ -643,7 +643,7 @@ items = [
     {
         'name': "SZ heating",
         'id': "sz_heating",
-        'zigbee_id': '0x5c0272fffec9d557',
+        'zigbee_id': '0x5c0272fffedc2f41',
         'type': DEVICES.TUYA_THERMOSTAT_VALVE,
         'groups': {
             'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_eg'],

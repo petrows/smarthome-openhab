@@ -723,7 +723,7 @@ Thing mqtt:topic:openhab:ku_heating "KU heating" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// SZ heating (0x5c0272fffec9d557)
+// SZ heating (0x5c0272fffedc2f41)
 // TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
 Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 	Channels:
