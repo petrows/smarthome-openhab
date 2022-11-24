@@ -233,29 +233,42 @@ when
     Channel "mqtt:topic:openhab:sz_remote:action" triggered
 then
 	var state = receivedEvent
+    var mode = sz_remote_mode.state.toString()
     switch(state) {
         case "toggle": {
             g_light_all.sendCommand(OFF)
         }
         case "brightness_down_click": {
-            if (0 == (g_light_eg_sz_decor_brightness.state as Number) && ON == g_light_eg_sz_decor.state) {
-                g_light_eg_sz_decor.sendCommand(OFF)
-            } else {
-                g_light_eg_sz_decor_brightness.sendCommand(0)
+            if ("DECOR" == mode) {
+                g_light_eg_sz_decor_brightness.sendCommand(1)
+            }
+            if ("BED" == mode) {
+                sz_bed_light_dim.sendCommand(1)
             }
         }
         case "brightness_up_click": {
-            if (ON == g_light_eg_sz_decor.state) {
-                g_light_eg_sz_decor.sendCommand(OFF)
-            } else {
+            if ("DECOR" == mode) {
                 g_light_eg_sz_decor_brightness.sendCommand(100)
+            }
+            if ("BED" == mode) {
+                sz_bed_light_dim.sendCommand(100)
             }
         }
         case "arrow_right_click": {
-
+            sz_remote_mode.sendCommand("DECOR")
+            if (ON == g_light_eg_sz_decor.state) {
+                g_light_eg_sz_decor.sendCommand(OFF)
+            } else {
+                g_light_eg_sz_decor_brightness.sendCommand(1)
+            }
         }
         case "arrow_left_click": {
-
+            sz_remote_mode.sendCommand("BED")
+            if (ON == sz_bed_light.state) {
+                sz_bed_light.sendCommand(OFF)
+            } else {
+                sz_bed_light_dim.sendCommand(1)
+            }
         }
     }
 end

@@ -62,6 +62,9 @@ Switch light_astrocolor_enabled "Astrocolor enabled [%s]" <light>
 
 // ====== EG
 
+// Mode selector for SZ remote button
+String sz_remote_mode "SZ remote control mode" <light>
+
 Switch snf_eg_ns "EG Nagel Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_ns) { channel="mqtt:topic:openhab:snf-eg-ns:power" }
 
 Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg, g_light_eg_flur) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
