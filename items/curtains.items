@@ -1,0 +1,2 @@
+String sz_curtain_switch "SZ Curtain" <rollershutter> {channel="mqtt:topic:openhab:sz-curtain:command"}
+Dimmer sz_curtain_position "SZ Curtain pos [%d %%]" <rollershutter> {channel="mqtt:topic:openhab:sz-curtain:position"}

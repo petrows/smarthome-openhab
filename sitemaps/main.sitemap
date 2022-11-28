@@ -155,6 +155,10 @@ sitemap main label="MAIN"
 				Switch item=g_light_eg_sz_night label="Night [%s]" icon="light"
 				Slider item=g_light_eg_sz_night_brightness label="Night dim [%d %%]" icon="light"
 				Switch item=light_sunrise_enabled icon="light"
+            }
+            Frame label="Curtains" {
+                Switch item=sz_curtain_switch label="Command []" mappings=["open"="< >","stop"="||","close"="> <"]
+                Slider item=sz_curtain_position label="Position [%d %%]"
 			}
 			Frame label="Bed decor" {
 				Switch item=sz_bed_light label="Bed light [%s]" icon="light"

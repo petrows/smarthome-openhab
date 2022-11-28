@@ -61,4 +61,8 @@ Thing mqtt:topic:openhab:snf-kg-lg1 (mqtt:broker:openhab) {
 		Type switch : power  [ stateTopic="stat/snf-kg-lg1/POWER", commandTopic="cmnd/snf-kg-lg1/POWER", on="ON", off="OFF" ]
 }
 
-
+Thing mqtt:topic:openhab:sz-curtain (mqtt:broker:openhab) {
+	Channels:
+		Type string : command  [ commandTopic="tuya/sz_curtain/dps/1/command", stateTopic="tuya/sz_curtain/dps/3/state" ]
+		Type dimmer : position  [ commandTopic="tuya/sz_curtain/dps/2/command", stateTopic="tuya/sz_curtain/dps/3/state", min=0, max=100 ]
+}
