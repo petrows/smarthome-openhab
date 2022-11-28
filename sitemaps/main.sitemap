@@ -149,7 +149,7 @@ sitemap main label="MAIN"
 			Slider item=desktop_marina_light_ct label="Desktop CT [JS(display-mired.js):%s]"
             Switch item=fs_christmas_light_sw label="Christmas [%s]" icon="light"
 		}
-		Group item=g_light_eg_sz label="Bedroom [%s]" icon="light" {
+		Group item=g_light_eg_sz label="Sleep [%s]" icon="light" {
 			Frame {
 				Switch item=snf_eg_sz label="Main [%s]" icon="light"
 				Switch item=g_light_eg_sz_night label="Night [%s]" icon="light"
@@ -165,7 +165,15 @@ sitemap main label="MAIN"
 				Switch item=sz_bed_light label="Bed light [%s]" icon="light"
 				Slider item=sz_bed_light_dim label="Bed light DIM [%d %%]" icon="light"
 			}
-			Frame label="Night decor" {
+			Frame label="Room decor" {
+                Switch item=g_light_eg_sz_decor label="Room light [%s]" icon="light"
+                Slider item=g_light_eg_sz_decor_brightness label="Room light DIM [%d %%]" icon="light"
+            }
+            Frame label="Lamps control" {
+				Switch item=sz_bed_light_1_sw label="Bed 1 [%s]"
+				Slider item=sz_bed_light_1_dim label="Bed 1 DIM [%d %%]"
+				Switch item=sz_bed_light_2_sw label="Bed 2 [%s]"
+				Slider item=sz_bed_light_2_dim label="Bed 2 DIM [%d %%]"
 				Switch item=sz_declamp_1_sw label="Night 1 [%s]"
 				Slider item=sz_declamp_1_dim label="Night 1 DIM [%d %%]"
 				Switch item=sz_declamp_2_sw label="Night 2 [%s]"
