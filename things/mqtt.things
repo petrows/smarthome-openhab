@@ -61,8 +61,19 @@ Thing mqtt:topic:openhab:snf-kg-lg1 (mqtt:broker:openhab) {
 		Type switch : power  [ stateTopic="stat/snf-kg-lg1/POWER", commandTopic="cmnd/snf-kg-lg1/POWER", on="ON", off="OFF" ]
 }
 
+// Zemismart WiFi Curtain Motor Tuya Smart Life
+// https://www.aliexpress.com/item/4000695814463.html
 Thing mqtt:topic:openhab:sz-curtain (mqtt:broker:openhab) {
 	Channels:
+        // Device channels
+        // 1 : command general(open, close, stop)
+        // 2 : command in % open
+        // 3 : current position status
+
+        // Command
+        // Recieves number from channel 3 to "reset" command status
 		Type string : command  [ commandTopic="tuya/sz_curtain/dps/1/command", stateTopic="tuya/sz_curtain/dps/3/state" ]
+        // Position
+        // Channel 2 - command, 3 - current position
 		Type dimmer : position  [ commandTopic="tuya/sz_curtain/dps/2/command", stateTopic="tuya/sz_curtain/dps/3/state", min=0, max=100 ]
 }
