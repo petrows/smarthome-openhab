@@ -259,6 +259,16 @@ class DEVICES:
         'device_name': 'Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/HG06337.html',
     }
+    SILVERCREST_SMART_BUTTON = {
+        'types': [
+            'zigbee',
+            'remote',
+            'battery',
+            'voltage',
+        ],
+        'device_name': 'Lidl Silvercrest smart button (HG08164)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/HG08164.html',
+    }
     # DIY
     DIY_CC2540_ROUTER = {
         'types': [

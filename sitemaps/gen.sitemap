@@ -109,6 +109,14 @@ Frame label="Bedroom remote (0x14b457fffe7e2305)" {
 Text item=sz_remote_link icon="linkz"
 Text item=sz_remote_ota icon="fire"
 }
+Frame label="Bedroom curtains remote (0xccccccfffef0356e)" {
+Text item=sz_curtain_remote_link icon="linkz"
+Text item=sz_curtain_remote_ota icon="fire"
+}
+Frame label="Bedroom night mode (0x2c1165fffe30cf8f)" {
+Text item=sz_night_mode_remote_link icon="linkz"
+Text item=sz_night_mode_remote_ota icon="fire"
+}
 Frame label="SZ Bed 1 (0x04cd15fffe7a35b5)" {
 Switch item=sz_bed_light_1_sw
 Slider item=sz_bed_light_1_dim

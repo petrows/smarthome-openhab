@@ -11,6 +11,8 @@ things/spotify.things
 things/telegram.things
 # HomeConnect token is secret
 things/homeconnect.things
+# Config for Tyua-mqqtt is secret
+tuya-mqtt
 
 bin/config.sh
 .vscode

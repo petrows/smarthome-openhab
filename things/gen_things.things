@@ -221,6 +221,29 @@ Thing mqtt:topic:openhab:sz_remote "Bedroom remote" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// Bedroom curtains remote (0xccccccfffef0356e)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Thing mqtt:topic:openhab:sz_curtain_remote "Bedroom curtains remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="JSONPATH:$.action", trigger=true]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// Bedroom night mode (0x2c1165fffe30cf8f)
+// Lidl Silvercrest smart button (HG08164) / https://www.zigbee2mqtt.io/devices/HG08164.html
+Thing mqtt:topic:openhab:sz_night_mode_remote "Bedroom night mode" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="JSONPATH:$.action", trigger=true]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : voltage [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // SZ Bed 1 (0x04cd15fffe7a35b5)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Thing mqtt:topic:openhab:sz_bed_light_1 "SZ Bed 1" (mqtt:broker:openhab) {

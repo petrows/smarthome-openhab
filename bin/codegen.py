@@ -211,6 +211,18 @@ items = [
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
     {
+        'name': "Bedroom curtains remote",
+        'id': "sz_curtain_remote",
+        'zigbee_id': '0xccccccfffef0356e',
+        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+    },
+    {
+        'name': "Bedroom night mode",
+        'id': "sz_night_mode_remote",
+        'zigbee_id': '0x2c1165fffe30cf8f',
+        'type': DEVICES.SILVERCREST_SMART_BUTTON,
+    },
+    {
         'name': "SZ Bed 1",
         'id': "sz_bed_light_1",
         'zigbee_id': '0x04cd15fffe7a35b5',

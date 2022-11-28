@@ -273,6 +273,35 @@ then
     }
 end
 
+rule "SZ remote curtain"
+when
+    Channel "mqtt:topic:openhab:sz_curtain_remote:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "on": {
+            sz_curtain_switch.sendCommand("open")
+        }
+        case "off": {
+            sz_curtain_switch.sendCommand("close")
+        }
+    }
+end
+
+rule "SZ remote night"
+when
+    Channel "mqtt:topic:openhab:sz_night_mode_remote:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "on": {
+            sz_curtain_switch.sendCommand("close")
+            sz_bed_light_dim.sendCommand(50)
+            snf_eg_fl.sendCommand(OFF)
+        }
+    }
+end
+
 rule "KU Arbeitlicht SW (Spule)"
 when
     Channel "mqtt:topic:openhab:ku_light_switch_spule:action" triggered

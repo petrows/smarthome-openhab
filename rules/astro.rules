@@ -1,0 +1,25 @@
+rule "Astro: sunset"
+when
+    // Sunset (early)
+    Channel "astro:sun:home:set#event" triggered START
+then
+    logWarn("astro", "Sun: set")
+
+    // If enabled - close curtains
+    if (ON == sz_curtain_auto.state) {
+        sz_curtain_switch.sendCommand("close")
+    }
+end
+
+rule "Astro: civil dawn"
+when
+    // Civil Dawn (early)
+    Channel "astro:sun:home:civilDawn#event" triggered START
+then
+    logWarn("astro", "Sun: civilDawn")
+
+    // If enabled - close curtains
+    if (ON == sz_curtain_auto.state) {
+        sz_curtain_switch.sendCommand("open")
+    }
+end
