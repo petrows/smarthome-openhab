@@ -305,9 +305,12 @@ when
     Channel "mqtt:topic:openhab:sz_night_mode_remote:action" triggered
 then
 	var state = receivedEvent
+    var curtainPos = Integer::parseInt(sz_curtain_switch.state.toString())
     switch(state) {
         case "on": {
-            sz_curtain_switch.sendCommand("close")
+            if (100 != curtainPos) {
+                sz_curtain_switch.sendCommand("close")
+            }
             sz_bed_light_dim.sendCommand(50)
             snf_eg_fl.sendCommand(OFF)
         }
