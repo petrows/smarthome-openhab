@@ -159,7 +159,7 @@ sitemap main label="MAIN"
             Frame label="Curtains" {
                 Switch item=sz_curtain_switch label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=sz_curtain_position label="Position [%d %%]"
-                Switch item=sz_curtain_auto label="Enable auto"
+                Switch item=sz_curtain_auto label="Enable auto [%s]"
 			}
 			Frame label="Bed decor" {
 				Switch item=sz_bed_light label="Bed light [%s]" icon="light"
