@@ -134,9 +134,9 @@ sitemap main label="MAIN"
                 Switch item=ns_projector_power_sw label="Device power [%s]" icon="switch"
             }
             Frame {
-                Switch item=ir_projector_power label="Projector []" mappings=["ON"="⏼"] icon="projector"
-                Switch item=ir_audio_power label="Receiver []" mappings=["ON"="⏼"] icon="receiver"
-                Switch item=ir_stb_power label="STB []" mappings=["ON"="⏼"] icon="receiver"
+                Switch item=ir_projector_power label="Projector []" mappings=["ON"="⚇"] icon="projector"
+                Switch item=ir_audio_power label="Receiver []" mappings=["ON"="⚇"] icon="receiver"
+                Switch item=ir_stb_power label="STB []" mappings=["ON"="⚇"] icon="receiver"
             }
             Frame {
 			    Switch item=ns_christmas_light_sw label="Christmas [%s]" icon="light"
@@ -157,7 +157,7 @@ sitemap main label="MAIN"
 				Switch item=light_sunrise_enabled icon="light"
             }
             Frame label="Curtains" {
-                Switch item=sz_curtain_switch label="Command []" mappings=["open"="< >","stop"="||","close"="> <"]
+                Switch item=sz_curtain_switch label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=sz_curtain_position label="Position [%d %%]"
                 Switch item=sz_curtain_auto label="Enable auto"
 			}
