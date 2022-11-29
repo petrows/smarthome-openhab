@@ -279,11 +279,23 @@ when
 then
 	var state = receivedEvent
     switch(state) {
+        // Single action, just full open/close
         case "on": {
             sz_curtain_switch.sendCommand("open")
         }
         case "off": {
             sz_curtain_switch.sendCommand("close")
+        }
+        // Emulation of IKEA E1766 (curtain switch)
+        // Hold up/down to start move, release to stop
+        case "brightness_move_up": {
+            sz_curtain_switch.sendCommand("open")
+        }
+        case "brightness_move_down": {
+            sz_curtain_switch.sendCommand("close")
+        }
+        case "brightness_stop": {
+            sz_curtain_switch.sendCommand("stop")
         }
     }
 end
