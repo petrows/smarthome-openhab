@@ -305,7 +305,10 @@ when
     Channel "mqtt:topic:openhab:sz_night_mode_remote:action" triggered
 then
 	var state = receivedEvent
-    var curtainPos = Integer::parseInt(sz_curtain_switch.state.toString())
+    var curtainPos = 0
+    try {
+        curtainPos = Integer::parseInt(sz_curtain_switch.state.toString())
+    } catch(Throwable t) {}
     switch(state) {
         case "on": {
             if (100 != curtainPos) {
