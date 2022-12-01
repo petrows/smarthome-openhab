@@ -1,28 +1,52 @@
-rule "Robot custom command"
+rule "EG Robot custom command"
 when
-	Item robot_custom_command received command
+	Item eg_robot_custom_command received command
 then
-	logWarn("MI Robot", "Custom command: " + receivedCommand)
+	logWarn("robot-eg", "Custom command: " + receivedCommand)
 
     switch (receivedCommand) {
         case "FIND": {
-            robot_actions.sendCommand("custom-find-robot")
+            eg_robot_actions.sendCommand("custom-find-robot")
+        }
+        case "START": {
+            eg_robot_actions.sendCommand("vacuum-start-sweep")
+        }
+        case "STOP": {
+            eg_robot_actions.sendCommand("vacuum-stop-sweeping")
+        }
+        case "RETURN": {
+            eg_robot_actions.sendCommand("battery-start-charge")
         }
     }
     // Reset button status to empty
-    robot_custom_command.postUpdate("")
+    eg_robot_custom_command.postUpdate("")
 end
 
-rule "Robot error"
+rule "EG Robot error"
 when
-	Item robot_fault changed
+	Item eg_robot_fault changed
 then
-    val error_text = transform("MAP", "eve_fault.map", robot_fault.state.toString)
+    val error_text = transform("MAP", "eve_fault.map", eg_robot_fault.state.toString)
 
-	sendBroadcastNotification("Robot error: " + error_text)
-	logWarn("robot", "Robot error: " + error_text)
+	sendBroadcastNotification("EG Robot error: " + error_text)
+	logWarn("robot-eg", "Robot error: " + error_text)
 
     val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
-    telegramAction.sendTelegram("Robot error: " + error_text)
+    telegramAction.sendTelegram("EG Robot error: " + error_text)
 end
 
+// Regular cleaning
+
+rule "EG Robot clean auto"
+when
+	Time cron "0 0 12 ? * MON-FRI"
+then
+    if (OFF == eg_robot_regular_enable.state) {
+        logWarn("robot-eg", "Regular clean disabled")
+    }
+    logWarn("robot-eg", "Regular clean started")
+    logWarn("robot-eg", "Regular clean x2 mode: " + eg_robot_regular_x2.state.toString)
+
+    eg_robot_double_clean.sendCommand(eg_robot_regular_x2.state.toString)
+    eg_robot_custom_command.sendCommand("START")
+end

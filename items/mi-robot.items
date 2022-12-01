@@ -1,52 +1,56 @@
-Group g_robot "ROIDMI EVE vacuum" <status>
 
-String robot_custom_command "Custom command" (g_robot)
+Switch eg_robot_regular_enable "EG Robot regular [%s]" <power>
+Switch eg_robot_regular_x2 "EG Robot regular x2 mode [%s]" <power>
 
-String robot_actions "Actions" (g_robot) {channel="miio:basic:eve:actions"}
-Number robot_status "Robot Cleaner - Status" (g_robot) {channel="miio:basic:eve:status"}
-Number robot_fault "Robot Cleaner - Device Fault" (g_robot) {channel="miio:basic:eve:fault"}
-Number robot_mode "Robot Cleaner - Mode" (g_robot) {channel="miio:basic:eve:mode"}
-Number robot_sweep_type "Robot Cleaner - Sweep Type" (g_robot) {channel="miio:basic:eve:sweep_type"}
-Number robot_on "Robot Cleaner - Switch Status" (g_robot) {channel="miio:basic:eve:on"}
-Number:Dimensionless robot_battery_level "Battery - Battery Level" (g_robot) {channel="miio:basic:eve:battery_level"}
-Number robot_charging_state "Battery - Charging State" (g_robot) {channel="miio:basic:eve:charging_state"}
-Number:Dimensionless robot_volume "Speaker - Volume" (g_robot) {channel="miio:basic:eve:volume"}
-Switch robot_mute "Speaker - Mute" (g_robot) {channel="miio:basic:eve:mute"}
-Number:Dimensionless robot_filter_life_level "Filter - Filter Life Level" (g_robot) {channel="miio:basic:eve:filter_life_level"}
-Number:Time robot_filter_left_time "Filter - Filter Left Time" (g_robot) {channel="miio:basic:eve:filter_left_time"}
-Number:Time robot_brush_left_time "Brush Cleaner - Brush Left Time" (g_robot) {channel="miio:basic:eve:brush_left_time"}
-Number:Dimensionless robot_brush_life_level "Brush Cleaner - Brush Life Level" (g_robot) {channel="miio:basic:eve:brush_life_level"}
-Number:Time robot_brush_left_time1 "Brush Cleaner - Brush Left Time" (g_robot) {channel="miio:basic:eve:brush_left_time1"}
-Number:Dimensionless robot_brush_life_level1 "Brush Cleaner - Brush Life Level" (g_robot) {channel="miio:basic:eve:brush_life_level1"}
-Number:Time robot_brush_left_time2 "Brush Cleaner - Brush Left Time" (g_robot) {channel="miio:basic:eve:brush_left_time2"}
-Number:Dimensionless robot_brush_life_level2 "Brush Cleaner - Brush Life Level" (g_robot) {channel="miio:basic:eve:brush_life_level2"}
-Switch robot_mop "Custom - Mop" (g_robot) {channel="miio:basic:eve:mop"}
-Number robot_work_station_freq "Custom - Work Station Freq" (g_robot) {channel="miio:basic:eve:work_station_freq"}
-String robot_timing "Custom - Timing" (g_robot) {channel="miio:basic:eve:timing"}
-Number robot_clean_area "Custom - Clean Area" (g_robot) {channel="miio:basic:eve:clean_area"}
-String robot_uid "Custom - Uid" (g_robot) {channel="miio:basic:eve:uid"}
-Switch robot_auto_boost "Custom - Auto Boost" (g_robot) {channel="miio:basic:eve:auto_boost"}
-String robot_forbid_mode "Custom - Forbid Mode" (g_robot) {channel="miio:basic:eve:forbid_mode"}
-Number robot_water_level "Custom - Water Level" (g_robot) {channel="miio:basic:eve:water_level"}
-Number:Time robot_total_clean_time "Custom - Total Clean Time" (g_robot) {channel="miio:basic:eve:total_clean_time"}
-Number robot_total_clean_areas "Custom - Total Clean Areas" (g_robot) {channel="miio:basic:eve:total_clean_areas"}
-Number robot_clean_counts "Custom - Clean Counts" (g_robot) {channel="miio:basic:eve:clean_counts"}
-Number:Time robot_clean_time "Custom - Clean Time" (g_robot) {channel="miio:basic:eve:clean_time"}
-Switch robot_double_clean "Custom - Double Clean" (g_robot) {channel="miio:basic:eve:double_clean"}
-Switch robot_edge_sweep "Custom - Edge Sweep" (g_robot) {channel="miio:basic:eve:edge_sweep"}
-Switch robot_led_switch "Custom - Led Switch" (g_robot) {channel="miio:basic:eve:led_switch"}
-Switch robot_lidar_collision "Custom - Lidar Collision" (g_robot) {channel="miio:basic:eve:lidar_collision"}
-Switch robot_station_key "Custom - Station Key" (g_robot) {channel="miio:basic:eve:station_key"}
-Switch robot_station_led "Custom - Station Led" (g_robot) {channel="miio:basic:eve:station_led"}
-String robot_current_audio "Custom - Current Audio" (g_robot) {channel="miio:basic:eve:current_audio"}
-String robot_progress "Custom - Progress" (g_robot) {channel="miio:basic:eve:progress"}
-Number robot_station_type "Custom - Station Type" (g_robot) {channel="miio:basic:eve:station_type"}
-String robot_voice_conf "Custom - Voice Conf" (g_robot) {channel="miio:basic:eve:voice_conf"}
-String robot_clean_path "Map - Clean Path" (g_robot) {channel="miio:basic:eve:clean_path"}
-String robot_restricted_zone "Map - Restricted Zone" (g_robot) {channel="miio:basic:eve:restricted_zone"}
-String robot_auto_area "Map - Auto Area" (g_robot) {channel="miio:basic:eve:auto_area"}
-Switch robot_map_memory "Map - Map Memory" (g_robot) {channel="miio:basic:eve:map_memory"}
-String robot_map_name "Map - Map Name" (g_robot) {channel="miio:basic:eve:map_name"}
-Switch robot_use_auto_area "Map - Use Auto Area" (g_robot) {channel="miio:basic:eve:use_auto_area"}
-Number robot_path_type "Map - Path Type" (g_robot) {channel="miio:basic:eve:path_type"}
-Number robot_sweep_mode "Sweep - Sweep Mode" (g_robot) {channel="miio:basic:eve:sweep_mode"}
+Group eg_robot "ROIDMI EVE (EG)" <status>
+
+String eg_robot_custom_command "Custom command" (eg_robot)
+
+String eg_robot_actions "Actions" (eg_robot) {channel="miio:basic:eve:actions"}
+Number eg_robot_status "Robot Cleaner - Status" (eg_robot) {channel="miio:basic:eve:status"}
+Number eg_robot_fault "Robot Cleaner - Device Fault" (eg_robot) {channel="miio:basic:eve:fault"}
+Number eg_robot_mode "Robot Cleaner - Mode" (eg_robot) {channel="miio:basic:eve:mode"}
+Number eg_robot_sweep_type "Robot Cleaner - Sweep Type" (eg_robot) {channel="miio:basic:eve:sweep_type"}
+Number eg_robot_on "Robot Cleaner - Switch Status" (eg_robot) {channel="miio:basic:eve:on"}
+Number:Dimensionless eg_robot_battery_level "Battery - Battery Level" (eg_robot) {channel="miio:basic:eve:battery_level"}
+Number eg_robot_charging_state "Battery - Charging State" (eg_robot) {channel="miio:basic:eve:charging_state"}
+Number:Dimensionless eg_robot_volume "Speaker - Volume" (eg_robot) {channel="miio:basic:eve:volume"}
+Switch eg_robot_mute "Speaker - Mute" (eg_robot) {channel="miio:basic:eve:mute"}
+Number:Dimensionless eg_robot_filter_life_level "Filter - Filter Life Level" (eg_robot) {channel="miio:basic:eve:filter_life_level"}
+Number:Time eg_robot_filter_left_time "Filter - Filter Left Time" (eg_robot) {channel="miio:basic:eve:filter_left_time"}
+Number:Time eg_robot_main_brush_left_time "Brush Cleaner - Brush Left Time" (eg_robot) {channel="miio:basic:eve:brush_left_time"}
+Number:Dimensionless eg_robot_main_brush_life_level "Main Brush Life Level" (eg_robot) {channel="miio:basic:eve:brush_life_level"}
+Number:Time eg_robot_side_brush_left_time "Brush Cleaner - Brush Left Time" (eg_robot) {channel="miio:basic:eve:brush_left_time1"}
+Number:Dimensionless eg_robot_side_brush_life_level "Side Brush Life Level" (eg_robot) {channel="miio:basic:eve:brush_life_level1"}
+Number:Time eg_robot_sensor_clean_left_time "Brush Cleaner - Brush Left Time" (eg_robot) {channel="miio:basic:eve:brush_left_time2"}
+Number:Dimensionless eg_robot_sensor_clean_level "Sensor Clean Level" (eg_robot) {channel="miio:basic:eve:brush_life_level2"}
+Switch eg_robot_mop "Custom - Mop" (eg_robot) {channel="miio:basic:eve:mop"}
+Number eg_robot_work_station_freq "Custom - Work Station Freq" (eg_robot) {channel="miio:basic:eve:work_station_freq"}
+String eg_robot_timing "Custom - Timing" (eg_robot) {channel="miio:basic:eve:timing"}
+Number eg_robot_clean_area "Custom - Clean Area" (eg_robot) {channel="miio:basic:eve:clean_area"}
+String eg_robot_uid "Custom - Uid" (eg_robot) {channel="miio:basic:eve:uid"}
+Switch eg_robot_auto_boost "Custom - Auto Boost" (eg_robot) {channel="miio:basic:eve:auto_boost"}
+String eg_robot_forbid_mode "Custom - Forbid Mode" (eg_robot) {channel="miio:basic:eve:forbid_mode"}
+Number eg_robot_water_level "Custom - Water Level" (eg_robot) {channel="miio:basic:eve:water_level"}
+Number:Time eg_robot_total_clean_time "Custom - Total Clean Time" (eg_robot) {channel="miio:basic:eve:total_clean_time"}
+Number eg_robot_total_clean_areas "Custom - Total Clean Areas" (eg_robot) {channel="miio:basic:eve:total_clean_areas"}
+Number eg_robot_clean_counts "Custom - Clean Counts" (eg_robot) {channel="miio:basic:eve:clean_counts"}
+Number:Time eg_robot_clean_time "Custom - Clean Time" (eg_robot) {channel="miio:basic:eve:clean_time"}
+Switch eg_robot_double_clean "Custom - Double Clean" (eg_robot) {channel="miio:basic:eve:double_clean"}
+Switch eg_robot_edge_sweep "Custom - Edge Sweep" (eg_robot) {channel="miio:basic:eve:edge_sweep"}
+Switch eg_robot_led_switch "Custom - Led Switch" (eg_robot) {channel="miio:basic:eve:led_switch"}
+Switch eg_robot_lidar_collision "Custom - Lidar Collision" (eg_robot) {channel="miio:basic:eve:lidar_collision"}
+Switch eg_robot_station_key "Custom - Station Key" (eg_robot) {channel="miio:basic:eve:station_key"}
+Switch eg_robot_station_led "Custom - Station Led" (eg_robot) {channel="miio:basic:eve:station_led"}
+String eg_robot_current_audio "Custom - Current Audio" (eg_robot) {channel="miio:basic:eve:current_audio"}
+String eg_robot_progress "Custom - Progress" (eg_robot) {channel="miio:basic:eve:progress"}
+Number eg_robot_station_type "Custom - Station Type" (eg_robot) {channel="miio:basic:eve:station_type"}
+String eg_robot_voice_conf "Custom - Voice Conf" (eg_robot) {channel="miio:basic:eve:voice_conf"}
+String eg_robot_clean_path "Map - Clean Path" (eg_robot) {channel="miio:basic:eve:clean_path"}
+String eg_robot_restricted_zone "Map - Restricted Zone" (eg_robot) {channel="miio:basic:eve:restricted_zone"}
+String eg_robot_auto_area "Map - Auto Area" (eg_robot) {channel="miio:basic:eve:auto_area"}
+Switch eg_robot_map_memory "Map - Map Memory" (eg_robot) {channel="miio:basic:eve:map_memory"}
+String eg_robot_map_name "Map - Map Name" (eg_robot) {channel="miio:basic:eve:map_name"}
+Switch eg_robot_use_auto_area "Map - Use Auto Area" (eg_robot) {channel="miio:basic:eve:use_auto_area"}
+Number eg_robot_path_type "Map - Path Type" (eg_robot) {channel="miio:basic:eve:path_type"}
+Number eg_robot_sweep_mode "Sweep - Sweep Mode" (eg_robot) {channel="miio:basic:eve:sweep_mode"}
