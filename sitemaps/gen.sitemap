@@ -99,7 +99,7 @@ Frame label="Marina Desktop remote (0xccccccfffeea9703)" {
 Text item=desktop_marina_remote_link icon="linkz"
 Text item=desktop_marina_remote_ota icon="fire"
 }
-Frame label="SZ Climate (0x00158d0001c19a6b)" {
+Frame label="SZ Climate (0x847127fffec6acc3)" {
 Text item=sz_climate_temperature
 Text item=sz_climate_humidity
 Text item=sz_climate_link icon="linkz"

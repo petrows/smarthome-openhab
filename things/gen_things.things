@@ -196,8 +196,8 @@ Thing mqtt:topic:openhab:desktop_marina_remote "Marina Desktop remote" (mqtt:bro
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// SZ Climate (0x00158d0001c19a6b)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+// SZ Climate (0x847127fffec6acc3)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="JS:z2m-temperature.js",unit="°C"]

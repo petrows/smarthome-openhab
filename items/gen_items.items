@@ -140,8 +140,8 @@ Switch desktop_marina_remote_ota "Marina Desktop remote OTA [%s]" <fire> (g_zigb
 Number:Dimensionless desktop_marina_remote_battery "Marina Desktop remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:desktop_marina_remote:battery"}
 Switch desktop_marina_remote_battery_low "Marina Desktop remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:desktop_marina_remote:battery_low"}
 
-// SZ Climate (0x00158d0001c19a6b)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+// SZ Climate (0x847127fffec6acc3)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Number:Temperature sz_climate_temperature "SZ Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:sz_climate:temperature"}
 Number:Dimensionless sz_climate_humidity "SZ Climate [%.0f %%]" <humidity> {channel="mqtt:topic:openhab:sz_climate:humidity"}
 DateTime sz_climate_activity "SZ Climate [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:sz_climate:activity"}

@@ -201,8 +201,8 @@ items = [
     {
         'name': "SZ Climate",
         'id': "sz_climate",
-        'zigbee_id': '0x00158d0001c19a6b',
-        'type': DEVICES.XIAOMI_AQARA_V1,
+        'zigbee_id': '0x847127fffec6acc3',
+        'type': DEVICES.TUYA_TEMPERATURE_SENSOR_TS0201,
     },
     {
         'name': "Bedroom remote",
