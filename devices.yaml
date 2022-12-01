@@ -85,6 +85,8 @@
   friendly_name: sz_bed_light_2
 '0x9035eafffe20e847':
   friendly_name: eg_decoration_light
+'0xa4c13804963f4ccf':
+  friendly_name: sz_window_1
 '0xa4c138182f60d651':
   friendly_name: eg_main_door
 '0xa4c1383cc92cbbd2':

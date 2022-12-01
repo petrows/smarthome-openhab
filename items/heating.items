@@ -18,6 +18,7 @@ Group:Contact:AND(CLOSED, OPEN) all_windows "All windows [%s]" <window>
 
 // Groups of sensors, enabeling heating
 Group:Contact:AND(CLOSED, OPEN) kg_windows "KG windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) sz_windows "SZ windows [%s]" <window> (all_windows)
 
 // AVG valve
 Group:Number:AVG g_hz_valve "Alle Ventil" <heating>

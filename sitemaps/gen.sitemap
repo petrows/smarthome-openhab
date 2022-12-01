@@ -147,6 +147,11 @@ Slider item=sz_declamp_3_dim
 Text item=sz_declamp_3_link icon="linkz"
 Text item=sz_declamp_3_ota icon="fire"
 }
+Frame label="SZ Window 1 (0xa4c13804963f4ccf)" {
+Text item=sz_window_1_contact
+Text item=sz_window_1_link icon="linkz"
+Text item=sz_window_1_ota icon="fire"
+}
 Frame label="KU Climate (0x00158d0001b95fc4)" {
 Text item=ku_climate_temperature
 Text item=ku_climate_humidity

@@ -12,3 +12,17 @@ then
     // Reset button status to empty
     robot_custom_command.postUpdate("")
 end
+
+rule "Robot error"
+when
+	Item robot_fault changed
+then
+    val error_text = transform("MAP", "eve_fault.map", robot_fault.state.toString)
+
+	sendBroadcastNotification("Robot error: " + error_text)
+	logWarn("robot", "Robot error: " + error_text)
+
+    val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
+    telegramAction.sendTelegram("Robot error: " + error_text)
+end
+

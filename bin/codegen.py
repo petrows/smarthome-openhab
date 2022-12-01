@@ -272,6 +272,15 @@ items = [
             'dim': ['g_light_eg_sz_night_brightness', 'g_light_eg_sz_decor_brightness'],
         }
     },
+    {
+        'name': "SZ Window 1",
+        'id': "sz_window_1",
+        'zigbee_id': '0xa4c13804963f4ccf',
+        'type': DEVICES.TUYA_WINDOW_SENSOR,
+        'groups': {
+            'contact': ['sz_windows'],
+        }
+    },
     # EG (Kitchen)
     {
         'name': "KU Climate",
