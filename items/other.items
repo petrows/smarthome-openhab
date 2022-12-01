@@ -1,5 +1,8 @@
 Group:DateTime:EARLIEST g_device_activity "Device Activity [JS(display-activity.js):%s]" <time>
 
+// Item to send broadcast messages (Notification, telegram, etc)
+String global_message "Broadcast message"
+
 Switch cinema_mode "Cinema modus"
 Switch ir_projector_power { channel="mqtt:topic:openhab:snf-ns-ir:projector_power" }
 Switch ir_stb_power { channel="mqtt:topic:openhab:snf-ns-ir:stb_power" }

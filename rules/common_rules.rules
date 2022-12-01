@@ -13,6 +13,16 @@ then
     presMobileMarina.sendCommand(OFF)
 end
 
+rule "Broadcast message"
+when
+    Item global_message received command
+then
+    logWarn("broadcast", receivedCommand.toString)
+    sendBroadcastNotification(receivedCommand.toString)
+	val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
+    telegramAction.sendTelegram(receivedCommand.toString)
+end
+
 rule "Presence master"
 when
 	Item gPresent changed

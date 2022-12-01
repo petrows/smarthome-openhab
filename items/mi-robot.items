@@ -8,8 +8,10 @@ String eg_robot_custom_command "Custom command" (eg_robot)
 
 String eg_robot_actions "Actions" (eg_robot) {channel="miio:basic:eve:actions"}
 Number eg_robot_status "Robot Cleaner - Status" (eg_robot) {channel="miio:basic:eve:status"}
+String eg_robot_status_text "Robot Cleaner - Status" (eg_robot)
 Number eg_robot_fault "Robot Cleaner - Device Fault" (eg_robot) {channel="miio:basic:eve:fault"}
-Number eg_robot_mode "Robot Cleaner - Mode" (eg_robot) {channel="miio:basic:eve:mode"}
+String eg_robot_fault_text "Robot Cleaner - Device Fault" (eg_robot)
+Number eg_robot_sweep_level "Robot Cleaner - Mode" (eg_robot) {channel="miio:basic:eve:mode"}
 Number eg_robot_sweep_type "Robot Cleaner - Sweep Type" (eg_robot) {channel="miio:basic:eve:sweep_type"}
 Number eg_robot_on "Robot Cleaner - Switch Status" (eg_robot) {channel="miio:basic:eve:on"}
 Number:Dimensionless eg_robot_battery_level "Battery - Battery Level" (eg_robot) {channel="miio:basic:eve:battery_level"}

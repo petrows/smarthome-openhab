@@ -22,17 +22,23 @@ then
     eg_robot_custom_command.postUpdate("")
 end
 
+rule "EG Robot status text"
+when
+	Item eg_robot_status changed
+then
+    val status_text = transform("MAP", "eve_status.map", eg_robot_status.state.toString)
+    eg_robot_status_text.sendCommand(status_text)
+end
+
 rule "EG Robot error"
 when
 	Item eg_robot_fault changed
 then
     val error_text = transform("MAP", "eve_fault.map", eg_robot_fault.state.toString)
 
-	sendBroadcastNotification("EG Robot error: " + error_text)
-	logWarn("robot-eg", "Robot error: " + error_text)
+    eg_robot_fault_text.sendCommand(error_text)
 
-    val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
-    telegramAction.sendTelegram("EG Robot error: " + error_text)
+    global_message.sendCommand("EG Robot error: " + error_text)
 end
 
 // Regular cleaning
@@ -41,12 +47,22 @@ rule "EG Robot clean auto"
 when
 	Time cron "0 0 12 ? * MON-FRI"
 then
+    // Master switch
     if (OFF == eg_robot_regular_enable.state) {
         logWarn("robot-eg", "Regular clean disabled")
+        return
     }
+    // Check valid status (no faults)
+    if (0 != eg_robot_fault.state) {
+        logWarn("robot-eg", "Regular clean skipped: robot fault " + eg_robot_fault_text.state)
+        global_message.sendCommand("EG Robot clean skipped, error: " + eg_robot_fault_text.state)
+        return
+    }
+
     logWarn("robot-eg", "Regular clean started")
     logWarn("robot-eg", "Regular clean x2 mode: " + eg_robot_regular_x2.state.toString)
 
     eg_robot_double_clean.sendCommand(eg_robot_regular_x2.state.toString)
+    eg_robot_sweep_level.sendCommand(4) // 100%, see eve_level.map
     eg_robot_custom_command.sendCommand("START")
 end
