@@ -315,7 +315,9 @@ then
                 sz_curtain_switch.sendCommand("close")
             }
             sz_bed_light_dim.sendCommand(50)
+            Thread::sleep(3000)
             snf_eg_fl.sendCommand(OFF)
+            snf_eg_sz.sendCommand(OFF)
         }
     }
 end
