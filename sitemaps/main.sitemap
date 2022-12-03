@@ -305,6 +305,7 @@ sitemap main label="MAIN"
                 Switch item=eg_robot_double_clean icon="" label="Double clean []" mappings=["OFF"="OFF", "ON"="ON"]
                 Switch item=eg_robot_custom_command icon="" label="Find []" mappings=["FIND"="FIND"]
                 Slider item=eg_robot_volume
+                Image item=eg_robot_map
             }
         }
 		Switch item=garten_wasser_sw

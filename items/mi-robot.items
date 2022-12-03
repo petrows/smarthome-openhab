@@ -56,3 +56,6 @@ String eg_robot_map_name "Map - Map Name" (eg_robot) {channel="miio:basic:eve:ma
 Switch eg_robot_use_auto_area "Map - Use Auto Area" (eg_robot) {channel="miio:basic:eve:use_auto_area"}
 Number eg_robot_path_type "Map - Path Type" (eg_robot) {channel="miio:basic:eve:path_type"}
 Number eg_robot_sweep_mode "Sweep - Sweep Mode" (eg_robot) {channel="miio:basic:eve:sweep_mode"}
+
+Image eg_robot_map "Cleaning Map" (eg_robot) {channel="miio:basic:eve:cleaning#map"}
+

@@ -53,7 +53,7 @@ then
         return
     }
     // Check valid status (no faults)
-    if (0 != eg_robot_fault.state) {
+    if (0 != (eg_robot_fault.state as Number)) {
         logWarn("robot-eg", "Regular clean skipped: robot fault " + eg_robot_fault_text.state)
         global_message.sendCommand("EG Robot clean skipped, error: " + eg_robot_fault_text.state)
         return
