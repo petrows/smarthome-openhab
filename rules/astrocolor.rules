@@ -15,10 +15,9 @@ val astrocolorDaylight = 30
 // Persentage to be change on each step
 // Inrease this value to reduce command traffic, decrease for better smooth
 
-val astrocolorProgramPeriodStep = 1
+val astrocolorProgramPeriodStep = 1.0
 
 // === Configuration
-
 
 // Global vars
 var Timer astrocolorTimer
