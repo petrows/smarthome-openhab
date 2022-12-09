@@ -22,12 +22,44 @@ then
     eg_robot_custom_command.postUpdate("")
 end
 
+rule "KG Robot custom command"
+when
+	Item kg_robot_custom_command received command
+then
+	logWarn("robot-kg", "Custom command: " + receivedCommand)
+
+    switch (receivedCommand) {
+        case "FIND": {
+            kg_robot_actions.sendCommand("custom-find-robot")
+        }
+        case "START": {
+            kg_robot_actions.sendCommand("vacuum-start-sweep")
+        }
+        case "STOP": {
+            kg_robot_actions.sendCommand("vacuum-stop-sweeping")
+        }
+        case "RETURN": {
+            kg_robot_actions.sendCommand("battery-start-charge")
+        }
+    }
+    // Reset button status to empty
+    kg_robot_custom_command.postUpdate("")
+end
+
 rule "EG Robot status text"
 when
 	Item eg_robot_status changed
 then
     val status_text = transform("MAP", "eve_status.map", eg_robot_status.state.toString)
     eg_robot_status_text.sendCommand(status_text)
+end
+
+rule "KG Robot status text"
+when
+	Item kg_robot_status changed
+then
+    val status_text = transform("MAP", "eve_status.map", kg_robot_status.state.toString)
+    kg_robot_status_text.sendCommand(status_text)
 end
 
 rule "EG Robot error"
@@ -39,6 +71,17 @@ then
     eg_robot_fault_text.sendCommand(error_text)
 
     global_message.sendCommand("EG Robot error: " + error_text)
+end
+
+rule "KG Robot error"
+when
+	Item kg_robot_fault changed
+then
+    val error_text = transform("MAP", "eve_fault.map", kg_robot_fault.state.toString)
+
+    kg_robot_fault_text.sendCommand(error_text)
+
+    global_message.sendCommand("KG Robot error: " + error_text)
 end
 
 // Regular cleaning
@@ -65,4 +108,28 @@ then
     eg_robot_double_clean.sendCommand(eg_robot_regular_x2.state.toString)
     eg_robot_sweep_level.sendCommand(4) // 100%, see eve_level.map
     eg_robot_custom_command.sendCommand("START")
+end
+
+rule "KG Robot clean auto"
+when
+	Time cron "0 0 06 ? * MON-FRI"
+then
+    // Master switch
+    if (OFF == kg_robot_regular_enable.state) {
+        logWarn("robot-kg", "Regular clean disabled")
+        return
+    }
+    // Check valid status (no faults)
+    if (0 != (kg_robot_fault.state as Number)) {
+        logWarn("robot-kg", "Regular clean skipped: robot fault " + kg_robot_fault_text.state)
+        global_message.sendCommand("KG Robot clean skipped, error: " + kg_robot_fault_text.state)
+        return
+    }
+
+    logWarn("robot-kg", "Regular clean started")
+    logWarn("robot-kg", "Regular clean x2 mode: " + kg_robot_regular_x2.state.toString)
+
+    kg_robot_double_clean.sendCommand(kg_robot_regular_x2.state.toString)
+    kg_robot_sweep_level.sendCommand(4) // 100%, see eve_level.map
+    kg_robot_custom_command.sendCommand("START")
 end
