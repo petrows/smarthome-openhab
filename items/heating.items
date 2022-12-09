@@ -12,6 +12,10 @@ Group g_hz_kg <heating>
 
 // Heaters in EG
 Group g_hz_eg <heating>
+Group g_hz_fs <heating>
+Group g_hz_ns <heating>
+Group g_hz_ku <heating>
+Group g_hz_sz <heating>
 
 // All sensors
 Group:Contact:AND(CLOSED, OPEN) all_windows "All windows [%s]" <window>

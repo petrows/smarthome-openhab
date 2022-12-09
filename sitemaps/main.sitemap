@@ -279,7 +279,7 @@ sitemap main label="MAIN"
             Switch item=m800s_state_command label="Command []" mappings=["OFF"="OFF", "WARM"="WARM", "ON"="START"]
 		}
         Text label="Dryer time [%1$tH:%1$tM]" item=dryer_time
-		Group item=eg_robot_status icon="pump" label="Robot EVE [MAP(eve_status.map):%s]" {
+		Group item=eg_robot_status icon="pump" label="Robot EG [MAP(eve_status.map):%s]" {
             Frame label="Regular cleaning" {
                 Switch item=eg_robot_regular_enable label="Enable"
                 Switch item=eg_robot_regular_x2 label="x2 mode"
@@ -306,6 +306,35 @@ sitemap main label="MAIN"
                 Switch item=eg_robot_custom_command icon="" label="Find []" mappings=["FIND"="FIND"]
                 Slider item=eg_robot_volume
                 Image item=eg_robot_map
+            }
+        }
+		Group item=kg_robot_status icon="pump" label="Robot KG [MAP(eve_status.map):%s]" {
+            Frame label="Regular cleaning" {
+                Switch item=kg_robot_regular_enable label="Enable"
+                Switch item=kg_robot_regular_x2 label="x2 mode"
+            }
+            Frame label="Status" {
+                Text item=kg_robot_status label="Status [MAP(eve_status.map):%s]"
+                Text item=kg_robot_charging_state label="Charging [MAP(eve_charging.map):%s]"
+                Text item=kg_robot_fault label="Fault [MAP(eve_fault.map):%s]"
+                Text item=kg_robot_battery_level label="Battery [%d %%]"
+                Text item=kg_robot_total_clean_time label="Clean time [%1$tj days %1$tH:%1$tM]"
+                Text item=kg_robot_clean_counts label="Cleans [%d]"
+                Text item=kg_robot_filter_life_level label="Filter [%d %unit%]"
+                Text item=kg_robot_main_brush_life_level label="Brush (main) [%d %unit%]"
+                Text item=kg_robot_side_brush_life_level label="Brush (side) [%d %unit%]"
+                Text item=kg_robot_sensor_clean_level label="Sensor clean [%d %unit%]"
+            }
+            Frame label="Control" {
+                Switch item=kg_robot_custom_command icon="" label="Command []" mappings=["START"="START", "STOP"="STOP", "RETURN"="RETURN"]
+                Selection item=kg_robot_actions label="Command 2 []" mappings=["vacuum-start-sweep"="Vacuum Start Sweep","vacuum-stop-sweeping"="Vacuum Stop Sweeping","vacuum-start-room-sweep"="Vacuum Start Room Sweep","battery-start-charge"="Battery Start Charge","filter-reset-filter-life"="Filter Reset Filter Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","brush-cleaner-reset-brush-life"="Brush Cleaner Reset Brush Life","custom-find-robot"="Custom Find Robot","custom-stop-find-charge"="Custom Stop Find Charge","custom-continue-sweep"="Custom Continue Sweep","custom-start-dust"="Custom Start Dust","custom-pause"="Custom Pause","custom-pause-find-charge"="Custom Pause Find Charge","custom-continue-find-charge"="Custom Continue Find Charge","custom-update-audio"="Custom Update Audio","custom-set-voice"="Custom Set Voice","map-request-path"="Map Request Path","map-change-area-name"="Map Change Area Name","map-set-auto-area"="Map Set Auto Area","map-local-map"="Map Local Map","map-area-custom"="Map Area Custom","map-area-order"="Map Area Order","sweep-start-sweep"="Sweep Start Sweep"]
+                Switch item=kg_robot_sweep_type label="Mode []" mappings=["0"="Sweep","1"="Mop","2"="Mop+Sweep"]
+                Switch item=kg_robot_sweep_level label="Sweep []" mappings=["1"="25%","2"="50%","3"="75%","4"="100%","0"="OFF"]
+                Switch item=kg_robot_water_level label="Water []" mappings=["1"="25%","2"="50%","3"="75%","4"="100%","0"="OFF"]
+                Switch item=kg_robot_double_clean icon="" label="Double clean []" mappings=["OFF"="OFF", "ON"="ON"]
+                Switch item=kg_robot_custom_command icon="" label="Find []" mappings=["FIND"="FIND"]
+                Slider item=kg_robot_volume
+                Image item=kg_robot_map
             }
         }
 		Switch item=garten_wasser_sw

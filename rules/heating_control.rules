@@ -1,5 +1,73 @@
 import org.openhab.core.model.script.ScriptServiceUtil
 
+val Functions$Function2<String, Number, Boolean> set_room = [
+    room_name,
+    temperature |
+
+    logInfo("heating", "set_room " + room_name + ": request " + temperature.toString)
+
+    if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON)) {
+		logInfo("heating", "set_room: Auto disabled")
+		return false
+	}
+
+    var room_heating_enabled = true
+    var room_sensors_enabled = true
+    var room_heating_thermostat = ScriptServiceUtil.getItemRegistry?.getItem("g_hz_" + room_name) as GroupItem
+
+    // Check that we have master-switch for this room
+    try {
+        val SwitchItem room_switch = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_heating_enabled") as SwitchItem
+        // If we have
+        // logWarn("heating", "Item room sw: " + room_switch)
+        if (room_switch.state == OFF) {
+            logWarn("heating", "set_room " + room_name + ": switch " + room_switch.name + " is " + room_switch.state)
+            room_heating_enabled = false
+        }
+    } catch(Throwable t) {
+        // Nothing
+    }
+
+    if (!room_heating_enabled) {
+        logWarn("heating", "set_room " + room_name + ": disabled (switched off)")
+        room_heating_thermostat.sendCommand(cfgHeatingTempOff.state as Number)
+        return false
+    }
+
+    // Check that we have window-sensors for this room
+    try {
+        val GroupItem room_sensors = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_windows") as GroupItem
+        room_sensors.members.forEach [sensor |
+            if (room_sensors_enabled) {
+                if (sensor.state == OFF || sensor.state == OPEN) {
+                    logWarn("heating", "Room " + room_name + " sensor " + sensor.name + " is " + sensor.state)
+                    room_sensors_enabled = false
+                }
+            }
+        ]
+    } catch(Throwable t) {
+        // Nothing
+    }
+
+    if (!room_sensors_enabled) {
+        logWarn("heating", "set_room " + room_name + ": disabled (sensors)")
+        room_heating_thermostat.sendCommand(cfgHeatingTempOff.state as Number)
+        return false
+    }
+
+    logInfo("heating", "set_room " + room_name + ": set now " + temperature.toString)
+    room_heating_thermostat.sendCommand(temperature)
+
+    return true
+]
+
+rule "Heating test"
+when
+	Time cron "0 00 01,02,03,04 ? * *"
+then
+	set_room.apply("kg", 23.0)
+end
+
 // === MISC RULES ==========================================
 
 rule "Heating safe switch"
@@ -18,7 +86,13 @@ when
 then
 	logWarn("heating", "Set NIGHT")
 
-	hz_temp_auto.sendCommand(cfgHeatingTempNight.state as Number)
+    val temp = cfgHeatingTempNight.state as Number
+
+    set_room.apply("fs", temp)
+    set_room.apply("ns", temp)
+    set_room.apply("ku", temp)
+    set_room.apply("sz", temp)
+    set_room.apply("kg", temp)
 end
 
 rule "Heating MORNING"
@@ -27,7 +101,14 @@ when
 then
 	logWarn("heating", "Set MORNING")
 
-	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
+    val temp = cfgHeatingTempHeat.state as Number
+    val temp_off = cfgHeatingTempNight.state as Number
+
+    //set_room.apply("fs", temp_off)
+    //set_room.apply("ns", temp_off)
+    set_room.apply("ku", temp)
+    set_room.apply("sz", temp)
+    set_room.apply("kg", temp_off)
 end
 
 rule "Heating DAY"
@@ -36,7 +117,14 @@ when
 then
 	logWarn("heating", "Set DAY")
 
-	hz_temp_auto.sendCommand(cfgHeatingTempDay.state as Number)
+    val temp = cfgHeatingTempDay.state as Number
+    val temp_off = cfgHeatingTempNight.state as Number
+
+    //set_room.apply("fs", temp)
+    //set_room.apply("ns", temp)
+    set_room.apply("ku", temp_off)
+    set_room.apply("sz", temp_off)
+    //set_room.apply("kg", temp)
 end
 
 rule "Heating EVENING"
@@ -45,7 +133,25 @@ when
 then
 	logWarn("heating", "Set EVENING")
 
-	hz_temp_auto.sendCommand(cfgHeatingTempHeat.state as Number)
+	val temp = cfgHeatingTempHeat.state as Number
+    val temp_off = cfgHeatingTempNight.state as Number
+
+    //set_room.apply("fs", temp)
+    //set_room.apply("ns", temp)
+    set_room.apply("ku", temp_off)
+    set_room.apply("sz", temp_off)
+    set_room.apply("kg", temp)
+end
+
+rule "Heating for study"
+when
+	Time cron "0 00 06 ? * WED,FRI"
+then
+	logWarn("heating", "Set study mode")
+
+	val temp = cfgHeatingTempHeat.state as Number
+
+    set_room.apply("kg", temp)
 end
 
 // This rule is fired if any window open/closed
@@ -56,7 +162,7 @@ when
 	Item all_windows received command or
     Item all_windows changed
 then
-    if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && hz_temp_auto.state != cfgHeatingTempOff.state)) {
+    if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON)) {
 		logInfo("heating", "Windows: Auto disabled")
 		return
 	}
@@ -79,92 +185,6 @@ then
     ]
 end
 
-// === RULE CONTROLS ==========================================
-
-rule "Heating Auto command"
-when
-	Item hz_temp_auto changed
-then
-	if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON && hz_temp_auto.state != cfgHeatingTempOff.state)) {
-		logInfo("heating", "Auto disabled")
-        g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
-		return
-	}
-
-	// Check perisstance only if setting temp != OFF
-	if (hz_temp_auto.state != cfgHeatingTempOff.state) {
-		// Check that people are here
-		if (cfgHeatingPersistanceEnable.state == ON) {
-			if (presAll.state != ON) {
-				// Nobody at home, skip auto set
-				logInfo("heating", "Nobody at home, skip auto set")
-				g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
-				return
-			}
-		}
-	}
-
-	logInfo("heating", "Auto temp -> " + hz_temp_auto.state)
-	// g_hz_auto.sendCommand(hz_temp_auto.state as Number)
-
-    // Now we can apply new temp to members
-    g_hz_auto.members.forEach [s |
-        val room_name = transform("REGEX", "(.*)_heating_thermostat", s.name.toString)
-        logWarn("heating", "Item room: " + room_name)
-
-        var room_heating_enabled = true
-        var room_sensors_enabled = true
-
-        // Check that we have master-switch for this room
-        try {
-            val SwitchItem room_switch = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_heating_enabled") as SwitchItem
-            // If we have
-            // logWarn("heating", "Item room sw: " + room_switch)
-            if (room_switch.state == OFF) {
-                logWarn("heating", "Room " + room_name + " switch " + room_switch.name + " is " + room_switch.state)
-                room_heating_enabled = false
-            }
-        } catch(Throwable t) {
-            // Nothing
-        }
-        // Check that we have window-sensors for this room
-        try {
-            val GroupItem room_sensors = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_windows") as GroupItem
-            room_sensors.members.forEach [sensor |
-                if (room_sensors_enabled) {
-                    if (sensor.state == OFF || sensor.state == OPEN) {
-                        logWarn("heating", "Room " + room_name + " sensor " + sensor.name + " is " + sensor.state)
-                        room_sensors_enabled = false
-                    }
-                }
-            ]
-        } catch(Throwable t) {
-            // Nothing
-        }
-
-        // Apply final state?
-        var set_item = false
-
-        if (room_heating_enabled) {
-            if (room_sensors_enabled) {
-                set_item = true
-            } else {
-                logWarn("heating", "Set room " + room_name + " -> disabled (sensors)")
-            }
-        } else {
-            logWarn("heating", "Set room " + room_name + " -> disabled (switched off)")
-        }
-
-        if (set_item) {
-            logWarn("heating", "Set room " + room_name + " -> " + hz_temp_auto.state)
-            s.sendCommand(hz_temp_auto.state as Number)
-        } else {
-            logWarn("heating", "Set room " + room_name + " -> OFF")
-            s.sendCommand(cfgHeatingTempOff.state as Number)
-        }
-    ]
-end
-
 // === HEATING SWITCHES =========================================
 
 rule "Heating NS boost switch"
@@ -180,10 +200,12 @@ then
 
 	if (ON == ns_heating_boost.state) {
 		ns_heating_boost_power_sw.sendCommand(ON)
-		ns_heating_mode.sendCommand("BOOST")
+		// ns_heating_mode.sendCommand("BOOST")
+        g_hz_ns.sendCommand(cfgHeatingTempHeat.state as Number)
 	} else {
         ns_heating_boost_power_sw.sendCommand(OFF)
-		ns_heating_mode.sendCommand("MANUAL")
+		// ns_heating_mode.sendCommand("MANUAL")
+        g_hz_ns.sendCommand(cfgHeatingTempDay.state as Number)
 	}
 end
 
@@ -204,7 +226,7 @@ then
 	logInfo("heating", "Heating switched by presence to " + presAll.state)
 
 	if (presAll.state == ON) {
-		g_hz_all.sendCommand(hz_temp_auto.state as Number)
+		// g_hz_all.sendCommand(hz_temp_auto.state as Number)
 	} else {
 		g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
 	}
@@ -215,7 +237,7 @@ when
 	Item cfgHeatingEnable changed
 then
 	if (cfgHeatingEnable.state == ON) {
-		g_hz_all.sendCommand(hz_temp_auto.state as Number)
+		// g_hz_all.sendCommand(hz_temp_auto.state as Number)
 	} else {
 		g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
 	}
