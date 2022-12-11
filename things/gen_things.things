@@ -221,8 +221,8 @@ Thing mqtt:topic:openhab:sz_remote "Bedroom remote" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// Bedroom curtains remote (0xccccccfffef0356e)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+// Bedroom curtains remote (0x8cf681fffe36d14e)
+// IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
 Thing mqtt:topic:openhab:sz_curtain_remote "Bedroom curtains remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="JSONPATH:$.action", trigger=true]

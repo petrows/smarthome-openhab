@@ -81,6 +81,8 @@
   friendly_name: desktop_petro_pc_power
 '0x847127fffec6acc3':
   friendly_name: sz_climate
+'0x8cf681fffe36d14e':
+  friendly_name: sz_curtain_remote
 '0x9035eafffe1b9fcc':
   friendly_name: sz_bed_light_2
 '0x9035eafffe20e847':
@@ -111,8 +113,6 @@
   friendly_name: kg_lager4_switch
 '0xccccccfffeea9703':
   friendly_name: desktop_marina_remote
-'0xccccccfffef0356e':
-  friendly_name: sz_curtain_remote
 '0xd0cf5efffee892b0':
   friendly_name: treppe_up_light
 '0xec1bbdfffe1b89d1':

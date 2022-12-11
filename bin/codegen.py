@@ -57,6 +57,7 @@ PREAMBULA = """
 # 0x9035eafffe1b9fcc - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
 # 0x04cd15fffe7a35b5 - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
 # 0x04cd15fffe873cb7 - Ikea move sensor
+# 0x8cf681fffe36d14e - TRADFRI E1766 Open/Close Remote (from Marina E.)
 
 # Items defentition
 items = [
@@ -213,8 +214,8 @@ items = [
     {
         'name': "Bedroom curtains remote",
         'id': "sz_curtain_remote",
-        'zigbee_id': '0xccccccfffef0356e',
-        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+        'zigbee_id': '0x8cf681fffe36d14e',
+        'type': DEVICES.IKEA_TRADFRI_CURTAIN_REMOTE,
     },
     {
         'name': "Bedroom night mode",

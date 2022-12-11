@@ -158,8 +158,8 @@ Switch sz_remote_ota "Bedroom remote OTA [%s]" <fire> (g_zigbee_ota) {channel="m
 Number:Dimensionless sz_remote_battery "Bedroom remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_remote:battery"}
 Switch sz_remote_battery_low "Bedroom remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_remote:battery_low"}
 
-// Bedroom curtains remote (0xccccccfffef0356e)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+// Bedroom curtains remote (0x8cf681fffe36d14e)
+// IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
 Number:Dimensionless sz_curtain_remote_link "Bedroom curtains remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_curtain_remote:link"}
 Switch sz_curtain_remote_ota "Bedroom curtains remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_curtain_remote:ota"}
 Number:Dimensionless sz_curtain_remote_battery "Bedroom curtains remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_curtain_remote:battery"}

@@ -86,6 +86,17 @@ class DEVICES:
         'device_name': 'IKEA TRADFRI ON/OFF switch (E1743)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/E1743.html',
     }
+    # The possible values are: on, off, brightness_move_down, brightness_move_up, brightness_stop
+    IKEA_TRADFRI_CURTAIN_REMOTE = {
+        'types': [
+            'zigbee',
+            'remote',
+            'ikea',
+            'battery',
+        ],
+        'device_name': 'IKEA TRADFRI open/close remote (E1766)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/E1766.html',
+    }
     # The possible values are: on, off, brightness_move_up, brightness_move_down, brightness_stop, arrow_left_click, arrow_right_click, arrow_left_hold, arrow_right_hold, arrow_left_release, arrow_right_release
     IKEA_TRADFRI_STYRBAR = {
         'types': [
