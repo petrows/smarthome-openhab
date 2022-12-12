@@ -169,8 +169,31 @@ then
     logInfo("heating", "Windows state changed")
 	all_windows.members.forEach [sensor_group |
         val room_name = transform("REGEX", "(.*)_windows", sensor_group.name.toString)
+        var room_sensor_state = false
+        var sensor_group_g = sensor_group as GroupItem
 
-        if (sensor_group.state == OPEN) {
+        // logInfo("heating", sensor_group_g.name.toString)
+        // logInfo("heating", sensor_group_g.state.toString)
+
+        // Enumerate all sensors in this room
+        sensor_group_g.members.forEach [room_window_sensor |
+            var room_sensor_item = room_window_sensor as ContactItem
+            // Sensor is OPEN?
+            if (room_sensor_item.state == OPEN) {
+                // Sensor is member of 'g_windows_skip_off'? (Skip auto off)
+                var sensor_groups = room_sensor_item.getGroupNames()
+                // logInfo("heating", sensor_groups.toString)
+
+                if (sensor_groups.contains("g_windows_skip_off")) {
+                    logInfo("heating", "Windows: " + room_name + " sensor " + room_window_sensor.name + " is open, but skipped")
+                } else {
+                    logInfo("heating", "Windows: " + room_name + " sensor " + room_window_sensor.name + " is open")
+                    room_sensor_state = true
+                }
+            }
+        ]
+
+        if (room_sensor_state) {
             // Stop heating
             logInfo("heating", "Windows: Room " + room_name + " window is open, stop heating")
             // Check that we have heating for this room
