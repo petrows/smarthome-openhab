@@ -321,6 +321,13 @@ Text item=kg_lager1_main_light_rssi
 Text item=kg_lager1_main_light_bssid
 Text item=kg_lager1_main_light_la
 }
+Frame label="KG Lager 3 Climate (0x00158d0001c19a6b)" {
+Text item=kg_lager3_climate_temperature
+Text item=kg_lager3_climate_humidity
+Text item=kg_lager3_climate_pressure
+Text item=kg_lager3_climate_link icon="linkz"
+Text item=kg_lager3_climate_ota icon="fire"
+}
 Frame label="KG Lager 3 motion (0x04cd15fffe873cb7)" {
 Text item=kg_lager3_motion_occupancy
 Text item=kg_lager3_motion_link icon="linkz"

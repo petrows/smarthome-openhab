@@ -656,6 +656,21 @@ Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (Haupt)" (mqtt:broker:
 		Type datetime : activity [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
+// KG Lager 3 Climate (0x00158d0001c19a6b)
+// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+Thing mqtt:topic:openhab:kg_lager3_climate "KG Lager 3 Climate" (mqtt:broker:openhab) {
+	Channels:
+		Type number : temperature [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JS:z2m-temperature.js",unit="°C"]
+		Type number : humidity [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JSONPATH:$.humidity"]
+		Type number : pressure [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JSONPATH:$.pressure",unit="hPa"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JS:z2m-activity.js"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : voltage [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
+		Type number : link [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // KG Lager 3 motion (0x04cd15fffe873cb7)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
 Thing mqtt:topic:openhab:kg_lager3_motion "KG Lager 3 motion" (mqtt:broker:openhab) {

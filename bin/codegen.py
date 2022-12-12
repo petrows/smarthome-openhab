@@ -574,6 +574,12 @@ items = [
         }
     },
     {
+        'name': "KG Lager 3 Climate",
+        'id': "kg_lager3_climate",
+        'zigbee_id': '0x00158d0001c19a6b',
+        'type': DEVICES.XIAOMI_AQARA_V2,
+    },
+    {
         'name': "KG Lager 3 motion",
         'id': "kg_lager3_motion",
         'zigbee_id': '0x04cd15fffe873cb7',

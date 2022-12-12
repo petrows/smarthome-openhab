@@ -12,6 +12,8 @@
   friendly_name: ku_light_switch_spule
 '0x00158d0001c15121':
   friendly_name: fs_climate
+'0x00158d0001c19a6b':
+  friendly_name: kg_lager3_climate
 '0x00158d0001c2cc22':
   friendly_name: ext_climate
 '0x00158d000488052c':
