@@ -269,6 +269,9 @@ sitemap main label="MAIN"
                 Switch  	item=kg_heating_thermostat label="Mode []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
                 Switch      item=kg_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
                 Text        item=kg_windows label="Windows [%s]"
+                Text        item=kg_window_1_contact label="Window 1 [%s]" icon="window"
+                Text        item=kg_window_2_contact label="Window 2 [%s]" icon="window"
+                Text        item=kg_cabinet_door_contact label="Door [%s]"
             }
 		}
 	}
