@@ -20,6 +20,9 @@ Group g_hz_sz <heating>
 // All sensors
 Group:Contact:AND(CLOSED, OPEN) all_windows "All windows [%s]" <window>
 
+// Groups of sensors, DO NOT switch off heating on open imidiately
+Group:Contact:AND(CLOSED, OPEN) g_windows_skip_off "Windows skip auto OFF" <window>
+
 // Groups of sensors, enabeling heating
 Group:Contact:AND(CLOSED, OPEN) kg_windows "KG windows [%s]" <window> (all_windows)
 Group:Contact:AND(CLOSED, OPEN) sz_windows "SZ windows [%s]" <window> (all_windows)

@@ -344,6 +344,26 @@ Number:Dimensionless kg_window_1_battery "KG Window 1 [%.0f %%]" <battery> (g_ba
 Switch kg_window_1_battery_low "KG Window 1 [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_window_1:battery_low"}
 Number:ElectricPotential kg_window_1_voltage "KG Window 1 [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:kg_window_1:voltage"}
 
+// KG Window 2 (0xa4c1381a072fcf8b)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Contact kg_window_2_contact "KG Window 2 contact [%s]" <door> (kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
+DateTime kg_window_2_activity "KG Window 2 [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_window_2:activity"}
+Number:Dimensionless kg_window_2_link "KG Window 2 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_window_2:link"}
+Switch kg_window_2_ota "KG Window 2 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_window_2:ota"}
+Number:Dimensionless kg_window_2_battery "KG Window 2 [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_window_2:battery"}
+Switch kg_window_2_battery_low "KG Window 2 [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_window_2:battery_low"}
+Number:ElectricPotential kg_window_2_voltage "KG Window 2 [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:kg_window_2:voltage"}
+
+// KG Cabinet door (0xa4c138312d2c455f)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Contact kg_cabinet_door_contact "KG Cabinet door contact [%s]" <door> (kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
+DateTime kg_cabinet_door_activity "KG Cabinet door [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:kg_cabinet_door:activity"}
+Number:Dimensionless kg_cabinet_door_link "KG Cabinet door LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:kg_cabinet_door:link"}
+Switch kg_cabinet_door_ota "KG Cabinet door OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:kg_cabinet_door:ota"}
+Number:Dimensionless kg_cabinet_door_battery "KG Cabinet door [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:kg_cabinet_door:battery"}
+Switch kg_cabinet_door_battery_low "KG Cabinet door [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:kg_cabinet_door:battery_low"}
+Number:ElectricPotential kg_cabinet_door_voltage "KG Cabinet door [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:kg_cabinet_door:voltage"}
+
 // KG Climate (0x00158d0001b95e02)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Number:Temperature kg_climate_temperature "KG Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:kg_climate:temperature"}

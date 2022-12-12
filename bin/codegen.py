@@ -415,6 +415,24 @@ items = [
         }
     },
     {
+        'name': "KG Window 2",
+        'id': "kg_window_2",
+        'zigbee_id': '0xa4c1381a072fcf8b',
+        'type': DEVICES.TUYA_WINDOW_SENSOR,
+        'groups': {
+            'contact': ['kg_windows', 'g_windows_skip_off'],
+        }
+    },
+    {
+        'name': "KG Cabinet door",
+        'id': "kg_cabinet_door",
+        'zigbee_id': '0xa4c138312d2c455f',
+        'type': DEVICES.TUYA_WINDOW_SENSOR,
+        'groups': {
+            'contact': ['kg_windows', 'g_windows_skip_off'],
+        }
+    },
+    {
         'name': "KG Climate",
         'id': "kg_climate",
         'zigbee_id': '0x00158d0001b95e02',

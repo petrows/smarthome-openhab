@@ -233,6 +233,16 @@ Text item=kg_window_1_contact
 Text item=kg_window_1_link icon="linkz"
 Text item=kg_window_1_ota icon="fire"
 }
+Frame label="KG Window 2 (0xa4c1381a072fcf8b)" {
+Text item=kg_window_2_contact
+Text item=kg_window_2_link icon="linkz"
+Text item=kg_window_2_ota icon="fire"
+}
+Frame label="KG Cabinet door (0xa4c138312d2c455f)" {
+Text item=kg_cabinet_door_contact
+Text item=kg_cabinet_door_link icon="linkz"
+Text item=kg_cabinet_door_ota icon="fire"
+}
 Frame label="KG Climate (0x00158d0001b95e02)" {
 Text item=kg_climate_temperature
 Text item=kg_climate_humidity
