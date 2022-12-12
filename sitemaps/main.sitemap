@@ -273,6 +273,10 @@ sitemap main label="MAIN"
                 Text        item=kg_window_2_contact label="Window 2 [%s]" icon="window"
                 Text        item=kg_cabinet_door_contact label="Door [%s]"
             }
+            Frame label="Loundry room" {
+                Text 		item=kg_lager3_climate_temperature label="Temperature [%d °C]"
+                Text 		item=kg_lager3_climate_humidity label="Humidity [%d %%]"
+            }
 		}
 	}
 	Frame {
