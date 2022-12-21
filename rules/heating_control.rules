@@ -61,13 +61,6 @@ val Functions$Function2<String, Number, Boolean> set_room = [
     return true
 ]
 
-rule "Heating test"
-when
-	Time cron "0 00 01,02,03,04 ? * *"
-then
-	set_room.apply("kg", 23.0)
-end
-
 // === MISC RULES ==========================================
 
 rule "Heating safe switch"

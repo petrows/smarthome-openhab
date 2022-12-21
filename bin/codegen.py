@@ -692,7 +692,7 @@ items = [
         'zigbee_id': '0x5c0272fffedc2f41',
         'type': DEVICES.TUYA_THERMOSTAT_VALVE,
         'groups': {
-            'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_eg'],
+            'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_sz'],
             'position': ['g_hz_valve'],
         }
     },
