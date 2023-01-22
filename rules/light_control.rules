@@ -167,3 +167,12 @@ when
 then
     ku_light_arbeitplatte_sw.sendCommand(newState.toString())
 end
+
+// BZ: Mirror should follow main light
+
+rule "BZ mirror light follow main"
+when
+    Item bz_light_sw changed
+then
+    bz_mirror.sendCommand(newState.toString())
+end
