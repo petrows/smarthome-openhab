@@ -145,6 +145,20 @@ items = [
             'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz'],
         }
     },
+    {
+        'name': "BZ Mirror",
+        'id': "bz_mirror",
+        'type': DEVICES.TASMOTA_SONOFF_MINI,
+        'groups': {
+            'POWER': ['g_light_all', 'g_light_eg', 'g_light_eg_bz'],
+        },
+        'channels': {
+            'POWER': {
+                'id': 'bz_mirror',
+                'name': 'BZ Mirror',
+            }
+        }
+    },
     # EG (Nagel Studio)
     {
         'name': "NS Climate",

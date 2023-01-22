@@ -83,6 +83,14 @@ Switch bz_light_sw "BZ Light" <switch> (g_light_all,g_light_eg,g_light_eg_bz) {c
 Number:Dimensionless bz_light_link "BZ Light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light:link"}
 Switch bz_light_ota "BZ Light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light:ota"}
 
+// BZ Mirror (bz_mirror)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch bz_mirror "BZ Mirror" <light> (g_light_all,g_light_eg,g_light_eg_bz) {channel="mqtt:topic:openhab:bz_mirror:POWER"}
+Number:Dimensionless bz_mirror_rssi "BZ Mirror RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:bz_mirror:rssi"}
+String bz_mirror_bssid "BZ Mirror BSSID [%s]" <network> {channel="mqtt:topic:openhab:bz_mirror:bssid"}
+Number:Dimensionless bz_mirror_la "BZ Mirror LA [%d]" <energy> {channel="mqtt:topic:openhab:bz_mirror:la"}
+DateTime bz_mirror_activity "BZ Mirror [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:bz_mirror:activity"}
+
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Number:Temperature ns_climate_temperature "NS Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ns_climate:temperature"}

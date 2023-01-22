@@ -117,6 +117,17 @@ Thing mqtt:topic:openhab:bz_light "BZ Light" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/bz_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// BZ Mirror (bz_mirror)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Thing mqtt:topic:openhab:bz_mirror "BZ Mirror" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : POWER [stateTopic="stat/bz_mirror/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/bz_mirror/POWER", on="ON", off="OFF"]
+		Type number : rssi [stateTopic="tele/bz_mirror/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/bz_mirror/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/bz_mirror/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/bz_mirror/STATE", transformationPattern="JS:z2m-activity.js"]
+}
+
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {

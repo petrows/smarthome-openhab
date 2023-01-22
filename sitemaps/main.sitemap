@@ -115,7 +115,8 @@ sitemap main label="MAIN"
 			Text item=eg_main_door_contact label="Main door [%s]"
 		}
 		Group item=g_light_eg_bz label="WC [%s]" icon="light" {
-			Switch item=g_light_eg_bz label="Main" icon="light"
+			Switch item=bz_light_sw label="Main" icon="light"
+			Switch item=bz_mirror label="Mirror" icon="light"
 		}
 		Group item=g_light_eg_ku label="Kitchen [%s]" icon="light" {
 			Switch item=ku_light_switch_haupt_sw label="Main" icon="light"
