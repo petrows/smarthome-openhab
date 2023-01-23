@@ -403,3 +403,26 @@ then
         }
     }
 end
+
+// BZ: Mirror switch
+
+rule "BZ mirror switch"
+when
+    Channel "mqtt:topic:openhab:bz_mirror_switch:action" triggered
+then
+    var state = receivedEvent
+    switch(state) {
+        case "on": {
+            bz_mirror.sendCommand(ON)
+        }
+        case "brightness_move_up": {
+            bz_light_sw.sendCommand(ON)
+        }
+        case "off": {
+            bz_mirror.sendCommand(OFF)
+        }
+        case "brightness_move_down": {
+            bz_light_sw.sendCommand(OFF)
+        }
+    }
+end
