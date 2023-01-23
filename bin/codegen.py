@@ -159,6 +159,12 @@ items = [
             }
         }
     },
+    {
+        'name': "BZ Mirror switch",
+        'id': "bz_mirror_switch",
+        'zigbee_id': '0xccccccfffef0356e',
+        'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+    },
     # EG (Nagel Studio)
     {
         'name': "NS Climate",

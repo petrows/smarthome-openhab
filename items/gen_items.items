@@ -91,6 +91,13 @@ String bz_mirror_bssid "BZ Mirror BSSID [%s]" <network> {channel="mqtt:topic:ope
 Number:Dimensionless bz_mirror_la "BZ Mirror LA [%d]" <energy> {channel="mqtt:topic:openhab:bz_mirror:la"}
 DateTime bz_mirror_activity "BZ Mirror [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:bz_mirror:activity"}
 
+// BZ Mirror switch (0xccccccfffef0356e)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Number:Dimensionless bz_mirror_switch_link "BZ Mirror switch LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_mirror_switch:link"}
+Switch bz_mirror_switch_ota "BZ Mirror switch OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_mirror_switch:ota"}
+Number:Dimensionless bz_mirror_switch_battery "BZ Mirror switch [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:bz_mirror_switch:battery"}
+Switch bz_mirror_switch_battery_low "BZ Mirror switch [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:bz_mirror_switch:battery_low"}
+
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Number:Temperature ns_climate_temperature "NS Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ns_climate:temperature"}

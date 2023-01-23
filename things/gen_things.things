@@ -128,6 +128,17 @@ Thing mqtt:topic:openhab:bz_mirror "BZ Mirror" (mqtt:broker:openhab) {
 		Type datetime : activity [stateTopic="tele/bz_mirror/STATE", transformationPattern="JS:z2m-activity.js"]
 }
 
+// BZ Mirror switch (0xccccccfffef0356e)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Thing mqtt:topic:openhab:bz_mirror_switch "BZ Mirror switch" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="JSONPATH:$.action", trigger=true]
+		Type number : battery [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : link [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {

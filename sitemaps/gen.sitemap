@@ -65,6 +65,10 @@ Text item=bz_mirror_rssi
 Text item=bz_mirror_bssid
 Text item=bz_mirror_la
 }
+Frame label="BZ Mirror switch (0xccccccfffef0356e)" {
+Text item=bz_mirror_switch_link icon="linkz"
+Text item=bz_mirror_switch_ota icon="fire"
+}
 Frame label="NS Climate (0x00158d0001b95e08)" {
 Text item=ns_climate_temperature
 Text item=ns_climate_humidity
