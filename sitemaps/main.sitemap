@@ -286,7 +286,7 @@ sitemap main label="MAIN"
             Text item=m800s_time
             Switch item=m800s_state_command label="Command []" mappings=["OFF"="OFF", "WARM"="WARM", "ON"="START"]
 		}
-        Text label="Dryer time [%1$tH:%1$tM]" item=dryer_time
+        Text item=dryer_state_grp
 		Group item=eg_robot_status icon="pump" label="Robot EG [MAP(eve_status.map):%s]" {
             Frame label="Regular cleaning" {
                 Switch item=eg_robot_regular_enable label="Enable"

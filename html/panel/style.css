@@ -1,9 +1,9 @@
 .pws-value {
 	color: red;
 }
-.unit {
+/* .unit {
     font-size: smaller;
-}
+} */
 #clock-table {
 	width: 100%;
 }
@@ -18,10 +18,13 @@
 	text-transform: uppercase;
 }
 #clock-table-date {
-	font-size: 24pt;
+	font-size: 32pt;
 }
 #clock-table-wdate {
 	font-size: 18pt;
+}
+.widget-clock .time {
+    font-size: 68pt;
 }
 .weather-outside-value {
 	font-size: 20pt;
@@ -56,4 +59,15 @@
     padding: 0pt 15pt 5pt 15pt;
     text-align: left;
     font-size: medium;
+}
+
+.machines-info td {
+    padding: 3pt;
+    text-align: left;
+    font-size: 14pt;
+}
+
+.machines-value {
+    padding: 3pt;
+    font-weight: bold;
 }

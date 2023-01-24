@@ -193,3 +193,13 @@ then
         garten_wasser_sw.sendCommand(OFF)
     ])
 end
+
+// Update current date time
+
+rule "Update current date and time"
+when
+    Time cron "0 * * ? * *"
+then
+    val DateTimeType date_now = DateTimeType.valueOf(now.toLocalDateTime().toString())
+    current_date_time.postUpdate(date_now)
+end

@@ -9,3 +9,28 @@ then
     val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
     telegramAction.sendTelegram("Dryer finished")
 end
+
+// Update remain time
+
+rule "Siemens dryer time"
+    when Item dryer_time changed
+then
+    dryer_time_str.sendCommand(dryer_time.state.format("%1$tH:%1$tM"))
+end
+
+// Update cpmmon value with status
+
+rule "Siemens dryer status"
+    when Item dryer_time_str changed
+    or   Item dryer_operation_state changed
+then
+    val op_state = dryer_operation_state.state.toString()
+
+    if (
+        op_state == "Ready"
+    ) {
+        dryer_state_grp.sendCommand(op_state)
+    } else {
+        dryer_state_grp.sendCommand(op_state + " (" + dryer_time_str.state + ")")
+    }
+end

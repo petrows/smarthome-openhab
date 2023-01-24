@@ -1,4 +1,8 @@
 // Dryer Siemens
+
+// Common value to display
+String dryer_state_grp "Dryer [%s]" <whitegood>
+
 Contact dryer_door_state "Door State" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:door_state" }
 String dryer_operation_state "State" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:operation_state" }
 String dryer_active_program "Program" { channel="homeconnect:dryer:api_bridge_at_home:dryer1:active_program_state" }
