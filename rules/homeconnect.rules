@@ -24,10 +24,10 @@ rule "Siemens dryer status"
     when Item dryer_time_str changed
     or   Item dryer_operation_state changed
 then
-    val op_state = dryer_operation_state.state.toString()
+    val op_state = dryer_operation_state.state.toString().toUpperCase()
 
     if (
-        op_state == "Ready"
+        op_state == "READY" || op_state == "FINISHED"
     ) {
         dryer_state_grp.sendCommand(op_state)
     } else {
