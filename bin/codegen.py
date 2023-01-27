@@ -302,6 +302,18 @@ items = [
             'contact': ['sz_windows'],
         }
     },
+    {
+        'name': "SZ CO2",
+        'id': "sz_co2",
+        'type': DEVICES.TASMOTA_WEMOS_CO2,
+        'channels': {
+            'S8': {
+                'id': 'sz_co2',
+                'icon': 'co2',
+                'name': 'SZ CO2 [%d ppm]',
+            }
+        }
+    },
     # EG (Kitchen)
     {
         'name': "KU Climate",
@@ -833,19 +845,28 @@ if __name__ == "__main__":
 
             # Iterate through avaliable channels
             for channel in item['type']['tasmota_channels']:
-                command_opts = ''
-                if 'switch' == channel['type']:
-                    command_opts = ", on=\"ON\", off=\"OFF\""
-                if 'dimmer' == channel['type']:
-                    command_opts = ", min=1, max=100"
-                conf_str.append(
-                    f"\t\tType {channel['type']} : {channel['id']} ["
-                    f"stateTopic=\"stat/{item['id']}/RESULT\""
-                    f", transformationPattern=\"JSONPATH:$.{channel['id']}\""
-                    f", commandTopic=\"cmnd/{item['id']}/{channel['id']}\""
-                    f"{command_opts}"
-                    f"]"
-                )
+                channel_type = channel['type']
+                if channel_type == 'co2':
+                    conf_str.append(
+                        f"\t\tType number : {channel['id']} ["
+                        f"stateTopic=\"tele/{item['id']}/SENSOR\""
+                        f", transformationPattern=\"JSONPATH:$.{channel['id']}.CarbonDioxide\""
+                        f"]"
+                    )
+                else:
+                    command_opts = ''
+                    if 'switch' == channel['type']:
+                        command_opts = ", on=\"ON\", off=\"OFF\""
+                    if 'dimmer' == channel['type']:
+                        command_opts = ", min=1, max=100"
+                    conf_str.append(
+                        f"\t\tType {channel['type']} : {channel['id']} ["
+                        f"stateTopic=\"stat/{item['id']}/RESULT\""
+                        f", transformationPattern=\"JSONPATH:$.{channel['id']}\""
+                        f", commandTopic=\"cmnd/{item['id']}/{channel['id']}\""
+                        f"{command_opts}"
+                        f"]"
+                    )
 
             # Standard signal values
             conf_str.append(
@@ -1044,12 +1065,20 @@ if __name__ == "__main__":
                 device_icon = channel_cfg.get('icon', 'light')
                 if 'expire' in channel_cfg:
                     device_timout = f", expire=\"{channel_cfg['expire']},command=OFF\""
-                conf_str.append(
-                    f"Switch {channel_cfg['id']} \"{channel_cfg['name']}\" <{device_icon}>"
-                    f"{device_groups(item, channel['id'])}"
-                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:{channel['id']}\"{device_timout}}}"
-                )
-                device_items['items'].append(f"Switch item={item['id']}")
+                if channel['type'] == 'switch':
+                    conf_str.append(
+                        f"Switch {channel_cfg['id']} \"{channel_cfg['name']}\" <{device_icon}>"
+                        f"{device_groups(item, channel['id'])}"
+                        f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:{channel['id']}\"{device_timout}}}"
+                    )
+                    device_items['items'].append(f"Switch item={item['id']}")
+                if channel['type'] == 'co2':
+                    conf_str.append(
+                        f"Number:Dimensionless {channel_cfg['id']} \"{channel_cfg['name']}\" <{device_icon}>"
+                        f"{device_groups(item, channel['id'])}"
+                        f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:{channel['id']}\"{device_timout}}}"
+                    )
+                    device_items['items'].append(f"Text item={item['id']}")
 
         # Generic devices
 

@@ -329,6 +329,17 @@ Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// SZ CO2 (sz_co2)
+// ESP8266 + Senseair S8 / 
+Thing mqtt:topic:openhab:sz_co2 "SZ CO2" (mqtt:broker:openhab) {
+	Channels:
+		Type number : S8 [stateTopic="tele/sz_co2/SENSOR", transformationPattern="JSONPATH:$.S8.CarbonDioxide"]
+		Type number : rssi [stateTopic="tele/sz_co2/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/sz_co2/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/sz_co2/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/sz_co2/STATE", transformationPattern="JS:z2m-activity.js"]
+}
+
 // KU Climate (0x00158d0001b95fc4)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {

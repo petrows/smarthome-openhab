@@ -344,6 +344,25 @@ class DEVICES:
             }
         ]
     }
+    # Wemos D1 + Senseair S8
+    # tele/sz_co2/SENSOR {"Time":"2023-01-27T17:41:07","S8":{"CarbonDioxide":1352}}
+    TASMOTA_WEMOS_CO2 = {
+        'types': [
+            'tasmota',
+            'activity',
+            'rssi',
+            'bssid',
+            'la',
+        ],
+        'device_name': 'ESP8266 + Senseair S8',
+        'device_url': '',
+        'tasmota_channels': [
+            {
+                'type': 'co2',
+                'id': 'S8',
+            },
+        ]
+    }
     SILVERCREST_THERMOSTAT_368308_2010 = {
         'types': [
             'zigbee',

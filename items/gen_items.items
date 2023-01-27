@@ -233,6 +233,14 @@ Number:Dimensionless sz_window_1_battery "SZ Window 1 [%.0f %%]" <battery> (g_ba
 Switch sz_window_1_battery_low "SZ Window 1 [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_window_1:battery_low"}
 Number:ElectricPotential sz_window_1_voltage "SZ Window 1 [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:sz_window_1:voltage"}
 
+// SZ CO2 (sz_co2)
+// ESP8266 + Senseair S8 / 
+Number:Dimensionless sz_co2 "SZ CO2 [%d ppm]" <co2> {channel="mqtt:topic:openhab:sz_co2:S8"}
+Number:Dimensionless sz_co2_rssi "SZ CO2 RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:sz_co2:rssi"}
+String sz_co2_bssid "SZ CO2 BSSID [%s]" <network> {channel="mqtt:topic:openhab:sz_co2:bssid"}
+Number:Dimensionless sz_co2_la "SZ CO2 LA [%d]" <energy> {channel="mqtt:topic:openhab:sz_co2:la"}
+DateTime sz_co2_activity "SZ CO2 [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:sz_co2:activity"}
+
 // KU Climate (0x00158d0001b95fc4)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Number:Temperature ku_climate_temperature "KU Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:ku_climate:temperature"}

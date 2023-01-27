@@ -162,6 +162,12 @@ Text item=sz_window_1_contact
 Text item=sz_window_1_link icon="linkz"
 Text item=sz_window_1_ota icon="fire"
 }
+Frame label="SZ CO2 (sz_co2)" {
+Text item=sz_co2
+Text item=sz_co2_rssi
+Text item=sz_co2_bssid
+Text item=sz_co2_la
+}
 Frame label="KU Climate (0x00158d0001b95fc4)" {
 Text item=ku_climate_temperature
 Text item=ku_climate_humidity
