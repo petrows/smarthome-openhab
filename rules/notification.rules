@@ -1,26 +1,4 @@
 
-rule "Online notify"
-when
-	Item gOnline changed
-then
-
-	var notifyMsg = ""
-	
-	if (ON == gOnline.state) {
-		logInfo("online", "All devices online")
-		notifyMsg = "All devices online"
-	} else {
-		val offlineDevices = gOnline.members.filter[ dev | dev.state == OFF ]		
-		val devList = newArrayList()		
-		offlineDevices.forEach[ dev, index | 
-			devList.add(dev.label)
-		]
-		logInfo("online", "OFFLINE: " + devList.join(", "))
-		notifyMsg = "OFFLINE: " + devList.join(",")
-	}
-	sendBroadcastNotification(notifyMsg)
-end
-
 rule "LowBattery notify"
 when
 	Item g_battery_low changed from OFF to ON
