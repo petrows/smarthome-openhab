@@ -305,14 +305,8 @@ items = [
     {
         'name': "SZ CO2",
         'id': "sz_co2",
-        'type': DEVICES.TASMOTA_WEMOS_CO2,
-        'channels': {
-            'S8': {
-                'id': 'sz_co2',
-                'icon': 'co2',
-                'name': 'SZ CO2 [%d ppm]',
-            }
-        }
+        'type': DEVICES.PETROWS_CO2_SENSOR,
+        'device_id': '5C:CF:7F:68:19:46',
     },
     # EG (Kitchen)
     {
@@ -835,6 +829,30 @@ if __name__ == "__main__":
     # Generate THINGS
     conf_str = [PREAMBULA]
     for item in items:
+        # petro.ws device?
+        if 'petrows' in item['type']['types']:
+            device_topic_prefix = "petrows/" + item['device_id']
+            conf_str.extend(device_comment(item))
+            conf_str.append(
+                f"Thing mqtt:topic:openhab:{item['mqtt_topic']} \"{item['name']}\" (mqtt:broker:openhab) {{")
+            conf_str.append(
+                f"\tChannels:")
+
+            # CO₂ sensor
+            if np.in1d(['co2'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType number : co2 ["
+                    f"stateTopic=\"{device_topic_prefix}/co2\""
+                    f"]"
+                )
+
+            # Some wifi devices needs to be monitored
+            if np.in1d(['activity'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType datetime : activity [stateTopic=\"{device_topic_prefix}\", transformationPattern=\"JS:z2m-activity.js\"]")
+
+            conf_str.append(f"}}")
+
         # tasmota-wifi device?
         if 'tasmota' in item['type']['types']:
             conf_str.extend(device_comment(item))
@@ -1056,6 +1074,17 @@ if __name__ == "__main__":
             'items': []
         }
         all_items.append(device_items)
+
+        # Petrows devices
+        if np.in1d(['petrows'], item['type']['types']).any():
+            if np.in1d(['co2'], item['type']['types']).any():
+                device_icon = channel_cfg.get('icon', 'co2')
+                conf_str.append(
+                    f"Number:Dimensionless {item['id']} \"{item['name']}\" <{device_icon}>"
+                    f"{device_groups(item, 'co2')}"
+                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:co2\"}}"
+                )
+                device_items['items'].append(f"Text item={item['id']}")
 
         # Tasmota devices
         if np.in1d(['tasmota'], item['type']['types']).any():

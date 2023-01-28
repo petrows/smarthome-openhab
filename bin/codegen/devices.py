@@ -376,3 +376,15 @@ class DEVICES:
         'device_name': 'Silvercrest radiator valve with thermostat',
         'device_url': 'https://www.zigbee2mqtt.io/devices/368308_2010.html',
     }
+
+    # DIY devices by author
+
+    PETROWS_CO2_SENSOR = {
+        'types': [
+            'petrows',
+            'activity',
+            'co2',
+        ],
+        'device_name': 'Petro.ws CO₂ sensor module',
+        'device_url': 'https://github.com/petrows/smarthome-co2-module',
+    }

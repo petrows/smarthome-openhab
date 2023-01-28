@@ -330,14 +330,11 @@ Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 }
 
 // SZ CO2 (sz_co2)
-// ESP8266 + Senseair S8 / 
+// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
 Thing mqtt:topic:openhab:sz_co2 "SZ CO2" (mqtt:broker:openhab) {
 	Channels:
-		Type number : S8 [stateTopic="tele/sz_co2/SENSOR", transformationPattern="JSONPATH:$.S8.CarbonDioxide"]
-		Type number : rssi [stateTopic="tele/sz_co2/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
-		Type string : bssid [stateTopic="tele/sz_co2/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
-		Type number : la [stateTopic="tele/sz_co2/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
-		Type datetime : activity [stateTopic="tele/sz_co2/STATE", transformationPattern="JS:z2m-activity.js"]
+		Type number : co2 [stateTopic="petrows/5C:CF:7F:68:19:46/co2"]
+		Type datetime : activity [stateTopic="petrows/5C:CF:7F:68:19:46", transformationPattern="JS:z2m-activity.js"]
 }
 
 // KU Climate (0x00158d0001b95fc4)
