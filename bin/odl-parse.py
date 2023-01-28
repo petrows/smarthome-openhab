@@ -5,8 +5,13 @@ import paho.mqtt.publish as publish
 import requests
 import argparse
 import logging
+import pprint
 
-rad_level = 0.0136
+rad_level = 0.0001
+
+headers = {
+    'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0',
+}
 
 parser = argparse.ArgumentParser(description='Parse radiation level')
 
@@ -32,10 +37,10 @@ logging.debug(args)
 
 mqtt_auth = {'username':args.mqtt_user, 'password':args.mqtt_pass}
 
-page = requests.get(args.url)
+page = requests.get(args.url, headers=headers)
 tree = html.fromstring(page.content)
-
 mes = tree.xpath('//p[@class="aktmw"]/strong/text()')
+pprint.pp(mes)
 mes = mes[0]
 mes = mes.split(' ')
 mes = mes[0]
