@@ -334,7 +334,7 @@ Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:sz_co2 "SZ CO2" (mqtt:broker:openhab) {
 	Channels:
 		Type number : co2 [stateTopic="petrows/5C:CF:7F:68:19:46/co2"]
-		Type datetime : activity [stateTopic="petrows/5C:CF:7F:68:19:46", transformationPattern="JS:z2m-activity.js"]
+		Type datetime : activity [stateTopic="petrows/5C:CF:7F:68:19:46/co2", transformationPattern="JS:z2m-activity.js"]
 }
 
 // KU Climate (0x00158d0001b95fc4)

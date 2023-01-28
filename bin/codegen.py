@@ -845,11 +845,9 @@ if __name__ == "__main__":
                     f"stateTopic=\"{device_topic_prefix}/co2\""
                     f"]"
                 )
-
-            # Some wifi devices needs to be monitored
-            if np.in1d(['activity'], item['type']['types']).any():
-                conf_str.append(
-                    f"\t\tType datetime : activity [stateTopic=\"{device_topic_prefix}\", transformationPattern=\"JS:z2m-activity.js\"]")
+                if np.in1d(['activity'], item['type']['types']).any():
+                    conf_str.append(
+                        f"\t\tType datetime : activity [stateTopic=\"{device_topic_prefix}/co2\", transformationPattern=\"JS:z2m-activity.js\"]")
 
             conf_str.append(f"}}")
 
