@@ -182,6 +182,19 @@ Thing mqtt:topic:openhab:ns_projector_power "NS Projector" (mqtt:broker:openhab)
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_projector_power", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// NS Window 2 (0xa4c138f1bf27592c)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Thing mqtt:topic:openhab:ns_window_2 "NS Window 2" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="JSONPATH:$.contact", on="false", off="true"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="JS:z2m-activity.js"]
+		Type number : battery [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : voltage [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
+		Type number : link [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:fs_climate "FS Climate" (mqtt:broker:openhab) {
@@ -329,6 +342,19 @@ Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// SZ Window Door (0xa4c138fbdde6b200)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Thing mqtt:topic:openhab:sz_window_door "SZ Window Door" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="JSONPATH:$.contact", on="false", off="true"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="JS:z2m-activity.js"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : voltage [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // SZ CO2 (sz_co2)
 // Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
 Thing mqtt:topic:openhab:sz_co2 "SZ CO2" (mqtt:broker:openhab) {
@@ -417,6 +443,19 @@ Thing mqtt:topic:openhab:ku_light_switch "KU Light SW" (mqtt:broker:openhab) {
 		Type switch : state_l2 [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="JSONPATH:$.state_l2", commandTopic="zigbee2mqtt/ku_light_switch/set", formatBeforePublish="{\"state_l2\":\"%s\"}"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// KU Window Door (0xa4c1389dec8b9204)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="JSONPATH:$.contact", on="false", off="true"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="JS:z2m-activity.js"]
+		Type number : battery [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : voltage [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
+		Type number : link [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
 // Treppe Door sensor (0xccccccfffed82b91)

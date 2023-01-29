@@ -26,6 +26,9 @@ Group:Contact:AND(CLOSED, OPEN) g_windows_skip_off "Windows skip auto OFF" <wind
 // Groups of sensors, enabeling heating
 Group:Contact:AND(CLOSED, OPEN) kg_windows "KG windows [%s]" <window> (all_windows)
 Group:Contact:AND(CLOSED, OPEN) sz_windows "SZ windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) ns_windows "NS windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) fs_windows "FS windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) ku_windows "KU windows [%s]" <window> (all_windows)
 
 // AVG valve
 Group:Number:AVG g_hz_valve "Alle Ventil" <heating>

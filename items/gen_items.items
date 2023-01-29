@@ -129,6 +129,16 @@ Switch ns_projector_power_sw "NS Projector" <switch> {channel="mqtt:topic:openha
 Number:Dimensionless ns_projector_power_link "NS Projector LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ns_projector_power:link"}
 Switch ns_projector_power_ota "NS Projector OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ns_projector_power:ota"}
 
+// NS Window 2 (0xa4c138f1bf27592c)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Contact ns_window_2_contact "NS Window 2 contact [%s]" <door> (ns_windows) {channel="mqtt:topic:openhab:ns_window_2:contact"}
+DateTime ns_window_2_activity "NS Window 2 [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:ns_window_2:activity"}
+Number:Dimensionless ns_window_2_link "NS Window 2 LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ns_window_2:link"}
+Switch ns_window_2_ota "NS Window 2 OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ns_window_2:ota"}
+Number:Dimensionless ns_window_2_battery "NS Window 2 [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ns_window_2:battery"}
+Switch ns_window_2_battery_low "NS Window 2 [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ns_window_2:battery_low"}
+Number:ElectricPotential ns_window_2_voltage "NS Window 2 [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:ns_window_2:voltage"}
+
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Number:Temperature fs_climate_temperature "FS Climate [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:fs_climate:temperature"}
@@ -233,6 +243,16 @@ Number:Dimensionless sz_window_1_battery "SZ Window 1 [%.0f %%]" <battery> (g_ba
 Switch sz_window_1_battery_low "SZ Window 1 [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_window_1:battery_low"}
 Number:ElectricPotential sz_window_1_voltage "SZ Window 1 [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:sz_window_1:voltage"}
 
+// SZ Window Door (0xa4c138fbdde6b200)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Contact sz_window_door_contact "SZ Window Door contact [%s]" <door> (sz_windows) {channel="mqtt:topic:openhab:sz_window_door:contact"}
+DateTime sz_window_door_activity "SZ Window Door [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:sz_window_door:activity"}
+Number:Dimensionless sz_window_door_link "SZ Window Door LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_window_door:link"}
+Switch sz_window_door_ota "SZ Window Door OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_window_door:ota"}
+Number:Dimensionless sz_window_door_battery "SZ Window Door [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_window_door:battery"}
+Switch sz_window_door_battery_low "SZ Window Door [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_window_door:battery_low"}
+Number:ElectricPotential sz_window_door_voltage "SZ Window Door [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:sz_window_door:voltage"}
+
 // SZ CO2 (sz_co2)
 // Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
 Number:Dimensionless sz_co2 "SZ CO2" <co2> {channel="mqtt:topic:openhab:sz_co2:co2"}
@@ -295,6 +315,16 @@ Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_light_all,
 Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_light_all,g_light_eg,g_light_eg_ku,g_light_eg_ku_main) {channel="mqtt:topic:openhab:ku_light_switch:state_l2", expire="3h,command=OFF"}
 Number:Dimensionless ku_light_switch_link "KU Light SW LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_switch:link"}
 Switch ku_light_switch_ota "KU Light SW OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_switch:ota"}
+
+// KU Window Door (0xa4c1389dec8b9204)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Contact ku_window_door_contact "KU Window Door contact [%s]" <door> (ku_windows) {channel="mqtt:topic:openhab:ku_window_door:contact"}
+DateTime ku_window_door_activity "KU Window Door [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:ku_window_door:activity"}
+Number:Dimensionless ku_window_door_link "KU Window Door LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_window_door:link"}
+Switch ku_window_door_ota "KU Window Door OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_window_door:ota"}
+Number:Dimensionless ku_window_door_battery "KU Window Door [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:ku_window_door:battery"}
+Switch ku_window_door_battery_low "KU Window Door [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:ku_window_door:battery_low"}
+Number:ElectricPotential ku_window_door_voltage "KU Window Door [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:ku_window_door:voltage"}
 
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html

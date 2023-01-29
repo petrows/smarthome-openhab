@@ -92,6 +92,11 @@ Switch item=ns_projector_power_sw
 Text item=ns_projector_power_link icon="linkz"
 Text item=ns_projector_power_ota icon="fire"
 }
+Frame label="NS Window 2 (0xa4c138f1bf27592c)" {
+Text item=ns_window_2_contact
+Text item=ns_window_2_link icon="linkz"
+Text item=ns_window_2_ota icon="fire"
+}
 Frame label="FS Climate (0x00158d0001c15121)" {
 Text item=fs_climate_temperature
 Text item=fs_climate_humidity
@@ -162,6 +167,11 @@ Text item=sz_window_1_contact
 Text item=sz_window_1_link icon="linkz"
 Text item=sz_window_1_ota icon="fire"
 }
+Frame label="SZ Window Door (0xa4c138fbdde6b200)" {
+Text item=sz_window_door_contact
+Text item=sz_window_door_link icon="linkz"
+Text item=sz_window_door_ota icon="fire"
+}
 Frame label="SZ CO2 (sz_co2)" {
 Text item=sz_co2
 Text item=sz_co2_led
@@ -204,6 +214,11 @@ Switch item=ku_light_switch_haupt_sw
 Switch item=ku_light_switch_arbeit_sw
 Text item=ku_light_switch_link icon="linkz"
 Text item=ku_light_switch_ota icon="fire"
+}
+Frame label="KU Window Door (0xa4c1389dec8b9204)" {
+Text item=ku_window_door_contact
+Text item=ku_window_door_link icon="linkz"
+Text item=ku_window_door_ota icon="fire"
 }
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 Text item=treppe_door_sensor_contact

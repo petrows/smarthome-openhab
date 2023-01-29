@@ -400,5 +400,6 @@ sitemap main label="MAIN"
 		}
 
         Group item=g_device_activity
+        Group item=all_windows
 	}
 }

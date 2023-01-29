@@ -99,6 +99,12 @@
   friendly_name: kg_cabinet_door
 '0xa4c1383cc92cbbd2':
   friendly_name: treppe_climate
+'0xa4c1389dec8b9204':
+  friendly_name: ku_window_door
+'0xa4c138f1bf27592c':
+  friendly_name: ns_window_2
+'0xa4c138fbdde6b200':
+  friendly_name: sz_window_door
 '0xbc33acfffe84ca1e':
   friendly_name: kg_lager4_motion
 '0xbc33acfffe872049':

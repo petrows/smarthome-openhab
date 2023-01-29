@@ -165,7 +165,7 @@ items = [
         'zigbee_id': '0xccccccfffef0356e',
         'type': DEVICES.IKEA_TRADFRI_ON_OFF,
     },
-    # EG (Nagel Studio)
+    # EG (Theater)
     {
         'name': "NS Climate",
         'id': "ns_climate",
@@ -194,6 +194,15 @@ items = [
         'id': "ns_projector_power",
         'zigbee_id': '0x7cb03eaa0a094d1d',
         'type': DEVICES.OSRAM_SMART_PLUG,
+    },
+    {
+        'name': "NS Window 2",
+        'id': "ns_window_2",
+        'zigbee_id': '0xa4c138f1bf27592c',
+        'type': DEVICES.TUYA_WINDOW_SENSOR,
+        'groups': {
+            'contact': ['ns_windows'],
+        }
     },
     # EG (Foto Studio)
     {
@@ -303,6 +312,15 @@ items = [
         }
     },
     {
+        'name': "SZ Window Door",
+        'id': "sz_window_door",
+        'zigbee_id': '0xa4c138fbdde6b200',
+        'type': DEVICES.TUYA_WINDOW_SENSOR,
+        'groups': {
+            'contact': ['sz_windows'],
+        }
+    },
+    {
         'name': "SZ CO2",
         'id': "sz_co2",
         'type': DEVICES.PETROWS_CO2_SENSOR,
@@ -373,6 +391,15 @@ items = [
                     'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku', 'g_light_eg_ku_main'],
                 }
             },
+        }
+    },
+    {
+        'name': "KU Window Door",
+        'id': "ku_window_door",
+        'zigbee_id': '0xa4c1389dec8b9204',
+        'type': DEVICES.TUYA_WINDOW_SENSOR,
+        'groups': {
+            'contact': ['ku_windows'],
         }
     },
     # Ladder (Treppe)
