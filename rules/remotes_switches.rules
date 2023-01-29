@@ -93,6 +93,9 @@ then
         case "off": {
             g_light_treppe.sendCommand(OFF)
             g_light_lager_auto.sendCommand(OFF) // Lager licht also OFF
+            kg_lager1_main_light.sendCommand(OFF)
+            kg_lager3_main_light.sendCommand(OFF)
+            kg_lager4_main_light.sendCommand(OFF)
         }
         // Left arrow: turn off all light in KG rooms
         case "arrow_left_click": {
@@ -100,8 +103,9 @@ then
         }
         // Right arrow: turn on desktop (+pc)
         case "arrow_right_click": {
-            g_light_kg_desktop.sendCommand(ON)
             desktop_petro_power_try.sendCommand(ON)
+            g_light_kg_desktop_dim.sendCommand(25)
+            desktop_petro_light_dim.sendCommand(100)
         }
         // Turn OFF EG light
         case "brightness_move_down": { // Long press DOWN
@@ -138,7 +142,7 @@ then
     }
 end
 
-rule "KG Lager btn"
+rule "KG Lager corridor btn"
 when
     Channel "mqtt:topic:openhab:kg_lager4_switch:action" triggered
 then
