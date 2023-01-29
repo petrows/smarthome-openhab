@@ -1,4 +1,4 @@
-Number  weather_radiation "Radiation [%.3f µSv/h]" { channel="mqtt:topic:openhab:weather-radiation:level" }
+Number  weather_radiation "Radiation [%.3f µSv/h]" <radiation> { channel="mqtt:topic:openhab:weather-radiation:level" }
 
 Number:Temperature weather_today_temp_min "Temperature today min [%.0f %unit%]" <temperature>
 Number:Temperature weather_today_temp_max "Temperature today max [%.0f %unit%]" <temperature>

@@ -6,6 +6,7 @@ sitemap main label="MAIN"
 				Text 		item=ext_climate_temperature label="Temperature [%d °C]"
 				Text 		item=ext_climate_humidity label="Humidity [%d %%]"
 				Text 		item=ns_climate_pressure label="Pressure [%d hPa]"
+				Text 		item=weather_radiation
 			}
 			Frame {
 				Webview label="External" icon="temperature" height=8 url="https://stats.home.pws/d-solo/openhab_climate/climate?orgId=1&refresh=10s&theme=dark&panelId=3"
