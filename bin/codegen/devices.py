@@ -384,6 +384,8 @@ class DEVICES:
             'petrows',
             'activity',
             'co2',
+            'rssi',
+            'bssid',
         ],
         'device_name': 'Petro.ws CO₂ sensor module',
         'device_url': 'https://github.com/petrows/smarthome-co2-module',

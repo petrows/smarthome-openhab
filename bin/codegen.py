@@ -842,12 +842,34 @@ if __name__ == "__main__":
             if np.in1d(['co2'], item['type']['types']).any():
                 conf_str.append(
                     f"\t\tType number : co2 ["
-                    f"stateTopic=\"{device_topic_prefix}/co2\""
+                    f"stateTopic=\"{device_topic_prefix}/STATE\""
+                    f", transformationPattern=\"JSONPATH:$.S8.CO2\""
                     f"]"
                 )
-                if np.in1d(['activity'], item['type']['types']).any():
-                    conf_str.append(
-                        f"\t\tType datetime : activity [stateTopic=\"{device_topic_prefix}/co2\", transformationPattern=\"JS:z2m-activity.js\"]")
+                conf_str.append(
+                    f"\t\tType switch : co2_led ["
+                    f"stateTopic=\"{device_topic_prefix}/STATE\""
+                    f", transformationPattern=\"JSONPATH:$.S8.led\", on=\"1\", off=\"0\""
+                    f"]"
+                )
+
+            # Standard signal values
+            conf_str.append(
+                f"\t\tType number : rssi ["
+                f"stateTopic=\"{device_topic_prefix}/STATE\""
+                f", transformationPattern=\"JSONPATH:$.Wifi.RSSI\""
+                f"]"
+            )
+            conf_str.append(
+                f"\t\tType string : bssid ["
+                f"stateTopic=\"{device_topic_prefix}/STATE\""
+                f", transformationPattern=\"JSONPATH:$.Wifi.BSSId\""
+                f"]"
+            )
+            # Common monitoring
+            if np.in1d(['activity'], item['type']['types']).any():
+                conf_str.append(
+                    f"\t\tType datetime : activity [stateTopic=\"{device_topic_prefix}/STATE\", transformationPattern=\"JS:z2m-activity.js\"]")
 
             conf_str.append(f"}}")
 
@@ -1083,6 +1105,12 @@ if __name__ == "__main__":
                     f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:co2\"}}"
                 )
                 device_items['items'].append(f"Text item={item['id']}")
+                conf_str.append(
+                    f"Switch {item['id']}_led \"{item['name']} LED\" <alarm>"
+                    f"{device_groups(item, 'co2_led')}"
+                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:co2_led\"}}"
+                )
+                device_items['items'].append(f"Text item={item['id']}_led")
 
         # Tasmota devices
         if np.in1d(['tasmota'], item['type']['types']).any():
