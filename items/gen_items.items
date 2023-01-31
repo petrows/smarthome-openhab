@@ -77,12 +77,6 @@ Number:Dimensionless eg_main_door_battery "Entrance Door sensor [%.0f %%]" <batt
 Switch eg_main_door_battery_low "Entrance Door sensor [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:eg_main_door:battery_low"}
 Number:ElectricPotential eg_main_door_voltage "Entrance Door sensor [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:eg_main_door:voltage"}
 
-// BZ Light (0x086bd7fffefb619a)
-// HEIMAN Smart switch - 1 gang with neutral wire (HS2SW1A/HS2SW1A-N) / https://zigbee.blakadder.com/Heiman_HS2SW1A.html
-Switch bz_light_sw "BZ Light" <switch> (g_light_all,g_light_eg,g_light_eg_bz) {channel="mqtt:topic:openhab:bz_light:state"}
-Number:Dimensionless bz_light_link "BZ Light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light:link"}
-Switch bz_light_ota "BZ Light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light:ota"}
-
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Switch bz_light_1_sw "BZ Light (toilet)" <light> (g_light_all,g_light_eg,g_light_eg_bz,bz_main_light) {channel="mqtt:topic:openhab:bz_light_1:state"}

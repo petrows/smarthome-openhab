@@ -54,11 +54,6 @@ Text item=eg_main_door_contact
 Text item=eg_main_door_link icon="linkz"
 Text item=eg_main_door_ota icon="fire"
 }
-Frame label="BZ Light (0x086bd7fffefb619a)" {
-Switch item=bz_light_sw
-Text item=bz_light_link icon="linkz"
-Text item=bz_light_ota icon="fire"
-}
 Frame label="BZ Light (toilet) (0xcc86ecfffea0c7cb)" {
 Switch item=bz_light_1_sw
 Slider item=bz_light_1_dim

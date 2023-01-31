@@ -138,15 +138,6 @@ items = [
     },
     # EG (Closet)
     {
-        'name': "BZ Light",
-        'id': "bz_light",
-        'zigbee_id': '0x086bd7fffefb619a',
-        'type': DEVICES.HEIMAN_SW_1_GANG,
-        'groups': {
-            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz'],
-        }
-    },
-    {
         'name': "BZ Light (toilet)",
         'id': "bz_light_1",
         'zigbee_id': '0xcc86ecfffea0c7cb',
