@@ -31,6 +31,10 @@ Group:Dimmer:AVG g_light_astro_color "Astrocolor CT [%d %%]" <light>
 // Current value for astrocolor CT
 Dimmer astro_color_value "Astrocolor Value [%d %%]" <light>
 
+// BZ groups
+Group:Switch:OR(ON, OFF) bz_main_light "BZ main [%s]" <light>
+Group:Dimmer:AVG g_light_bz_dim "BZ main DIM [%d %%]" <light>
+
 // KG and Treppe lamps
 Group:Switch:OR(ON, OFF) g_light_kg // All lamps in KG
 Group:Switch:OR(ON, OFF) g_light_kg_auto // Lamps to be on by "All ON"

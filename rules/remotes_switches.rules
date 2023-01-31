@@ -430,3 +430,40 @@ then
         }
     }
 end
+
+// BZ Main control button
+
+rule "BZ main switch"
+when
+    Channel "mqtt:topic:openhab:bz_light_switch:action" triggered
+then
+    var state = receivedEvent
+    switch(state) {
+        case "on": {
+            // "up" -> Full power
+            g_light_bz_dim.sendCommand(100)
+        }
+        case "off": {
+            // "down" -> Small power + only toilet light
+            bz_light_1_dim.sendCommand(1)
+            // bz_light_2.sendCommand(OFF)
+        }
+        case "arrow_left_click": {
+            if (bz_mirror.state == ON) {
+                bz_mirror.sendCommand(OFF)
+            } else {
+                bz_mirror.sendCommand(ON)
+            }
+        }
+        case "arrow_right_click": {
+            g_light_eg_bz.sendCommand(OFF)
+        }
+    }
+end
+
+rule "BZ main dimmer"
+when
+    Item bz_light_switch_dim received update
+then
+    g_light_bz_dim.sendCommand((newState as Number).intValue())
+end

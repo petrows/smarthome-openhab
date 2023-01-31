@@ -78,6 +78,11 @@ Frame label="BZ Mirror switch (0xccccccfffef0356e)" {
 Text item=bz_mirror_switch_link icon="linkz"
 Text item=bz_mirror_switch_ota icon="fire"
 }
+Frame label="BZ Light Control (0x003c84fffe132b20)" {
+Text item=bz_light_switch_dim
+Text item=bz_light_switch_link icon="linkz"
+Text item=bz_light_switch_ota icon="fire"
+}
 Frame label="NS Climate (0x00158d0001b95e08)" {
 Text item=ns_climate_temperature
 Text item=ns_climate_humidity

@@ -85,8 +85,8 @@ Switch bz_light_ota "BZ Light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:top
 
 // BZ Light (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
-Switch bz_light_1_sw "BZ Light" <light> (g_light_all,g_light_eg,g_light_eg_bz) {channel="mqtt:topic:openhab:bz_light_1:state"}
-Dimmer bz_light_1_dim "BZ Light DIM [%d %%]" <light> {channel="mqtt:topic:openhab:bz_light_1:dim"}
+Switch bz_light_1_sw "BZ Light" <light> (g_light_all,g_light_eg,g_light_eg_bz,bz_main_light) {channel="mqtt:topic:openhab:bz_light_1:state"}
+Dimmer bz_light_1_dim "BZ Light DIM [%d %%]" <light> (g_light_bz_dim) {channel="mqtt:topic:openhab:bz_light_1:dim"}
 Dimmer bz_light_1_ct "BZ Light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color) {channel="mqtt:topic:openhab:bz_light_1:ct"}
 Color bz_light_1_color "BZ Light Color" <colorwheel> {channel="mqtt:topic:openhab:bz_light_1:color"}
 String bz_light_1_color_mode "BZ Light Color mode [%s]" <light> {channel="mqtt:topic:openhab:bz_light_1:color_mode"}
@@ -107,6 +107,14 @@ Number:Dimensionless bz_mirror_switch_link "BZ Mirror switch LINK [%d]" <linkz> 
 Switch bz_mirror_switch_ota "BZ Mirror switch OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_mirror_switch:ota"}
 Number:Dimensionless bz_mirror_switch_battery "BZ Mirror switch [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:bz_mirror_switch:battery"}
 Switch bz_mirror_switch_battery_low "BZ Mirror switch [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:bz_mirror_switch:battery_low"}
+
+// BZ Light Control (0x003c84fffe132b20)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer bz_light_switch_dim "BZ Light Control DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:bz_light_switch:dim"}
+Number:Dimensionless bz_light_switch_link "BZ Light Control LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light_switch:link"}
+Switch bz_light_switch_ota "BZ Light Control OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light_switch:ota"}
+Number:Dimensionless bz_light_switch_battery "BZ Light Control [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:bz_light_switch:battery"}
+Switch bz_light_switch_battery_low "BZ Light Control [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:bz_light_switch:battery_low"}
 
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html

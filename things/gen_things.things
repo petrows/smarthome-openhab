@@ -152,6 +152,18 @@ Thing mqtt:topic:openhab:bz_mirror_switch "BZ Mirror switch" (mqtt:broker:openha
 		Type switch : ota [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// BZ Light Control (0x003c84fffe132b20)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:bz_light_switch "BZ Light Control" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="JSONPATH:$.action", trigger=true]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="JSONPATH:$.brightness", min=1, max=255]
+		Type number : battery [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : link [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {

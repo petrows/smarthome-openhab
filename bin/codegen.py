@@ -152,7 +152,8 @@ items = [
         'zigbee_id': '0xcc86ecfffea0c7cb',
         'type': DEVICES.LIVARNO_CELLING,
         'groups': {
-            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz'],
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz', 'bz_main_light'],
+            'dim': ['g_light_bz_dim'],
             'ct': ['g_light_astro_color'],
         }
     },
@@ -175,6 +176,12 @@ items = [
         'id': "bz_mirror_switch",
         'zigbee_id': '0xccccccfffef0356e',
         'type': DEVICES.IKEA_TRADFRI_ON_OFF,
+    },
+    {
+        'name': "BZ Light Control",
+        'id': "bz_light_switch",
+        'zigbee_id': '0x003c84fffe132b20',
+        'type': DEVICES.IKEA_TRADFRI_STYRBAR,
     },
     # EG (Theater)
     {
