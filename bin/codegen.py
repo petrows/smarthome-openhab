@@ -1022,10 +1022,10 @@ if __name__ == "__main__":
             # Device has remote option
             if np.in1d(['remote'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType string : action [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.action\", trigger=true]")
+                    f"\t\tType string : action [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"REGEX:(.*\\\"action\\\".*)∩JSONPATH:$.action\", trigger=true]")
             if np.in1d(['simulated_brightness'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType dimmer : dim [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.brightness\", min=0, max=255]")
+                    f"\t\tType dimmer : dim [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"REGEX:(.*\\\"action_brightness_delta\\\".*)∩JSONPATH:$.brightness\", min=0, max=255]")
 
             # Device has dimmer
             if np.in1d(['lamp'], item['type']['types']).any():
@@ -1402,6 +1402,7 @@ end
                     f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:color_mode\"}}"
                 )
                 device_items['items'].append(f"Colorpicker item={item['id']}_color")
+                # Set to ON, when color mode, OFF to normal mode (CT)
                 # Set to ON, when color mode, OFF to normal mode (CT)
                 device_items['items'].append(f"Text item={item['id']}_color_mode")
 

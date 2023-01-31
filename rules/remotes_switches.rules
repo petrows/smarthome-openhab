@@ -355,7 +355,7 @@ end
 
 rule "KU table dimmer"
 when
-    Item ku_light_table_switch_dim changed
+    Item ku_light_table_switch_dim received update
 then
     if (ku_light_table_sw.state == ON) {
         ku_light_table_dim.sendCommand((newState as Number).intValue())
@@ -463,7 +463,7 @@ end
 
 rule "BZ main dimmer"
 when
-    Item bz_light_switch_dim changed
+    Item bz_light_switch_dim received update
 then
     g_light_bz_dim.sendCommand((newState as Number).intValue())
 end
