@@ -172,7 +172,7 @@ Text item=sz_window_door_contact
 Text item=sz_window_door_link icon="linkz"
 Text item=sz_window_door_ota icon="fire"
 }
-Frame label="SZ CO2 (sz_co2)" {
+Frame label="SZ CO2 [%d ppm] (sz_co2)" {
 Text item=sz_co2
 Text item=sz_co2_led
 Text item=sz_co2_rssi

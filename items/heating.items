@@ -36,43 +36,9 @@ Group:Number:AVG g_hz_valve "Alle Ventil" <heating>
 // NS force fan
 Switch ns_heating_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF" }
 
-// KG
+// Cfg to eanble auto control for room
 Switch kg_heating_enabled "HZ KG enable [%s]"
-// Switch kg_heating_lbatt "HZ KG [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1208573:battery_low"}
-// String kg_heating_mode "Modus []" {channel="max:thermostat:NEQ1442869:OEQ1208573:mode"}
-// Number kg_heating_sensor "Sens [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1208573:actual_temp"}
-// Number kg_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_kg) {channel="max:thermostat:NEQ1442869:OEQ1208573:set_temp"}
-// Number kg_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ1208573:valve"}
-
-// Kuche
 Switch ku_heating_enabled "HZ KU enable [%s]"
-// Switch ku_heating_lbatt "HZ KU [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ2037329:battery_low"}
-// String ku_heating_mode "Modus []" {channel="max:thermostat:NEQ1442869:OEQ2037329:mode"}
-// Number ku_heating_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ2037329:actual_temp"}
-// Number ku_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="max:thermostat:NEQ1442869:OEQ2037329:set_temp"}
-// Number ku_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ2037329:valve"}
-
-// Schlaffzimmer
 Switch sz_heating_enabled "HZ SZ enable [%s]"
-// MAX! Thermostat decomission
-// Switch hz_sz_lbatt "HZ SZ [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:MEQ1775184:battery_low"}
-// String hz_sz_mode "Modus []" {channel="max:thermostat:NEQ1442869:MEQ1775184:mode"}
-// Number hz_sz_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:MEQ1775184:actual_temp"}
-// Number hz_sz_set "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_eg) {channel="max:thermostat:NEQ1442869:MEQ1775184:set_temp"}
-// Number hz_sz_valve "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:MEQ1775184:valve"}
-
-// Foto Studio
 Switch fs_heating_enabled "HZ FS enable [%s]"
-// Switch fs_heating_lbatt "HZ FS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:MEQ1774936:battery_low"}
-// String fs_heating_mode    "Modus []" {channel="max:thermostat:NEQ1442869:MEQ1774936:mode"}
-// Number fs_heating_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:MEQ1774936:actual_temp"}
-// Number fs_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="max:thermostat:NEQ1442869:MEQ1774936:set_temp"}
-// Number fs_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:MEQ1774936:valve"}
-
-// Nagel Studio
 Switch ns_heating_enabled "HZ NS enable [%s]"
-// Switch ns_heating_lbatt "HZ NS [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="max:thermostat:NEQ1442869:OEQ1037125:battery_low"}
-// String ns_heating_mode    "Modus []" {channel="max:thermostat:NEQ1442869:OEQ1037125:mode"}
-// Number ns_heating_sensor "Sens  [%.1f °C]" <temperature> {channel="max:thermostat:NEQ1442869:OEQ1037125:actual_temp"}
-// Number ns_heating_thermostat "Ziel [%.1f °C]" <heatingt> (g_hz_all,g_hz_auto,g_hz_eg) {channel="max:thermostat:NEQ1442869:OEQ1037125:set_temp"}
-// Number ns_heating_position "Ventil" <heating> (g_hz_valve) {channel="max:thermostat:NEQ1442869:OEQ1037125:valve"}

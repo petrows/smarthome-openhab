@@ -321,7 +321,7 @@ items = [
         }
     },
     {
-        'name': "SZ CO2",
+        'name': "SZ CO2 [%d ppm]",
         'id': "sz_co2",
         'type': DEVICES.PETROWS_CO2_SENSOR,
         'device_id': '5C:CF:7F:68:19:46',

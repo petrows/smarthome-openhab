@@ -253,13 +253,13 @@ Number:Dimensionless sz_window_door_battery "SZ Window Door [%.0f %%]" <battery>
 Switch sz_window_door_battery_low "SZ Window Door [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_window_door:battery_low"}
 Number:ElectricPotential sz_window_door_voltage "SZ Window Door [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:sz_window_door:voltage"}
 
-// SZ CO2 (sz_co2)
+// SZ CO2 [%d ppm] (sz_co2)
 // Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
-Number:Dimensionless sz_co2 "SZ CO2" <co2> {channel="mqtt:topic:openhab:sz_co2:co2"}
-Switch sz_co2_led "SZ CO2 LED" <alarm> {channel="mqtt:topic:openhab:sz_co2:co2_led"}
-Number:Dimensionless sz_co2_rssi "SZ CO2 RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:sz_co2:rssi"}
-String sz_co2_bssid "SZ CO2 BSSID [%s]" <network> {channel="mqtt:topic:openhab:sz_co2:bssid"}
-DateTime sz_co2_activity "SZ CO2 [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:sz_co2:activity"}
+Number:Dimensionless sz_co2 "SZ CO2 [%d ppm]" <co2> {channel="mqtt:topic:openhab:sz_co2:co2"}
+Switch sz_co2_led "SZ CO2 [%d ppm] LED" <alarm> {channel="mqtt:topic:openhab:sz_co2:co2_led"}
+Number:Dimensionless sz_co2_rssi "SZ CO2 [%d ppm] RSSI [%.0f]" <network> {channel="mqtt:topic:openhab:sz_co2:rssi"}
+String sz_co2_bssid "SZ CO2 [%d ppm] BSSID [%s]" <network> {channel="mqtt:topic:openhab:sz_co2:bssid"}
+DateTime sz_co2_activity "SZ CO2 [%d ppm] [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:sz_co2:activity"}
 
 // KU Climate (0x00158d0001b95fc4)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
