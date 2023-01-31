@@ -147,14 +147,26 @@ items = [
         }
     },
     {
-        'name': "BZ Light",
+        'name': "BZ Light (toilet)",
         'id': "bz_light_1",
         'zigbee_id': '0xcc86ecfffea0c7cb',
         'type': DEVICES.LIVARNO_CELLING,
         'groups': {
             'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz', 'bz_main_light'],
             'dim': ['g_light_bz_dim'],
-            'ct': ['g_light_astro_color'],
+            'ct': ['g_light_astro_color', 'g_light_bz_ct'],
+            'color': ['g_light_bz_color'],
+        }
+    },
+    {
+        'name': "BZ Light (shower)",
+        'id': "bz_light_2",
+        'zigbee_id': '0x04cd15fffedb319f',
+        'type': DEVICES.LIVARNO_CELLING,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz', 'bz_main_light'],
+            'dim': ['g_light_bz_dim'],
+            'ct': ['g_light_astro_color', 'g_light_bz_ct'],
             'color': ['g_light_bz_color'],
         }
     },

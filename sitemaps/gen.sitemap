@@ -59,7 +59,7 @@ Switch item=bz_light_sw
 Text item=bz_light_link icon="linkz"
 Text item=bz_light_ota icon="fire"
 }
-Frame label="BZ Light (0xcc86ecfffea0c7cb)" {
+Frame label="BZ Light (toilet) (0xcc86ecfffea0c7cb)" {
 Switch item=bz_light_1_sw
 Slider item=bz_light_1_dim
 Slider item=bz_light_1_ct
@@ -67,6 +67,15 @@ Colorpicker item=bz_light_1_color
 Text item=bz_light_1_color_mode
 Text item=bz_light_1_link icon="linkz"
 Text item=bz_light_1_ota icon="fire"
+}
+Frame label="BZ Light (shower) (0x04cd15fffedb319f)" {
+Switch item=bz_light_2_sw
+Slider item=bz_light_2_dim
+Slider item=bz_light_2_ct
+Colorpicker item=bz_light_2_color
+Text item=bz_light_2_color_mode
+Text item=bz_light_2_link icon="linkz"
+Text item=bz_light_2_ota icon="fire"
 }
 Frame label="BZ Mirror (bz_mirror)" {
 Switch item=bz_mirror

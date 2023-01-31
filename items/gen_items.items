@@ -83,15 +83,25 @@ Switch bz_light_sw "BZ Light" <switch> (g_light_all,g_light_eg,g_light_eg_bz) {c
 Number:Dimensionless bz_light_link "BZ Light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light:link"}
 Switch bz_light_ota "BZ Light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light:ota"}
 
-// BZ Light (0xcc86ecfffea0c7cb)
+// BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
-Switch bz_light_1_sw "BZ Light" <light> (g_light_all,g_light_eg,g_light_eg_bz,bz_main_light) {channel="mqtt:topic:openhab:bz_light_1:state"}
-Dimmer bz_light_1_dim "BZ Light DIM [%d %%]" <light> (g_light_bz_dim) {channel="mqtt:topic:openhab:bz_light_1:dim"}
-Dimmer bz_light_1_ct "BZ Light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color) {channel="mqtt:topic:openhab:bz_light_1:ct"}
-Color bz_light_1_color "BZ Light Color" <colorwheel> (g_light_bz_color) {channel="mqtt:topic:openhab:bz_light_1:color"}
-String bz_light_1_color_mode "BZ Light Color mode [%s]" <light> {channel="mqtt:topic:openhab:bz_light_1:color_mode"}
-Number:Dimensionless bz_light_1_link "BZ Light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light_1:link"}
-Switch bz_light_1_ota "BZ Light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light_1:ota"}
+Switch bz_light_1_sw "BZ Light (toilet)" <light> (g_light_all,g_light_eg,g_light_eg_bz,bz_main_light) {channel="mqtt:topic:openhab:bz_light_1:state"}
+Dimmer bz_light_1_dim "BZ Light (toilet) DIM [%d %%]" <light> (g_light_bz_dim) {channel="mqtt:topic:openhab:bz_light_1:dim"}
+Dimmer bz_light_1_ct "BZ Light (toilet) CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color,g_light_bz_ct) {channel="mqtt:topic:openhab:bz_light_1:ct"}
+Color bz_light_1_color "BZ Light (toilet) Color" <colorwheel> (g_light_bz_color) {channel="mqtt:topic:openhab:bz_light_1:color"}
+String bz_light_1_color_mode "BZ Light (toilet) Color mode [%s]" <light> {channel="mqtt:topic:openhab:bz_light_1:color_mode"}
+Number:Dimensionless bz_light_1_link "BZ Light (toilet) LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light_1:link"}
+Switch bz_light_1_ota "BZ Light (toilet) OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light_1:ota"}
+
+// BZ Light (shower) (0x04cd15fffedb319f)
+// Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
+Switch bz_light_2_sw "BZ Light (shower)" <light> (g_light_all,g_light_eg,g_light_eg_bz,bz_main_light) {channel="mqtt:topic:openhab:bz_light_2:state"}
+Dimmer bz_light_2_dim "BZ Light (shower) DIM [%d %%]" <light> (g_light_bz_dim) {channel="mqtt:topic:openhab:bz_light_2:dim"}
+Dimmer bz_light_2_ct "BZ Light (shower) CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color,g_light_bz_ct) {channel="mqtt:topic:openhab:bz_light_2:ct"}
+Color bz_light_2_color "BZ Light (shower) Color" <colorwheel> (g_light_bz_color) {channel="mqtt:topic:openhab:bz_light_2:color"}
+String bz_light_2_color_mode "BZ Light (shower) Color mode [%s]" <light> {channel="mqtt:topic:openhab:bz_light_2:color_mode"}
+Number:Dimensionless bz_light_2_link "BZ Light (shower) LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light_2:link"}
+Switch bz_light_2_ota "BZ Light (shower) OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light_2:ota"}
 
 // BZ Mirror (bz_mirror)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
