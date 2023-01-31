@@ -446,7 +446,7 @@ then
         case "off": {
             // "down" -> Small power + only toilet light
             bz_light_1_dim.sendCommand(1)
-            // bz_light_2.sendCommand(OFF)
+            bz_light_2_sw.sendCommand(OFF)
         }
         case "arrow_left_click": {
             if (bz_mirror.state == ON) {
