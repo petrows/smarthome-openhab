@@ -59,6 +59,14 @@ Switch item=bz_light_sw
 Text item=bz_light_link icon="linkz"
 Text item=bz_light_ota icon="fire"
 }
+Frame label="BZ Light (0xcc86ecfffea0c7cb)" {
+Switch item=bz_light_1_sw
+Slider item=bz_light_1_dim
+Slider item=bz_light_1_ct
+Colorpicker item=bz_light_1_color
+Text item=bz_light_1_link icon="linkz"
+Text item=bz_light_1_ota icon="fire"
+}
 Frame label="BZ Mirror (bz_mirror)" {
 Switch item=bz_mirror
 Text item=bz_mirror_rssi

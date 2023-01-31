@@ -18,6 +18,15 @@ end
 
 
 // Device should apply saved color temp when ON
+rule "BZ Light apply color on ON"
+when
+    Item bz_light_1_sw changed to ON
+then
+	bz_light_1_ct.sendCommand(bz_light_1_ct.state as Number)
+end
+
+
+// Device should apply saved color temp when ON
 rule "Marina Desktop light apply color on ON"
 when
     Item desktop_marina_light_sw changed to ON

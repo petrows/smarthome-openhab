@@ -58,6 +58,7 @@ PREAMBULA = """
 # 0x04cd15fffe7a35b5 - TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (Ikea 2022-08-10)
 # 0x04cd15fffe873cb7 - Ikea move sensor
 # 0x8cf681fffe36d14e - TRADFRI E1766 Open/Close Remote (from Marina E.)
+# 0xcc86ecfffea0c7cb - Livarno Home LED ceiling light (Lidl 2023-01-31)
 
 # Items defentition
 items = [
@@ -143,6 +144,16 @@ items = [
         'type': DEVICES.HEIMAN_SW_1_GANG,
         'groups': {
             'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz'],
+        }
+    },
+    {
+        'name': "BZ Light",
+        'id': "bz_light_1",
+        'zigbee_id': '0xcc86ecfffea0c7cb',
+        'type': DEVICES.LIVARNO_CELLING,
+        'groups': {
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz'],
+            'ct': ['g_light_astro_color'],
         }
     },
     {

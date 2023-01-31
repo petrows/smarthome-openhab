@@ -117,6 +117,18 @@ Thing mqtt:topic:openhab:bz_light "BZ Light" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/bz_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// BZ Light (0xcc86ecfffea0c7cb)
+// Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
+Thing mqtt:topic:openhab:bz_light_1 "BZ Light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/bz_light_1", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/bz_light_1/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/bz_light_1", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/bz_light_1/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/bz_light_1", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/bz_light_1/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=150, max=500]
+		Type color : color [, commandTopic="zigbee2mqtt/bz_light_1/set", transformationPatternOut="JS:z2m-command-color_xy.js"]
+		Type number : link [stateTopic="zigbee2mqtt/bz_light_1", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/bz_light_1", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // BZ Mirror (bz_mirror)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Thing mqtt:topic:openhab:bz_mirror "BZ Mirror" (mqtt:broker:openhab) {

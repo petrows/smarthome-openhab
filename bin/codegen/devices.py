@@ -280,6 +280,16 @@ class DEVICES:
         'device_name': 'Lidl Silvercrest smart button (HG08164)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/HG08164.html',
     }
+    LIVARNO_CELLING = {
+        'types': [
+            'zigbee',
+            'lamp',
+            'ct',
+            'color',
+        ],
+        'device_name': 'Livarno Home LED ceiling light (HG08008)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008',
+    }
     # DIY
     DIY_CC2540_ROUTER = {
         'types': [
