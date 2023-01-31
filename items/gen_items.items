@@ -89,6 +89,7 @@ Switch bz_light_1_sw "BZ Light" <light> (g_light_all,g_light_eg,g_light_eg_bz) {
 Dimmer bz_light_1_dim "BZ Light DIM [%d %%]" <light> {channel="mqtt:topic:openhab:bz_light_1:dim"}
 Dimmer bz_light_1_ct "BZ Light CT [JS(display-mired.js):%s]" <colorwheel> (g_light_astro_color) {channel="mqtt:topic:openhab:bz_light_1:ct"}
 Color bz_light_1_color "BZ Light Color" <colorwheel> {channel="mqtt:topic:openhab:bz_light_1:color"}
+String bz_light_1_color_mode "BZ Light Color mode [%s]" <light> {channel="mqtt:topic:openhab:bz_light_1:color_mode"}
 Number:Dimensionless bz_light_1_link "BZ Light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:bz_light_1:link"}
 Switch bz_light_1_ota "BZ Light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:bz_light_1:ota"}
 

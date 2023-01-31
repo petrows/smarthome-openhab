@@ -28,6 +28,8 @@ Group:Dimmer:MAX g_dim_eg_auto
 
 // Group of lamps to set auto color depending on daytime
 Group:Dimmer:AVG g_light_astro_color "Astrocolor CT [%d %%]" <light>
+// Current value for astrocolor CT
+Dimmer astro_color_value "Astrocolor Value [%d %%]" <light>
 
 // KG and Treppe lamps
 Group:Switch:OR(ON, OFF) g_light_kg // All lamps in KG

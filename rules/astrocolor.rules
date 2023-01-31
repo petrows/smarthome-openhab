@@ -1,3 +1,5 @@
+import org.openhab.core.model.script.ScriptServiceUtil
+
 // Light color sunset emulation
 
 import java.time.temporal.ChronoUnit
@@ -32,7 +34,7 @@ then
     logWarn("light", "Astrocolor reset")
 
     light_astrocolor_enabled.sendCommand(ON)
-    g_light_astro_color.sendCommand(astrocolorDaylight) // Default color value for DAY
+    astro_color_value.sendCommand(astrocolorDaylight) // Default color value for DAY
 end
 
 rule "Astrocolor: Set lamps color according to daytime"
@@ -67,7 +69,7 @@ then
 
         logInfo("light", "Astrocolor set color: " + astrocolorValue)
 
-        g_light_astro_color.sendCommand(astrocolorValue)
+        astro_color_value.sendCommand(astrocolorValue)
 
         // All items 100% ?
         if (astrocolorValue >= 100) {
@@ -78,4 +80,30 @@ then
             astrocolorTimer.reschedule(ZonedDateTime.now.plus(astrocolorTimerMs.intValue, ChronoUnit.MILLIS))
         }
     ])
+end
+
+rule "Astrocolor: apply"
+when
+    Item astro_color_value received update
+then
+    // g_light_astro_color.sendCommand(newState.toString())
+    // Iterate group and find devices with color mode == OFF (skip RGB lamps to change)
+    g_light_astro_color.members.forEach [itm |
+        // Check that item satellite 'color_mode' exists
+        val itm_name = transform("REGEX", "(.*)_ct", itm.name.toString)
+        var itm_allow_astrocolor = true
+        try {
+            val StringItem itm_color_mode = ScriptServiceUtil.getItemRegistry?.getItem(itm_name + "_color_mode") as StringItem
+            if (itm_color_mode.state == "xy") {
+                logInfo("light", "Astrocolor: skip device due to RGB mode: " + itm_name)
+                itm_allow_astrocolor = false
+            }
+        } catch(Throwable t) {
+            // Nothing
+        }
+
+        if (itm_allow_astrocolor) {
+            itm.sendCommand(newState.toString())
+        }
+    ]
 end

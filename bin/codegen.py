@@ -1039,6 +1039,12 @@ if __name__ == "__main__":
                     f", transformationPatternOut=\"JS:z2m-command-color_xy.js\""
                     f"]"
                 )
+                conf_str.append(
+                    f"\t\tType string : color_mode ["
+                    f", stateTopic=\"{zigbe_mqtt_topic}\""
+                    f", transformationPattern=\"JSONPATH:$.color_mode\""
+                    f"]"
+                )
             # Device has Thermostat control
             if np.in1d(['thermostat'], item['type']['types']).any():
                 conf_str.append(
@@ -1370,7 +1376,13 @@ end
                     f"{device_groups(item,'color')}"
                     f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:color\"}}"
                 )
+                conf_str.append(
+                    f"String {item['id']}_color_mode \"{item['name']} Color mode [%s]\" <light>"
+                    f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:color_mode\"}}"
+                )
                 device_items['items'].append(f"Colorpicker item={item['id']}_color")
+                # Set to ON, when color mode, OFF to normal mode (CT)
+                device_items['items'].append(f"Text item={item['id']}_color_mode")
 
             # All zigbee devices have Link Quality reported
             conf_str.append(
