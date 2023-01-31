@@ -689,3 +689,11 @@ Switch ns_christmas_light_ota "NS Christmas light OTA [%s]" <fire> (g_zigbee_ota
 Switch balkon_christmas_light_sw "Balkon Christmas light" <switch> (g_light_christmas) {channel="mqtt:topic:openhab:balkon_christmas_light:state"}
 Number:Dimensionless balkon_christmas_light_link "Balkon Christmas light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:balkon_christmas_light:link"}
 Switch balkon_christmas_light_ota "Balkon Christmas light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:balkon_christmas_light:ota"}
+
+// Test remote (0x003c84fffe16f988)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer test_ikea_remote_dim "Test remote DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:test_ikea_remote:dim"}
+Number:Dimensionless test_ikea_remote_link "Test remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:test_ikea_remote:link"}
+Switch test_ikea_remote_ota "Test remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:test_ikea_remote:ota"}
+Number:Dimensionless test_ikea_remote_battery "Test remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:test_ikea_remote:battery"}
+Switch test_ikea_remote_battery_low "Test remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:test_ikea_remote:battery_low"}

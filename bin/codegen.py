@@ -811,6 +811,13 @@ items = [
             'sw': ['g_light_christmas'],
         }
     },
+    # =====================
+    {
+        'name': "Test remote",
+        'id': "test_ikea_remote",
+        'zigbee_id': '0x003c84fffe16f988',
+        'type': DEVICES.IKEA_TRADFRI_STYRBAR,
+    },
 ]
 
 
@@ -1018,7 +1025,7 @@ if __name__ == "__main__":
                     f"\t\tType string : action [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.action\", trigger=true]")
             if np.in1d(['simulated_brightness'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType dimmer : dim [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.brightness\", min=1, max=255]")
+                    f"\t\tType dimmer : dim [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.brightness\", min=0, max=255]")
 
             # Device has dimmer
             if np.in1d(['lamp'], item['type']['types']).any():

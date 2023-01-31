@@ -12,7 +12,7 @@
 Thing mqtt:topic:openhab:sturbar_test "Sturbar test" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="JSONPATH:$.action", trigger=true]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="JSONPATH:$.brightness", min=1, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
@@ -161,7 +161,7 @@ Thing mqtt:topic:openhab:bz_mirror_switch "BZ Mirror switch" (mqtt:broker:openha
 Thing mqtt:topic:openhab:bz_light_switch "BZ Light Control" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="JSONPATH:$.action", trigger=true]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="JSONPATH:$.brightness", min=1, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
 		Type number : link [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
@@ -447,7 +447,7 @@ Thing mqtt:topic:openhab:ku_light_arbeitplatte "KU Light Arbeit" (mqtt:broker:op
 Thing mqtt:topic:openhab:ku_light_table_switch "KU Light Table SW" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="JSONPATH:$.action", trigger=true]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="JSONPATH:$.brightness", min=1, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
@@ -516,7 +516,7 @@ Thing mqtt:topic:openhab:treppe_up_switch "Treppe Up switch" (mqtt:broker:openha
 Thing mqtt:topic:openhab:treppe_down_switch "Treppe Down switch" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="JSONPATH:$.action", trigger=true]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="JSONPATH:$.brightness", min=1, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
@@ -951,4 +951,16 @@ Thing mqtt:topic:openhab:balkon_christmas_light "Balkon Christmas light" (mqtt:b
 		Type switch : state [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/balkon_christmas_light/set", transformationPatternOut="JS:z2m-command-state.js"]
 		Type number : link [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
+// Test remote (0x003c84fffe16f988)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:test_ikea_remote "Test remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="JSONPATH:$.action", trigger=true]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="JSONPATH:$.brightness", min=0, max=255]
+		Type number : battery [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : link [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }

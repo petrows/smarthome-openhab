@@ -465,5 +465,10 @@ Switch item=balkon_christmas_light_sw
 Text item=balkon_christmas_light_link icon="linkz"
 Text item=balkon_christmas_light_ota icon="fire"
 }
+Frame label="Test remote (0x003c84fffe16f988)" {
+Text item=test_ikea_remote_dim
+Text item=test_ikea_remote_link icon="linkz"
+Text item=test_ikea_remote_ota icon="fire"
+}
 
 }
