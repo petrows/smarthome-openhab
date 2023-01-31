@@ -116,8 +116,15 @@ sitemap main label="MAIN"
 			Text item=eg_main_door_contact label="Main door [%s]"
 		}
 		Group item=g_light_eg_bz label="WC [%s]" icon="light" {
-			Switch item=bz_light_sw label="Main" icon="light"
-			Switch item=bz_mirror label="Mirror" icon="light"
+            Frame {
+			    Switch item=g_light_eg_bz label="All" icon="light"
+                Switch item=bz_mirror label="Mirror" icon="light"
+            }
+            Frame {
+			    Switch item=bz_main_light label="Main" icon="light"
+                Slider item=g_light_bz_dim label="Main DIM [%d %%]" icon="light"
+                Colorpicker item=g_light_bz_color label="Main Color []" icon="color"
+            }
 		}
 		Group item=g_light_eg_ku label="Kitchen [%s]" icon="light" {
 			Switch item=ku_light_switch_haupt_sw label="Main" icon="light"

@@ -155,6 +155,7 @@ items = [
             'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_bz', 'bz_main_light'],
             'dim': ['g_light_bz_dim'],
             'ct': ['g_light_astro_color'],
+            'color': ['g_light_bz_color'],
         }
     },
     {
