@@ -1383,7 +1383,10 @@ rule "{item['name']} apply color on ON"
 when
     Item {item['id']}_sw changed to ON
 then
-	{item['id']}_ct.sendCommand({item['id']}_ct.state as Number)
+    Thread::sleep(500)
+    if ({item['id']}_sw.state == ON) {{
+	    {item['id']}_ct.sendCommand({item['id']}_ct.state as Number)
+    }}
 end
 """
                 )

@@ -1,0 +1,6 @@
+rule "BZ main dimmer"
+when
+    Item test_ikea_remote_dim changed
+then
+    desktop_petro_light_dim.sendCommand((newState as Number).intValue())
+end

@@ -13,7 +13,10 @@ rule "Balkon light 1 apply color on ON"
 when
     Item balkon_light_1_sw changed to ON
 then
-	balkon_light_1_ct.sendCommand(balkon_light_1_ct.state as Number)
+    Thread::sleep(500)
+    if (balkon_light_1_sw.state == ON) {
+	    balkon_light_1_ct.sendCommand(balkon_light_1_ct.state as Number)
+    }
 end
 
 
@@ -22,7 +25,10 @@ rule "BZ Light (toilet) apply color on ON"
 when
     Item bz_light_1_sw changed to ON
 then
-	bz_light_1_ct.sendCommand(bz_light_1_ct.state as Number)
+    Thread::sleep(500)
+    if (bz_light_1_sw.state == ON) {
+	    bz_light_1_ct.sendCommand(bz_light_1_ct.state as Number)
+    }
 end
 
 
@@ -31,7 +37,10 @@ rule "BZ Light (shower) apply color on ON"
 when
     Item bz_light_2_sw changed to ON
 then
-	bz_light_2_ct.sendCommand(bz_light_2_ct.state as Number)
+    Thread::sleep(500)
+    if (bz_light_2_sw.state == ON) {
+	    bz_light_2_ct.sendCommand(bz_light_2_ct.state as Number)
+    }
 end
 
 
@@ -40,7 +49,10 @@ rule "Marina Desktop light apply color on ON"
 when
     Item desktop_marina_light_sw changed to ON
 then
-	desktop_marina_light_ct.sendCommand(desktop_marina_light_ct.state as Number)
+    Thread::sleep(500)
+    if (desktop_marina_light_sw.state == ON) {
+	    desktop_marina_light_ct.sendCommand(desktop_marina_light_ct.state as Number)
+    }
 end
 
 
@@ -49,7 +61,10 @@ rule "Treppe Up light apply color on ON"
 when
     Item treppe_up_light_sw changed to ON
 then
-	treppe_up_light_ct.sendCommand(treppe_up_light_ct.state as Number)
+    Thread::sleep(500)
+    if (treppe_up_light_sw.state == ON) {
+	    treppe_up_light_ct.sendCommand(treppe_up_light_ct.state as Number)
+    }
 end
 
 
@@ -58,7 +73,10 @@ rule "Treppe Down light apply color on ON"
 when
     Item treppe_down_light_sw changed to ON
 then
-	treppe_down_light_ct.sendCommand(treppe_down_light_ct.state as Number)
+    Thread::sleep(500)
+    if (treppe_down_light_sw.state == ON) {
+	    treppe_down_light_ct.sendCommand(treppe_down_light_ct.state as Number)
+    }
 end
 
 
@@ -67,7 +85,10 @@ rule "Petro Desktop up light 1 apply color on ON"
 when
     Item desktop_petro_up_light_1_sw changed to ON
 then
-	desktop_petro_up_light_1_ct.sendCommand(desktop_petro_up_light_1_ct.state as Number)
+    Thread::sleep(500)
+    if (desktop_petro_up_light_1_sw.state == ON) {
+	    desktop_petro_up_light_1_ct.sendCommand(desktop_petro_up_light_1_ct.state as Number)
+    }
 end
 
 
@@ -76,7 +97,10 @@ rule "Petro Desktop up light 2 apply color on ON"
 when
     Item desktop_petro_up_light_2_sw changed to ON
 then
-	desktop_petro_up_light_2_ct.sendCommand(desktop_petro_up_light_2_ct.state as Number)
+    Thread::sleep(500)
+    if (desktop_petro_up_light_2_sw.state == ON) {
+	    desktop_petro_up_light_2_ct.sendCommand(desktop_petro_up_light_2_ct.state as Number)
+    }
 end
 
 
@@ -85,7 +109,10 @@ rule "Petro Desktop up light 3 apply color on ON"
 when
     Item desktop_petro_up_light_3_sw changed to ON
 then
-	desktop_petro_up_light_3_ct.sendCommand(desktop_petro_up_light_3_ct.state as Number)
+    Thread::sleep(500)
+    if (desktop_petro_up_light_3_sw.state == ON) {
+	    desktop_petro_up_light_3_ct.sendCommand(desktop_petro_up_light_3_ct.state as Number)
+    }
 end
 
 
@@ -94,5 +121,8 @@ rule "Petro Desktop light apply color on ON"
 when
     Item desktop_petro_light_sw changed to ON
 then
-	desktop_petro_light_ct.sendCommand(desktop_petro_light_ct.state as Number)
+    Thread::sleep(500)
+    if (desktop_petro_light_sw.state == ON) {
+	    desktop_petro_light_ct.sendCommand(desktop_petro_light_ct.state as Number)
+    }
 end
