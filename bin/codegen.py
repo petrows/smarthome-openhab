@@ -332,7 +332,7 @@ items = [
         }
     },
     {
-        'name': "SZ CO2 [%d ppm]",
+        'name': "SZ CO2",
         'id': "sz_co2",
         'type': DEVICES.PETROWS_CO2_SENSOR,
         'device_id': '5C:CF:7F:68:19:46',
@@ -1138,7 +1138,7 @@ if __name__ == "__main__":
             if np.in1d(['co2'], item['type']['types']).any():
                 device_icon = channel_cfg.get('icon', 'co2')
                 conf_str.append(
-                    f"Number:Dimensionless {item['id']} \"{item['name']}\" <{device_icon}>"
+                    f"Number:Dimensionless {item['id']} \"{item['name']} [%d ppm]\" <{device_icon}>"
                     f"{device_groups(item, 'co2')}"
                     f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:co2\"}}"
                 )

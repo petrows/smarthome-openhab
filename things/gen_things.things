@@ -367,9 +367,9 @@ Thing mqtt:topic:openhab:sz_window_door "SZ Window Door" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// SZ CO2 [%d ppm] (sz_co2)
+// SZ CO2 (sz_co2)
 // Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
-Thing mqtt:topic:openhab:sz_co2 "SZ CO2 [%d ppm]" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:sz_co2 "SZ CO2" (mqtt:broker:openhab) {
 	Channels:
 		Type number : co2 [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.CO2"]
 		Type switch : co2_led [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.led", on="1", off="0"]
