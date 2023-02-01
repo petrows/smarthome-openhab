@@ -1148,7 +1148,8 @@ if __name__ == "__main__":
     # Generate ITEMS
     conf_str = [PREAMBULA]
     all_items = []
-    gen_rules = [PREAMBULA]  # Special rules for devices
+    gen_rules_vars = [PREAMBULA]    # What to put in header in rules
+    gen_rules = []                  # Special rules for devices
     for item in items:
         conf_str.extend(device_comment(item))
         device_items = {
@@ -1377,6 +1378,7 @@ if __name__ == "__main__":
                     f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:ct\"}}"
                 )
                 device_items['items'].append(f"Slider item={item['id']}_ct")
+                gen_rules_vars.append(f"var Timer {item['id']}_ct_timer")
                 gen_rules.append(
                     f"""
 // Device should apply saved color temp when ON
@@ -1385,10 +1387,9 @@ when
     Item {item['id']}_sw received command ON
 then
     val ct_set = ({item['id']}_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("{zigbe_mqtt_topic}/set", "{{\\\"color_temp\\\":" + ct_set.toString() + "}}")
+    {item['id']}_ct_timer = createTimer(now.plusSeconds(1), [ |
+        {item['id']}_ct.sendCommand(ct_set)
+    ])
 end
 """
                 )
@@ -1477,7 +1478,7 @@ sitemap gen label="GEN ITEMS"
         f.close()
 
     # Write generated rules
-    gen_rules = '\n'.join(gen_rules)
+    gen_rules = '\n'.join(gen_rules_vars) + '\n' + '\n'.join(gen_rules)
     print(gen_rules)
     if args.write:
         f = open(os.path.join(ROOT_PATH, 'rules', 'gen_auto.rules'), 'w')

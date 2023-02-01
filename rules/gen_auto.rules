@@ -7,6 +7,16 @@
 // ==========================================
 
 
+var Timer balkon_light_1_ct_timer
+var Timer bz_light_1_ct_timer
+var Timer bz_light_2_ct_timer
+var Timer desktop_marina_light_ct_timer
+var Timer treppe_up_light_ct_timer
+var Timer treppe_down_light_ct_timer
+var Timer desktop_petro_up_light_1_ct_timer
+var Timer desktop_petro_up_light_2_ct_timer
+var Timer desktop_petro_up_light_3_ct_timer
+var Timer desktop_petro_light_ct_timer
 
 // Device should apply saved color temp when ON
 rule "Balkon light 1 apply color on ON"
@@ -14,10 +24,9 @@ when
     Item balkon_light_1_sw received command ON
 then
     val ct_set = (balkon_light_1_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/balkon_light_1/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    balkon_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
+        balkon_light_1_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -27,10 +36,9 @@ when
     Item bz_light_1_sw received command ON
 then
     val ct_set = (bz_light_1_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/bz_light_1/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    bz_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
+        bz_light_1_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -40,10 +48,9 @@ when
     Item bz_light_2_sw received command ON
 then
     val ct_set = (bz_light_2_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/bz_light_2/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    bz_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
+        bz_light_2_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -53,10 +60,9 @@ when
     Item desktop_marina_light_sw received command ON
 then
     val ct_set = (desktop_marina_light_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_marina_light/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    desktop_marina_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        desktop_marina_light_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -66,10 +72,9 @@ when
     Item treppe_up_light_sw received command ON
 then
     val ct_set = (treppe_up_light_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/treppe_up_light/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    treppe_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        treppe_up_light_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -79,10 +84,9 @@ when
     Item treppe_down_light_sw received command ON
 then
     val ct_set = (treppe_down_light_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/treppe_down_light/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    treppe_down_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        treppe_down_light_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -92,10 +96,9 @@ when
     Item desktop_petro_up_light_1_sw received command ON
 then
     val ct_set = (desktop_petro_up_light_1_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_petro_up_light_1/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    desktop_petro_up_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
+        desktop_petro_up_light_1_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -105,10 +108,9 @@ when
     Item desktop_petro_up_light_2_sw received command ON
 then
     val ct_set = (desktop_petro_up_light_2_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_petro_up_light_2/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    desktop_petro_up_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
+        desktop_petro_up_light_2_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -118,10 +120,9 @@ when
     Item desktop_petro_up_light_3_sw received command ON
 then
     val ct_set = (desktop_petro_up_light_3_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_petro_up_light_3/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    desktop_petro_up_light_3_ct_timer = createTimer(now.plusSeconds(1), [ |
+        desktop_petro_up_light_3_ct.sendCommand(ct_set)
+    ])
 end
 
 
@@ -131,8 +132,7 @@ when
     Item desktop_petro_light_sw received command ON
 then
     val ct_set = (desktop_petro_light_ct.state as Number).intValue
-    Thread::sleep(1000)
-    // Send CT command directly via MQTT, as some devices reports "old" values
-    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
-    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_petro_light/set", "{\"color_temp\":" + ct_set.toString() + "}")
+    desktop_petro_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        desktop_petro_light_ct.sendCommand(ct_set)
+    ])
 end
