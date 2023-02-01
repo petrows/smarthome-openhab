@@ -203,6 +203,7 @@ sitemap main label="MAIN"
 				Switch item=g_light_treppe label="Ladder [%s]" icon="light"
 				Slider item=g_dim_treppe label="Ladder DIM [%d %%]" icon="light"
 				Slider item=g_ct_treppe label="Ladder CT [JS(display-mired.js):%s]" icon="colorwheel"
+                Colorpicker item=treppe_down_light_color label="Down light []" icon="colorpicker"
 				Text item=treppe_motion_occupancy label="Motion Ladder [%s]"
 			}
 			Frame label="Main" {
