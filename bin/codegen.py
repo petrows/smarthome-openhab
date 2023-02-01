@@ -458,8 +458,8 @@ items = [
     {
         'name': "Treppe Down light",
         'id': "treppe_down_light",
-        'zigbee_id': '0x588e81fffe507b40',
-        'type': DEVICES.IKEA_TRADFRI_LAMP_CT_1000,
+        'zigbee_id': '0x04cd15fffedb31f7',
+        'type': DEVICES.LIVARNO_CELLING,
         'expire': '1h',
         'groups': {
             'sw': ['g_light_all', 'g_light_treppe', 'g_light_kg', 'g_light_kg_auto'],

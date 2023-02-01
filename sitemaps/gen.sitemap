@@ -259,10 +259,12 @@ Slider item=treppe_up_light_ct
 Text item=treppe_up_light_link icon="linkz"
 Text item=treppe_up_light_ota icon="fire"
 }
-Frame label="Treppe Down light (0x588e81fffe507b40)" {
+Frame label="Treppe Down light (0x04cd15fffedb31f7)" {
 Switch item=treppe_down_light_sw
 Slider item=treppe_down_light_dim
 Slider item=treppe_down_light_ct
+Colorpicker item=treppe_down_light_color
+Text item=treppe_down_light_color_mode
 Text item=treppe_down_light_link icon="linkz"
 Text item=treppe_down_light_ota icon="fire"
 }

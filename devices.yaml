@@ -47,6 +47,8 @@
   friendly_name: kg_lager3_motion
 '0x04cd15fffedb319f':
   friendly_name: bz_light_2
+'0x04cd15fffedb31f7':
+  friendly_name: treppe_down_light
 '0x0c4314fffe5c6913':
   friendly_name: kg_heating
 '0x0c4314fffe62f090':
@@ -61,8 +63,6 @@
   friendly_name: sz_remote
 '0x2c1165fffe30cf8f':
   friendly_name: sz_night_mode_remote
-'0x588e81fffe507b40':
-  friendly_name: treppe_down_light
 '0x5c0272fffedc2f41':
   friendly_name: sz_heating
 '0x680ae2fffe16e111':
