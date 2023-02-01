@@ -124,11 +124,13 @@ sitemap main label="MAIN"
 			    Switch item=bz_main_light label="Main" icon="light"
                 Slider item=g_light_bz_dim label="Main DIM [%d %%]" icon="light"
                 Slider item=g_light_bz_ct label="Main CT [JS(display-mired.js):%s]"
-                Colorpicker item=g_light_bz_color label="Main Color []" icon="color"
+                Colorpicker item=g_light_bz_color label="Main Color []" icon="colorpicker"
             }
             Frame {
 			    Switch item=bz_light_1_sw label="Main toilet" icon="light"
 			    Switch item=bz_light_2_sw label="Main shower" icon="light"
+                Colorpicker item=bz_light_1_color label="Main toilet []" icon="colorpicker"
+                Colorpicker item=bz_light_2_color label="Main shower []" icon="colorpicker"
             }
 		}
 		Group item=g_light_eg_ku label="Kitchen [%s]" icon="light" {
