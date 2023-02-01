@@ -21,7 +21,8 @@ then
     // }
     if (state == ON) {
         if (g_light_treppe.state == OFF) {
-            sendCommand(g_dim_treppe, 30)
+            sendCommand(g_light_treppe, ON)
+            sendCommand(g_dim_treppe, 1)
         }
         if (g_light_eg_auto.state == OFF) {
             sendCommand(g_dim_eg_auto, 15)
