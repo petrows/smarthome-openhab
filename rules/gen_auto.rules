@@ -11,118 +11,128 @@
 // Device should apply saved color temp when ON
 rule "Balkon light 1 apply color on ON"
 when
-    Item balkon_light_1_sw changed to ON
+    Item balkon_light_1_sw received command ON
 then
-    Thread::sleep(500)
-    if (balkon_light_1_sw.state == ON) {
-	    balkon_light_1_ct.sendCommand(balkon_light_1_ct.state as Number)
-    }
+    val ct_set = (balkon_light_1_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/balkon_light_1/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "BZ Light (toilet) apply color on ON"
 when
-    Item bz_light_1_sw changed to ON
+    Item bz_light_1_sw received command ON
 then
-    Thread::sleep(500)
-    if (bz_light_1_sw.state == ON) {
-	    bz_light_1_ct.sendCommand(bz_light_1_ct.state as Number)
-    }
+    val ct_set = (bz_light_1_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/bz_light_1/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "BZ Light (shower) apply color on ON"
 when
-    Item bz_light_2_sw changed to ON
+    Item bz_light_2_sw received command ON
 then
-    Thread::sleep(500)
-    if (bz_light_2_sw.state == ON) {
-	    bz_light_2_ct.sendCommand(bz_light_2_ct.state as Number)
-    }
+    val ct_set = (bz_light_2_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/bz_light_2/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "Marina Desktop light apply color on ON"
 when
-    Item desktop_marina_light_sw changed to ON
+    Item desktop_marina_light_sw received command ON
 then
-    Thread::sleep(500)
-    if (desktop_marina_light_sw.state == ON) {
-	    desktop_marina_light_ct.sendCommand(desktop_marina_light_ct.state as Number)
-    }
+    val ct_set = (desktop_marina_light_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_marina_light/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "Treppe Up light apply color on ON"
 when
-    Item treppe_up_light_sw changed to ON
+    Item treppe_up_light_sw received command ON
 then
-    Thread::sleep(500)
-    if (treppe_up_light_sw.state == ON) {
-	    treppe_up_light_ct.sendCommand(treppe_up_light_ct.state as Number)
-    }
+    val ct_set = (treppe_up_light_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/treppe_up_light/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "Treppe Down light apply color on ON"
 when
-    Item treppe_down_light_sw changed to ON
+    Item treppe_down_light_sw received command ON
 then
-    Thread::sleep(500)
-    if (treppe_down_light_sw.state == ON) {
-	    treppe_down_light_ct.sendCommand(treppe_down_light_ct.state as Number)
-    }
+    val ct_set = (treppe_down_light_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/treppe_down_light/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "Petro Desktop up light 1 apply color on ON"
 when
-    Item desktop_petro_up_light_1_sw changed to ON
+    Item desktop_petro_up_light_1_sw received command ON
 then
-    Thread::sleep(500)
-    if (desktop_petro_up_light_1_sw.state == ON) {
-	    desktop_petro_up_light_1_ct.sendCommand(desktop_petro_up_light_1_ct.state as Number)
-    }
+    val ct_set = (desktop_petro_up_light_1_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_petro_up_light_1/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "Petro Desktop up light 2 apply color on ON"
 when
-    Item desktop_petro_up_light_2_sw changed to ON
+    Item desktop_petro_up_light_2_sw received command ON
 then
-    Thread::sleep(500)
-    if (desktop_petro_up_light_2_sw.state == ON) {
-	    desktop_petro_up_light_2_ct.sendCommand(desktop_petro_up_light_2_ct.state as Number)
-    }
+    val ct_set = (desktop_petro_up_light_2_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_petro_up_light_2/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "Petro Desktop up light 3 apply color on ON"
 when
-    Item desktop_petro_up_light_3_sw changed to ON
+    Item desktop_petro_up_light_3_sw received command ON
 then
-    Thread::sleep(500)
-    if (desktop_petro_up_light_3_sw.state == ON) {
-	    desktop_petro_up_light_3_ct.sendCommand(desktop_petro_up_light_3_ct.state as Number)
-    }
+    val ct_set = (desktop_petro_up_light_3_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_petro_up_light_3/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end
 
 
 // Device should apply saved color temp when ON
 rule "Petro Desktop light apply color on ON"
 when
-    Item desktop_petro_light_sw changed to ON
+    Item desktop_petro_light_sw received command ON
 then
-    Thread::sleep(500)
-    if (desktop_petro_light_sw.state == ON) {
-	    desktop_petro_light_ct.sendCommand(desktop_petro_light_ct.state as Number)
-    }
+    val ct_set = (desktop_petro_light_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("zigbee2mqtt/desktop_petro_light/set", "{\"color_temp\":" + ct_set.toString() + "}")
 end

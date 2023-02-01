@@ -1103,7 +1103,7 @@ if __name__ == "__main__":
                     f"\t\tType number : humidity [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.humidity\"]")
             if np.in1d(['pressure'], item['type']['types']).any():
                 conf_str.append(
-                    f"\t\tType number : pressure [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"JSONPATH:$.pressure\",unit=\"hPa\"]")
+                    f"\t\tType number : pressure [stateTopic=\"{zigbe_mqtt_topic}\", transformationPattern=\"REGEX:(.*pressure.*)∩JSONPATH:$.pressure\",unit=\"hPa\"]")
             # Some zigbee devices needs to be monitored
             if np.in1d(['activity'], item['type']['types']).any():
                 conf_str.append(
@@ -1359,6 +1359,7 @@ if __name__ == "__main__":
 
         # Special Zigbee things
         if np.in1d(['zigbee'], item['type']['types']).any():
+            zigbe_mqtt_topic = f"zigbee2mqtt/{item['id']}"
             # All Zigbee lamps have dimmer built-in
             if np.in1d(['lamp'], item['type']['types']).any():
                 conf_str.append(
@@ -1381,12 +1382,13 @@ if __name__ == "__main__":
 // Device should apply saved color temp when ON
 rule "{item['name']} apply color on ON"
 when
-    Item {item['id']}_sw changed to ON
+    Item {item['id']}_sw received command ON
 then
-    Thread::sleep(500)
-    if ({item['id']}_sw.state == ON) {{
-	    {item['id']}_ct.sendCommand({item['id']}_ct.state as Number)
-    }}
+    val ct_set = ({item['id']}_ct.state as Number).intValue
+    Thread::sleep(1000)
+    // Send CT command directly via MQTT, as some devices reports "old" values
+    val mqtt_actions = getActions("mqtt","mqtt:broker:openhab")
+    mqtt_actions.publishMQTT("{zigbe_mqtt_topic}/set", "{{\\\"color_temp\\\":" + ct_set.toString() + "}}")
 end
 """
                 )

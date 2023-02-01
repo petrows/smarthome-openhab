@@ -3,7 +3,7 @@
     if (x == '1' || x == 'ON') {
         result="{ \"state\": \"ON\" }";
     } else {
-        result = "{ \"state\": \"OFF\", \"transition\": 2 }";
+        result = "{ \"state\": \"OFF\", \"transition\": 0 }";
     }
     return result;
 })(input)

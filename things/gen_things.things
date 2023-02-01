@@ -174,7 +174,7 @@ Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type number : humidity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JSONPATH:$.humidity"]
-		Type number : pressure [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JSONPATH:$.pressure",unit="hPa"]
+		Type number : pressure [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*pressure.*)∩JSONPATH:$.pressure",unit="hPa"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
@@ -401,7 +401,7 @@ Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type number : humidity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JSONPATH:$.humidity"]
-		Type number : pressure [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JSONPATH:$.pressure",unit="hPa"]
+		Type number : pressure [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*pressure.*)∩JSONPATH:$.pressure",unit="hPa"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
@@ -616,7 +616,7 @@ Thing mqtt:topic:openhab:kg_climate "KG Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type number : humidity [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="JSONPATH:$.humidity"]
-		Type number : pressure [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="JSONPATH:$.pressure",unit="hPa"]
+		Type number : pressure [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*pressure.*)∩JSONPATH:$.pressure",unit="hPa"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
@@ -763,7 +763,7 @@ Thing mqtt:topic:openhab:kg_lager3_climate "KG Lager 3 Climate" (mqtt:broker:ope
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type number : humidity [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JSONPATH:$.humidity"]
-		Type number : pressure [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JSONPATH:$.pressure",unit="hPa"]
+		Type number : pressure [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*pressure.*)∩JSONPATH:$.pressure",unit="hPa"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JS:z2m-activity.js"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
