@@ -23,3 +23,24 @@ then
         sz_curtain_switch.sendCommand("open")
     }
 end
+
+// Update astro items
+
+rule "Astro: update Sun"
+when
+    Item astro_sun_el changed
+then
+    // Sun is above horisont?
+    if (newState > 0.0 | °) {
+        astro_is_dark.sendCommand(OFF)
+    } else {
+        astro_is_dark.sendCommand(ON)
+    }
+
+    // Night?
+    if (newState < 5.0 | °) {
+        astro_is_night.sendCommand(ON)
+    } else {
+        astro_is_night.sendCommand(OFF)
+    }
+end

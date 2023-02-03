@@ -326,8 +326,8 @@ Switch ku_light_table_switch_battery_low "KU Light Table SW [MAP(lowbat.map):%s]
 
 // KU Light Table (0xec1bbdfffe4695b5)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Switch ku_light_table_sw "KU Light Table" <light> (g_light_all,g_light_eg,g_light_eg_ku) {channel="mqtt:topic:openhab:ku_light_table:state"}
-Dimmer ku_light_table_dim "KU Light Table DIM [%d %%]" <light> {channel="mqtt:topic:openhab:ku_light_table:dim"}
+Switch ku_light_table_sw "KU Light Table" <light> (g_light_all,g_light_eg,g_light_eg_ku,g_light_eg_auto) {channel="mqtt:topic:openhab:ku_light_table:state"}
+Dimmer ku_light_table_dim "KU Light Table DIM [%d %%]" <light> (g_dim_eg_auto) {channel="mqtt:topic:openhab:ku_light_table:dim"}
 Number:Dimensionless ku_light_table_link "KU Light Table LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:ku_light_table:link"}
 Switch ku_light_table_ota "KU Light Table OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:ku_light_table:ota"}
 

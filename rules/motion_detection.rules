@@ -4,7 +4,7 @@ rule "KG Motion detect treppe"
 when
     Item treppe_motion_occupancy changed
 then
-    var state = treppe_motion_occupancy.state
+    var state = newState
     if (state == OFF) {
         // If light is triggered manually, does not stop it
         if (treppe_manual_sw.state == ON) {
@@ -24,8 +24,17 @@ then
             sendCommand(g_light_treppe, ON)
             sendCommand(g_dim_treppe, 1)
         }
-        if (g_light_eg_auto.state == OFF) {
-            sendCommand(g_dim_eg_auto, 15)
+        // At night -> turn on some EG
+        if (astro_is_night.state == ON) {
+            // If no light at flur or toilet or kitchen -> turn on some
+            if (
+                   g_light_eg_ku.state == OFF
+                && g_light_eg_flur.state == OFF
+                && g_light_eg_bz.state == OFF
+            ) {
+                sendCommand(g_light_eg_auto, ON)
+                sendCommand(g_dim_eg_auto, 15)
+            }
         }
     }
 end

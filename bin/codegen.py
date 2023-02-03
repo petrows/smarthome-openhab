@@ -389,7 +389,8 @@ items = [
         'zigbee_id': '0xec1bbdfffe4695b5',
         'type': DEVICES.IKEA_TRADFRI_LAMP_W_806,
         'groups': {
-            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku'],
+            'sw': ['g_light_all', 'g_light_eg', 'g_light_eg_ku', 'g_light_eg_auto'],
+            'dim': ['g_dim_eg_auto'],
         }
     },
     {

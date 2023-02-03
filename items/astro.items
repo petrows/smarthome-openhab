@@ -1,0 +1,4 @@
+// Items for day and time manegement
+
+Switch astro_is_dark "Astro: darkness [%s]" <moon>
+Switch astro_is_night "Astro: night [%s]" <light>

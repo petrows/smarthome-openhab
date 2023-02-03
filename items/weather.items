@@ -24,8 +24,6 @@ Number:Temperature  Aqi_Temperature     "Temperature" <temperature> (AirQuality)
 Number:Pressure     Aqi_Pressure        "Pressure" <pressure> (AirQuality) { channel="airquality:aqi:home:pressure" }
 Number:Dimensionless Aqi_Humidity        "Humidity" <humidity> (AirQuality) { channel="airquality:aqi:home:humidity" }
 
-Switch astro_is_night "Night mode [%s]" <light>
-
 DateTime astro_sun_rise "Sunrise [%1$tH:%1$tM]" { channel="astro:sun:home:rise#start" }
 DateTime astro_sun_set "Sunset [%1$tH:%1$tM]" { channel="astro:sun:home:set#start" }
 Number:Angle astro_sun_az "Azimuth [%.2f %unit%]" { channel="astro:sun:home:position#azimuth" }
