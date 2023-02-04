@@ -1385,7 +1385,7 @@ if __name__ == "__main__":
 // Device should apply saved color temp when ON
 rule "{item['name']} apply color on ON"
 when
-    Item {item['id']}_sw received command ON
+    Item {item['id']}_sw changed to ON
 then
     val ct_set = ({item['id']}_ct.state as Number).intValue
     {item['id']}_ct_timer = createTimer(now.plusSeconds(1), [ |

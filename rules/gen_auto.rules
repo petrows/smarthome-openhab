@@ -21,7 +21,7 @@ var Timer desktop_petro_light_ct_timer
 // Device should apply saved color temp when ON
 rule "Balkon light 1 apply color on ON"
 when
-    Item balkon_light_1_sw received command ON
+    Item balkon_light_1_sw changed to ON
 then
     val ct_set = (balkon_light_1_ct.state as Number).intValue
     balkon_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -33,7 +33,7 @@ end
 // Device should apply saved color temp when ON
 rule "BZ Light (toilet) apply color on ON"
 when
-    Item bz_light_1_sw received command ON
+    Item bz_light_1_sw changed to ON
 then
     val ct_set = (bz_light_1_ct.state as Number).intValue
     bz_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -45,7 +45,7 @@ end
 // Device should apply saved color temp when ON
 rule "BZ Light (shower) apply color on ON"
 when
-    Item bz_light_2_sw received command ON
+    Item bz_light_2_sw changed to ON
 then
     val ct_set = (bz_light_2_ct.state as Number).intValue
     bz_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -57,7 +57,7 @@ end
 // Device should apply saved color temp when ON
 rule "Marina Desktop light apply color on ON"
 when
-    Item desktop_marina_light_sw received command ON
+    Item desktop_marina_light_sw changed to ON
 then
     val ct_set = (desktop_marina_light_ct.state as Number).intValue
     desktop_marina_light_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -69,7 +69,7 @@ end
 // Device should apply saved color temp when ON
 rule "Treppe Up light apply color on ON"
 when
-    Item treppe_up_light_sw received command ON
+    Item treppe_up_light_sw changed to ON
 then
     val ct_set = (treppe_up_light_ct.state as Number).intValue
     treppe_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -81,7 +81,7 @@ end
 // Device should apply saved color temp when ON
 rule "Treppe Down light apply color on ON"
 when
-    Item treppe_down_light_sw received command ON
+    Item treppe_down_light_sw changed to ON
 then
     val ct_set = (treppe_down_light_ct.state as Number).intValue
     treppe_down_light_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -93,7 +93,7 @@ end
 // Device should apply saved color temp when ON
 rule "Petro Desktop up light 1 apply color on ON"
 when
-    Item desktop_petro_up_light_1_sw received command ON
+    Item desktop_petro_up_light_1_sw changed to ON
 then
     val ct_set = (desktop_petro_up_light_1_ct.state as Number).intValue
     desktop_petro_up_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -105,7 +105,7 @@ end
 // Device should apply saved color temp when ON
 rule "Petro Desktop up light 2 apply color on ON"
 when
-    Item desktop_petro_up_light_2_sw received command ON
+    Item desktop_petro_up_light_2_sw changed to ON
 then
     val ct_set = (desktop_petro_up_light_2_ct.state as Number).intValue
     desktop_petro_up_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -117,7 +117,7 @@ end
 // Device should apply saved color temp when ON
 rule "Petro Desktop up light 3 apply color on ON"
 when
-    Item desktop_petro_up_light_3_sw received command ON
+    Item desktop_petro_up_light_3_sw changed to ON
 then
     val ct_set = (desktop_petro_up_light_3_ct.state as Number).intValue
     desktop_petro_up_light_3_ct_timer = createTimer(now.plusSeconds(1), [ |
@@ -129,7 +129,7 @@ end
 // Device should apply saved color temp when ON
 rule "Petro Desktop light apply color on ON"
 when
-    Item desktop_petro_light_sw received command ON
+    Item desktop_petro_light_sw changed to ON
 then
     val ct_set = (desktop_petro_light_ct.state as Number).intValue
     desktop_petro_light_ct_timer = createTimer(now.plusSeconds(1), [ |
