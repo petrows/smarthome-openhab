@@ -276,13 +276,13 @@ Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
 
 // Bedroom remote (0x14b457fffe7e2305)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Thing mqtt:topic:openhab:sz_remote "Bedroom remote" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:sz_remote_bed "Bedroom remote" (mqtt:broker:openhab) {
 	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/sz_remote", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger=true]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_remote", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_remote", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_remote", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type string : action [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger=true]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
 // Bedroom curtains remote (0x8cf681fffe36d14e)
@@ -296,16 +296,16 @@ Thing mqtt:topic:openhab:sz_curtain_remote "Bedroom curtains remote" (mqtt:broke
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
-// Bedroom night mode (0x2c1165fffe30cf8f)
-// Lidl Silvercrest smart button (HG08164) / https://www.zigbee2mqtt.io/devices/HG08164.html
-Thing mqtt:topic:openhab:sz_night_mode_remote "Bedroom night mode" (mqtt:broker:openhab) {
+// Bedroom main remote (0x003c84fffe16f988)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:sz_remote_main "Bedroom main remote" (mqtt:broker:openhab) {
 	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger=true]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
-		Type number : voltage [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="JS:z2m-batt-mv.js",unit="V"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type string : action [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger=true]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
 // SZ Main (0x588e81fffefe9a05)
@@ -964,16 +964,4 @@ Thing mqtt:topic:openhab:balkon_christmas_light "Balkon Christmas light" (mqtt:b
 		Type switch : state [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/balkon_christmas_light/set", transformationPatternOut="JS:z2m-command-state.js"]
 		Type number : link [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-
-// Test remote (0x003c84fffe16f988)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:test_ikea_remote "Test remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger=true]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : battery [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*battery.*)∩JSONPATH:$.battery"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-lowbatt.js"]
-		Type number : link [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/test_ikea_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }

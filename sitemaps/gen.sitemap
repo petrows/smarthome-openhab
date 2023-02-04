@@ -139,16 +139,17 @@ Text item=sz_climate_link icon="linkz"
 Text item=sz_climate_ota icon="fire"
 }
 Frame label="Bedroom remote (0x14b457fffe7e2305)" {
-Text item=sz_remote_link icon="linkz"
-Text item=sz_remote_ota icon="fire"
+Text item=sz_remote_bed_link icon="linkz"
+Text item=sz_remote_bed_ota icon="fire"
 }
 Frame label="Bedroom curtains remote (0x8cf681fffe36d14e)" {
 Text item=sz_curtain_remote_link icon="linkz"
 Text item=sz_curtain_remote_ota icon="fire"
 }
-Frame label="Bedroom night mode (0x2c1165fffe30cf8f)" {
-Text item=sz_night_mode_remote_link icon="linkz"
-Text item=sz_night_mode_remote_ota icon="fire"
+Frame label="Bedroom main remote (0x003c84fffe16f988)" {
+Text item=sz_remote_main_dim
+Text item=sz_remote_main_link icon="linkz"
+Text item=sz_remote_main_ota icon="fire"
 }
 Frame label="SZ Main (0x588e81fffefe9a05)" {
 Switch item=sz_main_light_sw
@@ -473,11 +474,6 @@ Frame label="Balkon Christmas light (0x7cb03eaa0a094bf2)" {
 Switch item=balkon_christmas_light_sw
 Text item=balkon_christmas_light_link icon="linkz"
 Text item=balkon_christmas_light_ota icon="fire"
-}
-Frame label="Test remote (0x003c84fffe16f988)" {
-Text item=test_ikea_remote_dim
-Text item=test_ikea_remote_link icon="linkz"
-Text item=test_ikea_remote_ota icon="fire"
 }
 
 }

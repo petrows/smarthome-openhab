@@ -167,7 +167,12 @@ sitemap main label="MAIN"
 		}
 		Group item=g_light_eg_sz label="Sleep [%s]" icon="light" {
 			Frame {
-				Switch item=snf_eg_sz label="Main [%s]" icon="light"
+				Switch item=g_light_eg_sz label="All [%s]" icon="light"
+				Switch item=sz_main_light_sw label="Main [%s]" icon="light"
+				Slider item=sz_main_light_dim label="Main DIM [%d %%]" icon="light"
+				Slider item=sz_main_light_ct label="Main CT [JS(display-mired.js):%s]" icon="light"
+            }
+            Frame {
 				Switch item=g_light_eg_sz_night label="Night [%s]" icon="light"
 				Slider item=g_light_eg_sz_night_brightness label="Night dim [%d %%]" icon="light"
 				Switch item=light_sunrise_enabled icon="light"

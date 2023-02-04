@@ -200,10 +200,10 @@ Number:ElectricPotential sz_climate_voltage "SZ Climate [%.0f mV]" <energy> (g_b
 
 // Bedroom remote (0x14b457fffe7e2305)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Number:Dimensionless sz_remote_link "Bedroom remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_remote:link"}
-Switch sz_remote_ota "Bedroom remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_remote:ota"}
-Number:Dimensionless sz_remote_battery "Bedroom remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_remote:battery"}
-Switch sz_remote_battery_low "Bedroom remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_remote:battery_low"}
+Number:Dimensionless sz_remote_bed_link "Bedroom remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_remote_bed:link"}
+Switch sz_remote_bed_ota "Bedroom remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_remote_bed:ota"}
+Number:Dimensionless sz_remote_bed_battery "Bedroom remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_remote_bed:battery"}
+Switch sz_remote_bed_battery_low "Bedroom remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_remote_bed:battery_low"}
 
 // Bedroom curtains remote (0x8cf681fffe36d14e)
 // IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
@@ -212,13 +212,13 @@ Switch sz_curtain_remote_ota "Bedroom curtains remote OTA [%s]" <fire> (g_zigbee
 Number:Dimensionless sz_curtain_remote_battery "Bedroom curtains remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_curtain_remote:battery"}
 Switch sz_curtain_remote_battery_low "Bedroom curtains remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_curtain_remote:battery_low"}
 
-// Bedroom night mode (0x2c1165fffe30cf8f)
-// Lidl Silvercrest smart button (HG08164) / https://www.zigbee2mqtt.io/devices/HG08164.html
-Number:Dimensionless sz_night_mode_remote_link "Bedroom night mode LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_night_mode_remote:link"}
-Switch sz_night_mode_remote_ota "Bedroom night mode OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_night_mode_remote:ota"}
-Number:Dimensionless sz_night_mode_remote_battery "Bedroom night mode [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_night_mode_remote:battery"}
-Switch sz_night_mode_remote_battery_low "Bedroom night mode [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_night_mode_remote:battery_low"}
-Number:ElectricPotential sz_night_mode_remote_voltage "Bedroom night mode [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:sz_night_mode_remote:voltage"}
+// Bedroom main remote (0x003c84fffe16f988)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer sz_remote_main_dim "Bedroom main remote DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:sz_remote_main:dim"}
+Number:Dimensionless sz_remote_main_link "Bedroom main remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_remote_main:link"}
+Switch sz_remote_main_ota "Bedroom main remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_remote_main:ota"}
+Number:Dimensionless sz_remote_main_battery "Bedroom main remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_remote_main:battery"}
+Switch sz_remote_main_battery_low "Bedroom main remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_remote_main:battery_low"}
 
 // SZ Main (0x588e81fffefe9a05)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
@@ -699,11 +699,3 @@ Switch ns_christmas_light_ota "NS Christmas light OTA [%s]" <fire> (g_zigbee_ota
 Switch balkon_christmas_light_sw "Balkon Christmas light" <switch> (g_light_christmas) {channel="mqtt:topic:openhab:balkon_christmas_light:state"}
 Number:Dimensionless balkon_christmas_light_link "Balkon Christmas light LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:balkon_christmas_light:link"}
 Switch balkon_christmas_light_ota "Balkon Christmas light OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:balkon_christmas_light:ota"}
-
-// Test remote (0x003c84fffe16f988)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Dimmer test_ikea_remote_dim "Test remote DIM [%.0f %%]" <light> {channel="mqtt:topic:openhab:test_ikea_remote:dim"}
-Number:Dimensionless test_ikea_remote_link "Test remote LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:test_ikea_remote:link"}
-Switch test_ikea_remote_ota "Test remote OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:test_ikea_remote:ota"}
-Number:Dimensionless test_ikea_remote_battery "Test remote [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:test_ikea_remote:battery"}
-Switch test_ikea_remote_battery_low "Test remote [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:test_ikea_remote:battery_low"}

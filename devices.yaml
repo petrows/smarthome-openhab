@@ -24,7 +24,7 @@
   friendly_name: bz_light_switch
   simulated_brightness: []
 '0x003c84fffe16f988':
-  friendly_name: test_ikea_remote
+  friendly_name: sz_remote_main
   simulated_brightness: []
 '0x04cd15fffe35f24e':
   friendly_name: desktop_petro_up_light_1
@@ -60,9 +60,7 @@
 '0x14b457fffe399241':
   friendly_name: balkon_light_1
 '0x14b457fffe7e2305':
-  friendly_name: sz_remote
-'0x2c1165fffe30cf8f':
-  friendly_name: sz_night_mode_remote
+  friendly_name: sz_remote_bed
 '0x588e81fffefe9a05':
   friendly_name: sz_main_light
 '0x5c0272fffedc2f41':

@@ -257,9 +257,10 @@ items = [
         'zigbee_id': '0x847127fffec6acc3',
         'type': DEVICES.TUYA_TEMPERATURE_SENSOR_TS0201,
     },
+    # Remotes in bed
     {
         'name': "Bedroom remote",
-        'id': "sz_remote",
+        'id': "sz_remote_bed",
         'zigbee_id': '0x14b457fffe7e2305',
         'type': DEVICES.IKEA_TRADFRI_REMOTE,
     },
@@ -269,11 +270,12 @@ items = [
         'zigbee_id': '0x8cf681fffe36d14e',
         'type': DEVICES.IKEA_TRADFRI_CURTAIN_REMOTE,
     },
+    # Remote in room entry
     {
-        'name': "Bedroom night mode",
-        'id': "sz_night_mode_remote",
-        'zigbee_id': '0x2c1165fffe30cf8f',
-        'type': DEVICES.SILVERCREST_SMART_BUTTON,
+        'name': "Bedroom main remote",
+        'id': "sz_remote_main",
+        'zigbee_id': '0x003c84fffe16f988',
+        'type': DEVICES.IKEA_TRADFRI_STYRBAR,
     },
     {
         'name': "SZ Main",
@@ -822,13 +824,6 @@ items = [
         'groups': {
             'sw': ['g_light_christmas'],
         }
-    },
-    # =====================
-    {
-        'name': "Test remote",
-        'id': "test_ikea_remote",
-        'zigbee_id': '0x003c84fffe16f988',
-        'type': DEVICES.IKEA_TRADFRI_STYRBAR,
     },
 ]
 
