@@ -11,6 +11,7 @@ var Timer balkon_light_1_ct_timer
 var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
 var Timer desktop_marina_light_ct_timer
+var Timer sz_main_light_ct_timer
 var Timer treppe_up_light_ct_timer
 var Timer treppe_down_light_ct_timer
 var Timer desktop_petro_up_light_1_ct_timer
@@ -62,6 +63,18 @@ then
     val ct_set = (desktop_marina_light_ct.state as Number).intValue
     desktop_marina_light_ct_timer = createTimer(now.plusSeconds(1), [ |
         desktop_marina_light_ct.sendCommand(ct_set)
+    ])
+end
+
+
+// Device should apply saved color temp when ON
+rule "SZ Main apply color on ON"
+when
+    Item sz_main_light_sw changed to ON
+then
+    val ct_set = (sz_main_light_ct.state as Number).intValue
+    sz_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        sz_main_light_ct.sendCommand(ct_set)
     ])
 end
 

@@ -290,6 +290,15 @@ class DEVICES:
         'device_name': 'Livarno Home LED ceiling light (HG08008)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008',
     }
+    LIVARNO_CELLING_14147206L = {
+        'types': [
+            'zigbee',
+            'lamp',
+            'ct',
+        ],
+        'device_name': 'Livarno Home Lux ceiling light (14147206L)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l',
+    }
     # DIY
     DIY_CC2540_ROUTER = {
         'types': [

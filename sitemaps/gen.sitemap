@@ -150,6 +150,13 @@ Frame label="Bedroom night mode (0x2c1165fffe30cf8f)" {
 Text item=sz_night_mode_remote_link icon="linkz"
 Text item=sz_night_mode_remote_ota icon="fire"
 }
+Frame label="SZ Main (0x588e81fffefe9a05)" {
+Switch item=sz_main_light_sw
+Slider item=sz_main_light_dim
+Slider item=sz_main_light_ct
+Text item=sz_main_light_link icon="linkz"
+Text item=sz_main_light_ota icon="fire"
+}
 Frame label="SZ Bed 1 (0x04cd15fffe7a35b5)" {
 Switch item=sz_bed_light_1_sw
 Slider item=sz_bed_light_1_dim

@@ -308,6 +308,17 @@ Thing mqtt:topic:openhab:sz_night_mode_remote "Bedroom night mode" (mqtt:broker:
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_night_mode_remote", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 
+// SZ Main (0x588e81fffefe9a05)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Thing mqtt:topic:openhab:sz_main_light "SZ Main" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/sz_main_light", transformationPattern="JSONPATH:$.state", commandTopic="zigbee2mqtt/sz_main_light/set", transformationPatternOut="JS:z2m-command-state.js"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_main_light", transformationPattern="JSONPATH:$.brightness", commandTopic="zigbee2mqtt/sz_main_light/set", transformationPatternOut="JS:z2m-command-brightness.js", min=1, max=255]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_main_light", transformationPattern="JSONPATH:$.color_temp", commandTopic="zigbee2mqtt/sz_main_light/set", transformationPatternOut="JS:z2m-command-color_temp.js", min=150, max=500]
+		Type number : link [stateTopic="zigbee2mqtt/sz_main_light", transformationPattern="REGEX:(.*linkquality.*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_main_light", transformationPattern="REGEX:(.*update_available.*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+
 // SZ Bed 1 (0x04cd15fffe7a35b5)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Thing mqtt:topic:openhab:sz_bed_light_1 "SZ Bed 1" (mqtt:broker:openhab) {
