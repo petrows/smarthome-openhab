@@ -243,12 +243,20 @@ then
     } catch(Throwable t) {}
     switch(state) {
         case "on": {
-            sz_main_light_sw.sendCommand(ON)
-            sz_main_light_dim.sendCommand(100)
+            if (sz_main_light_sw.state == ON && sz_main_light_dim.state > 50) {
+                sz_main_light_sw.sendCommand(OFF)
+            } else {
+                sz_main_light_sw.sendCommand(ON)
+                sz_main_light_dim.sendCommand(100)
+            }
         }
         case "off": {
-            sz_main_light_sw.sendCommand(ON)
-            sz_main_light_dim.sendCommand(1)
+            if (sz_main_light_sw.state == ON && sz_main_light_dim.state < 50) {
+                sz_main_light_sw.sendCommand(OFF)
+            } else {
+                sz_main_light_sw.sendCommand(ON)
+                sz_main_light_dim.sendCommand(1)
+            }
         }
         case "arrow_right_click": {
             g_light_eg_sz.sendCommand(OFF)
@@ -492,15 +500,23 @@ then
     switch(state) {
         case "on": {
             // "up" -> Full power
-            bz_main_light.sendCommand(ON)
-            g_light_bz_dim.sendCommand(100)
+            if (bz_main_light.state == ON && g_light_bz_dim.state > 50) {
+                bz_main_light.sendCommand(OFF)
+            } else {
+                bz_main_light.sendCommand(ON)
+                g_light_bz_dim.sendCommand(100)
+            }
         }
         case "off": {
             // "down" -> Small power + only toilet light
-            bz_light_1_sw.sendCommand(ON)
-            bz_light_1_dim.sendCommand(1)
-            if (bz_light_2_sw.state == ON) {
-                bz_light_2_sw.sendCommand(OFF)
+            if (bz_light_1_sw.state == ON && bz_light_2_sw.state == OFF && bz_light_1_dim.state < 50) {
+                bz_main_light.sendCommand(OFF)
+            } else {
+                bz_light_1_sw.sendCommand(ON)
+                bz_light_1_dim.sendCommand(1)
+                if (bz_light_2_sw.state == ON) {
+                    bz_light_2_sw.sendCommand(OFF)
+                }
             }
         }
         case "arrow_left_click": {
