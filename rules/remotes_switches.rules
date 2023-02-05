@@ -237,6 +237,10 @@ when
     Channel "mqtt:topic:openhab:sz_remote_main:action" triggered
 then
 	var state = receivedEvent
+    var curtainPos = 0
+    try {
+        curtainPos = Integer::parseInt(sz_curtain_switch.state.toString())
+    } catch(Throwable t) {}
     switch(state) {
         case "on": {
             sz_main_light_sw.sendCommand(ON)
@@ -252,6 +256,16 @@ then
         case "arrow_left_click": {
             sz_bed_light.sendCommand(ON)
             sz_bed_light_dim.sendCommand(30)
+        }
+        case "arrow_left_hold": {
+            if (100 != curtainPos) {
+                sz_curtain_switch.sendCommand("close")
+            }
+            sz_bed_light.sendCommand(ON)
+            sz_bed_light_dim.sendCommand(50)
+            Thread::sleep(3000)
+            g_light_eg_flur.sendCommand(OFF)
+            sz_main_light_sw.sendCommand(OFF)
         }
     }
 end
