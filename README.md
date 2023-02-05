@@ -48,3 +48,11 @@ Used package from https://github.com/basmilius/weather-icons
 ## Player icons
 
 Part of FontAwesome project: https://fontawesome.com/license
+
+# Openhab
+
+Send command to device via CLI
+```
+docker exec -it  Openhab /openhab/runtime/bin/client
+openhab:send g_zigbee_ota OFF
+```
