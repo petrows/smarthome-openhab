@@ -447,7 +447,7 @@ Text item=ku_heating_temperature
 Text item=ku_heating_link icon="linkz"
 Text item=ku_heating_ota icon="fire"
 }
-Frame label="SZ heating (0x5c0272fffedc2f41)" {
+Frame label="SZ heating (0x003c84fffef0180e)" {
 Setpoint item=sz_heating_thermostat minValue=5 maxValue=30 step=1
 Text item=sz_heating_position
 Text item=sz_heating_temperature
