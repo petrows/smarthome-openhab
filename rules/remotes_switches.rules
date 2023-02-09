@@ -1,4 +1,5 @@
 var Timer verlassenTimer = null
+var Timer bz_light_timer = null
 
 rule "Spiegel control SW"
 when
@@ -487,7 +488,9 @@ then
             } else {
                 bz_main_light.sendCommand(ON)
                 g_light_bz_dim.sendCommand(100)
-                bz_main_light.sendCommand(ON) // Try to fix bug
+                bz_light_timer = createTimer(now.plusSeconds(1), [ |
+                    bz_main_light.sendCommand(ON) // Try to fix bug
+                ])
             }
         }
         case "off": {
@@ -497,7 +500,9 @@ then
             } else {
                 bz_light_1_sw.sendCommand(ON)
                 bz_light_1_dim.sendCommand(1)
-                bz_light_1_sw.sendCommand(ON) // Try to fix bug
+                bz_light_timer = createTimer(now.plusSeconds(1), [ |
+                    bz_light_1_sw.sendCommand(ON) // Try to fix bug
+                ])
                 if (bz_light_2_sw.state == ON) {
                     bz_light_2_sw.sendCommand(OFF)
                 }
