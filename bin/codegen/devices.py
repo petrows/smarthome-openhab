@@ -202,6 +202,18 @@ class DEVICES:
         'device_name': 'TuYa Radiator valve with thermostat (TS0601_thermostat)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html',
     }
+    TUYA_THERMOSTAT_VALVE_3 = {
+        'types': [
+            'zigbee',
+            'thermostat',
+            'temperature',
+            'activity',
+            'battery_low',
+        ],
+        'thermostat_control_mode': "",
+        'device_name': 'TuYa Radiator valve with thermostat (TS0601_thermostat 3)',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/TS0601_thermostat_3.html',
+    }
     TUYA_WINDOW_SENSOR = {
         'types': [
             'zigbee',

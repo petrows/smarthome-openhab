@@ -26,8 +26,6 @@
 '0x003c84fffe16f988':
   friendly_name: sz_remote_main
   simulated_brightness: []
-'0x003c84fffef0180e':
-  friendly_name: sz_heating
 '0x04cd15fffe35f24e':
   friendly_name: desktop_petro_up_light_1
 '0x04cd15fffe6bf002':
@@ -95,6 +93,8 @@
   friendly_name: sz_bed_light_2
 '0x9035eafffe20e847':
   friendly_name: eg_decoration_light
+'0x9035eafffe712884':
+  friendly_name: sz_heating
 '0xa4c13804963f4ccf':
   friendly_name: sz_window_1
 '0xa4c138182f60d651':

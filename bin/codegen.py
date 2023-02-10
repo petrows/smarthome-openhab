@@ -778,8 +778,8 @@ items = [
     {
         'name': "SZ heating",
         'id': "sz_heating",
-        'zigbee_id': '0x003c84fffef0180e',
-        'type': DEVICES.SITERWELL_THERMOSTAT_GS361A,
+        'zigbee_id': '0x9035eafffe712884',
+        'type': DEVICES.TUYA_THERMOSTAT_VALVE_3,
         'groups': {
             'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_sz'],
             'position': ['g_hz_valve'],
@@ -1091,6 +1091,14 @@ if __name__ == "__main__":
                     f", unit=\"°C\""
                     f"]"
                 )
+                conf_str.append(
+                    f"\t\tType string : thermostat_mode ["
+                    f"stateTopic=\"{zigbe_mqtt_topic}\""
+                    f", transformationPattern=\"JSONPATH:$.system_mode\""
+                    f", commandTopic=\"{zigbe_mqtt_topic}/set\""
+                    f", transformationPatternOut=\"JS:z2m-command-thermostat-mode.js\""
+                    f"]"
+                )
 
             # Device has Position sensor
             if np.in1d(['position'], item['type']['types']).any():
@@ -1270,6 +1278,13 @@ if __name__ == "__main__":
             )
             device_items['items'].append(
                 f"Setpoint item={item['id']}_thermostat minValue=5 maxValue=30 step=1")
+            conf_str.append(
+                f"String {item['id']}_thermostat_mode \"{item['name']} MODE [%s]\" <{device_icon}>"
+                f"{device_groups(item,'thermostat_mode')}"
+                f" {{channel=\"mqtt:topic:openhab:{item['mqtt_topic']}:thermostat_mode\"}}"
+            )
+            device_items['items'].append(
+                f"Switch item={item['id']}_thermostat_mode mappings=[\"off\"=\"OFF\",\"auto\"=\"AUTO\",\"heat\"=\"HEAT\"]")
 
         # Some devices have position option
         if np.in1d(['position'], item['type']['types']).any():
