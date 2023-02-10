@@ -429,7 +429,7 @@ Frame label="Warehouse 4 leak (0x00158d000488052c)" {
 Text item=kg_lager4_leak_link icon="linkz"
 Text item=kg_lager4_leak_ota icon="fire"
 }
-Frame label="FS heating (0x0c4314fffe73c43f)" {
+Frame label="FS heating (0x9035eafffe712884)" {
 Setpoint item=fs_heating_thermostat minValue=5 maxValue=30 step=1
 Switch item=fs_heating_thermostat_mode mappings=["off"="OFF","auto"="AUTO","heat"="HEAT"]
 Text item=fs_heating_temperature
@@ -450,7 +450,7 @@ Text item=ku_heating_temperature
 Text item=ku_heating_link icon="linkz"
 Text item=ku_heating_ota icon="fire"
 }
-Frame label="SZ heating (0x9035eafffe712884)" {
+Frame label="SZ heating (0x0c4314fffe73c43f)" {
 Setpoint item=sz_heating_thermostat minValue=5 maxValue=30 step=1
 Switch item=sz_heating_thermostat_mode mappings=["off"="OFF","auto"="AUTO","heat"="HEAT"]
 Text item=sz_heating_temperature

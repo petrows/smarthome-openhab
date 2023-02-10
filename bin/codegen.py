@@ -748,8 +748,8 @@ items = [
     {
         'name': "FS heating",
         'id': "fs_heating",
-        'zigbee_id': '0x0c4314fffe73c43f',
-        'type': DEVICES.SILVERCREST_THERMOSTAT_368308_2010,
+        'zigbee_id': '0x9035eafffe712884',
+        'type': DEVICES.TUYA_THERMOSTAT_VALVE_3,
         'groups': {
             'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_fs'],
             'position': ['g_hz_valve'],
@@ -778,8 +778,8 @@ items = [
     {
         'name': "SZ heating",
         'id': "sz_heating",
-        'zigbee_id': '0x9035eafffe712884',
-        'type': DEVICES.TUYA_THERMOSTAT_VALVE_3,
+        'zigbee_id': '0x0c4314fffe73c43f',
+        'type': DEVICES.SILVERCREST_THERMOSTAT_368308_2010,
         'groups': {
             'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_sz'],
             'position': ['g_hz_valve'],
