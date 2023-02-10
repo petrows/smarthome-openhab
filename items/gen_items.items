@@ -664,13 +664,14 @@ Switch ku_heating_battery_low "KU heating [MAP(lowbat.map):%s]" <lowbattery> (g_
 Number:ElectricPotential ku_heating_voltage "KU heating [%.0f mV]" <energy> (g_battery_voltage) {channel="mqtt:topic:openhab:ku_heating:voltage"}
 
 // SZ heating (0x003c84fffef0180e)
-// TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
+// Siterwell GS361A-H04 valve with thermostat / https://www.zigbee2mqtt.io/devices/GS361A-H04.html
 Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_hz_all,g_hz_auto,g_hz_sz) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
-Number:Dimensionless sz_heating_position "SZ heating POS [%.0f %%]" <heating> (g_hz_valve) {channel="mqtt:topic:openhab:sz_heating:position"}
 Number:Temperature sz_heating_temperature "SZ heating [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:sz_heating:temperature"}
 DateTime sz_heating_activity "SZ heating [JS(display-activity.js):%s]" <time> (g_device_activity) {channel="mqtt:topic:openhab:sz_heating:activity"}
 Number:Dimensionless sz_heating_link "SZ heating LINK [%d]" <linkz> (g_zigbee_link) {channel="mqtt:topic:openhab:sz_heating:link"}
 Switch sz_heating_ota "SZ heating OTA [%s]" <fire> (g_zigbee_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
+Number:Dimensionless sz_heating_battery "SZ heating [%.0f %%]" <battery> (g_battery_level) {channel="mqtt:topic:openhab:sz_heating:battery"}
+Switch sz_heating_battery_low "SZ heating [MAP(lowbat.map):%s]" <lowbattery> (g_battery_low) {channel="mqtt:topic:openhab:sz_heating:battery_low"}
 
 // KG heating (0x0c4314fffe5c6913)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html

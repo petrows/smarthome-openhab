@@ -193,12 +193,12 @@ class DEVICES:
         'types': [
             'zigbee',
             'thermostat',
-            'thermostat_preset',  # Has "preset" option
             'temperature',
             'position',
             'activity',
             # 'battery_low', # For using akkus - invalid battery level reporting
         ],
+        'thermostat_control_mode': "preset",  # Has "preset" option
         'device_name': 'TuYa Radiator valve with thermostat (TS0601_thermostat)',
         'device_url': 'https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html',
     }
@@ -387,13 +387,13 @@ class DEVICES:
         'types': [
             'zigbee',
             'thermostat',
-            'thermostat_preset', # Has "preset" option
             'temperature',
             'activity',
             'voltage',
             'battery_voltage',
         ],
         'batt_type': '1xAA', # Device reports value seems to be 'per element' (it has 2xAA)
+        'thermostat_control_mode': "preset",  # Has "preset" option
         'device_name': 'Silvercrest radiator valve with thermostat',
         'device_url': 'https://www.zigbee2mqtt.io/devices/368308_2010.html',
     }
@@ -403,11 +403,11 @@ class DEVICES:
             'thermostat',
             'temperature',
             'activity',
-            'voltage',
-            'battery_voltage',
+            'battery',
         ],
         # Device reports value seems to be 'per element' (it has 2xAA)
         'batt_type': '1xAA',
+        'thermostat_control_mode': "",  # Device does not react on mode change
         'device_name': 'Siterwell GS361A-H04 valve with thermostat',
         'device_url': 'https://www.zigbee2mqtt.io/devices/GS361A-H04.html',
     }

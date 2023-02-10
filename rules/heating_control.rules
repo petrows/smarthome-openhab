@@ -106,7 +106,7 @@ end
 
 rule "Heating DAY"
 when
-	Time cron "0 00 7 ? * *"
+	Time cron "0 00 10 ? * *"
 then
 	logWarn("heating", "Set DAY")
 

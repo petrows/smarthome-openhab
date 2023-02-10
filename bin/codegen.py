@@ -779,7 +779,7 @@ items = [
         'name': "SZ heating",
         'id': "sz_heating",
         'zigbee_id': '0x003c84fffef0180e',
-        'type': DEVICES.TUYA_THERMOSTAT_VALVE,
+        'type': DEVICES.SITERWELL_THERMOSTAT_GS361A,
         'groups': {
             'thermostat': ['g_hz_all', 'g_hz_auto', 'g_hz_sz'],
             'position': ['g_hz_valve'],
@@ -1073,9 +1073,15 @@ if __name__ == "__main__":
             # Device has Thermostat control
             if np.in1d(['thermostat'], item['type']['types']).any():
                 js_cmd_type = 'z2m-command-thermostat-setpoint'
-                # Thermostat has preset?
-                if np.in1d(['thermostat'], item['type']['types']).any():
-                    js_cmd_type = 'z2m-command-thermostat-setpoint-manual'
+                # How to control mode?
+                if 'thermostat_control_mode' in item['type']:
+                    control_mode = item['type']['thermostat_control_mode']
+                    # Thermostat has preset?
+                    if control_mode == 'preset':
+                        js_cmd_type = 'z2m-command-thermostat-setpoint-manual'
+                    # Thermostat has system_mode only?
+                    if control_mode == 'system_mode':
+                        js_cmd_type = 'z2m-command-thermostat-setpoint-heat'
                 conf_str.append(
                     f"\t\tType number : thermostat ["
                     f"stateTopic=\"{zigbe_mqtt_topic}\""
