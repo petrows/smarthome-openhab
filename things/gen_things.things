@@ -879,7 +879,7 @@ Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Thing mqtt:topic:openhab:fs_heating "FS heating" (mqtt:broker:openhab) {
 	Channels:
-		Type number : thermostat [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/fs_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint.js", unit="°C"]
+		Type number : thermostat [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/fs_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint-manual.js", unit="°C"]
 		Type number : temperature [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JS:z2m-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-batt-low-1xAA.js"]
@@ -892,7 +892,7 @@ Thing mqtt:topic:openhab:fs_heating "FS heating" (mqtt:broker:openhab) {
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Thing mqtt:topic:openhab:ns_heating "NS heating" (mqtt:broker:openhab) {
 	Channels:
-		Type number : thermostat [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/ns_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint.js", unit="°C"]
+		Type number : thermostat [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/ns_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint-manual.js", unit="°C"]
 		Type number : temperature [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="JS:z2m-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-batt-low-1xAA.js"]
@@ -905,7 +905,7 @@ Thing mqtt:topic:openhab:ns_heating "NS heating" (mqtt:broker:openhab) {
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Thing mqtt:topic:openhab:ku_heating "KU heating" (mqtt:broker:openhab) {
 	Channels:
-		Type number : thermostat [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/ku_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint.js", unit="°C"]
+		Type number : thermostat [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/ku_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint-manual.js", unit="°C"]
 		Type number : temperature [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="JS:z2m-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-batt-low-1xAA.js"]
@@ -918,7 +918,7 @@ Thing mqtt:topic:openhab:ku_heating "KU heating" (mqtt:broker:openhab) {
 // TuYa Radiator valve with thermostat (TS0601_thermostat) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html
 Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 	Channels:
-		Type number : thermostat [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/sz_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint.js", unit="°C"]
+		Type number : thermostat [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/sz_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint-manual.js", unit="°C"]
 		Type number : position [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JSONPATH:$.position"]
 		Type number : temperature [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:z2m-activity.js"]
@@ -930,7 +930,7 @@ Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Thing mqtt:topic:openhab:kg_heating "KG heating" (mqtt:broker:openhab) {
 	Channels:
-		Type number : thermostat [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/kg_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint.js", unit="°C"]
+		Type number : thermostat [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JSONPATH:$.current_heating_setpoint", commandTopic="zigbee2mqtt/kg_heating/set", transformationPatternOut="JS:z2m-command-thermostat-setpoint-manual.js", unit="°C"]
 		Type number : temperature [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:z2m-temperature.js",unit="°C"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:z2m-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*battery.*)∩JS:z2m-batt-low-1xAA.js"]

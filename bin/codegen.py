@@ -1072,12 +1072,16 @@ if __name__ == "__main__":
                 )
             # Device has Thermostat control
             if np.in1d(['thermostat'], item['type']['types']).any():
+                js_cmd_type = 'z2m-command-thermostat-setpoint'
+                # Thermostat has preset?
+                if np.in1d(['thermostat'], item['type']['types']).any():
+                    js_cmd_type = 'z2m-command-thermostat-setpoint-manual'
                 conf_str.append(
                     f"\t\tType number : thermostat ["
                     f"stateTopic=\"{zigbe_mqtt_topic}\""
                     f", transformationPattern=\"JSONPATH:$.current_heating_setpoint\""
                     f", commandTopic=\"{zigbe_mqtt_topic}/set\""
-                    f", transformationPatternOut=\"JS:z2m-command-thermostat-setpoint.js\""
+                    f", transformationPatternOut=\"JS:{js_cmd_type}.js\""
                     f", unit=\"°C\""
                     f"]"
                 )

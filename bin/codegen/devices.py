@@ -193,6 +193,7 @@ class DEVICES:
         'types': [
             'zigbee',
             'thermostat',
+            'thermostat_preset',  # Has "preset" option
             'temperature',
             'position',
             'activity',
@@ -386,6 +387,7 @@ class DEVICES:
         'types': [
             'zigbee',
             'thermostat',
+            'thermostat_preset', # Has "preset" option
             'temperature',
             'activity',
             'voltage',
@@ -394,6 +396,20 @@ class DEVICES:
         'batt_type': '1xAA', # Device reports value seems to be 'per element' (it has 2xAA)
         'device_name': 'Silvercrest radiator valve with thermostat',
         'device_url': 'https://www.zigbee2mqtt.io/devices/368308_2010.html',
+    }
+    SITERWELL_THERMOSTAT_GS361A = {
+        'types': [
+            'zigbee',
+            'thermostat',
+            'temperature',
+            'activity',
+            'voltage',
+            'battery_voltage',
+        ],
+        # Device reports value seems to be 'per element' (it has 2xAA)
+        'batt_type': '1xAA',
+        'device_name': 'Siterwell GS361A-H04 valve with thermostat',
+        'device_url': 'https://www.zigbee2mqtt.io/devices/GS361A-H04.html',
     }
 
     # DIY devices by author
