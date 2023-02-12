@@ -16,7 +16,6 @@ Text item=sturbar_test_dim
 Text item=sturbar_test_lowbatt
 Text item=sturbar_test_ota
 Text item=sturbar_test_link
-Text item=sturbar_test_battery
 }
 Frame label="Outside Climate (0x00158d0001c2cc22)" {
 // Outside Climate (0x00158d0001c2cc22)
@@ -26,8 +25,6 @@ Text item=ext_climate_ota
 Text item=ext_climate_link
 Text item=ext_climate_temperature
 Text item=ext_climate_humidity
-Text item=ext_climate_battery
-Text item=ext_climate_voltage
 }
 Frame label="Balkon light 1 (0x14b457fffe399241)" {
 // Balkon light 1 (0x14b457fffe399241)
@@ -44,7 +41,6 @@ Frame label="Garten wasser remote (0xccccccfffe58f1c3)" {
 Text item=garten_wasser_remote_lowbatt
 Text item=garten_wasser_remote_ota
 Text item=garten_wasser_remote_link
-Text item=garten_wasser_remote_battery
 }
 Frame label="Mirror remote (0x680ae2fffeab6b80)" {
 // Mirror remote (0x680ae2fffeab6b80)
@@ -52,7 +48,6 @@ Frame label="Mirror remote (0x680ae2fffeab6b80)" {
 Text item=mirror_remote_lowbatt
 Text item=mirror_remote_ota
 Text item=mirror_remote_link
-Text item=mirror_remote_battery
 }
 Frame label="Leave switch (0x680ae2fffe16e111)" {
 // Leave switch (0x680ae2fffe16e111)
@@ -60,7 +55,6 @@ Frame label="Leave switch (0x680ae2fffe16e111)" {
 Text item=eg_leave_switch_lowbatt
 Text item=eg_leave_switch_ota
 Text item=eg_leave_switch_link
-Text item=eg_leave_switch_battery
 }
 Frame label="EG Router (0x00124b000b4ed5cc)" {
 // EG Router (0x00124b000b4ed5cc)
@@ -83,8 +77,6 @@ Text item=eg_main_door_lowbatt
 Text item=eg_main_door_ota
 Text item=eg_main_door_link
 Text item=eg_main_door_contact
-Text item=eg_main_door_battery
-Text item=eg_main_door_voltage
 }
 Frame label="BZ Light (toilet) (0xcc86ecfffea0c7cb)" {
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
@@ -111,7 +103,7 @@ Switch item=bz_light_2_sw
 Frame label="BZ Mirror (bz_mirror)" {
 // BZ Mirror (bz_mirror)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch item=bz_mirror_sw
+Switch item=bz_mirror
 Text item=bz_mirror_rssi
 Text item=bz_mirror_bssid
 }
@@ -121,7 +113,6 @@ Frame label="BZ Mirror switch (0xccccccfffef0356e)" {
 Text item=bz_mirror_switch_lowbatt
 Text item=bz_mirror_switch_ota
 Text item=bz_mirror_switch_link
-Text item=bz_mirror_switch_battery
 }
 Frame label="BZ Light Control (0x003c84fffe132b20)" {
 // BZ Light Control (0x003c84fffe132b20)
@@ -130,7 +121,6 @@ Text item=bz_light_switch_dim
 Text item=bz_light_switch_lowbatt
 Text item=bz_light_switch_ota
 Text item=bz_light_switch_link
-Text item=bz_light_switch_battery
 }
 Frame label="NS Climate (0x00158d0001b95e08)" {
 // NS Climate (0x00158d0001b95e08)
@@ -141,8 +131,6 @@ Text item=ns_climate_link
 Text item=ns_climate_temperature
 Text item=ns_climate_humidity
 Text item=ns_climate_pressure
-Text item=ns_climate_battery
-Text item=ns_climate_voltage
 }
 Frame label="NS Boost power (0x7cb03eaa0a0a1103)" {
 // NS Boost power (0x7cb03eaa0a0a1103)
@@ -173,8 +161,6 @@ Text item=ns_window_2_lowbatt
 Text item=ns_window_2_ota
 Text item=ns_window_2_link
 Text item=ns_window_2_contact
-Text item=ns_window_2_battery
-Text item=ns_window_2_voltage
 }
 Frame label="FS Climate (0x00158d0001c15121)" {
 // FS Climate (0x00158d0001c15121)
@@ -184,8 +170,6 @@ Text item=fs_climate_ota
 Text item=fs_climate_link
 Text item=fs_climate_temperature
 Text item=fs_climate_humidity
-Text item=fs_climate_battery
-Text item=fs_climate_voltage
 }
 Frame label="Marina Desktop light (0xec1bbdfffe1b89d1)" {
 // Marina Desktop light (0xec1bbdfffe1b89d1)
@@ -202,7 +186,6 @@ Frame label="Marina Desktop remote (0xccccccfffeea9703)" {
 Text item=desktop_marina_remote_lowbatt
 Text item=desktop_marina_remote_ota
 Text item=desktop_marina_remote_link
-Text item=desktop_marina_remote_battery
 }
 Frame label="SZ Climate (0x847127fffec6acc3)" {
 // SZ Climate (0x847127fffec6acc3)
@@ -212,8 +195,6 @@ Text item=sz_climate_ota
 Text item=sz_climate_link
 Text item=sz_climate_temperature
 Text item=sz_climate_humidity
-Text item=sz_climate_battery
-Text item=sz_climate_voltage
 }
 Frame label="Bedroom remote (0x14b457fffe7e2305)" {
 // Bedroom remote (0x14b457fffe7e2305)
@@ -221,7 +202,6 @@ Frame label="Bedroom remote (0x14b457fffe7e2305)" {
 Text item=sz_remote_bed_lowbatt
 Text item=sz_remote_bed_ota
 Text item=sz_remote_bed_link
-Text item=sz_remote_bed_battery
 }
 Frame label="Bedroom curtains remote (0x8cf681fffe36d14e)" {
 // Bedroom curtains remote (0x8cf681fffe36d14e)
@@ -229,7 +209,6 @@ Frame label="Bedroom curtains remote (0x8cf681fffe36d14e)" {
 Text item=sz_curtain_remote_lowbatt
 Text item=sz_curtain_remote_ota
 Text item=sz_curtain_remote_link
-Text item=sz_curtain_remote_battery
 }
 Frame label="Bedroom main remote (0x003c84fffe16f988)" {
 // Bedroom main remote (0x003c84fffe16f988)
@@ -238,7 +217,6 @@ Text item=sz_remote_main_dim
 Text item=sz_remote_main_lowbatt
 Text item=sz_remote_main_ota
 Text item=sz_remote_main_link
-Text item=sz_remote_main_battery
 }
 Frame label="SZ Main (0x588e81fffefe9a05)" {
 // SZ Main (0x588e81fffefe9a05)
@@ -296,8 +274,6 @@ Text item=sz_window_1_lowbatt
 Text item=sz_window_1_ota
 Text item=sz_window_1_link
 Text item=sz_window_1_contact
-Text item=sz_window_1_battery
-Text item=sz_window_1_voltage
 }
 Frame label="SZ Window Door (0xa4c138fbdde6b200)" {
 // SZ Window Door (0xa4c138fbdde6b200)
@@ -306,8 +282,6 @@ Text item=sz_window_door_lowbatt
 Text item=sz_window_door_ota
 Text item=sz_window_door_link
 Text item=sz_window_door_contact
-Text item=sz_window_door_battery
-Text item=sz_window_door_voltage
 }
 Frame label="SZ CO2 (sz_co2)" {
 // SZ CO2 (sz_co2)
@@ -325,8 +299,6 @@ Text item=ku_climate_link
 Text item=ku_climate_temperature
 Text item=ku_climate_humidity
 Text item=ku_climate_pressure
-Text item=ku_climate_battery
-Text item=ku_climate_voltage
 }
 Frame label="KU Light Button (Spüle) (0x00158d0001be5b2d)" {
 // KU Light Button (Spüle) (0x00158d0001be5b2d)
@@ -334,8 +306,6 @@ Frame label="KU Light Button (Spüle) (0x00158d0001be5b2d)" {
 Text item=ku_light_switch_spule_lowbatt
 Text item=ku_light_switch_spule_ota
 Text item=ku_light_switch_spule_link
-Text item=ku_light_switch_spule_battery
-Text item=ku_light_switch_spule_voltage
 }
 Frame label="KU Light Button (Kochfield) (0x680ae2fffeaf18d4)" {
 // KU Light Button (Kochfield) (0x680ae2fffeaf18d4)
@@ -343,7 +313,6 @@ Frame label="KU Light Button (Kochfield) (0x680ae2fffeaf18d4)" {
 Text item=ku_light_switch_kochfeld_lowbatt
 Text item=ku_light_switch_kochfeld_ota
 Text item=ku_light_switch_kochfeld_link
-Text item=ku_light_switch_kochfeld_battery
 }
 Frame label="KU Light Arbeit (0xec1bbdfffea37757)" {
 // KU Light Arbeit (0xec1bbdfffea37757)
@@ -359,7 +328,6 @@ Text item=ku_light_table_switch_dim
 Text item=ku_light_table_switch_lowbatt
 Text item=ku_light_table_switch_ota
 Text item=ku_light_table_switch_link
-Text item=ku_light_table_switch_battery
 }
 Frame label="KU Light Table (0xec1bbdfffe4695b5)" {
 // KU Light Table (0xec1bbdfffe4695b5)
@@ -384,8 +352,6 @@ Text item=ku_window_door_lowbatt
 Text item=ku_window_door_ota
 Text item=ku_window_door_link
 Text item=ku_window_door_contact
-Text item=ku_window_door_battery
-Text item=ku_window_door_voltage
 }
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 // Treppe Door sensor (0xccccccfffed82b91)
@@ -394,8 +360,6 @@ Text item=treppe_door_sensor_lowbatt
 Text item=treppe_door_sensor_ota
 Text item=treppe_door_sensor_link
 Text item=treppe_door_sensor_contact
-Text item=treppe_door_sensor_battery
-Text item=treppe_door_sensor_voltage
 }
 Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
 // Treppe Up switch (0x680ae2fffe1a92f3)
@@ -403,7 +367,6 @@ Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
 Text item=treppe_up_switch_lowbatt
 Text item=treppe_up_switch_ota
 Text item=treppe_up_switch_link
-Text item=treppe_up_switch_battery
 }
 Frame label="Treppe Down switch (0x04cd15fffe75c518)" {
 // Treppe Down switch (0x04cd15fffe75c518)
@@ -412,7 +375,6 @@ Text item=treppe_down_switch_dim
 Text item=treppe_down_switch_lowbatt
 Text item=treppe_down_switch_ota
 Text item=treppe_down_switch_link
-Text item=treppe_down_switch_battery
 }
 Frame label="Treppe Up light (0xd0cf5efffee892b0)" {
 // Treppe Up light (0xd0cf5efffee892b0)
@@ -441,7 +403,6 @@ Text item=treppe_motion_lowbatt
 Text item=treppe_motion_ota
 Text item=treppe_motion_link
 Text item=treppe_motion_occupancy
-Text item=treppe_motion_battery
 }
 Frame label="Treppe climate (0xa4c1383cc92cbbd2)" {
 // Treppe climate (0xa4c1383cc92cbbd2)
@@ -451,8 +412,6 @@ Text item=treppe_climate_ota
 Text item=treppe_climate_link
 Text item=treppe_climate_temperature
 Text item=treppe_climate_humidity
-Text item=treppe_climate_battery
-Text item=treppe_climate_voltage
 }
 Frame label="KG Window 1 (0xccccccfffed82ba3)" {
 // KG Window 1 (0xccccccfffed82ba3)
@@ -461,8 +420,6 @@ Text item=kg_window_1_lowbatt
 Text item=kg_window_1_ota
 Text item=kg_window_1_link
 Text item=kg_window_1_contact
-Text item=kg_window_1_battery
-Text item=kg_window_1_voltage
 }
 Frame label="KG Window 2 (0xa4c1381a072fcf8b)" {
 // KG Window 2 (0xa4c1381a072fcf8b)
@@ -471,8 +428,6 @@ Text item=kg_window_2_lowbatt
 Text item=kg_window_2_ota
 Text item=kg_window_2_link
 Text item=kg_window_2_contact
-Text item=kg_window_2_battery
-Text item=kg_window_2_voltage
 }
 Frame label="KG Cabinet door (0xa4c138312d2c455f)" {
 // KG Cabinet door (0xa4c138312d2c455f)
@@ -481,8 +436,6 @@ Text item=kg_cabinet_door_lowbatt
 Text item=kg_cabinet_door_ota
 Text item=kg_cabinet_door_link
 Text item=kg_cabinet_door_contact
-Text item=kg_cabinet_door_battery
-Text item=kg_cabinet_door_voltage
 }
 Frame label="KG Climate (0x00158d0001b95e02)" {
 // KG Climate (0x00158d0001b95e02)
@@ -493,8 +446,6 @@ Text item=kg_climate_link
 Text item=kg_climate_temperature
 Text item=kg_climate_humidity
 Text item=kg_climate_pressure
-Text item=kg_climate_battery
-Text item=kg_climate_voltage
 }
 Frame label="Petro Desktop up light 1 (0x04cd15fffe35f24e)" {
 // Petro Desktop up light 1 (0x04cd15fffe35f24e)
@@ -545,33 +496,32 @@ Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {
 Text item=desktop_petro_remote_lowbatt
 Text item=desktop_petro_remote_ota
 Text item=desktop_petro_remote_link
-Text item=desktop_petro_remote_battery
 }
 Frame label="KG Hobbyraum (Flür) (kg_main1_light)" {
 // KG Hobbyraum (Flür) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
-Switch item=kg_main1_light_sw
+Switch item=kg_main1_light
 Text item=kg_main1_light_rssi
 Text item=kg_main1_light_bssid
 }
 Frame label="KG Hobbyraum (Haupt) (kg_main2_light)" {
 // KG Hobbyraum (Haupt) (kg_main2_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
-Switch item=kg_main2_light_sw
+Switch item=kg_main2_light
 Text item=kg_main2_light_rssi
 Text item=kg_main2_light_bssid
 }
 Frame label="KG Heuzung (Haupt) (kg_hz_main_light)" {
 // KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch item=kg_hz_main_light_sw
+Switch item=kg_hz_main_light
 Text item=kg_hz_main_light_rssi
 Text item=kg_hz_main_light_bssid
 }
 Frame label="Garden water (garten_wasser_sw)" {
 // Garden water (garten_wasser_sw)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch item=garten_wasser_sw_sw
+Switch item=garten_wasser_sw
 Text item=garten_wasser_sw_rssi
 Text item=garten_wasser_sw_bssid
 }
@@ -582,13 +532,11 @@ Text item=garten_wasser_leak_lowbatt
 Text item=garten_wasser_leak_ota
 Text item=garten_wasser_leak_link
 Text item=garten_wasser_leak_leak
-Text item=garten_wasser_leak_battery
-Text item=garten_wasser_leak_voltage
 }
 Frame label="KG Lager 1 (Haupt) (kg_lager1_main_light)" {
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch item=kg_lager1_main_light_sw
+Switch item=kg_lager1_main_light
 Text item=kg_lager1_main_light_rssi
 Text item=kg_lager1_main_light_bssid
 }
@@ -601,8 +549,6 @@ Text item=kg_lager3_climate_link
 Text item=kg_lager3_climate_temperature
 Text item=kg_lager3_climate_humidity
 Text item=kg_lager3_climate_pressure
-Text item=kg_lager3_climate_battery
-Text item=kg_lager3_climate_voltage
 }
 Frame label="KG Lager 3 motion (0x04cd15fffe873cb7)" {
 // KG Lager 3 motion (0x04cd15fffe873cb7)
@@ -611,19 +557,18 @@ Text item=kg_lager3_motion_lowbatt
 Text item=kg_lager3_motion_ota
 Text item=kg_lager3_motion_link
 Text item=kg_lager3_motion_occupancy
-Text item=kg_lager3_motion_battery
 }
 Frame label="KG Lager 3 (Haupt) (kg_lager3_main_light)" {
 // KG Lager 3 (Haupt) (kg_lager3_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch item=kg_lager3_main_light_sw
+Switch item=kg_lager3_main_light
 Text item=kg_lager3_main_light_rssi
 Text item=kg_lager3_main_light_bssid
 }
 Frame label="KG Lager 4 (Haupt) (kg_lager4_main_light)" {
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch item=kg_lager4_main_light_sw
+Switch item=kg_lager4_main_light
 Text item=kg_lager4_main_light_rssi
 Text item=kg_lager4_main_light_bssid
 }
@@ -649,7 +594,6 @@ Frame label="KG Lager switch (0xccccccfffee401f8)" {
 Text item=kg_lager4_switch_lowbatt
 Text item=kg_lager4_switch_ota
 Text item=kg_lager4_switch_link
-Text item=kg_lager4_switch_battery
 }
 Frame label="KG Lager motion (0xbc33acfffe84ca1e)" {
 // KG Lager motion (0xbc33acfffe84ca1e)
@@ -658,7 +602,6 @@ Text item=kg_lager4_motion_lowbatt
 Text item=kg_lager4_motion_ota
 Text item=kg_lager4_motion_link
 Text item=kg_lager4_motion_occupancy
-Text item=kg_lager4_motion_battery
 }
 Frame label="Warehouse 4 leak (0x00158d000488052c)" {
 // Warehouse 4 leak (0x00158d000488052c)
@@ -667,8 +610,6 @@ Text item=kg_lager4_leak_lowbatt
 Text item=kg_lager4_leak_ota
 Text item=kg_lager4_leak_link
 Text item=kg_lager4_leak_leak
-Text item=kg_lager4_leak_battery
-Text item=kg_lager4_leak_voltage
 }
 Frame label="FS heating (0x9035eafffe712884)" {
 // FS heating (0x9035eafffe712884)
@@ -691,7 +632,7 @@ Text item=ns_heating_lowbatt
 Text item=ns_heating_ota
 Text item=ns_heating_link
 Text item=ns_heating_local_temperature
-Text item=ns_heating_voltage
+Text item=ns_heating_battery_voltage
 }
 Frame label="KU heating (0x0c4314fffe73bf1f)" {
 // KU heating (0x0c4314fffe73bf1f)
@@ -703,7 +644,7 @@ Text item=ku_heating_lowbatt
 Text item=ku_heating_ota
 Text item=ku_heating_link
 Text item=ku_heating_local_temperature
-Text item=ku_heating_voltage
+Text item=ku_heating_battery_voltage
 }
 Frame label="SZ heating (0x0c4314fffe73c43f)" {
 // SZ heating (0x0c4314fffe73c43f)
@@ -715,7 +656,7 @@ Text item=sz_heating_lowbatt
 Text item=sz_heating_ota
 Text item=sz_heating_link
 Text item=sz_heating_local_temperature
-Text item=sz_heating_voltage
+Text item=sz_heating_battery_voltage
 }
 Frame label="KG heating (0x0c4314fffe5c6913)" {
 // KG heating (0x0c4314fffe5c6913)
@@ -727,7 +668,7 @@ Text item=kg_heating_lowbatt
 Text item=kg_heating_ota
 Text item=kg_heating_link
 Text item=kg_heating_local_temperature
-Text item=kg_heating_voltage
+Text item=kg_heating_battery_voltage
 }
 Frame label="FS Christmas light (0x7cb03eaa0a093a8b)" {
 // FS Christmas light (0x7cb03eaa0a093a8b)
