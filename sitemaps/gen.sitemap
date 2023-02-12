@@ -10,474 +10,744 @@
 sitemap gen label="GEN ITEMS"
 {
 Frame label="Sturbar test (0x04cd15fffe6d57dc)" {
+// Sturbar test (0x04cd15fffe6d57dc)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Text item=sturbar_test_dim
-Text item=sturbar_test_link icon="linkz"
-Text item=sturbar_test_ota icon="fire"
+Text item=sturbar_test_lowbatt
+Text item=sturbar_test_ota
+Text item=sturbar_test_link
+Text item=sturbar_test_battery
 }
 Frame label="Outside Climate (0x00158d0001c2cc22)" {
+// Outside Climate (0x00158d0001c2cc22)
+// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Text item=ext_climate_lowbatt
+Text item=ext_climate_ota
+Text item=ext_climate_link
 Text item=ext_climate_temperature
 Text item=ext_climate_humidity
-Text item=ext_climate_link icon="linkz"
-Text item=ext_climate_ota icon="fire"
+Text item=ext_climate_battery
+Text item=ext_climate_voltage
 }
 Frame label="Balkon light 1 (0x14b457fffe399241)" {
-Switch item=balkon_light_1_sw
+// Balkon light 1 (0x14b457fffe399241)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Slider item=balkon_light_1_dim
 Slider item=balkon_light_1_ct
-Text item=balkon_light_1_link icon="linkz"
-Text item=balkon_light_1_ota icon="fire"
+Text item=balkon_light_1_ota
+Text item=balkon_light_1_link
+Switch item=balkon_light_1_sw
 }
 Frame label="Garten wasser remote (0xccccccfffe58f1c3)" {
-Text item=garten_wasser_remote_link icon="linkz"
-Text item=garten_wasser_remote_ota icon="fire"
+// Garten wasser remote (0xccccccfffe58f1c3)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=garten_wasser_remote_lowbatt
+Text item=garten_wasser_remote_ota
+Text item=garten_wasser_remote_link
+Text item=garten_wasser_remote_battery
 }
 Frame label="Mirror remote (0x680ae2fffeab6b80)" {
-Text item=mirror_remote_link icon="linkz"
-Text item=mirror_remote_ota icon="fire"
+// Mirror remote (0x680ae2fffeab6b80)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Text item=mirror_remote_lowbatt
+Text item=mirror_remote_ota
+Text item=mirror_remote_link
+Text item=mirror_remote_battery
 }
 Frame label="Leave switch (0x680ae2fffe16e111)" {
-Text item=eg_leave_switch_link icon="linkz"
-Text item=eg_leave_switch_ota icon="fire"
+// Leave switch (0x680ae2fffe16e111)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=eg_leave_switch_lowbatt
+Text item=eg_leave_switch_ota
+Text item=eg_leave_switch_link
+Text item=eg_leave_switch_battery
 }
 Frame label="EG Router (0x00124b000b4ed5cc)" {
-Text item=eg_router_link icon="linkz"
-Text item=eg_router_ota icon="fire"
+// EG Router (0x00124b000b4ed5cc)
+// CC2530.ROUTER - Custom devices (DiY) / https://www.zigbee2mqtt.io/devices/CC2530.ROUTER.html
+Text item=eg_router_ota
+Text item=eg_router_link
 }
 Frame label="EG Decor light (0x9035eafffe20e847)" {
-Switch item=eg_decoration_light_sw
+// EG Decor light (0x9035eafffe20e847)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Slider item=eg_decoration_light_dim
-Text item=eg_decoration_light_link icon="linkz"
-Text item=eg_decoration_light_ota icon="fire"
+Text item=eg_decoration_light_ota
+Text item=eg_decoration_light_link
+Switch item=eg_decoration_light_sw
 }
 Frame label="Entrance Door sensor (0xa4c138182f60d651)" {
+// Entrance Door sensor (0xa4c138182f60d651)
+// TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
+Text item=eg_main_door_lowbatt
+Text item=eg_main_door_ota
+Text item=eg_main_door_link
 Text item=eg_main_door_contact
-Text item=eg_main_door_link icon="linkz"
-Text item=eg_main_door_ota icon="fire"
+Text item=eg_main_door_battery
+Text item=eg_main_door_voltage
 }
 Frame label="BZ Light (toilet) (0xcc86ecfffea0c7cb)" {
-Switch item=bz_light_1_sw
+// BZ Light (toilet) (0xcc86ecfffea0c7cb)
+// Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Slider item=bz_light_1_dim
 Slider item=bz_light_1_ct
 Colorpicker item=bz_light_1_color
 Text item=bz_light_1_color_mode
-Text item=bz_light_1_link icon="linkz"
-Text item=bz_light_1_ota icon="fire"
+Text item=bz_light_1_ota
+Text item=bz_light_1_link
+Switch item=bz_light_1_sw
 }
 Frame label="BZ Light (shower) (0x04cd15fffedb319f)" {
-Switch item=bz_light_2_sw
+// BZ Light (shower) (0x04cd15fffedb319f)
+// Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Slider item=bz_light_2_dim
 Slider item=bz_light_2_ct
 Colorpicker item=bz_light_2_color
 Text item=bz_light_2_color_mode
-Text item=bz_light_2_link icon="linkz"
-Text item=bz_light_2_ota icon="fire"
+Text item=bz_light_2_ota
+Text item=bz_light_2_link
+Switch item=bz_light_2_sw
 }
 Frame label="BZ Mirror (bz_mirror)" {
-Switch item=bz_mirror
+// BZ Mirror (bz_mirror)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch item=bz_mirror_sw
 Text item=bz_mirror_rssi
 Text item=bz_mirror_bssid
-Text item=bz_mirror_la
 }
 Frame label="BZ Mirror switch (0xccccccfffef0356e)" {
-Text item=bz_mirror_switch_link icon="linkz"
-Text item=bz_mirror_switch_ota icon="fire"
+// BZ Mirror switch (0xccccccfffef0356e)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=bz_mirror_switch_lowbatt
+Text item=bz_mirror_switch_ota
+Text item=bz_mirror_switch_link
+Text item=bz_mirror_switch_battery
 }
 Frame label="BZ Light Control (0x003c84fffe132b20)" {
+// BZ Light Control (0x003c84fffe132b20)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Text item=bz_light_switch_dim
-Text item=bz_light_switch_link icon="linkz"
-Text item=bz_light_switch_ota icon="fire"
+Text item=bz_light_switch_lowbatt
+Text item=bz_light_switch_ota
+Text item=bz_light_switch_link
+Text item=bz_light_switch_battery
 }
 Frame label="NS Climate (0x00158d0001b95e08)" {
+// NS Climate (0x00158d0001b95e08)
+// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+Text item=ns_climate_lowbatt
+Text item=ns_climate_ota
+Text item=ns_climate_link
 Text item=ns_climate_temperature
 Text item=ns_climate_humidity
 Text item=ns_climate_pressure
-Text item=ns_climate_link icon="linkz"
-Text item=ns_climate_ota icon="fire"
+Text item=ns_climate_battery
+Text item=ns_climate_voltage
 }
 Frame label="NS Boost power (0x7cb03eaa0a0a1103)" {
+// NS Boost power (0x7cb03eaa0a0a1103)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Text item=ns_heating_boost_power_ota
+Text item=ns_heating_boost_power_link
 Switch item=ns_heating_boost_power_sw
-Text item=ns_heating_boost_power_link icon="linkz"
-Text item=ns_heating_boost_power_ota icon="fire"
 }
 Frame label="NS Night lamp (0xec1bbdfffe9abfde)" {
-Switch item=ns_night_lamp_sw
+// NS Night lamp (0xec1bbdfffe9abfde)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Slider item=ns_night_lamp_dim
-Text item=ns_night_lamp_link icon="linkz"
-Text item=ns_night_lamp_ota icon="fire"
+Text item=ns_night_lamp_ota
+Text item=ns_night_lamp_link
+Switch item=ns_night_lamp_sw
 }
 Frame label="NS Projector (0x7cb03eaa0a094d1d)" {
+// NS Projector (0x7cb03eaa0a094d1d)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Text item=ns_projector_power_ota
+Text item=ns_projector_power_link
 Switch item=ns_projector_power_sw
-Text item=ns_projector_power_link icon="linkz"
-Text item=ns_projector_power_ota icon="fire"
 }
 Frame label="NS Window 2 (0xa4c138f1bf27592c)" {
+// NS Window 2 (0xa4c138f1bf27592c)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=ns_window_2_lowbatt
+Text item=ns_window_2_ota
+Text item=ns_window_2_link
 Text item=ns_window_2_contact
-Text item=ns_window_2_link icon="linkz"
-Text item=ns_window_2_ota icon="fire"
+Text item=ns_window_2_battery
+Text item=ns_window_2_voltage
 }
 Frame label="FS Climate (0x00158d0001c15121)" {
+// FS Climate (0x00158d0001c15121)
+// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Text item=fs_climate_lowbatt
+Text item=fs_climate_ota
+Text item=fs_climate_link
 Text item=fs_climate_temperature
 Text item=fs_climate_humidity
-Text item=fs_climate_link icon="linkz"
-Text item=fs_climate_ota icon="fire"
+Text item=fs_climate_battery
+Text item=fs_climate_voltage
 }
 Frame label="Marina Desktop light (0xec1bbdfffe1b89d1)" {
-Switch item=desktop_marina_light_sw
+// Marina Desktop light (0xec1bbdfffe1b89d1)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Slider item=desktop_marina_light_dim
 Slider item=desktop_marina_light_ct
-Text item=desktop_marina_light_link icon="linkz"
-Text item=desktop_marina_light_ota icon="fire"
+Text item=desktop_marina_light_ota
+Text item=desktop_marina_light_link
+Switch item=desktop_marina_light_sw
 }
 Frame label="Marina Desktop remote (0xccccccfffeea9703)" {
-Text item=desktop_marina_remote_link icon="linkz"
-Text item=desktop_marina_remote_ota icon="fire"
+// Marina Desktop remote (0xccccccfffeea9703)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Text item=desktop_marina_remote_lowbatt
+Text item=desktop_marina_remote_ota
+Text item=desktop_marina_remote_link
+Text item=desktop_marina_remote_battery
 }
 Frame label="SZ Climate (0x847127fffec6acc3)" {
+// SZ Climate (0x847127fffec6acc3)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
+Text item=sz_climate_lowbatt
+Text item=sz_climate_ota
+Text item=sz_climate_link
 Text item=sz_climate_temperature
 Text item=sz_climate_humidity
-Text item=sz_climate_link icon="linkz"
-Text item=sz_climate_ota icon="fire"
+Text item=sz_climate_battery
+Text item=sz_climate_voltage
 }
 Frame label="Bedroom remote (0x14b457fffe7e2305)" {
-Text item=sz_remote_bed_link icon="linkz"
-Text item=sz_remote_bed_ota icon="fire"
+// Bedroom remote (0x14b457fffe7e2305)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Text item=sz_remote_bed_lowbatt
+Text item=sz_remote_bed_ota
+Text item=sz_remote_bed_link
+Text item=sz_remote_bed_battery
 }
 Frame label="Bedroom curtains remote (0x8cf681fffe36d14e)" {
-Text item=sz_curtain_remote_link icon="linkz"
-Text item=sz_curtain_remote_ota icon="fire"
+// Bedroom curtains remote (0x8cf681fffe36d14e)
+// IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
+Text item=sz_curtain_remote_lowbatt
+Text item=sz_curtain_remote_ota
+Text item=sz_curtain_remote_link
+Text item=sz_curtain_remote_battery
 }
 Frame label="Bedroom main remote (0x003c84fffe16f988)" {
+// Bedroom main remote (0x003c84fffe16f988)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Text item=sz_remote_main_dim
-Text item=sz_remote_main_link icon="linkz"
-Text item=sz_remote_main_ota icon="fire"
+Text item=sz_remote_main_lowbatt
+Text item=sz_remote_main_ota
+Text item=sz_remote_main_link
+Text item=sz_remote_main_battery
 }
 Frame label="SZ Main (0x588e81fffefe9a05)" {
-Switch item=sz_main_light_sw
+// SZ Main (0x588e81fffefe9a05)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Slider item=sz_main_light_dim
 Slider item=sz_main_light_ct
-Text item=sz_main_light_link icon="linkz"
-Text item=sz_main_light_ota icon="fire"
+Text item=sz_main_light_ota
+Text item=sz_main_light_link
+Switch item=sz_main_light_sw
 }
 Frame label="SZ Bed 1 (0x04cd15fffe7a35b5)" {
-Switch item=sz_bed_light_1_sw
+// SZ Bed 1 (0x04cd15fffe7a35b5)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Slider item=sz_bed_light_1_dim
-Text item=sz_bed_light_1_link icon="linkz"
-Text item=sz_bed_light_1_ota icon="fire"
+Text item=sz_bed_light_1_ota
+Text item=sz_bed_light_1_link
+Switch item=sz_bed_light_1_sw
 }
 Frame label="SZ Bed 2 (0x9035eafffe1b9fcc)" {
-Switch item=sz_bed_light_2_sw
+// SZ Bed 2 (0x9035eafffe1b9fcc)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Slider item=sz_bed_light_2_dim
-Text item=sz_bed_light_2_link icon="linkz"
-Text item=sz_bed_light_2_ota icon="fire"
+Text item=sz_bed_light_2_ota
+Text item=sz_bed_light_2_link
+Switch item=sz_bed_light_2_sw
 }
 Frame label="SZ Decor lamp 1 (0xec1bbdfffe972819)" {
-Switch item=sz_declamp_1_sw
+// SZ Decor lamp 1 (0xec1bbdfffe972819)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Slider item=sz_declamp_1_dim
-Text item=sz_declamp_1_link icon="linkz"
-Text item=sz_declamp_1_ota icon="fire"
+Text item=sz_declamp_1_ota
+Text item=sz_declamp_1_link
+Switch item=sz_declamp_1_sw
 }
 Frame label="SZ Decor lamp 2 (0xec1bbdfffe972203)" {
-Switch item=sz_declamp_2_sw
+// SZ Decor lamp 2 (0xec1bbdfffe972203)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Slider item=sz_declamp_2_dim
-Text item=sz_declamp_2_link icon="linkz"
-Text item=sz_declamp_2_ota icon="fire"
+Text item=sz_declamp_2_ota
+Text item=sz_declamp_2_link
+Switch item=sz_declamp_2_sw
 }
 Frame label="SZ Decor lamp 3 (0xec1bbdfffe91007b)" {
-Switch item=sz_declamp_3_sw
+// SZ Decor lamp 3 (0xec1bbdfffe91007b)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Slider item=sz_declamp_3_dim
-Text item=sz_declamp_3_link icon="linkz"
-Text item=sz_declamp_3_ota icon="fire"
+Text item=sz_declamp_3_ota
+Text item=sz_declamp_3_link
+Switch item=sz_declamp_3_sw
 }
 Frame label="SZ Window 1 (0xa4c13804963f4ccf)" {
+// SZ Window 1 (0xa4c13804963f4ccf)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=sz_window_1_lowbatt
+Text item=sz_window_1_ota
+Text item=sz_window_1_link
 Text item=sz_window_1_contact
-Text item=sz_window_1_link icon="linkz"
-Text item=sz_window_1_ota icon="fire"
+Text item=sz_window_1_battery
+Text item=sz_window_1_voltage
 }
 Frame label="SZ Window Door (0xa4c138fbdde6b200)" {
+// SZ Window Door (0xa4c138fbdde6b200)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=sz_window_door_lowbatt
+Text item=sz_window_door_ota
+Text item=sz_window_door_link
 Text item=sz_window_door_contact
-Text item=sz_window_door_link icon="linkz"
-Text item=sz_window_door_ota icon="fire"
+Text item=sz_window_door_battery
+Text item=sz_window_door_voltage
 }
 Frame label="SZ CO2 (sz_co2)" {
-Text item=sz_co2
-Text item=sz_co2_led
+// SZ CO2 (sz_co2)
+// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
 Text item=sz_co2_rssi
 Text item=sz_co2_bssid
+Text item=sz_co2_co2
 }
 Frame label="KU Climate (0x00158d0001b95fc4)" {
+// KU Climate (0x00158d0001b95fc4)
+// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+Text item=ku_climate_lowbatt
+Text item=ku_climate_ota
+Text item=ku_climate_link
 Text item=ku_climate_temperature
 Text item=ku_climate_humidity
 Text item=ku_climate_pressure
-Text item=ku_climate_link icon="linkz"
-Text item=ku_climate_ota icon="fire"
+Text item=ku_climate_battery
+Text item=ku_climate_voltage
 }
 Frame label="KU Light Button (Spüle) (0x00158d0001be5b2d)" {
-Text item=ku_light_switch_spule_link icon="linkz"
-Text item=ku_light_switch_spule_ota icon="fire"
+// KU Light Button (Spüle) (0x00158d0001be5b2d)
+// Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
+Text item=ku_light_switch_spule_lowbatt
+Text item=ku_light_switch_spule_ota
+Text item=ku_light_switch_spule_link
+Text item=ku_light_switch_spule_battery
+Text item=ku_light_switch_spule_voltage
 }
 Frame label="KU Light Button (Kochfield) (0x680ae2fffeaf18d4)" {
-Text item=ku_light_switch_kochfeld_link icon="linkz"
-Text item=ku_light_switch_kochfeld_ota icon="fire"
+// KU Light Button (Kochfield) (0x680ae2fffeaf18d4)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Text item=ku_light_switch_kochfeld_lowbatt
+Text item=ku_light_switch_kochfeld_ota
+Text item=ku_light_switch_kochfeld_link
+Text item=ku_light_switch_kochfeld_battery
 }
 Frame label="KU Light Arbeit (0xec1bbdfffea37757)" {
+// KU Light Arbeit (0xec1bbdfffea37757)
+// Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html
+Text item=ku_light_arbeitplatte_ota
+Text item=ku_light_arbeitplatte_link
 Switch item=ku_light_arbeitplatte_sw
-Text item=ku_light_arbeitplatte_link icon="linkz"
-Text item=ku_light_arbeitplatte_ota icon="fire"
 }
 Frame label="KU Light Table SW (0x04cd15fffe789098)" {
+// KU Light Table SW (0x04cd15fffe789098)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Text item=ku_light_table_switch_dim
-Text item=ku_light_table_switch_link icon="linkz"
-Text item=ku_light_table_switch_ota icon="fire"
+Text item=ku_light_table_switch_lowbatt
+Text item=ku_light_table_switch_ota
+Text item=ku_light_table_switch_link
+Text item=ku_light_table_switch_battery
 }
 Frame label="KU Light Table (0xec1bbdfffe4695b5)" {
-Switch item=ku_light_table_sw
+// KU Light Table (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Slider item=ku_light_table_dim
-Text item=ku_light_table_link icon="linkz"
-Text item=ku_light_table_ota icon="fire"
+Text item=ku_light_table_ota
+Text item=ku_light_table_link
+Switch item=ku_light_table_sw
 }
 Frame label="KU Light SW (0x842e14fffe1267fb)" {
+// KU Light SW (0x842e14fffe1267fb)
+// TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
+Text item=ku_light_switch_ota
+Text item=ku_light_switch_link
 Switch item=ku_light_switch_haupt_sw
 Switch item=ku_light_switch_arbeit_sw
-Text item=ku_light_switch_link icon="linkz"
-Text item=ku_light_switch_ota icon="fire"
 }
 Frame label="KU Window Door (0xa4c1389dec8b9204)" {
+// KU Window Door (0xa4c1389dec8b9204)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=ku_window_door_lowbatt
+Text item=ku_window_door_ota
+Text item=ku_window_door_link
 Text item=ku_window_door_contact
-Text item=ku_window_door_link icon="linkz"
-Text item=ku_window_door_ota icon="fire"
+Text item=ku_window_door_battery
+Text item=ku_window_door_voltage
 }
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
+// Treppe Door sensor (0xccccccfffed82b91)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=treppe_door_sensor_lowbatt
+Text item=treppe_door_sensor_ota
+Text item=treppe_door_sensor_link
 Text item=treppe_door_sensor_contact
-Text item=treppe_door_sensor_link icon="linkz"
-Text item=treppe_door_sensor_ota icon="fire"
+Text item=treppe_door_sensor_battery
+Text item=treppe_door_sensor_voltage
 }
 Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
-Text item=treppe_up_switch_link icon="linkz"
-Text item=treppe_up_switch_ota icon="fire"
+// Treppe Up switch (0x680ae2fffe1a92f3)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=treppe_up_switch_lowbatt
+Text item=treppe_up_switch_ota
+Text item=treppe_up_switch_link
+Text item=treppe_up_switch_battery
 }
 Frame label="Treppe Down switch (0x04cd15fffe75c518)" {
+// Treppe Down switch (0x04cd15fffe75c518)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Text item=treppe_down_switch_dim
-Text item=treppe_down_switch_link icon="linkz"
-Text item=treppe_down_switch_ota icon="fire"
+Text item=treppe_down_switch_lowbatt
+Text item=treppe_down_switch_ota
+Text item=treppe_down_switch_link
+Text item=treppe_down_switch_battery
 }
 Frame label="Treppe Up light (0xd0cf5efffee892b0)" {
-Switch item=treppe_up_light_sw
+// Treppe Up light (0xd0cf5efffee892b0)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Slider item=treppe_up_light_dim
 Slider item=treppe_up_light_ct
-Text item=treppe_up_light_link icon="linkz"
-Text item=treppe_up_light_ota icon="fire"
+Text item=treppe_up_light_ota
+Text item=treppe_up_light_link
+Switch item=treppe_up_light_sw
 }
 Frame label="Treppe Down light (0x04cd15fffedb31f7)" {
-Switch item=treppe_down_light_sw
+// Treppe Down light (0x04cd15fffedb31f7)
+// Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Slider item=treppe_down_light_dim
 Slider item=treppe_down_light_ct
 Colorpicker item=treppe_down_light_color
 Text item=treppe_down_light_color_mode
-Text item=treppe_down_light_link icon="linkz"
-Text item=treppe_down_light_ota icon="fire"
+Text item=treppe_down_light_ota
+Text item=treppe_down_light_link
+Switch item=treppe_down_light_sw
 }
 Frame label="Treppe motion (0xbc33acfffe872049)" {
+// Treppe motion (0xbc33acfffe872049)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Text item=treppe_motion_lowbatt
+Text item=treppe_motion_ota
+Text item=treppe_motion_link
 Text item=treppe_motion_occupancy
-Text item=treppe_motion_link icon="linkz"
-Text item=treppe_motion_ota icon="fire"
+Text item=treppe_motion_battery
 }
 Frame label="Treppe climate (0xa4c1383cc92cbbd2)" {
+// Treppe climate (0xa4c1383cc92cbbd2)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
+Text item=treppe_climate_lowbatt
+Text item=treppe_climate_ota
+Text item=treppe_climate_link
 Text item=treppe_climate_temperature
 Text item=treppe_climate_humidity
-Text item=treppe_climate_link icon="linkz"
-Text item=treppe_climate_ota icon="fire"
+Text item=treppe_climate_battery
+Text item=treppe_climate_voltage
 }
 Frame label="KG Window 1 (0xccccccfffed82ba3)" {
+// KG Window 1 (0xccccccfffed82ba3)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=kg_window_1_lowbatt
+Text item=kg_window_1_ota
+Text item=kg_window_1_link
 Text item=kg_window_1_contact
-Text item=kg_window_1_link icon="linkz"
-Text item=kg_window_1_ota icon="fire"
+Text item=kg_window_1_battery
+Text item=kg_window_1_voltage
 }
 Frame label="KG Window 2 (0xa4c1381a072fcf8b)" {
+// KG Window 2 (0xa4c1381a072fcf8b)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=kg_window_2_lowbatt
+Text item=kg_window_2_ota
+Text item=kg_window_2_link
 Text item=kg_window_2_contact
-Text item=kg_window_2_link icon="linkz"
-Text item=kg_window_2_ota icon="fire"
+Text item=kg_window_2_battery
+Text item=kg_window_2_voltage
 }
 Frame label="KG Cabinet door (0xa4c138312d2c455f)" {
+// KG Cabinet door (0xa4c138312d2c455f)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=kg_cabinet_door_lowbatt
+Text item=kg_cabinet_door_ota
+Text item=kg_cabinet_door_link
 Text item=kg_cabinet_door_contact
-Text item=kg_cabinet_door_link icon="linkz"
-Text item=kg_cabinet_door_ota icon="fire"
+Text item=kg_cabinet_door_battery
+Text item=kg_cabinet_door_voltage
 }
 Frame label="KG Climate (0x00158d0001b95e02)" {
+// KG Climate (0x00158d0001b95e02)
+// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+Text item=kg_climate_lowbatt
+Text item=kg_climate_ota
+Text item=kg_climate_link
 Text item=kg_climate_temperature
 Text item=kg_climate_humidity
 Text item=kg_climate_pressure
-Text item=kg_climate_link icon="linkz"
-Text item=kg_climate_ota icon="fire"
+Text item=kg_climate_battery
+Text item=kg_climate_voltage
 }
 Frame label="Petro Desktop up light 1 (0x04cd15fffe35f24e)" {
-Switch item=desktop_petro_up_light_1_sw
+// Petro Desktop up light 1 (0x04cd15fffe35f24e)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Slider item=desktop_petro_up_light_1_dim
 Slider item=desktop_petro_up_light_1_ct
-Text item=desktop_petro_up_light_1_link icon="linkz"
-Text item=desktop_petro_up_light_1_ota icon="fire"
+Text item=desktop_petro_up_light_1_ota
+Text item=desktop_petro_up_light_1_link
+Switch item=desktop_petro_up_light_1_sw
 }
 Frame label="Petro Desktop up light 2 (0x04cd15fffe6bf002)" {
-Switch item=desktop_petro_up_light_2_sw
+// Petro Desktop up light 2 (0x04cd15fffe6bf002)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Slider item=desktop_petro_up_light_2_dim
 Slider item=desktop_petro_up_light_2_ct
-Text item=desktop_petro_up_light_2_link icon="linkz"
-Text item=desktop_petro_up_light_2_ota icon="fire"
+Text item=desktop_petro_up_light_2_ota
+Text item=desktop_petro_up_light_2_link
+Switch item=desktop_petro_up_light_2_sw
 }
 Frame label="Petro Desktop up light 3 (0x04cd15fffe73ecb6)" {
-Switch item=desktop_petro_up_light_3_sw
+// Petro Desktop up light 3 (0x04cd15fffe73ecb6)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Slider item=desktop_petro_up_light_3_dim
 Slider item=desktop_petro_up_light_3_ct
-Text item=desktop_petro_up_light_3_link icon="linkz"
-Text item=desktop_petro_up_light_3_ota icon="fire"
+Text item=desktop_petro_up_light_3_ota
+Text item=desktop_petro_up_light_3_link
+Switch item=desktop_petro_up_light_3_sw
 }
 Frame label="Petro Desktop light (0xccccccfffed8ef9d)" {
-Switch item=desktop_petro_light_sw
+// Petro Desktop light (0xccccccfffed8ef9d)
+// IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
 Slider item=desktop_petro_light_dim
 Slider item=desktop_petro_light_ct
-Text item=desktop_petro_light_link icon="linkz"
-Text item=desktop_petro_light_ota icon="fire"
+Text item=desktop_petro_light_ota
+Text item=desktop_petro_light_link
+Switch item=desktop_petro_light_sw
 }
 Frame label="Petro Desktop PC (0x847127fffe0c873b)" {
+// Petro Desktop PC (0x847127fffe0c873b)
+// Wall switch module / https://www.zigbee2mqtt.io/devices/WHD02.html#tuya-whd02
+Text item=desktop_petro_pc_power_ota
+Text item=desktop_petro_pc_power_link
 Switch item=desktop_petro_pc_power_sw
-Text item=desktop_petro_pc_power_link icon="linkz"
-Text item=desktop_petro_pc_power_ota icon="fire"
 }
 Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {
-Text item=desktop_petro_remote_link icon="linkz"
-Text item=desktop_petro_remote_ota icon="fire"
+// Petro Desktop remote (0x000d6ffffee8357d)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Text item=desktop_petro_remote_lowbatt
+Text item=desktop_petro_remote_ota
+Text item=desktop_petro_remote_link
+Text item=desktop_petro_remote_battery
 }
 Frame label="KG Hobbyraum (Flür) (kg_main1_light)" {
-Switch item=kg_main1_light
+// KG Hobbyraum (Flür) (kg_main1_light)
+// Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
+Switch item=kg_main1_light_sw
 Text item=kg_main1_light_rssi
 Text item=kg_main1_light_bssid
-Text item=kg_main1_light_la
 }
 Frame label="KG Hobbyraum (Haupt) (kg_main2_light)" {
-Switch item=kg_main2_light
+// KG Hobbyraum (Haupt) (kg_main2_light)
+// Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
+Switch item=kg_main2_light_sw
 Text item=kg_main2_light_rssi
 Text item=kg_main2_light_bssid
-Text item=kg_main2_light_la
 }
 Frame label="KG Heuzung (Haupt) (kg_hz_main_light)" {
-Switch item=kg_hz_main_light
+// KG Heuzung (Haupt) (kg_hz_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch item=kg_hz_main_light_sw
 Text item=kg_hz_main_light_rssi
 Text item=kg_hz_main_light_bssid
-Text item=kg_hz_main_light_la
 }
 Frame label="Garden water (garten_wasser_sw)" {
-Switch item=garten_wasser_sw
+// Garden water (garten_wasser_sw)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch item=garten_wasser_sw_sw
 Text item=garten_wasser_sw_rssi
 Text item=garten_wasser_sw_bssid
-Text item=garten_wasser_sw_la
 }
 Frame label="Warehouse 3 leak (0x00158d0006b7aa81)" {
-Text item=garten_wasser_leak_link icon="linkz"
-Text item=garten_wasser_leak_ota icon="fire"
+// Warehouse 3 leak (0x00158d0006b7aa81)
+// Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
+Text item=garten_wasser_leak_lowbatt
+Text item=garten_wasser_leak_ota
+Text item=garten_wasser_leak_link
+Text item=garten_wasser_leak_leak
+Text item=garten_wasser_leak_battery
+Text item=garten_wasser_leak_voltage
 }
 Frame label="KG Lager 1 (Haupt) (kg_lager1_main_light)" {
-Switch item=kg_lager1_main_light
+// KG Lager 1 (Haupt) (kg_lager1_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch item=kg_lager1_main_light_sw
 Text item=kg_lager1_main_light_rssi
 Text item=kg_lager1_main_light_bssid
-Text item=kg_lager1_main_light_la
 }
 Frame label="KG Lager 3 Climate (0x00158d0001c19a6b)" {
+// KG Lager 3 Climate (0x00158d0001c19a6b)
+// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+Text item=kg_lager3_climate_lowbatt
+Text item=kg_lager3_climate_ota
+Text item=kg_lager3_climate_link
 Text item=kg_lager3_climate_temperature
 Text item=kg_lager3_climate_humidity
 Text item=kg_lager3_climate_pressure
-Text item=kg_lager3_climate_link icon="linkz"
-Text item=kg_lager3_climate_ota icon="fire"
+Text item=kg_lager3_climate_battery
+Text item=kg_lager3_climate_voltage
 }
 Frame label="KG Lager 3 motion (0x04cd15fffe873cb7)" {
+// KG Lager 3 motion (0x04cd15fffe873cb7)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Text item=kg_lager3_motion_lowbatt
+Text item=kg_lager3_motion_ota
+Text item=kg_lager3_motion_link
 Text item=kg_lager3_motion_occupancy
-Text item=kg_lager3_motion_link icon="linkz"
-Text item=kg_lager3_motion_ota icon="fire"
+Text item=kg_lager3_motion_battery
 }
 Frame label="KG Lager 3 (Haupt) (kg_lager3_main_light)" {
-Switch item=kg_lager3_main_light
+// KG Lager 3 (Haupt) (kg_lager3_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch item=kg_lager3_main_light_sw
 Text item=kg_lager3_main_light_rssi
 Text item=kg_lager3_main_light_bssid
-Text item=kg_lager3_main_light_la
 }
 Frame label="KG Lager 4 (Haupt) (kg_lager4_main_light)" {
-Switch item=kg_lager4_main_light
+// KG Lager 4 (Haupt) (kg_lager4_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch item=kg_lager4_main_light_sw
 Text item=kg_lager4_main_light_rssi
 Text item=kg_lager4_main_light_bssid
-Text item=kg_lager4_main_light_la
 }
 Frame label="KG Lager 4 (1) (0xccccccfffedf345a)" {
-Switch item=kg_lager4_1_light_sw
+// KG Lager 4 (1) (0xccccccfffedf345a)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Slider item=kg_lager4_1_light_dim
-Text item=kg_lager4_1_light_link icon="linkz"
-Text item=kg_lager4_1_light_ota icon="fire"
+Text item=kg_lager4_1_light_ota
+Text item=kg_lager4_1_light_link
+Switch item=kg_lager4_1_light_sw
 }
 Frame label="KG Lager 4 (2) (0xccccccfffedf5314)" {
-Switch item=kg_lager4_2_light_sw
+// KG Lager 4 (2) (0xccccccfffedf5314)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Slider item=kg_lager4_2_light_dim
-Text item=kg_lager4_2_light_link icon="linkz"
-Text item=kg_lager4_2_light_ota icon="fire"
+Text item=kg_lager4_2_light_ota
+Text item=kg_lager4_2_light_link
+Switch item=kg_lager4_2_light_sw
 }
 Frame label="KG Lager switch (0xccccccfffee401f8)" {
-Text item=kg_lager4_switch_link icon="linkz"
-Text item=kg_lager4_switch_ota icon="fire"
+// KG Lager switch (0xccccccfffee401f8)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=kg_lager4_switch_lowbatt
+Text item=kg_lager4_switch_ota
+Text item=kg_lager4_switch_link
+Text item=kg_lager4_switch_battery
 }
 Frame label="KG Lager motion (0xbc33acfffe84ca1e)" {
+// KG Lager motion (0xbc33acfffe84ca1e)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Text item=kg_lager4_motion_lowbatt
+Text item=kg_lager4_motion_ota
+Text item=kg_lager4_motion_link
 Text item=kg_lager4_motion_occupancy
-Text item=kg_lager4_motion_link icon="linkz"
-Text item=kg_lager4_motion_ota icon="fire"
+Text item=kg_lager4_motion_battery
 }
 Frame label="Warehouse 4 leak (0x00158d000488052c)" {
-Text item=kg_lager4_leak_link icon="linkz"
-Text item=kg_lager4_leak_ota icon="fire"
+// Warehouse 4 leak (0x00158d000488052c)
+// Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
+Text item=kg_lager4_leak_lowbatt
+Text item=kg_lager4_leak_ota
+Text item=kg_lager4_leak_link
+Text item=kg_lager4_leak_leak
+Text item=kg_lager4_leak_battery
+Text item=kg_lager4_leak_voltage
 }
 Frame label="FS heating (0x9035eafffe712884)" {
-Setpoint item=fs_heating_thermostat minValue=5 maxValue=30 step=1
-Switch item=fs_heating_thermostat_mode mappings=["off"="OFF","auto"="AUTO","heat"="HEAT"]
-Text item=fs_heating_temperature
-Text item=fs_heating_link icon="linkz"
-Text item=fs_heating_ota icon="fire"
+// FS heating (0x9035eafffe712884)
+// TuYa Radiator valve with thermostat (TS0601_thermostat 3) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat_3.html
+Setpoint item=fs_heating_thermostat
+Text item=fs_heating_thermostat_mode
+Switch item=fs_heating_thermostat_enable
+Text item=fs_heating_lowbatt
+Text item=fs_heating_ota
+Text item=fs_heating_link
+Text item=fs_heating_local_temperature
 }
 Frame label="NS heating (0x0c4314fffe62f090)" {
-Setpoint item=ns_heating_thermostat minValue=5 maxValue=30 step=1
-Switch item=ns_heating_thermostat_mode mappings=["off"="OFF","auto"="AUTO","heat"="HEAT"]
-Text item=ns_heating_temperature
-Text item=ns_heating_link icon="linkz"
-Text item=ns_heating_ota icon="fire"
+// NS heating (0x0c4314fffe62f090)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
+Setpoint item=ns_heating_thermostat
+Text item=ns_heating_thermostat_mode
+Switch item=ns_heating_thermostat_enable
+Text item=ns_heating_lowbatt
+Text item=ns_heating_ota
+Text item=ns_heating_link
+Text item=ns_heating_local_temperature
+Text item=ns_heating_voltage
 }
 Frame label="KU heating (0x0c4314fffe73bf1f)" {
-Setpoint item=ku_heating_thermostat minValue=5 maxValue=30 step=1
-Switch item=ku_heating_thermostat_mode mappings=["off"="OFF","auto"="AUTO","heat"="HEAT"]
-Text item=ku_heating_temperature
-Text item=ku_heating_link icon="linkz"
-Text item=ku_heating_ota icon="fire"
+// KU heating (0x0c4314fffe73bf1f)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
+Setpoint item=ku_heating_thermostat
+Text item=ku_heating_thermostat_mode
+Switch item=ku_heating_thermostat_enable
+Text item=ku_heating_lowbatt
+Text item=ku_heating_ota
+Text item=ku_heating_link
+Text item=ku_heating_local_temperature
+Text item=ku_heating_voltage
 }
 Frame label="SZ heating (0x0c4314fffe73c43f)" {
-Setpoint item=sz_heating_thermostat minValue=5 maxValue=30 step=1
-Switch item=sz_heating_thermostat_mode mappings=["off"="OFF","auto"="AUTO","heat"="HEAT"]
-Text item=sz_heating_temperature
-Text item=sz_heating_link icon="linkz"
-Text item=sz_heating_ota icon="fire"
+// SZ heating (0x0c4314fffe73c43f)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
+Setpoint item=sz_heating_thermostat
+Text item=sz_heating_thermostat_mode
+Switch item=sz_heating_thermostat_enable
+Text item=sz_heating_lowbatt
+Text item=sz_heating_ota
+Text item=sz_heating_link
+Text item=sz_heating_local_temperature
+Text item=sz_heating_voltage
 }
 Frame label="KG heating (0x0c4314fffe5c6913)" {
-Setpoint item=kg_heating_thermostat minValue=5 maxValue=30 step=1
-Switch item=kg_heating_thermostat_mode mappings=["off"="OFF","auto"="AUTO","heat"="HEAT"]
-Text item=kg_heating_temperature
-Text item=kg_heating_link icon="linkz"
-Text item=kg_heating_ota icon="fire"
+// KG heating (0x0c4314fffe5c6913)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
+Setpoint item=kg_heating_thermostat
+Text item=kg_heating_thermostat_mode
+Switch item=kg_heating_thermostat_enable
+Text item=kg_heating_lowbatt
+Text item=kg_heating_ota
+Text item=kg_heating_link
+Text item=kg_heating_local_temperature
+Text item=kg_heating_voltage
 }
 Frame label="FS Christmas light (0x7cb03eaa0a093a8b)" {
+// FS Christmas light (0x7cb03eaa0a093a8b)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Text item=fs_christmas_light_ota
+Text item=fs_christmas_light_link
 Switch item=fs_christmas_light_sw
-Text item=fs_christmas_light_link icon="linkz"
-Text item=fs_christmas_light_ota icon="fire"
 }
 Frame label="NS Christmas light (0x7cb03eaa0a094303)" {
+// NS Christmas light (0x7cb03eaa0a094303)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Text item=ns_christmas_light_ota
+Text item=ns_christmas_light_link
 Switch item=ns_christmas_light_sw
-Text item=ns_christmas_light_link icon="linkz"
-Text item=ns_christmas_light_ota icon="fire"
 }
 Frame label="Balkon Christmas light (0x7cb03eaa0a094bf2)" {
+// Balkon Christmas light (0x7cb03eaa0a094bf2)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Text item=balkon_christmas_light_ota
+Text item=balkon_christmas_light_link
 Switch item=balkon_christmas_light_sw
-Text item=balkon_christmas_light_link icon="linkz"
-Text item=balkon_christmas_light_ota icon="fire"
 }
-
 }

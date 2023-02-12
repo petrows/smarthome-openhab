@@ -151,9 +151,9 @@ end
 // Will stop heating on open
 rule "Windows state changed"
 when
-	Item all_windows received update or
-	Item all_windows received command or
-    Item all_windows changed
+	Item g_all_contact received update or
+	Item g_all_contact received command or
+    Item g_all_contact changed
 then
     if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON)) {
 		logInfo("heating", "Windows: Auto disabled")
