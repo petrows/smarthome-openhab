@@ -73,7 +73,7 @@ rule "Test devices responce time"
 when
     Time cron "0 00 13 ? * *"
 then
-	g_device_activity.members.forEach [s |
+	g_all_activity.members.forEach [s |
         if (s.state != NULL) {
             val date_item = ( s.state as DateTimeType).zonedDateTime
             val date_now = ZonedDateTime.now

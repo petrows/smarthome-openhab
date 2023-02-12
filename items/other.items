@@ -1,4 +1,4 @@
-Group:DateTime:EARLIEST g_device_activity "Device Activity [JS(display-activity.js):%s]" <time>
+Group:DateTime:EARLIEST g_all_activity "Device Activity [JS(display-activity.js):%s]" <time>
 
 // Item to send broadcast messages (Notification, telegram, etc)
 String global_message "Broadcast message"

@@ -13,7 +13,7 @@ Thing mqtt:topic:openhab:sturbar_test "Sturbar test" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/sturbar_test", commandTopic="zigbee2mqtt/sturbar_test/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : battery [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -24,7 +24,8 @@ Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : battery [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -44,7 +45,7 @@ Thing mqtt:topic:openhab:balkon_light_1 "Balkon light 1" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:garten_wasser_remote "Garten wasser remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/garten_wasser_remote", commandTopic="zigbee2mqtt/garten_wasser_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -54,7 +55,7 @@ Thing mqtt:topic:openhab:garten_wasser_remote "Garten wasser remote" (mqtt:broke
 Thing mqtt:topic:openhab:mirror_remote "Mirror remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/mirror_remote", commandTopic="zigbee2mqtt/mirror_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/mirror_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/mirror_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -64,7 +65,7 @@ Thing mqtt:topic:openhab:mirror_remote "Mirror remote" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:eg_leave_switch "Leave switch" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/eg_leave_switch", commandTopic="zigbee2mqtt/eg_leave_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/eg_leave_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/eg_leave_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/eg_leave_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/eg_leave_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/eg_leave_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -90,7 +91,8 @@ Thing mqtt:topic:openhab:eg_decoration_light "EG Decor light" (mqtt:broker:openh
 Thing mqtt:topic:openhab:eg_main_door "Entrance Door sensor" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -134,7 +136,7 @@ Thing mqtt:topic:openhab:bz_mirror "BZ Mirror" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:bz_mirror_switch "BZ Mirror switch" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/bz_mirror_switch", commandTopic="zigbee2mqtt/bz_mirror_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -145,7 +147,7 @@ Thing mqtt:topic:openhab:bz_light_switch "BZ Light Control" (mqtt:broker:openhab
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/bz_light_switch", commandTopic="zigbee2mqtt/bz_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : battery [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -157,7 +159,8 @@ Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {
 		Type number : temperature [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
 		Type number : pressure [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"pressure\".*)∩JSONPATH:$.pressure", unit="hPa"]
-		Type number : battery [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -192,7 +195,8 @@ Thing mqtt:topic:openhab:ns_projector_power "NS Projector" (mqtt:broker:openhab)
 Thing mqtt:topic:openhab:ns_window_2 "NS Window 2" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -203,7 +207,8 @@ Thing mqtt:topic:openhab:fs_climate "FS Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : battery [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -223,7 +228,7 @@ Thing mqtt:topic:openhab:desktop_marina_light "Marina Desktop light" (mqtt:broke
 Thing mqtt:topic:openhab:desktop_marina_remote "Marina Desktop remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/desktop_marina_remote", commandTopic="zigbee2mqtt/desktop_marina_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -234,7 +239,8 @@ Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -244,7 +250,7 @@ Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:sz_remote_bed "Bedroom remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/sz_remote_bed", commandTopic="zigbee2mqtt/sz_remote_bed/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote_bed", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -254,7 +260,7 @@ Thing mqtt:topic:openhab:sz_remote_bed "Bedroom remote" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:sz_curtain_remote "Bedroom curtains remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/sz_curtain_remote", commandTopic="zigbee2mqtt/sz_curtain_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -265,7 +271,7 @@ Thing mqtt:topic:openhab:sz_remote_main "Bedroom main remote" (mqtt:broker:openh
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/sz_remote_main", commandTopic="zigbee2mqtt/sz_remote_main/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -330,7 +336,8 @@ Thing mqtt:topic:openhab:sz_declamp_3 "SZ Decor lamp 3" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -340,7 +347,8 @@ Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:sz_window_door "SZ Window Door" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -362,7 +370,8 @@ Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 		Type number : temperature [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
 		Type number : pressure [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"pressure\".*)∩JSONPATH:$.pressure", unit="hPa"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -372,7 +381,7 @@ Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spüle)" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/ku_light_switch_spule", commandTopic="zigbee2mqtt/ku_light_switch_spule/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -382,7 +391,7 @@ Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spüle)" (mqtt:
 Thing mqtt:topic:openhab:ku_light_switch_kochfeld "KU Light Button (Kochfield)" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", commandTopic="zigbee2mqtt/ku_light_switch_kochfeld/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -401,7 +410,7 @@ Thing mqtt:topic:openhab:ku_light_table_switch "KU Light Table SW" (mqtt:broker:
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/ku_light_table_switch", commandTopic="zigbee2mqtt/ku_light_table_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -429,7 +438,8 @@ Thing mqtt:topic:openhab:ku_light_switch "KU Light SW" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -439,7 +449,8 @@ Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:treppe_door_sensor "Treppe Door sensor" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -449,7 +460,7 @@ Thing mqtt:topic:openhab:treppe_door_sensor "Treppe Door sensor" (mqtt:broker:op
 Thing mqtt:topic:openhab:treppe_up_switch "Treppe Up switch" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/treppe_up_switch", commandTopic="zigbee2mqtt/treppe_up_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -460,7 +471,7 @@ Thing mqtt:topic:openhab:treppe_down_switch "Treppe Down switch" (mqtt:broker:op
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/treppe_down_switch", commandTopic="zigbee2mqtt/treppe_down_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -492,7 +503,8 @@ Thing mqtt:topic:openhab:treppe_down_light "Treppe Down light" (mqtt:broker:open
 Thing mqtt:topic:openhab:treppe_motion "Treppe motion" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : occupancy [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy"]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -503,7 +515,8 @@ Thing mqtt:topic:openhab:treppe_climate "Treppe climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -513,7 +526,8 @@ Thing mqtt:topic:openhab:treppe_climate "Treppe climate" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -523,7 +537,8 @@ Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:kg_window_2 "KG Window 2" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -533,7 +548,8 @@ Thing mqtt:topic:openhab:kg_window_2 "KG Window 2" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:kg_cabinet_door "KG Cabinet door" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -545,7 +561,8 @@ Thing mqtt:topic:openhab:kg_climate "KG Climate" (mqtt:broker:openhab) {
 		Type number : temperature [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
 		Type number : pressure [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"pressure\".*)∩JSONPATH:$.pressure", unit="hPa"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -603,7 +620,7 @@ Thing mqtt:topic:openhab:desktop_petro_pc_power "Petro Desktop PC" (mqtt:broker:
 Thing mqtt:topic:openhab:desktop_petro_remote "Petro Desktop remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/desktop_petro_remote", commandTopic="zigbee2mqtt/desktop_petro_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -653,7 +670,8 @@ Thing mqtt:topic:openhab:garten_wasser_sw "Garden water" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:garten_wasser_leak "Warehouse 3 leak" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : leak [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"leak\".*)∩JSONPATH:$.leak"]
-		Type number : battery [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -675,7 +693,8 @@ Thing mqtt:topic:openhab:kg_lager3_climate "KG Lager 3 Climate" (mqtt:broker:ope
 		Type number : temperature [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
 		Type number : pressure [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"pressure\".*)∩JSONPATH:$.pressure", unit="hPa"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -685,7 +704,8 @@ Thing mqtt:topic:openhab:kg_lager3_climate "KG Lager 3 Climate" (mqtt:broker:ope
 Thing mqtt:topic:openhab:kg_lager3_motion "KG Lager 3 motion" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : occupancy [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -733,7 +753,7 @@ Thing mqtt:topic:openhab:kg_lager4_2_light "KG Lager 4 (2)" (mqtt:broker:openhab
 Thing mqtt:topic:openhab:kg_lager4_switch "KG Lager switch" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/kg_lager4_switch", commandTopic="zigbee2mqtt/kg_lager4_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_lager4_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_lager4_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager4_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager4_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -743,7 +763,8 @@ Thing mqtt:topic:openhab:kg_lager4_switch "KG Lager switch" (mqtt:broker:openhab
 Thing mqtt:topic:openhab:kg_lager4_motion "KG Lager motion" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : occupancy [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -753,7 +774,8 @@ Thing mqtt:topic:openhab:kg_lager4_motion "KG Lager motion" (mqtt:broker:openhab
 Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : leak [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"leak\".*)∩JSONPATH:$.leak"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -766,6 +788,7 @@ Thing mqtt:topic:openhab:fs_heating "FS heating" (mqtt:broker:openhab) {
 		Type string : thermostat_mode [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JSONPATH:$.system_mode", formatBeforePublish="{\"system_mode\": \"%s\"}"]
 		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
 		Type number : local_temperature [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"battery_low\".*)∩JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -779,6 +802,7 @@ Thing mqtt:topic:openhab:ns_heating "NS heating" (mqtt:broker:openhab) {
 		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/ns_heating", commandTopic="zigbee2mqtt/ns_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
 		Type number : local_temperature [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
 		Type number : battery_voltage [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -792,6 +816,7 @@ Thing mqtt:topic:openhab:ku_heating "KU heating" (mqtt:broker:openhab) {
 		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/ku_heating", commandTopic="zigbee2mqtt/ku_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
 		Type number : local_temperature [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
 		Type number : battery_voltage [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -805,6 +830,7 @@ Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
 		Type number : local_temperature [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
 		Type number : battery_voltage [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
@@ -818,6 +844,7 @@ Thing mqtt:topic:openhab:kg_heating "KG heating" (mqtt:broker:openhab) {
 		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/kg_heating", commandTopic="zigbee2mqtt/kg_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
 		Type number : local_temperature [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
 		Type number : battery_voltage [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
