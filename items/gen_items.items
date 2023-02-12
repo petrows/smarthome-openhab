@@ -19,7 +19,7 @@ Number:Dimensionless sturbar_test_battery "Sturbar test  BAT [%d %%]" <battery> 
 Switch ext_climate_lowbatt "Outside Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ext_climate:battery_low"}
 Switch ext_climate_ota "Outside Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ext_climate:ota"}
 Number:Dimensionless ext_climate_link "Outside Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ext_climate:link"}
-DateTime ext_climate_activity "Outside Climate activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime ext_climate_activity "Outside Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature ext_climate_temperature "Outside Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ext_climate:temperature"}
 Number:Dimensionless ext_climate_humidity "Outside Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ext_climate:humidity"}
 Number:Dimensionless ext_climate_battery "Outside Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ext_climate:battery"}
@@ -63,8 +63,8 @@ Switch eg_decoration_light_sw "EG Decor light" <light> (g_all_sw,g_light_all,g_l
 Switch eg_main_door_lowbatt "Entrance Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:eg_main_door:battery_low"}
 Switch eg_main_door_ota "Entrance Door sensor OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_main_door:ota"}
 Number:Dimensionless eg_main_door_link "Entrance Door sensor LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_main_door:link"}
-DateTime eg_main_door_activity "Entrance Door sensor activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact eg_main_door_contact "Entrance Door sensor [%s]" <contact> (g_all_contact) {channel="mqtt:topic:openhab:eg_main_door:contact"}
+DateTime eg_main_door_activity "Entrance Door sensor activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact eg_main_door_contact "Entrance Door sensor [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:eg_main_door:contact"}
 Number:Dimensionless eg_main_door_battery "Entrance Door sensor  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:eg_main_door:battery"}
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
@@ -89,7 +89,7 @@ Switch bz_light_2_sw "BZ Light (shower)" <light> (g_all_sw,g_light_all,g_light_e
 Switch bz_mirror "BZ Mirror" <light> (g_all_sw) {channel="mqtt:topic:openhab:bz_mirror:POWER"}
 Number:Dimensionless bz_mirror_rssi "BZ Mirror RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String bz_mirror_bssid "BZ Mirror BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime bz_mirror_activity "BZ Mirror activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime bz_mirror_activity "BZ Mirror activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 // BZ Mirror switch (0xccccccfffef0356e)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
 Switch bz_mirror_switch_lowbatt "BZ Mirror switch BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:bz_mirror_switch:battery_low"}
@@ -108,7 +108,7 @@ Number:Dimensionless bz_light_switch_battery "BZ Light Control  BAT [%d %%]" <ba
 Switch ns_climate_lowbatt "NS Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ns_climate:battery_low"}
 Switch ns_climate_ota "NS Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_climate:ota"}
 Number:Dimensionless ns_climate_link "NS Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_climate:link"}
-DateTime ns_climate_activity "NS Climate activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime ns_climate_activity "NS Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature ns_climate_temperature "NS Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ns_climate:temperature"}
 Number:Dimensionless ns_climate_humidity "NS Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ns_climate:humidity"}
 Number:Pressure ns_climate_pressure "NS Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ns_climate:pressure"}
@@ -134,15 +134,15 @@ Switch ns_projector_power_sw "NS Projector" <light> (g_all_sw) {channel="mqtt:to
 Switch ns_window_2_lowbatt "NS Window 2 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ns_window_2:battery_low"}
 Switch ns_window_2_ota "NS Window 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_window_2:ota"}
 Number:Dimensionless ns_window_2_link "NS Window 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_window_2:link"}
-DateTime ns_window_2_activity "NS Window 2 activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact ns_window_2_contact "NS Window 2 [%s]" <contact> (g_all_contact,ns_windows) {channel="mqtt:topic:openhab:ns_window_2:contact"}
+DateTime ns_window_2_activity "NS Window 2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact ns_window_2_contact "NS Window 2 [%s]" <door> (g_all_contact,ns_windows) {channel="mqtt:topic:openhab:ns_window_2:contact"}
 Number:Dimensionless ns_window_2_battery "NS Window 2  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ns_window_2:battery"}
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Switch fs_climate_lowbatt "FS Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fs_climate:battery_low"}
 Switch fs_climate_ota "FS Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_climate:ota"}
 Number:Dimensionless fs_climate_link "FS Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_climate:link"}
-DateTime fs_climate_activity "FS Climate activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime fs_climate_activity "FS Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature fs_climate_temperature "FS Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:fs_climate:temperature"}
 Number:Dimensionless fs_climate_humidity "FS Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:fs_climate:humidity"}
 Number:Dimensionless fs_climate_battery "FS Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:fs_climate:battery"}
@@ -164,7 +164,7 @@ Number:Dimensionless desktop_marina_remote_battery "Marina Desktop remote  BAT [
 Switch sz_climate_lowbatt "SZ Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_climate:battery_low"}
 Switch sz_climate_ota "SZ Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_climate:ota"}
 Number:Dimensionless sz_climate_link "SZ Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_climate:link"}
-DateTime sz_climate_activity "SZ Climate activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime sz_climate_activity "SZ Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature sz_climate_temperature "SZ Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:sz_climate:temperature"}
 Number:Dimensionless sz_climate_humidity "SZ Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:sz_climate:humidity"}
 Number:Dimensionless sz_climate_battery "SZ Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_climate:battery"}
@@ -229,29 +229,29 @@ Switch sz_declamp_3_sw "SZ Decor lamp 3" <light> (g_all_sw,g_light_all,g_light_e
 Switch sz_window_1_lowbatt "SZ Window 1 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_window_1:battery_low"}
 Switch sz_window_1_ota "SZ Window 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_window_1:ota"}
 Number:Dimensionless sz_window_1_link "SZ Window 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_window_1:link"}
-DateTime sz_window_1_activity "SZ Window 1 activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact sz_window_1_contact "SZ Window 1 [%s]" <contact> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_1:contact"}
+DateTime sz_window_1_activity "SZ Window 1 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact sz_window_1_contact "SZ Window 1 [%s]" <door> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_1:contact"}
 Number:Dimensionless sz_window_1_battery "SZ Window 1  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_window_1:battery"}
 // SZ Window Door (0xa4c138fbdde6b200)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch sz_window_door_lowbatt "SZ Window Door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_window_door:battery_low"}
 Switch sz_window_door_ota "SZ Window Door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_window_door:ota"}
 Number:Dimensionless sz_window_door_link "SZ Window Door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_window_door:link"}
-DateTime sz_window_door_activity "SZ Window Door activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact sz_window_door_contact "SZ Window Door [%s]" <contact> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_door:contact"}
+DateTime sz_window_door_activity "SZ Window Door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact sz_window_door_contact "SZ Window Door [%s]" <door> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_door:contact"}
 Number:Dimensionless sz_window_door_battery "SZ Window Door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_window_door:battery"}
 // SZ CO2 (sz_co2)
 // Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
 Number:Dimensionless sz_co2_rssi "SZ CO2 RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String sz_co2_bssid "SZ CO2 BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime sz_co2_activity "SZ CO2 activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime sz_co2_activity "SZ CO2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Dimensionless sz_co2_co2 "SZ CO2 CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_co2:co2"}
 // KU Climate (0x00158d0001b95fc4)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Switch ku_climate_lowbatt "KU Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_climate:battery_low"}
 Switch ku_climate_ota "KU Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_climate:ota"}
 Number:Dimensionless ku_climate_link "KU Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_climate:link"}
-DateTime ku_climate_activity "KU Climate activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime ku_climate_activity "KU Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature ku_climate_temperature "KU Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ku_climate:temperature"}
 Number:Dimensionless ku_climate_humidity "KU Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ku_climate:humidity"}
 Number:Pressure ku_climate_pressure "KU Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ku_climate:pressure"}
@@ -297,16 +297,16 @@ Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_all_sw,g
 Switch ku_window_door_lowbatt "KU Window Door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_window_door:battery_low"}
 Switch ku_window_door_ota "KU Window Door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_window_door:ota"}
 Number:Dimensionless ku_window_door_link "KU Window Door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_window_door:link"}
-DateTime ku_window_door_activity "KU Window Door activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact ku_window_door_contact "KU Window Door [%s]" <contact> (g_all_contact,ku_windows) {channel="mqtt:topic:openhab:ku_window_door:contact"}
+DateTime ku_window_door_activity "KU Window Door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact ku_window_door_contact "KU Window Door [%s]" <door> (g_all_contact,ku_windows) {channel="mqtt:topic:openhab:ku_window_door:contact"}
 Number:Dimensionless ku_window_door_battery "KU Window Door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_window_door:battery"}
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch treppe_door_sensor_lowbatt "Treppe Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:treppe_door_sensor:battery_low"}
 Switch treppe_door_sensor_ota "Treppe Door sensor OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_door_sensor:ota"}
 Number:Dimensionless treppe_door_sensor_link "Treppe Door sensor LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_door_sensor:link"}
-DateTime treppe_door_sensor_activity "Treppe Door sensor activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact treppe_door_sensor_contact "Treppe Door sensor [%s]" <contact> (g_all_contact) {channel="mqtt:topic:openhab:treppe_door_sensor:contact"}
+DateTime treppe_door_sensor_activity "Treppe Door sensor activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact treppe_door_sensor_contact "Treppe Door sensor [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:treppe_door_sensor:contact"}
 Number:Dimensionless treppe_door_sensor_battery "Treppe Door sensor  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:treppe_door_sensor:battery"}
 // Treppe Up switch (0x680ae2fffe1a92f3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
@@ -342,15 +342,15 @@ Switch treppe_down_light_sw "Treppe Down light" <light> (g_all_sw,g_light_all,g_
 Switch treppe_motion_lowbatt "Treppe motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:treppe_motion:battery_low"}
 Switch treppe_motion_ota "Treppe motion OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_motion:ota"}
 Number:Dimensionless treppe_motion_link "Treppe motion LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_motion:link"}
-DateTime treppe_motion_activity "Treppe motion activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Switch treppe_motion_occupancy "Treppe motion [%s]" <occupancy> (g_all_occupancy) {channel="mqtt:topic:openhab:treppe_motion:occupancy"}
+DateTime treppe_motion_activity "Treppe motion activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Switch treppe_motion_occupancy "Treppe motion [%s]" <motion> (g_all_occupancy) {channel="mqtt:topic:openhab:treppe_motion:occupancy"}
 Number:Dimensionless treppe_motion_battery "Treppe motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:treppe_motion:battery"}
 // Treppe climate (0xa4c1383cc92cbbd2)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch treppe_climate_lowbatt "Treppe climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:treppe_climate:battery_low"}
 Switch treppe_climate_ota "Treppe climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_climate:ota"}
 Number:Dimensionless treppe_climate_link "Treppe climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_climate:link"}
-DateTime treppe_climate_activity "Treppe climate activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime treppe_climate_activity "Treppe climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature treppe_climate_temperature "Treppe climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:treppe_climate:temperature"}
 Number:Dimensionless treppe_climate_humidity "Treppe climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:treppe_climate:humidity"}
 Number:Dimensionless treppe_climate_battery "Treppe climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:treppe_climate:battery"}
@@ -359,31 +359,31 @@ Number:Dimensionless treppe_climate_battery "Treppe climate  BAT [%d %%]" <batte
 Switch kg_window_1_lowbatt "KG Window 1 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_window_1:battery_low"}
 Switch kg_window_1_ota "KG Window 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_1:ota"}
 Number:Dimensionless kg_window_1_link "KG Window 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_1:link"}
-DateTime kg_window_1_activity "KG Window 1 activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact kg_window_1_contact "KG Window 1 [%s]" <contact> (g_all_contact,kg_windows) {channel="mqtt:topic:openhab:kg_window_1:contact"}
+DateTime kg_window_1_activity "KG Window 1 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact kg_window_1_contact "KG Window 1 [%s]" <door> (g_all_contact,kg_windows) {channel="mqtt:topic:openhab:kg_window_1:contact"}
 Number:Dimensionless kg_window_1_battery "KG Window 1  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_1:battery"}
 // KG Window 2 (0xa4c1381a072fcf8b)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch kg_window_2_lowbatt "KG Window 2 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_window_2:battery_low"}
 Switch kg_window_2_ota "KG Window 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_2:ota"}
 Number:Dimensionless kg_window_2_link "KG Window 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_2:link"}
-DateTime kg_window_2_activity "KG Window 2 activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact kg_window_2_contact "KG Window 2 [%s]" <contact> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
+DateTime kg_window_2_activity "KG Window 2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact kg_window_2_contact "KG Window 2 [%s]" <door> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
 Number:Dimensionless kg_window_2_battery "KG Window 2  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_2:battery"}
 // KG Cabinet door (0xa4c138312d2c455f)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch kg_cabinet_door_lowbatt "KG Cabinet door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_cabinet_door:battery_low"}
 Switch kg_cabinet_door_ota "KG Cabinet door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_cabinet_door:ota"}
 Number:Dimensionless kg_cabinet_door_link "KG Cabinet door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_cabinet_door:link"}
-DateTime kg_cabinet_door_activity "KG Cabinet door activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <contact> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
+DateTime kg_cabinet_door_activity "KG Cabinet door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
 Number:Dimensionless kg_cabinet_door_battery "KG Cabinet door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_cabinet_door:battery"}
 // KG Climate (0x00158d0001b95e02)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Switch kg_climate_lowbatt "KG Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_climate:battery_low"}
 Switch kg_climate_ota "KG Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_climate:ota"}
 Number:Dimensionless kg_climate_link "KG Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_climate:link"}
-DateTime kg_climate_activity "KG Climate activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_climate_activity "KG Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature kg_climate_temperature "KG Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:kg_climate:temperature"}
 Number:Dimensionless kg_climate_humidity "KG Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:kg_climate:humidity"}
 Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:kg_climate:pressure"}
@@ -432,45 +432,45 @@ Number:Dimensionless desktop_petro_remote_battery "Petro Desktop remote  BAT [%d
 Switch kg_main1_light "KG Hobbyraum (Flür)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_main1_light:POWER"}
 Number:Dimensionless kg_main1_light_rssi "KG Hobbyraum (Flür) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String kg_main1_light_bssid "KG Hobbyraum (Flür) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime kg_main1_light_activity "KG Hobbyraum (Flür) activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_main1_light_activity "KG Hobbyraum (Flür) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 // KG Hobbyraum (Haupt) (kg_main2_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
 Switch kg_main2_light "KG Hobbyraum (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_main2_light:POWER"}
 Number:Dimensionless kg_main2_light_rssi "KG Hobbyraum (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String kg_main2_light_bssid "KG Hobbyraum (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime kg_main2_light_activity "KG Hobbyraum (Haupt) activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_main2_light_activity "KG Hobbyraum (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 // KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_hz_main_light:POWER"}
 Number:Dimensionless kg_hz_main_light_rssi "KG Heuzung (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String kg_hz_main_light_bssid "KG Heuzung (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 // Garden water (garten_wasser_sw)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:openhab:garten_wasser_sw:POWER"}
 Number:Dimensionless garten_wasser_sw_rssi "Garden water RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String garten_wasser_sw_bssid "Garden water BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime garten_wasser_sw_activity "Garden water activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime garten_wasser_sw_activity "Garden water activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 // Warehouse 3 leak (0x00158d0006b7aa81)
 // Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
 Switch garten_wasser_leak_lowbatt "Warehouse 3 leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:garten_wasser_leak:battery_low"}
 Switch garten_wasser_leak_ota "Warehouse 3 leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:garten_wasser_leak:ota"}
 Number:Dimensionless garten_wasser_leak_link "Warehouse 3 leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:garten_wasser_leak:link"}
-DateTime garten_wasser_leak_activity "Warehouse 3 leak activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Switch garten_wasser_leak_leak "Warehouse 3 leak [%s]" <leak> (g_all_leak) {channel="mqtt:topic:openhab:garten_wasser_leak:leak"}
+DateTime garten_wasser_leak_activity "Warehouse 3 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Switch garten_wasser_leak_leak "Warehouse 3 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:garten_wasser_leak:leak"}
 Number:Dimensionless garten_wasser_leak_battery "Warehouse 3 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:garten_wasser_leak:battery"}
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_lager1_main_light:POWER"}
 Number:Dimensionless kg_lager1_main_light_rssi "KG Lager 1 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String kg_lager1_main_light_bssid "KG Lager 1 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 // KG Lager 3 Climate (0x00158d0001c19a6b)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Switch kg_lager3_climate_lowbatt "KG Lager 3 Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager3_climate:battery_low"}
 Switch kg_lager3_climate_ota "KG Lager 3 Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager3_climate:ota"}
 Number:Dimensionless kg_lager3_climate_link "KG Lager 3 Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager3_climate:link"}
-DateTime kg_lager3_climate_activity "KG Lager 3 Climate activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_lager3_climate_activity "KG Lager 3 Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature kg_lager3_climate_temperature "KG Lager 3 Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:kg_lager3_climate:temperature"}
 Number:Dimensionless kg_lager3_climate_humidity "KG Lager 3 Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:kg_lager3_climate:humidity"}
 Number:Pressure kg_lager3_climate_pressure "KG Lager 3 Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:kg_lager3_climate:pressure"}
@@ -480,21 +480,21 @@ Number:Dimensionless kg_lager3_climate_battery "KG Lager 3 Climate  BAT [%d %%]"
 Switch kg_lager3_motion_lowbatt "KG Lager 3 motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager3_motion:battery_low"}
 Switch kg_lager3_motion_ota "KG Lager 3 motion OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager3_motion:ota"}
 Number:Dimensionless kg_lager3_motion_link "KG Lager 3 motion LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager3_motion:link"}
-DateTime kg_lager3_motion_activity "KG Lager 3 motion activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Switch kg_lager3_motion_occupancy "KG Lager 3 motion [%s]" <occupancy> (g_all_occupancy) {channel="mqtt:topic:openhab:kg_lager3_motion:occupancy"}
+DateTime kg_lager3_motion_activity "KG Lager 3 motion activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Switch kg_lager3_motion_occupancy "KG Lager 3 motion [%s]" <motion> (g_all_occupancy) {channel="mqtt:topic:openhab:kg_lager3_motion:occupancy"}
 Number:Dimensionless kg_lager3_motion_battery "KG Lager 3 motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager3_motion:battery"}
 // KG Lager 3 (Haupt) (kg_lager3_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_lager3_main_light "KG Lager 3 (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_lager3_main_light:POWER"}
 Number:Dimensionless kg_lager3_main_light_rssi "KG Lager 3 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String kg_lager3_main_light_bssid "KG Lager 3 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime kg_lager3_main_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_lager3_main_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_lager4_main_light:POWER"}
 Number:Dimensionless kg_lager4_main_light_rssi "KG Lager 4 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String kg_lager4_main_light_bssid "KG Lager 4 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
-DateTime kg_lager4_main_light_activity "KG Lager 4 (Haupt) activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_lager4_main_light_activity "KG Lager 4 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 // KG Lager 4 (1) (0xccccccfffedf345a)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]" <light> (g_all_dim,g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim"}
@@ -518,16 +518,16 @@ Number:Dimensionless kg_lager4_switch_battery "KG Lager switch  BAT [%d %%]" <ba
 Switch kg_lager4_motion_lowbatt "KG Lager motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager4_motion:battery_low"}
 Switch kg_lager4_motion_ota "KG Lager motion OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_motion:ota"}
 Number:Dimensionless kg_lager4_motion_link "KG Lager motion LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_motion:link"}
-DateTime kg_lager4_motion_activity "KG Lager motion activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Switch kg_lager4_motion_occupancy "KG Lager motion [%s]" <occupancy> (g_all_occupancy) {channel="mqtt:topic:openhab:kg_lager4_motion:occupancy"}
+DateTime kg_lager4_motion_activity "KG Lager motion activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Switch kg_lager4_motion_occupancy "KG Lager motion [%s]" <motion> (g_all_occupancy) {channel="mqtt:topic:openhab:kg_lager4_motion:occupancy"}
 Number:Dimensionless kg_lager4_motion_battery "KG Lager motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager4_motion:battery"}
 // Warehouse 4 leak (0x00158d000488052c)
 // Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
 Switch kg_lager4_leak_lowbatt "Warehouse 4 leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager4_leak:battery_low"}
 Switch kg_lager4_leak_ota "Warehouse 4 leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_leak:ota"}
 Number:Dimensionless kg_lager4_leak_link "Warehouse 4 leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_leak:link"}
-DateTime kg_lager4_leak_activity "Warehouse 4 leak activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Switch kg_lager4_leak_leak "Warehouse 4 leak [%s]" <leak> (g_all_leak) {channel="mqtt:topic:openhab:kg_lager4_leak:leak"}
+DateTime kg_lager4_leak_activity "Warehouse 4 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+Switch kg_lager4_leak_leak "Warehouse 4 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:kg_lager4_leak:leak"}
 Number:Dimensionless kg_lager4_leak_battery "Warehouse 4 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager4_leak:battery"}
 // FS heating (0x9035eafffe712884)
 // TuYa Radiator valve with thermostat (TS0601_thermostat 3) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat_3.html
@@ -537,7 +537,7 @@ Switch fs_heating_thermostat_enable "FS heating ENABLE [%s]" <heatingt> (g_all_t
 Switch fs_heating_lowbatt "FS heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fs_heating:battery_low"}
 Switch fs_heating_ota "FS heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_heating:ota"}
 Number:Dimensionless fs_heating_link "FS heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_heating:link"}
-DateTime fs_heating_activity "FS heating activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime fs_heating_activity "FS heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature fs_heating_local_temperature "FS heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:fs_heating:local_temperature"}
 // NS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -547,9 +547,9 @@ Switch ns_heating_thermostat_enable "NS heating ENABLE [%s]" <heatingt> (g_all_t
 Switch ns_heating_lowbatt "NS heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ns_heating:battery_low"}
 Switch ns_heating_ota "NS heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_heating:ota"}
 Number:Dimensionless ns_heating_link "NS heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_heating:link"}
-DateTime ns_heating_activity "NS heating activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime ns_heating_activity "NS heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature ns_heating_local_temperature "NS heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ns_heating:local_temperature"}
-Number:ElectricPotential ns_heating_battery_voltage "NS heating [%.0f mV]" <battery_voltage> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ns_heating:battery_voltage"}
+Number:ElectricPotential ns_heating_battery_voltage "NS heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ns_heating:battery_voltage"}
 // KU heating (0x0c4314fffe73bf1f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature ku_heating_thermostat "KU heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_ku) {channel="mqtt:topic:openhab:ku_heating:thermostat"}
@@ -558,9 +558,9 @@ Switch ku_heating_thermostat_enable "KU heating ENABLE [%s]" <heatingt> (g_all_t
 Switch ku_heating_lowbatt "KU heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_heating:battery_low"}
 Switch ku_heating_ota "KU heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_heating:ota"}
 Number:Dimensionless ku_heating_link "KU heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_heating:link"}
-DateTime ku_heating_activity "KU heating activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime ku_heating_activity "KU heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature ku_heating_local_temperature "KU heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ku_heating:local_temperature"}
-Number:ElectricPotential ku_heating_battery_voltage "KU heating [%.0f mV]" <battery_voltage> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ku_heating:battery_voltage"}
+Number:ElectricPotential ku_heating_battery_voltage "KU heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ku_heating:battery_voltage"}
 // SZ heating (0x0c4314fffe73c43f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_sz) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
@@ -569,9 +569,9 @@ Switch sz_heating_thermostat_enable "SZ heating ENABLE [%s]" <heatingt> (g_all_t
 Switch sz_heating_lowbatt "SZ heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_heating:battery_low"}
 Switch sz_heating_ota "SZ heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
 Number:Dimensionless sz_heating_link "SZ heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_heating:link"}
-DateTime sz_heating_activity "SZ heating activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime sz_heating_activity "SZ heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature sz_heating_local_temperature "SZ heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:sz_heating:local_temperature"}
-Number:ElectricPotential sz_heating_battery_voltage "SZ heating [%.0f mV]" <battery_voltage> (g_all_battery_voltage) {channel="mqtt:topic:openhab:sz_heating:battery_voltage"}
+Number:ElectricPotential sz_heating_battery_voltage "SZ heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:sz_heating:battery_voltage"}
 // KG heating (0x0c4314fffe5c6913)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature kg_heating_thermostat "KG heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_kg) {channel="mqtt:topic:openhab:kg_heating:thermostat"}
@@ -580,9 +580,9 @@ Switch kg_heating_thermostat_enable "KG heating ENABLE [%s]" <heatingt> (g_all_t
 Switch kg_heating_lowbatt "KG heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_heating:battery_low"}
 Switch kg_heating_ota "KG heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_heating:ota"}
 Number:Dimensionless kg_heating_link "KG heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_heating:link"}
-DateTime kg_heating_activity "KG heating activity [JS(codegen-display-activity.js):%s]" <clock> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
+DateTime kg_heating_activity "KG heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
 Number:Temperature kg_heating_local_temperature "KG heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:kg_heating:local_temperature"}
-Number:ElectricPotential kg_heating_battery_voltage "KG heating [%.0f mV]" <battery_voltage> (g_all_battery_voltage) {channel="mqtt:topic:openhab:kg_heating:battery_voltage"}
+Number:ElectricPotential kg_heating_battery_voltage "KG heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:kg_heating:battery_voltage"}
 // FS Christmas light (0x7cb03eaa0a093a8b)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
 Switch fs_christmas_light_ota "FS Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_christmas_light:ota"}
