@@ -104,7 +104,7 @@ sitemap main label="MAIN"
 		Group item=balkon_light label="Balkon [%s]" icon="light" {
 			Switch item=balkon_light label="Main [%s]" icon="light"
 			Slider item=balkon_light_dim label="Main DIM [%d %%]" icon="light"
-            Slider item=balkon_light_ct label="Main CT [JS(display-mired.js):%s]"
+            Slider item=balkon_light_ct label="Main CT [JS(codegen-mired.js):%s]"
             Switch item=balkon_christmas_light_sw label="Christmas [%s]" icon="light"
 		}
 		Group item=g_light_eg_flur label="Corridor [%s]" icon="light" {
@@ -123,7 +123,7 @@ sitemap main label="MAIN"
             Frame {
 			    Switch item=bz_main_light label="Main" icon="light"
                 Slider item=g_light_bz_dim label="Main DIM [%d %%]" icon="light"
-                Slider item=g_light_bz_ct label="Main CT [JS(display-mired.js):%s]"
+                Slider item=g_light_bz_ct label="Main CT [JS(codegen-mired.js):%s]"
                 Colorpicker item=g_light_bz_color label="Main Color []" icon="colorpicker"
             }
             Frame {
@@ -162,7 +162,7 @@ sitemap main label="MAIN"
 			Switch item=snf_eg_fs label="Main [%s]" icon="light"
 			Switch item=desktop_marina_light_sw label="Desktop [%s]"
 			Slider item=desktop_marina_light_dim label="Desktop DIM [%d %%]"
-			Slider item=desktop_marina_light_ct label="Desktop CT [JS(display-mired.js):%s]"
+			Slider item=desktop_marina_light_ct label="Desktop CT [JS(codegen-mired.js):%s]"
             Switch item=fs_christmas_light_sw label="Christmas [%s]" icon="light"
 		}
 		Group item=g_light_eg_sz label="Sleep [%s]" icon="light" {
@@ -170,7 +170,7 @@ sitemap main label="MAIN"
 				Switch item=g_light_eg_sz label="All [%s]" icon="light"
 				Switch item=sz_main_light_sw label="Main [%s]" icon="light"
 				Slider item=sz_main_light_dim label="Main DIM [%d %%]" icon="light"
-				Slider item=sz_main_light_ct label="Main CT [JS(display-mired.js):%s]" icon="light"
+				Slider item=sz_main_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
             Frame {
 				Switch item=g_light_eg_sz_night label="Night [%s]" icon="light"
@@ -207,7 +207,7 @@ sitemap main label="MAIN"
 			Frame label="Ladder" {
 				Switch item=g_light_treppe label="Ladder [%s]" icon="light"
 				Slider item=g_dim_treppe label="Ladder DIM [%d %%]" icon="light"
-				Slider item=g_ct_treppe label="Ladder CT [JS(display-mired.js):%s]" icon="colorwheel"
+				Slider item=g_ct_treppe label="Ladder CT [JS(codegen-mired.js):%s]" icon="colorwheel"
                 Colorpicker item=treppe_down_light_color label="Down light []" icon="colorpicker"
 				Text item=treppe_motion_occupancy label="Motion Ladder [%s]"
 			}
@@ -227,12 +227,12 @@ sitemap main label="MAIN"
 			Frame label="Desktop all" {
                 Switch item=g_light_kg_desktop label="Desktop [%s]"
 				Slider item=g_light_kg_desktop_dim label="Desktop DIM [%d %%]"
-				Slider item=g_light_kg_desktop_color label="Desktop CT [JS(display-mired.js):%s]"
+				Slider item=g_light_kg_desktop_color label="Desktop CT [JS(codegen-mired.js):%s]"
             }
 			Frame label="Desktop" {
 				Switch item=desktop_petro_light_sw label="Desktop [%s]"
 				Slider item=desktop_petro_light_dim label="Desktop DIM [%d %%]"
-				Slider item=desktop_petro_light_ct label="Desktop CT [JS(display-mired.js):%s]"
+				Slider item=desktop_petro_light_ct label="Desktop CT [JS(codegen-mired.js):%s]"
 				Switch item=desktop_petro_pc_power_sw label="Desktop power [%s]"
                 Text item=online_petro_pc label="Online PC [%s]"
                 Text item=online_petro_nb label="Online Laptop [%s]"
