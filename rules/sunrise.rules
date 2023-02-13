@@ -1,6 +1,7 @@
 // Sinrise emulation
 
 import java.time.temporal.ChronoUnit
+import org.openhab.core.model.script.ScriptServiceUtil
 
 // === Configuration
 
@@ -52,8 +53,33 @@ then
 
     sunriseTimer = createTimer(now, [ |
 
+        // Items to set ON
+        // Direct usage of group is problematic, because openHab do not keeps items order
+        // We do not use groups, we must have exact order of lamps defined
+        // Device MUST have pair of _sw and _dim items!
+        var lightGroupItems = newArrayList(
+            "sz_declamp_1",
+            "sz_declamp_2",
+            "sz_declamp_3",
+            "sz_main_light"
+        )
+
         if (sunriseStarted) {
-            if (g_light_eg_sz_night.state == OFF) {
+            // Check that we have at least one lamp ON
+            var lamps_on = false
+
+            for (itemName: lightGroupItems) {
+                try {
+                    val SwitchItem item = ScriptServiceUtil.getItemRegistry?.getItem(itemName + "_sw") as SwitchItem
+                    if (item.state == ON) {
+                        lamps_on = true
+                    }
+                } catch(Throwable t) {
+                    logError("light", "Sunrise: unable to get switch for " + itemName)
+                }
+            }
+
+            if (!lamps_on) {
                 logWarn("light", "Sunrise emulation stopped: group switched off")
                 return
             }
@@ -65,28 +91,13 @@ then
 
         sunriseStarted = true
 
-        // Items to set ON
-        // Direct usage of group is problematic, because openHab do not keeps items order
-        // Option 1: use manual group (check that it is in sync of "stop-detection" group members)
-        // var lightGroupItems = newArrayList(yel_white_1_brightness, ikea_led_007b_brightness, ikea_led_2203_brightness, ikea_led_2819_brightness)
-        // Option 2: use group and sort it
-        // var lightGroupItems = java.util.Collections.sort(g_light_eg_sz_night.members.map(name))
-
-        // We do not use groups, we must have exact order of lamps defined
-        var lightGroupItems = newArrayList(
-            "snf_eg_fl_spiegel_brightness",
-            "sz_declamp_3_dim",
-            "sz_declamp_2_dim",
-            "sz_declamp_1_dim"
-        )
-
-        // Sort items
-        // lightGroupItems = lightGroupItems.sortBy[1]
-
         // Calculate timer
         var brightTimerMs = (sunriseBrightPeriod * 1000) / ( (100 / sunriseBrightPeriodStep) * lightGroupItems.size)
 
         sunriseModeValue = sunriseBrightness
+
+        // Overall progress for scenario (0..1)
+        val brightnessAllProgress = (sunriseBrightness as float) / (lightGroupItems.size * 100.0)
 
         lightGroupItems.forEach [s |
 
@@ -98,12 +109,15 @@ then
                 return
             }
 
-            logWarn("light", "Sunrise item " + s + " -> " + setBright)
-            sendCommand(s, setBright.toString())
+            logWarn("light", "Sunrise item " + s + " -> " + setBright + " (" + brightnessAllProgress + ")")
+            sendCommand(s + "_dim", setBright.toString())
         ]
 
+        // Update CT (in reverse 100 -> 0)
+        g_sunrise_ct.sendCommand((100 - (brightnessAllProgress * 100)).toString())
+
         // All items 100% ?
-        if (sunriseBrightness > (lightGroupItems.size * 100)) {
+        if (brightnessAllProgress >= 1) {
             logWarn("light", "Sunrise emulation done")
         } else {
             // New timer loop

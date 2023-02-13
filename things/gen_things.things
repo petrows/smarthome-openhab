@@ -12,7 +12,7 @@
 Thing mqtt:topic:openhab:sturbar_test "Sturbar test" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/sturbar_test", commandTopic="zigbee2mqtt/sturbar_test/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
@@ -146,7 +146,7 @@ Thing mqtt:topic:openhab:bz_mirror_switch "BZ Mirror switch" (mqtt:broker:openha
 Thing mqtt:topic:openhab:bz_light_switch "BZ Light Control" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/bz_light_switch", commandTopic="zigbee2mqtt/bz_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
@@ -270,7 +270,7 @@ Thing mqtt:topic:openhab:sz_curtain_remote "Bedroom curtains remote" (mqtt:broke
 Thing mqtt:topic:openhab:sz_remote_main "Bedroom main remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/sz_remote_main", commandTopic="zigbee2mqtt/sz_remote_main/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
@@ -409,7 +409,7 @@ Thing mqtt:topic:openhab:ku_light_arbeitplatte "KU Light Arbeit" (mqtt:broker:op
 Thing mqtt:topic:openhab:ku_light_table_switch "KU Light Table SW" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/ku_light_table_switch", commandTopic="zigbee2mqtt/ku_light_table_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
@@ -470,7 +470,7 @@ Thing mqtt:topic:openhab:treppe_up_switch "Treppe Up switch" (mqtt:broker:openha
 Thing mqtt:topic:openhab:treppe_down_switch "Treppe Down switch" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/treppe_down_switch", commandTopic="zigbee2mqtt/treppe_down_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
 		Type number : battery [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]

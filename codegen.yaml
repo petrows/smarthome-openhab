@@ -157,118 +157,137 @@ devices:
     id: desktop_marina_remote
     zigbee_id: '0xccccccfffeea9703'
     type: IKEA_TRADFRI_REMOTE
+
+# BEDROOM ================================
   - name: SZ Climate
     id: sz_climate
     zigbee_id: '0x847127fffec6acc3'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+
   - name: Bedroom remote
     id: sz_remote_bed
     zigbee_id: '0x14b457fffe7e2305'
     type: IKEA_TRADFRI_REMOTE
+
   - name: Bedroom curtains remote
     id: sz_curtain_remote
     zigbee_id: '0x8cf681fffe36d14e'
     type: IKEA_TRADFRI_CURTAIN_REMOTE
+
   - name: Bedroom main remote
     id: sz_remote_main
     zigbee_id: '0x003c84fffe16f988'
     type: IKEA_TRADFRI_STYRBAR
+
   - name: SZ Main
     id: sz_main_light
     zigbee_id: '0x588e81fffefe9a05'
     type: LIVARNO_CELLING_14147206L
     groups:
       sw:
-      - g_light_all
-      - g_light_eg
-      - g_light_eg_sz
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
       ct:
-      - g_ct_treppe
-      - g_light_astro_color
+        - g_ct_treppe
+        - g_light_astro_color
+        - g_sunrise_ct
+
+# Lights behind bed
   - name: SZ Bed 1
     id: sz_bed_light_1
     zigbee_id: '0x04cd15fffe7a35b5'
     type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
-      - g_light_all
-      - g_light_eg
-      - g_light_eg_sz
-      - sz_bed_light
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
+        - sz_bed_light
       dim:
-      - sz_bed_light_dim
+        - sz_bed_light_dim
+
   - name: SZ Bed 2
     id: sz_bed_light_2
     zigbee_id: '0x9035eafffe1b9fcc'
     type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
-      - g_light_all
-      - g_light_eg
-      - g_light_eg_sz
-      - sz_bed_light
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
+        - sz_bed_light
       dim:
-      - sz_bed_light_dim
+        - sz_bed_light_dim
+
+# Lights behind window
   - name: SZ Decor lamp 1
     id: sz_declamp_1
     zigbee_id: '0xec1bbdfffe972819'
     type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
-      - g_light_all
-      - g_light_eg
-      - g_light_eg_sz
-      - g_light_eg_sz_night
-      - g_light_eg_sz_decor
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
+        - g_light_eg_sz_night
+        - g_light_eg_sz_decor
       dim:
-      - g_light_eg_sz_night_brightness
-      - g_light_eg_sz_decor_brightness
+        - g_light_eg_sz_night_brightness
+        - g_light_eg_sz_decor_brightness
+
   - name: SZ Decor lamp 2
     id: sz_declamp_2
     zigbee_id: '0xec1bbdfffe972203'
     type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
-      - g_light_all
-      - g_light_eg
-      - g_light_eg_sz
-      - g_light_eg_sz_night
-      - g_light_eg_sz_decor
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
+        - g_light_eg_sz_night
+        - g_light_eg_sz_decor
       dim:
-      - g_light_eg_sz_night_brightness
-      - g_light_eg_sz_decor_brightness
+        - g_light_eg_sz_night_brightness
+        - g_light_eg_sz_decor_brightness
+
   - name: SZ Decor lamp 3
     id: sz_declamp_3
     zigbee_id: '0xec1bbdfffe91007b'
     type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
-      - g_light_all
-      - g_light_eg
-      - g_light_eg_sz
-      - g_light_eg_sz_night
-      - g_light_eg_sz_decor
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
+        - g_light_eg_sz_night
+        - g_light_eg_sz_decor
       dim:
-      - g_light_eg_sz_night_brightness
-      - g_light_eg_sz_decor_brightness
+        - g_light_eg_sz_night_brightness
+        - g_light_eg_sz_decor_brightness
+
   - name: SZ Window 1
     id: sz_window_1
     zigbee_id: '0xa4c13804963f4ccf'
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-      - sz_windows
+        - sz_windows
+
   - name: SZ Window Door
     id: sz_window_door
     zigbee_id: '0xa4c138fbdde6b200'
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-      - sz_windows
+        - sz_windows
+
   - name: SZ CO2
     id: sz_co2
     type: PETROWS_CO2_SENSOR
     device_id: 5C:CF:7F:68:19:46
+
+# KITCHEN ================================
   - name: KU Climate
     id: ku_climate
     zigbee_id: '0x00158d0001b95fc4'

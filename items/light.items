@@ -22,6 +22,9 @@ Group:Dimmer:MAX g_light_eg_sz_decor_brightness
 Group:Switch:OR(ON, OFF) sz_bed_light
 Group:Dimmer:MAX sz_bed_light_dim
 
+// Sunrise groups
+Group:Dimmer:AVG g_sunrise_ct // Group of lamps to control temperature
+
 // EG auto lights
 Group:Switch:OR(ON, OFF) g_light_eg_auto
 Group:Dimmer:MAX g_dim_eg_auto
