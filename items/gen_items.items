@@ -245,7 +245,7 @@ Number:Dimensionless sz_window_door_battery "SZ Window Door  BAT [%d %%]" <batte
 Number:Dimensionless sz_co2_rssi "SZ CO2 RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:rssi"}
 String sz_co2_bssid "SZ CO2 BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bssid"}
 DateTime sz_co2_activity "SZ CO2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:activity"}
-Number:Dimensionless sz_co2_co2 "SZ CO2 CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_co2:co2"}
+Number:Dimensionless sz_co2_co2 "SZ CO2 CO₂ [%d %unit%]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_co2:co2"}
 // KU Climate (0x00158d0001b95fc4)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Switch ku_climate_lowbatt "KU Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_climate:battery_low"}

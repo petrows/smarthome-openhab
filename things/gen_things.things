@@ -90,7 +90,7 @@ Thing mqtt:topic:openhab:eg_decoration_light "EG Decor light" (mqtt:broker:openh
 // TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
 Thing mqtt:topic:openhab:eg_main_door "Entrance Door sensor" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -194,7 +194,7 @@ Thing mqtt:topic:openhab:ns_projector_power "NS Projector" (mqtt:broker:openhab)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:ns_window_2 "NS Window 2" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -335,7 +335,7 @@ Thing mqtt:topic:openhab:sz_declamp_3 "SZ Decor lamp 3" (mqtt:broker:openhab) {
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -346,7 +346,7 @@ Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:sz_window_door "SZ Window Door" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -357,7 +357,7 @@ Thing mqtt:topic:openhab:sz_window_door "SZ Window Door" (mqtt:broker:openhab) {
 // Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
 Thing mqtt:topic:openhab:sz_co2 "SZ CO2" (mqtt:broker:openhab) {
 	Channels:
-		Type number : co2 [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.CO2"]
+		Type number : co2 [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.CO2", unit="ppm"]
 		Type switch : co2_led [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.led", on="1", off="0"]
 		Type number : rssi [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
 		Type string : bssid [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
@@ -437,7 +437,7 @@ Thing mqtt:topic:openhab:ku_light_switch "KU Light SW" (mqtt:broker:openhab) {
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -448,7 +448,7 @@ Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:treppe_door_sensor "Treppe Door sensor" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -525,7 +525,7 @@ Thing mqtt:topic:openhab:treppe_climate "Treppe climate" (mqtt:broker:openhab) {
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -536,7 +536,7 @@ Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:kg_window_2 "KG Window 2" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -547,7 +547,7 @@ Thing mqtt:topic:openhab:kg_window_2 "KG Window 2" (mqtt:broker:openhab) {
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:kg_cabinet_door "KG Cabinet door" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="true", off="false"]
+		Type contact : contact [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -669,7 +669,7 @@ Thing mqtt:topic:openhab:garten_wasser_sw "Garden water" (mqtt:broker:openhab) {
 // Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
 Thing mqtt:topic:openhab:garten_wasser_leak "Warehouse 3 leak" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : leak [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"leak\".*)∩JSONPATH:$.leak"]
+		Type switch : leak [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"leak\".*)∩JSONPATH:$.leak", on="true", off="false"]
 		Type number : battery [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -773,7 +773,7 @@ Thing mqtt:topic:openhab:kg_lager4_motion "KG Lager motion" (mqtt:broker:openhab
 // Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
 Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : leak [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"leak\".*)∩JSONPATH:$.leak"]
+		Type switch : leak [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"leak\".*)∩JSONPATH:$.leak", on="true", off="false"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
