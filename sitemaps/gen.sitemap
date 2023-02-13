@@ -317,6 +317,7 @@ Text item=sz_co2_rssi
 Text item=sz_co2_bssid
 Text item=sz_co2_activity
 Text item=sz_co2_co2
+Text item=sz_co2_co2_led
 }
 Frame label="KU Climate (0x00158d0001b95fc4)" {
 // KU Climate (0x00158d0001b95fc4)
