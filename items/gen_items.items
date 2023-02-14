@@ -207,7 +207,7 @@ Switch sz_bed_light_2_ota "SZ Bed 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:
 Number:Dimensionless sz_bed_light_2_link "SZ Bed 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_2:link"}
 Switch sz_bed_light_2_sw "SZ Bed 2" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_2:state"}
 // SZ Decor lamp 1 (0x60a423fffe4b91cf)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
 Dimmer sz_declamp_1_dim "SZ Decor lamp 1 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_1:dim"}
 Dimmer sz_declamp_1_ct "SZ Decor lamp 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_sz_decor_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_declamp_1:ct"}
 Switch sz_declamp_1_ota "SZ Decor lamp 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_1:ota"}
@@ -220,7 +220,7 @@ Switch sz_declamp_2_ota "SZ Decor lamp 2 OTA [%s]" <fire> (g_all_ota) {channel="
 Number:Dimensionless sz_declamp_2_link "SZ Decor lamp 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_2:link"}
 Switch sz_declamp_2_sw "SZ Decor lamp 2" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_2:state"}
 // SZ Decor lamp 3 (0x60a423fffe4b9138)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
 Dimmer sz_declamp_3_dim "SZ Decor lamp 3 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_3:dim"}
 Dimmer sz_declamp_3_ct "SZ Decor lamp 3 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_sz_decor_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_declamp_3:ct"}
 Switch sz_declamp_3_ota "SZ Decor lamp 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_3:ota"}
