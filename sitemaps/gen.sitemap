@@ -268,7 +268,7 @@ Switch item=sz_bed_light_2_sw
 }
 Frame label="SZ Decor lamp 1 (0x60a423fffe4b91cf)" {
 // SZ Decor lamp 1 (0x60a423fffe4b91cf)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
 Slider item=sz_declamp_1_dim
 Slider item=sz_declamp_1_ct
 Text item=sz_declamp_1_ota
@@ -285,7 +285,7 @@ Switch item=sz_declamp_2_sw
 }
 Frame label="SZ Decor lamp 3 (0x60a423fffe4b9138)" {
 // SZ Decor lamp 3 (0x60a423fffe4b9138)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
 Slider item=sz_declamp_3_dim
 Slider item=sz_declamp_3_ct
 Text item=sz_declamp_3_ota

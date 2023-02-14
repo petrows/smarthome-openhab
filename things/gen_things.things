@@ -29,6 +29,7 @@ Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // Balkon light 1 (0x14b457fffe399241)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
@@ -96,6 +97,7 @@ Thing mqtt:topic:openhab:eg_main_door "Entrance Door sensor" (mqtt:broker:openha
 		Type switch : battery_low [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="JS:codegen-activity.js"]
 }
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
@@ -164,6 +166,7 @@ Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // NS Boost power (0x7cb03eaa0a0a1103)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
@@ -200,6 +203,7 @@ Thing mqtt:topic:openhab:ns_window_2 "NS Window 2" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="JS:codegen-activity.js"]
 }
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
@@ -212,6 +216,7 @@ Thing mqtt:topic:openhab:fs_climate "FS Climate" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/fs_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // Marina Desktop light (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
@@ -244,6 +249,7 @@ Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // Bedroom remote (0x14b457fffe7e2305)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
@@ -305,7 +311,7 @@ Thing mqtt:topic:openhab:sz_bed_light_2 "SZ Bed 2" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_light_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // SZ Decor lamp 1 (0x60a423fffe4b91cf)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
 Thing mqtt:topic:openhab:sz_declamp_1 "SZ Decor lamp 1" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/sz_declamp_1", commandTopic="zigbee2mqtt/sz_declamp_1/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
@@ -324,7 +330,7 @@ Thing mqtt:topic:openhab:sz_declamp_2 "SZ Decor lamp 2" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_declamp_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // SZ Decor lamp 3 (0x60a423fffe4b9138)
-// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / ?
 Thing mqtt:topic:openhab:sz_declamp_3 "SZ Decor lamp 3" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/sz_declamp_3", commandTopic="zigbee2mqtt/sz_declamp_3/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
@@ -343,6 +349,7 @@ Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="JS:codegen-activity.js"]
 }
 // SZ Window Door (0xa4c138fbdde6b200)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -354,6 +361,7 @@ Thing mqtt:topic:openhab:sz_window_door "SZ Window Door" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_door", transformationPattern="JS:codegen-activity.js"]
 }
 // SZ CO2 (sz_co2)
 // Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
@@ -377,6 +385,7 @@ Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // KU Light Button (Spüle) (0x00158d0001be5b2d)
 // Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
@@ -445,6 +454,7 @@ Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="JS:codegen-activity.js"]
 }
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -456,6 +466,7 @@ Thing mqtt:topic:openhab:treppe_door_sensor "Treppe Door sensor" (mqtt:broker:op
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="JS:codegen-activity.js"]
 }
 // Treppe Up switch (0x680ae2fffe1a92f3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
@@ -510,6 +521,7 @@ Thing mqtt:topic:openhab:treppe_motion "Treppe motion" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="JS:codegen-activity.js"]
 }
 // Treppe climate (0xa4c1383cc92cbbd2)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
@@ -522,6 +534,7 @@ Thing mqtt:topic:openhab:treppe_climate "Treppe climate" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Window 1 (0xccccccfffed82ba3)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -533,6 +546,7 @@ Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Window 2 (0xa4c1381a072fcf8b)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -544,6 +558,7 @@ Thing mqtt:topic:openhab:kg_window_2 "KG Window 2" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Cabinet door (0xa4c138312d2c455f)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -555,6 +570,7 @@ Thing mqtt:topic:openhab:kg_cabinet_door "KG Cabinet door" (mqtt:broker:openhab)
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_cabinet_door", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Climate (0x00158d0001b95e02)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
@@ -568,6 +584,7 @@ Thing mqtt:topic:openhab:kg_climate "KG Climate" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // Petro Desktop up light 1 (0x04cd15fffe35f24e)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
@@ -677,6 +694,7 @@ Thing mqtt:topic:openhab:garten_wasser_leak "Warehouse 3 leak" (mqtt:broker:open
 		Type switch : battery_low [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/garten_wasser_leak", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
@@ -700,6 +718,7 @@ Thing mqtt:topic:openhab:kg_lager3_climate "KG Lager 3 Climate" (mqtt:broker:ope
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Lager 3 motion (0x04cd15fffe873cb7)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
@@ -711,6 +730,7 @@ Thing mqtt:topic:openhab:kg_lager3_motion "KG Lager 3 motion" (mqtt:broker:openh
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Lager 3 (Haupt) (kg_lager3_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
@@ -770,6 +790,7 @@ Thing mqtt:topic:openhab:kg_lager4_motion "KG Lager motion" (mqtt:broker:openhab
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="JS:codegen-activity.js"]
 }
 // Warehouse 4 leak (0x00158d000488052c)
 // Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
@@ -781,6 +802,7 @@ Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab)
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JS:codegen-activity.js"]
 }
 // FS heating (0x9035eafffe712884)
 // TuYa Radiator valve with thermostat (TS0601_thermostat 3) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat_3.html
@@ -794,6 +816,7 @@ Thing mqtt:topic:openhab:fs_heating "FS heating" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"battery_low\".*)∩JSONPATH:$.battery_low", on="true", off="false"]
 		Type number : link [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JS:codegen-activity.js"]
 }
 // NS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -808,6 +831,7 @@ Thing mqtt:topic:openhab:ns_heating "NS heating" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="JS:codegen-activity.js"]
 }
 // KU heating (0x0c4314fffe73bf1f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -822,6 +846,7 @@ Thing mqtt:topic:openhab:ku_heating "KU heating" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="JS:codegen-activity.js"]
 }
 // SZ heating (0x0c4314fffe73c43f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -836,6 +861,7 @@ Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:codegen-activity.js"]
 }
 // KG heating (0x0c4314fffe5c6913)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -850,6 +876,7 @@ Thing mqtt:topic:openhab:kg_heating "KG heating" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:codegen-activity.js"]
 }
 // FS Christmas light (0x7cb03eaa0a093a8b)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
