@@ -190,7 +190,7 @@ Number:Dimensionless sz_remote_main_battery "Bedroom main remote  BAT [%d %%]" <
 // SZ Main (0x588e81fffefe9a05)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Dimmer sz_main_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_main_light:dim"}
-Dimmer sz_main_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_ct_treppe,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_main_light:ct"}
+Dimmer sz_main_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_main_light:ct"}
 Switch sz_main_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_main_light:ota"}
 Number:Dimensionless sz_main_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_main_light:link"}
 Switch sz_main_light_sw "SZ Main" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz) {channel="mqtt:topic:openhab:sz_main_light:state"}
@@ -206,9 +206,10 @@ Dimmer sz_bed_light_2_dim "SZ Bed 2 DIM [%d %%]" <light> (g_all_dim,sz_bed_light
 Switch sz_bed_light_2_ota "SZ Bed 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_light_2:ota"}
 Number:Dimensionless sz_bed_light_2_link "SZ Bed 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_2:link"}
 Switch sz_bed_light_2_sw "SZ Bed 2" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_2:state"}
-// SZ Decor lamp 1 (0xec1bbdfffe972819)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+// SZ Decor lamp 1 (0x60a423fffe4b91cf)
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
 Dimmer sz_declamp_1_dim "SZ Decor lamp 1 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_1:dim"}
+Dimmer sz_declamp_1_ct "SZ Decor lamp 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_sz_decor_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_declamp_1:ct"}
 Switch sz_declamp_1_ota "SZ Decor lamp 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_1:ota"}
 Number:Dimensionless sz_declamp_1_link "SZ Decor lamp 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_1:link"}
 Switch sz_declamp_1_sw "SZ Decor lamp 1" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_1:state"}
@@ -218,9 +219,10 @@ Dimmer sz_declamp_2_dim "SZ Decor lamp 2 DIM [%d %%]" <light> (g_all_dim,g_light
 Switch sz_declamp_2_ota "SZ Decor lamp 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_2:ota"}
 Number:Dimensionless sz_declamp_2_link "SZ Decor lamp 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_2:link"}
 Switch sz_declamp_2_sw "SZ Decor lamp 2" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_2:state"}
-// SZ Decor lamp 3 (0xec1bbdfffe91007b)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+// SZ Decor lamp 3 (0x60a423fffe4b9138)
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
 Dimmer sz_declamp_3_dim "SZ Decor lamp 3 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_3:dim"}
+Dimmer sz_declamp_3_ct "SZ Decor lamp 3 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_sz_decor_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_declamp_3:ct"}
 Switch sz_declamp_3_ota "SZ Decor lamp 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_3:ota"}
 Number:Dimensionless sz_declamp_3_link "SZ Decor lamp 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_3:link"}
 Switch sz_declamp_3_sw "SZ Decor lamp 3" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_3:state"}

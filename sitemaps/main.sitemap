@@ -189,6 +189,7 @@ sitemap main label="MAIN"
 			Frame label="Room decor" {
                 Switch item=g_light_eg_sz_decor label="Room light [%s]" icon="light"
                 Slider item=g_light_eg_sz_decor_brightness label="Room light DIM [%d %%]" icon="light"
+                Slider item=g_light_sz_decor_ct label="Room CT [JS(codegen-mired.js):%s]" icon="light"
             }
             Frame label="Lamps control" {
 				Switch item=sz_bed_light_1_sw label="Bed 1 [%s]"

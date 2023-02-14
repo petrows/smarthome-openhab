@@ -189,7 +189,7 @@ devices:
         - g_light_eg
         - g_light_eg_sz
       ct:
-        - g_ct_treppe
+        - g_light_sz_ct
         - g_light_astro_color
         - g_sunrise_ct
 
@@ -223,8 +223,8 @@ devices:
 # Lights behind window
   - name: SZ Decor lamp 1
     id: sz_declamp_1
-    zigbee_id: '0xec1bbdfffe972819'
-    type: IKEA_TRADFRI_LAMP_W_250
+    zigbee_id: '0x60a423fffe4b91cf'
+    type: ALDI_FILAMENT
     groups:
       sw:
         - g_light_all
@@ -235,6 +235,11 @@ devices:
       dim:
         - g_light_eg_sz_night_brightness
         - g_light_eg_sz_decor_brightness
+      ct:
+        - g_light_sz_ct
+        - g_light_sz_decor_ct
+        - g_light_astro_color
+        - g_sunrise_ct
 
   - name: SZ Decor lamp 2
     id: sz_declamp_2
@@ -253,8 +258,8 @@ devices:
 
   - name: SZ Decor lamp 3
     id: sz_declamp_3
-    zigbee_id: '0xec1bbdfffe91007b'
-    type: IKEA_TRADFRI_LAMP_W_250
+    zigbee_id: '0x60a423fffe4b9138'
+    type: ALDI_FILAMENT
     groups:
       sw:
         - g_light_all
@@ -265,6 +270,11 @@ devices:
       dim:
         - g_light_eg_sz_night_brightness
         - g_light_eg_sz_decor_brightness
+      ct:
+        - g_light_sz_ct
+        - g_light_sz_decor_ct
+        - g_light_astro_color
+        - g_sunrise_ct
 
   - name: SZ Window 1
     id: sz_window_1

@@ -304,12 +304,13 @@ Thing mqtt:topic:openhab:sz_bed_light_2 "SZ Bed 2" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/sz_bed_light_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_light_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// SZ Decor lamp 1 (0xec1bbdfffe972819)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+// SZ Decor lamp 1 (0x60a423fffe4b91cf)
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
 Thing mqtt:topic:openhab:sz_declamp_1 "SZ Decor lamp 1" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/sz_declamp_1", commandTopic="zigbee2mqtt/sz_declamp_1/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_declamp_1", commandTopic="zigbee2mqtt/sz_declamp_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=255]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_declamp_1", commandTopic="zigbee2mqtt/sz_declamp_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/sz_declamp_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_declamp_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -322,12 +323,13 @@ Thing mqtt:topic:openhab:sz_declamp_2 "SZ Decor lamp 2" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/sz_declamp_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_declamp_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// SZ Decor lamp 3 (0xec1bbdfffe91007b)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+// SZ Decor lamp 3 (0x60a423fffe4b9138)
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
 Thing mqtt:topic:openhab:sz_declamp_3 "SZ Decor lamp 3" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/sz_declamp_3", commandTopic="zigbee2mqtt/sz_declamp_3/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_declamp_3", commandTopic="zigbee2mqtt/sz_declamp_3/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=255]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_declamp_3", commandTopic="zigbee2mqtt/sz_declamp_3/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/sz_declamp_3", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_declamp_3", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }

@@ -300,6 +300,7 @@ then
         }
         case "brightness_down_click": {
             if ("DECOR" == mode) {
+                g_light_eg_sz_decor.sendCommand(ON)
                 g_light_eg_sz_decor_brightness.sendCommand(1)
             }
             if ("BED" == mode) {
@@ -308,6 +309,7 @@ then
         }
         case "brightness_up_click": {
             if ("DECOR" == mode) {
+                g_light_eg_sz_decor.sendCommand(ON)
                 g_light_eg_sz_decor_brightness.sendCommand(100)
             }
             if ("BED" == mode) {
@@ -319,6 +321,8 @@ then
             if (ON == g_light_eg_sz_decor.state) {
                 g_light_eg_sz_decor.sendCommand(OFF)
             } else {
+                g_light_eg_sz_decor.sendCommand(ON)
+                g_light_sz_decor_ct.sendCommand(100)
                 g_light_eg_sz_decor_brightness.sendCommand(1)
             }
         }

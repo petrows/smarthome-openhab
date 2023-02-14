@@ -110,6 +110,7 @@ then
             }
 
             logWarn("light", "Sunrise item " + s + " -> " + setBright + " (" + brightnessAllProgress + ")")
+            sendCommand(s + "_sw", "ON")
             sendCommand(s + "_dim", setBright.toString())
         ]
 

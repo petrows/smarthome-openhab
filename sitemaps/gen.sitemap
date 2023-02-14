@@ -266,10 +266,11 @@ Text item=sz_bed_light_2_ota
 Text item=sz_bed_light_2_link
 Switch item=sz_bed_light_2_sw
 }
-Frame label="SZ Decor lamp 1 (0xec1bbdfffe972819)" {
-// SZ Decor lamp 1 (0xec1bbdfffe972819)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Frame label="SZ Decor lamp 1 (0x60a423fffe4b91cf)" {
+// SZ Decor lamp 1 (0x60a423fffe4b91cf)
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
 Slider item=sz_declamp_1_dim
+Slider item=sz_declamp_1_ct
 Text item=sz_declamp_1_ota
 Text item=sz_declamp_1_link
 Switch item=sz_declamp_1_sw
@@ -282,10 +283,11 @@ Text item=sz_declamp_2_ota
 Text item=sz_declamp_2_link
 Switch item=sz_declamp_2_sw
 }
-Frame label="SZ Decor lamp 3 (0xec1bbdfffe91007b)" {
-// SZ Decor lamp 3 (0xec1bbdfffe91007b)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Frame label="SZ Decor lamp 3 (0x60a423fffe4b9138)" {
+// SZ Decor lamp 3 (0x60a423fffe4b9138)
+// Aldi LIGHTWAY smart home LED-lamp - filament (F122SB62H22A4.5W) / https://www.zigbee2mqtt.io/devices/F122SB62H22A4.5W.html
 Slider item=sz_declamp_3_dim
+Slider item=sz_declamp_3_ct
 Text item=sz_declamp_3_ota
 Text item=sz_declamp_3_link
 Switch item=sz_declamp_3_sw
