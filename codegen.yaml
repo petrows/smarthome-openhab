@@ -72,6 +72,7 @@ devices:
       - g_light_bz_ct
       color:
       - g_light_bz_color
+
   - name: BZ Light (shower)
     id: bz_light_2
     zigbee_id: '0x04cd15fffedb319f'
@@ -89,35 +90,41 @@ devices:
       - g_light_bz_ct
       color:
       - g_light_bz_color
+
   - name: BZ Mirror
     id: bz_mirror
     type: TASMOTA_SONOFF_MINI
-    groups:
-      POWER:
-      - g_light_all
-      - g_light_eg
-      - g_light_eg_bz
     channels:
       POWER:
         id: bz_mirror
         name: BZ Mirror
+        groups:
+          sw:
+          - g_light_all
+          - g_light_eg
+          - g_light_eg_bz
+
   - name: BZ Mirror switch
     id: bz_mirror_switch
     zigbee_id: '0xccccccfffef0356e'
     type: IKEA_TRADFRI_ON_OFF
+
   - name: BZ Light Control
     id: bz_light_switch
     zigbee_id: '0x003c84fffe132b20'
     type: IKEA_TRADFRI_STYRBAR
+
   - name: NS Climate
     id: ns_climate
     zigbee_id: '0x00158d0001b95e08'
     type: XIAOMI_AQARA_V2
+
   - name: NS Boost power
     id: ns_heating_boost_power
     zigbee_id: '0x7cb03eaa0a0a1103'
     type: OSRAM_SMART_PLUG
     expire: 1h
+
   - name: NS Night lamp
     id: ns_night_lamp
     zigbee_id: '0xec1bbdfffe9abfde'
@@ -127,6 +134,7 @@ devices:
       - g_light_all
       - g_light_eg
       - g_light_eg_ns
+
   - name: NS Projector
     id: ns_projector_power
     zigbee_id: '0x7cb03eaa0a094d1d'
@@ -252,7 +260,7 @@ devices:
     type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
-        - g_light_allk
+        - g_light_all
         - g_light_eg
         - g_light_eg_sz
         - g_light_eg_sz_night
@@ -302,14 +310,17 @@ devices:
     id: ku_climate
     zigbee_id: '0x00158d0001b95fc4'
     type: XIAOMI_AQARA_V2
+
   - name: "KU Light Button (Sp\xFCle)"
     id: ku_light_switch_spule
     zigbee_id: '0x00158d0001be5b2d'
     type: XIAOMI_BUTTON
+
   - name: KU Light Button (Kochfield)
     id: ku_light_switch_kochfeld
     zigbee_id: '0x680ae2fffeaf18d4'
     type: IKEA_TRADFRI_REMOTE
+
   - name: KU Light Arbeit
     id: ku_light_arbeitplatte
     zigbee_id: '0xec1bbdfffea37757'
@@ -321,10 +332,12 @@ devices:
       - g_light_eg
       - g_light_eg_ku
       - g_light_eg_ku_main
+
   - name: KU Light Table SW
     id: ku_light_table_switch
     zigbee_id: '0x04cd15fffe789098'
     type: IKEA_TRADFRI_STYRBAR
+
   - name: KU Light Table
     id: ku_light_table
     zigbee_id: '0xec1bbdfffe4695b5'
@@ -337,6 +350,7 @@ devices:
       - g_light_eg_auto
       dim:
       - g_dim_eg_auto
+
   - name: KU Light SW
     id: ku_light_switch
     zigbee_id: '0x842e14fffe1267fb'
@@ -361,6 +375,7 @@ devices:
           - g_light_eg
           - g_light_eg_ku
           - g_light_eg_ku_main
+
   - name: KU Window Door
     id: ku_window_door
     zigbee_id: '0xa4c1389dec8b9204'
@@ -368,18 +383,22 @@ devices:
     groups:
       contact:
       - ku_windows
+
   - name: Treppe Door sensor
     id: treppe_door_sensor
     zigbee_id: '0xccccccfffed82b91'
     type: TUYA_WINDOW_SENSOR
+
   - name: Treppe Up switch
     id: treppe_up_switch
     zigbee_id: '0x680ae2fffe1a92f3'
     type: IKEA_TRADFRI_ON_OFF
+
   - name: Treppe Down switch
     id: treppe_down_switch
     zigbee_id: '0x04cd15fffe75c518'
     type: IKEA_TRADFRI_STYRBAR
+
   - name: Treppe Up light
     id: treppe_up_light
     zigbee_id: '0xd0cf5efffee892b0'
@@ -396,6 +415,7 @@ devices:
       ct:
       - g_ct_treppe
       - g_light_astro_color
+
   - name: Treppe Down light
     id: treppe_down_light
     zigbee_id: '0x04cd15fffedb31f7'
@@ -412,14 +432,17 @@ devices:
       ct:
       - g_ct_treppe
       - g_light_astro_color
+
   - name: Treppe motion
     id: treppe_motion
     zigbee_id: '0xbc33acfffe872049'
     type: IKEA_TRADFRI_MOTION_SENSOR
+
   - name: Treppe climate
     id: treppe_climate
     zigbee_id: '0xa4c1383cc92cbbd2'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+
   - name: KG Window 1
     id: kg_window_1
     zigbee_id: '0xccccccfffed82ba3'
@@ -427,6 +450,7 @@ devices:
     groups:
       contact:
       - kg_windows
+
   - name: KG Window 2
     id: kg_window_2
     zigbee_id: '0xa4c1381a072fcf8b'
@@ -435,6 +459,7 @@ devices:
       contact:
       - kg_windows
       - g_windows_skip_off
+
   - name: KG Cabinet door
     id: kg_cabinet_door
     zigbee_id: '0xa4c138312d2c455f'
@@ -443,6 +468,7 @@ devices:
       contact:
       - kg_windows
       - g_windows_skip_off
+
   - name: KG Climate
     id: kg_climate
     zigbee_id: '0x00158d0001b95e02'
@@ -463,6 +489,7 @@ devices:
       - g_light_kg_desktop_color
       dim:
       - g_light_kg_desktop_dim
+
   - name: Petro Desktop up light 2
     id: desktop_petro_up_light_2
     zigbee_id: '0x04cd15fffe6bf002'
@@ -478,6 +505,7 @@ devices:
       - g_light_kg_desktop_color
       dim:
       - g_light_kg_desktop_dim
+
   - name: Petro Desktop up light 3
     id: desktop_petro_up_light_3
     zigbee_id: '0x04cd15fffe73ecb6'
@@ -510,47 +538,52 @@ devices:
     id: desktop_petro_pc_power
     zigbee_id: '0x847127fffe0c873b'
     type: TUYA_SWITCH_TS0001
+
   - name: Petro Desktop remote
     id: desktop_petro_remote
     zigbee_id: '0x000d6ffffee8357d'
     type: IKEA_TRADFRI_REMOTE
+
   - name: "KG Hobbyraum (Fl\xFCr)"
     id: kg_main1_light
     type: TASMOTA_SONOFF_TOUCH_EU1
-    groups:
-      POWER:
-      - g_light_all
-      - g_light_kg
-      - g_light_kg_hobbyraum
-      - g_light_kg_auto
     channels:
       POWER:
         id: kg_main1_light
         name: "KG Hobbyraum (Fl\xFCr)"
+        groups:
+          sw:
+            - g_light_all
+            - g_light_kg
+            - g_light_kg_hobbyraum
+            - g_light_kg_auto
+
   - name: KG Hobbyraum (Haupt)
     id: kg_main2_light
     type: TASMOTA_SONOFF_TOUCH_EU1
-    groups:
-      POWER:
-      - g_light_all
-      - g_light_kg
-      - g_light_kg_hobbyraum
     channels:
       POWER:
         id: kg_main2_light
         name: KG Hobbyraum (Haupt)
+        groups:
+          sw:
+            - g_light_all
+            - g_light_kg
+            - g_light_kg_hobbyraum
+
   - name: KG Heuzung (Haupt)
     id: kg_hz_main_light
     type: TASMOTA_SONOFF_MINI
-    groups:
-      POWER:
-      - g_light_all
-      - g_light_kg
     channels:
       POWER:
         id: kg_hz_main_light
         name: KG Heuzung (Haupt)
         expire: 1h
+        groups:
+          sw:
+            - g_light_all
+            - g_light_kg
+
   - name: Garden water
     id: garten_wasser_sw
     type: TASMOTA_SONOFF_MINI
@@ -559,54 +592,61 @@ devices:
         id: garten_wasser_sw
         name: Garden water
         expire: 1h
+
   - name: Warehouse 3 leak
     id: garten_wasser_leak
     zigbee_id: '0x00158d0006b7aa81'
     type: XIAOMI_AQARA_LEAK_V1
+
   - name: KG Lager 1 (Haupt)
     id: kg_lager1_main_light
     type: TASMOTA_SONOFF_MINI
-    groups:
-      POWER:
-      - g_light_all
-      - g_light_kg
     channels:
       POWER:
         id: kg_lager1_main_light
         name: KG Lager 1 (Haupt)
         expire: 1h
+        groups:
+          sw:
+            - g_light_all
+            - g_light_kg
+
   - name: KG Lager 3 Climate
     id: kg_lager3_climate
     zigbee_id: '0x00158d0001c19a6b'
     type: XIAOMI_AQARA_V2
+
   - name: KG Lager 3 motion
     id: kg_lager3_motion
     zigbee_id: '0x04cd15fffe873cb7'
     type: IKEA_TRADFRI_MOTION_SENSOR
+
   - name: KG Lager 3 (Haupt)
     id: kg_lager3_main_light
     type: TASMOTA_SONOFF_MINI
-    groups:
-      POWER:
-      - g_light_all
-      - g_light_kg
     channels:
       POWER:
         id: kg_lager3_main_light
         name: KG Lager 3 (Haupt)
         expire: 1h
+        groups:
+          sw:
+            - g_light_all
+            - g_light_kg
+
   - name: KG Lager 4 (Haupt)
     id: kg_lager4_main_light
     type: TASMOTA_SONOFF_MINI
-    groups:
-      POWER:
-      - g_light_all
-      - g_light_kg
     channels:
       POWER:
         id: kg_lager4_main_light
         name: KG Lager 4 (Haupt)
         expire: 1h
+        groups:
+          sw:
+            - g_light_all
+            - g_light_kg
+
   - name: KG Lager 4 (1)
     id: kg_lager4_1_light
     zigbee_id: '0xccccccfffedf345a'
@@ -619,6 +659,7 @@ devices:
       - g_light_lager_auto
       dim:
       - g_dim_lager_auto
+
   - name: KG Lager 4 (2)
     id: kg_lager4_2_light
     zigbee_id: '0xccccccfffedf5314'
@@ -631,18 +672,22 @@ devices:
       - g_light_lager_auto
       dim:
       - g_dim_lager_auto
+
   - name: KG Lager switch
     id: kg_lager4_switch
     zigbee_id: '0xccccccfffee401f8'
     type: IKEA_TRADFRI_ON_OFF
+
   - name: KG Lager motion
     id: kg_lager4_motion
     zigbee_id: '0xbc33acfffe84ca1e'
     type: IKEA_TRADFRI_MOTION_SENSOR
+
   - name: Warehouse 4 leak
     id: kg_lager4_leak
     zigbee_id: '0x00158d000488052c'
     type: XIAOMI_AQARA_LEAK_V1
+
   - name: FS heating
     id: fs_heating
     zigbee_id: '0x9035eafffe712884'
@@ -654,6 +699,7 @@ devices:
       - g_hz_fs
       position:
       - g_hz_valve
+
   - name: NS heating
     id: ns_heating
     zigbee_id: '0x0c4314fffe62f090'
@@ -665,6 +711,7 @@ devices:
       - g_hz_ns
       position:
       - g_hz_valve
+
   - name: KU heating
     id: ku_heating
     zigbee_id: '0x0c4314fffe73bf1f'
@@ -676,6 +723,7 @@ devices:
       - g_hz_ku
       position:
       - g_hz_valve
+
   - name: SZ heating
     id: sz_heating
     zigbee_id: '0x0c4314fffe73c43f'
@@ -687,6 +735,7 @@ devices:
       - g_hz_sz
       position:
       - g_hz_valve
+
   - name: KG heating
     id: kg_heating
     zigbee_id: '0x0c4314fffe5c6913'
@@ -698,6 +747,7 @@ devices:
       - g_hz_kg
       position:
       - g_hz_valve
+
   - name: FS Christmas light
     id: fs_christmas_light
     zigbee_id: '0x7cb03eaa0a093a8b'
@@ -705,6 +755,7 @@ devices:
     groups:
       sw:
       - g_light_christmas
+
   - name: NS Christmas light
     id: ns_christmas_light
     zigbee_id: '0x7cb03eaa0a094303'
@@ -712,6 +763,7 @@ devices:
     groups:
       sw:
       - g_light_christmas
+
   - name: Balkon Christmas light
     id: balkon_christmas_light
     zigbee_id: '0x7cb03eaa0a094bf2'
