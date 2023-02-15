@@ -61,7 +61,8 @@ then
             "sz_declamp_1",
             "sz_declamp_2",
             "sz_declamp_3",
-            "sz_main_light"
+            "sz_bed_light_1"
+            "sz_bed_light_2"
         )
 
         if (sunriseStarted) {

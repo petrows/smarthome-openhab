@@ -24,7 +24,7 @@ Group:Dimmer:MAX g_light_eg_sz_decor_brightness
 Group:Switch:OR(ON, OFF) sz_bed_light
 Group:Dimmer:MAX sz_bed_light_dim
 Group:Dimmer:AVG g_light_sz_ct "SZ all CT [%d %%]" <light>
-Group:Dimmer:AVG g_light_sz_decor_ct "SZ decor CT [%d %%]" <light>
+Group:Dimmer:AVG g_light_sz_bed_ct "SZ bed CT [%d %%]" <light>
 
 // Sunrise groups
 Group:Dimmer:AVG g_sunrise_ct // Group of lamps to control temperature

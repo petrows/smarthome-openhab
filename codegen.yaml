@@ -196,8 +196,8 @@ devices:
 # Lights behind bed
   - name: SZ Bed 1
     id: sz_bed_light_1
-    zigbee_id: '0x04cd15fffe7a35b5'
-    type: IKEA_TRADFRI_LAMP_W_250
+    zigbee_id: '0x040d84fffece67a6'
+    type: IKEA_TRADFRI_LAMP_LED1546G12
     groups:
       sw:
         - g_light_all
@@ -206,11 +206,16 @@ devices:
         - sz_bed_light
       dim:
         - sz_bed_light_dim
+      ct:
+        - g_light_sz_ct
+        - g_light_sz_bed_ct
+        - g_light_astro_color
+        - g_sunrise_ct
 
   - name: SZ Bed 2
     id: sz_bed_light_2
-    zigbee_id: '0x9035eafffe1b9fcc'
-    type: IKEA_TRADFRI_LAMP_W_250
+    zigbee_id: '0x040d84fffec53aaf'
+    type: IKEA_TRADFRI_LAMP_LED1546G12
     groups:
       sw:
         - g_light_all
@@ -219,12 +224,17 @@ devices:
         - sz_bed_light
       dim:
         - sz_bed_light_dim
+      ct:
+        - g_light_sz_ct
+        - g_light_sz_bed_ct
+        - g_light_astro_color
+        - g_sunrise_ct
 
 # Lights behind window
   - name: SZ Decor lamp 1
     id: sz_declamp_1
-    zigbee_id: '0x60a423fffe4b91cf'
-    type: ALDI_FILAMENT
+    zigbee_id: '0xec1bbdfffe972819'
+    type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
         - g_light_all
@@ -235,11 +245,6 @@ devices:
       dim:
         - g_light_eg_sz_night_brightness
         - g_light_eg_sz_decor_brightness
-      ct:
-        - g_light_sz_ct
-        - g_light_sz_decor_ct
-        - g_light_astro_color
-        - g_sunrise_ct
 
   - name: SZ Decor lamp 2
     id: sz_declamp_2
@@ -247,7 +252,7 @@ devices:
     type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
-        - g_light_all
+        - g_light_allk
         - g_light_eg
         - g_light_eg_sz
         - g_light_eg_sz_night
@@ -258,8 +263,8 @@ devices:
 
   - name: SZ Decor lamp 3
     id: sz_declamp_3
-    zigbee_id: '0x60a423fffe4b9138'
-    type: ALDI_FILAMENT
+    zigbee_id: '0xec1bbdfffe91007b'
+    type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
         - g_light_all
@@ -270,11 +275,6 @@ devices:
       dim:
         - g_light_eg_sz_night_brightness
         - g_light_eg_sz_decor_brightness
-      ct:
-        - g_light_sz_ct
-        - g_light_sz_decor_ct
-        - g_light_astro_color
-        - g_sunrise_ct
 
   - name: SZ Window 1
     id: sz_window_1
@@ -447,6 +447,7 @@ devices:
     id: kg_climate
     zigbee_id: '0x00158d0001b95e02'
     type: XIAOMI_AQARA_V2
+
   - name: Petro Desktop up light 1
     id: desktop_petro_up_light_1
     zigbee_id: '0x04cd15fffe35f24e'
@@ -492,6 +493,7 @@ devices:
       - g_light_kg_desktop_color
       dim:
       - g_light_kg_desktop_dim
+
   - name: Petro Desktop light
     id: desktop_petro_light
     zigbee_id: '0xccccccfffed8ef9d'
@@ -503,6 +505,7 @@ devices:
       - g_light_kg_hobbyraum
       ct:
       - g_light_astro_color
+
   - name: Petro Desktop PC
     id: desktop_petro_pc_power
     zigbee_id: '0x847127fffe0c873b'
