@@ -14,6 +14,10 @@ val sunriseBrightPeriod = 60 * 60
 
 val sunriseBrightPeriodStep = 1
 
+// Persentage, when CT starts to set (0 - begin, 1 - end)
+
+val sunriseCTStart = 0.6
+
 // === Configuration
 
 // Global vars
@@ -61,7 +65,7 @@ then
             "sz_declamp_1",
             "sz_declamp_2",
             "sz_declamp_3",
-            "sz_bed_light_1"
+            "sz_bed_light_1",
             "sz_bed_light_2"
         )
 
@@ -100,6 +104,13 @@ then
         // Overall progress for scenario (0..1)
         val brightnessAllProgress = (sunriseBrightness as float) / (lightGroupItems.size * 100.0)
 
+        // Detect start of CT
+        var sunriseCTProgress = 0.0
+        if (brightnessAllProgress > sunriseCTStart) {
+            // Detect current percecntage for CT
+            sunriseCTProgress = (brightnessAllProgress - sunriseCTStart) / (1.0 - sunriseCTStart)
+        }
+
         lightGroupItems.forEach [s |
 
             var setBright = sunriseModeValue
@@ -116,7 +127,7 @@ then
         ]
 
         // Update CT (in reverse 100 -> 0)
-        g_sunrise_ct.sendCommand((100 - (brightnessAllProgress * 100)).toString())
+        g_sunrise_ct.sendCommand((100 - (sunriseCTProgress * 100)).toString())
 
         // All items 100% ?
         if (brightnessAllProgress >= 1) {

@@ -171,11 +171,8 @@ sitemap main label="MAIN"
 				Switch item=sz_main_light_sw label="Main [%s]" icon="light"
 				Slider item=sz_main_light_dim label="Main DIM [%d %%]" icon="light"
 				Slider item=sz_main_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
-            }
-            Frame {
-				Switch item=g_light_eg_sz_night label="Night [%s]" icon="light"
-				Slider item=g_light_eg_sz_night_brightness label="Night dim [%d %%]" icon="light"
-				Switch item=light_sunrise_enabled icon="light"
+				Slider item=g_light_sz_ct label="All CT [JS(codegen-mired.js):%s]" icon="light"
+                Switch item=light_sunrise_enabled icon="light"
             }
             Frame label="Curtains" {
                 Switch item=sz_curtain_switch label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
@@ -185,7 +182,7 @@ sitemap main label="MAIN"
 			Frame label="Bed decor" {
 				Switch item=sz_bed_light label="Bed light [%s]" icon="light"
 				Slider item=sz_bed_light_dim label="Bed light DIM [%d %%]" icon="light"
-                Slider item=g_light_sz_bed_ct label="Room CT [JS(codegen-mired.js):%s]" icon="light"
+                Slider item=g_light_sz_bed_ct label="Bed CT [JS(codegen-mired.js):%s]" icon="light"
 			}
 			Frame label="Room decor" {
                 Switch item=g_light_eg_sz_decor label="Room light [%s]" icon="light"
