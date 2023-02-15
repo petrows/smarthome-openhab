@@ -80,11 +80,12 @@ then
 	logWarn("heating", "Set NIGHT")
 
     val temp = cfgHeatingTempNight.state as Number
+    val temp_off = cfgHeatingTempNight.state as Number
 
     set_room.apply("fs", temp)
     set_room.apply("ns", temp)
     set_room.apply("ku", temp)
-    set_room.apply("sz", temp)
+    set_room.apply("sz", temp_off)
     set_room.apply("kg", temp)
 end
 
@@ -110,7 +111,7 @@ when
 then
 	logWarn("heating", "Set DAY")
 
-    val temp = cfgHeatingTempDay.state as Number
+    // val temp = cfgHeatingTempDay.state as Number
     val temp_off = cfgHeatingTempNight.state as Number
 
     //set_room.apply("fs", temp)
