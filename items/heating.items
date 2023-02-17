@@ -17,6 +17,15 @@ Group g_hz_ns <heating>
 Group g_hz_ku <heating>
 Group g_hz_sz <heating>
 
+// Group to control heaters on/off
+Group:Switch:OR(ON, OFF) g_hz_enable <heating>
+// Room items
+Group:Switch:OR(ON, OFF) g_hz_kg_enable <heating>
+Group:Switch:OR(ON, OFF) g_hz_fs_enable <heating>
+Group:Switch:OR(ON, OFF) g_hz_ns_enable <heating>
+Group:Switch:OR(ON, OFF) g_hz_ku_enable <heating>
+Group:Switch:OR(ON, OFF) g_hz_sz_enable <heating>
+
 // All sensors
 Group:Contact:AND(CLOSED, OPEN) g_all_contact "All contacts [%s]" <window>
 Group:Contact:AND(CLOSED, OPEN) all_windows "All windows [%s]" <window>

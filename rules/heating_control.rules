@@ -6,6 +6,9 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     logInfo("heating", "set_room " + room_name + ": request " + temperature.toString)
 
+    var thermostat_item_temp = "g_hz_" + room_name
+    var thermostat_item_switch = "g_hz_" + room_name + '_enable'
+
     if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON)) {
 		logInfo("heating", "set_room: Auto disabled")
 		return false
@@ -13,7 +16,6 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     var room_heating_enabled = true
     var room_sensors_enabled = true
-    var room_heating_thermostat = ScriptServiceUtil.getItemRegistry?.getItem("g_hz_" + room_name) as GroupItem
 
     // Check that we have master-switch for this room
     try {
@@ -30,7 +32,7 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     if (!room_heating_enabled) {
         logWarn("heating", "set_room " + room_name + ": disabled (switched off)")
-        room_heating_thermostat.sendCommand(cfgHeatingTempOff.state as Number)
+        sendCommand(thermostat_item_switch, "OFF")
         return false
     }
 
@@ -51,12 +53,13 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     if (!room_sensors_enabled) {
         logWarn("heating", "set_room " + room_name + ": disabled (sensors)")
-        room_heating_thermostat.sendCommand(cfgHeatingTempOff.state as Number)
+        sendCommand(thermostat_item_switch, "OFF")
         return false
     }
 
     logInfo("heating", "set_room " + room_name + ": set now " + temperature.toString)
-    room_heating_thermostat.sendCommand(temperature)
+    sendCommand(thermostat_item_switch, "ON")
+    sendCommand(thermostat_item_temp, temperature.toString())
 
     return true
 ]

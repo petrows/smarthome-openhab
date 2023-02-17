@@ -699,6 +699,9 @@ devices:
       - g_hz_fs
       position:
       - g_hz_valve
+      thermostat_enable:
+      - g_hz_enable
+      - g_hz_fs_enable
 
   - name: NS heating
     id: ns_heating
@@ -711,6 +714,9 @@ devices:
       - g_hz_ns
       position:
       - g_hz_valve
+      thermostat_enable:
+      - g_hz_enable
+      - g_hz_ns_enable
 
   - name: KU heating
     id: ku_heating
@@ -723,6 +729,9 @@ devices:
       - g_hz_ku
       position:
       - g_hz_valve
+      thermostat_enable:
+      - g_hz_enable
+      - g_hz_ku_enable
 
   - name: SZ heating
     id: sz_heating
@@ -735,6 +744,9 @@ devices:
       - g_hz_sz
       position:
       - g_hz_valve
+      thermostat_enable:
+      - g_hz_enable
+      - g_hz_sz_enable
 
   - name: KG heating
     id: kg_heating
@@ -747,6 +759,9 @@ devices:
       - g_hz_kg
       position:
       - g_hz_valve
+      thermostat_enable:
+      - g_hz_enable
+      - g_hz_kg_enable
 
   - name: FS Christmas light
     id: fs_christmas_light
