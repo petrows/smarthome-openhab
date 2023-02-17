@@ -37,7 +37,7 @@ Thing mqtt:topic:openhab:balkon_light_1 "Balkon light 1" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/balkon_light_1", commandTopic="zigbee2mqtt/balkon_light_1/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/balkon_light_1", commandTopic="zigbee2mqtt/balkon_light_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/balkon_light_1", commandTopic="zigbee2mqtt/balkon_light_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=250, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/balkon_light_1", commandTopic="zigbee2mqtt/balkon_light_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/balkon_light_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/balkon_light_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -224,7 +224,7 @@ Thing mqtt:topic:openhab:desktop_marina_light "Marina Desktop light" (mqtt:broke
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/desktop_marina_light", commandTopic="zigbee2mqtt/desktop_marina_light/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/desktop_marina_light", commandTopic="zigbee2mqtt/desktop_marina_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_marina_light", commandTopic="zigbee2mqtt/desktop_marina_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=250, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_marina_light", commandTopic="zigbee2mqtt/desktop_marina_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/desktop_marina_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_marina_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -298,7 +298,7 @@ Thing mqtt:topic:openhab:sz_bed_light_1 "SZ Bed 1" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/sz_bed_light_1", commandTopic="zigbee2mqtt/sz_bed_light_1/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bed_light_1", commandTopic="zigbee2mqtt/sz_bed_light_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=2, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_bed_light_1", commandTopic="zigbee2mqtt/sz_bed_light_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=250, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_bed_light_1", commandTopic="zigbee2mqtt/sz_bed_light_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/sz_bed_light_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_light_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -308,7 +308,7 @@ Thing mqtt:topic:openhab:sz_bed_light_2 "SZ Bed 2" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/sz_bed_light_2", commandTopic="zigbee2mqtt/sz_bed_light_2/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bed_light_2", commandTopic="zigbee2mqtt/sz_bed_light_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=2, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_bed_light_2", commandTopic="zigbee2mqtt/sz_bed_light_2/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=250, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_bed_light_2", commandTopic="zigbee2mqtt/sz_bed_light_2/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/sz_bed_light_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_light_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -495,7 +495,7 @@ Thing mqtt:topic:openhab:treppe_up_light "Treppe Up light" (mqtt:broker:openhab)
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/treppe_up_light", commandTopic="zigbee2mqtt/treppe_up_light/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_up_light", commandTopic="zigbee2mqtt/treppe_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/treppe_up_light", commandTopic="zigbee2mqtt/treppe_up_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=250, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/treppe_up_light", commandTopic="zigbee2mqtt/treppe_up_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/treppe_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -592,7 +592,7 @@ Thing mqtt:topic:openhab:desktop_petro_up_light_1 "Petro Desktop up light 1" (mq
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", commandTopic="zigbee2mqtt/desktop_petro_up_light_1/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", commandTopic="zigbee2mqtt/desktop_petro_up_light_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", commandTopic="zigbee2mqtt/desktop_petro_up_light_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=250, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", commandTopic="zigbee2mqtt/desktop_petro_up_light_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_up_light_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -602,7 +602,7 @@ Thing mqtt:topic:openhab:desktop_petro_up_light_2 "Petro Desktop up light 2" (mq
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", commandTopic="zigbee2mqtt/desktop_petro_up_light_2/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", commandTopic="zigbee2mqtt/desktop_petro_up_light_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", commandTopic="zigbee2mqtt/desktop_petro_up_light_2/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=250, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", commandTopic="zigbee2mqtt/desktop_petro_up_light_2/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_up_light_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -612,7 +612,7 @@ Thing mqtt:topic:openhab:desktop_petro_up_light_3 "Petro Desktop up light 3" (mq
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", commandTopic="zigbee2mqtt/desktop_petro_up_light_3/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", commandTopic="zigbee2mqtt/desktop_petro_up_light_3/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", commandTopic="zigbee2mqtt/desktop_petro_up_light_3/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=250, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", commandTopic="zigbee2mqtt/desktop_petro_up_light_3/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -622,7 +622,7 @@ Thing mqtt:topic:openhab:desktop_petro_light "Petro Desktop light" (mqtt:broker:
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_light", commandTopic="zigbee2mqtt/desktop_petro_light/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/desktop_petro_light", commandTopic="zigbee2mqtt/desktop_petro_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JSONPATH:$.brightness", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_light", commandTopic="zigbee2mqtt/desktop_petro_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=454]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/desktop_petro_light", commandTopic="zigbee2mqtt/desktop_petro_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }

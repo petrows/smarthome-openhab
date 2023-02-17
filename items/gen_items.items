@@ -293,8 +293,8 @@ Switch ku_light_table_sw "KU Light Table" <light> (g_all_sw,g_light_all,g_light_
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
 Switch ku_light_switch_ota "KU Light SW OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_light_switch:ota"}
 Number:Dimensionless ku_light_switch_link "KU Light SW LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_light_switch:link"}
-Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_all_sw) {channel="mqtt:topic:openhab:ku_light_switch:state_l1"}
-Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_all_sw) {channel="mqtt:topic:openhab:ku_light_switch:state_l2", expire="3h,command=OFF"}
+Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_ku,g_light_eg_ku_main) {channel="mqtt:topic:openhab:ku_light_switch:state_l1"}
+Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_ku,g_light_eg_ku_main) {channel="mqtt:topic:openhab:ku_light_switch:state_l2", expire="3h,command=OFF"}
 // KU Window Door (0xa4c1389dec8b9204)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch ku_window_door_lowbatt "KU Window Door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_window_door:battery_low"}
