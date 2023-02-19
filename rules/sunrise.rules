@@ -37,7 +37,7 @@ then
         return
     }
 
-    g_light_eg_sz_night.sendCommand(OFF)
+    g_light_eg_sz.sendCommand(OFF)
 end
 
 rule "Sunrise emulation start"
