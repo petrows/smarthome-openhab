@@ -42,7 +42,7 @@ end
 
 rule "Sunrise emulation start"
 when
-    Time cron "0 00 05 ? * MON-FRI"
+    Time cron "0 00 05 ? * *"
     or Item test_sw_check_sunrize received update
 then
     logWarn("light", "Sunrise emulation started")
