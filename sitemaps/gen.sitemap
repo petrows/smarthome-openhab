@@ -689,6 +689,7 @@ Frame label="FS heating (0x9035eafffe712884)" {
 // TuYa Radiator valve with thermostat (TS0601_thermostat 3) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat_3.html
 Setpoint item=fs_heating_thermostat
 Text item=fs_heating_thermostat_mode
+Text item=fs_heating_thermostat_preset
 Switch item=fs_heating_thermostat_enable
 Text item=fs_heating_lowbatt
 Text item=fs_heating_ota
@@ -701,6 +702,7 @@ Frame label="NS heating (0x0c4314fffe62f090)" {
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Setpoint item=ns_heating_thermostat
 Text item=ns_heating_thermostat_mode
+Text item=ns_heating_thermostat_preset
 Switch item=ns_heating_thermostat_enable
 Text item=ns_heating_lowbatt
 Text item=ns_heating_ota
@@ -714,6 +716,7 @@ Frame label="KU heating (0x0c4314fffe73bf1f)" {
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Setpoint item=ku_heating_thermostat
 Text item=ku_heating_thermostat_mode
+Text item=ku_heating_thermostat_preset
 Switch item=ku_heating_thermostat_enable
 Text item=ku_heating_lowbatt
 Text item=ku_heating_ota
@@ -727,6 +730,7 @@ Frame label="SZ heating (0x0c4314fffe73c43f)" {
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Setpoint item=sz_heating_thermostat
 Text item=sz_heating_thermostat_mode
+Text item=sz_heating_thermostat_preset
 Switch item=sz_heating_thermostat_enable
 Text item=sz_heating_lowbatt
 Text item=sz_heating_ota
@@ -740,6 +744,7 @@ Frame label="KG heating (0x0c4314fffe5c6913)" {
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Setpoint item=kg_heating_thermostat
 Text item=kg_heating_thermostat_mode
+Text item=kg_heating_thermostat_preset
 Switch item=kg_heating_thermostat_enable
 Text item=kg_heating_lowbatt
 Text item=kg_heating_ota
