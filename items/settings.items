@@ -20,3 +20,6 @@ Group:Number:MIN g_battery_level
 Group:Number:MIN g_battery_voltage
 
 DateTime current_date_time "Current date and time"
+
+// From phone
+DateTime PetroAlarmClock "Alarm Clock [%s]" <time>
