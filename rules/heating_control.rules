@@ -7,7 +7,7 @@ val Functions$Function2<String, Number, Boolean> set_room = [
     logInfo("heating", "set_room " + room_name + ": request " + temperature.toString)
 
     var thermostat_item_temp = "g_hz_" + room_name
-    var thermostat_item_switch = "g_hz_" + room_name + '_enable'
+    // var thermostat_item_switch = "g_hz_" + room_name + '_enable'
 
     if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON)) {
 		logInfo("heating", "set_room: Auto disabled")
@@ -32,7 +32,7 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     if (!room_heating_enabled) {
         logWarn("heating", "set_room " + room_name + ": disabled (switched off)")
-        sendCommand(thermostat_item_switch, "OFF")
+        sendCommand(thermostat_item_temp, cfgHeatingTempOff.state)
         return false
     }
 
@@ -53,12 +53,11 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     if (!room_sensors_enabled) {
         logWarn("heating", "set_room " + room_name + ": disabled (sensors)")
-        sendCommand(thermostat_item_switch, "OFF")
+        sendCommand(thermostat_item_temp, cfgHeatingTempOff.state)
         return false
     }
 
     logInfo("heating", "set_room " + room_name + ": set now " + temperature.toString)
-    sendCommand(thermostat_item_switch, "ON")
     sendCommand(thermostat_item_temp, temperature.toString())
 
     return true
@@ -258,7 +257,9 @@ when
 then
 	if (cfgHeatingEnable.state == ON) {
 		// g_hz_all.sendCommand(hz_temp_auto.state as Number)
+        g_hz_enable.sendCommand(ON)
 	} else {
 		g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+        g_hz_enable.sendCommand(OFF)
 	}
 end
