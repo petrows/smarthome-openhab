@@ -281,10 +281,10 @@ end
 
 rule "SZ remote dimmer (main)"
 when
-    Item sz_remote_main_dim received update
+    Channel "mqtt:topic:openhab:sz_remote_main:action_dim" triggered
 then
     if (sz_main_light_sw.state == ON) {
-        sz_main_light_dim.sendCommand((newState as Number).intValue())
+        sz_main_light_dim.sendCommand((sz_main_light_dim.state as Number) + Integer::parseInt(receivedEvent))
     }
 end
 

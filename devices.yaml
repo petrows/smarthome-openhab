@@ -22,10 +22,14 @@
   friendly_name: garten_wasser_leak
 '0x003c84fffe132b20':
   friendly_name: bz_light_switch
-  simulated_brightness: []
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x003c84fffe16f988':
   friendly_name: sz_remote_main
-  simulated_brightness: []
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x040d84fffec53aaf':
   friendly_name: sz_bed_light_2
 '0x040d84fffece67a6':
@@ -36,15 +40,21 @@
   friendly_name: desktop_petro_up_light_2
 '0x04cd15fffe6d57dc':
   friendly_name: sturbar_test
-  simulated_brightness: []
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x04cd15fffe73ecb6':
   friendly_name: desktop_petro_up_light_3
 '0x04cd15fffe75c518':
   friendly_name: treppe_down_switch
-  simulated_brightness: []
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x04cd15fffe789098':
   friendly_name: ku_light_table_switch
-  simulated_brightness: []
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x04cd15fffe873cb7':
   friendly_name: kg_lager3_motion
 '0x04cd15fffedb319f':
