@@ -390,13 +390,13 @@ then
     }
 end
 
-
 rule "KU table dimmer"
 when
-    Item ku_light_table_switch_dim received update
+    Channel "mqtt:topic:openhab:ku_light_table_switch:action_dim" triggered
 then
+    var delta = Integer::parseInt(receivedEvent)
     if (ku_light_table_sw.state == ON) {
-        ku_light_table_dim.sendCommand((newState as Number).intValue())
+        ku_light_table_dim.sendCommand((ku_light_table_dim.state as Number) + delta)
     }
 end
 
@@ -520,12 +520,13 @@ end
 
 rule "BZ main dimmer"
 when
-    Item bz_light_switch_dim received update
+    Channel "mqtt:topic:openhab:bz_light_switch:action_dim" triggered
 then
     // Wake up lights (if not running)
     if (bz_main_light.state == OFF) {
         bz_main_light.sendCommand(ON)
     }
     // Apply brightness state
-    g_light_bz_dim.sendCommand((newState as Number).intValue())
+    var delta = Integer::parseInt(receivedEvent)
+    g_light_bz_dim.sendCommand((g_light_bz_dim.state as Number) + delta)
 end
