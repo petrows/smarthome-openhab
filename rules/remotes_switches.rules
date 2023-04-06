@@ -490,16 +490,20 @@ then
             bz_main_light.sendCommand(ON)
             g_light_bz_dim.sendCommand(100)
             // Workaround: https://github.com/Koenkk/zigbee2mqtt/issues/14714
-            Thread::sleep(1000)
-            bz_main_light.sendCommand(ON)
+            (1..10).forEach[
+                Thread::sleep(100)
+                g_light_bz_dim.sendCommand(100)
+            ]
         }
         case "off": {
             // "down" -> Small power + only toilet light
             bz_light_1_sw.sendCommand(ON)
             bz_light_1_dim.sendCommand(1)
             // Workaround: https://github.com/Koenkk/zigbee2mqtt/issues/14714
-            Thread::sleep(1000)
-            bz_light_1_sw.sendCommand(ON)
+            (1..10).forEach[
+                Thread::sleep(100)
+                bz_light_1_dim.sendCommand(1)
+            ]
 
             if (bz_light_2_sw.state == ON) {
                 bz_light_2_sw.sendCommand(OFF)
