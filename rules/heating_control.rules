@@ -206,27 +206,27 @@ end
 
 // === HEATING SWITCHES =========================================
 
-rule "Heating NS boost switch"
-when
-	Item ns_heating_boost changed
-then
-	if (ON != cfgHeatingEnable.state) {
-		logInfo("heating", "Heating disabled")
-		return
-	}
+// rule "Heating NS boost switch"
+// when
+// 	Item ns_heating_boost changed
+// then
+// 	if (ON != cfgHeatingEnable.state) {
+// 		logInfo("heating", "Heating disabled")
+// 		return
+// 	}
 
-	logInfo("heating", "Heating NS boost -> " + ns_heating_boost.state)
+// 	logInfo("heating", "Heating NS boost -> " + ns_heating_boost.state)
 
-	if (ON == ns_heating_boost.state) {
-		ns_heating_boost_power_sw.sendCommand(ON)
-		// ns_heating_mode.sendCommand("BOOST")
-        g_hz_ns.sendCommand(cfgHeatingTempHeat.state as Number)
-	} else {
-        ns_heating_boost_power_sw.sendCommand(OFF)
-		// ns_heating_mode.sendCommand("MANUAL")
-        g_hz_ns.sendCommand(cfgHeatingTempDay.state as Number)
-	}
-end
+// 	if (ON == ns_heating_boost.state) {
+// 		ns_heating_boost_power_sw.sendCommand(ON)
+// 		// ns_heating_mode.sendCommand("BOOST")
+//         g_hz_ns.sendCommand(cfgHeatingTempHeat.state as Number)
+// 	} else {
+//         ns_heating_boost_power_sw.sendCommand(OFF)
+// 		// ns_heating_mode.sendCommand("MANUAL")
+//         g_hz_ns.sendCommand(cfgHeatingTempDay.state as Number)
+// 	}
+// end
 
 rule "Heating presense switch"
 when

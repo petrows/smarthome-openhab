@@ -170,14 +170,6 @@ Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// NS Boost power (0x7cb03eaa0a0a1103)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:ns_heating_boost_power "NS Boost power" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ns_heating_boost_power", commandTopic="zigbee2mqtt/ns_heating_boost_power/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 0}"]
-		Type number : link [stateTopic="zigbee2mqtt/ns_heating_boost_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ns_heating_boost_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // NS Night lamp (0xec1bbdfffe9abfde)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Thing mqtt:topic:openhab:ns_night_lamp "NS Night lamp" (mqtt:broker:openhab) {
@@ -661,9 +653,17 @@ Thing mqtt:topic:openhab:desktop_petro_remote "Petro Desktop remote" (mqtt:broke
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KG Hobbyraum (Flür) (kg_main1_light)
+// KG Hobbyraum (Work light) (0x7cb03eaa0a0a1103)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:kg_main1_work_light "KG Hobbyraum (Work light)" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/kg_main1_work_light", commandTopic="zigbee2mqtt/kg_main1_work_light/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 0}"]
+		Type number : link [stateTopic="zigbee2mqtt/kg_main1_work_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/kg_main1_work_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
-Thing mqtt:topic:openhab:kg_main1_light "KG Hobbyraum (Flür)" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:kg_main1_light "KG Hobbyraum (Workshop)" (mqtt:broker:openhab) {
 	Channels:
 		Type number : rssi [stateTopic="tele/kg_main1_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
 		Type string : bssid [stateTopic="tele/kg_main1_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]

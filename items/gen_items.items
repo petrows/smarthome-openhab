@@ -113,11 +113,6 @@ Number:Temperature ns_climate_temperature "NS Climate temp  [%.0f %unit%]" <temp
 Number:Dimensionless ns_climate_humidity "NS Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ns_climate:humidity"}
 Number:Pressure ns_climate_pressure "NS Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ns_climate:pressure"}
 Number:Dimensionless ns_climate_battery "NS Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ns_climate:battery"}
-// NS Boost power (0x7cb03eaa0a0a1103)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch ns_heating_boost_power_ota "NS Boost power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_heating_boost_power:ota"}
-Number:Dimensionless ns_heating_boost_power_link "NS Boost power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_heating_boost_power:link"}
-Switch ns_heating_boost_power_sw "NS Boost power" <light> (g_all_sw) {channel="mqtt:topic:openhab:ns_heating_boost_power:state", expire="1h,command=OFF"}
 // NS Night lamp (0xec1bbdfffe9abfde)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer ns_night_lamp_dim "NS Night lamp DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:ns_night_lamp:dim"}
@@ -439,12 +434,17 @@ Switch desktop_petro_remote_lowbatt "Petro Desktop remote BAT [MAP(codegen-lowba
 Switch desktop_petro_remote_ota "Petro Desktop remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_remote:ota"}
 Number:Dimensionless desktop_petro_remote_link "Petro Desktop remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_remote:link"}
 Number:Dimensionless desktop_petro_remote_battery "Petro Desktop remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:desktop_petro_remote:battery"}
-// KG Hobbyraum (Flür) (kg_main1_light)
+// KG Hobbyraum (Work light) (0x7cb03eaa0a0a1103)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Switch kg_main1_work_light_ota "KG Hobbyraum (Work light) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_main1_work_light:ota"}
+Number:Dimensionless kg_main1_work_light_link "KG Hobbyraum (Work light) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_main1_work_light:link"}
+Switch kg_main1_work_light_sw "KG Hobbyraum (Work light)" <light> (g_all_sw,g_light_all,g_light_kg,g_light_kg_hobbyraum) {channel="mqtt:topic:openhab:kg_main1_work_light:state"}
+// KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
-Switch kg_main1_light "KG Hobbyraum (Flür)" <light> (g_all_sw,g_light_all,g_light_kg,g_light_kg_hobbyraum,g_light_kg_auto) {channel="mqtt:topic:openhab:kg_main1_light:POWER"}
-Number:Dimensionless kg_main1_light_rssi "KG Hobbyraum (Flür) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_main1_light:rssi"}
-String kg_main1_light_bssid "KG Hobbyraum (Flür) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_main1_light:bssid"}
-DateTime kg_main1_light_activity "KG Hobbyraum (Flür) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_main1_light:activity"}
+Switch kg_main1_light "KG Hobbyraum (Workshop)" <light> (g_all_sw,g_light_all,g_light_kg,g_light_kg_hobbyraum,g_light_kg_auto) {channel="mqtt:topic:openhab:kg_main1_light:POWER"}
+Number:Dimensionless kg_main1_light_rssi "KG Hobbyraum (Workshop) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_main1_light:rssi"}
+String kg_main1_light_bssid "KG Hobbyraum (Workshop) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_main1_light:bssid"}
+DateTime kg_main1_light_activity "KG Hobbyraum (Workshop) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_main1_light:activity"}
 // KG Hobbyraum (Haupt) (kg_main2_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
 Switch kg_main2_light "KG Hobbyraum (Haupt)" <light> (g_all_sw,g_light_all,g_light_kg,g_light_kg_hobbyraum) {channel="mqtt:topic:openhab:kg_main2_light:POWER"}

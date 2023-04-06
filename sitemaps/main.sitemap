@@ -217,7 +217,8 @@ sitemap main label="MAIN"
 			}
 			Frame label="Main" {
 				Switch item=kg_main2_light label="Main [%s]" icon="light"
-				Switch item=kg_main1_light label="Hall [%s]" icon="light"
+				Switch item=kg_main1_light label="Workshop (main) [%s]" icon="light"
+				Switch item=kg_main1_work_light_sw label="Workshop (table) [%s]" icon="light"
 				Switch item=kg_lager1_main_light label="Warehouse 1 [%s]" icon="light"
                 Switch item=kg_lager3_main_light label="Warehouse 3 [%s]" icon="light"
                 Switch item=kg_lager4_main_light label="Warehouse 4 [%s]" icon="light"
@@ -264,8 +265,8 @@ sitemap main label="MAIN"
 			Setpoint	item=ns_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=ns_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ns_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-			Switch		item=ns_heating_boost label="Heizung BOOST" icon="fan"
-			Switch		item=ns_heating_boost_power_sw label="Heizung Fan" icon="fan"
+			// Switch		item=ns_heating_boost label="Heizung BOOST" icon="fan"
+			// Switch		item=ns_heating_boost_power_sw label="Heizung Fan" icon="fan"
 		}
 		Group item=fs_climate_temperature label="Foto Studio" {
 			Text 		item=fs_climate_temperature label="Temperature [%d °C]"

@@ -119,12 +119,6 @@ devices:
     zigbee_id: '0x00158d0001b95e08'
     type: XIAOMI_AQARA_V2
 
-  - name: NS Boost power
-    id: ns_heating_boost_power
-    zigbee_id: '0x7cb03eaa0a0a1103'
-    type: OSRAM_SMART_PLUG
-    expire: 1h
-
   - name: NS Night lamp
     id: ns_night_lamp
     zigbee_id: '0xec1bbdfffe9abfde'
@@ -555,13 +549,23 @@ devices:
     zigbee_id: '0x000d6ffffee8357d'
     type: IKEA_TRADFRI_REMOTE
 
-  - name: "KG Hobbyraum (Fl\xFCr)"
+  - name: "KG Hobbyraum (Work light)"
+    id: kg_main1_work_light
+    zigbee_id: '0x7cb03eaa0a0a1103'
+    type: OSRAM_SMART_PLUG
+    groups:
+      sw:
+      - g_light_all
+      - g_light_kg
+      - g_light_kg_hobbyraum
+
+  - name: "KG Hobbyraum (Workshop)"
     id: kg_main1_light
     type: TASMOTA_SONOFF_TOUCH_EU1
     channels:
       POWER:
         id: kg_main1_light
-        name: "KG Hobbyraum (Fl\xFCr)"
+        name: "KG Hobbyraum (Workshop)"
         groups:
           sw:
             - g_light_all

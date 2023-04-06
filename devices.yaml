@@ -92,7 +92,7 @@
 '0x7cb03eaa0a094d1d':
   friendly_name: ns_projector_power
 '0x7cb03eaa0a0a1103':
-  friendly_name: ns_heating_boost_power
+  friendly_name: kg_main1_work_light
 '0x842e14fffe1267fb':
   friendly_name: ku_light_switch
 '0x847127fffe0c873b':

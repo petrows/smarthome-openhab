@@ -44,7 +44,7 @@ Group:Contact:AND(CLOSED, OPEN) ku_windows "KU windows [%s]" <window> (all_windo
 Group:Number:AVG g_hz_valve "Alle Ventil" <heating>
 
 // NS force fan
-Switch ns_heating_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF" }
+// Switch ns_heating_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF" }
 
 // Cfg to eanble auto control for room
 Switch kg_heating_enabled "HZ KG enable [%s]"
