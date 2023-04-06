@@ -250,6 +250,17 @@ Text item=sz_main_light_ota
 Text item=sz_main_light_link
 Switch item=sz_main_light_sw
 }
+Frame label="SZ Color Decor (0x8cf681fffef62c85)" {
+// SZ Color Decor (0x8cf681fffef62c85)
+// Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
+Slider item=sz_color_light_dim
+Slider item=sz_color_light_ct
+Colorpicker item=sz_color_light_color
+Text item=sz_color_light_color_mode
+Text item=sz_color_light_ota
+Text item=sz_color_light_link
+Switch item=sz_color_light_sw
+}
 Frame label="SZ Bed 1 (0x040d84fffece67a6)" {
 // SZ Bed 1 (0x040d84fffece67a6)
 // TRADFRI LED bulb E26/E27 950 lumen, dimmable, white spectrum, clear (LED1546G12) / https://www.zigbee2mqtt.io/devices/LED1546G12.html

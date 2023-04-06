@@ -188,6 +188,12 @@ sitemap main label="MAIN"
                 Switch item=g_light_eg_sz_decor label="Room light [%s]" icon="light"
                 Slider item=g_light_eg_sz_decor_brightness label="Room light DIM [%d %%]" icon="light"
             }
+            Frame label="RGB decor" {
+                Switch item=sz_color_light_sw label="RGB [%s]" icon="light"
+                Slider item=sz_color_light_dim label="RGB DIM [%d %%]" icon="light"
+                Slider item=sz_color_light_ct label="RGB CT [JS(codegen-mired.js):%s]" icon="light"
+                Colorpicker item=sz_color_light_color label="RGB Color []" icon="colorpicker"
+            }
             Frame label="Lamps control" {
 				Switch item=sz_bed_light_1_sw label="Bed 1 [%s]"
 				Slider item=sz_bed_light_1_dim label="Bed 1 DIM [%d %%]"

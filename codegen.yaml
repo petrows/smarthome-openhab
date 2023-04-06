@@ -201,6 +201,17 @@ devices:
         - g_light_astro_color
         - g_sunrise_ct
 
+# Light in torsher
+  - name: SZ Color Decor
+    id: sz_color_light
+    zigbee_id: '0x8cf681fffef62c85'
+    type: LIVARNO_RGB_HG07834B
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
+
 # Lights behind bed
   - name: SZ Bed 1
     id: sz_bed_light_1
