@@ -6,7 +6,8 @@ then
 	logWarn("cinema", "Cinema mode: ON")
 
     // Turn ON support light
-    ns_night_lamp_dim.sendCommand(1)
+    val mq = getActions("mqtt","mqtt:broker:openhab")
+    mq.publishMQTT("zigbee2mqtt/ns_night_lamp/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}, \"brightness\":254}")
 
     // Turn ON master power
     ns_projector_power_sw.sendCommand(ON)
@@ -18,16 +19,17 @@ then
     // ir_stb_power.sendCommand(ON) // STB stay on on power
 
     // Turn OFF light except Kino
+    mq.publishMQTT("zigbee2mqtt/ns_night_lamp/set","{\"brightness\":0, \"transition\": 20}")
     g_light_all.members.forEach [s |
         if (s == ns_night_lamp_sw) {
-            ns_night_lamp_dim.sendCommand(1)
+            // ns_night_lamp_dim.sendCommand(1)
         } else {
             s.sendCommand(OFF)
         }
     ]
 
     // When all ON, we can finally turn off all lights
-    Thread::sleep(10000)
+    Thread::sleep(21000)
     g_light_all.sendCommand(OFF)
 end
 
@@ -38,7 +40,11 @@ then
 	logWarn("cinema", "Cinema mode: OFF")
 
     // Turn on light
-    ns_night_lamp_dim.sendCommand(10)
+    // Very slow transition
+    val mq = getActions("mqtt","mqtt:broker:openhab")
+    mq.publishMQTT("zigbee2mqtt/ns_night_lamp/set","{\"brightness\":1}")
+    mq.publishMQTT("zigbee2mqtt/ns_night_lamp/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+    mq.publishMQTT("zigbee2mqtt/ns_night_lamp/set","{\"brightness\":254, \"transition\": 20}")
 
     // Turn off devices
     Thread::sleep(1000)

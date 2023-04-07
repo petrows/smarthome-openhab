@@ -114,6 +114,8 @@ devices:
     zigbee_id: '0x003c84fffe132b20'
     type: IKEA_TRADFRI_STYRBAR
 
+# THEATER
+
   - name: NS Climate
     id: ns_climate
     zigbee_id: '0x00158d0001b95e08'
@@ -121,8 +123,9 @@ devices:
 
   - name: NS Night lamp
     id: ns_night_lamp
-    zigbee_id: '0xec1bbdfffe9abfde'
-    type: IKEA_TRADFRI_LAMP_W_806
+    zigbee_id: '0x14b457fffe6383e5'
+    type: IKEA_TRADFRI_LAMP_COLOR_600
+    ct_auto: False # Do not apply CT when ON
     groups:
       sw:
       - g_light_all
@@ -140,6 +143,9 @@ devices:
     groups:
       contact:
       - ns_windows
+
+# FOTO STUDIO
+
   - name: FS Climate
     id: fs_climate
     zigbee_id: '0x00158d0001c15121'

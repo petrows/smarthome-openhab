@@ -145,10 +145,13 @@ Text item=ns_climate_humidity
 Text item=ns_climate_pressure
 Text item=ns_climate_battery
 }
-Frame label="NS Night lamp (0xec1bbdfffe9abfde)" {
-// NS Night lamp (0xec1bbdfffe9abfde)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Frame label="NS Night lamp (0x14b457fffe6383e5)" {
+// NS Night lamp (0x14b457fffe6383e5)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
 Slider item=ns_night_lamp_dim
+Slider item=ns_night_lamp_ct
+Colorpicker item=ns_night_lamp_color
+Text item=ns_night_lamp_color_mode
 Text item=ns_night_lamp_ota
 Text item=ns_night_lamp_link
 Switch item=ns_night_lamp_sw

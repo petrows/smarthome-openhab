@@ -142,8 +142,12 @@ sitemap main label="MAIN"
 		Group item=g_light_eg_ns label="Theater [%s]" icon="light" {
             Frame {
                 Switch item=snf_eg_ns label="Main [%s]" icon="light"
+            }
+            Frame {
                 Switch item=ns_night_lamp_sw label="Night [%s]" icon="light"
                 Slider item=ns_night_lamp_dim label="Night DIM [%d %%]" icon="light"
+                Slider item=ns_night_lamp_ct label="Main CT [JS(codegen-mired.js):%s]"
+                Colorpicker item=ns_night_lamp_color label="Main Color []" icon="colorpicker"
             }
             Frame {
                 Switch item=cinema_mode label="Cinemo mode [%s]" icon="projector"

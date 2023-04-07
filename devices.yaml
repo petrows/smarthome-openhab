@@ -71,6 +71,8 @@
   friendly_name: sz_heating
 '0x14b457fffe399241':
   friendly_name: balkon_light_1
+'0x14b457fffe6383e5':
+  friendly_name: ns_night_lamp
 '0x14b457fffe7e2305':
   friendly_name: sz_remote_bed
 '0x588e81fffefe9a05':
@@ -159,7 +161,5 @@
   friendly_name: sz_declamp_2
 '0xec1bbdfffe972819':
   friendly_name: sz_declamp_1
-'0xec1bbdfffe9abfde':
-  friendly_name: ns_night_lamp
 '0xec1bbdfffea37757':
   friendly_name: ku_light_arbeitplatte

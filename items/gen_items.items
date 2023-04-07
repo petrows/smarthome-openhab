@@ -113,9 +113,12 @@ Number:Temperature ns_climate_temperature "NS Climate temp  [%.0f %unit%]" <temp
 Number:Dimensionless ns_climate_humidity "NS Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ns_climate:humidity"}
 Number:Pressure ns_climate_pressure "NS Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ns_climate:pressure"}
 Number:Dimensionless ns_climate_battery "NS Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ns_climate:battery"}
-// NS Night lamp (0xec1bbdfffe9abfde)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+// NS Night lamp (0x14b457fffe6383e5)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
 Dimmer ns_night_lamp_dim "NS Night lamp DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:ns_night_lamp:dim"}
+Dimmer ns_night_lamp_ct "NS Night lamp CT [JS(codegen-mired.js): %s]" <light> (g_all_ct) {channel="mqtt:topic:openhab:ns_night_lamp:ct"}
+Color ns_night_lamp_color "NS Night lamp Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:ns_night_lamp:color"}
+String ns_night_lamp_color_mode "NS Night lamp Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:ns_night_lamp:color_mode"}
 Switch ns_night_lamp_ota "NS Night lamp OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_night_lamp:ota"}
 Number:Dimensionless ns_night_lamp_link "NS Night lamp LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_night_lamp:link"}
 Switch ns_night_lamp_sw "NS Night lamp" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_ns) {channel="mqtt:topic:openhab:ns_night_lamp:state"}

@@ -170,12 +170,15 @@ Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// NS Night lamp (0xec1bbdfffe9abfde)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+// NS Night lamp (0x14b457fffe6383e5)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
 Thing mqtt:topic:openhab:ns_night_lamp "NS Night lamp" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/ns_night_lamp", commandTopic="zigbee2mqtt/ns_night_lamp/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 0}"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/ns_night_lamp", commandTopic="zigbee2mqtt/ns_night_lamp/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/ns_night_lamp", commandTopic="zigbee2mqtt/ns_night_lamp/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
+		Type color : color [commandTopic="zigbee2mqtt/ns_night_lamp/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
+		Type string : color_mode [stateTopic="zigbee2mqtt/ns_night_lamp", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
 		Type number : link [stateTopic="zigbee2mqtt/ns_night_lamp", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_night_lamp", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
