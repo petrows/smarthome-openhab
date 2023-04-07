@@ -39,7 +39,6 @@ end
 
 rule "Astrocolor: Set lamps color according to daytime"
 when
-    // Time cron "0 00 18 ? * *"
     // Sunset (early)
     Channel "astro:sun:home:set#event" triggered START
 then
@@ -50,9 +49,8 @@ then
         return
     }
 
-    // On start, read current value from group and use it as "start value"
-    // We dont want to start awlays from "very cold"
-    astrocolorValue = Math.round((g_light_astro_color.state as DecimalType).doubleValue)
+    // On start, sat Daylight as "start value"
+    astrocolorValue = astrocolorDaylight
     // How much Persent we should move to reach 100%
     astrocolorSteps = 100.0 - astrocolorValue
     // Calculate timer
@@ -86,11 +84,13 @@ rule "Astrocolor: apply"
 when
     Item astro_color_value received update
 then
-    // g_light_astro_color.sendCommand(newState.toString())
+    // Current value
+    val ct = newState as Number
     // Iterate group and find devices with color mode == OFF (skip RGB lamps to change)
     g_light_astro_color.members.forEach [itm |
         // Check that item satellite 'color_mode' exists
         val itm_name = transform("REGEX", "(.*)_ct", itm.name.toString)
+        val itm_value = itm.state as Number
         var itm_allow_astrocolor = true
         try {
             val StringItem itm_color_mode = ScriptServiceUtil.getItemRegistry?.getItem(itm_name + "_color_mode") as StringItem
@@ -102,8 +102,14 @@ then
             // Nothing
         }
 
+        // Do not update item, if already above
+        if (itm_value > ct) {
+            logInfo("light", "Astrocolor: skip device " + itm_name + ", already has " + itm_value.toString())
+            itm_allow_astrocolor = false
+        }
+
         if (itm_allow_astrocolor) {
-            itm.sendCommand(newState.toString())
+            itm.sendCommand(ct.toString())
         }
     ]
 end
