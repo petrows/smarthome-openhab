@@ -70,6 +70,8 @@ devices:
       - bz_main_light
       dim:
       - g_light_bz_dim
+      dim_fast:
+      - g_light_bz_dim_fast
       ct:
       - g_light_astro_color
       - g_light_bz_ct
@@ -88,6 +90,8 @@ devices:
       - bz_main_light
       dim:
       - g_light_bz_dim
+      dim_fast:
+      - g_light_bz_dim_fast
       ct:
       - g_light_astro_color
       - g_light_bz_ct
@@ -228,6 +232,8 @@ devices:
         - sz_bed_light
       dim:
         - sz_bed_light_dim
+      dim_fast:
+        - sz_bed_light_dim_fast
       ct:
         - g_light_sz_ct
         - g_light_sz_bed_ct
@@ -246,6 +252,8 @@ devices:
         - sz_bed_light
       dim:
         - sz_bed_light_dim
+      dim_fast:
+        - sz_bed_light_dim_fast
       ct:
         - g_light_sz_ct
         - g_light_sz_bed_ct

@@ -26,6 +26,7 @@ Number:Dimensionless ext_climate_battery "Outside Climate  BAT [%d %%]" <battery
 // Balkon light 1 (0x14b457fffe399241)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer balkon_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (g_all_dim,balkon_light_dim) {channel="mqtt:topic:openhab:balkon_light_1:dim"}
+Dimmer balkon_light_1_dim_fast "Balkon light 1 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:balkon_light_1:dim_fast"}
 Dimmer balkon_light_1_ct "Balkon light 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,balkon_light_ct) {channel="mqtt:topic:openhab:balkon_light_1:ct"}
 Switch balkon_light_1_ota "Balkon light 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:balkon_light_1:ota"}
 Number:Dimensionless balkon_light_1_link "Balkon light 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:balkon_light_1:link"}
@@ -55,6 +56,7 @@ Number:Dimensionless eg_router_link "EG Router LINK [%d]" <linkz> (g_all_link) {
 // EG Decor light (0x9035eafffe20e847)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Dimmer eg_decoration_light_dim "EG Decor light DIM [%d %%]" <light> (g_all_dim,g_dim_eg_auto) {channel="mqtt:topic:openhab:eg_decoration_light:dim"}
+Dimmer eg_decoration_light_dim_fast "EG Decor light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:eg_decoration_light:dim_fast"}
 Switch eg_decoration_light_ota "EG Decor light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_decoration_light:ota"}
 Number:Dimensionless eg_decoration_light_link "EG Decor light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_decoration_light:link"}
 Switch eg_decoration_light_sw "EG Decor light" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_auto) {channel="mqtt:topic:openhab:eg_decoration_light:state"}
@@ -69,6 +71,7 @@ Number:Dimensionless eg_main_door_battery "Entrance Door sensor  BAT [%d %%]" <b
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer bz_light_1_dim "BZ Light (toilet) DIM [%d %%]" <light> (g_all_dim,g_light_bz_dim) {channel="mqtt:topic:openhab:bz_light_1:dim"}
+Dimmer bz_light_1_dim_fast "BZ Light (toilet) DIM-F [%d %%]" (g_all_dim_fast,g_light_bz_dim_fast) {channel="mqtt:topic:openhab:bz_light_1:dim_fast"}
 Dimmer bz_light_1_ct "BZ Light (toilet) CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color,g_light_bz_ct) {channel="mqtt:topic:openhab:bz_light_1:ct"}
 Color bz_light_1_color "BZ Light (toilet) Color" <colorwheel> (g_all_color,g_light_bz_color) {channel="mqtt:topic:openhab:bz_light_1:color"}
 String bz_light_1_color_mode "BZ Light (toilet) Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:bz_light_1:color_mode"}
@@ -79,6 +82,7 @@ Switch bz_light_1_sw "BZ Light (toilet)" <light> {channel="mqtt:topic:openhab:bz
 // BZ Light (shower) (0x04cd15fffedb319f)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer bz_light_2_dim "BZ Light (shower) DIM [%d %%]" <light> (g_all_dim,g_light_bz_dim) {channel="mqtt:topic:openhab:bz_light_2:dim"}
+Dimmer bz_light_2_dim_fast "BZ Light (shower) DIM-F [%d %%]" (g_all_dim_fast,g_light_bz_dim_fast) {channel="mqtt:topic:openhab:bz_light_2:dim_fast"}
 Dimmer bz_light_2_ct "BZ Light (shower) CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color,g_light_bz_ct) {channel="mqtt:topic:openhab:bz_light_2:ct"}
 Color bz_light_2_color "BZ Light (shower) Color" <colorwheel> (g_all_color,g_light_bz_color) {channel="mqtt:topic:openhab:bz_light_2:color"}
 String bz_light_2_color_mode "BZ Light (shower) Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:bz_light_2:color_mode"}
@@ -118,6 +122,7 @@ Number:Dimensionless ns_climate_battery "NS Climate  BAT [%d %%]" <battery> (g_a
 // NS Night lamp (0x14b457fffe6383e5)
 // TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
 Dimmer ns_night_lamp_dim "NS Night lamp DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:ns_night_lamp:dim"}
+Dimmer ns_night_lamp_dim_fast "NS Night lamp DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:ns_night_lamp:dim_fast"}
 Dimmer ns_night_lamp_ct "NS Night lamp CT [JS(codegen-mired.js): %s]" <light> (g_all_ct) {channel="mqtt:topic:openhab:ns_night_lamp:ct"}
 Color ns_night_lamp_color "NS Night lamp Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:ns_night_lamp:color"}
 String ns_night_lamp_color_mode "NS Night lamp Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:ns_night_lamp:color_mode"}
@@ -149,6 +154,7 @@ Number:Dimensionless fs_climate_battery "FS Climate  BAT [%d %%]" <battery> (g_a
 // Marina Desktop light (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer desktop_marina_light_dim "Marina Desktop light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:desktop_marina_light:dim"}
+Dimmer desktop_marina_light_dim_fast "Marina Desktop light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_marina_light:dim_fast"}
 Dimmer desktop_marina_light_ct "Marina Desktop light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color) {channel="mqtt:topic:openhab:desktop_marina_light:ct"}
 Switch desktop_marina_light_ota "Marina Desktop light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_marina_light:ota"}
 Number:Dimensionless desktop_marina_light_link "Marina Desktop light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_marina_light:link"}
@@ -190,6 +196,7 @@ Number:Dimensionless sz_remote_main_battery "Bedroom main remote  BAT [%d %%]" <
 // SZ Main (0x588e81fffefe9a05)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Dimmer sz_main_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_main_light:dim"}
+Dimmer sz_main_light_dim_fast "SZ Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_main_light:dim_fast"}
 Dimmer sz_main_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_main_light:ct"}
 Switch sz_main_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_main_light:ota"}
 Number:Dimensionless sz_main_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_main_light:link"}
@@ -197,6 +204,7 @@ Switch sz_main_light_sw "SZ Main" <light> (g_all_sw,g_light_all,g_light_eg,g_lig
 // SZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
 Dimmer sz_color_light_dim "SZ Color Decor DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_color_light:dim"}
+Dimmer sz_color_light_dim_fast "SZ Color Decor DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_color_light:dim_fast"}
 Dimmer sz_color_light_ct "SZ Color Decor CT [JS(codegen-mired.js): %s]" <light> (g_all_ct) {channel="mqtt:topic:openhab:sz_color_light:ct"}
 Color sz_color_light_color "SZ Color Decor Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:sz_color_light:color"}
 String sz_color_light_color_mode "SZ Color Decor Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:sz_color_light:color_mode"}
@@ -206,6 +214,7 @@ Switch sz_color_light_sw "SZ Color Decor" <light> (g_all_sw,g_light_all,g_light_
 // SZ Bed 1 (0x040d84fffece67a6)
 // TRADFRI LED bulb E26/E27 950 lumen, dimmable, white spectrum, clear (LED1546G12) / https://www.zigbee2mqtt.io/devices/LED1546G12.html
 Dimmer sz_bed_light_1_dim "SZ Bed 1 DIM [%d %%]" <light> (g_all_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_1:dim"}
+Dimmer sz_bed_light_1_dim_fast "SZ Bed 1 DIM-F [%d %%]" (g_all_dim_fast,sz_bed_light_dim_fast) {channel="mqtt:topic:openhab:sz_bed_light_1:dim_fast"}
 Dimmer sz_bed_light_1_ct "SZ Bed 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_sz_bed_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_bed_light_1:ct"}
 Switch sz_bed_light_1_ota "SZ Bed 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_light_1:ota"}
 Number:Dimensionless sz_bed_light_1_link "SZ Bed 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_1:link"}
@@ -213,6 +222,7 @@ Switch sz_bed_light_1_sw "SZ Bed 1" <light> (g_all_sw,g_light_all,g_light_eg,g_l
 // SZ Bed 2 (0x040d84fffec53aaf)
 // TRADFRI LED bulb E26/E27 950 lumen, dimmable, white spectrum, clear (LED1546G12) / https://www.zigbee2mqtt.io/devices/LED1546G12.html
 Dimmer sz_bed_light_2_dim "SZ Bed 2 DIM [%d %%]" <light> (g_all_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_2:dim"}
+Dimmer sz_bed_light_2_dim_fast "SZ Bed 2 DIM-F [%d %%]" (g_all_dim_fast,sz_bed_light_dim_fast) {channel="mqtt:topic:openhab:sz_bed_light_2:dim_fast"}
 Dimmer sz_bed_light_2_ct "SZ Bed 2 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_sz_bed_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_bed_light_2:ct"}
 Switch sz_bed_light_2_ota "SZ Bed 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_light_2:ota"}
 Number:Dimensionless sz_bed_light_2_link "SZ Bed 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_2:link"}
@@ -220,18 +230,21 @@ Switch sz_bed_light_2_sw "SZ Bed 2" <light> (g_all_sw,g_light_all,g_light_eg,g_l
 // SZ Decor lamp 1 (0xec1bbdfffe972819)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Dimmer sz_declamp_1_dim "SZ Decor lamp 1 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_1:dim"}
+Dimmer sz_declamp_1_dim_fast "SZ Decor lamp 1 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_declamp_1:dim_fast"}
 Switch sz_declamp_1_ota "SZ Decor lamp 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_1:ota"}
 Number:Dimensionless sz_declamp_1_link "SZ Decor lamp 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_1:link"}
 Switch sz_declamp_1_sw "SZ Decor lamp 1" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_1:state"}
 // SZ Decor lamp 2 (0xec1bbdfffe972203)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Dimmer sz_declamp_2_dim "SZ Decor lamp 2 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_2:dim"}
+Dimmer sz_declamp_2_dim_fast "SZ Decor lamp 2 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_declamp_2:dim_fast"}
 Switch sz_declamp_2_ota "SZ Decor lamp 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_2:ota"}
 Number:Dimensionless sz_declamp_2_link "SZ Decor lamp 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_2:link"}
 Switch sz_declamp_2_sw "SZ Decor lamp 2" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_2:state"}
 // SZ Decor lamp 3 (0xec1bbdfffe91007b)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Dimmer sz_declamp_3_dim "SZ Decor lamp 3 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_3:dim"}
+Dimmer sz_declamp_3_dim_fast "SZ Decor lamp 3 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_declamp_3:dim_fast"}
 Switch sz_declamp_3_ota "SZ Decor lamp 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_3:ota"}
 Number:Dimensionless sz_declamp_3_link "SZ Decor lamp 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_3:link"}
 Switch sz_declamp_3_sw "SZ Decor lamp 3" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_3:state"}
@@ -295,6 +308,7 @@ Number:Dimensionless ku_light_table_switch_battery "KU Light Table SW  BAT [%d %
 // KU Light Table (0xec1bbdfffe4695b5)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer ku_light_table_dim "KU Light Table DIM [%d %%]" <light> (g_all_dim,g_dim_eg_auto) {channel="mqtt:topic:openhab:ku_light_table:dim"}
+Dimmer ku_light_table_dim_fast "KU Light Table DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:ku_light_table:dim_fast"}
 Switch ku_light_table_ota "KU Light Table OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_light_table:ota"}
 Number:Dimensionless ku_light_table_link "KU Light Table LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_light_table:link"}
 Switch ku_light_table_sw "KU Light Table" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_ku,g_light_eg_auto) {channel="mqtt:topic:openhab:ku_light_table:state"}
@@ -336,6 +350,7 @@ Number:Dimensionless treppe_down_switch_battery "Treppe Down switch  BAT [%d %%]
 // Treppe Up light (0xd0cf5efffee892b0)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer treppe_up_light_dim "Treppe Up light DIM [%d %%]" <light> (g_all_dim,g_dim_treppe) {channel="mqtt:topic:openhab:treppe_up_light:dim"}
+Dimmer treppe_up_light_dim_fast "Treppe Up light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:treppe_up_light:dim_fast"}
 Dimmer treppe_up_light_ct "Treppe Up light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_ct_treppe,g_light_astro_color) {channel="mqtt:topic:openhab:treppe_up_light:ct"}
 Switch treppe_up_light_ota "Treppe Up light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_up_light:ota"}
 Number:Dimensionless treppe_up_light_link "Treppe Up light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_up_light:link"}
@@ -343,6 +358,7 @@ Switch treppe_up_light_sw "Treppe Up light" <light> (g_all_sw,g_light_all,g_ligh
 // Treppe Down light (0x04cd15fffedb31f7)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer treppe_down_light_dim "Treppe Down light DIM [%d %%]" <light> (g_all_dim,g_dim_treppe) {channel="mqtt:topic:openhab:treppe_down_light:dim"}
+Dimmer treppe_down_light_dim_fast "Treppe Down light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:treppe_down_light:dim_fast"}
 Dimmer treppe_down_light_ct "Treppe Down light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_ct_treppe,g_light_astro_color) {channel="mqtt:topic:openhab:treppe_down_light:ct"}
 Color treppe_down_light_color "Treppe Down light Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:treppe_down_light:color"}
 String treppe_down_light_color_mode "Treppe Down light Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:treppe_down_light:color_mode"}
@@ -404,6 +420,7 @@ Number:Dimensionless kg_climate_battery "KG Climate  BAT [%d %%]" <battery> (g_a
 // Petro Desktop up light 1 (0x04cd15fffe35f24e)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer desktop_petro_up_light_1_dim "Petro Desktop up light 1 DIM [%d %%]" <light> (g_all_dim,g_light_kg_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim"}
+Dimmer desktop_petro_up_light_1_dim_fast "Petro Desktop up light 1 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim_fast"}
 Dimmer desktop_petro_up_light_1_ct "Petro Desktop up light 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color,g_light_kg_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:ct"}
 Switch desktop_petro_up_light_1_ota "Petro Desktop up light 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:ota"}
 Number:Dimensionless desktop_petro_up_light_1_link "Petro Desktop up light 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:link"}
@@ -411,6 +428,7 @@ Switch desktop_petro_up_light_1_sw "Petro Desktop up light 1" <light> (g_all_sw,
 // Petro Desktop up light 2 (0x04cd15fffe6bf002)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer desktop_petro_up_light_2_dim "Petro Desktop up light 2 DIM [%d %%]" <light> (g_all_dim,g_light_kg_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:dim"}
+Dimmer desktop_petro_up_light_2_dim_fast "Petro Desktop up light 2 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:dim_fast"}
 Dimmer desktop_petro_up_light_2_ct "Petro Desktop up light 2 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color,g_light_kg_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:ct"}
 Switch desktop_petro_up_light_2_ota "Petro Desktop up light 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:ota"}
 Number:Dimensionless desktop_petro_up_light_2_link "Petro Desktop up light 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:link"}
@@ -418,6 +436,7 @@ Switch desktop_petro_up_light_2_sw "Petro Desktop up light 2" <light> (g_all_sw,
 // Petro Desktop up light 3 (0x04cd15fffe73ecb6)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer desktop_petro_up_light_3_dim "Petro Desktop up light 3 DIM [%d %%]" <light> (g_all_dim,g_light_kg_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:dim"}
+Dimmer desktop_petro_up_light_3_dim_fast "Petro Desktop up light 3 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:dim_fast"}
 Dimmer desktop_petro_up_light_3_ct "Petro Desktop up light 3 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color,g_light_kg_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:ct"}
 Switch desktop_petro_up_light_3_ota "Petro Desktop up light 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:ota"}
 Number:Dimensionless desktop_petro_up_light_3_link "Petro Desktop up light 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:link"}
@@ -425,6 +444,7 @@ Switch desktop_petro_up_light_3_sw "Petro Desktop up light 3" <light> (g_all_sw,
 // Petro Desktop light (0xccccccfffed8ef9d)
 // IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
 Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:desktop_petro_light:dim"}
+Dimmer desktop_petro_light_dim_fast "Petro Desktop light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_light:dim_fast"}
 Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color) {channel="mqtt:topic:openhab:desktop_petro_light:ct"}
 Switch desktop_petro_light_ota "Petro Desktop light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_light:ota"}
 Number:Dimensionless desktop_petro_light_link "Petro Desktop light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_light:link"}
@@ -516,12 +536,14 @@ DateTime kg_lager4_main_light_activity "KG Lager 4 (Haupt) activity [JS(codegen-
 // KG Lager 4 (1) (0xccccccfffedf345a)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]" <light> (g_all_dim,g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim"}
+Dimmer kg_lager4_1_light_dim_fast "KG Lager 4 (1) DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim_fast"}
 Switch kg_lager4_1_light_ota "KG Lager 4 (1) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_1_light:ota"}
 Number:Dimensionless kg_lager4_1_light_link "KG Lager 4 (1) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_1_light:link"}
 Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_all_sw,g_light_all,g_light_kg,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:state", expire="1h,command=OFF"}
 // KG Lager 4 (2) (0xccccccfffedf5314)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer kg_lager4_2_light_dim "KG Lager 4 (2) DIM [%d %%]" <light> (g_all_dim,g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:dim"}
+Dimmer kg_lager4_2_light_dim_fast "KG Lager 4 (2) DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:kg_lager4_2_light:dim_fast"}
 Switch kg_lager4_2_light_ota "KG Lager 4 (2) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_2_light:ota"}
 Number:Dimensionless kg_lager4_2_light_link "KG Lager 4 (2) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_2_light:link"}
 Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_all_sw,g_light_all,g_light_kg,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:state", expire="1h,command=OFF"}
