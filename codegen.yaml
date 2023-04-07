@@ -55,6 +55,9 @@ devices:
     id: eg_main_door
     zigbee_id: '0xa4c138182f60d651'
     type: TUYA_WINDOW_SENSOR_TS0203
+
+# WC =====================================
+
   - name: BZ Light (toilet)
     id: bz_light_1
     zigbee_id: '0xcc86ecfffea0c7cb'
@@ -114,7 +117,7 @@ devices:
     zigbee_id: '0x003c84fffe132b20'
     type: IKEA_TRADFRI_STYRBAR
 
-# THEATER
+# THEATER ================================
 
   - name: NS Climate
     id: ns_climate
@@ -144,7 +147,7 @@ devices:
       contact:
       - ns_windows
 
-# FOTO STUDIO
+# FOTO STUDIO ============================
 
   - name: FS Climate
     id: fs_climate

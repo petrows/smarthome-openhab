@@ -42,6 +42,25 @@ then
         bz_light_1_ct.sendCommand(ct_set)
     ])
 end
+// Device needs to proxy events from groups, to filter duplicating
+rule "BZ Light (toilet) proxy state item"
+when
+    Item bz_light_1_sw changed
+then
+    if (bz_light_1_sw_proxy.state != newState) {
+        bz_light_1_sw_proxy.postUpdate(newState)
+    }
+end
+rule "BZ Light (toilet) proxy state group"
+when
+    Item bz_light_1_sw_proxy received command
+then
+    if (bz_light_1_sw.state != receivedCommand) {
+        bz_light_1_sw.sendCommand(receivedCommand)
+    } else {
+        logWarn("proxy", "Filter state for item bz_light_1")
+    }
+end
 // Device should apply saved color temp when ON
 rule "BZ Light (shower) apply color on ON"
 when
@@ -51,6 +70,25 @@ then
     bz_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
         bz_light_2_ct.sendCommand(ct_set)
     ])
+end
+// Device needs to proxy events from groups, to filter duplicating
+rule "BZ Light (shower) proxy state item"
+when
+    Item bz_light_2_sw changed
+then
+    if (bz_light_2_sw_proxy.state != newState) {
+        bz_light_2_sw_proxy.postUpdate(newState)
+    }
+end
+rule "BZ Light (shower) proxy state group"
+when
+    Item bz_light_2_sw_proxy received command
+then
+    if (bz_light_2_sw.state != receivedCommand) {
+        bz_light_2_sw.sendCommand(receivedCommand)
+    } else {
+        logWarn("proxy", "Filter state for item bz_light_2")
+    }
 end
 // Device should apply saved color temp when ON
 rule "Marina Desktop light apply color on ON"
@@ -121,6 +159,25 @@ then
     treppe_down_light_ct_timer = createTimer(now.plusSeconds(1), [ |
         treppe_down_light_ct.sendCommand(ct_set)
     ])
+end
+// Device needs to proxy events from groups, to filter duplicating
+rule "Treppe Down light proxy state item"
+when
+    Item treppe_down_light_sw changed
+then
+    if (treppe_down_light_sw_proxy.state != newState) {
+        treppe_down_light_sw_proxy.postUpdate(newState)
+    }
+end
+rule "Treppe Down light proxy state group"
+when
+    Item treppe_down_light_sw_proxy received command
+then
+    if (treppe_down_light_sw.state != receivedCommand) {
+        treppe_down_light_sw.sendCommand(receivedCommand)
+    } else {
+        logWarn("proxy", "Filter state for item treppe_down_light")
+    }
 end
 // Device should apply saved color temp when ON
 rule "Petro Desktop up light 1 apply color on ON"

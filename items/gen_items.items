@@ -74,7 +74,8 @@ Color bz_light_1_color "BZ Light (toilet) Color" <colorwheel> (g_all_color,g_lig
 String bz_light_1_color_mode "BZ Light (toilet) Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:bz_light_1:color_mode"}
 Switch bz_light_1_ota "BZ Light (toilet) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bz_light_1:ota"}
 Number:Dimensionless bz_light_1_link "BZ Light (toilet) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bz_light_1:link"}
-Switch bz_light_1_sw "BZ Light (toilet)" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_bz,bz_main_light) {channel="mqtt:topic:openhab:bz_light_1:state"}
+Switch bz_light_1_sw_proxy "BZ Light (toilet) proxy" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_bz,bz_main_light)
+Switch bz_light_1_sw "BZ Light (toilet)" <light> {channel="mqtt:topic:openhab:bz_light_1:state"}
 // BZ Light (shower) (0x04cd15fffedb319f)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer bz_light_2_dim "BZ Light (shower) DIM [%d %%]" <light> (g_all_dim,g_light_bz_dim) {channel="mqtt:topic:openhab:bz_light_2:dim"}
@@ -83,7 +84,8 @@ Color bz_light_2_color "BZ Light (shower) Color" <colorwheel> (g_all_color,g_lig
 String bz_light_2_color_mode "BZ Light (shower) Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:bz_light_2:color_mode"}
 Switch bz_light_2_ota "BZ Light (shower) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bz_light_2:ota"}
 Number:Dimensionless bz_light_2_link "BZ Light (shower) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bz_light_2:link"}
-Switch bz_light_2_sw "BZ Light (shower)" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_bz,bz_main_light) {channel="mqtt:topic:openhab:bz_light_2:state"}
+Switch bz_light_2_sw_proxy "BZ Light (shower) proxy" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_bz,bz_main_light)
+Switch bz_light_2_sw "BZ Light (shower)" <light> {channel="mqtt:topic:openhab:bz_light_2:state"}
 // BZ Mirror (bz_mirror)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch bz_mirror "BZ Mirror" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_bz) {channel="mqtt:topic:openhab:bz_mirror:POWER"}
@@ -346,7 +348,8 @@ Color treppe_down_light_color "Treppe Down light Color" <colorwheel> (g_all_colo
 String treppe_down_light_color_mode "Treppe Down light Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:treppe_down_light:color_mode"}
 Switch treppe_down_light_ota "Treppe Down light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_down_light:ota"}
 Number:Dimensionless treppe_down_light_link "Treppe Down light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_down_light:link"}
-Switch treppe_down_light_sw "Treppe Down light" <light> (g_all_sw,g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto) {channel="mqtt:topic:openhab:treppe_down_light:state", expire="1h,command=OFF"}
+Switch treppe_down_light_sw_proxy "Treppe Down light proxy" <light> (g_all_sw,g_light_all,g_light_treppe,g_light_kg,g_light_kg_auto)
+Switch treppe_down_light_sw "Treppe Down light" <light> {channel="mqtt:topic:openhab:treppe_down_light:state", expire="1h,command=OFF"}
 // Treppe motion (0xbc33acfffe872049)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
 Switch treppe_motion_lowbatt "Treppe motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:treppe_motion:battery_low"}
