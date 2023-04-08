@@ -412,12 +412,7 @@ sitemap main label="MAIN"
 			}
 		}
 
-		Group item=g_battery_low label="Batteries [MAP(lowbat.map):%s]" icon=lowbattery {
-			Frame label="Common status" {
-				Group item=g_battery_low icon=lowbattery label="Battery low [MAP(lowbat.map):%s]"
-				Group item=g_battery_level icon=battery label="Battery level [%d %%]"
-			}
-		}
+		Group item=g_all_battery
 
 		Group item=g_zigbee_link label="Zigbee" icon=linkz {
 			Frame label="ZigBee Config" {
