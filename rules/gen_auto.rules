@@ -138,6 +138,28 @@ then
         sz_color_light_ct.sendCommand(ct_set)
     ])
 end
+// Device needs to proxy events from groups, to filter duplicating
+rule "SZ Color Decor proxy state item"
+when
+    Item sz_color_light_sw changed
+then
+    if (sz_color_light_sw_proxy.state != newState) {
+        sz_color_light_sw_proxy.postUpdate(newState)
+    }
+end
+rule "SZ Color Decor proxy state group"
+when
+    Item sz_color_light_sw_proxy received command
+then
+    if (sz_color_light_sw.state != receivedCommand) {
+        sz_color_light_sw.sendCommand(receivedCommand)
+    } else {
+        logWarn("proxy", "Filter state for item sz_color_light")
+        // Send request for status - to ensure we are in sync
+        val mq = getActions("mqtt","mqtt:broker:openhab")
+        mq.publishMQTT("zigbee2mqtt/sz_color_light/get","{\"state\":\"\"}")
+    }
+end
 // Device should apply saved color temp when ON
 rule "SZ Bed 1 apply color on ON"
 when
