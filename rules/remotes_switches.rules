@@ -121,20 +121,18 @@ when
 then
 	var state = receivedEvent
     switch(state) {
-        case "brightness_move_up": { // Long press UP
-            g_light_kg_auto.sendCommand(ON)
-            treppe_manual_sw.sendCommand(ON)
-            g_dim_treppe.sendCommand(100) // Full brightness for auto-light
+        case "on": {
+            g_dim_eg_auto.sendCommand(100)
         }
         // Turn OFF EG light
-        case "brightness_move_down": { // Long press DOWN
+        case "off": {
             g_light_eg.sendCommand(OFF)
         }
-        case "on": {
+        case "brightness_move_up": { // Long press UP
             treppe_manual_sw.sendCommand(ON)
             g_dim_treppe.sendCommand(100)
         }
-        case "off": {
+        case "brightness_move_down": { // Long press DOWN
             // Up button switches ALL light in KG
             g_light_kg.sendCommand(OFF)
             // Check that PC is off and turn off also sockets there
