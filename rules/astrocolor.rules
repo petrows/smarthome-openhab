@@ -34,7 +34,9 @@ then
     logWarn("light", "Astrocolor reset")
 
     light_astrocolor_enabled.sendCommand(ON)
+
     astro_color_value.sendCommand(astrocolorDaylight) // Default color value for DAY
+    g_light_astro_color.sendCommand(astrocolorDaylight) // Default color value for DAY
 end
 
 rule "Astrocolor: Set lamps color according to daytime"

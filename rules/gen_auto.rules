@@ -59,6 +59,9 @@ then
         bz_light_1_sw.sendCommand(receivedCommand)
     } else {
         logWarn("proxy", "Filter state for item bz_light_1")
+        // Send request for status - to ensure we are in sync
+        val mq = getActions("mqtt","mqtt:broker:openhab")
+        mq.publishMQTT("zigbee2mqtt/bz_light_1/get","{\"state\":\"\"}")
     }
 end
 // Device should apply saved color temp when ON
@@ -88,6 +91,9 @@ then
         bz_light_2_sw.sendCommand(receivedCommand)
     } else {
         logWarn("proxy", "Filter state for item bz_light_2")
+        // Send request for status - to ensure we are in sync
+        val mq = getActions("mqtt","mqtt:broker:openhab")
+        mq.publishMQTT("zigbee2mqtt/bz_light_2/get","{\"state\":\"\"}")
     }
 end
 // Device should apply saved color temp when ON
@@ -177,6 +183,9 @@ then
         treppe_down_light_sw.sendCommand(receivedCommand)
     } else {
         logWarn("proxy", "Filter state for item treppe_down_light")
+        // Send request for status - to ensure we are in sync
+        val mq = getActions("mqtt","mqtt:broker:openhab")
+        mq.publishMQTT("zigbee2mqtt/treppe_down_light/get","{\"state\":\"\"}")
     }
 end
 // Device should apply saved color temp when ON
