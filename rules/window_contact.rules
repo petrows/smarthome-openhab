@@ -1,9 +1,24 @@
-
-
 // Door contact in treppe UP
-rule "Trepp door UP"
+rule "Treppe door UP"
 when
     Item treppe_door_sensor_contact changed from CLOSED to OPEN
 then
     treppe_motion_occupancy.sendCommand(ON)
+end
+
+// Door contact for Main door
+rule "Main door"
+when
+    Item eg_main_door_contact changed from CLOSED to OPEN
+then
+    if (
+           g_light_eg_ku.state == OFF
+        && g_light_eg_flur.state == OFF
+        && g_light_eg_bz.state == OFF
+    ) {
+        if (astro_sun_up_5.state == OFF) {
+            sendCommand(g_light_eg_auto, ON)
+            sendCommand(g_dim_eg_auto, 15)
+        }
+    }
 end

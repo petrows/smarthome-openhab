@@ -2,9 +2,9 @@
 // Motion detect in KG
 rule "KG Motion detect treppe"
 when
-    Item treppe_motion_occupancy changed
+    Item treppe_motion_occupancy received command
 then
-    if (newState == OFF) {
+    if (receivedCommand == OFF) {
         // If light is triggered manually, does not stop it
         if (treppe_manual_sw.state == ON) {
             logWarn("light", "KG Motion treppe OFF ignored by manual override")
@@ -13,7 +13,7 @@ then
         }
         return
     }
-    if (newState == ON) {
+    if (receivedCommand == ON) {
         if (g_light_treppe.state == OFF) {
             sendCommand(g_light_treppe, ON)
             sendCommand(g_dim_treppe, 1)
@@ -36,9 +36,9 @@ end
 // Motion detect in Lager Flür
 rule "KG Motion detect Lager"
 when
-    Item kg_lager4_motion_occupancy changed
+    Item kg_lager4_motion_occupancy received command
 then
-    if (newState == OFF) {
+    if (receivedCommand == OFF) {
         // If light is triggered manually, does not stop it
         if (kg_lager4_manual_sw.state == ON) {
             logWarn("light", "KG Motion lager OFF ignored by manual override")
@@ -46,7 +46,7 @@ then
         }
         sendCommand(g_light_lager_auto, OFF)
     }
-    if (newState == ON && g_light_lager_auto.state == OFF) {
+    if (receivedCommand == ON && g_light_lager_auto.state == OFF) {
         sendCommand(g_dim_lager_auto, 30)
     }
 end
@@ -54,9 +54,9 @@ end
 // Motion detect in Laundry
 rule "KG Motion detect Laundry"
 when
-    Item kg_lager3_motion_occupancy changed
+    Item kg_lager3_motion_occupancy received command
 then
-    if (newState == OFF) {
+    if (receivedCommand == OFF) {
         sendCommand(kg_lager3_main_light, OFF)
     } else {
         sendCommand(kg_lager3_main_light, ON)
