@@ -11,7 +11,6 @@ then
         } else {
             sendCommand(g_light_treppe, OFF)
         }
-        sendCommand(g_light_eg_auto, OFF)
         return
     }
     if (newState == ON) {
@@ -20,7 +19,7 @@ then
             sendCommand(g_dim_treppe, 1)
         }
         // At night -> turn on some EG
-        if (astro_is_night.state == ON) {
+        if (astro_sun_up_5.state == OFF) {
             // If no light at flur or toilet or kitchen -> turn on some
             if (
                    g_light_eg_ku.state == OFF

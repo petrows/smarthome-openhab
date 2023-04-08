@@ -403,7 +403,8 @@ sitemap main label="MAIN"
 				Switch	item=light_astrocolor_enabled
 				Slider	item=g_light_astro_color
                 Switch  item=cfg_christmas_lights_enable
-                Text  item=astro_is_night
+                Text  item=astro_sun_up_5
+                Text  item=astro_sun_up_0
 			}
 			Frame label="Watering" {
 				Switch	item=cfg_wassering_auto_enable

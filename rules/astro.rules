@@ -30,17 +30,16 @@ rule "Astro: update Sun"
 when
     Item astro_sun_el changed
 then
-    // Sun is above horisont?
-    if (newState > 0.0 | °) {
-        astro_is_dark.sendCommand(OFF)
+    // Sun going low
+    if (newState > 5.0 | °) {
+        if (astro_sun_up_5.state != ON) astro_sun_up_5.sendCommand(ON)
     } else {
-        astro_is_dark.sendCommand(ON)
+        if (astro_sun_up_5.state != OFF) astro_sun_up_5.sendCommand(OFF)
     }
-
-    // Night?
-    if (newState < 5.0 | °) {
-        astro_is_night.sendCommand(ON)
+    // Sun leaving
+    if (newState > 0.0 | °) {
+        if (astro_sun_up_0.state != ON) astro_sun_up_0.sendCommand(ON)
     } else {
-        astro_is_night.sendCommand(OFF)
+        if (astro_sun_up_0.state != OFF) astro_sun_up_0.sendCommand(OFF)
     }
 end
