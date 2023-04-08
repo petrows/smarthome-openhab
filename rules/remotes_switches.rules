@@ -473,9 +473,7 @@ then
 end
 
 // BZ Main control button
-
 // Livarno Home LED ceiling light
-// requires to be explicitly ON, otherwise brightness command does not set proper state
 
 rule "BZ main switch"
 when
@@ -492,9 +490,12 @@ then
         case "off": {
             // "down" -> Small power
             g_light_bz_color.sendCommand("0,100,50")
+            // Start from minimal to avoid flicker
+            bz_light_1_dim_fast.sendCommand(1)
+            bz_light_2_dim_fast.sendCommand(1)
+            g_light_bz_color.sendCommand("0,100,50")
             bz_light_1_dim.sendCommand(50)
             bz_light_2_dim.sendCommand(10)
-            g_light_bz_color.sendCommand("0,100,50")
         }
         case "arrow_left_click": {
             if (bz_mirror.state == ON) {
