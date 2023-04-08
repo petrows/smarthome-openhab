@@ -37,12 +37,12 @@ rule "BZ Light (toilet) apply color on ON"
 when
     Item bz_light_1_sw changed to ON
 then
-    // Item with RGB: do not reset RGB color while ON
-    if (bz_light_1_color_mode.state == "xy") {
-        return
-    }
     val ct_set = (bz_light_1_ct.state as Number).intValue
     bz_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
+        // Item with RGB: do not reset RGB color while ON
+        if (bz_light_1_color_mode.state == "xy") {
+            return
+        }
         bz_light_1_ct.sendCommand(ct_set)
     ])
 end
@@ -73,12 +73,12 @@ rule "BZ Light (shower) apply color on ON"
 when
     Item bz_light_2_sw changed to ON
 then
-    // Item with RGB: do not reset RGB color while ON
-    if (bz_light_2_color_mode.state == "xy") {
-        return
-    }
     val ct_set = (bz_light_2_ct.state as Number).intValue
     bz_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
+        // Item with RGB: do not reset RGB color while ON
+        if (bz_light_2_color_mode.state == "xy") {
+            return
+        }
         bz_light_2_ct.sendCommand(ct_set)
     ])
 end
@@ -129,12 +129,12 @@ rule "SZ Color Decor apply color on ON"
 when
     Item sz_color_light_sw changed to ON
 then
-    // Item with RGB: do not reset RGB color while ON
-    if (sz_color_light_color_mode.state == "xy") {
-        return
-    }
     val ct_set = (sz_color_light_ct.state as Number).intValue
     sz_color_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        // Item with RGB: do not reset RGB color while ON
+        if (sz_color_light_color_mode.state == "xy") {
+            return
+        }
         sz_color_light_ct.sendCommand(ct_set)
     ])
 end
@@ -195,12 +195,12 @@ rule "Treppe Down light apply color on ON"
 when
     Item treppe_down_light_sw changed to ON
 then
-    // Item with RGB: do not reset RGB color while ON
-    if (treppe_down_light_color_mode.state == "xy") {
-        return
-    }
     val ct_set = (treppe_down_light_ct.state as Number).intValue
     treppe_down_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        // Item with RGB: do not reset RGB color while ON
+        if (treppe_down_light_color_mode.state == "xy") {
+            return
+        }
         treppe_down_light_ct.sendCommand(ct_set)
     ])
 end

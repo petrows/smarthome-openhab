@@ -485,12 +485,15 @@ then
     switch(state) {
         case "on": {
             // "up" -> Full power
+            g_light_bz_ct.sendCommand(astro_color_value.state.toString)
             g_light_bz_dim.sendCommand(100)
             g_light_bz_ct.sendCommand(astro_color_value.state.toString)
         }
         case "off": {
             // "down" -> Small power
-            g_light_bz_dim.sendCommand(50)
+            g_light_bz_color.sendCommand("0,100,50")
+            bz_light_1_dim.sendCommand(50)
+            bz_light_2_dim.sendCommand(10)
             g_light_bz_color.sendCommand("0,100,50")
         }
         case "arrow_left_click": {
