@@ -13,16 +13,6 @@ then
     presMobileMarina.sendCommand(OFF)
 end
 
-rule "Broadcast message"
-when
-    Item global_message received command
-then
-    logWarn("broadcast", receivedCommand.toString)
-    sendBroadcastNotification(receivedCommand.toString)
-	val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
-    telegramAction.sendTelegram(receivedCommand.toString)
-end
-
 rule "Presence master"
 when
 	Item gPresent changed
@@ -42,32 +32,6 @@ then
 	}
 end
 
-rule "Waterleak LG 4"
-when
-	Item kg_lager4_leak_leak changed to ON
-then
-	sendBroadcastNotification("WATER LEAK IN KG 4!")
-	logWarn("water-leak", "WATER LEAK IN KG 4!")
-
-    val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
-    telegramAction.sendTelegram("WATER LEAK IN KG 4!")
-end
-
-rule "Waterleak LG 3"
-when
-	Item garten_wasser_leak_leak changed to ON
-then
-	sendBroadcastNotification("WATER LEAK IN KG 2!")
-	logWarn("water-leak", "WATER LEAK IN KG 2!")
-
-    // Disable auto wasser
-    cfg_wassering_auto_enable.sendCommand(OFF)
-    garten_wasser_sw.sendCommand(OFF)
-
-    val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
-    telegramAction.sendTelegram("WATER LEAK IN KG 2!")
-end
-
 // This rule send notifications if item was not updated within 24 hrs
 rule "Test devices responce time"
 when
@@ -83,10 +47,7 @@ then
             logInfo("activity", "Item " + s.label + " last update: " + diff_hours)
 
             if (diff_hours > 24) {
-                sendBroadcastNotification("Item " + s.label + " no activity for " + diff_hours + " h")
-
-                val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
-                telegramAction.sendTelegram("Item " + s.label + " no activity for " + diff_hours + " h")
+                global_message.sendCommand("Item " + s.label + " no activity for " + diff_hours + " h")
             }
         } else {
             logInfo("activity", "Item " + s.label + " never updated")

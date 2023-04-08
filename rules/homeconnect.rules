@@ -3,11 +3,7 @@ rule "Siemens dryer state finished"
     when Item dryer_operation_state changed from 'Run' to 'Finished'
 then
     logInfo("dryer", "Siemens dryer state finished")
-
-    sendBroadcastNotification("Dryer finished")
-
-    val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
-    telegramAction.sendTelegram("Dryer finished")
+    global_message.sendCommand("Dryer finished")
 end
 
 // Update remain time

@@ -17,7 +17,7 @@ Switch cfg_wassering_auto_enable "Wasserung auto [%s]" <faucet> (gSettings)
 
 Group:Switch:OR(ON,OFF) g_all_lowbattery "Battery low [%s]" <lowbattery>
 Group:Number:MIN g_all_battery "Battery [%d %%]" <battery>
-Group:Number:MIN g_battery_voltage
+Group:Number:MIN g_all_battery_voltage
 
 DateTime current_date_time "Current date and time"
 
