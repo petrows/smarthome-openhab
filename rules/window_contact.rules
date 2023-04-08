@@ -18,7 +18,7 @@ then
     ) {
         if (astro_sun_up_5.state == OFF) {
             sendCommand(g_light_eg_auto, ON)
-            sendCommand(g_dim_eg_auto, 15)
+            sendCommand(g_dim_eg_auto, 30)
         }
     }
 end

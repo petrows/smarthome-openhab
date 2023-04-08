@@ -11,6 +11,13 @@ then
         } else {
             sendCommand(g_light_treppe, OFF)
         }
+        // Switch off decor ligts - only if brightness is 15
+        if (Math::round(Float::parseFloat(ku_light_table_dim.state.toString)) == 15) {
+            ku_light_table_sw.sendCommand(OFF)
+        }
+        if (Math::round(Float::parseFloat(eg_decoration_light_dim.state.toString)) == 15) {
+            eg_decoration_light_sw.sendCommand(OFF)
+        }
         return
     }
     if (receivedCommand == ON) {
