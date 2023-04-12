@@ -123,6 +123,19 @@ devices:
 
 # THEATER ================================
 
+  - name: NS Main
+    id: ns_main_light
+    zigbee_id: '0x588e81fffefb217b'
+    type: LIVARNO_CELLING_14147206L
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_ns
+      ct:
+        - g_light_ns_ct
+        - g_light_astro_color
+
   - name: NS Climate
     id: ns_climate
     zigbee_id: '0x00158d0001b95e08'
@@ -405,6 +418,8 @@ devices:
     groups:
       contact:
       - ku_windows
+
+# TREPPE ================================
 
   - name: Treppe Door sensor
     id: treppe_door_sensor

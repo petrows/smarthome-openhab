@@ -23,30 +23,10 @@ Thing mqtt:topic:openhab:snf-eg-fl-spiegel (mqtt:broker:openhab) {
 		Type switch : power  [ stateTopic="stat/snf-eg-fl-spiegel/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/snf-eg-fl-spiegel/POWER", on="ON", off="OFF" ]
 		Type dimmer : brightness [ stateTopic="stat/snf-eg-fl-spiegel/RESULT", transformationPattern="JSONPATH:$.Dimmer", commandTopic="cmnd/snf-eg-fl-spiegel/Dimmer", min=1, max=100 ]
 }
-
-Thing mqtt:topic:openhab:snf-eg-sz (mqtt:broker:openhab) {
-	Channels:
-		Type switch : power  [ stateTopic="stat/snf-eg-sz/POWER", commandTopic="cmnd/snf-eg-sz/POWER", on="ON", off="OFF" ]
-}
-Thing mqtt:topic:openhab:snf-eg-ns (mqtt:broker:openhab) {
-	Channels:
-		Type switch : power  [ stateTopic="stat/snf-eg-ns/POWER", commandTopic="cmnd/snf-eg-ns/POWER", on="ON", off="OFF" ]
-}
 Thing mqtt:topic:openhab:snf-eg-fs (mqtt:broker:openhab) {
 	Channels:
 		Type switch : power  [ stateTopic="stat/snf-eg-fs/POWER", commandTopic="cmnd/snf-eg-fs/POWER", on="ON", off="OFF" ]
 }
-Thing mqtt:topic:openhab:snf-eg-bz (mqtt:broker:openhab) {
-	Channels:
-		Type switch : power1  [ stateTopic="stat/snf-eg-bz/POWER1", commandTopic="cmnd/snf-eg-bz/POWER1", on="ON", off="OFF" ]
-		Type switch : power2  [ stateTopic="stat/snf-eg-bz/POWER2", commandTopic="cmnd/snf-eg-bz/POWER2", on="ON", off="OFF" ]
-}
-Thing mqtt:topic:openhab:snf-eg-ku (mqtt:broker:openhab) {
-	Channels:
-		Type switch : power1  [ stateTopic="stat/snf-eg-ku/POWER1", commandTopic="cmnd/snf-eg-ku/POWER1", on="ON", off="OFF" ]
-		Type switch : power2  [ stateTopic="stat/snf-eg-ku/POWER2", commandTopic="cmnd/snf-eg-ku/POWER2", on="ON", off="OFF" ]
-}
-
 Thing mqtt:topic:openhab:snf-kg-1 "Main KG" (mqtt:broker:openhab) @ "KG" {
 	Channels:
 		Type switch : power  [ stateTopic="stat/snf-kg-1/POWER", commandTopic="cmnd/snf-kg-1/POWER", on="ON", off="OFF" ]

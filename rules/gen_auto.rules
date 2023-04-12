@@ -10,6 +10,7 @@
 var Timer balkon_light_1_ct_timer
 var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
+var Timer ns_main_light_ct_timer
 var Timer desktop_marina_light_ct_timer
 var Timer sz_main_light_ct_timer
 var Timer sz_color_light_ct_timer
@@ -103,6 +104,16 @@ then
         val mq = getActions("mqtt","mqtt:broker:openhab")
         mq.publishMQTT("zigbee2mqtt/bz_light_2/get","{\"state\":\"\"}")
     }
+end
+// Device should apply saved color temp when ON
+rule "NS Main apply color on ON"
+when
+    Item ns_main_light_sw changed to ON
+then
+    val ct_set = (ns_main_light_ct.state as Number).intValue
+    ns_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        ns_main_light_ct.sendCommand(ct_set)
+    ])
 end
 // Device should apply saved color temp when ON
 rule "Marina Desktop light apply color on ON"

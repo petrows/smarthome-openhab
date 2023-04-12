@@ -141,24 +141,29 @@ sitemap main label="MAIN"
 		}
 		Group item=g_light_eg_ns label="Theater [%s]" icon="light" {
             Frame {
-                Switch item=snf_eg_ns label="Main [%s]" icon="light"
+				Switch item=g_light_eg_ns label="All [%s]" icon="light"
             }
-            Frame {
-                Switch item=ns_night_lamp_sw label="Night [%s]" icon="light"
-                Slider item=ns_night_lamp_dim label="Night DIM [%d %%]" icon="light"
-                Slider item=ns_night_lamp_ct label="Main CT [JS(codegen-mired.js):%s]"
-                Colorpicker item=ns_night_lamp_color label="Main Color []" icon="colorpicker"
+            Frame label="Main" {
+                Switch item=ns_main_light_sw label="Main [%s]" icon="light"
+                Slider item=ns_main_light_dim label="Main DIM [%d %%]" icon="light"
+				Slider item=ns_main_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
-            Frame {
+            Frame label="RGB" {
+                Switch item=ns_night_lamp_sw label="RGB [%s]" icon="light"
+                Slider item=ns_night_lamp_dim label="RGB DIM [%d %%]" icon="light"
+                Slider item=ns_night_lamp_ct label="RGB CT [JS(codegen-mired.js):%s]"
+                Colorpicker item=ns_night_lamp_color label="RGB Color []" icon="colorpicker"
+            }
+            Frame label="Cinema" {
                 Switch item=cinema_mode label="Cinemo mode [%s]" icon="projector"
                 Switch item=ns_projector_power_sw label="Device power [%s]" icon="switch"
             }
-            Frame {
+            Frame label="Devices" {
                 Switch item=ir_projector_power label="Projector []" mappings=["ON"="⚇"] icon="projector"
                 Switch item=ir_audio_power label="Receiver []" mappings=["ON"="⚇"] icon="receiver"
                 Switch item=ir_stb_power label="STB []" mappings=["ON"="⚇"] icon="receiver"
             }
-            Frame {
+            Frame label="Christmas" {
 			    Switch item=ns_christmas_light_sw label="Christmas [%s]" icon="light"
             }
 		}
@@ -172,6 +177,8 @@ sitemap main label="MAIN"
 		Group item=g_light_eg_sz label="Sleep [%s]" icon="light" {
 			Frame {
 				Switch item=g_light_eg_sz label="All [%s]" icon="light"
+            }
+            Frame label="Main" {
 				Switch item=sz_main_light_sw label="Main [%s]" icon="light"
 				Slider item=sz_main_light_dim label="Main DIM [%d %%]" icon="light"
 				Slider item=sz_main_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"

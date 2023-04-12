@@ -75,6 +75,8 @@
   friendly_name: ns_night_lamp
 '0x14b457fffe7e2305':
   friendly_name: sz_remote_bed
+'0x588e81fffefb217b':
+  friendly_name: ns_main_light
 '0x588e81fffefe9a05':
   friendly_name: sz_main_light
 '0x680ae2fffe16e111':

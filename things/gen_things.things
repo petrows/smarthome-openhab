@@ -160,6 +160,17 @@ Thing mqtt:topic:openhab:bz_light_switch "BZ Light Control" (mqtt:broker:openhab
 		Type number : link [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// NS Main (0x588e81fffefb217b)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Thing mqtt:topic:openhab:ns_main_light "NS Main" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/ns_main_light", commandTopic="zigbee2mqtt/ns_main_light/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/ns_main_light", commandTopic="zigbee2mqtt/ns_main_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-brightness.js", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/ns_main_light", commandTopic="zigbee2mqtt/ns_main_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-brightness-fast.js", min=1, max=254]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/ns_main_light", commandTopic="zigbee2mqtt/ns_main_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-color_temp.js", min=150, max=500]
+		Type number : link [stateTopic="zigbee2mqtt/ns_main_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ns_main_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
 Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {

@@ -133,6 +133,15 @@ Text item=bz_light_switch_ota
 Text item=bz_light_switch_link
 Text item=bz_light_switch_battery
 }
+Frame label="NS Main (0x588e81fffefb217b)" {
+// NS Main (0x588e81fffefb217b)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Slider item=ns_main_light_dim
+Slider item=ns_main_light_ct
+Text item=ns_main_light_ota
+Text item=ns_main_light_link
+Switch item=ns_main_light_sw
+}
 Frame label="NS Climate (0x00158d0001b95e08)" {
 // NS Climate (0x00158d0001b95e08)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
