@@ -231,6 +231,38 @@ then
     }
 end
 
+rule "NS remote sw"
+when
+    Channel "mqtt:topic:openhab:ns_light_switch:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "on": {
+            ns_main_light_dim.sendCommand(100)
+        }
+        case "off": {
+            if (g_light_eg_ns.state == ON) {
+                g_light_eg_ns.sendCommand(OFF)
+            } else {
+                ns_main_light_dim.sendCommand(1)
+            }
+        }
+        case "arrow_right_click": {
+            ns_main_light_ct.sendCommand(100)
+        }
+        case "arrow_left_click": {
+            ns_main_light_ct.sendCommand(1)
+        }
+    }
+end
+
+rule "NS remote dimmer"
+when
+    Channel "mqtt:topic:openhab:ns_light_switch:action_dim" triggered
+then
+    ns_main_light_dim_fast.sendCommand((ns_main_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+end
+
 rule "SZ remote sw (main)"
 when
     Channel "mqtt:topic:openhab:sz_remote_main:action" triggered
