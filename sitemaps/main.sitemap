@@ -167,12 +167,21 @@ sitemap main label="MAIN"
 			    Switch item=ns_christmas_light_sw label="Christmas [%s]" icon="light"
             }
 		}
-		Group item=g_light_eg_fs label="Foto Studio [%s]" icon="light" {
-			Switch item=snf_eg_fs label="Main [%s]" icon="light"
-			Switch item=desktop_marina_light_sw label="Desktop [%s]"
-			Slider item=desktop_marina_light_dim label="Desktop DIM [%d %%]"
-			Slider item=desktop_marina_light_ct label="Desktop CT [JS(codegen-mired.js):%s]"
-            Switch item=fs_christmas_light_sw label="Christmas [%s]" icon="light"
+		Group item=g_light_eg_fs label="New Room [%s]" icon="light" {
+            Frame {
+				Switch item=g_light_eg_fs label="All [%s]" icon="light"
+            }
+            Frame label="Main" {
+			    Switch item=fs_main_light_sw label="Main [%s]" icon="light"
+                Slider item=fs_main_light_dim label="Main DIM [%d %%]" icon="light"
+				Slider item=fs_main_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
+            }
+            Frame label="Desktop" {
+                Switch item=desktop_marina_light_sw label="Desktop [%s]"
+                Slider item=desktop_marina_light_dim label="Desktop DIM [%d %%]"
+                Slider item=desktop_marina_light_ct label="Desktop CT [JS(codegen-mired.js):%s]"
+                Switch item=fs_christmas_light_sw label="Christmas [%s]" icon="light"
+            }
 		}
 		Group item=g_light_eg_sz label="Sleep [%s]" icon="light" {
 			Frame {

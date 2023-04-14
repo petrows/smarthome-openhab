@@ -175,6 +175,7 @@ devices:
     id: fs_climate
     zigbee_id: '0x00158d0001c15121'
     type: XIAOMI_AQARA_V1
+
   - name: Marina Desktop light
     id: desktop_marina_light
     zigbee_id: '0xec1bbdfffe1b89d1'
@@ -186,10 +187,23 @@ devices:
       - g_light_eg_fs
       ct:
       - g_light_astro_color
+
   - name: Marina Desktop remote
     id: desktop_marina_remote
     zigbee_id: '0xccccccfffeea9703'
     type: IKEA_TRADFRI_REMOTE
+
+  - name: FS Main
+    id: fs_main_light
+    zigbee_id: '0x842e14fffe0eb8a0'
+    type: LIVARNO_CELLING_14147206L
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_fs
+      ct:
+        - g_light_astro_color
 
   - name: FS Main remote
     id: fs_light_switch

@@ -86,8 +86,6 @@ String sz_remote_mode "SZ remote control mode" <light>
 Switch snf_eg_fl "EG Flur" <light> (g_light_all, g_light_eg, g_light_eg_flur) { channel="mqtt:topic:openhab:snf-eg-fl:power" }
 Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg, g_light_eg_flur, g_light_eg_sz_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
 Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }
-Switch snf_eg_fs "EG Foto Studio Licht" <light> (g_light_all, g_light_eg, g_light_eg_fs) { channel="mqtt:topic:openhab:snf-eg-fs:power" }
-
 
 // Yeelight (Night SZ)
 

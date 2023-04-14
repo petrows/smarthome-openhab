@@ -23,10 +23,6 @@ Thing mqtt:topic:openhab:snf-eg-fl-spiegel (mqtt:broker:openhab) {
 		Type switch : power  [ stateTopic="stat/snf-eg-fl-spiegel/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/snf-eg-fl-spiegel/POWER", on="ON", off="OFF" ]
 		Type dimmer : brightness [ stateTopic="stat/snf-eg-fl-spiegel/RESULT", transformationPattern="JSONPATH:$.Dimmer", commandTopic="cmnd/snf-eg-fl-spiegel/Dimmer", min=1, max=100 ]
 }
-Thing mqtt:topic:openhab:snf-eg-fs (mqtt:broker:openhab) {
-	Channels:
-		Type switch : power  [ stateTopic="stat/snf-eg-fs/POWER", commandTopic="cmnd/snf-eg-fs/POWER", on="ON", off="OFF" ]
-}
 Thing mqtt:topic:openhab:snf-kg-1 "Main KG" (mqtt:broker:openhab) @ "KG" {
 	Channels:
 		Type switch : power  [ stateTopic="stat/snf-kg-1/POWER", commandTopic="cmnd/snf-kg-1/POWER", on="ON", off="OFF" ]

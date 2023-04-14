@@ -219,6 +219,15 @@ Text item=desktop_marina_remote_ota
 Text item=desktop_marina_remote_link
 Text item=desktop_marina_remote_battery
 }
+Frame label="FS Main (0x842e14fffe0eb8a0)" {
+// FS Main (0x842e14fffe0eb8a0)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Slider item=fs_main_light_dim
+Slider item=fs_main_light_ct
+Text item=fs_main_light_ota
+Text item=fs_main_light_link
+Switch item=fs_main_light_sw
+}
 Frame label="FS Main remote (0xb4e3f9fffeb35529)" {
 // FS Main remote (0xb4e3f9fffeb35529)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html

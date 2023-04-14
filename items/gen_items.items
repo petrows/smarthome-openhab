@@ -180,6 +180,14 @@ Switch desktop_marina_remote_lowbatt "Marina Desktop remote BAT [MAP(codegen-low
 Switch desktop_marina_remote_ota "Marina Desktop remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_marina_remote:ota"}
 Number:Dimensionless desktop_marina_remote_link "Marina Desktop remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_marina_remote:link"}
 Number:Dimensionless desktop_marina_remote_battery "Marina Desktop remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:desktop_marina_remote:battery"}
+// FS Main (0x842e14fffe0eb8a0)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Dimmer fs_main_light_dim "FS Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fs_main_light:dim"}
+Dimmer fs_main_light_dim_fast "FS Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:fs_main_light:dim_fast"}
+Dimmer fs_main_light_ct "FS Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color) {channel="mqtt:topic:openhab:fs_main_light:ct"}
+Switch fs_main_light_ota "FS Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_main_light:ota"}
+Number:Dimensionless fs_main_light_link "FS Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_main_light:link"}
+Switch fs_main_light_sw "FS Main" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_fs) {channel="mqtt:topic:openhab:fs_main_light:state"}
 // FS Main remote (0xb4e3f9fffeb35529)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Dimmer fs_light_switch_dim "FS Main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fs_light_switch:dim"}
