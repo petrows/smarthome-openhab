@@ -111,6 +111,11 @@
   friendly_name: eg_decoration_light
 '0x9035eafffe712884':
   friendly_name: fs_heating
+'0x9035eafffee1ba1d':
+  friendly_name: ns_light_switch
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0xa4c13804963f4ccf':
   friendly_name: sz_window_1
 '0xa4c138182f60d651':
@@ -127,6 +132,11 @@
   friendly_name: ns_window_2
 '0xa4c138fbdde6b200':
   friendly_name: sz_window_door
+'0xb4e3f9fffeb35529':
+  friendly_name: fs_light_switch
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0xbc33acfffe84ca1e':
   friendly_name: kg_lager4_motion
 '0xbc33acfffe872049':

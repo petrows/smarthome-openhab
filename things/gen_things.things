@@ -218,6 +218,18 @@ Thing mqtt:topic:openhab:ns_window_2 "NS Window 2" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ns_window_2", transformationPattern="JS:codegen-activity.js"]
 }
+// NS Main remote (0x9035eafffee1ba1d)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:ns_light_switch "NS Main remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/ns_light_switch", commandTopic="zigbee2mqtt/ns_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/ns_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="zigbee2mqtt/ns_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/ns_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/ns_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ns_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Thing mqtt:topic:openhab:fs_climate "FS Climate" (mqtt:broker:openhab) {
@@ -251,6 +263,18 @@ Thing mqtt:topic:openhab:desktop_marina_remote "Marina Desktop remote" (mqtt:bro
 		Type switch : battery_low [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_marina_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// FS Main remote (0xb4e3f9fffeb35529)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:fs_light_switch "FS Main remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/fs_light_switch", commandTopic="zigbee2mqtt/fs_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/fs_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="zigbee2mqtt/fs_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/fs_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/fs_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/fs_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // SZ Climate (0x847127fffec6acc3)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html

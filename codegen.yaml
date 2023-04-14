@@ -164,6 +164,11 @@ devices:
       contact:
       - ns_windows
 
+  - name: NS Main remote
+    id: ns_light_switch
+    zigbee_id: '0x9035eafffee1ba1d'
+    type: IKEA_TRADFRI_STYRBAR
+
 # FOTO STUDIO ============================
 
   - name: FS Climate
@@ -185,6 +190,11 @@ devices:
     id: desktop_marina_remote
     zigbee_id: '0xccccccfffeea9703'
     type: IKEA_TRADFRI_REMOTE
+
+  - name: FS Main remote
+    id: fs_light_switch
+    zigbee_id: '0xb4e3f9fffeb35529'
+    type: IKEA_TRADFRI_STYRBAR
 
 # BEDROOM ================================
   - name: SZ Climate

@@ -182,6 +182,15 @@ Text item=ns_window_2_activity
 Text item=ns_window_2_contact
 Text item=ns_window_2_battery
 }
+Frame label="NS Main remote (0x9035eafffee1ba1d)" {
+// NS Main remote (0x9035eafffee1ba1d)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=ns_light_switch_dim
+Text item=ns_light_switch_lowbatt
+Text item=ns_light_switch_ota
+Text item=ns_light_switch_link
+Text item=ns_light_switch_battery
+}
 Frame label="FS Climate (0x00158d0001c15121)" {
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
@@ -209,6 +218,15 @@ Text item=desktop_marina_remote_lowbatt
 Text item=desktop_marina_remote_ota
 Text item=desktop_marina_remote_link
 Text item=desktop_marina_remote_battery
+}
+Frame label="FS Main remote (0xb4e3f9fffeb35529)" {
+// FS Main remote (0xb4e3f9fffeb35529)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=fs_light_switch_dim
+Text item=fs_light_switch_lowbatt
+Text item=fs_light_switch_ota
+Text item=fs_light_switch_link
+Text item=fs_light_switch_battery
 }
 Frame label="SZ Climate (0x847127fffec6acc3)" {
 // SZ Climate (0x847127fffec6acc3)

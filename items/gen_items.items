@@ -150,6 +150,13 @@ Number:Dimensionless ns_window_2_link "NS Window 2 LINK [%d]" <linkz> (g_all_lin
 DateTime ns_window_2_activity "NS Window 2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ns_window_2:activity"}
 Contact ns_window_2_contact "NS Window 2 [%s]" <door> (g_all_contact,ns_windows) {channel="mqtt:topic:openhab:ns_window_2:contact"}
 Number:Dimensionless ns_window_2_battery "NS Window 2  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ns_window_2:battery"}
+// NS Main remote (0x9035eafffee1ba1d)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer ns_light_switch_dim "NS Main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:ns_light_switch:dim"}
+Switch ns_light_switch_lowbatt "NS Main remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ns_light_switch:battery_low"}
+Switch ns_light_switch_ota "NS Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_light_switch:ota"}
+Number:Dimensionless ns_light_switch_link "NS Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_light_switch:link"}
+Number:Dimensionless ns_light_switch_battery "NS Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ns_light_switch:battery"}
 // FS Climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
 Switch fs_climate_lowbatt "FS Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fs_climate:battery_low"}
@@ -173,6 +180,13 @@ Switch desktop_marina_remote_lowbatt "Marina Desktop remote BAT [MAP(codegen-low
 Switch desktop_marina_remote_ota "Marina Desktop remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_marina_remote:ota"}
 Number:Dimensionless desktop_marina_remote_link "Marina Desktop remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_marina_remote:link"}
 Number:Dimensionless desktop_marina_remote_battery "Marina Desktop remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:desktop_marina_remote:battery"}
+// FS Main remote (0xb4e3f9fffeb35529)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer fs_light_switch_dim "FS Main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fs_light_switch:dim"}
+Switch fs_light_switch_lowbatt "FS Main remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fs_light_switch:battery_low"}
+Switch fs_light_switch_ota "FS Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_light_switch:ota"}
+Number:Dimensionless fs_light_switch_link "FS Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_light_switch:link"}
+Number:Dimensionless fs_light_switch_battery "FS Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:fs_light_switch:battery"}
 // SZ Climate (0x847127fffec6acc3)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch sz_climate_lowbatt "SZ Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_climate:battery_low"}
