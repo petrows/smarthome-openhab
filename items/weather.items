@@ -35,51 +35,51 @@ Number:Intensity astro_radiation_diff "Diffuse Radiation [%.2f %unit%]" { channe
 
 // Dark Sky weather
 
-DateTime weather_ext_time "Timestamp of last measurement [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS]" <temperature> { channel="darksky:weather-and-forecast:api:local:current#time-stamp" }
-String weather_ext_summary "Current weather [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:current#condition" }
-Image weather_ext_image "Current weather image [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:current#icon" }
-String weather_ext_icon "Current weather icon [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:current#icon-id" }
-Number:Temperature weather_ext_temp "Outside Temperature [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:current#temperature" }
-Number weather_ext_hum "Humidity [%d %%]" <humidity> { channel="darksky:weather-and-forecast:api:local:current#humidity" }
-Number:Pressure weather_ext_pres "Airpressure [%.1f hPa]" <line> { channel="darksky:weather-and-forecast:api:local:current#pressure" }
-Number:Angle weather_ext_wind_dir "Wind direction [%.0f °]" <wind> { channel="darksky:weather-and-forecast:api:local:current#wind-direction" }
-Number:Speed weather_ext_wind_speed "Wind speed [%.1f m/s]" <wind> { channel="darksky:weather-and-forecast:api:local:current#wind-speed" }
-Number:Speed weather_ext_wind_gust "Wind gusts [%.1f m/s]" <wind> { channel="darksky:weather-and-forecast:api:local:current#gust-speed" }
-Number:Temperature weather_ext_temp_feel "Apparent temperature [%.0f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:current#apparent-temperature" }
-Number:Length weather_ext_visibility "Visibility [%.1f km]" <visibility> { channel="darksky:weather-and-forecast:api:local:current#visibility" }
-Number:ArealDensity weather_ext_ozone "Ozone [%.2f]" <sun> { channel="darksky:weather-and-forecast:api:local:current#ozone" }
-Number weather_ext_uv "UV Index [%.0f]" <sun> { channel="darksky:weather-and-forecast:api:local:current#uvindex" }
-Number:Speed weather_ext_precip_intensity "Precipitation [%.2f mm/h]" <rain> { channel="darksky:weather-and-forecast:api:local:current#precip-intensity" }
-Number:Speed weather_ext_precip_probabiity "Precipitation [%d %%]" <rain> { channel="darksky:weather-and-forecast:api:local:current#precip-probability" }
-String weather_ext_precip_type "Precipitation type [%s]" <rain> { channel="darksky:weather-and-forecast:api:local:current#precip-type" }
-Number:Speed weather_ext_rain "Hourly rain [%s mm]" <rain> { channel="darksky:weather-and-forecast:api:local:current#rain" }
+DateTime weather_ext_time "Timestamp of last measurement [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:current#time-stamp" }
+String weather_ext_summary "Current weather [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:current#condition" }
+Image weather_ext_image "Current weather image [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:current#icon" }
+String weather_ext_icon "Current weather icon [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:current#icon-id" }
+Number:Temperature weather_ext_temp "Outside Temperature [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:current#temperature" }
+Number weather_ext_hum "Humidity [%d %%]" <humidity> { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
+Number:Pressure weather_ext_pres "Airpressure [%.1f hPa]" <line> { channel="openweathermap:weather-and-forecast:api:local:current#pressure" }
+Number:Angle weather_ext_wind_dir "Wind direction [%.0f °]" <wind> { channel="openweathermap:weather-and-forecast:api:local:current#wind-direction" }
+Number:Speed weather_ext_wind_speed "Wind speed [%.1f m/s]" <wind> { channel="openweathermap:weather-and-forecast:api:local:current#wind-speed" }
+Number:Speed weather_ext_wind_gust "Wind gusts [%.1f m/s]" <wind> { channel="openweathermap:weather-and-forecast:api:local:current#gust-speed" }
+Number:Temperature weather_ext_temp_feel "Apparent temperature [%.0f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:current#apparent-temperature" }
+Number:Length weather_ext_visibility "Visibility [%.1f km]" <visibility> { channel="openweathermap:weather-and-forecast:api:local:current#visibility" }
+Number:ArealDensity weather_ext_ozone "Ozone [%.2f]" <sun> { channel="openweathermap:weather-and-forecast:api:local:current#ozone" }
+Number weather_ext_uv "UV Index [%.0f]" <sun> { channel="openweathermap:weather-and-forecast:api:local:current#uvindex" }
+Number:Speed weather_ext_precip_intensity "Precipitation [%.2f mm/h]" <rain> { channel="openweathermap:weather-and-forecast:api:local:current#precip-intensity" }
+Number:Speed weather_ext_precip_probabiity "Precipitation [%d %%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:current#precip-probability" }
+String weather_ext_precip_type "Precipitation type [%s]" <rain> { channel="openweathermap:weather-and-forecast:api:local:current#precip-type" }
+Number:Speed weather_ext_rain "Hourly rain [%s mm]" <rain> { channel="openweathermap:weather-and-forecast:api:local:current#rain" }
 
 // Forecast for hours
 
-DateTime weather_fc_1h_time "Forecast 1h time [%1$tY-%1$tm-%1$td]" <time> { channel="darksky:weather-and-forecast:api:local:forecastHours01#time-stamp" }
-Number:Temperature weather_fc_1h_temp "Forecast 1h [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastHours01#temperature" }
-Number:Speed weather_fc_1h_precip_intensity "Forecast 1h precip [%.2f mm/h]" <rain> { channel="darksky:weather-and-forecast:api:local:forecastHours01#precip-intensity" }
-Number:Dimensionless weather_fc_1h_precip_probabiity "Forecast 1h precip [%d %%]" <rain> { channel="darksky:weather-and-forecast:api:local:forecastHours01#precip-probability" }
-String weather_fc_1h_icon "Forecast 1h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours01#icon-id" }
-String weather_fc_1h_summary "Summary 1h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours01#condition" }
+DateTime weather_fc_3h_time "Forecast 3h time [%s]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#time-stamp" }
+Number:Temperature weather_fc_3h_temp "Forecast 3h [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#temperature" }
+Number:Speed weather_fc_3h_precip_intensity "Forecast 3h precip [%.2f mm/h]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#precip-intensity" }
+Number:Dimensionless weather_fc_3h_precip_probabiity "Forecast 3h precip [%d %%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#precip-probability" }
+String weather_fc_3h_icon "Forecast 3h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#icon-id" }
+String weather_fc_3h_summary "Summary 3h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#condition" }
 
-DateTime weather_fc_3h_time "Forecast 3h time [%s]" <time> { channel="darksky:weather-and-forecast:api:local:forecastHours04#time-stamp" }
-Number:Temperature weather_fc_3h_temp "Forecast 3h [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastHours04#temperature" }
-Number:Speed weather_fc_3h_precip_intensity "Forecast 3h precip [%.2f mm/h]" <rain> { channel="darksky:weather-and-forecast:api:local:forecastHours04#precip-intensity" }
-Number:Dimensionless weather_fc_3h_precip_probabiity "Forecast 3h precip [%d %%]" <rain> { channel="darksky:weather-and-forecast:api:local:forecastHours04#precip-probability" }
-String weather_fc_3h_icon "Forecast 3h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours04#icon-id" }
-String weather_fc_3h_summary "Summary 3h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours04#condition" }
+DateTime weather_fc_6h_time "Forecast 6h time [%s]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#time-stamp" }
+Number:Temperature weather_fc_6h_temp "Forecast 6h [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#temperature" }
+Number:Speed weather_fc_6h_precip_intensity "Forecast 6h precip [%.2f mm/h]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#precip-intensity" }
+Number:Dimensionless weather_fc_6h_precip_probabiity "Forecast 6h precip [%d %%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#precip-probability" }
+String weather_fc_6h_icon "Forecast 6h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#icon-id" }
+String weather_fc_6h_summary "Summary 6h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#condition" }
 
-DateTime weather_fc_6h_time "Forecast 6h time [%s]" <time> { channel="darksky:weather-and-forecast:api:local:forecastHours07#time-stamp" }
-Number:Temperature weather_fc_6h_temp "Forecast 6h [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastHours07#temperature" }
-Number:Speed weather_fc_6h_precip_intensity "Forecast 6h precip [%.2f mm/h]" <rain> { channel="darksky:weather-and-forecast:api:local:forecastHours07#precip-intensity" }
-Number:Dimensionless weather_fc_6h_precip_probabiity "Forecast 6h precip [%d %%]" <rain> { channel="darksky:weather-and-forecast:api:local:forecastHours07#precip-probability" }
-String weather_fc_6h_icon "Forecast 6h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours07#icon-id" }
-String weather_fc_6h_summary "Summary 6h [%s]" <sun_clouds> { channel="darksky:weather-and-forecast:api:local:forecastHours07#condition" }
+DateTime weather_fc_9h_time "Forecast 9h time [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#time-stamp" }
+Number:Temperature weather_fc_9h_temp "Forecast 9h [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#temperature" }
+Number:Speed weather_fc_9h_precip_intensity "Forecast 9h precip [%.2f mm/h]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#precip-intensity" }
+Number:Dimensionless weather_fc_9h_precip_probabiity "Forecast 9h precip [%d %%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#precip-probability" }
+String weather_fc_9h_icon "Forecast 9h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#icon-id" }
+String weather_fc_9h_summary "Summary 9h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#condition" }
 
 // Forecast today
 
-DateTime weather_fc_today_time "Forecast today time [%1$tY-%1$tm-%1$td]" <time> { channel="darksky:weather-and-forecast:api:local:forecastToday#time-stamp" }
-Number:Temperature weather_fc_today_temp_max "Forecast today max [%.1f °C]" <temperature> { channel="darksky:weather-and-forecast:api:local:forecastToday#max-temperature" }
-Number:Speed weather_fc_today_precip_intensity "Forecast today precip [%.2f mm/h]" <rain> { channel="darksky:weather-and-forecast:api:local:forecastToday#precip-intensity" }
-Number:Dimensionless weather_fc_today_precip_probabiity "Forecast today precip [%d %%]" <rain> { channel="darksky:weather-and-forecast:api:local:forecastToday#precip-probability" }
+DateTime weather_fc_today_time "Forecast today time [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#time-stamp" }
+Number:Temperature weather_fc_today_temp_max "Forecast today max [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#max-temperature" }
+Number:Speed weather_fc_today_precip_intensity "Forecast today precip [%.2f mm/h]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#precip-intensity" }
+Number:Dimensionless weather_fc_today_precip_probabiity "Forecast today precip [%d %%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#precip-probability" }

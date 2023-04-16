@@ -38,7 +38,7 @@ sitemap main label="MAIN"
 				Text item=weather_ext_wind_dir
 				Text item=weather_ext_ozone
 				Text item=weather_ext_uv
-				Text item=weather_ext_precip
+				Text item=weather_ext_precip_probabiity
 			}
 		}
 
