@@ -40,6 +40,7 @@ String weather_ext_summary "Current weather [%s]" <sun_clouds> { channel="openwe
 Image weather_ext_image "Current weather image [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:current#icon" }
 String weather_ext_icon "Current weather icon [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:current#icon-id" }
 Number:Temperature weather_ext_temp "Outside Temperature [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:current#temperature" }
+Number:Temperature weather_ext_temp_feels "Outside Temperature (feels) [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:current#apparent-temperature" }
 Number weather_ext_hum "Humidity [%d %%]" <humidity> { channel="openweathermap:weather-and-forecast:api:local:current#humidity" }
 Number:Pressure weather_ext_pres "Airpressure [%.1f hPa]" <line> { channel="openweathermap:weather-and-forecast:api:local:current#pressure" }
 Number:Angle weather_ext_wind_dir "Wind direction [%.0f °]" <wind> { channel="openweathermap:weather-and-forecast:api:local:current#wind-direction" }
@@ -58,6 +59,7 @@ Number:Speed weather_ext_rain "Hourly rain [%s mm]" <rain> { channel="openweathe
 
 DateTime weather_fc_3h_time "Forecast 3h time [%s]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#time-stamp" }
 Number:Temperature weather_fc_3h_temp "Forecast 3h [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#temperature" }
+Number:Temperature weather_fc_3h_temp_feels "Forecast 3h (feels) [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#apparent-temperature" }
 Number:Speed weather_fc_3h_precip_intensity "Forecast 3h precip [%.2f mm/h]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#precip-intensity" }
 Number:Dimensionless weather_fc_3h_precip_probabiity "Forecast 3h precip [%d %%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#precip-probability" }
 String weather_fc_3h_icon "Forecast 3h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours03#icon-id" }
@@ -65,6 +67,7 @@ String weather_fc_3h_summary "Summary 3h [%s]" <sun_clouds> { channel="openweath
 
 DateTime weather_fc_6h_time "Forecast 6h time [%s]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#time-stamp" }
 Number:Temperature weather_fc_6h_temp "Forecast 6h [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#temperature" }
+Number:Temperature weather_fc_6h_temp_feels "Forecast 6h (feels) [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#apparent-temperature" }
 Number:Speed weather_fc_6h_precip_intensity "Forecast 6h precip [%.2f mm/h]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#precip-intensity" }
 Number:Dimensionless weather_fc_6h_precip_probabiity "Forecast 6h precip [%d %%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#precip-probability" }
 String weather_fc_6h_icon "Forecast 6h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours06#icon-id" }
@@ -72,6 +75,7 @@ String weather_fc_6h_summary "Summary 6h [%s]" <sun_clouds> { channel="openweath
 
 DateTime weather_fc_9h_time "Forecast 9h time [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#time-stamp" }
 Number:Temperature weather_fc_9h_temp "Forecast 9h [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#temperature" }
+Number:Temperature weather_fc_9h_temp_feels "Forecast 9h (feels) [%.1f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#apparent-temperature" }
 Number:Speed weather_fc_9h_precip_intensity "Forecast 9h precip [%.2f mm/h]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#precip-intensity" }
 Number:Dimensionless weather_fc_9h_precip_probabiity "Forecast 9h precip [%d %%]" <rain> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#precip-probability" }
 String weather_fc_9h_icon "Forecast 9h [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:api:local:forecastHours09#icon-id" }
