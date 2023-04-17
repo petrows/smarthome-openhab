@@ -156,7 +156,8 @@ rule "Windows state changed"
 when
 	Item g_all_contact received update or
 	Item g_all_contact received command or
-    Item g_all_contact changed
+    Item g_all_contact changed or
+    Member of g_all_contact changed
 then
     if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON)) {
 		logInfo("heating", "Windows: Auto disabled")

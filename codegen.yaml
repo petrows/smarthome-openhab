@@ -528,7 +528,6 @@ devices:
     groups:
       contact:
       - kg_windows
-      - g_windows_skip_off
 
   - name: KG Climate
     id: kg_climate
