@@ -519,7 +519,7 @@ devices:
     groups:
       contact:
       - kg_windows
-      - g_windows_skip_off
+      - g_windows_skip_off  # Using this window should not deactivate heating
 
   - name: KG Cabinet door
     id: kg_cabinet_door
@@ -528,6 +528,7 @@ devices:
     groups:
       contact:
       - kg_windows
+      - g_windows_skip_off  # Using door should not deactivate heating
 
   - name: KG Climate
     id: kg_climate

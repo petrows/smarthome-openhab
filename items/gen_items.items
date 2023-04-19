@@ -436,7 +436,7 @@ Switch kg_cabinet_door_lowbatt "KG Cabinet door BAT [MAP(codegen-lowbat.map):%s]
 Switch kg_cabinet_door_ota "KG Cabinet door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_cabinet_door:ota"}
 Number:Dimensionless kg_cabinet_door_link "KG Cabinet door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_cabinet_door:link"}
 DateTime kg_cabinet_door_activity "KG Cabinet door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_cabinet_door:activity"}
-Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
+Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
 Number:Dimensionless kg_cabinet_door_battery "KG Cabinet door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_cabinet_door:battery"}
 // KG Climate (0x00158d0001b95e02)
 // Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
