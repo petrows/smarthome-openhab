@@ -117,15 +117,14 @@ Dimmer ns_main_light_ct "NS Main CT [JS(codegen-mired.js): %s]" <light> (g_all_c
 Switch ns_main_light_ota "NS Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_main_light:ota"}
 Number:Dimensionless ns_main_light_link "NS Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_main_light:link"}
 Switch ns_main_light_sw "NS Main" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_ns) {channel="mqtt:topic:openhab:ns_main_light:state"}
-// NS Climate (0x00158d0001b95e08)
-// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+// NS Climate (0xa4c1386df39045f6)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch ns_climate_lowbatt "NS Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ns_climate:battery_low"}
 Switch ns_climate_ota "NS Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_climate:ota"}
 Number:Dimensionless ns_climate_link "NS Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_climate:link"}
 DateTime ns_climate_activity "NS Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ns_climate:activity"}
 Number:Temperature ns_climate_temperature "NS Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ns_climate:temperature"}
 Number:Dimensionless ns_climate_humidity "NS Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ns_climate:humidity"}
-Number:Pressure ns_climate_pressure "NS Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ns_climate:pressure"}
 Number:Dimensionless ns_climate_battery "NS Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ns_climate:battery"}
 // NS Night lamp (0x14b457fffe6383e5)
 // TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html

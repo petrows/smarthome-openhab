@@ -138,8 +138,8 @@ devices:
 
   - name: NS Climate
     id: ns_climate
-    zigbee_id: '0x00158d0001b95e08'
-    type: XIAOMI_AQARA_V2
+    zigbee_id: '0xa4c1386df39045f6'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: NS Night lamp
     id: ns_night_lamp

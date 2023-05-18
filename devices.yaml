@@ -4,8 +4,6 @@
   friendly_name: eg_router
 '0x00158d0001b95e02':
   friendly_name: kg_climate
-'0x00158d0001b95e08':
-  friendly_name: ns_climate
 '0x00158d0001b95fc4':
   friendly_name: ku_climate
 '0x00158d0001be5b2d':
@@ -128,6 +126,8 @@
   friendly_name: kg_cabinet_door
 '0xa4c1383cc92cbbd2':
   friendly_name: treppe_climate
+'0xa4c1386df39045f6':
+  friendly_name: ns_climate
 '0xa4c1389dec8b9204':
   friendly_name: ku_window_door
 '0xa4c138f1bf27592c':

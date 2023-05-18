@@ -171,13 +171,12 @@ Thing mqtt:topic:openhab:ns_main_light "NS Main" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/ns_main_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ns_main_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// NS Climate (0x00158d0001b95e08)
-// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+// NS Climate (0xa4c1386df39045f6)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:ns_climate "NS Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : pressure [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"pressure\".*)∩JSONPATH:$.pressure", unit="hPa"]
 		Type number : battery [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
