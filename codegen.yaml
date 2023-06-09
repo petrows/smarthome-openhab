@@ -834,6 +834,8 @@ devices:
       - g_hz_enable
       - g_hz_kg_enable
 
+# Christmas lights
+
   - name: FS Christmas light
     id: fs_christmas_light
     zigbee_id: '0x7cb03eaa0a093a8b'
@@ -857,3 +859,10 @@ devices:
     groups:
       sw:
       - g_light_christmas
+
+# Other
+
+  - name: Ext backup power supply
+    id: backup_ext_power
+    zigbee_id: '0x7cb03eaa0a09e7bc'
+    type: OSRAM_SMART_PLUG
