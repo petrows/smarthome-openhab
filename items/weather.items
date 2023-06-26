@@ -33,6 +33,9 @@ Number:Length astro_moon_dst "Moon Distance [%.1f %unit%]" { channel="astro:moon
 Number:Intensity astro_radiation "Radiation [%.2f %unit%]" { channel="astro:sun:home:radiation#total" }
 Number:Intensity astro_radiation_diff "Diffuse Radiation [%.2f %unit%]" { channel="astro:sun:home:radiation#diffuse" }
 
+// Today forecast
+Number:Temperature weather_fc_today_temp_max "Today max forecast [%.0f °C]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:forecastToday#max-temperaturee" }
+
 // Dark Sky weather
 
 DateTime weather_ext_time "Timestamp of last measurement [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS]" <temperature> { channel="openweathermap:weather-and-forecast:api:local:current#time-stamp" }
