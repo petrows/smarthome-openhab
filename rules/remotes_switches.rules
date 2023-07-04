@@ -580,3 +580,28 @@ when
 then
     g_light_bz_dim_fast.sendCommand((g_light_bz_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
 end
+
+rule "TMP blinds cube"
+when
+    Channel "mqtt:topic:openhab:aquara_cube:action" triggered
+then
+    var state = receivedEvent
+    switch(state) {
+        case "rotate_right": {
+            logInfo("cube", "rotate_right")
+            ns_blinds_1_pos.sendCommand(30)
+        }
+        case "rotate_left": {
+            logInfo("cube", "rotate_left")
+            ns_blinds_1_pos.sendCommand(70)
+        }
+        case "flip180": {
+            logInfo("cube", "flip180")
+            ns_blinds_1_pos.sendCommand(0)
+        }
+        case "tap": {
+            logInfo("cube", "tap")
+            ns_blinds_1_pos.sendCommand(100)
+        }
+    }
+end
