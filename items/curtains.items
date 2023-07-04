@@ -1,6 +1,10 @@
 // Jalousie groups
 
+Group g_blinds_cmd "Blinds command []"
 Group:Dimmer:AVG g_blinds_pos "Blinds pos [%d %%]"
+
+Group g_blinds_ns_cmd "NS Blinds command []"
+Group:Dimmer:AVG g_blinds_ns_pos "NS Blinds pos [%d %%]"
 
 
 Switch sz_curtain_auto "SZ Curtain auto" <rollershutter>

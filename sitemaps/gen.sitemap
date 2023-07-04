@@ -828,9 +828,11 @@ Frame label="NS Blinds (0xa4c13878cea182ad)" {
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
 Text item=ns_blinds_ota
 Text item=ns_blinds_link
+Switch item=ns_blinds_1_cmd
 Text item=ns_blinds_1_mov
 Slider item=ns_blinds_1_pos
 Switch item=ns_blinds_1_cal
+Switch item=ns_blinds_2_cmd
 Text item=ns_blinds_2_mov
 Slider item=ns_blinds_2_pos
 Switch item=ns_blinds_2_cal

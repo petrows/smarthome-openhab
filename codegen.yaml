@@ -871,14 +871,20 @@ devices:
         id: ns_blinds_1
         name: NS Blinds (Main)
         groups:
+          cmd:
+          - g_blinds_ns_cmd
           pos:
           - g_blinds_pos
+          - g_blinds_ns_pos
       right:
         id: ns_blinds_2
         name: NS Blinds (Side)
         groups:
+          cmd:
+          - g_blinds_ns_cmd
           pos:
           - g_blinds_pos
+          - g_blinds_ns_pos
 
 # Other
 
