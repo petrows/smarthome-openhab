@@ -860,6 +860,26 @@ devices:
       sw:
       - g_light_christmas
 
+# Blinds
+
+  - name: NS Blinds
+    id: ns_blinds
+    zigbee_id: '0xa4c13878cea182ad'
+    type: LS_BLINDS_MODULE_2CH
+    channels:
+      left:
+        id: ns_blinds_1
+        name: NS Blinds (Main)
+        groups:
+          pos:
+          - g_blinds_pos
+      right:
+        id: ns_blinds_2
+        name: NS Blinds (Side)
+        groups:
+          pos:
+          - g_blinds_pos
+
 # Other
 
   - name: Ext backup power supply

@@ -994,6 +994,21 @@ Thing mqtt:topic:openhab:balkon_christmas_light "Balkon Christmas light" (mqtt:b
 		Type number : link [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// NS Blinds (0xa4c13878cea182ad)
+// Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
+Thing mqtt:topic:openhab:ns_blinds "NS Blinds" (mqtt:broker:openhab) {
+	Channels:
+		Type string : moving_left [stateTopic="zigbee2mqtt/ns_blinds", transformationPattern="JSONPATH:$.moving_left"]
+		Type string : state_left [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JSONPATH:$.state_left", formatBeforePublish="{\"state_left\": \"%s\"}"]
+		Type dimmer : position_left [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JS:codegen-rpos.js?channel=position_left", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position_left"]
+		Type switch : calibration_left [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JSONPATH:$.calibration_left", formatBeforePublish="{\"calibration_left\": \"%s\"}"]
+		Type string : moving_right [stateTopic="zigbee2mqtt/ns_blinds", transformationPattern="JSONPATH:$.moving_right"]
+		Type string : state_right [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JSONPATH:$.state_right", formatBeforePublish="{\"state_right\": \"%s\"}"]
+		Type dimmer : position_right [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JS:codegen-rpos.js?channel=position_right", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position_right"]
+		Type switch : calibration_right [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JSONPATH:$.calibration_right", formatBeforePublish="{\"calibration_right\": \"%s\"}"]
+		Type number : link [stateTopic="zigbee2mqtt/ns_blinds", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ns_blinds", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // Ext backup power supply (0x7cb03eaa0a09e7bc)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
 Thing mqtt:topic:openhab:backup_ext_power "Ext backup power supply" (mqtt:broker:openhab) {

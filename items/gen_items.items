@@ -673,6 +673,16 @@ Switch ns_christmas_light_sw "NS Christmas light" <light> (g_all_sw,g_light_chri
 Switch balkon_christmas_light_ota "Balkon Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:balkon_christmas_light:ota"}
 Number:Dimensionless balkon_christmas_light_link "Balkon Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:balkon_christmas_light:link"}
 Switch balkon_christmas_light_sw "Balkon Christmas light" <light> (g_all_sw,g_light_christmas) {channel="mqtt:topic:openhab:balkon_christmas_light:state"}
+// NS Blinds (0xa4c13878cea182ad)
+// Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
+Switch ns_blinds_ota "NS Blinds OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_blinds:ota"}
+Number:Dimensionless ns_blinds_link "NS Blinds LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_blinds:link"}
+String ns_blinds_1_mov "NS Blinds (Main) movement" <blinds> {channel="mqtt:topic:openhab:ns_blinds:moving_left"}
+Dimmer ns_blinds_1_pos "NS Blinds (Main) [%d %%]" <blinds> (g_all_pos,g_blinds_pos) {channel="mqtt:topic:openhab:ns_blinds:position_left"}
+Switch ns_blinds_1_cal "NS Blinds (Main) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ns_blinds:calibration_left"}
+String ns_blinds_2_mov "NS Blinds (Side) movement" <blinds> {channel="mqtt:topic:openhab:ns_blinds:moving_right"}
+Dimmer ns_blinds_2_pos "NS Blinds (Side) [%d %%]" <blinds> (g_all_pos,g_blinds_pos) {channel="mqtt:topic:openhab:ns_blinds:position_right"}
+Switch ns_blinds_2_cal "NS Blinds (Side) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ns_blinds:calibration_right"}
 // Ext backup power supply (0x7cb03eaa0a09e7bc)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
 Switch backup_ext_power_ota "Ext backup power supply OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:backup_ext_power:ota"}
