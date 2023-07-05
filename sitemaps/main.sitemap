@@ -8,28 +8,38 @@ sitemap main label="MAIN"
 				Text 		item=ku_climate_pressure label="Pressure [%d hPa]"
 				Text 		item=weather_radiation
 			}
-			Frame label="Current" {
-                Image item=weather_ext_image
-				Text item=weather_ext_time
-				Text item=weather_ext_summary
-				Text item=weather_ext_temp
-				Text item=weather_ext_pres
-				Text item=weather_ext_hum
-				Text item=weather_ext_wind_speed
-				Text item=weather_ext_wind_dir
-				Text item=weather_ext_uv
+			Frame label="Today" item=weather_fc_0d_temp_max {
+                Image item=weather_fc_0d_image
+				Text item=weather_fc_0d_summary
+				Text item=weather_fc_0d_hum
+				Text item=weather_fc_0d_temp_min
+				Text item=weather_fc_0d_temp_max
+				Text item=weather_fc_0d_temp_night
+				Text item=weather_fc_0d_temp_morning
+				Text item=weather_fc_0d_temp_day
+				Text item=weather_fc_0d_temp_night
 			}
-			Frame label="Tomorrow" {
+			Frame label="Tomorrow" item=weather_fc_1d_temp_max {
                 Image item=weather_fc_1d_image
 				Text item=weather_fc_1d_summary
+                Text item=weather_fc_1d_hum
+                Text item=weather_fc_1d_temp_min
 				Text item=weather_fc_1d_temp_max
-				Text item=weather_fc_1d_temp_min
+				Text item=weather_fc_1d_temp_night
+				Text item=weather_fc_1d_temp_morning
+				Text item=weather_fc_1d_temp_day
+				Text item=weather_fc_1d_temp_night
 			}
-			Frame label="2-day" {
+			Frame label="2-day" item=weather_fc_2d_temp_max {
                 Image item=weather_fc_2d_image
 				Text item=weather_fc_2d_summary
+                Text item=weather_fc_2d_hum
+                Text item=weather_fc_2d_temp_min
 				Text item=weather_fc_2d_temp_max
-				Text item=weather_fc_2d_temp_min
+				Text item=weather_fc_2d_temp_night
+				Text item=weather_fc_2d_temp_morning
+				Text item=weather_fc_2d_temp_day
+				Text item=weather_fc_2d_temp_night
 			}
             Frame {
 				Webview label="External" icon="temperature" height=8 url="https://stats.home.pws/d-solo/openhab_climate/climate?orgId=1&refresh=10s&theme=dark&panelId=3"

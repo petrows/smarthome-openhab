@@ -80,15 +80,35 @@ String weather_fc_9h_summary "Summary 9h [%s]" <sun_clouds> { channel="openweath
 
 // Forecast for days
 
-String weather_fc_1d_summary "Forecast tomorrow [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastTomorrow#condition" }
-Image weather_fc_1d_image "Forecast tomorrow image [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastTomorrow#icon" }
-String weather_fc_1d_icon "Forecast tomorrow [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastTomorrow#icon-id" }
-Number:Temperature weather_fc_1d_temp_max "Forecast tomorrow max [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastTomorrow#max-temperature" }
-Number:Temperature weather_fc_1d_temp_min "Forecast tomorrow min [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastTomorrow#min-temperature" }
+String weather_fc_0d_summary "Summary [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastToday#condition" }
+Image weather_fc_0d_image <sun_clouds> { channel="openweathermap:onecall:api:local:forecastToday#icon" }
+String weather_fc_0d_icon "Forecast [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastToday#icon-id" }
+Number weather_fc_0d_hum "Humidity [%d %%]" <humidity> { channel="openweathermap:onecall:api:local:forecastToday#humidity" }
+Number:Temperature weather_fc_0d_temp_max "Max [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastToday#max-temperature" }
+Number:Temperature weather_fc_0d_temp_min "Min [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastToday#min-temperature" }
+Number:Temperature weather_fc_0d_temp_night "Night [%.1f °C]" <moon> { channel="openweathermap:onecall:api:local:forecastToday#apparent-night" }
+Number:Temperature weather_fc_0d_temp_morning "Morning [%.1f °C]" <sunrise> { channel="openweathermap:onecall:api:local:forecastToday#apparent-morning" }
+Number:Temperature weather_fc_0d_temp_day "Day [%.1f °C]" <sun> { channel="openweathermap:onecall:api:local:forecastToday#apparent-day" }
+Number:Temperature weather_fc_0d_temp_evening "Evening [%.1f °C]" <sunset> { channel="openweathermap:onecall:api:local:forecastToday#apparent-evening" }
 
-String weather_fc_2d_summary "Forecast tomorrow [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastDay2#condition" }
-Image weather_fc_2d_image "Forecast tomorrow image [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastDay2#icon" }
-String weather_fc_2d_icon "Forecast tomorrow [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastDay2#icon-id" }
-Number:Temperature weather_fc_2d_temp_max "Forecast 2d max [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastDay2#max-temperature" }
-Number:Temperature weather_fc_2d_temp_min "Forecast 2d min [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastDay2#min-temperature" }
+String weather_fc_1d_summary "Summary[%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastTomorrow#condition" }
+Image weather_fc_1d_image <sun_clouds> { channel="openweathermap:onecall:api:local:forecastTomorrow#icon" }
+String weather_fc_1d_icon "Forecast [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastTomorrow#icon-id" }
+Number weather_fc_1d_hum "Humidity [%d %%]" <humidity> { channel="openweathermap:onecall:api:local:forecastTomorrow#humidity" }
+Number:Temperature weather_fc_1d_temp_max "Max [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastTomorrow#max-temperature" }
+Number:Temperature weather_fc_1d_temp_min "Min [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastTomorrow#min-temperature" }
+Number:Temperature weather_fc_1d_temp_night "Night [%.1f °C]" <moon> { channel="openweathermap:onecall:api:local:forecastTomorrow#apparent-night" }
+Number:Temperature weather_fc_1d_temp_morning "Morning [%.1f °C]" <sunrise> { channel="openweathermap:onecall:api:local:forecastTomorrow#apparent-morning" }
+Number:Temperature weather_fc_1d_temp_day "Day [%.1f °C]" <sun> { channel="openweathermap:onecall:api:local:forecastTomorrow#apparent-day" }
+Number:Temperature weather_fc_1d_temp_evening "Evening [%.1f °C]" <sunset> { channel="openweathermap:onecall:api:local:forecastTomorrow#apparent-evening" }
 
+String weather_fc_2d_summary "Summary [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastDay2#condition" }
+Image weather_fc_2d_image <sun_clouds> { channel="openweathermap:onecall:api:local:forecastDay2#icon" }
+String weather_fc_2d_icon "Forecast [%s]" <sun_clouds> { channel="openweathermap:onecall:api:local:forecastDay2#icon-id" }
+Number weather_fc_2d_hum "Humidity [%d %%]" <humidity> { channel="openweathermap:onecall:api:local:forecastDay2#humidity" }
+Number:Temperature weather_fc_2d_temp_max "Max [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastDay2#max-temperature" }
+Number:Temperature weather_fc_2d_temp_min "Min [%.1f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastDay2#min-temperature" }
+Number:Temperature weather_fc_2d_temp_night "Night [%.1f °C]" <moon> { channel="openweathermap:onecall:api:local:forecastDay2#apparent-night" }
+Number:Temperature weather_fc_2d_temp_morning "Morning [%.1f °C]" <sunrise> { channel="openweathermap:onecall:api:local:forecastDay2#apparent-morning" }
+Number:Temperature weather_fc_2d_temp_day "Day [%.1f °C]" <sun> { channel="openweathermap:onecall:api:local:forecastDay2#apparent-day" }
+Number:Temperature weather_fc_2d_temp_evening "Evening [%.1f °C]" <sunset> { channel="openweathermap:onecall:api:local:forecastDay2#apparent-evening" }
