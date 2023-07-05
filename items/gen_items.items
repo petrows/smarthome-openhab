@@ -690,9 +690,3 @@ Switch ns_blinds_2_cal "NS Blinds (Side) cal [%s]" <light> (g_all_cal) {channel=
 Switch backup_ext_power_ota "Ext backup power supply OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:backup_ext_power:ota"}
 Number:Dimensionless backup_ext_power_link "Ext backup power supply LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:backup_ext_power:link"}
 Switch backup_ext_power_sw "Ext backup power supply" <light> (g_all_sw) {channel="mqtt:topic:openhab:backup_ext_power:state"}
-// Auqara cube (0x00158d00029bf66a)
-// Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
-Switch aquara_cube_lowbatt "Auqara cube BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:aquara_cube:battery_low"}
-Switch aquara_cube_ota "Auqara cube OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:aquara_cube:ota"}
-Number:Dimensionless aquara_cube_link "Auqara cube LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:aquara_cube:link"}
-Number:Dimensionless aquara_cube_battery "Auqara cube  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:aquara_cube:battery"}

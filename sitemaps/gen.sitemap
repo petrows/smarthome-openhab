@@ -844,12 +844,4 @@ Text item=backup_ext_power_ota
 Text item=backup_ext_power_link
 Switch item=backup_ext_power_sw
 }
-Frame label="Auqara cube (0x00158d00029bf66a)" {
-// Auqara cube (0x00158d00029bf66a)
-// Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
-Text item=aquara_cube_lowbatt
-Text item=aquara_cube_ota
-Text item=aquara_cube_link
-Text item=aquara_cube_battery
-}
 }
