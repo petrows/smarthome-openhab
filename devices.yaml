@@ -138,6 +138,8 @@
   friendly_name: ns_window_2
 '0xa4c138fbdde6b200':
   friendly_name: sz_window_door
+'0xa4c138fd0fd1c168':
+  friendly_name: fs_blinds
 '0xb4e3f9fffeb35529':
   friendly_name: fs_light_switch
   simulated_brightness:

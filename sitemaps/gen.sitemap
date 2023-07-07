@@ -823,6 +823,16 @@ Text item=balkon_christmas_light_ota
 Text item=balkon_christmas_light_link
 Switch item=balkon_christmas_light_sw
 }
+Frame label="FS Blinds (0xa4c138fd0fd1c168)" {
+// FS Blinds (0xa4c138fd0fd1c168)
+// Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
+Text item=fs_blinds_ota
+Text item=fs_blinds_link
+Switch item=fs_blinds_cmd
+Text item=fs_blinds_mov
+Slider item=fs_blinds_pos
+Switch item=fs_blinds_cal
+}
 Frame label="NS Blinds (0xa4c13878cea182ad)" {
 // NS Blinds (0xa4c13878cea182ad)
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html

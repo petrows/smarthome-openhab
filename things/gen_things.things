@@ -994,6 +994,17 @@ Thing mqtt:topic:openhab:balkon_christmas_light "Balkon Christmas light" (mqtt:b
 		Type number : link [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/balkon_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// FS Blinds (0xa4c138fd0fd1c168)
+// Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
+Thing mqtt:topic:openhab:fs_blinds "FS Blinds" (mqtt:broker:openhab) {
+	Channels:
+		Type string : moving [stateTopic="zigbee2mqtt/fs_blinds", transformationPattern="JSONPATH:$.moving"]
+		Type string : state [stateTopic="zigbee2mqtt/fs_blinds", commandTopic="zigbee2mqtt/fs_blinds/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\"}"]
+		Type dimmer : position [stateTopic="zigbee2mqtt/fs_blinds", commandTopic="zigbee2mqtt/fs_blinds/set", transformationPattern="JS:codegen-rpos.js?channel=position", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position"]
+		Type switch : calibration [stateTopic="zigbee2mqtt/fs_blinds", commandTopic="zigbee2mqtt/fs_blinds/set", transformationPattern="JSONPATH:$.calibration", formatBeforePublish="{\"calibration\": \"%s\"}"]
+		Type number : link [stateTopic="zigbee2mqtt/fs_blinds", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/fs_blinds", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // NS Blinds (0xa4c13878cea182ad)
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
 Thing mqtt:topic:openhab:ns_blinds "NS Blinds" (mqtt:broker:openhab) {

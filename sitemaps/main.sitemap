@@ -195,6 +195,10 @@ sitemap main label="MAIN"
                 Slider item=fs_main_light_dim label="Main DIM [%d %%]" icon="light"
 				Slider item=fs_main_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
+            Frame label="Curtains" {
+                Switch item=fs_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
+                Slider item=fs_blinds_pos label="Position [%d %%]"
+            }
             Frame label="Desktop" {
                 Switch item=desktop_marina_light_sw label="Desktop [%s]"
                 Slider item=desktop_marina_light_dim label="Desktop DIM [%d %%]"
