@@ -1,12 +1,12 @@
 // Jalousie groups
 
-Group g_blinds_cmd "Blinds command []"
-Group:Dimmer:AVG g_blinds_pos "Blinds pos [%d %%]"
+Group g_blinds_cmd "Blinds command []" <rollershutter>
+Group:Dimmer:AVG g_blinds_pos "Blinds pos [%d %%]" <rollershutter>
 
-Group g_blinds_ns_cmd "NS Blinds command []"
-Group:Dimmer:AVG g_blinds_ns_pos "NS Blinds pos [%d %%]"
+Group g_blinds_ns_cmd "NS Blinds command []" <rollershutter>
+Group:Dimmer:AVG g_blinds_ns_pos "NS Blinds pos [%d %%]" <rollershutter>
 
 
 Switch sz_curtain_auto "SZ Curtain auto" <rollershutter>
-String sz_curtain_switch "SZ Curtain" <rollershutter> {channel="mqtt:topic:openhab:sz-curtain:command"}
-Dimmer sz_curtain_position "SZ Curtain pos [%d %%]" <rollershutter> {channel="mqtt:topic:openhab:sz-curtain:position"}
+String sz_curtain_switch "SZ Curtain" <rollershutter> (g_blinds_cmd) {channel="mqtt:topic:openhab:sz-curtain:command"}
+Dimmer sz_curtain_position "SZ Curtain pos [%d %%]" <rollershutter> (g_blinds_pos) {channel="mqtt:topic:openhab:sz-curtain:position"}

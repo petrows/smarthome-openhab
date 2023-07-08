@@ -677,7 +677,7 @@ Switch balkon_christmas_light_sw "Balkon Christmas light" <light> (g_all_sw,g_li
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
 Switch fs_blinds_ota "FS Blinds OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_blinds:ota"}
 Number:Dimensionless fs_blinds_link "FS Blinds LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_blinds:link"}
-String fs_blinds_cmd "FS Blinds [%s]" <blinds> (g_all_cmd,g_blinds_fs_cmd) {channel="mqtt:topic:openhab:fs_blinds:state"}
+String fs_blinds_cmd "FS Blinds [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_fs_cmd) {channel="mqtt:topic:openhab:fs_blinds:state"}
 String fs_blinds_mov "FS Blinds movement" <blinds> {channel="mqtt:topic:openhab:fs_blinds:moving"}
 Dimmer fs_blinds_pos "FS Blinds [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_fs_pos) {channel="mqtt:topic:openhab:fs_blinds:position"}
 Switch fs_blinds_cal "FS Blinds cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:fs_blinds:calibration"}
@@ -685,7 +685,7 @@ Switch fs_blinds_cal "FS Blinds cal [%s]" <light> (g_all_cal) {channel="mqtt:top
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
 Switch ns_blinds_ota "NS Blinds OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_blinds:ota"}
 Number:Dimensionless ns_blinds_link "NS Blinds LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_blinds:link"}
-String ns_blinds_1_cmd "NS Blinds (Main) [%s]" <blinds> (g_all_cmd,g_blinds_ns_cmd) {channel="mqtt:topic:openhab:ns_blinds:state_left"}
+String ns_blinds_1_cmd "NS Blinds (Main) [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_ns_cmd) {channel="mqtt:topic:openhab:ns_blinds:state_left"}
 String ns_blinds_1_mov "NS Blinds (Main) movement" <blinds> {channel="mqtt:topic:openhab:ns_blinds:moving_left"}
 Dimmer ns_blinds_1_pos "NS Blinds (Main) [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ns_pos) {channel="mqtt:topic:openhab:ns_blinds:position_left"}
 Switch ns_blinds_1_cal "NS Blinds (Main) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ns_blinds:calibration_left"}
