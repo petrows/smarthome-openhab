@@ -9,7 +9,7 @@ sitemap main label="MAIN"
 				Text 		item=weather_radiation
 			}
 			Frame label="Today" item=weather_fc_0d_temp_max {
-                Image item=weather_fc_0d_image
+                //Image item=weather_fc_0d_image
 				Text item=weather_fc_0d_summary
 				Text item=weather_fc_0d_hum
 				Text item=weather_fc_0d_temp_min
@@ -17,10 +17,10 @@ sitemap main label="MAIN"
 				Text item=weather_fc_0d_temp_night
 				Text item=weather_fc_0d_temp_morning
 				Text item=weather_fc_0d_temp_day
-				Text item=weather_fc_0d_temp_night
+				Text item=weather_fc_0d_temp_evening
 			}
 			Frame label="Tomorrow" item=weather_fc_1d_temp_max {
-                Image item=weather_fc_1d_image
+                //Image item=weather_fc_1d_image
 				Text item=weather_fc_1d_summary
                 Text item=weather_fc_1d_hum
                 Text item=weather_fc_1d_temp_min
@@ -28,10 +28,10 @@ sitemap main label="MAIN"
 				Text item=weather_fc_1d_temp_night
 				Text item=weather_fc_1d_temp_morning
 				Text item=weather_fc_1d_temp_day
-				Text item=weather_fc_1d_temp_night
+				Text item=weather_fc_1d_temp_evening
 			}
 			Frame label="2-day" item=weather_fc_2d_temp_max {
-                Image item=weather_fc_2d_image
+                //Image item=weather_fc_2d_image
 				Text item=weather_fc_2d_summary
                 Text item=weather_fc_2d_hum
                 Text item=weather_fc_2d_temp_min
@@ -39,7 +39,7 @@ sitemap main label="MAIN"
 				Text item=weather_fc_2d_temp_night
 				Text item=weather_fc_2d_temp_morning
 				Text item=weather_fc_2d_temp_day
-				Text item=weather_fc_2d_temp_night
+				Text item=weather_fc_2d_temp_evening
 			}
             Frame {
 				Webview label="External" icon="temperature" height=8 url="https://stats.home.pws/d-solo/openhab_climate/climate?orgId=1&refresh=10s&theme=dark&panelId=3"
