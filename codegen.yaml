@@ -894,6 +894,7 @@ devices:
         name: NS Blinds (Side)
         groups:
           cmd:
+          - g_blinds_cmd
           - g_blinds_ns_cmd
           pos:
           - g_blinds_pos

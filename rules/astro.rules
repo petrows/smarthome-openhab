@@ -5,10 +5,10 @@ when
 then
     logWarn("astro", "Sun: set")
 
-    // If enabled - close curtains
-    if (ON == sz_curtain_auto.state) {
-        sz_curtain_switch.sendCommand("close")
-    }
+    // We are going to sleep soon
+
+    // Close all curtains
+    blinds_auto_cmd.sendCommand("close")
 end
 
 rule "Astro: civil dawn"
@@ -18,10 +18,10 @@ when
 then
     logWarn("astro", "Sun: civilDawn")
 
-    // If enabled - close curtains
-    if (ON == sz_curtain_auto.state) {
-        sz_curtain_switch.sendCommand("open")
-    }
+    // Morning
+
+    // Open all curtains
+    blinds_auto_cmd.sendCommand("open")
 end
 
 // Update astro items

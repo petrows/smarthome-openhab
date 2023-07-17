@@ -1,0 +1,20 @@
+rule "Blinds: auto command"
+when
+    Item blinds_auto_cmd received command
+then
+    // New value
+    val cmd = receivedCommand.toString()
+
+    // If enabled - command curtains
+    if (ON == cfg_blinds_auto.state) {
+        if (ON == cfg_blinds_auto_sz.state) {
+            sz_curtain_switch.sendCommand(cmd)
+        }
+        if (ON == cfg_blinds_auto_ns.state) {
+            g_blinds_ns_cmd.sendCommand(cmd)
+        }
+        if (ON == cfg_blinds_auto_fs.state) {
+            g_blinds_fs_cmd.sendCommand(cmd)
+        }
+    }
+end

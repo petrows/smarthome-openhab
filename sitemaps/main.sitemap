@@ -224,7 +224,7 @@ sitemap main label="MAIN"
             Frame label="Curtains" {
                 Switch item=sz_curtain_switch label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=sz_curtain_position label="Position [%d %%]"
-                Switch item=sz_curtain_auto label="Enable auto [%s]"
+                Switch item=cfg_blinds_auto_sz label="Enable auto [%s]"
 			}
 			Frame label="Bed decor" {
 				Switch item=sz_bed_light label="Bed light [%s]" icon="light"
@@ -452,6 +452,12 @@ sitemap main label="MAIN"
 			Frame label="Watering" {
 				Switch	item=cfg_wassering_auto_enable
 				Text    item=garten_wasser_leak_leak
+			}
+			Frame label="Blinds" {
+				Switch item=cfg_blinds_auto label="Enable blinds auto control [%s]"
+                Switch item=cfg_blinds_auto_sz label="Sleeproom: auto [%s]" visibility=[cfg_blinds_auto==ON]
+                Switch item=cfg_blinds_auto_ns label="New Room: auto [%s]" visibility=[cfg_blinds_auto==ON]
+                Switch item=cfg_blinds_auto_fs label="Theater: auto [%s]" visibility=[cfg_blinds_auto==ON]
 			}
 		}
 

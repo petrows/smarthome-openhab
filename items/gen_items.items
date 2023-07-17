@@ -689,7 +689,7 @@ String ns_blinds_1_cmd "NS Blinds (Main) [%s]" <blinds> (g_all_cmd,g_blinds_cmd,
 String ns_blinds_1_mov "NS Blinds (Main) movement" <blinds> {channel="mqtt:topic:openhab:ns_blinds:moving_left"}
 Dimmer ns_blinds_1_pos "NS Blinds (Main) [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ns_pos) {channel="mqtt:topic:openhab:ns_blinds:position_left"}
 Switch ns_blinds_1_cal "NS Blinds (Main) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ns_blinds:calibration_left"}
-String ns_blinds_2_cmd "NS Blinds (Side) [%s]" <blinds> (g_all_cmd,g_blinds_ns_cmd) {channel="mqtt:topic:openhab:ns_blinds:state_right"}
+String ns_blinds_2_cmd "NS Blinds (Side) [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_ns_cmd) {channel="mqtt:topic:openhab:ns_blinds:state_right"}
 String ns_blinds_2_mov "NS Blinds (Side) movement" <blinds> {channel="mqtt:topic:openhab:ns_blinds:moving_right"}
 Dimmer ns_blinds_2_pos "NS Blinds (Side) [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ns_pos) {channel="mqtt:topic:openhab:ns_blinds:position_right"}
 Switch ns_blinds_2_cal "NS Blinds (Side) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ns_blinds:calibration_right"}
