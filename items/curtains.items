@@ -1,6 +1,6 @@
 // Jalousie groups
 
-Switch blinds_auto_cmd
+String blinds_auto_cmd
 
 Group g_blinds_cmd "Blinds command []" <rollershutter>
 Group:Dimmer:AVG g_blinds_pos "Blinds pos [%d %%]" <rollershutter>
