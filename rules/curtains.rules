@@ -5,16 +5,40 @@ then
     // New value
     val cmd = receivedCommand.toString()
 
-    // If enabled - command curtains
+    // If enabled - command blinds
     if (ON == cfg_blinds_auto.state) {
-        if (ON == cfg_blinds_auto_sz.state) {
-            sz_curtain_switch.sendCommand(cmd)
-        }
         if (ON == cfg_blinds_auto_ns.state) {
             g_blinds_ns_cmd.sendCommand(cmd)
         }
         if (ON == cfg_blinds_auto_fs.state) {
             g_blinds_fs_cmd.sendCommand(cmd)
         }
+    }
+end
+
+rule "Curtains: auto command"
+when
+    Item curtains_auto_cmd received command
+then
+    // New value
+    val cmd = receivedCommand.toString()
+
+    // If enabled - command blinds
+    if (ON == cfg_blinds_auto.state) {
+        if (ON == cfg_blinds_auto_sz.state) {
+            sz_curtain_switch.sendCommand(cmd)
+        }
+    }
+end
+
+// Check the current forecast and close blinds - if too heat
+rule "Blinds: protect from weather"
+when
+    Time cron "0 00 10 ? * *"
+then
+    // Check, do we have some heat expected today?
+    if (weather_fc_0d_temp_max.state > 28 | °C) {
+        logWarn("blinds", "Expected today " + weather_fc_0d_temp_max.state.toString() + ", closing hard blinds")
+        blinds_auto_cmd.sendCommand("close")
     }
 end

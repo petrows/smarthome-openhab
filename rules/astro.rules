@@ -7,8 +7,10 @@ then
 
     // We are going to sleep soon
 
-    // Close all curtains
+    // Close all blinds
     blinds_auto_cmd.sendCommand("close")
+    // Close all curtains
+    curtains_auto_cmd.sendCommand("close")
 end
 
 rule "Astro: civil dawn"
@@ -20,8 +22,10 @@ then
 
     // Morning
 
-    // Open all curtains
+    // Open all blinds
     blinds_auto_cmd.sendCommand("open")
+    // Open all curtains
+    curtains_auto_cmd.sendCommand("open")
 end
 
 // Update astro items
