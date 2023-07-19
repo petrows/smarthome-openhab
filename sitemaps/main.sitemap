@@ -114,7 +114,11 @@ sitemap main label="MAIN"
 		Switch item=g_light_kg label="KG" icon="light" mappings=[ON="ON", OFF="OFF"]
         Switch item=g_light_christmas label="Christmas []" icon="light" mappings=[ON="ON", OFF="OFF"]
         Switch item=cinema_mode label="Cinemo mode" icon="projector" mappings=[ON="ON", OFF="OFF"]
-        Switch item=g_blinds_cmd label="Curtains []" mappings=["open"="☼","stop"="||","close"="☰"]
+    }
+    Frame {
+        Slider item=g_blinds_pos label="Blinds [%d %%]"
+        Slider item=g_curtains_pos label="Curtains [%d %%]"
+        Switch item=g_blinds_curtains_cmd label="All []" mappings=["open"="☼","stop"="||","close"="☰"]
     }
     Frame {
 		Group item=balkon_light label="Balkon [%s]" icon="light" {
