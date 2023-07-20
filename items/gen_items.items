@@ -299,6 +299,8 @@ Number:Dimensionless sz_window_door_battery "SZ Window Door  BAT [%d %%]" <batte
 Number:Dimensionless sz_co2_rssi "SZ CO2 RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:sz_co2:rssi"}
 String sz_co2_bssid "SZ CO2 BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:sz_co2:bssid"}
 DateTime sz_co2_activity "SZ CO2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_co2:activity"}
+Number:Temperature sz_co2_temperature "SZ CO2 temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:sz_co2:temperature"}
+Number:Dimensionless sz_co2_humidity "SZ CO2 humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:sz_co2:humidity"}
 Number:Dimensionless sz_co2_co2 "SZ CO2 CO₂ [%d %unit%]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_co2:co2"}
 Switch sz_co2_co2_led "SZ CO2 CO₂ alarm [%s]" <alarm> (g_all_co2_led) {channel="mqtt:topic:openhab:sz_co2:co2_led"}
 // KU Climate (0x00158d0001b95fc4)
