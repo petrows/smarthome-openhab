@@ -128,7 +128,8 @@ sitemap main label="MAIN"
             Switch item=balkon_christmas_light_sw label="Christmas [%s]" icon="light"
 		}
 		Group item=g_light_eg_flur label="Corridor [%s]" icon="light" {
-			Switch item=snf_eg_fl label="Main [%s]" icon="light"
+			Switch item=eg_flur_light_sw label="Main [%s]" icon="light"
+			Slider item=eg_flur_light_dim label="Main DIM [%d %%]" icon="light"
 			Switch item=eg_decoration_light_sw label="Decor [%s]" icon="light"
             Slider item=eg_decoration_light_dim label="Decor DIM [%d %%]"
 			Switch item=snf_eg_fl_spiegel label="Mirror [%s]" icon="light"

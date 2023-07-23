@@ -40,6 +40,19 @@ devices:
     id: eg_router
     zigbee_id: '0x00124b000b4ed5cc'
     type: DIY_CC2540_ROUTER
+
+# CORRIDOR ===============================
+
+  - name: EG Corridor Light
+    id: eg_flur_light
+    zigbee_id: '0xa4c138a06ec38c9e'
+    type: TUYA_WALL_DIMMER
+    groups:
+      sw:
+      - g_light_all
+      - g_light_eg
+      - g_light_eg_flur
+
   - name: EG Decor light
     id: eg_decoration_light
     zigbee_id: '0x9035eafffe20e847'
@@ -51,6 +64,7 @@ devices:
       - g_light_eg_auto
       dim:
       - g_dim_eg_auto
+
   - name: Entrance Door sensor
     id: eg_main_door
     zigbee_id: '0xa4c138182f60d651'

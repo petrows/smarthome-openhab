@@ -68,6 +68,14 @@ Frame label="EG Router (0x00124b000b4ed5cc)" {
 Text item=eg_router_ota
 Text item=eg_router_link
 }
+Frame label="EG Corridor Light (0xa4c138a06ec38c9e)" {
+// EG Corridor Light (0xa4c138a06ec38c9e)
+// TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
+Slider item=eg_flur_light_dim
+Text item=eg_flur_light_ota
+Text item=eg_flur_light_link
+Switch item=eg_flur_light_sw
+}
 Frame label="EG Decor light (0x9035eafffe20e847)" {
 // EG Decor light (0x9035eafffe20e847)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html

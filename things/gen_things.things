@@ -80,6 +80,16 @@ Thing mqtt:topic:openhab:eg_router "EG Router" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/eg_router", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/eg_router", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// EG Corridor Light (0xa4c138a06ec38c9e)
+// TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
+Thing mqtt:topic:openhab:eg_flur_light "EG Corridor Light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/eg_flur_light", commandTopic="zigbee2mqtt/eg_flur_light/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\", \"transition\": 1}"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/eg_flur_light", commandTopic="zigbee2mqtt/eg_flur_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-brightness.js", min=30, max=254]
+		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/eg_flur_light", commandTopic="zigbee2mqtt/eg_flur_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-brightness-fast.js", min=30, max=254]
+		Type number : link [stateTopic="zigbee2mqtt/eg_flur_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/eg_flur_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // EG Decor light (0x9035eafffe20e847)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Thing mqtt:topic:openhab:eg_decoration_light "EG Decor light" (mqtt:broker:openhab) {
