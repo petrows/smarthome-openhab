@@ -24,15 +24,6 @@ Number:Temperature  Aqi_Temperature     "Temperature" <temperature> (AirQuality)
 Number:Pressure     Aqi_Pressure        "Pressure" <pressure> (AirQuality) { channel="airquality:aqi:home:pressure" }
 Number:Dimensionless Aqi_Humidity        "Humidity" <humidity> (AirQuality) { channel="airquality:aqi:home:humidity" }
 
-DateTime astro_sun_rise "Sunrise [%1$tH:%1$tM]" { channel="astro:sun:home:rise#start" }
-DateTime astro_sun_set "Sunset [%1$tH:%1$tM]" { channel="astro:sun:home:set#start" }
-Number:Angle astro_sun_az "Azimuth [%.2f %unit%]" { channel="astro:sun:home:position#azimuth" }
-Number:Angle astro_sun_el "Elevation [%.2f %unit%]" { channel="astro:sun:home:position#elevation" }
-String astro_moon_phase "Moon Phase" { channel="astro:moon:home:phase#name" }
-Number:Length astro_moon_dst "Moon Distance [%.1f %unit%]" { channel="astro:moon:home:distance#distance" }
-Number:Intensity astro_radiation "Radiation [%.2f %unit%]" { channel="astro:sun:home:radiation#total" }
-Number:Intensity astro_radiation_diff "Diffuse Radiation [%.2f %unit%]" { channel="astro:sun:home:radiation#diffuse" }
-
 // Today forecast
 Number:Temperature weather_fc_today_temp_max "Today max forecast [%.0f °C]" <temperature> { channel="openweathermap:onecall:api:local:forecastToday#max-temperature" }
 
