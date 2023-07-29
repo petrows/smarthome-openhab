@@ -857,6 +857,16 @@ Text item=ns_blinds_2_mov
 Slider item=ns_blinds_2_pos
 Switch item=ns_blinds_2_cal
 }
+Frame label="KU Blinds (0xa4c138018d7a55bf)" {
+// KU Blinds (0xa4c138018d7a55bf)
+// Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
+Text item=ku_blinds_ota
+Text item=ku_blinds_link
+Switch item=ku_blinds_cmd
+Text item=ku_blinds_mov
+Slider item=ku_blinds_pos
+Switch item=ku_blinds_cal
+}
 Frame label="Ext backup power supply (0x7cb03eaa0a09e7bc)" {
 // Ext backup power supply (0x7cb03eaa0a09e7bc)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html

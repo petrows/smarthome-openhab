@@ -118,6 +118,8 @@
   simulated_brightness:
     delta: 5
     interval: 100
+'0xa4c138018d7a55bf':
+  friendly_name: ku_blinds
 '0xa4c13804963f4ccf':
   friendly_name: sz_window_1
 '0xa4c138182f60d651':

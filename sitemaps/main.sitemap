@@ -155,10 +155,19 @@ sitemap main label="MAIN"
             }
 		}
 		Group item=g_light_eg_ku label="Kitchen [%s]" icon="light" {
-			Switch item=ku_light_switch_haupt_sw label="Main" icon="light"
-			Switch item=ku_light_switch_arbeit_sw label="Work" icon="light"
-			Switch item=ku_light_table_sw label="Table [%s]" icon="light"
-			Slider item=ku_light_table_dim label="Table DIM [%d %%]" icon="light"
+            Frame {
+				Switch item=g_light_eg_ku label="All [%s]" icon="light"
+            }
+            Frame {
+                Switch item=ku_light_switch_haupt_sw label="Main" icon="light"
+                Switch item=ku_light_switch_arbeit_sw label="Work" icon="light"
+                Switch item=ku_light_table_sw label="Table [%s]" icon="light"
+                Slider item=ku_light_table_dim label="Table DIM [%d %%]" icon="light"
+            }
+            Frame label="Curtains" {
+                Switch item=ku_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
+                Slider item=ku_blinds_pos label="Position [%d %%]"
+            }
 		}
 		Group item=g_light_eg_ns label="Theater [%s]" icon="light" {
             Frame {
@@ -463,6 +472,7 @@ sitemap main label="MAIN"
                 Switch item=cfg_blinds_auto_sz label="Sleeproom: auto [%s]" visibility=[cfg_blinds_auto==ON]
                 Switch item=cfg_blinds_auto_ns label="New Room: auto [%s]" visibility=[cfg_blinds_auto==ON]
                 Switch item=cfg_blinds_auto_fs label="Theater: auto [%s]" visibility=[cfg_blinds_auto==ON]
+                Switch item=cfg_blinds_auto_ku label="Theater: auto [%s]" visibility=[cfg_blinds_auto==ON]
 			}
 		}
 
