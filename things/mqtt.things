@@ -1,6 +1,6 @@
 Thing mqtt:topic:openhab:weather-radiation (mqtt:broker:openhab) {
 	Channels:
-		Type number : level  [ stateTopic="weather/radiation" ]
+		Type number : level  [ stateTopic="weather/radiation", unit="µSv" ]
 }
 
 Thing mqtt:topic:openhab:snf-pow-1 (mqtt:broker:openhab) {

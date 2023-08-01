@@ -4,10 +4,10 @@ Group gSettingsHeating <settings>
 Switch cfgHeatingEnable "Heuzung [%s]" <radiator> (gSettings,gSettingsHeating)
 Switch cfgHeatingAutoEnable "Heuzung auto Ein [%s]" <radiator> (gSettings)
 Switch cfgHeatingPersistanceEnable "Отопление: прогрев при возврате домой" <radiator> (gSettings)
-Number cfgHeatingTempOff "Температура выкл. [%.1f °C]" <temperature>
-Number cfgHeatingTempDay "Температура день [%.1f °C]" <temperature>
-Number cfgHeatingTempNight "Температура ночь [%.1f °C]" <temperature>
-Number cfgHeatingTempHeat "Температура тепло [%.1f °C]" <temperature>
+Number:Temperature cfgHeatingTempOff "Температура выкл. [%.1f °C]" <temperature>
+Number:Temperature cfgHeatingTempDay "Температура день [%.1f °C]" <temperature>
+Number:Temperature cfgHeatingTempNight "Температура ночь [%.1f °C]" <temperature>
+Number:Temperature cfgHeatingTempHeat "Температура тепло [%.1f °C]" <temperature>
 
 Switch cfgPersistanceEnable "Определение присутствия" <parents_1_1> (gSettings)
 

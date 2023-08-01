@@ -1,6 +1,6 @@
 
 // Current temp set by rules
-Number hz_temp_auto
+Number:Temperature hz_temp_auto
 
 // Groups define
 Group:Number:AVG g_hz_all <heatingt>
