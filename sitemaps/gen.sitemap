@@ -715,8 +715,8 @@ Text item=kg_lager4_2_light_ota
 Text item=kg_lager4_2_light_link
 Switch item=kg_lager4_2_light_sw
 }
-Frame label="KG Lager switch (0xccccccfffee401f8)" {
-// KG Lager switch (0xccccccfffee401f8)
+Frame label="KG Lager switch (0xb43522fffe790ebe)" {
+// KG Lager switch (0xb43522fffe790ebe)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
 Text item=kg_lager4_switch_lowbatt
 Text item=kg_lager4_switch_ota

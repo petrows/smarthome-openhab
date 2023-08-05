@@ -587,7 +587,7 @@ Dimmer kg_lager4_2_light_dim_fast "KG Lager 4 (2) DIM-F [%d %%]" (g_all_dim_fast
 Switch kg_lager4_2_light_ota "KG Lager 4 (2) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_2_light:ota"}
 Number:Dimensionless kg_lager4_2_light_link "KG Lager 4 (2) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_2_light:link"}
 Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_all_sw,g_light_all,g_light_kg,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:state", expire="1h,command=OFF"}
-// KG Lager switch (0xccccccfffee401f8)
+// KG Lager switch (0xb43522fffe790ebe)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
 Switch kg_lager4_switch_lowbatt "KG Lager switch BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager4_switch:battery_low"}
 Switch kg_lager4_switch_ota "KG Lager switch OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_switch:ota"}

@@ -760,7 +760,7 @@ devices:
 
   - name: KG Lager switch
     id: kg_lager4_switch
-    zigbee_id: '0xccccccfffee401f8'
+    zigbee_id: '0xb43522fffe790ebe'
     type: IKEA_TRADFRI_ON_OFF
 
   - name: KG Lager motion

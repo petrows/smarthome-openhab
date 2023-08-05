@@ -144,6 +144,8 @@
   friendly_name: sz_window_door
 '0xa4c138fd0fd1c168':
   friendly_name: fs_blinds
+'0xb43522fffe790ebe':
+  friendly_name: kg_lager4_switch
 '0xb4e3f9fffeb35529':
   friendly_name: fs_light_switch
   simulated_brightness:
@@ -167,8 +169,6 @@
   friendly_name: kg_lager4_1_light
 '0xccccccfffedf5314':
   friendly_name: kg_lager4_2_light
-'0xccccccfffee401f8':
-  friendly_name: kg_lager4_switch
 '0xccccccfffeea9703':
   friendly_name: desktop_marina_remote
 '0xccccccfffef0356e':
