@@ -828,6 +828,18 @@ Thing mqtt:topic:openhab:kg_lager3_motion "KG Lager 3 motion" (mqtt:broker:openh
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="JS:codegen-activity.js"]
 }
+// KG Lager 3 door (0xa4c138a52c4e5c19)
+// TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
+Thing mqtt:topic:openhab:kg_lager3_door "KG Lager 3 door" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="JS:codegen-activity.js"]
+}
 // KG Lager 3 (Haupt) (kg_lager3_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Thing mqtt:topic:openhab:kg_lager3_main_light "KG Lager 3 (Haupt)" (mqtt:broker:openhab) {

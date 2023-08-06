@@ -24,3 +24,17 @@ then
         }
     }
 end
+
+
+// Auto light in laundry
+// turn ON light when dorr is open
+rule "Treppe door UP"
+when
+    Item kg_lager3_door_contact changed
+then
+    if (newState == OPEN) {
+        kg_lager3_main_light.sendCommand(ON)
+    } else {
+        kg_lager3_main_light.sendCommand(OFF)
+    }
+end

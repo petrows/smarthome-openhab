@@ -706,6 +706,11 @@ devices:
     zigbee_id: '0x04cd15fffe873cb7'
     type: IKEA_TRADFRI_MOTION_SENSOR
 
+  - name: KG Lager 3 door
+    id: kg_lager3_door
+    zigbee_id: '0xa4c138a52c4e5c19'
+    type: TUYA_WINDOW_SENSOR_TS0203
+
   - name: KG Lager 3 (Haupt)
     id: kg_lager3_main_light
     type: TASMOTA_SONOFF_MINI

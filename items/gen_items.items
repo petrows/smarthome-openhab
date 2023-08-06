@@ -560,6 +560,14 @@ Number:Dimensionless kg_lager3_motion_link "KG Lager 3 motion LINK [%d]" <linkz>
 DateTime kg_lager3_motion_activity "KG Lager 3 motion activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager3_motion:activity"}
 Switch kg_lager3_motion_occupancy "KG Lager 3 motion [%s]" <motion> (g_all_occupancy) {channel="mqtt:topic:openhab:kg_lager3_motion:occupancy"}
 Number:Dimensionless kg_lager3_motion_battery "KG Lager 3 motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager3_motion:battery"}
+// KG Lager 3 door (0xa4c138a52c4e5c19)
+// TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
+Switch kg_lager3_door_lowbatt "KG Lager 3 door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager3_door:battery_low"}
+Switch kg_lager3_door_ota "KG Lager 3 door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager3_door:ota"}
+Number:Dimensionless kg_lager3_door_link "KG Lager 3 door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager3_door:link"}
+DateTime kg_lager3_door_activity "KG Lager 3 door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager3_door:activity"}
+Contact kg_lager3_door_contact "KG Lager 3 door [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:kg_lager3_door:contact"}
+Number:Dimensionless kg_lager3_door_battery "KG Lager 3 door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager3_door:battery"}
 // KG Lager 3 (Haupt) (kg_lager3_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_lager3_main_light "KG Lager 3 (Haupt)" <light> (g_all_sw,g_light_all,g_light_kg) {channel="mqtt:topic:openhab:kg_lager3_main_light:POWER"}

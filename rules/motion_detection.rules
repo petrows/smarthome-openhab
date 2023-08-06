@@ -61,14 +61,14 @@ then
 end
 
 // Motion detect in Laundry
-rule "KG Motion detect Laundry"
-when
-    Item kg_lager3_motion_occupancy received update
-then
-    logInfo("light", "KG Laundry Motion: " + newState.toString)
-    if (newState == OFF) {
-        sendCommand(kg_lager3_main_light, OFF)
-    } else {
-        sendCommand(kg_lager3_main_light, ON)
-    }
-end
+// rule "KG Motion detect Laundry"
+// when
+//     Item kg_lager3_motion_occupancy received update
+// then
+//     logInfo("light", "KG Laundry Motion: " + newState.toString)
+//     if (newState == OFF) {
+//         sendCommand(kg_lager3_main_light, OFF)
+//     } else {
+//         sendCommand(kg_lager3_main_light, ON)
+//     }
+// end
