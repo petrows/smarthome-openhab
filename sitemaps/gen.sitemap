@@ -510,8 +510,8 @@ Text item=treppe_climate_temperature
 Text item=treppe_climate_humidity
 Text item=treppe_climate_battery
 }
-Frame label="KG Window 1 (0xccccccfffed82ba3)" {
-// KG Window 1 (0xccccccfffed82ba3)
+Frame label="KG Window (Cabinet) (0xccccccfffed82ba3)" {
+// KG Window (Cabinet) (0xccccccfffed82ba3)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Text item=kg_window_1_lowbatt
 Text item=kg_window_1_ota
@@ -520,8 +520,8 @@ Text item=kg_window_1_activity
 Text item=kg_window_1_contact
 Text item=kg_window_1_battery
 }
-Frame label="KG Window 2 (0xa4c1381a072fcf8b)" {
-// KG Window 2 (0xa4c1381a072fcf8b)
+Frame label="KG Window (Hobbyraum) (0xa4c1381a072fcf8b)" {
+// KG Window (Hobbyraum) (0xa4c1381a072fcf8b)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Text item=kg_window_2_lowbatt
 Text item=kg_window_2_ota

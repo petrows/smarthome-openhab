@@ -422,22 +422,22 @@ DateTime treppe_climate_activity "Treppe climate activity [JS(codegen-display-ac
 Number:Temperature treppe_climate_temperature "Treppe climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:treppe_climate:temperature"}
 Number:Dimensionless treppe_climate_humidity "Treppe climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:treppe_climate:humidity"}
 Number:Dimensionless treppe_climate_battery "Treppe climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:treppe_climate:battery"}
-// KG Window 1 (0xccccccfffed82ba3)
+// KG Window (Cabinet) (0xccccccfffed82ba3)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Switch kg_window_1_lowbatt "KG Window 1 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_window_1:battery_low"}
-Switch kg_window_1_ota "KG Window 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_1:ota"}
-Number:Dimensionless kg_window_1_link "KG Window 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_1:link"}
-DateTime kg_window_1_activity "KG Window 1 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_window_1:activity"}
-Contact kg_window_1_contact "KG Window 1 [%s]" <door> (g_all_contact,kg_windows) {channel="mqtt:topic:openhab:kg_window_1:contact"}
-Number:Dimensionless kg_window_1_battery "KG Window 1  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_1:battery"}
-// KG Window 2 (0xa4c1381a072fcf8b)
+Switch kg_window_1_lowbatt "KG Window (Cabinet) BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_window_1:battery_low"}
+Switch kg_window_1_ota "KG Window (Cabinet) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_1:ota"}
+Number:Dimensionless kg_window_1_link "KG Window (Cabinet) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_1:link"}
+DateTime kg_window_1_activity "KG Window (Cabinet) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_window_1:activity"}
+Contact kg_window_1_contact "KG Window (Cabinet) [%s]" <door> (g_all_contact,kg_windows) {channel="mqtt:topic:openhab:kg_window_1:contact"}
+Number:Dimensionless kg_window_1_battery "KG Window (Cabinet)  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_1:battery"}
+// KG Window (Hobbyraum) (0xa4c1381a072fcf8b)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Switch kg_window_2_lowbatt "KG Window 2 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_window_2:battery_low"}
-Switch kg_window_2_ota "KG Window 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_2:ota"}
-Number:Dimensionless kg_window_2_link "KG Window 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_2:link"}
-DateTime kg_window_2_activity "KG Window 2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_window_2:activity"}
-Contact kg_window_2_contact "KG Window 2 [%s]" <door> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
-Number:Dimensionless kg_window_2_battery "KG Window 2  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_2:battery"}
+Switch kg_window_2_lowbatt "KG Window (Hobbyraum) BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_window_2:battery_low"}
+Switch kg_window_2_ota "KG Window (Hobbyraum) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_2:ota"}
+Number:Dimensionless kg_window_2_link "KG Window (Hobbyraum) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_2:link"}
+DateTime kg_window_2_activity "KG Window (Hobbyraum) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_window_2:activity"}
+Contact kg_window_2_contact "KG Window (Hobbyraum) [%s]" <door> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
+Number:Dimensionless kg_window_2_battery "KG Window (Hobbyraum)  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_2:battery"}
 // KG Cabinet door (0xa4c138312d2c455f)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch kg_cabinet_door_lowbatt "KG Cabinet door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_cabinet_door:battery_low"}

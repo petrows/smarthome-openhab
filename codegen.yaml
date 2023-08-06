@@ -518,7 +518,7 @@ devices:
     zigbee_id: '0xa4c1383cc92cbbd2'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
 
-  - name: KG Window 1
+  - name: KG Window (Cabinet)
     id: kg_window_1
     zigbee_id: '0xccccccfffed82ba3'
     type: TUYA_WINDOW_SENSOR
@@ -526,7 +526,7 @@ devices:
       contact:
       - kg_windows
 
-  - name: KG Window 2
+  - name: KG Window (Hobbyraum)
     id: kg_window_2
     zigbee_id: '0xa4c1381a072fcf8b'
     type: TUYA_WINDOW_SENSOR

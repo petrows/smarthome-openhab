@@ -620,9 +620,9 @@ Thing mqtt:topic:openhab:treppe_climate "Treppe climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// KG Window 1 (0xccccccfffed82ba3)
+// KG Window (Cabinet) (0xccccccfffed82ba3)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:kg_window_1 "KG Window (Cabinet)" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
@@ -632,9 +632,9 @@ Thing mqtt:topic:openhab:kg_window_1 "KG Window 1" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JS:codegen-activity.js"]
 }
-// KG Window 2 (0xa4c1381a072fcf8b)
+// KG Window (Hobbyraum) (0xa4c1381a072fcf8b)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Thing mqtt:topic:openhab:kg_window_2 "KG Window 2" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:kg_window_2 "KG Window (Hobbyraum)" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
