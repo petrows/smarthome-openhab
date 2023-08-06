@@ -4,8 +4,6 @@
   friendly_name: eg_router
 '0x00158d0001b95e02':
   friendly_name: kg_climate
-'0x00158d0001b95fc4':
-  friendly_name: ku_climate
 '0x00158d0001be5b2d':
   friendly_name: ku_light_switch_spule
 '0x00158d0001c15121':
@@ -140,6 +138,8 @@
   friendly_name: eg_flur_light
 '0xa4c138f1bf27592c':
   friendly_name: ns_window_2
+'0xa4c138f5460e22dd':
+  friendly_name: ku_climate
 '0xa4c138fbdde6b200':
   friendly_name: sz_window_door
 '0xa4c138fd0fd1c168':

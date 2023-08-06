@@ -381,8 +381,8 @@ devices:
 # KITCHEN ================================
   - name: KU Climate
     id: ku_climate
-    zigbee_id: '0x00158d0001b95fc4'
-    type: XIAOMI_AQARA_V2
+    zigbee_id: '0xa4c138f5460e22dd'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: "KU Light Button (Sp\xFCle)"
     id: ku_light_switch_spule

@@ -453,13 +453,12 @@ Thing mqtt:topic:openhab:sz_co2 "SZ CO2" (mqtt:broker:openhab) {
 		Type string : bssid [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type datetime : activity [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JS:codegen-activity.js"]
 }
-// KU Climate (0x00158d0001b95fc4)
-// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+// KU Climate (0xa4c138f5460e22dd)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
 		Type number : humidity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : pressure [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"pressure\".*)∩JSONPATH:$.pressure", unit="hPa"]
 		Type number : battery [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
