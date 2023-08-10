@@ -51,9 +51,6 @@ then
         eg_flur_light_sw.sendCommand(receivedCommand)
     } else {
         logWarn("proxy", "Filter state for item eg_flur_light")
-        // Send request for status - to ensure we are in sync
-        val mq = getActions("mqtt","mqtt:broker:openhab")
-        mq.publishMQTT("zigbee2mqtt/eg_flur_light/get","{\"state\":\"\"}")
     }
 end
 // Device should apply saved color temp when ON
