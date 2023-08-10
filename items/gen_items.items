@@ -59,8 +59,7 @@ Dimmer eg_flur_light_dim "EG Corridor Light DIM [%d %%]" <light> (g_all_dim) {ch
 Dimmer eg_flur_light_dim_fast "EG Corridor Light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:eg_flur_light:dim_fast"}
 Switch eg_flur_light_ota "EG Corridor Light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_flur_light:ota"}
 Number:Dimensionless eg_flur_light_link "EG Corridor Light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_flur_light:link"}
-Switch eg_flur_light_sw_proxy "EG Corridor Light proxy" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_flur)
-Switch eg_flur_light_sw "EG Corridor Light" <light> {channel="mqtt:topic:openhab:eg_flur_light:state"}
+Switch eg_flur_light_sw "EG Corridor Light" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_flur) {channel="mqtt:topic:openhab:eg_flur_light:state"}
 // EG Decor light (0x9035eafffe20e847)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Dimmer eg_decoration_light_dim "EG Decor light DIM [%d %%]" <light> (g_all_dim,g_dim_eg_auto) {channel="mqtt:topic:openhab:eg_decoration_light:dim"}

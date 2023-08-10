@@ -275,7 +275,7 @@ devices:
     id: sz_bed_light_1
     zigbee_id: '0x040d84fffece67a6'
     type: IKEA_TRADFRI_LAMP_LED1546G12
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
         - g_light_all
@@ -296,7 +296,7 @@ devices:
     id: sz_bed_light_2
     zigbee_id: '0x040d84fffec53aaf'
     type: IKEA_TRADFRI_LAMP_LED1546G12
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
         - g_light_all
@@ -318,7 +318,7 @@ devices:
     id: sz_declamp_1
     zigbee_id: '0xec1bbdfffe972819'
     type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
         - g_light_all
@@ -334,7 +334,7 @@ devices:
     id: sz_declamp_2
     zigbee_id: '0xec1bbdfffe972203'
     type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
         - g_light_all
@@ -350,7 +350,7 @@ devices:
     id: sz_declamp_3
     zigbee_id: '0xec1bbdfffe91007b'
     type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
         - g_light_all
@@ -420,7 +420,7 @@ devices:
     id: ku_light_table
     zigbee_id: '0xec1bbdfffe4695b5'
     type: IKEA_TRADFRI_LAMP_W_806
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
       - g_light_all
@@ -559,7 +559,7 @@ devices:
     id: desktop_petro_up_light_1
     zigbee_id: '0x04cd15fffe35f24e'
     type: IKEA_TRADFRI_LAMP_CT_1000
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
       - g_light_all
@@ -576,7 +576,7 @@ devices:
     id: desktop_petro_up_light_2
     zigbee_id: '0x04cd15fffe6bf002'
     type: IKEA_TRADFRI_LAMP_CT_1000
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
       - g_light_all
@@ -593,7 +593,7 @@ devices:
     id: desktop_petro_up_light_3
     zigbee_id: '0x04cd15fffe73ecb6'
     type: IKEA_TRADFRI_LAMP_CT_1000
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
       - g_light_all
@@ -610,7 +610,7 @@ devices:
     id: desktop_petro_light
     zigbee_id: '0xccccccfffed8ef9d'
     type: IKEA_TRADFRI_LAMP_CLEAR_806
-    transition_brightnes: 3
+    transition_brightness: 3
     groups:
       sw:
       - g_light_all

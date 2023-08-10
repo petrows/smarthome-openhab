@@ -34,25 +34,6 @@ then
         balkon_light_1_ct.sendCommand(ct_set)
     ])
 end
-// Device needs to proxy events from groups, to filter duplicating
-rule "EG Corridor Light proxy state item"
-when
-    Item eg_flur_light_sw changed
-then
-    if (eg_flur_light_sw_proxy.state != newState) {
-        eg_flur_light_sw_proxy.postUpdate(newState)
-    }
-end
-rule "EG Corridor Light proxy state group"
-when
-    Item eg_flur_light_sw_proxy received command
-then
-    if (eg_flur_light_sw.state != receivedCommand) {
-        eg_flur_light_sw.sendCommand(receivedCommand)
-    } else {
-        logWarn("proxy", "Filter state for item eg_flur_light")
-    }
-end
 // Device should apply saved color temp when ON
 rule "BZ Light (toilet) apply color on ON"
 when
