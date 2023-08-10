@@ -1,4 +1,7 @@
-(function(x) {
-    var v = Math.round(x)
-    return "{\"brightness\":" + v + ", \"transition\": 1}"
-})(input)
+(function (input, transition) {
+    out = {
+        'brightness': Math.round(input),
+        'transition': transition,
+    }
+    return JSON.stringify(out)
+})(input, transition)
