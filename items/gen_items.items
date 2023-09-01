@@ -615,8 +615,8 @@ Number:Dimensionless kg_lager4_leak_link "Warehouse 4 leak LINK [%d]" <linkz> (g
 DateTime kg_lager4_leak_activity "Warehouse 4 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager4_leak:activity"}
 Switch kg_lager4_leak_leak "Warehouse 4 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:kg_lager4_leak:leak"}
 Number:Dimensionless kg_lager4_leak_battery "Warehouse 4 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager4_leak:battery"}
-// FS heating (0x9035eafffe712884)
-// TuYa Radiator valve with thermostat (TS0601_thermostat 3) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat_3.html
+// FS heating (0x0c4314fffe63b727)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature fs_heating_thermostat "FS heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_fs) {channel="mqtt:topic:openhab:fs_heating:thermostat"}
 String fs_heating_thermostat_mode "FS heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:fs_heating:thermostat_mode"}
 String fs_heating_thermostat_preset "FS heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:fs_heating:thermostat_preset"}
@@ -626,6 +626,7 @@ Switch fs_heating_ota "FS heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:to
 Number:Dimensionless fs_heating_link "FS heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_heating:link"}
 DateTime fs_heating_activity "FS heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:fs_heating:activity"}
 Number:Temperature fs_heating_local_temperature "FS heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:fs_heating:local_temperature"}
+Number:ElectricPotential fs_heating_battery_voltage "FS heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:fs_heating:battery_voltage"}
 // NS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature ns_heating_thermostat "NS heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_ns) {channel="mqtt:topic:openhab:ns_heating:thermostat"}

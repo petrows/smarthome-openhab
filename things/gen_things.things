@@ -914,8 +914,8 @@ Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab)
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JS:codegen-activity.js"]
 }
-// FS heating (0x9035eafffe712884)
-// TuYa Radiator valve with thermostat (TS0601_thermostat 3) / https://www.zigbee2mqtt.io/devices/TS0601_thermostat_3.html
+// FS heating (0x0c4314fffe63b727)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Thing mqtt:topic:openhab:fs_heating "FS heating" (mqtt:broker:openhab) {
 	Channels:
 		Type number : thermostat [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"current_heating_setpoint\".*)∩JSONPATH:$.current_heating_setpoint", transformationPatternOut="JS:codegen-cmd-thermostat-point.js", unit="C°"]
@@ -923,8 +923,9 @@ Thing mqtt:topic:openhab:fs_heating "FS heating" (mqtt:broker:openhab) {
 		Type string : thermostat_preset [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"preset\".*)∩JSONPATH:$.preset", formatBeforePublish="{\"preset\": \"%s\"}"]
 		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
 		Type number : local_temperature [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
+		Type number : battery_voltage [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"battery_low\".*)∩JSONPATH:$.battery_low", on="true", off="false"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
 		Type number : link [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JS:codegen-activity.js"]
