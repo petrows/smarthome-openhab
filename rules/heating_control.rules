@@ -7,9 +7,15 @@ val Functions$Function2<String, Number, Boolean> set_room = [
     logInfo("heating", "set_room " + room_name + ": request " + temperature.toString)
 
     var thermostat_item_temp = "g_hz_" + room_name
-    // var thermostat_item_switch = "g_hz_" + room_name + '_enable'
+    var thermostat_item_switch = "g_hz_" + room_name + '_enable'
 
-    if (cfgHeatingEnable.state != ON || (cfgHeatingAutoEnable.state != ON)) {
+    if (cfgHeatingEnable.state != ON) {
+        logInfo("heating", "set_room: Heating disabled")
+        sendCommand(thermostat_item_switch, OFF)
+		return false
+    }
+
+    if (cfgHeatingAutoEnable.state != ON) {
 		logInfo("heating", "set_room: Auto disabled")
 		return false
 	}
@@ -70,7 +76,12 @@ when
 	Time cron "0 00 01,02,03,04 ? * *"
 then
 	logWarn("heating", "Set safe off")
-	g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+
+    if (cfgHeatingEnable.state == ON) {
+        g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+    } else {
+        g_hz_enable.sendCommand(OFF)
+    }
 end
 
 // === TIME RULES ==========================================
