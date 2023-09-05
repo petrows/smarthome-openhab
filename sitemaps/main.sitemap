@@ -167,6 +167,7 @@ sitemap main label="MAIN"
             Frame label="Curtains" {
                 Switch item=ku_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=ku_blinds_pos label="Position [%d %%]"
+                Switch item=cfg_blinds_auto_ku label="Enable auto [%s]"
             }
 		}
 		Group item=g_light_eg_ns label="Theater [%s]" icon="light" {
@@ -184,6 +185,7 @@ sitemap main label="MAIN"
                 Slider item=ns_blinds_1_pos label="Position 1 [%d %%]"
                 Switch item=ns_blinds_2_cmd label="Command 2 []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=ns_blinds_2_pos label="Position 2 [%d %%]"
+                Switch item=cfg_blinds_auto_ns label="Enable auto [%s]"
             }
             Frame label="RGB" {
                 Switch item=ns_night_lamp_sw label="RGB [%s]" icon="light"
@@ -216,6 +218,7 @@ sitemap main label="MAIN"
             Frame label="Curtains" {
                 Switch item=fs_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=fs_blinds_pos label="Position [%d %%]"
+                Switch item=cfg_blinds_auto_fs label="Enable auto [%s]"
             }
             Frame label="Desktop" {
                 Switch item=desktop_marina_light_sw label="Desktop [%s]"
