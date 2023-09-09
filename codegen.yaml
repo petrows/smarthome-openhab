@@ -370,13 +370,13 @@ devices:
       contact:
         - sz_windows
 
-  - name: SZ Window Door
-    id: sz_window_door
-    zigbee_id: '0xa4c138fbdde6b200'
-    type: TUYA_WINDOW_SENSOR
-    groups:
-      contact:
-        - sz_windows
+  # - name: SZ Window Door
+  #   id: sz_window_door
+  #   zigbee_id: '0xa4c138fbdde6b200'
+  #   type: TUYA_WINDOW_SENSOR
+  #   groups:
+  #     contact:
+  #       - sz_windows
 
   # - name: SZ CO2
   #   id: sz_co2
