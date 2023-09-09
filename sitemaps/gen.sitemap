@@ -362,17 +362,6 @@ Text item=sz_window_door_activity
 Text item=sz_window_door_contact
 Text item=sz_window_door_battery
 }
-Frame label="SZ CO2 (sz_co2)" {
-// SZ CO2 (sz_co2)
-// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
-Text item=sz_co2_rssi
-Text item=sz_co2_bssid
-Text item=sz_co2_activity
-Text item=sz_co2_temperature
-Text item=sz_co2_humidity
-Text item=sz_co2_co2
-Text item=sz_co2_co2_led
-}
 Frame label="KU Climate (0xa4c138f5460e22dd)" {
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
