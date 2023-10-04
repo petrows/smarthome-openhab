@@ -122,7 +122,7 @@ then
     logWarn("light", "Petro desktop power: " + newState)
 
     if (newState == ON) {
-        desktop_petro_pc_power_sw.sendCommand(ON)
+        desktop_petro_pc_power.sendCommand(ON)
         return
     }
 
@@ -133,7 +133,7 @@ then
                 desktop_petro_power_try.setState(ON) // Decline state change
                 return
             }
-            desktop_petro_pc_power_sw.sendCommand(OFF)
+            desktop_petro_pc_power.sendCommand(OFF)
         ])
         return
     }

@@ -567,12 +567,13 @@ Text item=desktop_petro_light_ota
 Text item=desktop_petro_light_link
 Switch item=desktop_petro_light_sw
 }
-Frame label="Petro Desktop PC (0x847127fffe0c873b)" {
-// Petro Desktop PC (0x847127fffe0c873b)
-// Wall switch module / https://www.zigbee2mqtt.io/devices/WHD02.html#tuya-whd02
-Text item=desktop_petro_pc_power_ota
-Text item=desktop_petro_pc_power_link
-Switch item=desktop_petro_pc_power_sw
+Frame label="Petro Desktop PC (desktop_petro_pc_power)" {
+// Petro Desktop PC (desktop_petro_pc_power)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch item=desktop_petro_pc_power
+Text item=desktop_petro_pc_power_rssi
+Text item=desktop_petro_pc_power_bssid
+Text item=desktop_petro_pc_power_activity
 }
 Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {
 // Petro Desktop remote (0x000d6ffffee8357d)

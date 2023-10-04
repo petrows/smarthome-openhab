@@ -302,7 +302,7 @@ sitemap main label="MAIN"
 				Switch item=desktop_petro_light_sw label="Desktop [%s]"
 				Slider item=desktop_petro_light_dim label="Desktop DIM [%d %%]"
 				Slider item=desktop_petro_light_ct label="Desktop CT [JS(codegen-mired.js):%s]"
-				Switch item=desktop_petro_pc_power_sw label="Desktop power [%s]"
+				Switch item=desktop_petro_pc_power label="Desktop power [%s]"
                 Text item=online_petro_pc label="Online PC [%s]"
                 Text item=online_petro_nb label="Online Laptop [%s]"
 			}

@@ -101,8 +101,6 @@
   friendly_name: fs_main_light
 '0x842e14fffe1267fb':
   friendly_name: ku_light_switch
-'0x847127fffe0c873b':
-  friendly_name: desktop_petro_pc_power
 '0x847127fffec6acc3':
   friendly_name: sz_climate
 '0x8cf681fffe36d14e':

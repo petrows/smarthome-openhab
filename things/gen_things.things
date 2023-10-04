@@ -690,13 +690,15 @@ Thing mqtt:topic:openhab:desktop_petro_light "Petro Desktop light" (mqtt:broker:
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Petro Desktop PC (0x847127fffe0c873b)
-// Wall switch module / https://www.zigbee2mqtt.io/devices/WHD02.html#tuya-whd02
+// Petro Desktop PC (desktop_petro_pc_power)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Thing mqtt:topic:openhab:desktop_petro_pc_power "Petro Desktop PC" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_pc_power", commandTopic="zigbee2mqtt/desktop_petro_pc_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0"]
-		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_pc_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_pc_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type number : rssi [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type switch : POWER [stateTopic="stat/desktop_petro_pc_power/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/desktop_petro_pc_power/POWER", on="ON", off="OFF"]
 }
 // Petro Desktop remote (0x000d6ffffee8357d)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html

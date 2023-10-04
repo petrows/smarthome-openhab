@@ -621,8 +621,11 @@ devices:
 
   - name: Petro Desktop PC
     id: desktop_petro_pc_power
-    zigbee_id: '0x847127fffe0c873b'
-    type: TUYA_SWITCH_TS0001
+    type: TASMOTA_SONOFF_MINI
+    channels:
+      POWER:
+        id: desktop_petro_pc_power
+        name: Petro Desktop PC
 
   - name: Petro Desktop remote
     id: desktop_petro_remote
