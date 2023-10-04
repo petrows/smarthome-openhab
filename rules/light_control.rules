@@ -114,6 +114,15 @@ then
     }
 end
 
+// PC turned off -> trigger offline check
+rule "PC desktop offline"
+when
+    Item g_online_petro changed from ON to OFF
+then
+    logWarn("light", "Petro desktop offline")
+    desktop_petro_power_try.sendCommand(OFF)
+end
+
 // Petro desktop power control
 rule "Petro desktop power"
 when
@@ -127,7 +136,7 @@ then
     }
 
     if (newState == OFF) {
-        createTimer(now.plusSeconds(60), [|
+        createTimer(now.plusSeconds(300), [|
             logWarn("light", "Petro delayed power off check, PC status is " + g_online_petro.state)
             if (g_online_petro.state == ON) {
                 desktop_petro_power_try.setState(ON) // Decline state change

@@ -79,6 +79,9 @@ then
         }
     }
 
+     // Check that PC is off and turn off also sockets there
+    desktop_petro_power_try.sendCommand(OFF)
+
 end
 
 rule "KG Ladder BOTTOM btn"
@@ -359,6 +362,8 @@ then
     switch(state) {
         case "toggle": {
             g_light_all.sendCommand(OFF)
+            // Check that PC is off and turn off also sockets there
+            desktop_petro_power_try.sendCommand(OFF)
         }
         case "brightness_down_click": {
             if ("DECOR" == mode) {
