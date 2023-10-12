@@ -352,6 +352,14 @@ Text item=sz_window_1_activity
 Text item=sz_window_1_contact
 Text item=sz_window_1_battery
 }
+Frame label="SZ Bedside drawler (0x287681fffe95cba4)" {
+// SZ Bedside drawler (0x287681fffe95cba4)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Slider item=sz_bedside_drawler_light_dim
+Text item=sz_bedside_drawler_light_ota
+Text item=sz_bedside_drawler_light_link
+Switch item=sz_bedside_drawler_light_sw
+}
 Frame label="KU Climate (0xa4c138f5460e22dd)" {
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html

@@ -383,6 +383,13 @@ devices:
   #   type: PETROWS_CO2_SENSOR
   #   device_id: 5C:CF:7F:68:19:46
 
+# BEDROOM NEW ================================
+
+  - name: SZ Bedside drawler
+    id: sz_bedside_drawler_light
+    zigbee_id: '0x287681fffe95cba4'
+    type: IKEA_TRADFRI_LED_DRIVER
+
 # KITCHEN ================================
   - name: KU Climate
     id: ku_climate

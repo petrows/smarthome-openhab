@@ -429,6 +429,16 @@ Thing mqtt:topic:openhab:sz_window_1 "SZ Window 1" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_1", transformationPattern="JS:codegen-activity.js"]
 }
+// SZ Bedside drawler (0x287681fffe95cba4)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Thing mqtt:topic:openhab:sz_bedside_drawler_light "SZ Bedside drawler" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", commandTopic="zigbee2mqtt/sz_bedside_drawler_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", commandTopic="zigbee2mqtt/sz_bedside_drawler_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", commandTopic="zigbee2mqtt/sz_bedside_drawler_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
+		Type number : link [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
