@@ -73,6 +73,8 @@
   friendly_name: ns_night_lamp
 '0x14b457fffe7e2305':
   friendly_name: sz_remote_bed
+'0x287681fffe6f76fd':
+  friendly_name: sz_bed_light_l
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x588e81fffefb217b':
@@ -116,6 +118,8 @@
   simulated_brightness:
     delta: 5
     interval: 100
+'0x90395efffeb9dcee':
+  friendly_name: sz_bed_light_r
 '0xa4c138018d7a55bf':
   friendly_name: ku_blinds
 '0xa4c13804963f4ccf':

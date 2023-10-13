@@ -360,6 +360,24 @@ Text item=sz_bedside_drawler_light_ota
 Text item=sz_bedside_drawler_light_link
 Switch item=sz_bedside_drawler_light_sw
 }
+Frame label="SZ Bed L (0x287681fffe6f76fd)" {
+// SZ Bed L (0x287681fffe6f76fd)
+// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
+Slider item=sz_bed_light_l_dim
+Slider item=sz_bed_light_l_ct
+Text item=sz_bed_light_l_ota
+Text item=sz_bed_light_l_link
+Switch item=sz_bed_light_l_sw
+}
+Frame label="SZ Bed R (0x90395efffeb9dcee)" {
+// SZ Bed R (0x90395efffeb9dcee)
+// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
+Slider item=sz_bed_light_r_dim
+Slider item=sz_bed_light_r_ct
+Text item=sz_bed_light_r_ota
+Text item=sz_bed_light_r_link
+Switch item=sz_bed_light_r_sw
+}
 Frame label="KU Climate (0xa4c138f5460e22dd)" {
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html

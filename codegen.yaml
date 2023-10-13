@@ -390,6 +390,26 @@ devices:
     zigbee_id: '0x287681fffe95cba4'
     type: IKEA_TRADFRI_LED_DRIVER
 
+  - name: SZ Bed L
+    id: sz_bed_light_l
+    zigbee_id: '0x287681fffe6f76fd'
+    type: IKEA_TRADFRI_LAMP_LED2101G4
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
+
+  - name: SZ Bed R
+    id: sz_bed_light_r
+    zigbee_id: '0x90395efffeb9dcee'
+    type: IKEA_TRADFRI_LAMP_LED2101G4
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_eg_sz
+
 # KITCHEN ================================
   - name: KU Climate
     id: ku_climate
