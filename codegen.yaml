@@ -579,8 +579,8 @@ devices:
 
   - name: KG Climate
     id: kg_climate
-    zigbee_id: '0x00158d0001b95e02'
-    type: XIAOMI_AQARA_V2
+    zigbee_id: '0xa4c138234138f73a'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: Petro Desktop up light 1
     id: desktop_petro_up_light_1

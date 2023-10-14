@@ -2,8 +2,6 @@
   friendly_name: desktop_petro_remote
 '0x00124b000b4ed5cc':
   friendly_name: eg_router
-'0x00158d0001b95e02':
-  friendly_name: kg_climate
 '0x00158d0001be5b2d':
   friendly_name: ku_light_switch_spule
 '0x00158d0001c15121':
@@ -128,6 +126,8 @@
   friendly_name: eg_main_door
 '0xa4c1381a072fcf8b':
   friendly_name: kg_window_2
+'0xa4c138234138f73a':
+  friendly_name: kg_climate
 '0xa4c138312d2c455f':
   friendly_name: kg_cabinet_door
 '0xa4c1383cc92cbbd2':

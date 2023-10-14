@@ -227,7 +227,20 @@ sitemap main label="MAIN"
                 Switch item=fs_christmas_light_sw label="Christmas [%s]" icon="light"
             }
 		}
-		Group item=g_light_eg_sz label="Sleep [%s]" icon="light" {
+        Group item=g_light_eg_sz label="Sleep [%s]" icon="light" {
+			Frame {
+				Switch item=g_light_eg_sz label="All [%s]" icon="light"
+            }
+            Frame label="Bed" {
+				Switch item=sz_bed_light_l_sw label="Bed L [%s]" icon="light"
+				Slider item=sz_bed_light_l_dim label="Bed L DIM [%d %%]" icon="light"
+                Slider item=sz_bed_light_l_ct label="Bed L CT [JS(codegen-mired.js):%s]" icon="light"
+				Switch item=sz_bed_light_r_sw label="Bed R [%s]" icon="light"
+				Slider item=sz_bed_light_r_dim label="Bed R DIM [%d %%]" icon="light"
+                Slider item=sz_bed_light_r_ct label="Bed R CT [JS(codegen-mired.js):%s]" icon="light"
+			}
+        }
+		Group item=g_light_eg_sz label="Sleep (old) [%s]" icon="light" {
 			Frame {
 				Switch item=g_light_eg_sz label="All [%s]" icon="light"
             }

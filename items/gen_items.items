@@ -451,15 +451,14 @@ Number:Dimensionless kg_cabinet_door_link "KG Cabinet door LINK [%d]" <linkz> (g
 DateTime kg_cabinet_door_activity "KG Cabinet door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_cabinet_door:activity"}
 Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
 Number:Dimensionless kg_cabinet_door_battery "KG Cabinet door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_cabinet_door:battery"}
-// KG Climate (0x00158d0001b95e02)
-// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
+// KG Climate (0xa4c138234138f73a)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch kg_climate_lowbatt "KG Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_climate:battery_low"}
 Switch kg_climate_ota "KG Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_climate:ota"}
 Number:Dimensionless kg_climate_link "KG Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_climate:link"}
 DateTime kg_climate_activity "KG Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_climate:activity"}
 Number:Temperature kg_climate_temperature "KG Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:kg_climate:temperature"}
 Number:Dimensionless kg_climate_humidity "KG Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:kg_climate:humidity"}
-Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:kg_climate:pressure"}
 Number:Dimensionless kg_climate_battery "KG Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_climate:battery"}
 // Petro Desktop up light 1 (0x04cd15fffe35f24e)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
