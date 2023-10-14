@@ -198,51 +198,68 @@ Text item=ns_light_switch_ota
 Text item=ns_light_switch_link
 Text item=ns_light_switch_battery
 }
-Frame label="FS Climate (0x00158d0001c15121)" {
-// FS Climate (0x00158d0001c15121)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Text item=fs_climate_lowbatt
-Text item=fs_climate_ota
-Text item=fs_climate_link
-Text item=fs_climate_activity
-Text item=fs_climate_temperature
-Text item=fs_climate_humidity
-Text item=fs_climate_battery
-}
-Frame label="Marina Desktop light (0xec1bbdfffe1b89d1)" {
-// Marina Desktop light (0xec1bbdfffe1b89d1)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Slider item=desktop_marina_light_dim
-Slider item=desktop_marina_light_ct
-Text item=desktop_marina_light_ota
-Text item=desktop_marina_light_link
-Switch item=desktop_marina_light_sw
-}
-Frame label="Marina Desktop remote (0xccccccfffeea9703)" {
-// Marina Desktop remote (0xccccccfffeea9703)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Text item=desktop_marina_remote_lowbatt
-Text item=desktop_marina_remote_ota
-Text item=desktop_marina_remote_link
-Text item=desktop_marina_remote_battery
-}
-Frame label="FS Main (0x842e14fffe0eb8a0)" {
-// FS Main (0x842e14fffe0eb8a0)
-// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Slider item=fs_main_light_dim
-Slider item=fs_main_light_ct
-Text item=fs_main_light_ota
-Text item=fs_main_light_link
-Switch item=fs_main_light_sw
-}
-Frame label="FS Main remote (0xb4e3f9fffeb35529)" {
-// FS Main remote (0xb4e3f9fffeb35529)
+Frame label="Bedroom main remote (0x003c84fffe16f988)" {
+// Bedroom main remote (0x003c84fffe16f988)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=fs_light_switch_dim
-Text item=fs_light_switch_lowbatt
-Text item=fs_light_switch_ota
-Text item=fs_light_switch_link
-Text item=fs_light_switch_battery
+Text item=wz_remote_main_dim
+Text item=wz_remote_main_lowbatt
+Text item=wz_remote_main_ota
+Text item=wz_remote_main_link
+Text item=wz_remote_main_battery
+}
+Frame label="SZ Main (0x588e81fffefe9a05)" {
+// SZ Main (0x588e81fffefe9a05)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Slider item=wz_main_light_dim
+Slider item=wz_main_light_ct
+Text item=wz_main_light_ota
+Text item=wz_main_light_link
+Switch item=wz_main_light_sw
+}
+Frame label="WZ Color Decor (0x8cf681fffef62c85)" {
+// WZ Color Decor (0x8cf681fffef62c85)
+// Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
+Slider item=wz_color_light_dim
+Slider item=wz_color_light_ct
+Colorpicker item=wz_color_light_color
+Text item=wz_color_light_color_mode
+Text item=wz_color_light_ota
+Text item=wz_color_light_link
+Switch item=wz_color_light_sw
+}
+Frame label="WZ Decor lamp 1 (0xec1bbdfffe972819)" {
+// WZ Decor lamp 1 (0xec1bbdfffe972819)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=wz_declamp_1_dim
+Text item=wz_declamp_1_ota
+Text item=wz_declamp_1_link
+Switch item=wz_declamp_1_sw
+}
+Frame label="WZ Decor lamp 2 (0xec1bbdfffe972203)" {
+// WZ Decor lamp 2 (0xec1bbdfffe972203)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=wz_declamp_2_dim
+Text item=wz_declamp_2_ota
+Text item=wz_declamp_2_link
+Switch item=wz_declamp_2_sw
+}
+Frame label="WZ Decor lamp 3 (0xec1bbdfffe91007b)" {
+// WZ Decor lamp 3 (0xec1bbdfffe91007b)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=wz_declamp_3_dim
+Text item=wz_declamp_3_ota
+Text item=wz_declamp_3_link
+Switch item=wz_declamp_3_sw
+}
+Frame label="WZ Window 1 (0xa4c13804963f4ccf)" {
+// WZ Window 1 (0xa4c13804963f4ccf)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Text item=wz_window_1_lowbatt
+Text item=wz_window_1_ota
+Text item=wz_window_1_link
+Text item=wz_window_1_activity
+Text item=wz_window_1_contact
+Text item=wz_window_1_battery
 }
 Frame label="SZ Climate (0x847127fffec6acc3)" {
 // SZ Climate (0x847127fffec6acc3)
@@ -254,6 +271,24 @@ Text item=sz_climate_activity
 Text item=sz_climate_temperature
 Text item=sz_climate_humidity
 Text item=sz_climate_battery
+}
+Frame label="SZ Main (0x842e14fffe0eb8a0)" {
+// SZ Main (0x842e14fffe0eb8a0)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Slider item=sz_main_light_dim
+Slider item=sz_main_light_ct
+Text item=sz_main_light_ota
+Text item=sz_main_light_link
+Switch item=sz_main_light_sw
+}
+Frame label="FS Main remote (0xb4e3f9fffeb35529)" {
+// FS Main remote (0xb4e3f9fffeb35529)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=sz_remote_main_dim
+Text item=sz_remote_main_lowbatt
+Text item=sz_remote_main_ota
+Text item=sz_remote_main_link
+Text item=sz_remote_main_battery
 }
 Frame label="Bedroom remote (0x14b457fffe7e2305)" {
 // Bedroom remote (0x14b457fffe7e2305)
@@ -270,87 +305,6 @@ Text item=sz_curtain_remote_lowbatt
 Text item=sz_curtain_remote_ota
 Text item=sz_curtain_remote_link
 Text item=sz_curtain_remote_battery
-}
-Frame label="Bedroom main remote (0x003c84fffe16f988)" {
-// Bedroom main remote (0x003c84fffe16f988)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=sz_remote_main_dim
-Text item=sz_remote_main_lowbatt
-Text item=sz_remote_main_ota
-Text item=sz_remote_main_link
-Text item=sz_remote_main_battery
-}
-Frame label="SZ Main (0x588e81fffefe9a05)" {
-// SZ Main (0x588e81fffefe9a05)
-// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Slider item=sz_main_light_dim
-Slider item=sz_main_light_ct
-Text item=sz_main_light_ota
-Text item=sz_main_light_link
-Switch item=sz_main_light_sw
-}
-Frame label="SZ Color Decor (0x8cf681fffef62c85)" {
-// SZ Color Decor (0x8cf681fffef62c85)
-// Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
-Slider item=sz_color_light_dim
-Slider item=sz_color_light_ct
-Colorpicker item=sz_color_light_color
-Text item=sz_color_light_color_mode
-Text item=sz_color_light_ota
-Text item=sz_color_light_link
-Switch item=sz_color_light_sw
-}
-Frame label="SZ Bed 1 (0x040d84fffece67a6)" {
-// SZ Bed 1 (0x040d84fffece67a6)
-// TRADFRI LED bulb E26/E27 950 lumen, dimmable, white spectrum, clear (LED1546G12) / https://www.zigbee2mqtt.io/devices/LED1546G12.html
-Slider item=sz_bed_light_1_dim
-Slider item=sz_bed_light_1_ct
-Text item=sz_bed_light_1_ota
-Text item=sz_bed_light_1_link
-Switch item=sz_bed_light_1_sw
-}
-Frame label="SZ Bed 2 (0x040d84fffec53aaf)" {
-// SZ Bed 2 (0x040d84fffec53aaf)
-// TRADFRI LED bulb E26/E27 950 lumen, dimmable, white spectrum, clear (LED1546G12) / https://www.zigbee2mqtt.io/devices/LED1546G12.html
-Slider item=sz_bed_light_2_dim
-Slider item=sz_bed_light_2_ct
-Text item=sz_bed_light_2_ota
-Text item=sz_bed_light_2_link
-Switch item=sz_bed_light_2_sw
-}
-Frame label="SZ Decor lamp 1 (0xec1bbdfffe972819)" {
-// SZ Decor lamp 1 (0xec1bbdfffe972819)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Slider item=sz_declamp_1_dim
-Text item=sz_declamp_1_ota
-Text item=sz_declamp_1_link
-Switch item=sz_declamp_1_sw
-}
-Frame label="SZ Decor lamp 2 (0xec1bbdfffe972203)" {
-// SZ Decor lamp 2 (0xec1bbdfffe972203)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Slider item=sz_declamp_2_dim
-Text item=sz_declamp_2_ota
-Text item=sz_declamp_2_link
-Switch item=sz_declamp_2_sw
-}
-Frame label="SZ Decor lamp 3 (0xec1bbdfffe91007b)" {
-// SZ Decor lamp 3 (0xec1bbdfffe91007b)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Slider item=sz_declamp_3_dim
-Text item=sz_declamp_3_ota
-Text item=sz_declamp_3_link
-Switch item=sz_declamp_3_sw
-}
-Frame label="SZ Window 1 (0xa4c13804963f4ccf)" {
-// SZ Window 1 (0xa4c13804963f4ccf)
-// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Text item=sz_window_1_lowbatt
-Text item=sz_window_1_ota
-Text item=sz_window_1_link
-Text item=sz_window_1_activity
-Text item=sz_window_1_contact
-Text item=sz_window_1_battery
 }
 Frame label="SZ Bedside drawler (0x287681fffe95cba4)" {
 // SZ Bedside drawler (0x287681fffe95cba4)

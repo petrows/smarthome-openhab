@@ -183,52 +183,111 @@ devices:
     zigbee_id: '0x9035eafffee1ba1d'
     type: IKEA_TRADFRI_STYRBAR
 
-# FOTO STUDIO ============================
+# LIVING ROOM ================================
 
-  - name: FS Climate
-    id: fs_climate
-    zigbee_id: '0x00158d0001c15121'
-    type: XIAOMI_AQARA_V1
+  - name: Bedroom main remote
+    id: wz_remote_main
+    zigbee_id: '0x003c84fffe16f988'
+    type: IKEA_TRADFRI_STYRBAR
 
-  - name: Marina Desktop light
-    id: desktop_marina_light
-    zigbee_id: '0xec1bbdfffe1b89d1'
-    type: IKEA_TRADFRI_LAMP_CT_1000
+  - name: SZ Main
+    id: wz_main_light
+    zigbee_id: '0x588e81fffefe9a05'
+    type: LIVARNO_CELLING_14147206L
     groups:
       sw:
-      - g_light_all
-      - g_light_eg
-      - g_light_eg_fs
+        - g_light_all
+        - g_light_eg
+        - g_light_wz
       ct:
-      - g_light_astro_color
+        - g_light_wz_ct
+        - g_light_astro_color
 
-  - name: Marina Desktop remote
-    id: desktop_marina_remote
-    zigbee_id: '0xccccccfffeea9703'
-    type: IKEA_TRADFRI_REMOTE
+# Light in torsher
+  - name: WZ Color Decor
+    id: wz_color_light
+    zigbee_id: '0x8cf681fffef62c85'
+    type: LIVARNO_RGB_HG07834B
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_wz
 
-  - name: FS Main
-    id: fs_main_light
+# Lights behind window
+  - name: WZ Decor lamp 1
+    id: wz_declamp_1
+    zigbee_id: '0xec1bbdfffe972819'
+    type: IKEA_TRADFRI_LAMP_W_250
+    transition_brightness: 3
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_wz
+        - g_light_wz_decor
+      dim:
+        - g_light_wz_decor_brightness
+
+  - name: WZ Decor lamp 2
+    id: wz_declamp_2
+    zigbee_id: '0xec1bbdfffe972203'
+    type: IKEA_TRADFRI_LAMP_W_250
+    transition_brightness: 3
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_wz
+        - g_light_wz_decor
+      dim:
+        - g_light_wz_decor_brightness
+
+  - name: WZ Decor lamp 3
+    id: wz_declamp_3
+    zigbee_id: '0xec1bbdfffe91007b'
+    type: IKEA_TRADFRI_LAMP_W_250
+    transition_brightness: 3
+    groups:
+      sw:
+        - g_light_all
+        - g_light_eg
+        - g_light_wz
+        - g_light_wz_decor
+      dim:
+        - g_light_wz_decor_brightness
+
+  - name: WZ Window 1
+    id: wz_window_1
+    zigbee_id: '0xa4c13804963f4ccf'
+    type: TUYA_WINDOW_SENSOR
+    groups:
+      contact:
+        - wz_windows
+
+# BEDROOM ================================
+
+  - name: SZ Climate
+    id: sz_climate
+    zigbee_id: '0x847127fffec6acc3'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
+
+  - name: SZ Main
+    id: sz_main_light
     zigbee_id: '0x842e14fffe0eb8a0'
     type: LIVARNO_CELLING_14147206L
     groups:
       sw:
         - g_light_all
         - g_light_eg
-        - g_light_eg_fs
+        - g_light_sz
       ct:
         - g_light_astro_color
 
   - name: FS Main remote
-    id: fs_light_switch
+    id: sz_remote_main
     zigbee_id: '0xb4e3f9fffeb35529'
     type: IKEA_TRADFRI_STYRBAR
-
-# BEDROOM ================================
-  - name: SZ Climate
-    id: sz_climate
-    zigbee_id: '0x847127fffec6acc3'
-    type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: Bedroom remote
     id: sz_remote_bed
@@ -239,151 +298,6 @@ devices:
     id: sz_curtain_remote
     zigbee_id: '0x8cf681fffe36d14e'
     type: IKEA_TRADFRI_CURTAIN_REMOTE
-
-  - name: Bedroom main remote
-    id: sz_remote_main
-    zigbee_id: '0x003c84fffe16f988'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: SZ Main
-    id: sz_main_light
-    zigbee_id: '0x588e81fffefe9a05'
-    type: LIVARNO_CELLING_14147206L
-    groups:
-      sw:
-        - g_light_all
-        - g_light_eg
-        - g_light_eg_sz
-      ct:
-        - g_light_sz_ct
-        - g_light_astro_color
-        - g_sunrise_ct
-
-# Light in torsher
-  - name: SZ Color Decor
-    id: sz_color_light
-    zigbee_id: '0x8cf681fffef62c85'
-    type: LIVARNO_RGB_HG07834B
-    groups:
-      sw:
-        - g_light_all
-        - g_light_eg
-        - g_light_eg_sz
-
-# Lights behind bed
-  - name: SZ Bed 1
-    id: sz_bed_light_1
-    zigbee_id: '0x040d84fffece67a6'
-    type: IKEA_TRADFRI_LAMP_LED1546G12
-    transition_brightness: 3
-    groups:
-      sw:
-        - g_light_all
-        - g_light_eg
-        - g_light_eg_sz
-        - sz_bed_light
-      dim:
-        - sz_bed_light_dim
-      dim_fast:
-        - sz_bed_light_dim_fast
-      ct:
-        - g_light_sz_ct
-        - g_light_sz_bed_ct
-        - g_light_astro_color
-        - g_sunrise_ct
-
-  - name: SZ Bed 2
-    id: sz_bed_light_2
-    zigbee_id: '0x040d84fffec53aaf'
-    type: IKEA_TRADFRI_LAMP_LED1546G12
-    transition_brightness: 3
-    groups:
-      sw:
-        - g_light_all
-        - g_light_eg
-        - g_light_eg_sz
-        - sz_bed_light
-      dim:
-        - sz_bed_light_dim
-      dim_fast:
-        - sz_bed_light_dim_fast
-      ct:
-        - g_light_sz_ct
-        - g_light_sz_bed_ct
-        - g_light_astro_color
-        - g_sunrise_ct
-
-# Lights behind window
-  - name: SZ Decor lamp 1
-    id: sz_declamp_1
-    zigbee_id: '0xec1bbdfffe972819'
-    type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightness: 3
-    groups:
-      sw:
-        - g_light_all
-        - g_light_eg
-        - g_light_eg_sz
-        - g_light_eg_sz_night
-        - g_light_eg_sz_decor
-      dim:
-        - g_light_eg_sz_night_brightness
-        - g_light_eg_sz_decor_brightness
-
-  - name: SZ Decor lamp 2
-    id: sz_declamp_2
-    zigbee_id: '0xec1bbdfffe972203'
-    type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightness: 3
-    groups:
-      sw:
-        - g_light_all
-        - g_light_eg
-        - g_light_eg_sz
-        - g_light_eg_sz_night
-        - g_light_eg_sz_decor
-      dim:
-        - g_light_eg_sz_night_brightness
-        - g_light_eg_sz_decor_brightness
-
-  - name: SZ Decor lamp 3
-    id: sz_declamp_3
-    zigbee_id: '0xec1bbdfffe91007b'
-    type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightness: 3
-    groups:
-      sw:
-        - g_light_all
-        - g_light_eg
-        - g_light_eg_sz
-        - g_light_eg_sz_night
-        - g_light_eg_sz_decor
-      dim:
-        - g_light_eg_sz_night_brightness
-        - g_light_eg_sz_decor_brightness
-
-  - name: SZ Window 1
-    id: sz_window_1
-    zigbee_id: '0xa4c13804963f4ccf'
-    type: TUYA_WINDOW_SENSOR
-    groups:
-      contact:
-        - sz_windows
-
-  # - name: SZ Window Door
-  #   id: sz_window_door
-  #   zigbee_id: '0xa4c138fbdde6b200'
-  #   type: TUYA_WINDOW_SENSOR
-  #   groups:
-  #     contact:
-  #       - sz_windows
-
-  # - name: SZ CO2
-  #   id: sz_co2
-  #   type: PETROWS_CO2_SENSOR
-  #   device_id: 5C:CF:7F:68:19:46
-
-# BEDROOM NEW ================================
 
   - name: SZ Bedside drawler
     id: sz_bedside_drawler_light
@@ -411,6 +325,7 @@ devices:
         - g_light_eg_sz
 
 # KITCHEN ================================
+
   - name: KU Climate
     id: ku_climate
     zigbee_id: '0xa4c138f5460e22dd'

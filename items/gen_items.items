@@ -163,44 +163,61 @@ Switch ns_light_switch_lowbatt "NS Main remote BAT [MAP(codegen-lowbat.map):%s]"
 Switch ns_light_switch_ota "NS Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_light_switch:ota"}
 Number:Dimensionless ns_light_switch_link "NS Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_light_switch:link"}
 Number:Dimensionless ns_light_switch_battery "NS Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ns_light_switch:battery"}
-// FS Climate (0x00158d0001c15121)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Switch fs_climate_lowbatt "FS Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fs_climate:battery_low"}
-Switch fs_climate_ota "FS Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_climate:ota"}
-Number:Dimensionless fs_climate_link "FS Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_climate:link"}
-DateTime fs_climate_activity "FS Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:fs_climate:activity"}
-Number:Temperature fs_climate_temperature "FS Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:fs_climate:temperature"}
-Number:Dimensionless fs_climate_humidity "FS Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:fs_climate:humidity"}
-Number:Dimensionless fs_climate_battery "FS Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:fs_climate:battery"}
-// Marina Desktop light (0xec1bbdfffe1b89d1)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Dimmer desktop_marina_light_dim "Marina Desktop light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:desktop_marina_light:dim"}
-Dimmer desktop_marina_light_dim_fast "Marina Desktop light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_marina_light:dim_fast"}
-Dimmer desktop_marina_light_ct "Marina Desktop light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color) {channel="mqtt:topic:openhab:desktop_marina_light:ct"}
-Switch desktop_marina_light_ota "Marina Desktop light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_marina_light:ota"}
-Number:Dimensionless desktop_marina_light_link "Marina Desktop light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_marina_light:link"}
-Switch desktop_marina_light_sw "Marina Desktop light" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_fs) {channel="mqtt:topic:openhab:desktop_marina_light:state"}
-// Marina Desktop remote (0xccccccfffeea9703)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Switch desktop_marina_remote_lowbatt "Marina Desktop remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:desktop_marina_remote:battery_low"}
-Switch desktop_marina_remote_ota "Marina Desktop remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_marina_remote:ota"}
-Number:Dimensionless desktop_marina_remote_link "Marina Desktop remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_marina_remote:link"}
-Number:Dimensionless desktop_marina_remote_battery "Marina Desktop remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:desktop_marina_remote:battery"}
-// FS Main (0x842e14fffe0eb8a0)
-// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Dimmer fs_main_light_dim "FS Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fs_main_light:dim"}
-Dimmer fs_main_light_dim_fast "FS Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:fs_main_light:dim_fast"}
-Dimmer fs_main_light_ct "FS Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color) {channel="mqtt:topic:openhab:fs_main_light:ct"}
-Switch fs_main_light_ota "FS Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_main_light:ota"}
-Number:Dimensionless fs_main_light_link "FS Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_main_light:link"}
-Switch fs_main_light_sw "FS Main" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_fs) {channel="mqtt:topic:openhab:fs_main_light:state"}
-// FS Main remote (0xb4e3f9fffeb35529)
+// Bedroom main remote (0x003c84fffe16f988)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Dimmer fs_light_switch_dim "FS Main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fs_light_switch:dim"}
-Switch fs_light_switch_lowbatt "FS Main remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fs_light_switch:battery_low"}
-Switch fs_light_switch_ota "FS Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_light_switch:ota"}
-Number:Dimensionless fs_light_switch_link "FS Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_light_switch:link"}
-Number:Dimensionless fs_light_switch_battery "FS Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:fs_light_switch:battery"}
+Dimmer wz_remote_main_dim "Bedroom main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_remote_main:dim"}
+Switch wz_remote_main_lowbatt "Bedroom main remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:wz_remote_main:battery_low"}
+Switch wz_remote_main_ota "Bedroom main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_remote_main:ota"}
+Number:Dimensionless wz_remote_main_link "Bedroom main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_remote_main:link"}
+Number:Dimensionless wz_remote_main_battery "Bedroom main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:wz_remote_main:battery"}
+// SZ Main (0x588e81fffefe9a05)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Dimmer wz_main_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_main_light:dim"}
+Dimmer wz_main_light_dim_fast "SZ Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_main_light:dim_fast"}
+Dimmer wz_main_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_wz_ct,g_light_astro_color) {channel="mqtt:topic:openhab:wz_main_light:ct"}
+Switch wz_main_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_main_light:ota"}
+Number:Dimensionless wz_main_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_main_light:link"}
+Switch wz_main_light_sw "SZ Main" <light> (g_all_sw,g_light_all,g_light_eg,g_light_wz) {channel="mqtt:topic:openhab:wz_main_light:state"}
+// WZ Color Decor (0x8cf681fffef62c85)
+// Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
+Dimmer wz_color_light_dim "WZ Color Decor DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_color_light:dim"}
+Dimmer wz_color_light_dim_fast "WZ Color Decor DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_color_light:dim_fast"}
+Dimmer wz_color_light_ct "WZ Color Decor CT [JS(codegen-mired.js): %s]" <light> (g_all_ct) {channel="mqtt:topic:openhab:wz_color_light:ct"}
+Color wz_color_light_color "WZ Color Decor Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:wz_color_light:color"}
+String wz_color_light_color_mode "WZ Color Decor Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:wz_color_light:color_mode"}
+Switch wz_color_light_ota "WZ Color Decor OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_color_light:ota"}
+Number:Dimensionless wz_color_light_link "WZ Color Decor LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_color_light:link"}
+Switch wz_color_light_sw_proxy "WZ Color Decor proxy" <light> (g_all_sw,g_light_all,g_light_eg,g_light_wz)
+Switch wz_color_light_sw "WZ Color Decor" <light> {channel="mqtt:topic:openhab:wz_color_light:state"}
+// WZ Decor lamp 1 (0xec1bbdfffe972819)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Dimmer wz_declamp_1_dim "WZ Decor lamp 1 DIM [%d %%]" <light> (g_all_dim,g_light_wz_decor_brightness) {channel="mqtt:topic:openhab:wz_declamp_1:dim"}
+Dimmer wz_declamp_1_dim_fast "WZ Decor lamp 1 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_declamp_1:dim_fast"}
+Switch wz_declamp_1_ota "WZ Decor lamp 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_declamp_1:ota"}
+Number:Dimensionless wz_declamp_1_link "WZ Decor lamp 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_declamp_1:link"}
+Switch wz_declamp_1_sw "WZ Decor lamp 1" <light> (g_all_sw,g_light_all,g_light_eg,g_light_wz,g_light_wz_decor) {channel="mqtt:topic:openhab:wz_declamp_1:state"}
+// WZ Decor lamp 2 (0xec1bbdfffe972203)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Dimmer wz_declamp_2_dim "WZ Decor lamp 2 DIM [%d %%]" <light> (g_all_dim,g_light_wz_decor_brightness) {channel="mqtt:topic:openhab:wz_declamp_2:dim"}
+Dimmer wz_declamp_2_dim_fast "WZ Decor lamp 2 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_declamp_2:dim_fast"}
+Switch wz_declamp_2_ota "WZ Decor lamp 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_declamp_2:ota"}
+Number:Dimensionless wz_declamp_2_link "WZ Decor lamp 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_declamp_2:link"}
+Switch wz_declamp_2_sw "WZ Decor lamp 2" <light> (g_all_sw,g_light_all,g_light_eg,g_light_wz,g_light_wz_decor) {channel="mqtt:topic:openhab:wz_declamp_2:state"}
+// WZ Decor lamp 3 (0xec1bbdfffe91007b)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Dimmer wz_declamp_3_dim "WZ Decor lamp 3 DIM [%d %%]" <light> (g_all_dim,g_light_wz_decor_brightness) {channel="mqtt:topic:openhab:wz_declamp_3:dim"}
+Dimmer wz_declamp_3_dim_fast "WZ Decor lamp 3 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_declamp_3:dim_fast"}
+Switch wz_declamp_3_ota "WZ Decor lamp 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_declamp_3:ota"}
+Number:Dimensionless wz_declamp_3_link "WZ Decor lamp 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_declamp_3:link"}
+Switch wz_declamp_3_sw "WZ Decor lamp 3" <light> (g_all_sw,g_light_all,g_light_eg,g_light_wz,g_light_wz_decor) {channel="mqtt:topic:openhab:wz_declamp_3:state"}
+// WZ Window 1 (0xa4c13804963f4ccf)
+// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+Switch wz_window_1_lowbatt "WZ Window 1 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:wz_window_1:battery_low"}
+Switch wz_window_1_ota "WZ Window 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_window_1:ota"}
+Number:Dimensionless wz_window_1_link "WZ Window 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_window_1:link"}
+DateTime wz_window_1_activity "WZ Window 1 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:wz_window_1:activity"}
+Contact wz_window_1_contact "WZ Window 1 [%s]" <door> (g_all_contact,wz_windows) {channel="mqtt:topic:openhab:wz_window_1:contact"}
+Number:Dimensionless wz_window_1_battery "WZ Window 1  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:wz_window_1:battery"}
 // SZ Climate (0x847127fffec6acc3)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch sz_climate_lowbatt "SZ Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_climate:battery_low"}
@@ -210,6 +227,21 @@ DateTime sz_climate_activity "SZ Climate activity [JS(codegen-display-activity.j
 Number:Temperature sz_climate_temperature "SZ Climate temp  [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:sz_climate:temperature"}
 Number:Dimensionless sz_climate_humidity "SZ Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:sz_climate:humidity"}
 Number:Dimensionless sz_climate_battery "SZ Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_climate:battery"}
+// SZ Main (0x842e14fffe0eb8a0)
+// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
+Dimmer sz_main_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_main_light:dim"}
+Dimmer sz_main_light_dim_fast "SZ Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_main_light:dim_fast"}
+Dimmer sz_main_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_astro_color) {channel="mqtt:topic:openhab:sz_main_light:ct"}
+Switch sz_main_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_main_light:ota"}
+Number:Dimensionless sz_main_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_main_light:link"}
+Switch sz_main_light_sw "SZ Main" <light> (g_all_sw,g_light_all,g_light_eg,g_light_sz) {channel="mqtt:topic:openhab:sz_main_light:state"}
+// FS Main remote (0xb4e3f9fffeb35529)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer sz_remote_main_dim "FS Main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_remote_main:dim"}
+Switch sz_remote_main_lowbatt "FS Main remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_remote_main:battery_low"}
+Switch sz_remote_main_ota "FS Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_remote_main:ota"}
+Number:Dimensionless sz_remote_main_link "FS Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_remote_main:link"}
+Number:Dimensionless sz_remote_main_battery "FS Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_remote_main:battery"}
 // Bedroom remote (0x14b457fffe7e2305)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Switch sz_remote_bed_lowbatt "Bedroom remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_remote_bed:battery_low"}
@@ -222,77 +254,6 @@ Switch sz_curtain_remote_lowbatt "Bedroom curtains remote BAT [MAP(codegen-lowba
 Switch sz_curtain_remote_ota "Bedroom curtains remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_curtain_remote:ota"}
 Number:Dimensionless sz_curtain_remote_link "Bedroom curtains remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_curtain_remote:link"}
 Number:Dimensionless sz_curtain_remote_battery "Bedroom curtains remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_curtain_remote:battery"}
-// Bedroom main remote (0x003c84fffe16f988)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Dimmer sz_remote_main_dim "Bedroom main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_remote_main:dim"}
-Switch sz_remote_main_lowbatt "Bedroom main remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_remote_main:battery_low"}
-Switch sz_remote_main_ota "Bedroom main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_remote_main:ota"}
-Number:Dimensionless sz_remote_main_link "Bedroom main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_remote_main:link"}
-Number:Dimensionless sz_remote_main_battery "Bedroom main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_remote_main:battery"}
-// SZ Main (0x588e81fffefe9a05)
-// Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Dimmer sz_main_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_main_light:dim"}
-Dimmer sz_main_light_dim_fast "SZ Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_main_light:dim_fast"}
-Dimmer sz_main_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_main_light:ct"}
-Switch sz_main_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_main_light:ota"}
-Number:Dimensionless sz_main_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_main_light:link"}
-Switch sz_main_light_sw "SZ Main" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz) {channel="mqtt:topic:openhab:sz_main_light:state"}
-// SZ Color Decor (0x8cf681fffef62c85)
-// Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
-Dimmer sz_color_light_dim "SZ Color Decor DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_color_light:dim"}
-Dimmer sz_color_light_dim_fast "SZ Color Decor DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_color_light:dim_fast"}
-Dimmer sz_color_light_ct "SZ Color Decor CT [JS(codegen-mired.js): %s]" <light> (g_all_ct) {channel="mqtt:topic:openhab:sz_color_light:ct"}
-Color sz_color_light_color "SZ Color Decor Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:sz_color_light:color"}
-String sz_color_light_color_mode "SZ Color Decor Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:sz_color_light:color_mode"}
-Switch sz_color_light_ota "SZ Color Decor OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_color_light:ota"}
-Number:Dimensionless sz_color_light_link "SZ Color Decor LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_color_light:link"}
-Switch sz_color_light_sw_proxy "SZ Color Decor proxy" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz)
-Switch sz_color_light_sw "SZ Color Decor" <light> {channel="mqtt:topic:openhab:sz_color_light:state"}
-// SZ Bed 1 (0x040d84fffece67a6)
-// TRADFRI LED bulb E26/E27 950 lumen, dimmable, white spectrum, clear (LED1546G12) / https://www.zigbee2mqtt.io/devices/LED1546G12.html
-Dimmer sz_bed_light_1_dim "SZ Bed 1 DIM [%d %%]" <light> (g_all_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_1:dim"}
-Dimmer sz_bed_light_1_dim_fast "SZ Bed 1 DIM-F [%d %%]" (g_all_dim_fast,sz_bed_light_dim_fast) {channel="mqtt:topic:openhab:sz_bed_light_1:dim_fast"}
-Dimmer sz_bed_light_1_ct "SZ Bed 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_sz_bed_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_bed_light_1:ct"}
-Switch sz_bed_light_1_ota "SZ Bed 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_light_1:ota"}
-Number:Dimensionless sz_bed_light_1_link "SZ Bed 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_1:link"}
-Switch sz_bed_light_1_sw "SZ Bed 1" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_1:state"}
-// SZ Bed 2 (0x040d84fffec53aaf)
-// TRADFRI LED bulb E26/E27 950 lumen, dimmable, white spectrum, clear (LED1546G12) / https://www.zigbee2mqtt.io/devices/LED1546G12.html
-Dimmer sz_bed_light_2_dim "SZ Bed 2 DIM [%d %%]" <light> (g_all_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_2:dim"}
-Dimmer sz_bed_light_2_dim_fast "SZ Bed 2 DIM-F [%d %%]" (g_all_dim_fast,sz_bed_light_dim_fast) {channel="mqtt:topic:openhab:sz_bed_light_2:dim_fast"}
-Dimmer sz_bed_light_2_ct "SZ Bed 2 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,g_light_sz_ct,g_light_sz_bed_ct,g_light_astro_color,g_sunrise_ct) {channel="mqtt:topic:openhab:sz_bed_light_2:ct"}
-Switch sz_bed_light_2_ota "SZ Bed 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_light_2:ota"}
-Number:Dimensionless sz_bed_light_2_link "SZ Bed 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_2:link"}
-Switch sz_bed_light_2_sw "SZ Bed 2" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_2:state"}
-// SZ Decor lamp 1 (0xec1bbdfffe972819)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Dimmer sz_declamp_1_dim "SZ Decor lamp 1 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_1:dim"}
-Dimmer sz_declamp_1_dim_fast "SZ Decor lamp 1 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_declamp_1:dim_fast"}
-Switch sz_declamp_1_ota "SZ Decor lamp 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_1:ota"}
-Number:Dimensionless sz_declamp_1_link "SZ Decor lamp 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_1:link"}
-Switch sz_declamp_1_sw "SZ Decor lamp 1" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_1:state"}
-// SZ Decor lamp 2 (0xec1bbdfffe972203)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Dimmer sz_declamp_2_dim "SZ Decor lamp 2 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_2:dim"}
-Dimmer sz_declamp_2_dim_fast "SZ Decor lamp 2 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_declamp_2:dim_fast"}
-Switch sz_declamp_2_ota "SZ Decor lamp 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_2:ota"}
-Number:Dimensionless sz_declamp_2_link "SZ Decor lamp 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_2:link"}
-Switch sz_declamp_2_sw "SZ Decor lamp 2" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_2:state"}
-// SZ Decor lamp 3 (0xec1bbdfffe91007b)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Dimmer sz_declamp_3_dim "SZ Decor lamp 3 DIM [%d %%]" <light> (g_all_dim,g_light_eg_sz_night_brightness,g_light_eg_sz_decor_brightness) {channel="mqtt:topic:openhab:sz_declamp_3:dim"}
-Dimmer sz_declamp_3_dim_fast "SZ Decor lamp 3 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_declamp_3:dim_fast"}
-Switch sz_declamp_3_ota "SZ Decor lamp 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_declamp_3:ota"}
-Number:Dimensionless sz_declamp_3_link "SZ Decor lamp 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_declamp_3:link"}
-Switch sz_declamp_3_sw "SZ Decor lamp 3" <light> (g_all_sw,g_light_all,g_light_eg,g_light_eg_sz,g_light_eg_sz_night,g_light_eg_sz_decor) {channel="mqtt:topic:openhab:sz_declamp_3:state"}
-// SZ Window 1 (0xa4c13804963f4ccf)
-// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Switch sz_window_1_lowbatt "SZ Window 1 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_window_1:battery_low"}
-Switch sz_window_1_ota "SZ Window 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_window_1:ota"}
-Number:Dimensionless sz_window_1_link "SZ Window 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_window_1:link"}
-DateTime sz_window_1_activity "SZ Window 1 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_window_1:activity"}
-Contact sz_window_1_contact "SZ Window 1 [%s]" <door> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_1:contact"}
-Number:Dimensionless sz_window_1_battery "SZ Window 1  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_window_1:battery"}
 // SZ Bedside drawler (0x287681fffe95cba4)
 // IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
 Dimmer sz_bedside_drawler_light_dim "SZ Bedside drawler DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:dim"}

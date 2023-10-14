@@ -11,12 +11,9 @@ var Timer balkon_light_1_ct_timer
 var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
 var Timer ns_main_light_ct_timer
-var Timer desktop_marina_light_ct_timer
-var Timer fs_main_light_ct_timer
+var Timer wz_main_light_ct_timer
+var Timer wz_color_light_ct_timer
 var Timer sz_main_light_ct_timer
-var Timer sz_color_light_ct_timer
-var Timer sz_bed_light_1_ct_timer
-var Timer sz_bed_light_2_ct_timer
 var Timer sz_bed_light_l_ct_timer
 var Timer sz_bed_light_r_ct_timer
 var Timer treppe_up_light_ct_timer
@@ -119,24 +116,50 @@ then
     ])
 end
 // Device should apply saved color temp when ON
-rule "Marina Desktop light apply color on ON"
+rule "SZ Main apply color on ON"
 when
-    Item desktop_marina_light_sw changed to ON
+    Item wz_main_light_sw changed to ON
 then
-    val ct_set = (desktop_marina_light_ct.state as Number).intValue
-    desktop_marina_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        desktop_marina_light_ct.sendCommand(ct_set)
+    val ct_set = (wz_main_light_ct.state as Number).intValue
+    wz_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        wz_main_light_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON
-rule "FS Main apply color on ON"
+rule "WZ Color Decor apply color on ON"
 when
-    Item fs_main_light_sw changed to ON
+    Item wz_color_light_sw changed to ON
 then
-    val ct_set = (fs_main_light_ct.state as Number).intValue
-    fs_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        fs_main_light_ct.sendCommand(ct_set)
+    val ct_set = (wz_color_light_ct.state as Number).intValue
+    wz_color_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        // Item with RGB: do not reset RGB color while ON
+        if (wz_color_light_color_mode.state == "xy") {
+            return
+        }
+        wz_color_light_ct.sendCommand(ct_set)
     ])
+end
+// Device needs to proxy events from groups, to filter duplicating
+rule "WZ Color Decor proxy state item"
+when
+    Item wz_color_light_sw changed
+then
+    if (wz_color_light_sw_proxy.state != newState) {
+        wz_color_light_sw_proxy.postUpdate(newState)
+    }
+end
+rule "WZ Color Decor proxy state group"
+when
+    Item wz_color_light_sw_proxy received command
+then
+    if (wz_color_light_sw.state != receivedCommand) {
+        wz_color_light_sw.sendCommand(receivedCommand)
+    } else {
+        logWarn("proxy", "Filter state for item wz_color_light")
+        // Send request for status - to ensure we are in sync
+        val mq = getActions("mqtt","mqtt:broker:openhab")
+        mq.publishMQTT("zigbee2mqtt/wz_color_light/get","{\"state\":\"\"}")
+    }
 end
 // Device should apply saved color temp when ON
 rule "SZ Main apply color on ON"
@@ -146,62 +169,6 @@ then
     val ct_set = (sz_main_light_ct.state as Number).intValue
     sz_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
         sz_main_light_ct.sendCommand(ct_set)
-    ])
-end
-// Device should apply saved color temp when ON
-rule "SZ Color Decor apply color on ON"
-when
-    Item sz_color_light_sw changed to ON
-then
-    val ct_set = (sz_color_light_ct.state as Number).intValue
-    sz_color_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        // Item with RGB: do not reset RGB color while ON
-        if (sz_color_light_color_mode.state == "xy") {
-            return
-        }
-        sz_color_light_ct.sendCommand(ct_set)
-    ])
-end
-// Device needs to proxy events from groups, to filter duplicating
-rule "SZ Color Decor proxy state item"
-when
-    Item sz_color_light_sw changed
-then
-    if (sz_color_light_sw_proxy.state != newState) {
-        sz_color_light_sw_proxy.postUpdate(newState)
-    }
-end
-rule "SZ Color Decor proxy state group"
-when
-    Item sz_color_light_sw_proxy received command
-then
-    if (sz_color_light_sw.state != receivedCommand) {
-        sz_color_light_sw.sendCommand(receivedCommand)
-    } else {
-        logWarn("proxy", "Filter state for item sz_color_light")
-        // Send request for status - to ensure we are in sync
-        val mq = getActions("mqtt","mqtt:broker:openhab")
-        mq.publishMQTT("zigbee2mqtt/sz_color_light/get","{\"state\":\"\"}")
-    }
-end
-// Device should apply saved color temp when ON
-rule "SZ Bed 1 apply color on ON"
-when
-    Item sz_bed_light_1_sw changed to ON
-then
-    val ct_set = (sz_bed_light_1_ct.state as Number).intValue
-    sz_bed_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
-        sz_bed_light_1_ct.sendCommand(ct_set)
-    ])
-end
-// Device should apply saved color temp when ON
-rule "SZ Bed 2 apply color on ON"
-when
-    Item sz_bed_light_2_sw changed to ON
-then
-    val ct_set = (sz_bed_light_2_ct.state as Number).intValue
-    sz_bed_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
-        sz_bed_light_2_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON
