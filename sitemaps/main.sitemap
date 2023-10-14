@@ -176,9 +176,9 @@ sitemap main label="MAIN"
 				Switch item=g_blinds_ns_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
             }
             Frame label="Main" {
-                Switch item=ns_main_light_sw label="Main [%s]" icon="light"
-                Slider item=ns_main_light_dim label="Main DIM [%d %%]" icon="light"
-				Slider item=ns_main_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
+                Switch item=ks_up_light_sw label="Main [%s]" icon="light"
+                Slider item=ks_up_light_dim label="Main DIM [%d %%]" icon="light"
+				Slider item=ks_up_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
             Frame label="Curtains" {
                 Switch item=ns_blinds_1_cmd label="Command 1 []" mappings=["open"="☼","stop"="||","close"="☰"]

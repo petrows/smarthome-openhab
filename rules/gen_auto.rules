@@ -10,7 +10,7 @@
 var Timer bk_light_1_ct_timer
 var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
-var Timer ks_main_light_ct_timer
+var Timer ks_up_light_ct_timer
 var Timer wz_main_light_ct_timer
 var Timer wz_color_light_ct_timer
 var Timer sz_main_light_ct_timer
@@ -108,11 +108,11 @@ end
 // Device should apply saved color temp when ON
 rule "KS Main apply color on ON"
 when
-    Item ks_main_light_sw changed to ON
+    Item ks_up_light_sw changed to ON
 then
-    val ct_set = (ks_main_light_ct.state as Number).intValue
-    ks_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        ks_main_light_ct.sendCommand(ct_set)
+    val ct_set = (ks_up_light_ct.state as Number).intValue
+    ks_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        ks_up_light_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON

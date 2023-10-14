@@ -144,11 +144,11 @@ Text item=bz_light_switch_battery
 Frame label="KS Main (0x588e81fffefb217b)" {
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Slider item=ks_main_light_dim
-Slider item=ks_main_light_ct
-Text item=ks_main_light_ota
-Text item=ks_main_light_link
-Switch item=ks_main_light_sw
+Slider item=ks_up_light_dim
+Slider item=ks_up_light_ct
+Text item=ks_up_light_ota
+Text item=ks_up_light_link
+Switch item=ks_up_light_sw
 }
 Frame label="KS Climate (0xa4c1386df39045f6)" {
 // KS Climate (0xa4c1386df39045f6)

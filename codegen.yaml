@@ -138,7 +138,7 @@ devices:
 # THEATER ================================
 
   - name: KS Main
-    id: ks_main_light
+    id: ks_up_light
     zigbee_id: '0x588e81fffefb217b'
     type: LIVARNO_CELLING_14147206L
     groups:
