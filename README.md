@@ -48,6 +48,7 @@ Configuration model.
 
 ## Rooms and places
 
+* ``TR`` - Ladder (german "TReppehaus")
 * ``EG`` - Ground floor
 * ``KS`` - Cinema room (german "KinoSaal")
 * ``BZ`` - Bathroom (german "BadZimmmer")

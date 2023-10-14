@@ -137,8 +137,8 @@ devices:
 
 # THEATER ================================
 
-  - name: NS Main
-    id: ns_main_light
+  - name: KS Main
+    id: ks_main_light
     zigbee_id: '0x588e81fffefb217b'
     type: LIVARNO_CELLING_14147206L
     groups:
@@ -150,13 +150,13 @@ devices:
         - ks_light_ct
         - astro_color_light_ct
 
-  - name: NS Climate
-    id: ns_climate
+  - name: KS Climate
+    id: ks_climate
     zigbee_id: '0xa4c1386df39045f6'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
 
-  - name: NS Night lamp
-    id: ns_night_lamp
+  - name: KS Night lamp
+    id: ks_night_lamp
     zigbee_id: '0x14b457fffe6383e5'
     type: IKEA_TRADFRI_LAMP_COLOR_600
     ct_auto: False # Do not apply CT when ON
@@ -166,24 +166,30 @@ devices:
       - eg_light
       - ks_light
 
-  - name: NS Projector
-    id: ns_projector_power
+  - name: KS Projector
+    id: ks_projector_power
     zigbee_id: '0x7cb03eaa0a094d1d'
     type: OSRAM_SMART_PLUG
-  - name: NS Window 2
-    id: ns_window_2
+
+  - name: KS Window 2
+    id: ks_window_2
     zigbee_id: '0xa4c138f1bf27592c'
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-      - ns_windows
+      - ks_windows
 
-  - name: NS Main remote
-    id: ns_light_switch
+  - name: KS Main remote
+    id: ks_light_switch
     zigbee_id: '0x9035eafffee1ba1d'
     type: IKEA_TRADFRI_STYRBAR
 
 # LIVING ROOM ================================
+
+  - name: WZ Climate
+    id: wz_climate
+    zigbee_id: '0xa4c1386a03a53708'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: Bedroom main remote
     id: wz_remote_main

@@ -62,7 +62,7 @@
 '0x14b457fffe399241':
   friendly_name: bk_light_1
 '0x14b457fffe6383e5':
-  friendly_name: ns_night_lamp
+  friendly_name: ks_night_lamp
 '0x14b457fffe7e2305':
   friendly_name: sz_remote_bed
 '0x287681fffe6f76fd':
@@ -70,7 +70,7 @@
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x588e81fffefb217b':
-  friendly_name: ns_main_light
+  friendly_name: ks_main_light
 '0x588e81fffefe9a05':
   friendly_name: wz_main_light
 '0x680ae2fffe16e111':
@@ -88,7 +88,7 @@
 '0x7cb03eaa0a094bf2':
   friendly_name: bk_christmas_light
 '0x7cb03eaa0a094d1d':
-  friendly_name: ns_projector_power
+  friendly_name: ks_projector_power
 '0x7cb03eaa0a09e7bc':
   friendly_name: backup_ext_power
 '0x7cb03eaa0a0a1103':
@@ -106,7 +106,7 @@
 '0x9035eafffe20e847':
   friendly_name: eg_decoration_light
 '0x9035eafffee1ba1d':
-  friendly_name: ns_light_switch
+  friendly_name: ks_light_switch
   simulated_brightness:
     delta: 5
     interval: 100
@@ -126,8 +126,10 @@
   friendly_name: kg_cabinet_door
 '0xa4c1383cc92cbbd2':
   friendly_name: tr_climate
+'0xa4c1386a03a53708':
+  friendly_name: wz_climate
 '0xa4c1386df39045f6':
-  friendly_name: ns_climate
+  friendly_name: ks_climate
 '0xa4c13878cea182ad':
   friendly_name: ns_blinds
 '0xa4c1389dec8b9204':
@@ -137,7 +139,7 @@
 '0xa4c138a52c4e5c19':
   friendly_name: kg_lager3_door
 '0xa4c138f1bf27592c':
-  friendly_name: ns_window_2
+  friendly_name: ks_window_2
 '0xa4c138f5460e22dd':
   friendly_name: ku_climate
 '0xa4c138fd0fd1c168':

@@ -10,7 +10,7 @@
 var Timer bk_light_1_ct_timer
 var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
-var Timer ns_main_light_ct_timer
+var Timer ks_main_light_ct_timer
 var Timer wz_main_light_ct_timer
 var Timer wz_color_light_ct_timer
 var Timer sz_main_light_ct_timer
@@ -106,13 +106,13 @@ then
     }
 end
 // Device should apply saved color temp when ON
-rule "NS Main apply color on ON"
+rule "KS Main apply color on ON"
 when
-    Item ns_main_light_sw changed to ON
+    Item ks_main_light_sw changed to ON
 then
-    val ct_set = (ns_main_light_ct.state as Number).intValue
-    ns_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        ns_main_light_ct.sendCommand(ct_set)
+    val ct_set = (ks_main_light_ct.state as Number).intValue
+    ks_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        ks_main_light_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON
@@ -209,7 +209,7 @@ then
     val ct_set = (treppe_down_light_ct.state as Number).intValue
     treppe_down_light_ct_timer = createTimer(now.plusSeconds(1), [ |
         // Item with RGB: do not reset RGB color while ON
-        if (tr_down_light_color_mode.state == "xy") {
+        if (treppe_down_light_color_mode.state == "xy") {
             return
         }
         treppe_down_light_ct.sendCommand(ct_set)

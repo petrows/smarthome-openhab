@@ -141,62 +141,73 @@ Text item=bz_light_switch_ota
 Text item=bz_light_switch_link
 Text item=bz_light_switch_battery
 }
-Frame label="NS Main (0x588e81fffefb217b)" {
-// NS Main (0x588e81fffefb217b)
+Frame label="KS Main (0x588e81fffefb217b)" {
+// KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Slider item=ns_main_light_dim
-Slider item=ns_main_light_ct
-Text item=ns_main_light_ota
-Text item=ns_main_light_link
-Switch item=ns_main_light_sw
+Slider item=ks_main_light_dim
+Slider item=ks_main_light_ct
+Text item=ks_main_light_ota
+Text item=ks_main_light_link
+Switch item=ks_main_light_sw
 }
-Frame label="NS Climate (0xa4c1386df39045f6)" {
-// NS Climate (0xa4c1386df39045f6)
+Frame label="KS Climate (0xa4c1386df39045f6)" {
+// KS Climate (0xa4c1386df39045f6)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Text item=ns_climate_lowbatt
-Text item=ns_climate_ota
-Text item=ns_climate_link
-Text item=ns_climate_activity
-Text item=ns_climate_temperature
-Text item=ns_climate_humidity
-Text item=ns_climate_battery
+Text item=ks_climate_lowbatt
+Text item=ks_climate_ota
+Text item=ks_climate_link
+Text item=ks_climate_activity
+Text item=ks_climate_temperature
+Text item=ks_climate_humidity
+Text item=ks_climate_battery
 }
-Frame label="NS Night lamp (0x14b457fffe6383e5)" {
-// NS Night lamp (0x14b457fffe6383e5)
+Frame label="KS Night lamp (0x14b457fffe6383e5)" {
+// KS Night lamp (0x14b457fffe6383e5)
 // TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
-Slider item=ns_night_lamp_dim
-Slider item=ns_night_lamp_ct
-Colorpicker item=ns_night_lamp_color
-Text item=ns_night_lamp_color_mode
-Text item=ns_night_lamp_ota
-Text item=ns_night_lamp_link
-Switch item=ns_night_lamp_sw
+Slider item=ks_night_lamp_dim
+Slider item=ks_night_lamp_ct
+Colorpicker item=ks_night_lamp_color
+Text item=ks_night_lamp_color_mode
+Text item=ks_night_lamp_ota
+Text item=ks_night_lamp_link
+Switch item=ks_night_lamp_sw
 }
-Frame label="NS Projector (0x7cb03eaa0a094d1d)" {
-// NS Projector (0x7cb03eaa0a094d1d)
+Frame label="KS Projector (0x7cb03eaa0a094d1d)" {
+// KS Projector (0x7cb03eaa0a094d1d)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=ns_projector_power_ota
-Text item=ns_projector_power_link
-Switch item=ns_projector_power_sw
+Text item=ks_projector_power_ota
+Text item=ks_projector_power_link
+Switch item=ks_projector_power_sw
 }
-Frame label="NS Window 2 (0xa4c138f1bf27592c)" {
-// NS Window 2 (0xa4c138f1bf27592c)
+Frame label="KS Window 2 (0xa4c138f1bf27592c)" {
+// KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Text item=ns_window_2_lowbatt
-Text item=ns_window_2_ota
-Text item=ns_window_2_link
-Text item=ns_window_2_activity
-Text item=ns_window_2_contact
-Text item=ns_window_2_battery
+Text item=ks_window_2_lowbatt
+Text item=ks_window_2_ota
+Text item=ks_window_2_link
+Text item=ks_window_2_activity
+Text item=ks_window_2_contact
+Text item=ks_window_2_battery
 }
-Frame label="NS Main remote (0x9035eafffee1ba1d)" {
-// NS Main remote (0x9035eafffee1ba1d)
+Frame label="KS Main remote (0x9035eafffee1ba1d)" {
+// KS Main remote (0x9035eafffee1ba1d)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=ns_light_switch_dim
-Text item=ns_light_switch_lowbatt
-Text item=ns_light_switch_ota
-Text item=ns_light_switch_link
-Text item=ns_light_switch_battery
+Text item=ks_light_switch_dim
+Text item=ks_light_switch_lowbatt
+Text item=ks_light_switch_ota
+Text item=ks_light_switch_link
+Text item=ks_light_switch_battery
+}
+Frame label="WZ Climate (0xa4c1386a03a53708)" {
+// WZ Climate (0xa4c1386a03a53708)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
+Text item=wz_climate_lowbatt
+Text item=wz_climate_ota
+Text item=wz_climate_link
+Text item=wz_climate_activity
+Text item=wz_climate_temperature
+Text item=wz_climate_humidity
+Text item=wz_climate_battery
 }
 Frame label="Bedroom main remote (0x003c84fffe16f988)" {
 // Bedroom main remote (0x003c84fffe16f988)
@@ -442,8 +453,8 @@ Frame label="Treppe Down light (0x04cd15fffedb31f7)" {
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Slider item=treppe_down_light_dim
 Slider item=treppe_down_light_ct
-Colorpicker item=tr_down_light_color
-Text item=tr_down_light_color_mode
+Colorpicker item=treppe_down_light_color
+Text item=treppe_down_light_color_mode
 Text item=treppe_down_light_ota
 Text item=treppe_down_light_link
 Switch item=treppe_down_light_sw
@@ -451,12 +462,12 @@ Switch item=treppe_down_light_sw
 Frame label="Treppe motion (0xbc33acfffe872049)" {
 // Treppe motion (0xbc33acfffe872049)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Text item=tr_motion_lowbatt
-Text item=tr_motion_ota
-Text item=tr_motion_link
-Text item=tr_motion_activity
-Text item=tr_motion_occupancy
-Text item=tr_motion_battery
+Text item=treppe_motion_lowbatt
+Text item=treppe_motion_ota
+Text item=treppe_motion_link
+Text item=treppe_motion_activity
+Text item=treppe_motion_occupancy
+Text item=treppe_motion_battery
 }
 Frame label="Treppe climate (0xa4c1383cc92cbbd2)" {
 // Treppe climate (0xa4c1383cc92cbbd2)
