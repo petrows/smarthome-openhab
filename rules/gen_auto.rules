@@ -16,8 +16,8 @@ var Timer wz_color_light_ct_timer
 var Timer sz_main_light_ct_timer
 var Timer sz_bed_light_l_ct_timer
 var Timer sz_bed_light_r_ct_timer
-var Timer treppe_up_light_ct_timer
-var Timer treppe_down_light_ct_timer
+var Timer tr_up_light_ct_timer
+var Timer tr_down_light_ct_timer
 var Timer desktop_petro_up_light_1_ct_timer
 var Timer desktop_petro_up_light_2_ct_timer
 var Timer desktop_petro_up_light_3_ct_timer
@@ -194,47 +194,47 @@ end
 // Device should apply saved color temp when ON
 rule "Treppe Up light apply color on ON"
 when
-    Item treppe_up_light_sw changed to ON
+    Item tr_up_light_sw changed to ON
 then
-    val ct_set = (treppe_up_light_ct.state as Number).intValue
-    treppe_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        treppe_up_light_ct.sendCommand(ct_set)
+    val ct_set = (tr_up_light_ct.state as Number).intValue
+    tr_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        tr_up_light_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON
 rule "Treppe Down light apply color on ON"
 when
-    Item treppe_down_light_sw changed to ON
+    Item tr_down_light_sw changed to ON
 then
-    val ct_set = (treppe_down_light_ct.state as Number).intValue
-    treppe_down_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+    val ct_set = (tr_down_light_ct.state as Number).intValue
+    tr_down_light_ct_timer = createTimer(now.plusSeconds(1), [ |
         // Item with RGB: do not reset RGB color while ON
-        if (treppe_down_light_color_mode.state == "xy") {
+        if (tr_down_light_color_mode.state == "xy") {
             return
         }
-        treppe_down_light_ct.sendCommand(ct_set)
+        tr_down_light_ct.sendCommand(ct_set)
     ])
 end
 // Device needs to proxy events from groups, to filter duplicating
 rule "Treppe Down light proxy state item"
 when
-    Item treppe_down_light_sw changed
+    Item tr_down_light_sw changed
 then
-    if (treppe_down_light_sw_proxy.state != newState) {
-        treppe_down_light_sw_proxy.postUpdate(newState)
+    if (tr_down_light_sw_proxy.state != newState) {
+        tr_down_light_sw_proxy.postUpdate(newState)
     }
 end
 rule "Treppe Down light proxy state group"
 when
-    Item treppe_down_light_sw_proxy received command
+    Item tr_down_light_sw_proxy received command
 then
-    if (treppe_down_light_sw.state != receivedCommand) {
-        treppe_down_light_sw.sendCommand(receivedCommand)
+    if (tr_down_light_sw.state != receivedCommand) {
+        tr_down_light_sw.sendCommand(receivedCommand)
     } else {
-        logWarn("proxy", "Filter state for item treppe_down_light")
+        logWarn("proxy", "Filter state for item tr_down_light")
         // Send request for status - to ensure we are in sync
         val mq = getActions("mqtt","mqtt:broker:openhab")
-        mq.publishMQTT("zigbee2mqtt/treppe_down_light/get","{\"state\":\"\"}")
+        mq.publishMQTT("zigbee2mqtt/tr_down_light/get","{\"state\":\"\"}")
     }
 end
 // Device should apply saved color temp when ON

@@ -342,52 +342,52 @@ Contact ku_window_door_contact "KU Window Door [%s]" <door> (g_all_contact,ku_wi
 Number:Dimensionless ku_window_door_battery "KU Window Door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_window_door:battery"}
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Switch treppe_door_sensor_lowbatt "Treppe Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:treppe_door_sensor:battery_low"}
-Switch treppe_door_sensor_ota "Treppe Door sensor OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_door_sensor:ota"}
-Number:Dimensionless treppe_door_sensor_link "Treppe Door sensor LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_door_sensor:link"}
-DateTime treppe_door_sensor_activity "Treppe Door sensor activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:treppe_door_sensor:activity"}
-Contact treppe_door_sensor_contact "Treppe Door sensor [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:treppe_door_sensor:contact"}
-Number:Dimensionless treppe_door_sensor_battery "Treppe Door sensor  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:treppe_door_sensor:battery"}
+Switch tr_door_sensor_lowbatt "Treppe Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_door_sensor:battery_low"}
+Switch tr_door_sensor_ota "Treppe Door sensor OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:tr_door_sensor:ota"}
+Number:Dimensionless tr_door_sensor_link "Treppe Door sensor LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:tr_door_sensor:link"}
+DateTime tr_door_sensor_activity "Treppe Door sensor activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:tr_door_sensor:activity"}
+Contact tr_door_sensor_contact "Treppe Door sensor [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:tr_door_sensor:contact"}
+Number:Dimensionless tr_door_sensor_battery "Treppe Door sensor  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:tr_door_sensor:battery"}
 // Treppe Up switch (0x680ae2fffe1a92f3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Switch treppe_up_switch_lowbatt "Treppe Up switch BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:treppe_up_switch:battery_low"}
-Switch treppe_up_switch_ota "Treppe Up switch OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_up_switch:ota"}
-Number:Dimensionless treppe_up_switch_link "Treppe Up switch LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_up_switch:link"}
-Number:Dimensionless treppe_up_switch_battery "Treppe Up switch  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:treppe_up_switch:battery"}
+Switch tr_up_switch_lowbatt "Treppe Up switch BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_up_switch:battery_low"}
+Switch tr_up_switch_ota "Treppe Up switch OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:tr_up_switch:ota"}
+Number:Dimensionless tr_up_switch_link "Treppe Up switch LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:tr_up_switch:link"}
+Number:Dimensionless tr_up_switch_battery "Treppe Up switch  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:tr_up_switch:battery"}
 // Treppe Down switch (0x04cd15fffe75c518)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Dimmer treppe_down_switch_dim "Treppe Down switch DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:treppe_down_switch:dim"}
-Switch treppe_down_switch_lowbatt "Treppe Down switch BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:treppe_down_switch:battery_low"}
-Switch treppe_down_switch_ota "Treppe Down switch OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_down_switch:ota"}
-Number:Dimensionless treppe_down_switch_link "Treppe Down switch LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_down_switch:link"}
-Number:Dimensionless treppe_down_switch_battery "Treppe Down switch  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:treppe_down_switch:battery"}
+Dimmer tr_down_switch_dim "Treppe Down switch DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:tr_down_switch:dim"}
+Switch tr_down_switch_lowbatt "Treppe Down switch BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_down_switch:battery_low"}
+Switch tr_down_switch_ota "Treppe Down switch OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:tr_down_switch:ota"}
+Number:Dimensionless tr_down_switch_link "Treppe Down switch LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:tr_down_switch:link"}
+Number:Dimensionless tr_down_switch_battery "Treppe Down switch  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:tr_down_switch:battery"}
 // Treppe Up light (0xd0cf5efffee892b0)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Dimmer treppe_up_light_dim "Treppe Up light DIM [%d %%]" <light> (g_all_dim,tr_light_dim) {channel="mqtt:topic:openhab:treppe_up_light:dim"}
-Dimmer treppe_up_light_dim_fast "Treppe Up light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:treppe_up_light:dim_fast"}
-Dimmer treppe_up_light_ct "Treppe Up light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,tr_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:treppe_up_light:ct"}
-Switch treppe_up_light_ota "Treppe Up light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_up_light:ota"}
-Number:Dimensionless treppe_up_light_link "Treppe Up light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_up_light:link"}
-Switch treppe_up_light_sw "Treppe Up light" <light> (g_all_sw,all_light,tr_light,kg_light,kg_light_auto) {channel="mqtt:topic:openhab:treppe_up_light:state", expire="1h,command=OFF"}
+Dimmer tr_up_light_dim "Treppe Up light DIM [%d %%]" <light> (g_all_dim,tr_light_dim) {channel="mqtt:topic:openhab:tr_up_light:dim"}
+Dimmer tr_up_light_dim_fast "Treppe Up light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:tr_up_light:dim_fast"}
+Dimmer tr_up_light_ct "Treppe Up light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,tr_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:tr_up_light:ct"}
+Switch tr_up_light_ota "Treppe Up light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:tr_up_light:ota"}
+Number:Dimensionless tr_up_light_link "Treppe Up light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:tr_up_light:link"}
+Switch tr_up_light_sw "Treppe Up light" <light> (g_all_sw,all_light,tr_light,kg_light,kg_light_auto) {channel="mqtt:topic:openhab:tr_up_light:state", expire="1h,command=OFF"}
 // Treppe Down light (0x04cd15fffedb31f7)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
-Dimmer treppe_down_light_dim "Treppe Down light DIM [%d %%]" <light> (g_all_dim,tr_light_dim) {channel="mqtt:topic:openhab:treppe_down_light:dim"}
-Dimmer treppe_down_light_dim_fast "Treppe Down light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:treppe_down_light:dim_fast"}
-Dimmer treppe_down_light_ct "Treppe Down light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,tr_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:treppe_down_light:ct"}
-Color treppe_down_light_color "Treppe Down light Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:treppe_down_light:color"}
-String treppe_down_light_color_mode "Treppe Down light Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:treppe_down_light:color_mode"}
-Switch treppe_down_light_ota "Treppe Down light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_down_light:ota"}
-Number:Dimensionless treppe_down_light_link "Treppe Down light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_down_light:link"}
-Switch treppe_down_light_sw_proxy "Treppe Down light proxy" <light> (g_all_sw,all_light,tr_light,kg_light,kg_light_auto)
-Switch treppe_down_light_sw "Treppe Down light" <light> {channel="mqtt:topic:openhab:treppe_down_light:state", expire="1h,command=OFF"}
+Dimmer tr_down_light_dim "Treppe Down light DIM [%d %%]" <light> (g_all_dim,tr_light_dim) {channel="mqtt:topic:openhab:tr_down_light:dim"}
+Dimmer tr_down_light_dim_fast "Treppe Down light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:tr_down_light:dim_fast"}
+Dimmer tr_down_light_ct "Treppe Down light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,tr_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:tr_down_light:ct"}
+Color tr_down_light_color "Treppe Down light Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:tr_down_light:color"}
+String tr_down_light_color_mode "Treppe Down light Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:tr_down_light:color_mode"}
+Switch tr_down_light_ota "Treppe Down light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:tr_down_light:ota"}
+Number:Dimensionless tr_down_light_link "Treppe Down light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:tr_down_light:link"}
+Switch tr_down_light_sw_proxy "Treppe Down light proxy" <light> (g_all_sw,all_light,tr_light,kg_light,kg_light_auto)
+Switch tr_down_light_sw "Treppe Down light" <light> {channel="mqtt:topic:openhab:tr_down_light:state", expire="1h,command=OFF"}
 // Treppe motion (0xbc33acfffe872049)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Switch treppe_motion_lowbatt "Treppe motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:treppe_motion:battery_low"}
-Switch treppe_motion_ota "Treppe motion OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:treppe_motion:ota"}
-Number:Dimensionless treppe_motion_link "Treppe motion LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:treppe_motion:link"}
-DateTime treppe_motion_activity "Treppe motion activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:treppe_motion:activity"}
-Switch treppe_motion_occupancy "Treppe motion [%s]" <motion> (g_all_occupancy) {channel="mqtt:topic:openhab:treppe_motion:occupancy"}
-Number:Dimensionless treppe_motion_battery "Treppe motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:treppe_motion:battery"}
+Switch tr_motion_lowbatt "Treppe motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_motion:battery_low"}
+Switch tr_motion_ota "Treppe motion OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:tr_motion:ota"}
+Number:Dimensionless tr_motion_link "Treppe motion LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:tr_motion:link"}
+DateTime tr_motion_activity "Treppe motion activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:tr_motion:activity"}
+Switch tr_motion_occupancy "Treppe motion [%s]" <motion> (g_all_occupancy) {channel="mqtt:topic:openhab:tr_motion:occupancy"}
+Number:Dimensionless tr_motion_battery "Treppe motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:tr_motion:battery"}
 // Treppe climate (0xa4c1383cc92cbbd2)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch tr_climate_lowbatt "Treppe climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_climate:battery_low"}

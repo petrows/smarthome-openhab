@@ -54,10 +54,10 @@ then
 
     // Set all except treppe oben
     all_light.members.forEach [s |
-        if (s == treppe_up_light_sw) {
+        if (s == tr_up_light_sw) {
             // s.sendCommand(ON)
             // Set Ladder lamp ON and 100%
-            treppe_up_light_dim.sendCommand(100)
+            tr_up_light_dim.sendCommand(100)
         } else {
             s.sendCommand(OFF)
         }
@@ -86,12 +86,12 @@ end
 
 rule "KG Ladder BOTTOM btn"
 when
-    Channel "mqtt:topic:openhab:treppe_down_switch:action" triggered
+    Channel "mqtt:topic:openhab:tr_down_switch:action" triggered
 then
 	var state = receivedEvent
     switch(state) {
         case "on": {
-            treppe_manual_sw.sendCommand(ON)
+            tr_manual_sw.sendCommand(ON)
             tr_light_dim.sendCommand(100)
         }
         case "off": {
@@ -120,7 +120,7 @@ end
 
 rule "KG Ladder UP btn"
 when
-    Channel "mqtt:topic:openhab:treppe_up_switch:action" triggered
+    Channel "mqtt:topic:openhab:tr_up_switch:action" triggered
 then
 	var state = receivedEvent
     switch(state) {
@@ -132,7 +132,7 @@ then
             eg_light.sendCommand(OFF)
         }
         case "brightness_move_up": { // Long press UP
-            treppe_manual_sw.sendCommand(ON)
+            tr_manual_sw.sendCommand(ON)
             tr_light_dim.sendCommand(100)
         }
         case "brightness_move_down": { // Long press DOWN

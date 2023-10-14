@@ -7,7 +7,7 @@ then
     logInfo("light", "KG Motion: " + newState.toString)
     if (newState == OFF) {
         // If light is triggered manually, does not stop it
-        if (treppe_manual_sw.state == ON) {
+        if (tr_manual_sw.state == ON) {
             logWarn("light", "KG Motion treppe OFF ignored by manual override")
         } else {
             sendCommand(tr_light, OFF)

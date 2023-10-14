@@ -414,22 +414,22 @@ devices:
 # TREPPE ================================
 
   - name: Treppe Door sensor
-    id: treppe_door_sensor
+    id: tr_door_sensor
     zigbee_id: '0xccccccfffed82b91'
     type: TUYA_WINDOW_SENSOR
 
   - name: Treppe Up switch
-    id: treppe_up_switch
+    id: tr_up_switch
     zigbee_id: '0x680ae2fffe1a92f3'
     type: IKEA_TRADFRI_ON_OFF
 
   - name: Treppe Down switch
-    id: treppe_down_switch
+    id: tr_down_switch
     zigbee_id: '0x04cd15fffe75c518'
     type: IKEA_TRADFRI_STYRBAR
 
   - name: Treppe Up light
-    id: treppe_up_light
+    id: tr_up_light
     zigbee_id: '0xd0cf5efffee892b0'
     type: IKEA_TRADFRI_LAMP_CT_1000
     expire: 1h
@@ -446,7 +446,7 @@ devices:
       - astro_color_light_ct
 
   - name: Treppe Down light
-    id: treppe_down_light
+    id: tr_down_light
     zigbee_id: '0x04cd15fffedb31f7'
     type: LIVARNO_CELLING
     expire: 1h
@@ -463,7 +463,7 @@ devices:
       - astro_color_light_ct
 
   - name: Treppe motion
-    id: treppe_motion
+    id: tr_motion
     zigbee_id: '0xbc33acfffe872049'
     type: IKEA_TRADFRI_MOTION_SENSOR
 

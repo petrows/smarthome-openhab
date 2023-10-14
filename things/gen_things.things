@@ -504,73 +504,73 @@ Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
 }
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Thing mqtt:topic:openhab:treppe_door_sensor "Treppe Door sensor" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:tr_door_sensor "Treppe Door sensor" (mqtt:broker:openhab) {
 	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_door_sensor", transformationPattern="JS:codegen-activity.js"]
+		Type contact : contact [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="JS:codegen-activity.js"]
 }
 // Treppe Up switch (0x680ae2fffe1a92f3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Thing mqtt:topic:openhab:treppe_up_switch "Treppe Up switch" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:tr_up_switch "Treppe Up switch" (mqtt:broker:openhab) {
 	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/treppe_up_switch", commandTopic="zigbee2mqtt/treppe_up_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/treppe_up_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type string : action [stateTopic="zigbee2mqtt/tr_up_switch", commandTopic="zigbee2mqtt/tr_up_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/tr_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/tr_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/tr_up_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/tr_up_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Treppe Down switch (0x04cd15fffe75c518)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:treppe_down_switch "Treppe Down switch" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:tr_down_switch "Treppe Down switch" (mqtt:broker:openhab) {
 	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/treppe_down_switch", commandTopic="zigbee2mqtt/treppe_down_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/treppe_down_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type string : action [stateTopic="zigbee2mqtt/tr_down_switch", commandTopic="zigbee2mqtt/tr_down_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Treppe Up light (0xd0cf5efffee892b0)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Thing mqtt:topic:openhab:treppe_up_light "Treppe Up light" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:tr_up_light "Treppe Up light" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/treppe_up_light", commandTopic="zigbee2mqtt/treppe_up_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_up_light", commandTopic="zigbee2mqtt/treppe_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/treppe_up_light", commandTopic="zigbee2mqtt/treppe_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/treppe_up_light", commandTopic="zigbee2mqtt/treppe_up_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
-		Type number : link [stateTopic="zigbee2mqtt/treppe_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/treppe_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type switch : state [stateTopic="zigbee2mqtt/tr_up_light", commandTopic="zigbee2mqtt/tr_up_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/tr_up_light", commandTopic="zigbee2mqtt/tr_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/tr_up_light", commandTopic="zigbee2mqtt/tr_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/tr_up_light", commandTopic="zigbee2mqtt/tr_up_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
+		Type number : link [stateTopic="zigbee2mqtt/tr_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/tr_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Treppe Down light (0x04cd15fffedb31f7)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
-Thing mqtt:topic:openhab:treppe_down_light "Treppe Down light" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:tr_down_light "Treppe Down light" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/treppe_down_light", commandTopic="zigbee2mqtt/treppe_down_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/treppe_down_light", commandTopic="zigbee2mqtt/treppe_down_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/treppe_down_light", commandTopic="zigbee2mqtt/treppe_down_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/treppe_down_light", commandTopic="zigbee2mqtt/treppe_down_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
-		Type color : color [commandTopic="zigbee2mqtt/treppe_down_light/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
-		Type string : color_mode [stateTopic="zigbee2mqtt/treppe_down_light", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
-		Type number : link [stateTopic="zigbee2mqtt/treppe_down_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/treppe_down_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type switch : state [stateTopic="zigbee2mqtt/tr_down_light", commandTopic="zigbee2mqtt/tr_down_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/tr_down_light", commandTopic="zigbee2mqtt/tr_down_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/tr_down_light", commandTopic="zigbee2mqtt/tr_down_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/tr_down_light", commandTopic="zigbee2mqtt/tr_down_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
+		Type color : color [commandTopic="zigbee2mqtt/tr_down_light/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
+		Type string : color_mode [stateTopic="zigbee2mqtt/tr_down_light", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
+		Type number : link [stateTopic="zigbee2mqtt/tr_down_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/tr_down_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Treppe motion (0xbc33acfffe872049)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Thing mqtt:topic:openhab:treppe_motion "Treppe motion" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:tr_motion "Treppe motion" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : occupancy [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy", on="true", off="false"]
-		Type number : battery [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/treppe_motion", transformationPattern="JS:codegen-activity.js"]
+		Type switch : occupancy [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy", on="true", off="false"]
+		Type number : battery [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="JS:codegen-activity.js"]
 }
 // Treppe climate (0xa4c1383cc92cbbd2)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html

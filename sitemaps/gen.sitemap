@@ -415,59 +415,59 @@ Text item=ku_window_door_battery
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
-Text item=treppe_door_sensor_lowbatt
-Text item=treppe_door_sensor_ota
-Text item=treppe_door_sensor_link
-Text item=treppe_door_sensor_activity
-Text item=treppe_door_sensor_contact
-Text item=treppe_door_sensor_battery
+Text item=tr_door_sensor_lowbatt
+Text item=tr_door_sensor_ota
+Text item=tr_door_sensor_link
+Text item=tr_door_sensor_activity
+Text item=tr_door_sensor_contact
+Text item=tr_door_sensor_battery
 }
 Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
 // Treppe Up switch (0x680ae2fffe1a92f3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Text item=treppe_up_switch_lowbatt
-Text item=treppe_up_switch_ota
-Text item=treppe_up_switch_link
-Text item=treppe_up_switch_battery
+Text item=tr_up_switch_lowbatt
+Text item=tr_up_switch_ota
+Text item=tr_up_switch_link
+Text item=tr_up_switch_battery
 }
 Frame label="Treppe Down switch (0x04cd15fffe75c518)" {
 // Treppe Down switch (0x04cd15fffe75c518)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=treppe_down_switch_dim
-Text item=treppe_down_switch_lowbatt
-Text item=treppe_down_switch_ota
-Text item=treppe_down_switch_link
-Text item=treppe_down_switch_battery
+Text item=tr_down_switch_dim
+Text item=tr_down_switch_lowbatt
+Text item=tr_down_switch_ota
+Text item=tr_down_switch_link
+Text item=tr_down_switch_battery
 }
 Frame label="Treppe Up light (0xd0cf5efffee892b0)" {
 // Treppe Up light (0xd0cf5efffee892b0)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Slider item=treppe_up_light_dim
-Slider item=treppe_up_light_ct
-Text item=treppe_up_light_ota
-Text item=treppe_up_light_link
-Switch item=treppe_up_light_sw
+Slider item=tr_up_light_dim
+Slider item=tr_up_light_ct
+Text item=tr_up_light_ota
+Text item=tr_up_light_link
+Switch item=tr_up_light_sw
 }
 Frame label="Treppe Down light (0x04cd15fffedb31f7)" {
 // Treppe Down light (0x04cd15fffedb31f7)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
-Slider item=treppe_down_light_dim
-Slider item=treppe_down_light_ct
-Colorpicker item=treppe_down_light_color
-Text item=treppe_down_light_color_mode
-Text item=treppe_down_light_ota
-Text item=treppe_down_light_link
-Switch item=treppe_down_light_sw
+Slider item=tr_down_light_dim
+Slider item=tr_down_light_ct
+Colorpicker item=tr_down_light_color
+Text item=tr_down_light_color_mode
+Text item=tr_down_light_ota
+Text item=tr_down_light_link
+Switch item=tr_down_light_sw
 }
 Frame label="Treppe motion (0xbc33acfffe872049)" {
 // Treppe motion (0xbc33acfffe872049)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Text item=treppe_motion_lowbatt
-Text item=treppe_motion_ota
-Text item=treppe_motion_link
-Text item=treppe_motion_activity
-Text item=treppe_motion_occupancy
-Text item=treppe_motion_battery
+Text item=tr_motion_lowbatt
+Text item=tr_motion_ota
+Text item=tr_motion_link
+Text item=tr_motion_activity
+Text item=tr_motion_occupancy
+Text item=tr_motion_battery
 }
 Frame label="Treppe climate (0xa4c1383cc92cbbd2)" {
 // Treppe climate (0xa4c1383cc92cbbd2)

@@ -65,7 +65,7 @@ Group:Dimmer:AVG kg_light_desktop_dim
 Group:Dimmer:AVG kg_light_desktop_color
 
 // Switches to control: manual override for auto light
-Switch treppe_manual_sw "KG Treppe manual SW" <light> { expire="3h,command=OFF" }
+Switch tr_manual_sw "KG Treppe manual SW" <light> { expire="3h,command=OFF" }
 Switch kg_lager4_manual_sw "KG Lager 4 manual SW" <light> { expire="3h,command=OFF" }
 
 // Switch to debounce BZ
