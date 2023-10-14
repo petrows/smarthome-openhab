@@ -36,7 +36,7 @@ then
     light_astrocolor_enabled.sendCommand(ON)
 
     astro_color_value.sendCommand(astrocolorDaylight) // Default color value for DAY
-    g_light_astro_color.sendCommand(astrocolorDaylight) // Default color value for DAY
+    astro_color_light_ct.sendCommand(astrocolorDaylight) // Default color value for DAY
 end
 
 rule "Astrocolor: Set lamps color according to daytime"
@@ -89,7 +89,7 @@ then
     // Current value
     val ct = newState as Number
     // Iterate group and find devices with color mode == OFF (skip RGB lamps to change)
-    g_light_astro_color.members.forEach [itm |
+    astro_color_light_ct.members.forEach [itm |
         // Check that item satellite 'color_mode' exists
         val itm_name = transform("REGEX", "(.*)_ct", itm.name.toString)
         val itm_value = itm.state as Number

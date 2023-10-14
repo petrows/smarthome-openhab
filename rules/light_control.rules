@@ -152,7 +152,7 @@ end
 
 rule "KG Treppe light changed"
 when
-    Item g_light_treppe changed
+    Item tr_light changed
 then
     // If KG Treppe light is OFF -> Stop manual override (if active)
     if (newState == OFF) {

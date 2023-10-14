@@ -10,7 +10,7 @@ then
         if (treppe_manual_sw.state == ON) {
             logWarn("light", "KG Motion treppe OFF ignored by manual override")
         } else {
-            sendCommand(g_light_treppe, OFF)
+            sendCommand(tr_light, OFF)
         }
         // Switch off decor ligts - only if brightness is 15
         if (Math::round(Float::parseFloat(ku_light_table_dim.state.toString)) == 15) {
@@ -22,9 +22,9 @@ then
         return
     }
     if (newState == ON) {
-        if (g_light_treppe.state == OFF) {
-            sendCommand(g_light_treppe, ON)
-            sendCommand(g_dim_treppe, 1)
+        if (tr_light.state == OFF) {
+            sendCommand(tr_light, ON)
+            sendCommand(tr_light_dim, 1)
         }
         // At night -> turn on some EG
         if (astro_sun_up_5.state == OFF) {

@@ -142,10 +142,10 @@ sitemap main label="MAIN"
                 Switch item=bz_mirror label="Mirror" icon="light"
             }
             Frame {
-			    Switch item=bz_main_light label="Main" icon="light"
+			    Switch item=bz_up_light label="Main" icon="light"
                 Slider item=g_light_bz_dim label="Main DIM [%d %%]" icon="light"
-                Slider item=g_light_bz_ct label="Main CT [JS(codegen-mired.js):%s]"
-                Colorpicker item=g_light_bz_color label="Main Color []" icon="colorpicker"
+                Slider item=bz_light_ct label="Main CT [JS(codegen-mired.js):%s]"
+                Colorpicker item=bz_light_color label="Main Color []" icon="colorpicker"
             }
             Frame {
 			    Switch item=bz_light_1_sw label="Main toilet" icon="light"
@@ -245,9 +245,9 @@ sitemap main label="MAIN"
 		}
 		Group item=kg_light label="KG [%s]" icon="light" {
 			Frame label="Ladder" {
-				Switch item=g_light_treppe label="Ladder [%s]" icon="light"
-				Slider item=g_dim_treppe label="Ladder DIM [%d %%]" icon="light"
-				Slider item=g_ct_treppe label="Ladder CT [JS(codegen-mired.js):%s]" icon="colorwheel"
+				Switch item=tr_light label="Ladder [%s]" icon="light"
+				Slider item=tr_light_dim label="Ladder DIM [%d %%]" icon="light"
+				Slider item=tr_light_ct label="Ladder CT [JS(codegen-mired.js):%s]" icon="colorwheel"
                 Colorpicker item=treppe_down_light_color label="Down light []" icon="colorpicker"
 				Text item=treppe_motion_occupancy label="Motion Ladder [%s]"
 			}
@@ -433,7 +433,7 @@ sitemap main label="MAIN"
 			Frame label="Light" {
 				Switch	item=light_sunrise_enabled
 				Switch	item=light_astrocolor_enabled
-				Slider	item=g_light_astro_color
+				Slider	item=astro_color_light_ct
                 Switch  item=cfg_christmas_lights_enable
                 Text  item=astro_sun_up_5
                 Text  item=astro_sun_up_0

@@ -81,16 +81,16 @@ devices:
       - all_light
       - eg_light
       - bz_light
-      - bz_main_light
+      - bz_up_light
       dim:
       - g_light_bz_dim
       dim_fast:
       - g_light_bz_dim_fast
       ct:
-      - g_light_astro_color
-      - g_light_bz_ct
+      - astro_color_light_ct
+      - bz_light_ct
       color:
-      - g_light_bz_color
+      - bz_light_color
 
   - name: BZ Light (shower)
     id: bz_light_2
@@ -101,16 +101,16 @@ devices:
       - all_light
       - eg_light
       - bz_light
-      - bz_main_light
+      - bz_up_light
       dim:
       - g_light_bz_dim
       dim_fast:
       - g_light_bz_dim_fast
       ct:
-      - g_light_astro_color
-      - g_light_bz_ct
+      - astro_color_light_ct
+      - bz_light_ct
       color:
-      - g_light_bz_color
+      - bz_light_color
 
   - name: BZ Mirror
     id: bz_mirror
@@ -148,7 +148,7 @@ devices:
         - ks_light
       ct:
         - ks_light_ct
-        - g_light_astro_color
+        - astro_color_light_ct
 
   - name: NS Climate
     id: ns_climate
@@ -198,10 +198,10 @@ devices:
       sw:
         - all_light
         - eg_light
-        - g_light_wz
+        - wz_light
       ct:
-        - g_light_wz_ct
-        - g_light_astro_color
+        - wz_light_ct
+        - astro_color_light_ct
 
 # Light in torsher
   - name: WZ Color Decor
@@ -212,7 +212,7 @@ devices:
       sw:
         - all_light
         - eg_light
-        - g_light_wz
+        - wz_light
 
 # Lights behind window
   - name: WZ Decor lamp 1
@@ -224,10 +224,10 @@ devices:
       sw:
         - all_light
         - eg_light
-        - g_light_wz
-        - g_light_wz_decor
+        - wz_light
+        - wz_light_decor
       dim:
-        - g_light_wz_decor_brightness
+        - wz_light_decor_brightness
 
   - name: WZ Decor lamp 2
     id: wz_declamp_2
@@ -238,10 +238,10 @@ devices:
       sw:
         - all_light
         - eg_light
-        - g_light_wz
-        - g_light_wz_decor
+        - wz_light
+        - wz_light_decor
       dim:
-        - g_light_wz_decor_brightness
+        - wz_light_decor_brightness
 
   - name: WZ Decor lamp 3
     id: wz_declamp_3
@@ -252,10 +252,10 @@ devices:
       sw:
         - all_light
         - eg_light
-        - g_light_wz
-        - g_light_wz_decor
+        - wz_light
+        - wz_light_decor
       dim:
-        - g_light_wz_decor_brightness
+        - wz_light_decor_brightness
 
   - name: WZ Window 1
     id: wz_window_1
@@ -280,9 +280,9 @@ devices:
       sw:
         - all_light
         - eg_light
-        - g_light_sz
+        - sz_light
       ct:
-        - g_light_astro_color
+        - astro_color_light_ct
 
   - name: FS Main remote
     id: sz_remote_main
@@ -351,7 +351,7 @@ devices:
       - all_light
       - eg_light
       - ku_light
-      - ku_light_main
+      - ku_up_light
 
   - name: KU Light Table SW
     id: ku_light_table_switch
@@ -385,7 +385,7 @@ devices:
           - all_light
           - eg_light
           - ku_light
-          - ku_light_main
+          - ku_up_light
       l2:
         id: ku_light_switch_arbeit
         name: KU Light Arbeit (Wall SW)
@@ -395,7 +395,7 @@ devices:
           - all_light
           - eg_light
           - ku_light
-          - ku_light_main
+          - ku_up_light
 
   - name: KU Window Door
     id: ku_window_door
@@ -430,14 +430,14 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_treppe
+      - tr_light
       - kg_light
       - kg_light_auto
       dim:
-      - g_dim_treppe
+      - tr_light_dim
       ct:
-      - g_ct_treppe
-      - g_light_astro_color
+      - tr_light_ct
+      - astro_color_light_ct
 
   - name: Treppe Down light
     id: treppe_down_light
@@ -447,14 +447,14 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_treppe
+      - tr_light
       - kg_light
       - kg_light_auto
       dim:
-      - g_dim_treppe
+      - tr_light_dim
       ct:
-      - g_ct_treppe
-      - g_light_astro_color
+      - tr_light_ct
+      - astro_color_light_ct
 
   - name: Treppe motion
     id: treppe_motion
@@ -509,7 +509,7 @@ devices:
       - kg_light_hobbyraum
       - kg_light_desktop
       ct:
-      - g_light_astro_color
+      - astro_color_light_ct
       - kg_light_desktop_color
       dim:
       - kg_light_desktop_dim
@@ -526,7 +526,7 @@ devices:
       - kg_light_hobbyraum
       - kg_light_desktop
       ct:
-      - g_light_astro_color
+      - astro_color_light_ct
       - kg_light_desktop_color
       dim:
       - kg_light_desktop_dim
@@ -543,7 +543,7 @@ devices:
       - kg_light_hobbyraum
       - kg_light_desktop
       ct:
-      - g_light_astro_color
+      - astro_color_light_ct
       - kg_light_desktop_color
       dim:
       - kg_light_desktop_dim
@@ -559,7 +559,7 @@ devices:
       - kg_light
       - kg_light_hobbyraum
       ct:
-      - g_light_astro_color
+      - astro_color_light_ct
 
   - name: Petro Desktop PC
     id: desktop_petro_pc_power
