@@ -109,7 +109,7 @@ sitemap main label="MAIN"
 	}
 
 	Frame {
-		Switch item=light_all_mode label="All" icon="light" mappings=["ON"="ON","N"="NIGHT", OFF="OFF"]
+		Switch item=all_light_mode label="All" icon="light" mappings=["ON"="ON","N"="NIGHT", OFF="OFF"]
 		Switch item=g_light_eg label="EG" icon="light" mappings=[ON="ON", OFF="OFF"]
 		Switch item=g_light_kg label="KG" icon="light" mappings=[ON="ON", OFF="OFF"]
         Switch item=g_light_christmas label="Christmas []" icon="light" mappings=[ON="ON", OFF="OFF"]
@@ -127,7 +127,7 @@ sitemap main label="MAIN"
             Slider item=balkon_light_ct label="Main CT [JS(codegen-mired.js):%s]"
             Switch item=balkon_christmas_light_sw label="Christmas [%s]" icon="light"
 		}
-		Group item=g_light_eg_flur label="Corridor [%s]" icon="light" {
+		Group item=fl_light label="Corridor [%s]" icon="light" {
 			Switch item=eg_flur_light_sw label="Main [%s]" icon="light"
 			Slider item=eg_flur_light_dim label="Main DIM [%d %%]" icon="light"
 			Switch item=eg_decoration_light_sw label="Decor [%s]" icon="light"
@@ -136,9 +136,9 @@ sitemap main label="MAIN"
 			Slider item=snf_eg_fl_spiegel_brightness label="Mirror DIM [%d %%]" icon="light"
 			Text item=eg_main_door_contact label="Main door [%s]"
 		}
-		Group item=g_light_eg_bz label="WC [%s]" icon="light" {
+		Group item=bz_light label="WC [%s]" icon="light" {
             Frame {
-			    Switch item=g_light_eg_bz label="All" icon="light"
+			    Switch item=bz_light label="All" icon="light"
                 Switch item=bz_mirror label="Mirror" icon="light"
             }
             Frame {
@@ -154,9 +154,9 @@ sitemap main label="MAIN"
                 Colorpicker item=bz_light_2_color label="Main shower []" icon="colorpicker"
             }
 		}
-		Group item=g_light_eg_ku label="Kitchen [%s]" icon="light" {
+		Group item=ku_light label="Kitchen [%s]" icon="light" {
             Frame {
-				Switch item=g_light_eg_ku label="All [%s]" icon="light"
+				Switch item=ku_light label="All [%s]" icon="light"
             }
             Frame {
                 Switch item=ku_light_switch_haupt_sw label="Main" icon="light"
@@ -227,9 +227,9 @@ sitemap main label="MAIN"
                 Switch item=fs_christmas_light_sw label="Christmas [%s]" icon="light"
             }
 		}
-        Group item=g_light_eg_sz label="Sleep [%s]" icon="light" {
+        Group item=sz_light label="Sleep [%s]" icon="light" {
 			Frame {
-				Switch item=g_light_eg_sz label="All [%s]" icon="light"
+				Switch item=sz_light label="All [%s]" icon="light"
             }
             Frame label="Bed" {
 				Switch item=sz_bed_light_l_sw label="Bed L [%s]" icon="light"
@@ -240,9 +240,9 @@ sitemap main label="MAIN"
                 Slider item=sz_bed_light_r_ct label="Bed R CT [JS(codegen-mired.js):%s]" icon="light"
 			}
         }
-		Group item=g_light_eg_sz label="Sleep (old) [%s]" icon="light" {
+		Group item=sz_light label="Sleep (old) [%s]" icon="light" {
 			Frame {
-				Switch item=g_light_eg_sz label="All [%s]" icon="light"
+				Switch item=sz_light label="All [%s]" icon="light"
             }
             Frame label="Main" {
 				Switch item=sz_main_light_sw label="Main [%s]" icon="light"
@@ -262,8 +262,8 @@ sitemap main label="MAIN"
                 Slider item=g_light_sz_bed_ct label="Bed CT [JS(codegen-mired.js):%s]" icon="light"
 			}
 			Frame label="Room decor" {
-                Switch item=g_light_eg_sz_decor label="Room light [%s]" icon="light"
-                Slider item=g_light_eg_sz_decor_brightness label="Room light DIM [%d %%]" icon="light"
+                Switch item=sz_light_decor label="Room light [%s]" icon="light"
+                Slider item=sz_light_decor_brightness label="Room light DIM [%d %%]" icon="light"
             }
             Frame label="RGB decor" {
                 Switch item=sz_color_light_sw label="RGB [%s]" icon="light"

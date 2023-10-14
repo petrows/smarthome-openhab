@@ -13,13 +13,13 @@ when
 then
     if (astro_sun_up_5.state == OFF) {
         if (
-            g_light_eg_ku.state == OFF
-            && g_light_eg_flur.state == OFF
-            && g_light_eg_bz.state == OFF
+            ku_light.state == OFF
+            && fl_light.state == OFF
+            && bz_light.state == OFF
         ) {
             if (astro_sun_up_5.state == OFF) {
-                sendCommand(g_light_eg_auto, ON)
-                sendCommand(g_dim_eg_auto, 30)
+                sendCommand(eg_light_auto, ON)
+                sendCommand(eg_light_auto_dim, 30)
             }
         }
     }

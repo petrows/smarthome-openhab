@@ -11,14 +11,14 @@ devices:
     type: XIAOMI_AQARA_V1
     groups:
       sw:
-      - g_light_all
+      - all_light
   - name: Balkon light 1
     id: balkon_light_1
     zigbee_id: '0x14b457fffe399241'
     type: IKEA_TRADFRI_LAMP_CT_1000
     groups:
       sw:
-      - g_light_all
+      - all_light
       - balkon_light
       dim:
       - balkon_light_dim
@@ -49,9 +49,9 @@ devices:
     type: TUYA_WALL_DIMMER
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_eg
-      - g_light_eg_flur
+      - fl_light
 
   - name: EG Decor light
     id: eg_decoration_light
@@ -59,11 +59,11 @@ devices:
     type: IKEA_TRADFRI_LAMP_W_250
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_eg
-      - g_light_eg_auto
+      - eg_light_auto
       dim:
-      - g_dim_eg_auto
+      - eg_light_auto_dim
 
   - name: Entrance Door sensor
     id: eg_main_door
@@ -78,9 +78,9 @@ devices:
     type: LIVARNO_CELLING
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_eg
-      - g_light_eg_bz
+      - bz_light
       - bz_main_light
       dim:
       - g_light_bz_dim
@@ -98,9 +98,9 @@ devices:
     type: LIVARNO_CELLING
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_eg
-      - g_light_eg_bz
+      - bz_light
       - bz_main_light
       dim:
       - g_light_bz_dim
@@ -121,9 +121,9 @@ devices:
         name: BZ Mirror
         groups:
           sw:
-          - g_light_all
+          - all_light
           - g_light_eg
-          - g_light_eg_bz
+          - bz_light
 
   - name: BZ Mirror switch
     id: bz_mirror_switch
@@ -143,7 +143,7 @@ devices:
     type: LIVARNO_CELLING_14147206L
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
         - g_light_eg_ns
       ct:
@@ -162,7 +162,7 @@ devices:
     ct_auto: False # Do not apply CT when ON
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_eg
       - g_light_eg_ns
 
@@ -196,7 +196,7 @@ devices:
     type: LIVARNO_CELLING_14147206L
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
         - g_light_wz
       ct:
@@ -210,7 +210,7 @@ devices:
     type: LIVARNO_RGB_HG07834B
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
         - g_light_wz
 
@@ -222,7 +222,7 @@ devices:
     transition_brightness: 3
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
         - g_light_wz
         - g_light_wz_decor
@@ -236,7 +236,7 @@ devices:
     transition_brightness: 3
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
         - g_light_wz
         - g_light_wz_decor
@@ -250,7 +250,7 @@ devices:
     transition_brightness: 3
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
         - g_light_wz
         - g_light_wz_decor
@@ -278,7 +278,7 @@ devices:
     type: LIVARNO_CELLING_14147206L
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
         - g_light_sz
       ct:
@@ -310,9 +310,9 @@ devices:
     type: IKEA_TRADFRI_LAMP_LED2101G4
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
-        - g_light_eg_sz
+        - sz_light
 
   - name: SZ Bed R
     id: sz_bed_light_r
@@ -320,9 +320,9 @@ devices:
     type: IKEA_TRADFRI_LAMP_LED2101G4
     groups:
       sw:
-        - g_light_all
+        - all_light
         - g_light_eg
-        - g_light_eg_sz
+        - sz_light
 
 # KITCHEN ================================
 
@@ -348,10 +348,10 @@ devices:
     expire: 3h
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_eg
-      - g_light_eg_ku
-      - g_light_eg_ku_main
+      - ku_light
+      - ku_light_main
 
   - name: KU Light Table SW
     id: ku_light_table_switch
@@ -365,12 +365,12 @@ devices:
     transition_brightness: 3
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_eg
-      - g_light_eg_ku
-      - g_light_eg_auto
+      - ku_light
+      - eg_light_auto
       dim:
-      - g_dim_eg_auto
+      - eg_light_auto_dim
 
   - name: KU Light SW
     id: ku_light_switch
@@ -382,20 +382,20 @@ devices:
         name: KU Light Haupt (Wall SW)
         groups:
           sw:
-          - g_light_all
+          - all_light
           - g_light_eg
-          - g_light_eg_ku
-          - g_light_eg_ku_main
+          - ku_light
+          - ku_light_main
       l2:
         id: ku_light_switch_arbeit
         name: KU Light Arbeit (Wall SW)
         expire: 3h
         groups:
           sw:
-          - g_light_all
+          - all_light
           - g_light_eg
-          - g_light_eg_ku
-          - g_light_eg_ku_main
+          - ku_light
+          - ku_light_main
 
   - name: KU Window Door
     id: ku_window_door
@@ -429,7 +429,7 @@ devices:
     expire: 1h
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_treppe
       - g_light_kg
       - g_light_kg_auto
@@ -446,7 +446,7 @@ devices:
     expire: 1h
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_treppe
       - g_light_kg
       - g_light_kg_auto
@@ -504,7 +504,7 @@ devices:
     transition_brightness: 3
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_kg
       - g_light_kg_hobbyraum
       - g_light_kg_desktop
@@ -521,7 +521,7 @@ devices:
     transition_brightness: 3
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_kg
       - g_light_kg_hobbyraum
       - g_light_kg_desktop
@@ -538,7 +538,7 @@ devices:
     transition_brightness: 3
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_kg
       - g_light_kg_hobbyraum
       - g_light_kg_desktop
@@ -555,7 +555,7 @@ devices:
     transition_brightness: 3
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_kg
       - g_light_kg_hobbyraum
       ct:
@@ -580,7 +580,7 @@ devices:
     type: OSRAM_SMART_PLUG
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_kg
       - g_light_kg_hobbyraum
 
@@ -593,7 +593,7 @@ devices:
         name: "KG Hobbyraum (Workshop)"
         groups:
           sw:
-            - g_light_all
+            - all_light
             - g_light_kg
             - g_light_kg_hobbyraum
             - g_light_kg_auto
@@ -607,7 +607,7 @@ devices:
         name: KG Hobbyraum (Haupt)
         groups:
           sw:
-            - g_light_all
+            - all_light
             - g_light_kg
             - g_light_kg_hobbyraum
 
@@ -621,7 +621,7 @@ devices:
         expire: 1h
         groups:
           sw:
-            - g_light_all
+            - all_light
             - g_light_kg
 
   - name: Garden water
@@ -648,7 +648,7 @@ devices:
         expire: 1h
         groups:
           sw:
-            - g_light_all
+            - all_light
             - g_light_kg
 
   - name: KG Lager 3 Climate
@@ -676,7 +676,7 @@ devices:
         expire: 1h
         groups:
           sw:
-            - g_light_all
+            - all_light
             - g_light_kg
 
   - name: KG Lager 4 (Haupt)
@@ -689,7 +689,7 @@ devices:
         expire: 1h
         groups:
           sw:
-            - g_light_all
+            - all_light
             - g_light_kg
 
   - name: KG Lager 4 (1)
@@ -699,7 +699,7 @@ devices:
     expire: 1h
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_kg
       - g_light_lager_auto
       dim:
@@ -712,7 +712,7 @@ devices:
     expire: 1h
     groups:
       sw:
-      - g_light_all
+      - all_light
       - g_light_kg
       - g_light_lager_auto
       dim:

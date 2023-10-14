@@ -24,21 +24,6 @@ Network controlled by [Electrolama zig-a-zig-ah! (zzh!)](https://www.zigbee2mqtt
 
 ![Electrolama zig-a-zig-ah! (zzh!)](docs/zzh-pcba-green.jpg)
 
-### Sensors
-
-* Xiaomi Aquara sensors (1st and 2nd gen)
-* Aquara water leak sensor
-* IKEA TRADFRI motion sensor (E1525/E1745)
-
-### Devices
-
-* IKEA TRADFRI ON/OFF switch (E1743)
-* IKEA TRADFRI remote control (E1524/E1810)
-* IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9)
-* IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9)
-* TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11)
-* IKEA TRADFRI LED bulb E27 WW clear 250 lumen,dimmable (LED1842G3)
-
 # 3rd party software
 
 ## Dark sky weather animated icons
@@ -56,3 +41,26 @@ Send command to device via CLI
 docker exec -it  Openhab /openhab/runtime/bin/client
 openhab:send g_zigbee_ota OFF
 ```
+
+# Code model
+
+Configuration model.
+
+## Rooms and places
+
+* ``EG`` - Ground floor
+* ``KS`` - Cinema room (german "KinoSaal")
+* ``BZ`` - Bathroom (german "BadZimmmer")
+* ``KU`` - Kitchen (german "KUeche")
+* ``WZ`` - Living room (german "WohnZimmer")
+* ``SZ`` - Bedroom (german "SchlafZimmer")
+* ``KG`` - Underground floor
+
+## Naming
+
+Items, groups: ``<location>[_<sub-location>]_<type>``:
+
+* ``sz_bed_light``
+* ``eg_light``
+* ``wz_main_remote``
+* ``wz_climate``

@@ -30,12 +30,12 @@ then
         if (astro_sun_up_5.state == OFF) {
             // If no light at flur or toilet or kitchen -> turn on some
             if (
-                   g_light_eg_ku.state == OFF
-                && g_light_eg_flur.state == OFF
-                && g_light_eg_bz.state == OFF
+                   ku_light.state == OFF
+                && fl_light.state == OFF
+                && bz_light.state == OFF
             ) {
-                sendCommand(g_light_eg_auto, ON)
-                sendCommand(g_dim_eg_auto, 15)
+                sendCommand(eg_light_auto, ON)
+                sendCommand(eg_light_auto_dim, 15)
             }
         }
     }

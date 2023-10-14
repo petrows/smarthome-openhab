@@ -6,17 +6,17 @@ var Boolean in_bz_rule = false
 
 rule "Ligth master mode"
 when
-    Item light_all_mode received command
+    Item all_light_mode received command
 then
     switch (receivedCommand) {
         case "ON": {
-            g_light_all.sendCommand(ON)
+            all_light.sendCommand(ON)
         }
         case "OFF": {
-            g_light_all.sendCommand(OFF)
+            all_light.sendCommand(OFF)
         }
         case "N": {
-            g_light_all.members.forEach [s |
+            all_light.members.forEach [s |
                 if (s != sz_declamp_1_sw) {
                     s.sendCommand(OFF)
                 }
@@ -28,26 +28,26 @@ end
 
 rule "Ligth master mode status"
 when
-    Item g_light_all received update
+    Item all_light received update
 then
-    switch (g_light_all.state) {
+    switch (all_light.state) {
         case OFF: {
-            light_all_mode.postUpdate("OFF")
+            all_light_mode.postUpdate("OFF")
         }
         case ON: {
             nachtModeTest = true
 
             // Check if any light is ON and NOT in night group -> no night mode
-            g_light_all.members.forEach [s |
-                if (s.state == ON && !s.getGroupNames.contains("g_light_eg_sz_night")) {
+            all_light.members.forEach [s |
+                if (s.state == ON && !s.getGroupNames.contains("sz_light_night")) {
                     nachtModeTest = false
                 }
             ]
 
             if (nachtModeTest) {
-                light_all_mode.postUpdate("N")
+                all_light_mode.postUpdate("N")
             } else {
-                light_all_mode.postUpdate("ON")
+                all_light_mode.postUpdate("ON")
             }
         }
     }
@@ -71,7 +71,7 @@ when
 then
 	logWarn("light", "Set safe off")
 
-	g_light_all.sendCommand(OFF)
+	all_light.sendCommand(OFF)
 
     // Stop decorative lights
     if (cfg_christmas_lights_enable.state == ON) {

@@ -23,7 +23,7 @@ then
 
     // Turn OFF light except Kino
     mq.publishMQTT("zigbee2mqtt/ns_night_lamp/set","{\"brightness\":0, \"transition\": 20}")
-    g_light_all.members.forEach [s |
+    all_light.members.forEach [s |
         if (s == ns_night_lamp_sw) {
             // ns_night_lamp_dim.sendCommand(1)
         } else {
@@ -33,7 +33,7 @@ then
 
     // When all ON, we can finally turn off all lights
     Thread::sleep(21000)
-    g_light_all.sendCommand(OFF)
+    all_light.sendCommand(OFF)
 end
 
 rule "Cinema OFF"

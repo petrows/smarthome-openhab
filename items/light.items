@@ -1,5 +1,5 @@
 
-Group:Switch:OR(ON, OFF) g_light_all
+Group:Switch:OR(ON, OFF) all_light
 Group:Switch:OR(ON, OFF) g_light_eg
 
 // Balkon light
@@ -7,20 +7,18 @@ Group:Switch:OR(ON, OFF) balkon_light "Balkon light [%s]" <light>
 Group:Dimmer:MAX balkon_light_dim "Balkon DIM [%d %%]" <light>
 Group:Dimmer:MAX balkon_light_ct "Balkon CT [%d %%]" <light>
 
-Group:Switch:OR(ON, OFF) g_light_eg_flur <light>
-Group:Switch:OR(ON, OFF) g_light_eg_bz <light>
-Group:Switch:OR(ON, OFF) g_light_eg_fs <light>
-Group:Switch:OR(ON, OFF) g_light_eg_sz <light>
-Group:Switch:OR(ON, OFF) g_light_eg_ku <light>
-Group:Switch:OR(ON, OFF) g_light_eg_ku_main <light>
-Group:Switch:OR(ON, OFF) g_light_eg_ns <light>
+Group:Switch:OR(ON, OFF) fl_light <light>
+Group:Switch:OR(ON, OFF) bz_light <light>
+Group:Switch:OR(ON, OFF) sz_light <light>
+Group:Switch:OR(ON, OFF) ku_light <light>
+Group:Switch:OR(ON, OFF) ku_light_main <light>
 
 // SZ groups
 
-Group:Switch:OR(ON, OFF) g_light_eg_sz_decor
-Group:Switch:OR(ON, OFF) g_light_eg_sz_night
-Group:Dimmer:MAX g_light_eg_sz_night_brightness
-Group:Dimmer:MAX g_light_eg_sz_decor_brightness
+Group:Switch:OR(ON, OFF) sz_light_decor
+Group:Switch:OR(ON, OFF) sz_light_night
+Group:Dimmer:MAX sz_light_night_brightness
+Group:Dimmer:MAX sz_light_decor_brightness
 Group:Switch:OR(ON, OFF) sz_bed_light
 Group:Dimmer:MAX sz_bed_light_dim
 Group:Dimmer:MAX sz_bed_light_dim_fast
@@ -31,8 +29,8 @@ Group:Dimmer:AVG g_light_sz_bed_ct "SZ bed CT [%d %%]" <light>
 Group:Dimmer:AVG g_sunrise_ct // Group of lamps to control temperature
 
 // EG auto lights
-Group:Switch:OR(ON, OFF) g_light_eg_auto
-Group:Dimmer:MAX g_dim_eg_auto
+Group:Switch:OR(ON, OFF) eg_light_auto
+Group:Dimmer:MAX eg_light_auto_dim
 
 // Group of lamps to set auto color depending on daytime
 Group:Dimmer:AVG g_light_astro_color "Astrocolor CT [%d %%]" <light>
@@ -74,7 +72,7 @@ Switch desktop_petro_power_try "Petro desktop power gracefull [%s]"
 // Holydays: exterrior light
 Group:Switch:AND(ON, OFF) g_light_christmas "Christmas light [%s]" <light>
 
-String light_all_mode "Light mode" <light>
+String all_light_mode "Light mode" <light>
 Switch light_sunrise_enabled "Sunrise enabled [%s]" <light>
 Switch light_astrocolor_enabled "Astrocolor enabled [%s]" <light>
 
@@ -83,5 +81,5 @@ Switch light_astrocolor_enabled "Astrocolor enabled [%s]" <light>
 // Mode selector for SZ remote button
 String sz_remote_mode "SZ remote control mode" <light>
 
-Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (g_light_all, g_light_eg, g_light_eg_flur, g_light_eg_sz_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
+Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (all_light, g_light_eg, fl_light, sz_light_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
 Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }
