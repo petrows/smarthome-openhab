@@ -10,16 +10,3 @@ String spotify_petro_artist_name    "Artist Name: [%s]"    {channel="spotify:pla
 Image  spotify_petro_album_image    "Album Art"            {channel="spotify:player:petro:albumImage"}
 String spotify_petro_playlists     "Playlists [%s]"       {channel="spotify:player:petro:playlists"}
 String spotify_petro_playname      "Playlist [%s]"        {channel="spotify:player:petro:playlistName"}
-
-// Player spotify_marina_track_player   "Player"               {channel="spotify:player:marina:trackPlayer"}
-// String spotify_marina_devices       "Active device [%s]"   {channel="spotify:player:marina:devices"}
-// Switch spotify_marina_device_shuffle "Shuffle mode"         {channel="spotify:player:marina:deviceShuffle"}
-// String spotify_marina_track_repeat   "Repeat mode: [%s]"    {channel="spotify:player:marina:trackRepeat"}
-// String spotify_marina_track_progress "Track progress: [%s]" {channel="spotify:player:marina:trackProgress"}
-// String spotify_marina_track_duration "Track duration: [%s]" {channel="spotify:player:marina:trackDuration"}
-// String spotify_marina_track_name     "Track Name: [%s]"     {channel="spotify:player:marina:trackName"}
-// String spotify_marina_album_name     "Album Name: [%s]"     {channel="spotify:player:marina:albumName"}
-// String spotify_marina_artist_name    "Artist Name: [%s]"    {channel="spotify:player:marina:artistName"}
-// Image  spotify_marina_album_image    "Album Art"            {channel="spotify:player:marina:albumImage"}
-// String spotify_marina_playlists     "Playlists [%s]"       {channel="spotify:player:marina:playlists"}
-// String spotify_marina_playname      "Playlist [%s]"        {channel="spotify:player:marina:playlistName"}

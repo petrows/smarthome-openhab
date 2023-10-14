@@ -1,6 +1,6 @@
 
 Group:Switch:OR(ON, OFF) all_light
-Group:Switch:OR(ON, OFF) g_light_eg
+Group:Switch:OR(ON, OFF) eg_light
 
 // Balkon light
 Group:Switch:OR(ON, OFF) balkon_light "Balkon light [%s]" <light>
@@ -9,21 +9,25 @@ Group:Dimmer:MAX balkon_light_ct "Balkon CT [%d %%]" <light>
 
 Group:Switch:OR(ON, OFF) fl_light <light>
 Group:Switch:OR(ON, OFF) bz_light <light>
-Group:Switch:OR(ON, OFF) sz_light <light>
+Group:Switch:OR(ON, OFF) wz_light <light>
+Group:Switch:OR(ON, OFF) ks_light <light>
 Group:Switch:OR(ON, OFF) ku_light <light>
 Group:Switch:OR(ON, OFF) ku_light_main <light>
 
 // SZ groups
+Group:Switch:OR(ON, OFF) sz_light <light>
+Group:Dimmer:AVG sz_light_ct "SZ CT [%d %%]" <light>
 
 Group:Switch:OR(ON, OFF) sz_light_decor
 Group:Switch:OR(ON, OFF) sz_light_night
 Group:Dimmer:MAX sz_light_night_brightness
 Group:Dimmer:MAX sz_light_decor_brightness
 Group:Switch:OR(ON, OFF) sz_bed_light
+Group:Dimmer:AVG sz_bed_light_ct "SZ Bed CT [%d %%]" <light>
 Group:Dimmer:MAX sz_bed_light_dim
 Group:Dimmer:MAX sz_bed_light_dim_fast
-Group:Dimmer:AVG g_light_sz_ct "SZ all CT [%d %%]" <light>
-Group:Dimmer:AVG g_light_sz_bed_ct "SZ bed CT [%d %%]" <light>
+
+
 
 // Sunrise groups
 Group:Dimmer:AVG g_sunrise_ct // Group of lamps to control temperature
@@ -46,9 +50,9 @@ Group:Dimmer:AVG g_light_bz_ct "BZ main CT [%d %%]" <light>
 Group:Color:AVG g_light_bz_color "BZ main Color []" <light>
 
 // KG and Treppe lamps
-Group:Switch:OR(ON, OFF) g_light_kg // All lamps in KG
-Group:Switch:OR(ON, OFF) g_light_kg_auto // Lamps to be on by "All ON"
-Group:Switch:OR(ON, OFF) g_light_kg_hobbyraum // All lights in "rooms" KG
+Group:Switch:OR(ON, OFF) kg_light // All lamps in KG
+Group:Switch:OR(ON, OFF) kg_light_auto // Lamps to be on by "All ON"
+Group:Switch:OR(ON, OFF) kg_light_hobbyraum // All lights in "rooms" KG
 Group:Switch:OR(ON, OFF) g_light_treppe
 Group:Switch:OR(ON, OFF) g_light_lager_auto
 Group:Dimmer:MAX g_dim_treppe
@@ -56,9 +60,9 @@ Group:Dimmer:MAX g_ct_treppe
 Group:Dimmer:MAX g_dim_lager_auto
 
 // KG desktop new setup
-Group:Switch:OR(ON, OFF) g_light_kg_desktop
-Group:Dimmer:AVG g_light_kg_desktop_dim
-Group:Dimmer:AVG g_light_kg_desktop_color
+Group:Switch:OR(ON, OFF) kg_light_desktop
+Group:Dimmer:AVG kg_light_desktop_dim
+Group:Dimmer:AVG kg_light_desktop_color
 
 // Switches to control: manual override for auto light
 Switch treppe_manual_sw "KG Treppe manual SW" <light> { expire="3h,command=OFF" }
@@ -81,5 +85,5 @@ Switch light_astrocolor_enabled "Astrocolor enabled [%s]" <light>
 // Mode selector for SZ remote button
 String sz_remote_mode "SZ remote control mode" <light>
 
-Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (all_light, g_light_eg, fl_light, sz_light_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
+Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (all_light, eg_light, fl_light, sz_light_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
 Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }

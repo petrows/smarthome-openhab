@@ -50,7 +50,7 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_eg
+      - eg_light
       - fl_light
 
   - name: EG Decor light
@@ -60,7 +60,7 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_eg
+      - eg_light
       - eg_light_auto
       dim:
       - eg_light_auto_dim
@@ -79,7 +79,7 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_eg
+      - eg_light
       - bz_light
       - bz_main_light
       dim:
@@ -99,7 +99,7 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_eg
+      - eg_light
       - bz_light
       - bz_main_light
       dim:
@@ -122,7 +122,7 @@ devices:
         groups:
           sw:
           - all_light
-          - g_light_eg
+          - eg_light
           - bz_light
 
   - name: BZ Mirror switch
@@ -144,10 +144,10 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
-        - g_light_eg_ns
+        - eg_light
+        - ks_light
       ct:
-        - g_light_ns_ct
+        - ks_light_ct
         - g_light_astro_color
 
   - name: NS Climate
@@ -163,8 +163,8 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_eg
-      - g_light_eg_ns
+      - eg_light
+      - ks_light
 
   - name: NS Projector
     id: ns_projector_power
@@ -197,7 +197,7 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
+        - eg_light
         - g_light_wz
       ct:
         - g_light_wz_ct
@@ -211,7 +211,7 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
+        - eg_light
         - g_light_wz
 
 # Lights behind window
@@ -223,7 +223,7 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
+        - eg_light
         - g_light_wz
         - g_light_wz_decor
       dim:
@@ -237,7 +237,7 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
+        - eg_light
         - g_light_wz
         - g_light_wz_decor
       dim:
@@ -251,7 +251,7 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
+        - eg_light
         - g_light_wz
         - g_light_wz_decor
       dim:
@@ -279,7 +279,7 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
+        - eg_light
         - g_light_sz
       ct:
         - g_light_astro_color
@@ -311,7 +311,7 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
+        - eg_light
         - sz_light
 
   - name: SZ Bed R
@@ -321,7 +321,7 @@ devices:
     groups:
       sw:
         - all_light
-        - g_light_eg
+        - eg_light
         - sz_light
 
 # KITCHEN ================================
@@ -349,7 +349,7 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_eg
+      - eg_light
       - ku_light
       - ku_light_main
 
@@ -366,7 +366,7 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_eg
+      - eg_light
       - ku_light
       - eg_light_auto
       dim:
@@ -383,7 +383,7 @@ devices:
         groups:
           sw:
           - all_light
-          - g_light_eg
+          - eg_light
           - ku_light
           - ku_light_main
       l2:
@@ -393,7 +393,7 @@ devices:
         groups:
           sw:
           - all_light
-          - g_light_eg
+          - eg_light
           - ku_light
           - ku_light_main
 
@@ -431,8 +431,8 @@ devices:
       sw:
       - all_light
       - g_light_treppe
-      - g_light_kg
-      - g_light_kg_auto
+      - kg_light
+      - kg_light_auto
       dim:
       - g_dim_treppe
       ct:
@@ -448,8 +448,8 @@ devices:
       sw:
       - all_light
       - g_light_treppe
-      - g_light_kg
-      - g_light_kg_auto
+      - kg_light
+      - kg_light_auto
       dim:
       - g_dim_treppe
       ct:
@@ -505,14 +505,14 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_kg
-      - g_light_kg_hobbyraum
-      - g_light_kg_desktop
+      - kg_light
+      - kg_light_hobbyraum
+      - kg_light_desktop
       ct:
       - g_light_astro_color
-      - g_light_kg_desktop_color
+      - kg_light_desktop_color
       dim:
-      - g_light_kg_desktop_dim
+      - kg_light_desktop_dim
 
   - name: Petro Desktop up light 2
     id: desktop_petro_up_light_2
@@ -522,14 +522,14 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_kg
-      - g_light_kg_hobbyraum
-      - g_light_kg_desktop
+      - kg_light
+      - kg_light_hobbyraum
+      - kg_light_desktop
       ct:
       - g_light_astro_color
-      - g_light_kg_desktop_color
+      - kg_light_desktop_color
       dim:
-      - g_light_kg_desktop_dim
+      - kg_light_desktop_dim
 
   - name: Petro Desktop up light 3
     id: desktop_petro_up_light_3
@@ -539,14 +539,14 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_kg
-      - g_light_kg_hobbyraum
-      - g_light_kg_desktop
+      - kg_light
+      - kg_light_hobbyraum
+      - kg_light_desktop
       ct:
       - g_light_astro_color
-      - g_light_kg_desktop_color
+      - kg_light_desktop_color
       dim:
-      - g_light_kg_desktop_dim
+      - kg_light_desktop_dim
 
   - name: Petro Desktop light
     id: desktop_petro_light
@@ -556,8 +556,8 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_kg
-      - g_light_kg_hobbyraum
+      - kg_light
+      - kg_light_hobbyraum
       ct:
       - g_light_astro_color
 
@@ -581,8 +581,8 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_kg
-      - g_light_kg_hobbyraum
+      - kg_light
+      - kg_light_hobbyraum
 
   - name: "KG Hobbyraum (Workshop)"
     id: kg_main1_light
@@ -594,9 +594,9 @@ devices:
         groups:
           sw:
             - all_light
-            - g_light_kg
-            - g_light_kg_hobbyraum
-            - g_light_kg_auto
+            - kg_light
+            - kg_light_hobbyraum
+            - kg_light_auto
 
   - name: KG Hobbyraum (Haupt)
     id: kg_main2_light
@@ -608,8 +608,8 @@ devices:
         groups:
           sw:
             - all_light
-            - g_light_kg
-            - g_light_kg_hobbyraum
+            - kg_light
+            - kg_light_hobbyraum
 
   - name: KG Heuzung (Haupt)
     id: kg_hz_main_light
@@ -622,7 +622,7 @@ devices:
         groups:
           sw:
             - all_light
-            - g_light_kg
+            - kg_light
 
   - name: Garden water
     id: garten_wasser_sw
@@ -649,7 +649,7 @@ devices:
         groups:
           sw:
             - all_light
-            - g_light_kg
+            - kg_light
 
   - name: KG Lager 3 Climate
     id: kg_lager3_climate
@@ -677,7 +677,7 @@ devices:
         groups:
           sw:
             - all_light
-            - g_light_kg
+            - kg_light
 
   - name: KG Lager 4 (Haupt)
     id: kg_lager4_main_light
@@ -690,7 +690,7 @@ devices:
         groups:
           sw:
             - all_light
-            - g_light_kg
+            - kg_light
 
   - name: KG Lager 4 (1)
     id: kg_lager4_1_light
@@ -700,7 +700,7 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_kg
+      - kg_light
       - g_light_lager_auto
       dim:
       - g_dim_lager_auto
@@ -713,7 +713,7 @@ devices:
     groups:
       sw:
       - all_light
-      - g_light_kg
+      - kg_light
       - g_light_lager_auto
       dim:
       - g_dim_lager_auto

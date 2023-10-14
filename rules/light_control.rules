@@ -93,7 +93,7 @@ then
 	logWarn("light", "Set safe off (KG version)")
 
     // All light in KG off
-	g_light_kg.sendCommand(OFF)
+	kg_light.sendCommand(OFF)
 
     // Stop decorative lights
     g_light_christmas.sendCommand(OFF)
