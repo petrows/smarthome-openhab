@@ -3,7 +3,7 @@ rule "Treppe door UP"
 when
     Item treppe_door_sensor_contact changed from CLOSED to OPEN
 then
-    treppe_motion_occupancy.postUpdate(ON)
+    tr_motion_occupancy.postUpdate(ON)
 end
 
 // Door contact for Main door

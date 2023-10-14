@@ -32,11 +32,11 @@ Text item=ext_climate_battery
 Frame label="Balkon light 1 (0x14b457fffe399241)" {
 // Balkon light 1 (0x14b457fffe399241)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Slider item=balkon_light_1_dim
-Slider item=balkon_light_1_ct
-Text item=balkon_light_1_ota
-Text item=balkon_light_1_link
-Switch item=balkon_light_1_sw
+Slider item=bk_light_1_dim
+Slider item=bk_light_1_ct
+Text item=bk_light_1_ota
+Text item=bk_light_1_link
+Switch item=bk_light_1_sw
 }
 Frame label="Garten wasser remote (0xccccccfffe58f1c3)" {
 // Garten wasser remote (0xccccccfffe58f1c3)
@@ -442,8 +442,8 @@ Frame label="Treppe Down light (0x04cd15fffedb31f7)" {
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Slider item=treppe_down_light_dim
 Slider item=treppe_down_light_ct
-Colorpicker item=treppe_down_light_color
-Text item=treppe_down_light_color_mode
+Colorpicker item=tr_down_light_color
+Text item=tr_down_light_color_mode
 Text item=treppe_down_light_ota
 Text item=treppe_down_light_link
 Switch item=treppe_down_light_sw
@@ -451,23 +451,23 @@ Switch item=treppe_down_light_sw
 Frame label="Treppe motion (0xbc33acfffe872049)" {
 // Treppe motion (0xbc33acfffe872049)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Text item=treppe_motion_lowbatt
-Text item=treppe_motion_ota
-Text item=treppe_motion_link
-Text item=treppe_motion_activity
-Text item=treppe_motion_occupancy
-Text item=treppe_motion_battery
+Text item=tr_motion_lowbatt
+Text item=tr_motion_ota
+Text item=tr_motion_link
+Text item=tr_motion_activity
+Text item=tr_motion_occupancy
+Text item=tr_motion_battery
 }
 Frame label="Treppe climate (0xa4c1383cc92cbbd2)" {
 // Treppe climate (0xa4c1383cc92cbbd2)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Text item=treppe_climate_lowbatt
-Text item=treppe_climate_ota
-Text item=treppe_climate_link
-Text item=treppe_climate_activity
-Text item=treppe_climate_temperature
-Text item=treppe_climate_humidity
-Text item=treppe_climate_battery
+Text item=tr_climate_lowbatt
+Text item=tr_climate_ota
+Text item=tr_climate_link
+Text item=tr_climate_activity
+Text item=tr_climate_temperature
+Text item=tr_climate_humidity
+Text item=tr_climate_battery
 }
 Frame label="KG Window (Cabinet) (0xccccccfffed82ba3)" {
 // KG Window (Cabinet) (0xccccccfffed82ba3)
@@ -798,9 +798,9 @@ Switch item=ns_christmas_light_sw
 Frame label="Balkon Christmas light (0x7cb03eaa0a094bf2)" {
 // Balkon Christmas light (0x7cb03eaa0a094bf2)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=balkon_christmas_light_ota
-Text item=balkon_christmas_light_link
-Switch item=balkon_christmas_light_sw
+Text item=bk_christmas_light_ota
+Text item=bk_christmas_light_link
+Switch item=bk_christmas_light_sw
 }
 Frame label="FS Blinds (0xa4c138fd0fd1c168)" {
 // FS Blinds (0xa4c138fd0fd1c168)

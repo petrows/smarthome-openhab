@@ -84,7 +84,7 @@ when
     Time cron "0 00 05 ? * *"
 then
     // Master switch
-    if (cfg_wassering_auto_enable.state == OFF) {
+    if (wassering_auto_enable.state == OFF) {
         logInfo("common", "Garten wasser disabled")
         return
     }
@@ -136,7 +136,7 @@ when
     Time cron "0 00 23 ? * *"
 then
     // Master switch
-    if (cfg_wassering_auto_enable.state == OFF) {
+    if (wassering_auto_enable.state == OFF) {
         logInfo("common", "Garten wasser disabled")
         return
     }

@@ -11,9 +11,9 @@ Number:Temperature cfgHeatingTempHeat "Температура тепло [%.1f �
 
 Switch cfgPersistanceEnable "Определение присутствия" <parents_1_1> (gSettings)
 
-Switch cfg_christmas_lights_enable "Christmas Licht [%s]" <light> (gSettings)
+Switch christmas_lights_enable "Christmas Licht [%s]" <light> (gSettings)
 
-Switch cfg_wassering_auto_enable "Wasserung auto [%s]" <faucet> (gSettings)
+Switch wassering_auto_enable "Wasserung auto [%s]" <faucet> (gSettings)
 
 Group:Switch:OR(ON,OFF) g_all_lowbattery "Battery low [%s]" <lowbattery>
 Group:Number:MIN g_all_battery "Battery [%d %%]" <battery>

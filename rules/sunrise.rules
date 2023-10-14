@@ -32,7 +32,7 @@ when
 then
     logWarn("light", "Sunrise emulation daylight switch off")
 
-    if (light_sunrise_enabled.state == OFF) {
+    if (sunrise_enable.state == OFF) {
         logWarn("light", "Sunrise emulation disabled")
         return
     }
@@ -47,7 +47,7 @@ when
 then
     logWarn("light", "Sunrise emulation started")
 
-    if (light_sunrise_enabled.state == OFF) {
+    if (sunrise_enable.state == OFF) {
         logWarn("light", "Sunrise emulation disabled")
         return
     }
@@ -88,7 +88,7 @@ then
                 logWarn("light", "Sunrise emulation stopped: group switched off")
                 return
             }
-            if (light_sunrise_enabled.state == OFF) {
+            if (sunrise_enable.state == OFF) {
                 logWarn("light", "Sunrise emulation disabled")
                 return
             }

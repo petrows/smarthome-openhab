@@ -13,17 +13,17 @@ devices:
       sw:
       - all_light
   - name: Balkon light 1
-    id: balkon_light_1
+    id: bk_light_1
     zigbee_id: '0x14b457fffe399241'
     type: IKEA_TRADFRI_LAMP_CT_1000
     groups:
       sw:
       - all_light
-      - balkon_light
+      - bk_light
       dim:
-      - balkon_light_dim
+      - bk_light_dim
       ct:
-      - balkon_light_ct
+      - bk_light_ct
   - name: Garten wasser remote
     id: garten_wasser_remote
     zigbee_id: '0xccccccfffe58f1c3'
@@ -462,7 +462,7 @@ devices:
     type: IKEA_TRADFRI_MOTION_SENSOR
 
   - name: Treppe climate
-    id: treppe_climate
+    id: tr_climate
     zigbee_id: '0xa4c1383cc92cbbd2'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
 
@@ -827,7 +827,7 @@ devices:
       - g_light_christmas
 
   - name: Balkon Christmas light
-    id: balkon_christmas_light
+    id: bk_christmas_light
     zigbee_id: '0x7cb03eaa0a094bf2'
     type: OSRAM_SMART_PLUG
     groups:

@@ -121,11 +121,11 @@ sitemap main label="MAIN"
         Switch item=g_blinds_curtains_cmd label="All []" mappings=["open"="☼","stop"="||","close"="☰"]
     }
     Frame {
-		Group item=balkon_light label="Balkon [%s]" icon="light" {
-			Switch item=balkon_light label="Main [%s]" icon="light"
-			Slider item=balkon_light_dim label="Main DIM [%d %%]" icon="light"
-            Slider item=balkon_light_ct label="Main CT [JS(codegen-mired.js):%s]"
-            Switch item=balkon_christmas_light_sw label="Christmas [%s]" icon="light"
+		Group item=bk_light label="Balkon [%s]" icon="light" {
+			Switch item=bk_light label="Main [%s]" icon="light"
+			Slider item=bk_light_dim label="Main DIM [%d %%]" icon="light"
+            Slider item=bk_light_ct label="Main CT [JS(codegen-mired.js):%s]"
+            Switch item=bk_christmas_light_sw label="Christmas [%s]" icon="light"
 		}
 		Group item=fl_light label="Corridor [%s]" icon="light" {
 			Switch item=eg_flur_light_sw label="Main [%s]" icon="light"
@@ -209,7 +209,7 @@ sitemap main label="MAIN"
         Group item=sz_light label="Sleep [%s]" icon="light" {
 			Frame {
 				Switch item=sz_light label="All [%s]" icon="light"
-                Switch item=light_sunrise_enabled icon="light"
+                Switch item=sunrise_enable icon="light"
             }
             Frame label="Bed" {
 				Switch item=sz_bed_light_l_sw label="Bed L [%s]" icon="light"
@@ -248,8 +248,8 @@ sitemap main label="MAIN"
 				Switch item=tr_light label="Ladder [%s]" icon="light"
 				Slider item=tr_light_dim label="Ladder DIM [%d %%]" icon="light"
 				Slider item=tr_light_ct label="Ladder CT [JS(codegen-mired.js):%s]" icon="colorwheel"
-                Colorpicker item=treppe_down_light_color label="Down light []" icon="colorpicker"
-				Text item=treppe_motion_occupancy label="Motion Ladder [%s]"
+                Colorpicker item=tr_down_light_color label="Down light []" icon="colorpicker"
+				Text item=tr_motion_occupancy label="Motion Ladder [%s]"
 			}
 			Frame label="Main" {
 				Switch item=kg_main2_light label="Main [%s]" icon="light"
@@ -288,50 +288,43 @@ sitemap main label="MAIN"
 		Group item=ku_climate_temperature label="Kitchen" {
 			Text 		item=ku_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ku_climate_humidity label="Humidity [%d %%]"
-			//ext		item=ku_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=ku_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=ku_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ku_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
 		}
 
 		Group item=ns_climate_temperature label="Theater" {
-			Text 		item=ns_climate_temperature label="Temperature [%d °C]"
-			Text 		item=ns_climate_humidity label="Humidity [%d %%]"
-			//Text		item=ns_heating_position label="Beheizung [%d %%]"
-			Setpoint	item=ns_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=ns_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
-            Switch      item=ns_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-			// Switch		item=ns_heating_boost label="Heizung BOOST" icon="fan"
-			// Switch		item=ns_heating_boost_power_sw label="Heizung Fan" icon="fan"
-		}
-		Group item=fs_climate_temperature label="Foto Studio" {
-			Text 		item=fs_climate_temperature label="Temperature [%d °C]"
-			Text 		item=fs_climate_humidity label="Humidity [%d %%]"
-			//Text		item=fs_heating_position label="Beheizung [%d %%]"
-			Setpoint	item=fs_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=fs_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
-            Switch      item=fs_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
+			Text 		item=ks_climate_temperature label="Temperature [%d °C]"
+			Text 		item=ks_climate_humidity label="Humidity [%d %%]"
+			Setpoint	item=ks_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=ks_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+            Switch      item=ks_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
 		}
 		Group item=sz_climate_temperature label="Sleep" {
 			Text 		item=sz_climate_temperature label="Temperature [%d °C]"
 			Text 		item=sz_climate_humidity label="Humidity [%d %%]"
-			Text 		item=sz_co2_co2 label="CO₂ [%d %unit%]"
+            Text 		item=sz_co2_co2 label="CO₂ [%d %unit%]"
 			Text 		item=sz_co2_co2_led label="CO₂ alarm [%s]"
-			//Text		item=sz_heating_position label="Beheizung [%d %%]"
 			Setpoint	item=sz_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0 °C"="☼", "17.0 °C"="☾", "5.0 °C"="OFF"]	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=sz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-            Text        item=sz_windows label="Windows [%s]"
+		}
+		Group item=wz_climate_temperature label="Living" {
+			Text 		item=wz_climate_temperature label="Temperature [%d °C]"
+			Text 		item=wz_climate_humidity label="Humidity [%d %%]"
+			Setpoint	item=wz_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=wz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0 °C"="☼", "17.0 °C"="☾", "5.0 °C"="OFF"]	visibility=[cfgHeatingEnable==ON]
+            Switch      item=wz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
+            Text        item=wz_windows label="Windows [%s]"
 		}
 		Group item=kg_climate_temperature label="KG" {
             Frame label="Treppe" {
-                Text 		item=treppe_climate_temperature label="Temperature [%d °C]"
-                Text 		item=treppe_climate_humidity label="Humidity [%d %%]"
+                Text 		item=tr_climate_temperature label="Temperature [%d °C]"
+                Text 		item=tr_climate_humidity label="Humidity [%d %%]"
             }
             Frame label="Hobbyraum" {
                 Text 		item=kg_climate_temperature label="Temperature [%d °C]"
                 Text 		item=kg_climate_humidity label="Humidity [%d %%]"
-                //Text		item=kg_heating_position label="Beheizung [%d %%]"
                 Setpoint	item=kg_heating_thermostat label="Set" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
                 Switch  	item=kg_heating_thermostat label="Mode []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
                 Switch      item=kg_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
@@ -431,15 +424,15 @@ sitemap main label="MAIN"
 				Text	item=hz_temp_auto label="Temperature auto [%.1f °C]" icon=heatingt visibility=[cfgHeatingEnable==ON]
 			}
 			Frame label="Light" {
-				Switch	item=light_sunrise_enabled
-				Switch	item=light_astrocolor_enabled
+				Switch	item=sunrise_enable
+				Switch	item=astro_color_enable
 				Slider	item=astro_color_light_ct
-                Switch  item=cfg_christmas_lights_enable
+                Switch  item=christmas_lights_enable
                 Text  item=astro_sun_up_5
                 Text  item=astro_sun_up_0
 			}
 			Frame label="Watering" {
-				Switch	item=cfg_wassering_auto_enable
+				Switch	item=wassering_auto_enable
 				Text    item=garten_wasser_leak_leak
 			}
 			Frame label="Blinds" {

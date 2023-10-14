@@ -3,9 +3,9 @@ Group:Switch:OR(ON, OFF) all_light
 Group:Switch:OR(ON, OFF) eg_light
 
 // Balkon light
-Group:Switch:OR(ON, OFF) balkon_light "Balkon light [%s]" <light>
-Group:Dimmer:MAX balkon_light_dim "Balkon DIM [%d %%]" <light>
-Group:Dimmer:MAX balkon_light_ct "Balkon CT [%d %%]" <light>
+Group:Switch:OR(ON, OFF) bk_light "Balkon light [%s]" <light>
+Group:Dimmer:MAX bk_light_dim "Balkon DIM [%d %%]" <light>
+Group:Dimmer:MAX bk_light_ct "Balkon CT [%d %%]" <light>
 
 Group:Switch:OR(ON, OFF) fl_light <light>
 Group:Switch:OR(ON, OFF) bz_light <light>
@@ -77,8 +77,8 @@ Switch desktop_petro_power_try "Petro desktop power gracefull [%s]"
 Group:Switch:AND(ON, OFF) g_light_christmas "Christmas light [%s]" <light>
 
 String all_light_mode "Light mode" <light>
-Switch light_sunrise_enabled "Sunrise enabled [%s]" <light>
-Switch light_astrocolor_enabled "Astrocolor enabled [%s]" <light>
+Switch sunrise_enable "Sunrise enabled [%s]" <light>
+Switch astro_color_enable "Astrocolor enabled [%s]" <light>
 
 // ====== EG
 

@@ -484,11 +484,11 @@ then
             }
         }
         case "arrow_left_click": {
-            if (balkon_light.state == OFF) {
-                balkon_light.sendCommand(ON)
-                balkon_light_dim.sendCommand(100)
+            if (bk_light.state == OFF) {
+                bk_light.sendCommand(ON)
+                bk_light_dim.sendCommand(100)
             } else {
-                balkon_light.sendCommand(OFF)
+                bk_light.sendCommand(OFF)
             }
         }
         case "arrow_right_click": {

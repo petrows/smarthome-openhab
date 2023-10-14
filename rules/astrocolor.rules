@@ -33,7 +33,7 @@ when
 then
     logWarn("light", "Astrocolor reset")
 
-    light_astrocolor_enabled.sendCommand(ON)
+    astro_color_enable.sendCommand(ON)
 
     astro_color_value.sendCommand(astrocolorDaylight) // Default color value for DAY
     astro_color_light_ct.sendCommand(astrocolorDaylight) // Default color value for DAY
@@ -46,7 +46,7 @@ when
 then
     logWarn("light", "Astrocolor emulation started")
 
-    if (light_astrocolor_enabled.state == OFF) {
+    if (astro_color_enable.state == OFF) {
         logWarn("light", "Astrocolor emulation disabled")
         return
     }
@@ -62,7 +62,7 @@ then
 
     astrocolorTimer = createTimer(now, [ |
 
-        if (light_astrocolor_enabled.state == OFF) {
+        if (astro_color_enable.state == OFF) {
             logWarn("light", "Astrocolor emulation disabled")
             return
         }

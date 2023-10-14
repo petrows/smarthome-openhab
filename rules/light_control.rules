@@ -60,7 +60,7 @@ then
     logWarn("light", "Decorative light off")
 
     // Stop decorative lights
-    if (cfg_christmas_lights_enable.state == ON) {
+    if (christmas_lights_enable.state == ON) {
         g_light_christmas.sendCommand(OFF)
     }
 end
@@ -74,7 +74,7 @@ then
 	all_light.sendCommand(OFF)
 
     // Stop decorative lights
-    if (cfg_christmas_lights_enable.state == ON) {
+    if (christmas_lights_enable.state == ON) {
         g_light_christmas.sendCommand(OFF)
     }
 
@@ -109,7 +109,7 @@ when
 then
     logWarn("light", "Sunset Rule")
 
-    if (cfg_christmas_lights_enable.state == ON) {
+    if (christmas_lights_enable.state == ON) {
         g_light_christmas.sendCommand(ON)
     }
 end

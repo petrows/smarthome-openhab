@@ -7,7 +7,7 @@
 // ==========================================
 
 
-var Timer balkon_light_1_ct_timer
+var Timer bk_light_1_ct_timer
 var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
 var Timer ns_main_light_ct_timer
@@ -26,11 +26,11 @@ var Timer desktop_petro_light_ct_timer
 // Device should apply saved color temp when ON
 rule "Balkon light 1 apply color on ON"
 when
-    Item balkon_light_1_sw changed to ON
+    Item bk_light_1_sw changed to ON
 then
-    val ct_set = (balkon_light_1_ct.state as Number).intValue
-    balkon_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
-        balkon_light_1_ct.sendCommand(ct_set)
+    val ct_set = (bk_light_1_ct.state as Number).intValue
+    bk_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
+        bk_light_1_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON
@@ -209,7 +209,7 @@ then
     val ct_set = (treppe_down_light_ct.state as Number).intValue
     treppe_down_light_ct_timer = createTimer(now.plusSeconds(1), [ |
         // Item with RGB: do not reset RGB color while ON
-        if (treppe_down_light_color_mode.state == "xy") {
+        if (tr_down_light_color_mode.state == "xy") {
             return
         }
         treppe_down_light_ct.sendCommand(ct_set)

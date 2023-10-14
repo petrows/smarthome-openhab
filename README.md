@@ -55,6 +55,7 @@ Configuration model.
 * ``WZ`` - Living room (german "WohnZimmer")
 * ``SZ`` - Bedroom (german "SchlafZimmer")
 * ``KG`` - Underground floor
+* ``BK`` - Balcony
 
 ## Naming
 

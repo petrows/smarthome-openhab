@@ -2,7 +2,7 @@
 // Motion detect in KG
 rule "KG Motion detect treppe"
 when
-    Item treppe_motion_occupancy received update
+    Item tr_motion_occupancy received update
 then
     logInfo("light", "KG Motion: " + newState.toString)
     if (newState == OFF) {
