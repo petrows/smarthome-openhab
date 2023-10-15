@@ -192,12 +192,12 @@ devices:
     type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: Bedroom main remote
-    id: wz_remote_main
+    id: wz_up_remote
     zigbee_id: '0x003c84fffe16f988'
     type: IKEA_TRADFRI_STYRBAR
 
   - name: SZ Main
-    id: wz_main_light
+    id: wz_up_light
     zigbee_id: '0x588e81fffefe9a05'
     type: LIVARNO_CELLING_14147206L
     groups:
@@ -211,7 +211,7 @@ devices:
 
 # Light in torsher
   - name: WZ Color Decor
-    id: wz_color_light
+    id: wz_light_color
     zigbee_id: '0x8cf681fffef62c85'
     type: LIVARNO_RGB_HG07834B
     groups:
@@ -233,7 +233,9 @@ devices:
         - wz_light
         - wz_light_decor
       dim:
-        - wz_light_decor_brightness
+        - wz_light_decor_dim
+      dim_fast:
+        - wz_light_decor_dim_fast
 
   - name: WZ Decor lamp 2
     id: wz_declamp_2
@@ -247,7 +249,9 @@ devices:
         - wz_light
         - wz_light_decor
       dim:
-        - wz_light_decor_brightness
+        - wz_light_decor_dim
+      dim_fast:
+        - wz_light_decor_dim_fast
 
   - name: WZ Decor lamp 3
     id: wz_declamp_3
@@ -261,7 +265,9 @@ devices:
         - wz_light
         - wz_light_decor
       dim:
-        - wz_light_decor_brightness
+        - wz_light_decor_dim
+      dim_fast:
+        - wz_light_decor_dim_fast
 
   - name: WZ Window 1
     id: wz_window_1
@@ -291,7 +297,7 @@ devices:
         - astro_color_light_ct
 
   - name: FS Main remote
-    id: sz_remote_main
+    id: sz_up_remote
     zigbee_id: '0xb4e3f9fffeb35529'
     type: IKEA_TRADFRI_STYRBAR
 
@@ -327,6 +333,8 @@ devices:
         - sz_bed_light
       dim:
         - sz_bed_light_dim
+      dim_fast:
+        - sz_bed_light_dim_fast
 
   - name: SZ Bed R
     id: sz_bed_light_r
@@ -340,6 +348,8 @@ devices:
         - sz_bed_light
       dim:
         - sz_bed_light_dim
+      dim_fast:
+        - sz_bed_light_dim_fast
 
 # KITCHEN ================================
 

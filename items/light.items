@@ -17,17 +17,15 @@ Group:Switch:OR(ON, OFF) ku_up_light <light>
 // SZ groups
 Group:Switch:OR(ON, OFF) sz_light <light>
 Group:Dimmer:AVG sz_light_ct "SZ CT [%d %%]" <light>
-
-Group:Switch:OR(ON, OFF) sz_light_decor
-Group:Switch:OR(ON, OFF) sz_light_night
-Group:Dimmer:MAX sz_light_night_brightness
-Group:Dimmer:MAX sz_light_decor_brightness
 Group:Switch:OR(ON, OFF) sz_bed_light
 Group:Dimmer:AVG sz_bed_light_ct "SZ Bed CT [%d %%]" <light>
 Group:Dimmer:MAX sz_bed_light_dim
 Group:Dimmer:MAX sz_bed_light_dim_fast
 
-
+// WZ groups
+Group:Switch:OR(ON, OFF) wz_light_decor
+Group:Dimmer:MAX wz_light_decor_dim
+Group:Dimmer:MAX wz_light_decor_dim_fast
 
 // Sunrise groups
 Group:Dimmer:AVG g_sunrise_ct // Group of lamps to control temperature

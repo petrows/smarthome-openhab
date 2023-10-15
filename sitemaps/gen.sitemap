@@ -212,31 +212,31 @@ Text item=wz_climate_battery
 Frame label="Bedroom main remote (0x003c84fffe16f988)" {
 // Bedroom main remote (0x003c84fffe16f988)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=wz_remote_main_dim
-Text item=wz_remote_main_lowbatt
-Text item=wz_remote_main_ota
-Text item=wz_remote_main_link
-Text item=wz_remote_main_battery
+Text item=wz_up_remote_dim
+Text item=wz_up_remote_lowbatt
+Text item=wz_up_remote_ota
+Text item=wz_up_remote_link
+Text item=wz_up_remote_battery
 }
 Frame label="SZ Main (0x588e81fffefe9a05)" {
 // SZ Main (0x588e81fffefe9a05)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Slider item=wz_main_light_dim
-Slider item=wz_main_light_ct
-Text item=wz_main_light_ota
-Text item=wz_main_light_link
-Switch item=wz_main_light_sw
+Slider item=wz_up_light_dim
+Slider item=wz_up_light_ct
+Text item=wz_up_light_ota
+Text item=wz_up_light_link
+Switch item=wz_up_light_sw
 }
 Frame label="WZ Color Decor (0x8cf681fffef62c85)" {
 // WZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
-Slider item=wz_color_light_dim
-Slider item=wz_color_light_ct
-Colorpicker item=wz_color_light_color
-Text item=wz_color_light_color_mode
-Text item=wz_color_light_ota
-Text item=wz_color_light_link
-Switch item=wz_color_light_sw
+Slider item=wz_light_color_dim
+Slider item=wz_light_color_ct
+Colorpicker item=wz_light_color_color
+Text item=wz_light_color_color_mode
+Text item=wz_light_color_ota
+Text item=wz_light_color_link
+Switch item=wz_light_color_sw
 }
 Frame label="WZ Decor lamp 1 (0xec1bbdfffe972819)" {
 // WZ Decor lamp 1 (0xec1bbdfffe972819)
@@ -295,11 +295,11 @@ Switch item=sz_up_light_sw
 Frame label="FS Main remote (0xb4e3f9fffeb35529)" {
 // FS Main remote (0xb4e3f9fffeb35529)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=sz_remote_main_dim
-Text item=sz_remote_main_lowbatt
-Text item=sz_remote_main_ota
-Text item=sz_remote_main_link
-Text item=sz_remote_main_battery
+Text item=sz_up_remote_dim
+Text item=sz_up_remote_lowbatt
+Text item=sz_up_remote_ota
+Text item=sz_up_remote_link
+Text item=sz_up_remote_battery
 }
 Frame label="FS remote L (0x94deb8fffea8a1f9)" {
 // FS remote L (0x94deb8fffea8a1f9)

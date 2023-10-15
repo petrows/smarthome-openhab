@@ -18,7 +18,7 @@
     delta: 5
     interval: 100
 '0x003c84fffe16f988':
-  friendly_name: wz_remote_main
+  friendly_name: wz_up_remote
   simulated_brightness:
     delta: 5
     interval: 100
@@ -72,7 +72,7 @@
 '0x588e81fffefb217b':
   friendly_name: ks_up_light
 '0x588e81fffefe9a05':
-  friendly_name: wz_main_light
+  friendly_name: wz_up_light
 '0x680ae2fffe16e111':
   friendly_name: eg_leave_switch
 '0x680ae2fffe1a92f3':
@@ -102,7 +102,7 @@
 '0x8cf681fffe36d14e':
   friendly_name: sz_curtain_remote
 '0x8cf681fffef62c85':
-  friendly_name: wz_color_light
+  friendly_name: wz_light_color
 '0x9035eafffe20e847':
   friendly_name: eg_decoration_light
 '0x9035eafffee1ba1d':
@@ -152,7 +152,7 @@
 '0xb43522fffe790ebe':
   friendly_name: kg_lager4_switch
 '0xb4e3f9fffeb35529':
-  friendly_name: sz_remote_main
+  friendly_name: sz_up_remote
   simulated_brightness:
     delta: 5
     interval: 100
