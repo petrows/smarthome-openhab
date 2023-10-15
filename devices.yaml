@@ -94,7 +94,7 @@
 '0x7cb03eaa0a0a1103':
   friendly_name: kg_main1_work_light
 '0x842e14fffe0eb8a0':
-  friendly_name: sz_main_light
+  friendly_name: sz_up_light
 '0x842e14fffe1267fb':
   friendly_name: ku_light_switch
 '0x847127fffec6acc3':
@@ -112,8 +112,13 @@
     interval: 100
 '0x90395efffeb9dcee':
   friendly_name: sz_bed_light_r
+'0x94deb8fffea8a1f9':
+  friendly_name: sz_bed_l_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0xa4c138018d7a55bf':
-  friendly_name: ku_blinds
+  friendly_name: ku_shutter
 '0xa4c13804963f4ccf':
   friendly_name: wz_window_1
 '0xa4c138182f60d651':
@@ -131,7 +136,7 @@
 '0xa4c1386df39045f6':
   friendly_name: ks_climate
 '0xa4c13878cea182ad':
-  friendly_name: ns_blinds
+  friendly_name: ks_shutter
 '0xa4c1389dec8b9204':
   friendly_name: ku_window_door
 '0xa4c138a06ec38c9e':
@@ -143,7 +148,7 @@
 '0xa4c138f5460e22dd':
   friendly_name: ku_climate
 '0xa4c138fd0fd1c168':
-  friendly_name: fs_blinds
+  friendly_name: sz_shutter
 '0xb43522fffe790ebe':
   friendly_name: kg_lager4_switch
 '0xb4e3f9fffeb35529':

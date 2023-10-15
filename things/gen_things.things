@@ -345,14 +345,14 @@ Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
 }
 // SZ Main (0x842e14fffe0eb8a0)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Thing mqtt:topic:openhab:sz_main_light "SZ Main" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:sz_up_light "SZ Main" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/sz_main_light", commandTopic="zigbee2mqtt/sz_main_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_main_light", commandTopic="zigbee2mqtt/sz_main_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/sz_main_light", commandTopic="zigbee2mqtt/sz_main_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_main_light", commandTopic="zigbee2mqtt/sz_main_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
-		Type number : link [stateTopic="zigbee2mqtt/sz_main_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_main_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type switch : state [stateTopic="zigbee2mqtt/sz_up_light", commandTopic="zigbee2mqtt/sz_up_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_up_light", commandTopic="zigbee2mqtt/sz_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/sz_up_light", commandTopic="zigbee2mqtt/sz_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_up_light", commandTopic="zigbee2mqtt/sz_up_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
+		Type number : link [stateTopic="zigbee2mqtt/sz_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // FS Main remote (0xb4e3f9fffeb35529)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
@@ -365,6 +365,18 @@ Thing mqtt:topic:openhab:sz_remote_main "FS Main remote" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_remote_main", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// FS remote L (0x94deb8fffea8a1f9)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:sz_bed_l_remote "FS remote L" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/sz_bed_l_remote", commandTopic="zigbee2mqtt/sz_bed_l_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Bedroom remote (0x14b457fffe7e2305)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
@@ -984,42 +996,42 @@ Thing mqtt:topic:openhab:bk_christmas_light "Balkon Christmas light" (mqtt:broke
 		Type number : link [stateTopic="zigbee2mqtt/bk_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/bk_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// FS Blinds (0xa4c138fd0fd1c168)
+// FS Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
-Thing mqtt:topic:openhab:fs_blinds "FS Blinds" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:sz_shutter "FS Shutter" (mqtt:broker:openhab) {
 	Channels:
-		Type string : moving [stateTopic="zigbee2mqtt/fs_blinds", transformationPattern="JSONPATH:$.moving"]
-		Type string : state [stateTopic="zigbee2mqtt/fs_blinds", commandTopic="zigbee2mqtt/fs_blinds/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\"}"]
-		Type dimmer : position [stateTopic="zigbee2mqtt/fs_blinds", commandTopic="zigbee2mqtt/fs_blinds/set", transformationPattern="JS:codegen-rpos.js?channel=position", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position"]
-		Type switch : calibration [stateTopic="zigbee2mqtt/fs_blinds", commandTopic="zigbee2mqtt/fs_blinds/set", transformationPattern="JSONPATH:$.calibration", formatBeforePublish="{\"calibration\": \"%s\"}"]
-		Type number : link [stateTopic="zigbee2mqtt/fs_blinds", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/fs_blinds", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type string : moving [stateTopic="zigbee2mqtt/sz_shutter", transformationPattern="JSONPATH:$.moving"]
+		Type string : state [stateTopic="zigbee2mqtt/sz_shutter", commandTopic="zigbee2mqtt/sz_shutter/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\"}"]
+		Type dimmer : position [stateTopic="zigbee2mqtt/sz_shutter", commandTopic="zigbee2mqtt/sz_shutter/set", transformationPattern="JS:codegen-rpos.js?channel=position", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position"]
+		Type switch : calibration [stateTopic="zigbee2mqtt/sz_shutter", commandTopic="zigbee2mqtt/sz_shutter/set", transformationPattern="JSONPATH:$.calibration", formatBeforePublish="{\"calibration\": \"%s\"}"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_shutter", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_shutter", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// NS Blinds (0xa4c13878cea182ad)
+// KS Blinds (0xa4c13878cea182ad)
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
-Thing mqtt:topic:openhab:ns_blinds "NS Blinds" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:ks_shutter "KS Blinds" (mqtt:broker:openhab) {
 	Channels:
-		Type string : moving_left [stateTopic="zigbee2mqtt/ns_blinds", transformationPattern="JSONPATH:$.moving_left"]
-		Type string : state_left [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JSONPATH:$.state_left", formatBeforePublish="{\"state_left\": \"%s\"}"]
-		Type dimmer : position_left [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JS:codegen-rpos.js?channel=position_left", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position_left"]
-		Type switch : calibration_left [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JSONPATH:$.calibration_left", formatBeforePublish="{\"calibration_left\": \"%s\"}"]
-		Type string : moving_right [stateTopic="zigbee2mqtt/ns_blinds", transformationPattern="JSONPATH:$.moving_right"]
-		Type string : state_right [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JSONPATH:$.state_right", formatBeforePublish="{\"state_right\": \"%s\"}"]
-		Type dimmer : position_right [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JS:codegen-rpos.js?channel=position_right", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position_right"]
-		Type switch : calibration_right [stateTopic="zigbee2mqtt/ns_blinds", commandTopic="zigbee2mqtt/ns_blinds/set", transformationPattern="JSONPATH:$.calibration_right", formatBeforePublish="{\"calibration_right\": \"%s\"}"]
-		Type number : link [stateTopic="zigbee2mqtt/ns_blinds", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ns_blinds", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type string : moving_left [stateTopic="zigbee2mqtt/ks_shutter", transformationPattern="JSONPATH:$.moving_left"]
+		Type string : state_left [stateTopic="zigbee2mqtt/ks_shutter", commandTopic="zigbee2mqtt/ks_shutter/set", transformationPattern="JSONPATH:$.state_left", formatBeforePublish="{\"state_left\": \"%s\"}"]
+		Type dimmer : position_left [stateTopic="zigbee2mqtt/ks_shutter", commandTopic="zigbee2mqtt/ks_shutter/set", transformationPattern="JS:codegen-rpos.js?channel=position_left", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position_left"]
+		Type switch : calibration_left [stateTopic="zigbee2mqtt/ks_shutter", commandTopic="zigbee2mqtt/ks_shutter/set", transformationPattern="JSONPATH:$.calibration_left", formatBeforePublish="{\"calibration_left\": \"%s\"}"]
+		Type string : moving_right [stateTopic="zigbee2mqtt/ks_shutter", transformationPattern="JSONPATH:$.moving_right"]
+		Type string : state_right [stateTopic="zigbee2mqtt/ks_shutter", commandTopic="zigbee2mqtt/ks_shutter/set", transformationPattern="JSONPATH:$.state_right", formatBeforePublish="{\"state_right\": \"%s\"}"]
+		Type dimmer : position_right [stateTopic="zigbee2mqtt/ks_shutter", commandTopic="zigbee2mqtt/ks_shutter/set", transformationPattern="JS:codegen-rpos.js?channel=position_right", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position_right"]
+		Type switch : calibration_right [stateTopic="zigbee2mqtt/ks_shutter", commandTopic="zigbee2mqtt/ks_shutter/set", transformationPattern="JSONPATH:$.calibration_right", formatBeforePublish="{\"calibration_right\": \"%s\"}"]
+		Type number : link [stateTopic="zigbee2mqtt/ks_shutter", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ks_shutter", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KU Blinds (0xa4c138018d7a55bf)
+// KU Shutter (0xa4c138018d7a55bf)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
-Thing mqtt:topic:openhab:ku_blinds "KU Blinds" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:ku_shutter "KU Shutter" (mqtt:broker:openhab) {
 	Channels:
-		Type string : moving [stateTopic="zigbee2mqtt/ku_blinds", transformationPattern="JSONPATH:$.moving"]
-		Type string : state [stateTopic="zigbee2mqtt/ku_blinds", commandTopic="zigbee2mqtt/ku_blinds/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\"}"]
-		Type dimmer : position [stateTopic="zigbee2mqtt/ku_blinds", commandTopic="zigbee2mqtt/ku_blinds/set", transformationPattern="JS:codegen-rpos.js?channel=position", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position"]
-		Type switch : calibration [stateTopic="zigbee2mqtt/ku_blinds", commandTopic="zigbee2mqtt/ku_blinds/set", transformationPattern="JSONPATH:$.calibration", formatBeforePublish="{\"calibration\": \"%s\"}"]
-		Type number : link [stateTopic="zigbee2mqtt/ku_blinds", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ku_blinds", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type string : moving [stateTopic="zigbee2mqtt/ku_shutter", transformationPattern="JSONPATH:$.moving"]
+		Type string : state [stateTopic="zigbee2mqtt/ku_shutter", commandTopic="zigbee2mqtt/ku_shutter/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\"}"]
+		Type dimmer : position [stateTopic="zigbee2mqtt/ku_shutter", commandTopic="zigbee2mqtt/ku_shutter/set", transformationPattern="JS:codegen-rpos.js?channel=position", transformationPatternOut="JS:codegen-cmd-rpos.js?channel=position"]
+		Type switch : calibration [stateTopic="zigbee2mqtt/ku_shutter", commandTopic="zigbee2mqtt/ku_shutter/set", transformationPattern="JSONPATH:$.calibration", formatBeforePublish="{\"calibration\": \"%s\"}"]
+		Type number : link [stateTopic="zigbee2mqtt/ku_shutter", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ku_shutter", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Ext backup power supply (0x7cb03eaa0a09e7bc)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html

@@ -238,12 +238,12 @@ Number:Dimensionless sz_climate_humidity "SZ Climate humidity  [%.0f %%]" <humid
 Number:Dimensionless sz_climate_battery "SZ Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_climate:battery"}
 // SZ Main (0x842e14fffe0eb8a0)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Dimmer sz_main_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_main_light:dim"}
-Dimmer sz_main_light_dim_fast "SZ Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_main_light:dim_fast"}
-Dimmer sz_main_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:sz_main_light:ct"}
-Switch sz_main_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_main_light:ota"}
-Number:Dimensionless sz_main_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_main_light:link"}
-Switch sz_main_light_sw "SZ Main" <light> (g_all_sw,all_light,eg_light,sz_light) {channel="mqtt:topic:openhab:sz_main_light:state"}
+Dimmer sz_up_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_up_light:dim"}
+Dimmer sz_up_light_dim_fast "SZ Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_up_light:dim_fast"}
+Dimmer sz_up_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:sz_up_light:ct"}
+Switch sz_up_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_up_light:ota"}
+Number:Dimensionless sz_up_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_up_light:link"}
+Switch sz_up_light_sw "SZ Main" <light> (g_all_sw,all_light,eg_light,sz_light) {channel="mqtt:topic:openhab:sz_up_light:state"}
 // FS Main remote (0xb4e3f9fffeb35529)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Dimmer sz_remote_main_dim "FS Main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_remote_main:dim"}
@@ -251,6 +251,13 @@ Switch sz_remote_main_lowbatt "FS Main remote BAT [MAP(codegen-lowbat.map):%s]" 
 Switch sz_remote_main_ota "FS Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_remote_main:ota"}
 Number:Dimensionless sz_remote_main_link "FS Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_remote_main:link"}
 Number:Dimensionless sz_remote_main_battery "FS Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_remote_main:battery"}
+// FS remote L (0x94deb8fffea8a1f9)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer sz_bed_l_remote_dim "FS remote L DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bed_l_remote:dim"}
+Switch sz_bed_l_remote_lowbatt "FS remote L BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_bed_l_remote:battery_low"}
+Switch sz_bed_l_remote_ota "FS remote L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_l_remote:ota"}
+Number:Dimensionless sz_bed_l_remote_link "FS remote L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_l_remote:link"}
+Number:Dimensionless sz_bed_l_remote_battery "FS remote L  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_bed_l_remote:battery"}
 // Bedroom remote (0x14b457fffe7e2305)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Switch sz_remote_bed_lowbatt "Bedroom remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_remote_bed:battery_low"}
@@ -272,20 +279,20 @@ Number:Dimensionless sz_bedside_drawler_light_link "SZ Bedside drawler LINK [%d]
 Switch sz_bedside_drawler_light_sw "SZ Bedside drawler" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:state"}
 // SZ Bed L (0x287681fffe6f76fd)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
-Dimmer sz_bed_light_l_dim "SZ Bed L DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bed_light_l:dim"}
+Dimmer sz_bed_light_l_dim "SZ Bed L DIM [%d %%]" <light> (g_all_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_l:dim"}
 Dimmer sz_bed_light_l_dim_fast "SZ Bed L DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_bed_light_l:dim_fast"}
 Dimmer sz_bed_light_l_ct "SZ Bed L CT [JS(codegen-mired.js): %s]" <light> (g_all_ct) {channel="mqtt:topic:openhab:sz_bed_light_l:ct"}
 Switch sz_bed_light_l_ota "SZ Bed L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_light_l:ota"}
 Number:Dimensionless sz_bed_light_l_link "SZ Bed L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_l:link"}
-Switch sz_bed_light_l_sw "SZ Bed L" <light> (g_all_sw,all_light,eg_light,sz_light) {channel="mqtt:topic:openhab:sz_bed_light_l:state"}
+Switch sz_bed_light_l_sw "SZ Bed L" <light> (g_all_sw,all_light,eg_light,sz_light,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_l:state"}
 // SZ Bed R (0x90395efffeb9dcee)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
-Dimmer sz_bed_light_r_dim "SZ Bed R DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bed_light_r:dim"}
+Dimmer sz_bed_light_r_dim "SZ Bed R DIM [%d %%]" <light> (g_all_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_r:dim"}
 Dimmer sz_bed_light_r_dim_fast "SZ Bed R DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_bed_light_r:dim_fast"}
 Dimmer sz_bed_light_r_ct "SZ Bed R CT [JS(codegen-mired.js): %s]" <light> (g_all_ct) {channel="mqtt:topic:openhab:sz_bed_light_r:ct"}
 Switch sz_bed_light_r_ota "SZ Bed R OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_light_r:ota"}
 Number:Dimensionless sz_bed_light_r_link "SZ Bed R LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_r:link"}
-Switch sz_bed_light_r_sw "SZ Bed R" <light> (g_all_sw,all_light,eg_light,sz_light) {channel="mqtt:topic:openhab:sz_bed_light_r:state"}
+Switch sz_bed_light_r_sw "SZ Bed R" <light> (g_all_sw,all_light,eg_light,sz_light,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_r:state"}
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch ku_climate_lowbatt "KU Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_climate:battery_low"}
@@ -666,34 +673,34 @@ Switch ns_christmas_light_sw "NS Christmas light" <light> (g_all_sw,g_light_chri
 Switch bk_christmas_light_ota "Balkon Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_christmas_light:ota"}
 Number:Dimensionless bk_christmas_light_link "Balkon Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_christmas_light:link"}
 Switch bk_christmas_light_sw "Balkon Christmas light" <light> (g_all_sw,g_light_christmas) {channel="mqtt:topic:openhab:bk_christmas_light:state"}
-// FS Blinds (0xa4c138fd0fd1c168)
+// FS Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
-Switch fs_blinds_ota "FS Blinds OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_blinds:ota"}
-Number:Dimensionless fs_blinds_link "FS Blinds LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_blinds:link"}
-String fs_blinds_cmd "FS Blinds [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_fs_cmd) {channel="mqtt:topic:openhab:fs_blinds:state"}
-String fs_blinds_mov "FS Blinds movement" <blinds> {channel="mqtt:topic:openhab:fs_blinds:moving"}
-Dimmer fs_blinds_pos "FS Blinds [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_fs_pos) {channel="mqtt:topic:openhab:fs_blinds:position"}
-Switch fs_blinds_cal "FS Blinds cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:fs_blinds:calibration"}
-// NS Blinds (0xa4c13878cea182ad)
+Switch sz_shutter_ota "FS Shutter OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_shutter:ota"}
+Number:Dimensionless sz_shutter_link "FS Shutter LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_shutter:link"}
+String sz_shutter_cmd "FS Shutter [%s]" <blinds> (g_all_cmd,g_blinds_cmd,sz_blinds_cmd) {channel="mqtt:topic:openhab:sz_shutter:state"}
+String sz_shutter_mov "FS Shutter movement" <blinds> {channel="mqtt:topic:openhab:sz_shutter:moving"}
+Dimmer sz_shutter_pos "FS Shutter [%d %%]" <blinds> (g_all_pos,g_blinds_pos,sz_blinds_pos) {channel="mqtt:topic:openhab:sz_shutter:position"}
+Switch sz_shutter_cal "FS Shutter cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:sz_shutter:calibration"}
+// KS Blinds (0xa4c13878cea182ad)
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
-Switch ns_blinds_ota "NS Blinds OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_blinds:ota"}
-Number:Dimensionless ns_blinds_link "NS Blinds LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_blinds:link"}
-String ns_blinds_1_cmd "NS Blinds (Main) [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_ns_cmd) {channel="mqtt:topic:openhab:ns_blinds:state_left"}
-String ns_blinds_1_mov "NS Blinds (Main) movement" <blinds> {channel="mqtt:topic:openhab:ns_blinds:moving_left"}
-Dimmer ns_blinds_1_pos "NS Blinds (Main) [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ns_pos) {channel="mqtt:topic:openhab:ns_blinds:position_left"}
-Switch ns_blinds_1_cal "NS Blinds (Main) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ns_blinds:calibration_left"}
-String ns_blinds_2_cmd "NS Blinds (Side) [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_ns_cmd) {channel="mqtt:topic:openhab:ns_blinds:state_right"}
-String ns_blinds_2_mov "NS Blinds (Side) movement" <blinds> {channel="mqtt:topic:openhab:ns_blinds:moving_right"}
-Dimmer ns_blinds_2_pos "NS Blinds (Side) [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ns_pos) {channel="mqtt:topic:openhab:ns_blinds:position_right"}
-Switch ns_blinds_2_cal "NS Blinds (Side) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ns_blinds:calibration_right"}
-// KU Blinds (0xa4c138018d7a55bf)
+Switch ks_shutter_ota "KS Blinds OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_shutter:ota"}
+Number:Dimensionless ks_shutter_link "KS Blinds LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_shutter:link"}
+String ks_shutter_1_cmd "KS Shutter (Main) [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_ks_cmd) {channel="mqtt:topic:openhab:ks_shutter:state_left"}
+String ks_shutter_1_mov "KS Shutter (Main) movement" <blinds> {channel="mqtt:topic:openhab:ks_shutter:moving_left"}
+Dimmer ks_shutter_1_pos "KS Shutter (Main) [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ks_pos) {channel="mqtt:topic:openhab:ks_shutter:position_left"}
+Switch ks_shutter_1_cal "KS Shutter (Main) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ks_shutter:calibration_left"}
+String ks_shutter_2_cmd "KS Shutter (Side) [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_ks_cmd) {channel="mqtt:topic:openhab:ks_shutter:state_right"}
+String ks_shutter_2_mov "KS Shutter (Side) movement" <blinds> {channel="mqtt:topic:openhab:ks_shutter:moving_right"}
+Dimmer ks_shutter_2_pos "KS Shutter (Side) [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ks_pos) {channel="mqtt:topic:openhab:ks_shutter:position_right"}
+Switch ks_shutter_2_cal "KS Shutter (Side) cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ks_shutter:calibration_right"}
+// KU Shutter (0xa4c138018d7a55bf)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
-Switch ku_blinds_ota "KU Blinds OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_blinds:ota"}
-Number:Dimensionless ku_blinds_link "KU Blinds LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_blinds:link"}
-String ku_blinds_cmd "KU Blinds [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_ku_cmd) {channel="mqtt:topic:openhab:ku_blinds:state"}
-String ku_blinds_mov "KU Blinds movement" <blinds> {channel="mqtt:topic:openhab:ku_blinds:moving"}
-Dimmer ku_blinds_pos "KU Blinds [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ku_pos) {channel="mqtt:topic:openhab:ku_blinds:position"}
-Switch ku_blinds_cal "KU Blinds cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ku_blinds:calibration"}
+Switch ku_shutter_ota "KU Shutter OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_shutter:ota"}
+Number:Dimensionless ku_shutter_link "KU Shutter LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_shutter:link"}
+String ku_shutter_cmd "KU Shutter [%s]" <blinds> (g_all_cmd,g_blinds_cmd,g_blinds_ku_cmd) {channel="mqtt:topic:openhab:ku_shutter:state"}
+String ku_shutter_mov "KU Shutter movement" <blinds> {channel="mqtt:topic:openhab:ku_shutter:moving"}
+Dimmer ku_shutter_pos "KU Shutter [%d %%]" <blinds> (g_all_pos,g_blinds_pos,g_blinds_ku_pos) {channel="mqtt:topic:openhab:ku_shutter:position"}
+Switch ku_shutter_cal "KU Shutter cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ku_shutter:calibration"}
 // Ext backup power supply (0x7cb03eaa0a09e7bc)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
 Switch backup_ext_power_ota "Ext backup power supply OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:backup_ext_power:ota"}

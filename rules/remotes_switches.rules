@@ -291,7 +291,7 @@ then
     }
 end
 
-rule "NS remote dimmer"
+rule "KS remote dimmer"
 when
     Channel "mqtt:topic:openhab:ns_light_switch:action_dim" triggered
 then
@@ -309,19 +309,19 @@ then
     } catch(Throwable t) {}
     switch(state) {
         case "on": {
-            if (sz_main_light_sw.state == ON && sz_main_light_dim.state > 50) {
-                sz_main_light_sw.sendCommand(OFF)
+            if (sz_up_light_sw.state == ON && sz_up_light_dim.state > 50) {
+                sz_up_light_sw.sendCommand(OFF)
             } else {
-                //sz_main_light_sw.sendCommand(ON)
-                sz_main_light_dim.sendCommand(100)
+                //sz_up_light_sw.sendCommand(ON)
+                sz_up_light_dim.sendCommand(100)
             }
         }
         case "off": {
-            if (sz_main_light_sw.state == ON && sz_main_light_dim.state < 50) {
-                sz_main_light_sw.sendCommand(OFF)
+            if (sz_up_light_sw.state == ON && sz_up_light_dim.state < 50) {
+                sz_up_light_sw.sendCommand(OFF)
             } else {
-                //sz_main_light_sw.sendCommand(ON)
-                sz_main_light_dim.sendCommand(1)
+                //sz_up_light_sw.sendCommand(ON)
+                sz_up_light_dim.sendCommand(1)
             }
         }
         case "arrow_right_click": {
@@ -339,7 +339,7 @@ then
             sz_bed_light_dim.sendCommand(50)
             Thread::sleep(3000)
             fl_light.sendCommand(OFF)
-            sz_main_light_sw.sendCommand(OFF)
+            sz_up_light_sw.sendCommand(OFF)
         }
     }
 end
@@ -348,8 +348,41 @@ rule "SZ remote dimmer (main)"
 when
     Channel "mqtt:topic:openhab:sz_remote_main:action_dim" triggered
 then
-    if (sz_main_light_sw.state == ON) {
-        sz_main_light_dim_fast.sendCommand((sz_main_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+    if (sz_up_light_sw.state == ON) {
+        sz_up_light_dim_fast.sendCommand((sz_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+    }
+end
+
+rule "SZ main sw (bed)"
+when
+    Channel "mqtt:topic:openhab:sz_bed_l_remote:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "volume_up": {
+            sz_bed_light_dim.sendCommand(100)
+        }
+        case "volume_down": {
+            if (sz_bed_light_dim.state < 10) {
+                sz_bed_light.sendCommand(OFF)
+            } else {
+                sz_bed_light_dim.sendCommand(1)
+            }
+        }
+        // Control Blinds
+        case "track_next": {
+            sz_blinds_cmd.sendCommand("open")
+        }
+        case "dots_2_initial_press": {
+            sz_blinds_cmd.sendCommand("close")
+        }
+        // Control Curtains
+        case "track_previous": {
+            sz_curtain_position.sendCommand(100)
+        }
+        case "dots_1_initial_press": {
+            sz_curtain_position.sendCommand(0)
+        }
     }
 end
 

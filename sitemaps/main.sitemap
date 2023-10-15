@@ -211,6 +211,16 @@ sitemap main label="MAIN"
 				Switch item=sz_light label="All [%s]" icon="light"
                 Switch item=sunrise_enable icon="light"
             }
+            Frame label="Blinds" {
+                Switch item=sz_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
+                Slider item=sz_blinds_pos label="Position [%d %%]"
+                Switch item=cfg_blinds_auto_sz label="Enable auto [%s]"
+            }
+            Frame label="Curtains" {
+                Switch item=sz_curtain_switch label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
+                Slider item=sz_curtain_position label="Position [%d %%]"
+                Switch item=cfg_blinds_auto_sz label="Enable auto [%s]"
+            }
             Frame label="Bed" {
 				Switch item=sz_bed_light_l_sw label="Bed L [%s]" icon="light"
 				Slider item=sz_bed_light_l_dim label="Bed L DIM [%d %%]" icon="light"
@@ -293,7 +303,7 @@ sitemap main label="MAIN"
             Switch      item=ku_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
 		}
 
-		Group item=ns_climate_temperature label="Theater" {
+		Group item=ks_climate_temperature label="Theater" {
 			Text 		item=ks_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ks_climate_humidity label="Humidity [%d %%]"
 			Setpoint	item=ks_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]

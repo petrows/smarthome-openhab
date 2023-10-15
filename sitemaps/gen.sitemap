@@ -286,11 +286,11 @@ Text item=sz_climate_battery
 Frame label="SZ Main (0x842e14fffe0eb8a0)" {
 // SZ Main (0x842e14fffe0eb8a0)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Slider item=sz_main_light_dim
-Slider item=sz_main_light_ct
-Text item=sz_main_light_ota
-Text item=sz_main_light_link
-Switch item=sz_main_light_sw
+Slider item=sz_up_light_dim
+Slider item=sz_up_light_ct
+Text item=sz_up_light_ota
+Text item=sz_up_light_link
+Switch item=sz_up_light_sw
 }
 Frame label="FS Main remote (0xb4e3f9fffeb35529)" {
 // FS Main remote (0xb4e3f9fffeb35529)
@@ -300,6 +300,15 @@ Text item=sz_remote_main_lowbatt
 Text item=sz_remote_main_ota
 Text item=sz_remote_main_link
 Text item=sz_remote_main_battery
+}
+Frame label="FS remote L (0x94deb8fffea8a1f9)" {
+// FS remote L (0x94deb8fffea8a1f9)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=sz_bed_l_remote_dim
+Text item=sz_bed_l_remote_lowbatt
+Text item=sz_bed_l_remote_ota
+Text item=sz_bed_l_remote_link
+Text item=sz_bed_l_remote_battery
 }
 Frame label="Bedroom remote (0x14b457fffe7e2305)" {
 // Bedroom remote (0x14b457fffe7e2305)
@@ -813,39 +822,39 @@ Text item=bk_christmas_light_ota
 Text item=bk_christmas_light_link
 Switch item=bk_christmas_light_sw
 }
-Frame label="FS Blinds (0xa4c138fd0fd1c168)" {
-// FS Blinds (0xa4c138fd0fd1c168)
+Frame label="FS Shutter (0xa4c138fd0fd1c168)" {
+// FS Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
-Text item=fs_blinds_ota
-Text item=fs_blinds_link
-Switch item=fs_blinds_cmd
-Text item=fs_blinds_mov
-Slider item=fs_blinds_pos
-Switch item=fs_blinds_cal
+Text item=sz_shutter_ota
+Text item=sz_shutter_link
+Switch item=sz_shutter_cmd
+Text item=sz_shutter_mov
+Slider item=sz_shutter_pos
+Switch item=sz_shutter_cal
 }
-Frame label="NS Blinds (0xa4c13878cea182ad)" {
-// NS Blinds (0xa4c13878cea182ad)
+Frame label="KS Blinds (0xa4c13878cea182ad)" {
+// KS Blinds (0xa4c13878cea182ad)
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
-Text item=ns_blinds_ota
-Text item=ns_blinds_link
-Switch item=ns_blinds_1_cmd
-Text item=ns_blinds_1_mov
-Slider item=ns_blinds_1_pos
-Switch item=ns_blinds_1_cal
-Switch item=ns_blinds_2_cmd
-Text item=ns_blinds_2_mov
-Slider item=ns_blinds_2_pos
-Switch item=ns_blinds_2_cal
+Text item=ks_shutter_ota
+Text item=ks_shutter_link
+Switch item=ks_shutter_1_cmd
+Text item=ks_shutter_1_mov
+Slider item=ks_shutter_1_pos
+Switch item=ks_shutter_1_cal
+Switch item=ks_shutter_2_cmd
+Text item=ks_shutter_2_mov
+Slider item=ks_shutter_2_pos
+Switch item=ks_shutter_2_cal
 }
-Frame label="KU Blinds (0xa4c138018d7a55bf)" {
-// KU Blinds (0xa4c138018d7a55bf)
+Frame label="KU Shutter (0xa4c138018d7a55bf)" {
+// KU Shutter (0xa4c138018d7a55bf)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
-Text item=ku_blinds_ota
-Text item=ku_blinds_link
-Switch item=ku_blinds_cmd
-Text item=ku_blinds_mov
-Slider item=ku_blinds_pos
-Switch item=ku_blinds_cal
+Text item=ku_shutter_ota
+Text item=ku_shutter_link
+Switch item=ku_shutter_cmd
+Text item=ku_shutter_mov
+Slider item=ku_shutter_pos
+Switch item=ku_shutter_cal
 }
 Frame label="Ext backup power supply (0x7cb03eaa0a09e7bc)" {
 // Ext backup power supply (0x7cb03eaa0a09e7bc)

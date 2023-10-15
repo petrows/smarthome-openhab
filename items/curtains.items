@@ -14,16 +14,16 @@ Group:Dimmer:AVG g_curtains_pos "Curtains pos [%d %%]" <curtains>
 Group g_blinds_ns_cmd "NS Blinds command []" <rollershutter>
 Group:Dimmer:AVG g_blinds_ns_pos "NS Blinds pos [%d %%]" <rollershutter>
 
-Group g_blinds_fs_cmd "FS Blinds command []" <rollershutter>
-Group:Dimmer:AVG g_blinds_fs_pos "FS Blinds pos [%d %%]" <rollershutter>
+Group sz_blinds_cmd "FS Blinds command []" <rollershutter>
+Group:Dimmer:AVG sz_blinds_pos "FS Blinds pos [%d %%]" <rollershutter>
 
 Group g_blinds_ku_cmd "KU Blinds command []" <rollershutter>
 Group:Dimmer:AVG g_blinds_ku_pos "KU Blinds pos [%d %%]" <rollershutter>
 
 Switch cfg_blinds_auto "Blinds auto" <curtains_cfg>
 Switch cfg_blinds_auto_sz "SZ Curtain auto" <curtains_cfg>
-Switch cfg_blinds_auto_ns "NS Curtain auto" <curtains_cfg>
-Switch cfg_blinds_auto_fs "FS Curtain auto" <curtains_cfg>
+Switch cfg_blinds_auto_wz "WZ Curtain auto" <curtains_cfg>
+Switch cfg_blinds_auto_ks "KS Curtain auto" <curtains_cfg>
 Switch cfg_blinds_auto_ku "KU Curtain auto" <curtains_cfg>
 
 String sz_curtain_switch "SZ Curtain" <curtains> (g_curtains_cmd) {channel="mqtt:topic:openhab:sz-curtain:command"}

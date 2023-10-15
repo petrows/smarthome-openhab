@@ -12,7 +12,7 @@ then
             g_blinds_ns_cmd.sendCommand(cmd)
         }
         if (ON == cfg_blinds_auto_fs.state) {
-            g_blinds_fs_cmd.sendCommand(cmd)
+            sz_blinds_cmd.sendCommand(cmd)
         }
         if (ON == cfg_blinds_auto_ku.state) {
             g_blinds_ku_cmd.sendCommand(cmd)

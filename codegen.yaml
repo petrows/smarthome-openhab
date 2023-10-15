@@ -279,7 +279,7 @@ devices:
     type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: SZ Main
-    id: sz_main_light
+    id: sz_up_light
     zigbee_id: '0x842e14fffe0eb8a0'
     type: LIVARNO_CELLING_14147206L
     groups:
@@ -293,6 +293,11 @@ devices:
   - name: FS Main remote
     id: sz_remote_main
     zigbee_id: '0xb4e3f9fffeb35529'
+    type: IKEA_TRADFRI_STYRBAR
+
+  - name: FS remote L
+    id: sz_bed_l_remote
+    zigbee_id: '0x94deb8fffea8a1f9'
     type: IKEA_TRADFRI_STYRBAR
 
   - name: Bedroom remote
@@ -319,6 +324,9 @@ devices:
         - all_light
         - eg_light
         - sz_light
+        - sz_bed_light
+      dim:
+        - sz_bed_light_dim
 
   - name: SZ Bed R
     id: sz_bed_light_r
@@ -329,6 +337,9 @@ devices:
         - all_light
         - eg_light
         - sz_light
+        - sz_bed_light
+      dim:
+        - sz_bed_light_dim
 
 # KITCHEN ================================
 
@@ -842,46 +853,46 @@ devices:
 
 # Blinds
 
-  - name: FS Blinds
-    id: fs_blinds
+  - name: FS Shutter
+    id: sz_shutter
     zigbee_id: '0xa4c138fd0fd1c168'
     type: BLINDS_MODULE_TS130F_1CH
     groups:
       cmd:
       - g_blinds_cmd
-      - g_blinds_fs_cmd
+      - sz_blinds_cmd
       pos:
       - g_blinds_pos
-      - g_blinds_fs_pos
+      - sz_blinds_pos
 
-  - name: NS Blinds
-    id: ns_blinds
+  - name: KS Blinds
+    id: ks_shutter
     zigbee_id: '0xa4c13878cea182ad'
     type: BLINDS_MODULE_TS130F_2CH
     channels:
       left:
-        id: ns_blinds_1
-        name: NS Blinds (Main)
+        id: ks_shutter_1
+        name: KS Shutter (Main)
         groups:
           cmd:
           - g_blinds_cmd
-          - g_blinds_ns_cmd
+          - g_blinds_ks_cmd
           pos:
           - g_blinds_pos
-          - g_blinds_ns_pos
+          - g_blinds_ks_pos
       right:
-        id: ns_blinds_2
-        name: NS Blinds (Side)
+        id: ks_shutter_2
+        name: KS Shutter (Side)
         groups:
           cmd:
           - g_blinds_cmd
-          - g_blinds_ns_cmd
+          - g_blinds_ks_cmd
           pos:
           - g_blinds_pos
-          - g_blinds_ns_pos
+          - g_blinds_ks_pos
 
-  - name: KU Blinds
-    id: ku_blinds
+  - name: KU Shutter
+    id: ku_shutter
     zigbee_id: '0xa4c138018d7a55bf'
     type: BLINDS_MODULE_TS130F_1CH
     groups:

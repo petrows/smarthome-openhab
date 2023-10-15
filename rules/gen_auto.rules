@@ -13,7 +13,7 @@ var Timer bz_light_2_ct_timer
 var Timer ks_up_light_ct_timer
 var Timer wz_main_light_ct_timer
 var Timer wz_color_light_ct_timer
-var Timer sz_main_light_ct_timer
+var Timer sz_up_light_ct_timer
 var Timer sz_bed_light_l_ct_timer
 var Timer sz_bed_light_r_ct_timer
 var Timer tr_up_light_ct_timer
@@ -164,11 +164,11 @@ end
 // Device should apply saved color temp when ON
 rule "SZ Main apply color on ON"
 when
-    Item sz_main_light_sw changed to ON
+    Item sz_up_light_sw changed to ON
 then
-    val ct_set = (sz_main_light_ct.state as Number).intValue
-    sz_main_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        sz_main_light_ct.sendCommand(ct_set)
+    val ct_set = (sz_up_light_ct.state as Number).intValue
+    sz_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        sz_up_light_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON
