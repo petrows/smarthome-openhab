@@ -295,6 +295,7 @@ devices:
         - sz_light
       ct:
         - sz_light_ct
+        - sunrise_ct
         - astro_color_light_ct
 
   - name: FS Main remote
@@ -334,6 +335,8 @@ devices:
         - sz_bed_light
       ct:
         - sz_light_ct
+        - sz_bed_light_ct
+        - sunrise_ct
         - astro_color_light_ct
       dim:
         - sz_bed_light_dim
@@ -352,6 +355,8 @@ devices:
         - sz_bed_light
       ct:
         - sz_light_ct
+        - sz_bed_light_ct
+        - sunrise_ct
         - astro_color_light_ct
       dim:
         - sz_bed_light_dim

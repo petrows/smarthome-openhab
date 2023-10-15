@@ -28,7 +28,7 @@ Group:Dimmer:MAX wz_light_decor_dim
 Group:Dimmer:MAX wz_light_decor_dim_fast
 
 // Sunrise groups
-Group:Dimmer:AVG g_sunrise_ct // Group of lamps to control temperature
+Group:Dimmer:AVG sunrise_ct // Group of lamps to control temperature
 
 // EG auto lights
 Group:Switch:OR(ON, OFF) eg_light_auto

@@ -62,11 +62,10 @@ then
         // We do not use groups, we must have exact order of lamps defined
         // Device MUST have pair of _sw and _dim items!
         var lightGroupItems = newArrayList(
-            "sz_declamp_1",
-            "sz_declamp_2",
-            "sz_declamp_3",
-            "sz_bed_light_1",
-            "sz_bed_light_2"
+            "eg_flur_light",
+            "sz_bed_light_l",
+            "sz_bed_light_2",
+            "sz_up_light"
         )
 
         if (sunriseStarted) {
@@ -127,7 +126,7 @@ then
         ]
 
         // Update CT (in reverse 100 -> 0)
-        g_sunrise_ct.sendCommand((100 - (sunriseCTProgress * 100)).toString())
+        sunrise_ct.sendCommand((100 - (sunriseCTProgress * 100)).toString())
 
         // All items 100% ?
         if (brightnessAllProgress >= 1) {
