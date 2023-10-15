@@ -248,16 +248,17 @@ sitemap main label="MAIN"
 		Group item=wz_light label="Living [%s]" icon="light" {
 			Frame {
 				Switch item=wz_light label="All [%s]" icon="light"
+                Slider item=wz_light_dim label="All DIM [%d %%]" icon="light"
+                Slider item=wz_light_ct label="All CT [JS(codegen-mired.js):%s]" icon="light"
             }
             Frame label="Main" {
-				Switch item=wz_main_light_sw label="Main [%s]" icon="light"
-				Slider item=wz_main_light_dim label="Main DIM [%d %%]" icon="light"
-				Slider item=wz_main_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
-				Slider item=wz_light_ct label="All CT [JS(codegen-mired.js):%s]" icon="light"
+				Switch item=wz_up_light_sw label="Main [%s]" icon="light"
+				Slider item=wz_up_light_dim label="Main DIM [%d %%]" icon="light"
+				Slider item=wz_up_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
 			Frame label="Room decor" {
                 Switch item=wz_light_decor label="Room light [%s]" icon="light"
-                Slider item=wz_light_decor_brightness label="Room light DIM [%d %%]" icon="light"
+                Slider item=wz_light_decor_dim label="Room light DIM [%d %%]" icon="light"
             }
             Frame label="Lamps control" {
 				Switch item=wz_declamp_1_sw label="Night 1 [%s]"

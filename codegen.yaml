@@ -205,6 +205,8 @@ devices:
         - all_light
         - eg_light
         - wz_light
+      dim:
+        - wz_light_dim
       ct:
         - wz_light_ct
         - astro_color_light_ct
@@ -233,6 +235,7 @@ devices:
         - wz_light
         - wz_light_decor
       dim:
+        - wz_light_dim
         - wz_light_decor_dim
       dim_fast:
         - wz_light_decor_dim_fast
@@ -249,6 +252,7 @@ devices:
         - wz_light
         - wz_light_decor
       dim:
+        - wz_light_dim
         - wz_light_decor_dim
       dim_fast:
         - wz_light_decor_dim_fast
@@ -265,6 +269,7 @@ devices:
         - wz_light
         - wz_light_decor
       dim:
+        - wz_light_dim
         - wz_light_decor_dim
       dim_fast:
         - wz_light_decor_dim_fast
@@ -293,6 +298,8 @@ devices:
         - all_light
         - eg_light
         - sz_light
+      dim:
+        - sz_light_dim
       ct:
         - sz_light_ct
         - sunrise_ct
@@ -339,6 +346,7 @@ devices:
         - sunrise_ct
         - astro_color_light_ct
       dim:
+        - sz_light_dim
         - sz_bed_light_dim
       dim_fast:
         - sz_bed_light_dim_fast
@@ -359,6 +367,7 @@ devices:
         - sunrise_ct
         - astro_color_light_ct
       dim:
+        - sz_light_dim
         - sz_bed_light_dim
       dim_fast:
         - sz_bed_light_dim_fast

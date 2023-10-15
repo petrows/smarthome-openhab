@@ -9,7 +9,6 @@ Group:Dimmer:MAX bk_light_ct "Balkon CT [%d %%]" <light>
 
 Group:Switch:OR(ON, OFF) fl_light <light>
 Group:Switch:OR(ON, OFF) bz_light <light>
-Group:Switch:OR(ON, OFF) wz_light <light>
 Group:Switch:OR(ON, OFF) ks_light <light>
 Group:Switch:OR(ON, OFF) ku_light <light>
 Group:Switch:OR(ON, OFF) ku_up_light <light>
@@ -17,12 +16,16 @@ Group:Switch:OR(ON, OFF) ku_up_light <light>
 // SZ groups
 Group:Switch:OR(ON, OFF) sz_light <light>
 Group:Dimmer:AVG sz_light_ct "SZ CT [%d %%]" <light>
+Group:Dimmer:AVG sz_light_dim "WZ DIM [%d %%]" <light>
 Group:Switch:OR(ON, OFF) sz_bed_light
 Group:Dimmer:AVG sz_bed_light_ct "SZ Bed CT [%d %%]" <light>
 Group:Dimmer:MAX sz_bed_light_dim
 Group:Dimmer:MAX sz_bed_light_dim_fast
 
 // WZ groups
+Group:Switch:OR(ON, OFF) wz_light <light>
+Group:Dimmer:AVG wz_light_ct "WZ CT [%d %%]" <light>
+Group:Dimmer:AVG wz_light_dim "WZ DIM [%d %%]" <light>
 Group:Switch:OR(ON, OFF) wz_light_decor
 Group:Dimmer:MAX wz_light_decor_dim
 Group:Dimmer:MAX wz_light_decor_dim_fast
