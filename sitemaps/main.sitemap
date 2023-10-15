@@ -188,10 +188,10 @@ sitemap main label="MAIN"
                 Switch item=cfg_blinds_auto_ks label="Enable auto [%s]"
             }
             Frame label="RGB" {
-                Switch item=ns_night_lamp_sw label="RGB [%s]" icon="light"
-                Slider item=ns_night_lamp_dim label="RGB DIM [%d %%]" icon="light"
-                Slider item=ns_night_lamp_ct label="RGB CT [JS(codegen-mired.js):%s]"
-                Colorpicker item=ns_night_lamp_color label="RGB Color []" icon="colorpicker"
+                Switch item=ks_light_night_sw label="RGB [%s]" icon="light"
+                Slider item=ks_light_night_dim label="RGB DIM [%d %%]" icon="light"
+                Slider item=ks_light_night_ct label="RGB CT [JS(codegen-mired.js):%s]"
+                Colorpicker item=ks_light_night_color label="RGB Color []" icon="colorpicker"
             }
             Frame label="Cinema" {
                 Switch item=cinema_mode label="Cinemo mode [%s]" icon="projector"
@@ -210,6 +210,7 @@ sitemap main label="MAIN"
 			Frame {
 				Switch item=sz_light label="All [%s]" icon="light"
                 Slider item=sz_light_ct label="All CT [JS(codegen-mired.js):%s]" icon="light"
+                Slider item=sz_bedside_drawler_light_dim label="Bedside DIM [%d %%]" icon="light"
                 Switch item=sunrise_enable icon="light"
             }
             Frame label="Blinds" {
@@ -228,9 +229,17 @@ sitemap main label="MAIN"
 				Slider item=sz_up_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
             Frame label="Bed" {
+				Switch item=sz_bed_light label="Bed [%s]" icon="light"
+				Slider item=sz_bed_light_dim label="Bed DIM [%d %%]" icon="light"
+                Slider item=sz_bed_light_ct label="Bed CT [JS(codegen-mired.js):%s]" icon="light"
+			}
+
+            Frame {
 				Switch item=sz_bed_light_l_sw label="Bed L [%s]" icon="light"
 				Slider item=sz_bed_light_l_dim label="Bed L DIM [%d %%]" icon="light"
                 Slider item=sz_bed_light_l_ct label="Bed L CT [JS(codegen-mired.js):%s]" icon="light"
+            }
+            Frame {
 				Switch item=sz_bed_light_r_sw label="Bed R [%s]" icon="light"
 				Slider item=sz_bed_light_r_dim label="Bed R DIM [%d %%]" icon="light"
                 Slider item=sz_bed_light_r_ct label="Bed R CT [JS(codegen-mired.js):%s]" icon="light"

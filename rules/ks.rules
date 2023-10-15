@@ -1,0 +1,107 @@
+
+rule "Cinema ON"
+when
+	Item cinema_mode changed to ON
+then
+	logWarn("cinema", "Cinema mode: ON")
+
+    // Close blinds
+    ks_blinds_cmd.sendCommand("close")
+
+    // Turn ON support light
+    val mq = getActions("mqtt","mqtt:broker:openhab")
+    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}, \"brightness\":254}")
+
+    // Turn ON master power
+    ks_projector_power_sw.sendCommand(ON)
+
+    // Turn on devices
+    Thread::sleep(10000)
+    ir_projector_power.sendCommand(ON)
+    ir_audio_power.sendCommand(ON)
+    // ir_stb_power.sendCommand(ON) // STB stay on on power
+
+    // Turn OFF light except Kino
+    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"brightness\":0, \"transition\": 20}")
+    all_light.members.forEach [s |
+        if (s == ks_light_night_sw) {
+            // ns_night_lamp_dim.sendCommand(1)
+        } else {
+            s.sendCommand(OFF)
+        }
+    ]
+
+    // When all ON, we can finally turn off all lights
+    Thread::sleep(21000)
+    all_light.sendCommand(OFF)
+end
+
+rule "Cinema OFF"
+when
+	Item cinema_mode changed to OFF
+then
+	logWarn("cinema", "Cinema mode: OFF")
+
+    // Open blinds
+    ks_blinds_cmd.sendCommand("open")
+
+    // Turn on light
+    // Very slow transition
+    val mq = getActions("mqtt","mqtt:broker:openhab")
+    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"brightness\":1}")
+    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"brightness\":254, \"transition\": 20}")
+
+    // Turn off devices
+    Thread::sleep(1000)
+    ir_projector_power.sendCommand(ON)
+    Thread::sleep(1000)
+    ir_projector_power.sendCommand(ON) // "Press again to turn off"
+
+    ir_audio_power.sendCommand(ON)
+    ir_stb_power.sendCommand(ON)
+
+    Thread::sleep(20000)
+    // Turn OFF master power
+    ks_projector_power_sw.sendCommand(OFF)
+end
+
+
+rule "KS remote sw"
+when
+    Channel "mqtt:topic:openhab:ks_light_switch:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "on": {
+            ks_up_light_dim.sendCommand(100)
+        }
+        case "off": {
+            if (ks_light.state == ON) {
+                ks_light.sendCommand(OFF)
+            } else {
+                ks_up_light_dim.sendCommand(1)
+            }
+        }
+        case "arrow_right_click": {
+            ks_light.sendCommand(OFF)
+        }
+        case "arrow_left_click": {
+           val mq = getActions("mqtt","mqtt:broker:openhab")
+            mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"brightness\":30}")
+            mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+        }
+    }
+end
+
+rule "KS remote dimmer"
+when
+    Channel "mqtt:topic:openhab:ns_light_switch:action_dim" triggered
+then
+    if (ks_up_light_sw.state == ON) {
+        ks_up_light_dim_fast.sendCommand((ks_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+    }
+    if (ks_light_night_sw.state == ON) {
+        ks_light_night_dim_fast.sendCommand((ks_light_night_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+    }
+end

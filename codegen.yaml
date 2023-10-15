@@ -156,7 +156,7 @@ devices:
     type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: KS Night lamp
-    id: ks_night_lamp
+    id: ks_light_night
     zigbee_id: '0x14b457fffe6383e5'
     type: IKEA_TRADFRI_LAMP_COLOR_600
     ct_auto: False # Do not apply CT when ON
@@ -294,6 +294,7 @@ devices:
         - eg_light
         - sz_light
       ct:
+        - sz_light_ct
         - astro_color_light_ct
 
   - name: FS Main remote
@@ -331,6 +332,9 @@ devices:
         - eg_light
         - sz_light
         - sz_bed_light
+      ct:
+        - sz_light_ct
+        - astro_color_light_ct
       dim:
         - sz_bed_light_dim
       dim_fast:
@@ -346,6 +350,9 @@ devices:
         - eg_light
         - sz_light
         - sz_bed_light
+      ct:
+        - sz_light_ct
+        - astro_color_light_ct
       dim:
         - sz_bed_light_dim
       dim_fast:

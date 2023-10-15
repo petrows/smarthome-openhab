@@ -79,7 +79,7 @@ then
     }
 
     // Stop projector
-    ns_projector_power_sw.sendCommand(OFF)
+    ks_projector_power_sw.sendCommand(OFF)
 
     // Check that PC is off and turn off also sockets there
     desktop_petro_power_try.sendCommand(OFF)
@@ -168,13 +168,6 @@ then
     if (newState == OFF) {
         kg_lager4_manual_sw.sendCommand(OFF)
     }
-end
-
-rule "KU Arbeitlicht switch"
-when
-    Item ku_light_switch_arbeit_sw received update
-then
-    ku_light_arbeitplatte_sw.sendCommand(newState.toString())
 end
 
 // BZ: Mirror should follow main light

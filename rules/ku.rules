@@ -1,0 +1,29 @@
+rule "KU Arbeitlicht SW (Spule)"
+when
+    Channel "mqtt:topic:openhab:ku_light_switch_spule:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "single": {
+            if (ku_light_switch_arbeit_sw.state == ON) {
+                ku_light_switch_arbeit_sw.sendCommand(OFF)
+            } else {
+                ku_light_switch_arbeit_sw.sendCommand(ON)
+            }
+        }
+        case "hold": {
+            if (ku_light_switch_haupt_sw.state == ON) {
+                ku_light_switch_haupt_sw.sendCommand(OFF)
+            } else {
+                ku_light_switch_haupt_sw.sendCommand(ON)
+            }
+        }
+    }
+end
+
+rule "KU Arbeitlicht switch"
+when
+    Item ku_light_switch_arbeit_sw received update
+then
+    ku_light_arbeitplatte_sw.sendCommand(newState.toString())
+end

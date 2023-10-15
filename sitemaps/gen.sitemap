@@ -164,13 +164,13 @@ Text item=ks_climate_battery
 Frame label="KS Night lamp (0x14b457fffe6383e5)" {
 // KS Night lamp (0x14b457fffe6383e5)
 // TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
-Slider item=ks_night_lamp_dim
-Slider item=ks_night_lamp_ct
-Colorpicker item=ks_night_lamp_color
-Text item=ks_night_lamp_color_mode
-Text item=ks_night_lamp_ota
-Text item=ks_night_lamp_link
-Switch item=ks_night_lamp_sw
+Slider item=ks_light_night_dim
+Slider item=ks_light_night_ct
+Colorpicker item=ks_light_night_color
+Text item=ks_light_night_color_mode
+Text item=ks_light_night_ota
+Text item=ks_light_night_link
+Switch item=ks_light_night_sw
 }
 Frame label="KS Projector (0x7cb03eaa0a094d1d)" {
 // KS Projector (0x7cb03eaa0a094d1d)

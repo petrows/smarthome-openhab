@@ -196,16 +196,16 @@ Thing mqtt:topic:openhab:ks_climate "KS Climate" (mqtt:broker:openhab) {
 }
 // KS Night lamp (0x14b457fffe6383e5)
 // TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
-Thing mqtt:topic:openhab:ks_night_lamp "KS Night lamp" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:ks_light_night "KS Night lamp" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ks_night_lamp", commandTopic="zigbee2mqtt/ks_night_lamp/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/ks_night_lamp", commandTopic="zigbee2mqtt/ks_night_lamp/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/ks_night_lamp", commandTopic="zigbee2mqtt/ks_night_lamp/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/ks_night_lamp", commandTopic="zigbee2mqtt/ks_night_lamp/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
-		Type color : color [commandTopic="zigbee2mqtt/ks_night_lamp/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
-		Type string : color_mode [stateTopic="zigbee2mqtt/ks_night_lamp", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
-		Type number : link [stateTopic="zigbee2mqtt/ks_night_lamp", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ks_night_lamp", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type switch : state [stateTopic="zigbee2mqtt/ks_light_night", commandTopic="zigbee2mqtt/ks_light_night/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/ks_light_night", commandTopic="zigbee2mqtt/ks_light_night/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/ks_light_night", commandTopic="zigbee2mqtt/ks_light_night/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="zigbee2mqtt/ks_light_night", commandTopic="zigbee2mqtt/ks_light_night/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
+		Type color : color [commandTopic="zigbee2mqtt/ks_light_night/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
+		Type string : color_mode [stateTopic="zigbee2mqtt/ks_light_night", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
+		Type number : link [stateTopic="zigbee2mqtt/ks_light_night", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ks_light_night", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // KS Projector (0x7cb03eaa0a094d1d)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
