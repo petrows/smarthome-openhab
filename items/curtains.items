@@ -11,8 +11,8 @@ Group:Dimmer:AVG blinds_pos "Blinds pos [%d %%]" <rollershutter>
 Group curtains_cmd "Curtains command []" <curtains> (blinds_curtains_cmd)
 Group:Dimmer:AVG curtains_pos "Curtains pos [%d %%]" <curtains>
 
-Group kt_blinds_cmd "NS Blinds command []" <rollershutter>
-Group:Dimmer:AVG kt_blinds_pos "NS Blinds pos [%d %%]" <rollershutter>
+Group ks_blinds_cmd "KS Blinds command []" <rollershutter>
+Group:Dimmer:AVG ks_blinds_pos "KS Blinds pos [%d %%]" <rollershutter>
 
 Group sz_blinds_cmd "FS Blinds command []" <rollershutter>
 Group:Dimmer:AVG sz_blinds_pos "FS Blinds pos [%d %%]" <rollershutter>

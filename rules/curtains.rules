@@ -8,10 +8,10 @@ then
     // If enabled - command blinds
     if (ON == cfg_blinds_auto.state) {
         // Theater - skip auto modes, if Cinema mode is active
-        if (ON == cfg_blinds_auto_ns.state && OFF == cinema_mode.state) {
-            kt_blinds_cmd.sendCommand(cmd)
+        if (ON == cfg_blinds_auto_ks.state && OFF == cinema_mode.state) {
+            ks_blinds_cmd.sendCommand(cmd)
         }
-        if (ON == cfg_blinds_auto_fs.state) {
+        if (ON == cfg_blinds_auto_sz.state) {
             sz_blinds_cmd.sendCommand(cmd)
         }
         if (ON == cfg_blinds_auto_ku.state) {

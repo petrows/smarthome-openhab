@@ -822,8 +822,8 @@ Text item=bk_christmas_light_ota
 Text item=bk_christmas_light_link
 Switch item=bk_christmas_light_sw
 }
-Frame label="FS Shutter (0xa4c138fd0fd1c168)" {
-// FS Shutter (0xa4c138fd0fd1c168)
+Frame label="SZ Shutter (0xa4c138fd0fd1c168)" {
+// SZ Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
 Text item=sz_shutter_ota
 Text item=sz_shutter_link

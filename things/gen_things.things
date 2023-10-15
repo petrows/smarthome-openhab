@@ -996,9 +996,9 @@ Thing mqtt:topic:openhab:bk_christmas_light "Balkon Christmas light" (mqtt:broke
 		Type number : link [stateTopic="zigbee2mqtt/bk_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/bk_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// FS Shutter (0xa4c138fd0fd1c168)
+// SZ Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
-Thing mqtt:topic:openhab:sz_shutter "FS Shutter" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:sz_shutter "SZ Shutter" (mqtt:broker:openhab) {
 	Channels:
 		Type string : moving [stateTopic="zigbee2mqtt/sz_shutter", transformationPattern="JSONPATH:$.moving"]
 		Type string : state [stateTopic="zigbee2mqtt/sz_shutter", commandTopic="zigbee2mqtt/sz_shutter/set", transformationPattern="JSONPATH:$.state", formatBeforePublish="{\"state\": \"%s\"}"]

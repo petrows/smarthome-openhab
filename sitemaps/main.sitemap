@@ -173,7 +173,7 @@ sitemap main label="MAIN"
 		Group item=ks_light label="Theater [%s]" icon="light" {
             Frame {
 				Switch item=ks_light label="All [%s]" icon="light"
-				Switch item=kt_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
+				Switch item=ks_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
             }
             Frame label="Main" {
                 Switch item=ks_up_light_sw label="Main [%s]" icon="light"
@@ -181,11 +181,11 @@ sitemap main label="MAIN"
 				Slider item=ks_up_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
             Frame label="Curtains" {
-                Switch item=ns_blinds_1_cmd label="Command 1 []" mappings=["open"="☼","stop"="||","close"="☰"]
-                Slider item=ns_blinds_1_pos label="Position 1 [%d %%]"
-                Switch item=ns_blinds_2_cmd label="Command 2 []" mappings=["open"="☼","stop"="||","close"="☰"]
-                Slider item=ns_blinds_2_pos label="Position 2 [%d %%]"
-                Switch item=cfg_blinds_auto_ns label="Enable auto [%s]"
+                Switch item=ks_shutter_1_cmd label="Command 1 []" mappings=["open"="☼","stop"="||","close"="☰"]
+                Slider item=ks_shutter_1_pos label="Position 1 [%d %%]"
+                Switch item=ks_shutter_2_cmd label="Command 2 []" mappings=["open"="☼","stop"="||","close"="☰"]
+                Slider item=ks_shutter_2_pos label="Position 2 [%d %%]"
+                Switch item=cfg_blinds_auto_ks label="Enable auto [%s]"
             }
             Frame label="RGB" {
                 Switch item=ns_night_lamp_sw label="RGB [%s]" icon="light"
@@ -195,7 +195,7 @@ sitemap main label="MAIN"
             }
             Frame label="Cinema" {
                 Switch item=cinema_mode label="Cinemo mode [%s]" icon="projector"
-                Switch item=ns_projector_power_sw label="Device power [%s]" icon="switch"
+                Switch item=ks_projector_power_sw label="Device power [%s]" icon="switch"
             }
             Frame label="Devices" {
                 Switch item=ir_projector_power label="Projector []" mappings=["ON"="⚇"] icon="projector"
