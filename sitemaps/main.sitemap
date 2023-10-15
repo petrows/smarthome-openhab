@@ -116,9 +116,9 @@ sitemap main label="MAIN"
         Switch item=cinema_mode label="Cinemo mode" icon="projector" mappings=[ON="ON", OFF="OFF"]
     }
     Frame {
-        Slider item=g_blinds_pos label="Blinds [%d %%]"
-        Slider item=g_curtains_pos label="Curtains [%d %%]"
-        Switch item=g_blinds_curtains_cmd label="All []" mappings=["open"="☼","stop"="||","close"="☰"]
+        Slider item=blinds_pos label="Blinds [%d %%]"
+        Slider item=curtains_pos label="Curtains [%d %%]"
+        Switch item=blinds_curtains_cmd label="All []" mappings=["open"="☼","stop"="||","close"="☰"]
     }
     Frame {
 		Group item=bk_light label="Balkon [%s]" icon="light" {
@@ -173,7 +173,7 @@ sitemap main label="MAIN"
 		Group item=ks_light label="Theater [%s]" icon="light" {
             Frame {
 				Switch item=ks_light label="All [%s]" icon="light"
-				Switch item=g_blinds_ns_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
+				Switch item=kt_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
             }
             Frame label="Main" {
                 Switch item=ks_up_light_sw label="Main [%s]" icon="light"
@@ -209,6 +209,7 @@ sitemap main label="MAIN"
         Group item=sz_light label="Sleep [%s]" icon="light" {
 			Frame {
 				Switch item=sz_light label="All [%s]" icon="light"
+                Slider item=sz_light_ct label="All CT [JS(codegen-mired.js):%s]" icon="light"
                 Switch item=sunrise_enable icon="light"
             }
             Frame label="Blinds" {
@@ -220,6 +221,11 @@ sitemap main label="MAIN"
                 Switch item=sz_curtain_switch label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=sz_curtain_position label="Position [%d %%]"
                 Switch item=cfg_blinds_auto_sz label="Enable auto [%s]"
+            }
+            Frame label="Main" {
+				Switch item=sz_up_light_sw label="Main [%s]" icon="light"
+				Slider item=sz_up_light_dim label="Main DIM [%d %%]" icon="light"
+				Slider item=sz_up_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
             Frame label="Bed" {
 				Switch item=sz_bed_light_l_sw label="Bed L [%s]" icon="light"

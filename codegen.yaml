@@ -859,10 +859,10 @@ devices:
     type: BLINDS_MODULE_TS130F_1CH
     groups:
       cmd:
-      - g_blinds_cmd
+      - blinds_cmd
       - sz_blinds_cmd
       pos:
-      - g_blinds_pos
+      - blinds_pos
       - sz_blinds_pos
 
   - name: KS Blinds
@@ -875,20 +875,20 @@ devices:
         name: KS Shutter (Main)
         groups:
           cmd:
-          - g_blinds_cmd
+          - blinds_cmd
           - g_blinds_ks_cmd
           pos:
-          - g_blinds_pos
+          - blinds_pos
           - g_blinds_ks_pos
       right:
         id: ks_shutter_2
         name: KS Shutter (Side)
         groups:
           cmd:
-          - g_blinds_cmd
+          - blinds_cmd
           - g_blinds_ks_cmd
           pos:
-          - g_blinds_pos
+          - blinds_pos
           - g_blinds_ks_pos
 
   - name: KU Shutter
@@ -897,11 +897,11 @@ devices:
     type: BLINDS_MODULE_TS130F_1CH
     groups:
       cmd:
-      - g_blinds_cmd
-      - g_blinds_ku_cmd
+      - blinds_cmd
+      - ku_blinds_cmd
       pos:
-      - g_blinds_pos
-      - g_blinds_ku_pos
+      - blinds_pos
+      - ku_blinds_pos
 
 # Other
 

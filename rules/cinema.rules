@@ -6,7 +6,7 @@ then
 	logWarn("cinema", "Cinema mode: ON")
 
     // Close blinds
-    g_blinds_ns_cmd.sendCommand("close")
+    kt_blinds_cmd.sendCommand("close")
 
     // Turn ON support light
     val mq = getActions("mqtt","mqtt:broker:openhab")
@@ -43,7 +43,7 @@ then
 	logWarn("cinema", "Cinema mode: OFF")
 
     // Open blinds
-    g_blinds_ns_cmd.sendCommand("open")
+    kt_blinds_cmd.sendCommand("open")
 
     // Turn on light
     // Very slow transition
