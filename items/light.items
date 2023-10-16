@@ -86,5 +86,10 @@ Switch astro_color_enable "Astrocolor enabled [%s]" <light>
 // Mode selector for SZ remote button
 String sz_remote_mode "SZ remote control mode" <light>
 
+// Corridor
+
+// Special item to hold origin of "external" control -> if triggered via buttons
+String fl_up_light_trigger "FL UP light trigger"
+
 Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (all_light, eg_light, fl_light, sz_light_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
 Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }

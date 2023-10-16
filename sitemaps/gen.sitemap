@@ -46,22 +46,6 @@ Text item=garten_wasser_remote_ota
 Text item=garten_wasser_remote_link
 Text item=garten_wasser_remote_battery
 }
-Frame label="Mirror remote (0x680ae2fffeab6b80)" {
-// Mirror remote (0x680ae2fffeab6b80)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Text item=mirror_remote_lowbatt
-Text item=mirror_remote_ota
-Text item=mirror_remote_link
-Text item=mirror_remote_battery
-}
-Frame label="Leave switch (0x680ae2fffe16e111)" {
-// Leave switch (0x680ae2fffe16e111)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Text item=eg_leave_switch_lowbatt
-Text item=eg_leave_switch_ota
-Text item=eg_leave_switch_link
-Text item=eg_leave_switch_battery
-}
 Frame label="EG Router (0x00124b000b4ed5cc)" {
 // EG Router (0x00124b000b4ed5cc)
 // CC2530.ROUTER - Custom devices (DiY) / https://www.zigbee2mqtt.io/devices/CC2530.ROUTER.html
@@ -71,10 +55,10 @@ Text item=eg_router_link
 Frame label="EG Corridor Light (0xa4c138a06ec38c9e)" {
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
-Slider item=eg_flur_light_dim
-Text item=eg_flur_light_ota
-Text item=eg_flur_light_link
-Switch item=eg_flur_light_sw
+Slider item=fl_up_light_dim
+Text item=fl_up_light_ota
+Text item=fl_up_light_link
+Switch item=fl_up_light_sw
 }
 Frame label="EG Decor light (0x9035eafffe20e847)" {
 // EG Decor light (0x9035eafffe20e847)
@@ -93,6 +77,23 @@ Text item=eg_main_door_link
 Text item=eg_main_door_activity
 Text item=eg_main_door_contact
 Text item=eg_main_door_battery
+}
+Frame label="Entrance Door remote (0x1c34f1fffe830517)" {
+// Entrance Door remote (0x1c34f1fffe830517)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=fl_door_remote_dim
+Text item=fl_door_remote_lowbatt
+Text item=fl_door_remote_ota
+Text item=fl_door_remote_link
+Text item=fl_door_remote_battery
+}
+Frame label="Mirror remote (0x680ae2fffeab6b80)" {
+// Mirror remote (0x680ae2fffeab6b80)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Text item=mirror_remote_lowbatt
+Text item=mirror_remote_ota
+Text item=mirror_remote_link
+Text item=mirror_remote_battery
 }
 Frame label="BZ Light (toilet) (0xcc86ecfffea0c7cb)" {
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)

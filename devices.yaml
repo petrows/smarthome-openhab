@@ -65,14 +65,17 @@
   friendly_name: ks_light_night
 '0x14b457fffe7e2305':
   friendly_name: sz_remote_bed
+'0x1c34f1fffe830517':
+  friendly_name: fl_door_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x588e81fffefb217b':
   friendly_name: ks_up_light
 '0x588e81fffefe9a05':
   friendly_name: wz_up_light
-'0x680ae2fffe16e111':
-  friendly_name: eg_leave_switch
 '0x680ae2fffe1a92f3':
   friendly_name: tr_up_switch
 '0x680ae2fffeab6b80':
@@ -140,7 +143,7 @@
 '0xa4c1389dec8b9204':
   friendly_name: ku_window_door
 '0xa4c138a06ec38c9e':
-  friendly_name: eg_flur_light
+  friendly_name: fl_up_light
 '0xa4c138a52c4e5c19':
   friendly_name: kg_lager3_door
 '0xa4c138f1bf27592c':

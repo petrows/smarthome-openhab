@@ -178,35 +178,3 @@ end
 // then
 //     bz_mirror.sendCommand(newState.toString())
 // end
-
-// Apply auto brightness on ON for light in corridor
-// bright at day, dimmed at night
-rule "Corridor auto brightness"
-when
-    Item eg_flur_light_sw changed from OFF to ON
-then
-    // Take sun elevation as source
-    var elev = (astro_sun_el.state as Number).doubleValue
-    var brt = 100
-    // Configure limits for transition period
-    val elev_max = 10
-    val elev_min = 0
-
-    if (elev > elev_max) {
-        // Day mode
-        brt = 100
-    } else if (elev > elev_min) {
-        // Everning mode
-        // Calculate current transition
-        var elev_size = elev_max - elev_min
-        var elev_corrected = elev - elev_min
-        brt = ((elev_corrected / elev_size) * 100.0).intValue
-    } else {
-        // Night mode
-        brt = 1
-    }
-
-    eg_flur_light_dim.sendCommand(brt.toString())
-
-    logWarn("light", "Elevation is " + elev.toString() + ", corridor brightness is " + brt.toString())
-end

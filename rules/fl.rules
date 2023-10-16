@@ -1,0 +1,102 @@
+rule "Main door leave remote"
+when
+    Channel "mqtt:topic:openhab:fl_door_remote:action" triggered
+then
+	var state = receivedEvent
+
+    logWarn("light", "Leave SW: " + state)
+
+    switch(state) {
+        case "on": {
+            fl_up_light_trigger.sendCommand("manual")
+            fl_up_light_dim.sendCommand(100)
+            if (fl_up_light_sw.state == OFF) { fl_up_light_sw.sendCommand(ON) }
+        }
+        case "off": {
+            fl_up_light_trigger.sendCommand("manual")
+            if (fl_up_light_sw.state == OFF) {
+                fl_up_light_dim.sendCommand(1)
+                fl_up_light_sw.sendCommand(ON)
+            } else {
+                fl_up_light_sw.sendCommand(OFF)
+                eg_decoration_light_sw.sendCommand(OFF)
+            }
+        }
+        case "arrow_left_click": {
+            eg_decoration_light_dim.sendCommand(100)
+            if (eg_decoration_light_sw.state == OFF) { eg_decoration_light_sw.sendCommand(ON) }
+        }
+
+        // Right -> exit
+        case "arrow_right_click": {
+            verlassenTimer = createTimer(now.plusSeconds(20), [ |
+                logWarn("light", "Leave all OFF")
+                all_light.sendCommand(OFF)
+            ])
+
+            // Set all except treppe oben
+            all_light.members.forEach [s |
+                if (s == tr_up_light_sw) {
+                    // Set Ladder lamp ON and 100%
+                    tr_up_light_sw.sendCommand(ON)
+                    tr_up_light_dim.sendCommand(100)
+                } else {
+                    s.sendCommand(OFF)
+                }
+            ]
+
+            // Check that PC is off and turn off also sockets there
+            desktop_petro_power_try.sendCommand(OFF)
+        }
+    }
+end
+
+rule "Main door leave remote dimmer"
+when
+    Channel "mqtt:topic:openhab:fl_door_remote:action_dim" triggered
+then
+    if (fl_up_light_sw.state == ON) {
+        fl_up_light_dim_fast.sendCommand((fl_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+    }
+    if (eg_decoration_light_sw.state == ON) {
+        eg_decoration_light_dim_fast.sendCommand((eg_decoration_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+    }
+end
+
+// Apply auto brightness on ON for light in corridor
+// bright at day, dimmed at night
+rule "Corridor auto brightness"
+when
+    Item fl_up_light_sw changed from OFF to ON
+then
+    if (fl_up_light_trigger.state == "manual") {
+        logWarn("light", "Corridor light triggered manually, skip auto")
+        fl_up_light_trigger.sendCommand("none")
+        return
+    }
+
+    // Take sun elevation as source
+    var elev = (astro_sun_el.state as Number).doubleValue
+    var brt = 100
+    // Configure limits for transition period
+    val elev_max = 10
+    val elev_min = 0
+
+    if (elev > elev_max) {
+        // Day mode
+        brt = 100
+    } else if (elev > elev_min) {
+        // Everning mode
+        // Calculate current transition
+        var elev_size = elev_max - elev_min
+        var elev_corrected = elev - elev_min
+        brt = ((elev_corrected / elev_size) * 100.0).intValue
+    } else {
+        // Night mode
+        brt = 1
+    }
+
+    fl_up_light_dim.sendCommand(brt.toString())
+
+    logWarn("light", "Elevation is " + elev.toString() + ", corridor brightness is " + brt.toString())
+end

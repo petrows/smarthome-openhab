@@ -39,50 +39,6 @@ then
     }
 end
 
-rule "House verlassen SW"
-when
-    Channel "mqtt:topic:openhab:eg_leave_switch:action" triggered
-then
-	var state = receivedEvent
-
-    logWarn("light", "Verlassen SW: " + state)
-
-    verlassenTimer = createTimer(now.plusSeconds(20), [ |
-        logWarn("light", "Verlassen all OFF")
-        all_light.sendCommand(OFF)
-    ])
-
-    // Set all except treppe oben
-    all_light.members.forEach [s |
-        if (s == tr_up_light_sw) {
-            // s.sendCommand(ON)
-            // Set Ladder lamp ON and 100%
-            tr_up_light_dim.sendCommand(100)
-        } else {
-            s.sendCommand(OFF)
-        }
-    ]
-
-    // Diff by buttons
-    switch(state) {
-
-        // Someone in house?
-        case "on": {
-            // Do nothing
-        }
-
-        // Nobody in house
-        case "off": {
-            if (cfgHeatingEnable.state == ON) {
-                all_hz.sendCommand(cfgHeatingTempOff.state as Number)
-            }
-        }
-    }
-
-     // Check that PC is off and turn off also sockets there
-    desktop_petro_power_try.sendCommand(OFF)
-
-end
 
 rule "KG Ladder BOTTOM btn"
 when

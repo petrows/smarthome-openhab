@@ -62,7 +62,7 @@ then
         // We do not use groups, we must have exact order of lamps defined
         // Device MUST have pair of _sw and _dim items!
         var lightGroupItems = newArrayList(
-            "eg_flur_light",
+            "fl_up_light",
             "sz_bed_light_l",
             "sz_bed_light_2",
             "sz_up_light"

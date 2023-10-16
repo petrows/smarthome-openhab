@@ -24,18 +24,13 @@ devices:
       - bk_light_dim
       ct:
       - bk_light_ct
+
   - name: Garten wasser remote
     id: garten_wasser_remote
     zigbee_id: '0xccccccfffe58f1c3'
     type: IKEA_TRADFRI_ON_OFF
-  - name: Mirror remote
-    id: mirror_remote
-    zigbee_id: '0x680ae2fffeab6b80'
-    type: IKEA_TRADFRI_REMOTE
-  - name: Leave switch
-    id: eg_leave_switch
-    zigbee_id: '0x680ae2fffe16e111'
-    type: IKEA_TRADFRI_ON_OFF
+
+
   - name: EG Router
     id: eg_router
     zigbee_id: '0x00124b000b4ed5cc'
@@ -44,7 +39,7 @@ devices:
 # CORRIDOR ===============================
 
   - name: EG Corridor Light
-    id: eg_flur_light
+    id: fl_up_light
     zigbee_id: '0xa4c138a06ec38c9e'
     type: TUYA_WALL_DIMMER
     groups:
@@ -69,6 +64,16 @@ devices:
     id: eg_main_door
     zigbee_id: '0xa4c138182f60d651'
     type: TUYA_WINDOW_SENSOR_TS0203
+
+  - name: Entrance Door remote
+    id: fl_door_remote
+    zigbee_id: '0x1c34f1fffe830517'
+    type: IKEA_TRADFRI_STYRBAR
+
+  - name: Mirror remote
+    id: mirror_remote
+    zigbee_id: '0x680ae2fffeab6b80'
+    type: IKEA_TRADFRI_REMOTE
 
 # WC =====================================
 

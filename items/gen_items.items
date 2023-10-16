@@ -37,29 +37,17 @@ Switch garten_wasser_remote_lowbatt "Garten wasser remote BAT [MAP(codegen-lowba
 Switch garten_wasser_remote_ota "Garten wasser remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:garten_wasser_remote:ota"}
 Number:Dimensionless garten_wasser_remote_link "Garten wasser remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:garten_wasser_remote:link"}
 Number:Dimensionless garten_wasser_remote_battery "Garten wasser remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:garten_wasser_remote:battery"}
-// Mirror remote (0x680ae2fffeab6b80)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Switch mirror_remote_lowbatt "Mirror remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mirror_remote:battery_low"}
-Switch mirror_remote_ota "Mirror remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mirror_remote:ota"}
-Number:Dimensionless mirror_remote_link "Mirror remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mirror_remote:link"}
-Number:Dimensionless mirror_remote_battery "Mirror remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mirror_remote:battery"}
-// Leave switch (0x680ae2fffe16e111)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Switch eg_leave_switch_lowbatt "Leave switch BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:eg_leave_switch:battery_low"}
-Switch eg_leave_switch_ota "Leave switch OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_leave_switch:ota"}
-Number:Dimensionless eg_leave_switch_link "Leave switch LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_leave_switch:link"}
-Number:Dimensionless eg_leave_switch_battery "Leave switch  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:eg_leave_switch:battery"}
 // EG Router (0x00124b000b4ed5cc)
 // CC2530.ROUTER - Custom devices (DiY) / https://www.zigbee2mqtt.io/devices/CC2530.ROUTER.html
 Switch eg_router_ota "EG Router OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_router:ota"}
 Number:Dimensionless eg_router_link "EG Router LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_router:link"}
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
-Dimmer eg_flur_light_dim "EG Corridor Light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:eg_flur_light:dim"}
-Dimmer eg_flur_light_dim_fast "EG Corridor Light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:eg_flur_light:dim_fast"}
-Switch eg_flur_light_ota "EG Corridor Light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_flur_light:ota"}
-Number:Dimensionless eg_flur_light_link "EG Corridor Light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_flur_light:link"}
-Switch eg_flur_light_sw "EG Corridor Light" <light> (g_all_sw,all_light,eg_light,fl_light) {channel="mqtt:topic:openhab:eg_flur_light:state"}
+Dimmer fl_up_light_dim "EG Corridor Light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fl_up_light:dim"}
+Dimmer fl_up_light_dim_fast "EG Corridor Light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:fl_up_light:dim_fast"}
+Switch fl_up_light_ota "EG Corridor Light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fl_up_light:ota"}
+Number:Dimensionless fl_up_light_link "EG Corridor Light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fl_up_light:link"}
+Switch fl_up_light_sw "EG Corridor Light" <light> (g_all_sw,all_light,eg_light,fl_light) {channel="mqtt:topic:openhab:fl_up_light:state"}
 // EG Decor light (0x9035eafffe20e847)
 // IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
 Dimmer eg_decoration_light_dim "EG Decor light DIM [%d %%]" <light> (g_all_dim,eg_light_auto_dim) {channel="mqtt:topic:openhab:eg_decoration_light:dim"}
@@ -75,6 +63,19 @@ Number:Dimensionless eg_main_door_link "Entrance Door sensor LINK [%d]" <linkz> 
 DateTime eg_main_door_activity "Entrance Door sensor activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:eg_main_door:activity"}
 Contact eg_main_door_contact "Entrance Door sensor [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:eg_main_door:contact"}
 Number:Dimensionless eg_main_door_battery "Entrance Door sensor  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:eg_main_door:battery"}
+// Entrance Door remote (0x1c34f1fffe830517)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer fl_door_remote_dim "Entrance Door remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fl_door_remote:dim"}
+Switch fl_door_remote_lowbatt "Entrance Door remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fl_door_remote:battery_low"}
+Switch fl_door_remote_ota "Entrance Door remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fl_door_remote:ota"}
+Number:Dimensionless fl_door_remote_link "Entrance Door remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fl_door_remote:link"}
+Number:Dimensionless fl_door_remote_battery "Entrance Door remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:fl_door_remote:battery"}
+// Mirror remote (0x680ae2fffeab6b80)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Switch mirror_remote_lowbatt "Mirror remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mirror_remote:battery_low"}
+Switch mirror_remote_ota "Mirror remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mirror_remote:ota"}
+Number:Dimensionless mirror_remote_link "Mirror remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mirror_remote:link"}
+Number:Dimensionless mirror_remote_battery "Mirror remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mirror_remote:battery"}
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer bz_light_1_dim "BZ Light (toilet) DIM [%d %%]" <light> (g_all_dim,g_light_bz_dim) {channel="mqtt:topic:openhab:bz_light_1:dim"}
