@@ -408,7 +408,7 @@ Thing mqtt:topic:openhab:sz_bedside_drawler_light "SZ Bedside drawler" (mqtt:bro
 		Type number : link [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// SZ Bed L (0x287681fffe6f76fd)
+// SZ Bed L (0x9035eafffe93bfc6)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
 Thing mqtt:topic:openhab:sz_bed_light_l "SZ Bed L" (mqtt:broker:openhab) {
 	Channels:

@@ -277,7 +277,7 @@ Dimmer sz_bedside_drawler_light_dim_fast "SZ Bedside drawler DIM-F [%d %%]" (g_a
 Switch sz_bedside_drawler_light_ota "SZ Bedside drawler OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:ota"}
 Number:Dimensionless sz_bedside_drawler_light_link "SZ Bedside drawler LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:link"}
 Switch sz_bedside_drawler_light_sw "SZ Bedside drawler" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:state"}
-// SZ Bed L (0x287681fffe6f76fd)
+// SZ Bed L (0x9035eafffe93bfc6)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
 Dimmer sz_bed_light_l_dim "SZ Bed L DIM [%d %%]" <light> (g_all_dim,sz_light_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_l:dim"}
 Dimmer sz_bed_light_l_dim_fast "SZ Bed L DIM-F [%d %%]" (g_all_dim_fast,sz_bed_light_dim_fast) {channel="mqtt:topic:openhab:sz_bed_light_l:dim_fast"}

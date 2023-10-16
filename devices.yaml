@@ -65,8 +65,6 @@
   friendly_name: ks_light_night
 '0x14b457fffe7e2305':
   friendly_name: sz_remote_bed
-'0x287681fffe6f76fd':
-  friendly_name: sz_bed_light_l
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x588e81fffefb217b':
@@ -105,6 +103,8 @@
   friendly_name: wz_light_color
 '0x9035eafffe20e847':
   friendly_name: eg_decoration_light
+'0x9035eafffe93bfc6':
+  friendly_name: sz_bed_light_l
 '0x9035eafffee1ba1d':
   friendly_name: ks_light_switch
   simulated_brightness:
