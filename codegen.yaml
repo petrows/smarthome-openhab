@@ -794,7 +794,7 @@ devices:
       thermostat:
       - all_hz
       - all_hz_auto
-      - g_hz_sz
+      - sz_hz
       thermostat_enable:
       - all_hz_enable
       - sz_hz_enable

@@ -38,7 +38,7 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     if (!room_heating_enabled) {
         logWarn("heating", "set_room " + room_name + ": disabled (switched off)")
-        sendCommand(thermostat_item_temp, cfgHeatingTempOff.state)
+        sendCommand(thermostat_item_temp, cfgHeatingTempOff.state.toString())
         return false
     }
 
@@ -59,7 +59,7 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     if (!room_sensors_enabled) {
         logWarn("heating", "set_room " + room_name + ": disabled (sensors)")
-        sendCommand(thermostat_item_temp, cfgHeatingTempOff.state)
+        sendCommand(thermostat_item_temp, cfgHeatingTempOff.state.toString())
         return false
     }
 

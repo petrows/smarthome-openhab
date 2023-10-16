@@ -601,7 +601,7 @@ Switch kg_lager4_leak_leak "Warehouse 4 leak [%s]" <flow> (g_all_leak) {channel=
 Number:Dimensionless kg_lager4_leak_battery "Warehouse 4 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager4_leak:battery"}
 // SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,g_hz_sz) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
+Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,sz_hz) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
 String sz_heating_thermostat_mode "SZ heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:sz_heating:thermostat_mode"}
 String sz_heating_thermostat_preset "SZ heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:sz_heating:thermostat_preset"}
 Switch sz_heating_thermostat_enable "SZ heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,sz_hz_enable) {channel="mqtt:topic:openhab:sz_heating:thermostat_enable"}
