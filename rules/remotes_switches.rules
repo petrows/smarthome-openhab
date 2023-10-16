@@ -74,7 +74,7 @@ then
         // Nobody in house
         case "off": {
             if (cfgHeatingEnable.state == ON) {
-                g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+                all_hz.sendCommand(cfgHeatingTempOff.state as Number)
             }
         }
     }

@@ -731,33 +731,33 @@ Text item=kg_lager4_leak_activity
 Text item=kg_lager4_leak_leak
 Text item=kg_lager4_leak_battery
 }
-Frame label="FS heating (0x0c4314fffe63b727)" {
-// FS heating (0x0c4314fffe63b727)
+Frame label="SZ heating (0x0c4314fffe63b727)" {
+// SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Setpoint item=fs_heating_thermostat
-Text item=fs_heating_thermostat_mode
-Text item=fs_heating_thermostat_preset
-Switch item=fs_heating_thermostat_enable
-Text item=fs_heating_lowbatt
-Text item=fs_heating_ota
-Text item=fs_heating_link
-Text item=fs_heating_activity
-Text item=fs_heating_local_temperature
-Text item=fs_heating_battery_voltage
+Setpoint item=sz_heating_thermostat
+Text item=sz_heating_thermostat_mode
+Text item=sz_heating_thermostat_preset
+Switch item=sz_heating_thermostat_enable
+Text item=sz_heating_lowbatt
+Text item=sz_heating_ota
+Text item=sz_heating_link
+Text item=sz_heating_activity
+Text item=sz_heating_local_temperature
+Text item=sz_heating_battery_voltage
 }
-Frame label="NS heating (0x0c4314fffe62f090)" {
-// NS heating (0x0c4314fffe62f090)
+Frame label="KS heating (0x0c4314fffe62f090)" {
+// KS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Setpoint item=ns_heating_thermostat
-Text item=ns_heating_thermostat_mode
-Text item=ns_heating_thermostat_preset
-Switch item=ns_heating_thermostat_enable
-Text item=ns_heating_lowbatt
-Text item=ns_heating_ota
-Text item=ns_heating_link
-Text item=ns_heating_activity
-Text item=ns_heating_local_temperature
-Text item=ns_heating_battery_voltage
+Setpoint item=ks_heating_thermostat
+Text item=ks_heating_thermostat_mode
+Text item=ks_heating_thermostat_preset
+Switch item=ks_heating_thermostat_enable
+Text item=ks_heating_lowbatt
+Text item=ks_heating_ota
+Text item=ks_heating_link
+Text item=ks_heating_activity
+Text item=ks_heating_local_temperature
+Text item=ks_heating_battery_voltage
 }
 Frame label="KU heating (0x0c4314fffe73bf1f)" {
 // KU heating (0x0c4314fffe73bf1f)
@@ -773,19 +773,19 @@ Text item=ku_heating_activity
 Text item=ku_heating_local_temperature
 Text item=ku_heating_battery_voltage
 }
-Frame label="SZ heating (0x0c4314fffe73c43f)" {
-// SZ heating (0x0c4314fffe73c43f)
+Frame label="WZ heating (0x0c4314fffe73c43f)" {
+// WZ heating (0x0c4314fffe73c43f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Setpoint item=sz_heating_thermostat
-Text item=sz_heating_thermostat_mode
-Text item=sz_heating_thermostat_preset
-Switch item=sz_heating_thermostat_enable
-Text item=sz_heating_lowbatt
-Text item=sz_heating_ota
-Text item=sz_heating_link
-Text item=sz_heating_activity
-Text item=sz_heating_local_temperature
-Text item=sz_heating_battery_voltage
+Setpoint item=wz_heating_thermostat
+Text item=wz_heating_thermostat_mode
+Text item=wz_heating_thermostat_preset
+Switch item=wz_heating_thermostat_enable
+Text item=wz_heating_lowbatt
+Text item=wz_heating_ota
+Text item=wz_heating_link
+Text item=wz_heating_activity
+Text item=wz_heating_local_temperature
+Text item=wz_heating_battery_voltage
 }
 Frame label="KG heating (0x0c4314fffe5c6913)" {
 // KG heating (0x0c4314fffe5c6913)

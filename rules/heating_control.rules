@@ -6,8 +6,8 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     logInfo("heating", "set_room " + room_name + ": request " + temperature.toString)
 
-    var thermostat_item_temp = "g_hz_" + room_name
-    var thermostat_item_switch = "g_hz_" + room_name + '_enable'
+    var thermostat_item_temp = room_name + "_hz"
+    var thermostat_item_switch = room_name  + '_hz_enable'
 
     if (cfgHeatingEnable.state != ON) {
         logInfo("heating", "set_room: Heating disabled")
@@ -78,9 +78,9 @@ then
 	logWarn("heating", "Set safe off")
 
     if (cfgHeatingEnable.state == ON) {
-        g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+        all_hz.sendCommand(cfgHeatingTempOff.state as Number)
     } else {
-        g_hz_enable.sendCommand(OFF)
+        all_hz_enable.sendCommand(OFF)
     }
 end
 
@@ -95,8 +95,8 @@ then
     val temp = cfgHeatingTempNight.state as Number
     val temp_off = cfgHeatingTempNight.state as Number
 
-    set_room.apply("fs", temp)
-    set_room.apply("ns", temp)
+    set_room.apply("ks", temp)
+    set_room.apply("wz", temp)
     set_room.apply("ku", temp)
     set_room.apply("sz", temp_off)
     set_room.apply("kg", temp)
@@ -111,8 +111,6 @@ then
     val temp = cfgHeatingTempHeat.state as Number
     val temp_off = cfgHeatingTempNight.state as Number
 
-    //set_room.apply("fs", temp_off)
-    //set_room.apply("ns", temp_off)
     set_room.apply("ku", temp)
     set_room.apply("sz", temp)
     set_room.apply("kg", temp_off)
@@ -124,14 +122,10 @@ when
 then
 	logWarn("heating", "Set DAY")
 
-    // val temp = cfgHeatingTempDay.state as Number
     val temp_off = cfgHeatingTempNight.state as Number
 
-    //set_room.apply("fs", temp)
-    //set_room.apply("ns", temp)
     set_room.apply("ku", temp_off)
     set_room.apply("sz", temp_off)
-    //set_room.apply("kg", temp)
 end
 
 rule "Heating EVENING"
@@ -143,8 +137,6 @@ then
 	val temp = cfgHeatingTempHeat.state as Number
     val temp_off = cfgHeatingTempNight.state as Number
 
-    //set_room.apply("fs", temp)
-    //set_room.apply("ns", temp)
     set_room.apply("ku", temp_off)
     set_room.apply("sz", temp_off)
     set_room.apply("kg", temp)
@@ -188,11 +180,11 @@ then
             var room_sensor_item = room_window_sensor as ContactItem
             // Sensor is OPEN?
             if (room_sensor_item.state == OPEN) {
-                // Sensor is member of 'g_windows_skip_off'? (Skip auto off)
+                // Sensor is member of 'windows_skip_off'? (Skip auto off)
                 var sensor_groups = room_sensor_item.getGroupNames()
                 // logInfo("heating", sensor_groups.toString)
 
-                if (sensor_groups.contains("g_windows_skip_off")) {
+                if (sensor_groups.contains("windows_skip_off")) {
                     logInfo("heating", "Windows: " + room_name + " sensor " + room_window_sensor.name + " is open, but skipped")
                 } else {
                     logInfo("heating", "Windows: " + room_name + " sensor " + room_window_sensor.name + " is open")
@@ -257,9 +249,9 @@ then
 	logInfo("heating", "Heating switched by presence to " + presAll.state)
 
 	if (presAll.state == ON) {
-		// g_hz_all.sendCommand(hz_temp_auto.state as Number)
+		// all_hz.sendCommand(hz_temp_auto.state as Number)
 	} else {
-		g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
+		all_hz.sendCommand(cfgHeatingTempOff.state as Number)
 	}
 end
 
@@ -268,10 +260,10 @@ when
 	Item cfgHeatingEnable changed
 then
 	if (cfgHeatingEnable.state == ON) {
-		// g_hz_all.sendCommand(hz_temp_auto.state as Number)
-        g_hz_enable.sendCommand(ON)
+		// all_hz.sendCommand(hz_temp_auto.state as Number)
+        all_hz_enable.sendCommand(ON)
 	} else {
-		g_hz_all.sendCommand(cfgHeatingTempOff.state as Number)
-        g_hz_enable.sendCommand(OFF)
+		all_hz.sendCommand(cfgHeatingTempOff.state as Number)
+        all_hz_enable.sendCommand(OFF)
 	}
 end

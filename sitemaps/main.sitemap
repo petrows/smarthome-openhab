@@ -233,7 +233,6 @@ sitemap main label="MAIN"
 				Slider item=sz_bed_light_dim label="Bed DIM [%d %%]" icon="light"
                 Slider item=sz_bed_light_ct label="Bed CT [JS(codegen-mired.js):%s]" icon="light"
 			}
-
             Frame {
 				Switch item=sz_bed_light_l_sw label="Bed L [%s]" icon="light"
 				Slider item=sz_bed_light_l_dim label="Bed L DIM [%d %%]" icon="light"
@@ -308,7 +307,7 @@ sitemap main label="MAIN"
 	}
 
 	Frame {
-		Switch item=g_hz_all label="Heating [%.1f °C]" mappings=["23.0"="☼", "17.0"="☾", "5.0"="OFF"]	visibility=[cfgHeatingEnable==ON]
+		Switch item=all_hz label="Heating [%.1f °C]" mappings=["23.0"="☼", "17.0"="☾", "5.0"="OFF"]	visibility=[cfgHeatingEnable==ON]
 		//Text item=g_hz_valve label="Heating valve [%d %%]"
 
 		Group item=ku_climate_temperature label="Kitchen" {

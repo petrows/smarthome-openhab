@@ -52,13 +52,13 @@
 '0x0c4314fffe5c6913':
   friendly_name: kg_heating
 '0x0c4314fffe62f090':
-  friendly_name: ns_heating
+  friendly_name: ks_heating
 '0x0c4314fffe63b727':
-  friendly_name: fs_heating
+  friendly_name: sz_heating
 '0x0c4314fffe73bf1f':
   friendly_name: ku_heating
 '0x0c4314fffe73c43f':
-  friendly_name: sz_heating
+  friendly_name: wz_heating
 '0x14b457fffe399241':
   friendly_name: bk_light_1
 '0x14b457fffe6383e5':

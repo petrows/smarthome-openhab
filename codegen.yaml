@@ -529,7 +529,7 @@ devices:
     groups:
       contact:
       - kg_windows
-      - g_windows_skip_off  # Using this window should not deactivate heating
+      - windows_skip_off  # Using this window should not deactivate heating
 
   - name: KG Cabinet door
     id: kg_cabinet_door
@@ -538,7 +538,7 @@ devices:
     groups:
       contact:
       - kg_windows
-      - g_windows_skip_off  # Using door should not deactivate heating
+      - windows_skip_off  # Using door should not deactivate heating
 
   - name: KG Climate
     id: kg_climate
@@ -781,35 +781,31 @@ devices:
     zigbee_id: '0x00158d000488052c'
     type: XIAOMI_AQARA_LEAK_V1
 
-  - name: FS heating
-    id: fs_heating
+  - name: SZ heating
+    id: sz_heating
     zigbee_id: '0x0c4314fffe63b727'
     type: SILVERCREST_THERMOSTAT_368308_2010
     groups:
       thermostat:
-      - g_hz_all
-      - g_hz_auto
-      - g_hz_fs
-      position:
-      - g_hz_valve
+      - all_hz
+      - all_hz_auto
+      - g_hz_sz
       thermostat_enable:
-      - g_hz_enable
-      - g_hz_fs_enable
+      - all_hz_enable
+      - sz_hz_enable
 
-  - name: NS heating
-    id: ns_heating
+  - name: KS heating
+    id: ks_heating
     zigbee_id: '0x0c4314fffe62f090'
     type: SILVERCREST_THERMOSTAT_368308_2010
     groups:
       thermostat:
-      - g_hz_all
-      - g_hz_auto
-      - g_hz_ns
-      position:
-      - g_hz_valve
+      - all_hz
+      - all_hz_auto
+      - ks_hz
       thermostat_enable:
-      - g_hz_enable
-      - g_hz_ns_enable
+      - all_hz_enable
+      - ks_hz_enable
 
   - name: KU heating
     id: ku_heating
@@ -817,29 +813,25 @@ devices:
     type: SILVERCREST_THERMOSTAT_368308_2010
     groups:
       thermostat:
-      - g_hz_all
-      - g_hz_auto
-      - g_hz_ku
-      position:
-      - g_hz_valve
+      - all_hz
+      - all_hz_auto
+      - ku_hz
       thermostat_enable:
-      - g_hz_enable
-      - g_hz_ku_enable
+      - all_hz_enable
+      - ku_hz_enable
 
-  - name: SZ heating
-    id: sz_heating
+  - name: WZ heating
+    id: wz_heating
     zigbee_id: '0x0c4314fffe73c43f'
     type: SILVERCREST_THERMOSTAT_368308_2010
     groups:
       thermostat:
-      - g_hz_all
-      - g_hz_auto
-      - g_hz_sz
-      position:
-      - g_hz_valve
+      - all_hz
+      - all_hz_auto
+      - wz_hz
       thermostat_enable:
-      - g_hz_enable
-      - g_hz_sz_enable
+      - all_hz_enable
+      - sz_hz_enable
 
   - name: KG heating
     id: kg_heating
@@ -847,14 +839,12 @@ devices:
     type: SILVERCREST_THERMOSTAT_368308_2010
     groups:
       thermostat:
-      - g_hz_all
-      - g_hz_auto
-      - g_hz_kg
-      position:
-      - g_hz_valve
+      - all_hz
+      - all_hz_auto
+      - kg_hz
       thermostat_enable:
-      - g_hz_enable
-      - g_hz_kg_enable
+      - all_hz_enable
+      - kg_hz_enable
 
 # Christmas lights
 

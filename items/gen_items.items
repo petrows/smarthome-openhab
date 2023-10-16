@@ -418,7 +418,7 @@ Switch kg_window_2_lowbatt "KG Window (Hobbyraum) BAT [MAP(codegen-lowbat.map):%
 Switch kg_window_2_ota "KG Window (Hobbyraum) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_2:ota"}
 Number:Dimensionless kg_window_2_link "KG Window (Hobbyraum) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_2:link"}
 DateTime kg_window_2_activity "KG Window (Hobbyraum) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_window_2:activity"}
-Contact kg_window_2_contact "KG Window (Hobbyraum) [%s]" <door> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
+Contact kg_window_2_contact "KG Window (Hobbyraum) [%s]" <door> (g_all_contact,kg_windows,windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
 Number:Dimensionless kg_window_2_battery "KG Window (Hobbyraum)  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_2:battery"}
 // KG Cabinet door (0xa4c138312d2c455f)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -426,7 +426,7 @@ Switch kg_cabinet_door_lowbatt "KG Cabinet door BAT [MAP(codegen-lowbat.map):%s]
 Switch kg_cabinet_door_ota "KG Cabinet door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_cabinet_door:ota"}
 Number:Dimensionless kg_cabinet_door_link "KG Cabinet door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_cabinet_door:link"}
 DateTime kg_cabinet_door_activity "KG Cabinet door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_cabinet_door:activity"}
-Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows,g_windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
+Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows,windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
 Number:Dimensionless kg_cabinet_door_battery "KG Cabinet door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_cabinet_door:battery"}
 // KG Climate (0xa4c138234138f73a)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
@@ -598,60 +598,60 @@ Number:Dimensionless kg_lager4_leak_link "Warehouse 4 leak LINK [%d]" <linkz> (g
 DateTime kg_lager4_leak_activity "Warehouse 4 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager4_leak:activity"}
 Switch kg_lager4_leak_leak "Warehouse 4 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:kg_lager4_leak:leak"}
 Number:Dimensionless kg_lager4_leak_battery "Warehouse 4 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager4_leak:battery"}
-// FS heating (0x0c4314fffe63b727)
+// SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Number:Temperature fs_heating_thermostat "FS heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_fs) {channel="mqtt:topic:openhab:fs_heating:thermostat"}
-String fs_heating_thermostat_mode "FS heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:fs_heating:thermostat_mode"}
-String fs_heating_thermostat_preset "FS heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:fs_heating:thermostat_preset"}
-Switch fs_heating_thermostat_enable "FS heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,g_hz_enable,g_hz_fs_enable) {channel="mqtt:topic:openhab:fs_heating:thermostat_enable"}
-Switch fs_heating_lowbatt "FS heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fs_heating:battery_low"}
-Switch fs_heating_ota "FS heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_heating:ota"}
-Number:Dimensionless fs_heating_link "FS heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_heating:link"}
-DateTime fs_heating_activity "FS heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:fs_heating:activity"}
-Number:Temperature fs_heating_local_temperature "FS heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:fs_heating:local_temperature"}
-Number:ElectricPotential fs_heating_battery_voltage "FS heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:fs_heating:battery_voltage"}
-// NS heating (0x0c4314fffe62f090)
-// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Number:Temperature ns_heating_thermostat "NS heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_ns) {channel="mqtt:topic:openhab:ns_heating:thermostat"}
-String ns_heating_thermostat_mode "NS heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:ns_heating:thermostat_mode"}
-String ns_heating_thermostat_preset "NS heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:ns_heating:thermostat_preset"}
-Switch ns_heating_thermostat_enable "NS heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,g_hz_enable,g_hz_ns_enable) {channel="mqtt:topic:openhab:ns_heating:thermostat_enable"}
-Switch ns_heating_lowbatt "NS heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ns_heating:battery_low"}
-Switch ns_heating_ota "NS heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_heating:ota"}
-Number:Dimensionless ns_heating_link "NS heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_heating:link"}
-DateTime ns_heating_activity "NS heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ns_heating:activity"}
-Number:Temperature ns_heating_local_temperature "NS heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ns_heating:local_temperature"}
-Number:ElectricPotential ns_heating_battery_voltage "NS heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ns_heating:battery_voltage"}
-// KU heating (0x0c4314fffe73bf1f)
-// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Number:Temperature ku_heating_thermostat "KU heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_ku) {channel="mqtt:topic:openhab:ku_heating:thermostat"}
-String ku_heating_thermostat_mode "KU heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:ku_heating:thermostat_mode"}
-String ku_heating_thermostat_preset "KU heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:ku_heating:thermostat_preset"}
-Switch ku_heating_thermostat_enable "KU heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,g_hz_enable,g_hz_ku_enable) {channel="mqtt:topic:openhab:ku_heating:thermostat_enable"}
-Switch ku_heating_lowbatt "KU heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_heating:battery_low"}
-Switch ku_heating_ota "KU heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_heating:ota"}
-Number:Dimensionless ku_heating_link "KU heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_heating:link"}
-DateTime ku_heating_activity "KU heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_heating:activity"}
-Number:Temperature ku_heating_local_temperature "KU heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ku_heating:local_temperature"}
-Number:ElectricPotential ku_heating_battery_voltage "KU heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ku_heating:battery_voltage"}
-// SZ heating (0x0c4314fffe73c43f)
-// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_sz) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
+Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,g_hz_sz) {channel="mqtt:topic:openhab:sz_heating:thermostat"}
 String sz_heating_thermostat_mode "SZ heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:sz_heating:thermostat_mode"}
 String sz_heating_thermostat_preset "SZ heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:sz_heating:thermostat_preset"}
-Switch sz_heating_thermostat_enable "SZ heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,g_hz_enable,g_hz_sz_enable) {channel="mqtt:topic:openhab:sz_heating:thermostat_enable"}
+Switch sz_heating_thermostat_enable "SZ heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,sz_hz_enable) {channel="mqtt:topic:openhab:sz_heating:thermostat_enable"}
 Switch sz_heating_lowbatt "SZ heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_heating:battery_low"}
 Switch sz_heating_ota "SZ heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
 Number:Dimensionless sz_heating_link "SZ heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_heating:link"}
 DateTime sz_heating_activity "SZ heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_heating:activity"}
 Number:Temperature sz_heating_local_temperature "SZ heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:sz_heating:local_temperature"}
 Number:ElectricPotential sz_heating_battery_voltage "SZ heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:sz_heating:battery_voltage"}
+// KS heating (0x0c4314fffe62f090)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
+Number:Temperature ks_heating_thermostat "KS heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,ks_hz) {channel="mqtt:topic:openhab:ks_heating:thermostat"}
+String ks_heating_thermostat_mode "KS heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:ks_heating:thermostat_mode"}
+String ks_heating_thermostat_preset "KS heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:ks_heating:thermostat_preset"}
+Switch ks_heating_thermostat_enable "KS heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,ks_hz_enable) {channel="mqtt:topic:openhab:ks_heating:thermostat_enable"}
+Switch ks_heating_lowbatt "KS heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ks_heating:battery_low"}
+Switch ks_heating_ota "KS heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_heating:ota"}
+Number:Dimensionless ks_heating_link "KS heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_heating:link"}
+DateTime ks_heating_activity "KS heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ks_heating:activity"}
+Number:Temperature ks_heating_local_temperature "KS heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ks_heating:local_temperature"}
+Number:ElectricPotential ks_heating_battery_voltage "KS heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ks_heating:battery_voltage"}
+// KU heating (0x0c4314fffe73bf1f)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
+Number:Temperature ku_heating_thermostat "KU heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,ku_hz) {channel="mqtt:topic:openhab:ku_heating:thermostat"}
+String ku_heating_thermostat_mode "KU heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:ku_heating:thermostat_mode"}
+String ku_heating_thermostat_preset "KU heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:ku_heating:thermostat_preset"}
+Switch ku_heating_thermostat_enable "KU heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,ku_hz_enable) {channel="mqtt:topic:openhab:ku_heating:thermostat_enable"}
+Switch ku_heating_lowbatt "KU heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_heating:battery_low"}
+Switch ku_heating_ota "KU heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_heating:ota"}
+Number:Dimensionless ku_heating_link "KU heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_heating:link"}
+DateTime ku_heating_activity "KU heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_heating:activity"}
+Number:Temperature ku_heating_local_temperature "KU heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ku_heating:local_temperature"}
+Number:ElectricPotential ku_heating_battery_voltage "KU heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ku_heating:battery_voltage"}
+// WZ heating (0x0c4314fffe73c43f)
+// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
+Number:Temperature wz_heating_thermostat "WZ heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,wz_hz) {channel="mqtt:topic:openhab:wz_heating:thermostat"}
+String wz_heating_thermostat_mode "WZ heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:wz_heating:thermostat_mode"}
+String wz_heating_thermostat_preset "WZ heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:wz_heating:thermostat_preset"}
+Switch wz_heating_thermostat_enable "WZ heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,sz_hz_enable) {channel="mqtt:topic:openhab:wz_heating:thermostat_enable"}
+Switch wz_heating_lowbatt "WZ heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:wz_heating:battery_low"}
+Switch wz_heating_ota "WZ heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_heating:ota"}
+Number:Dimensionless wz_heating_link "WZ heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_heating:link"}
+DateTime wz_heating_activity "WZ heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:wz_heating:activity"}
+Number:Temperature wz_heating_local_temperature "WZ heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:wz_heating:local_temperature"}
+Number:ElectricPotential wz_heating_battery_voltage "WZ heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:wz_heating:battery_voltage"}
 // KG heating (0x0c4314fffe5c6913)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Number:Temperature kg_heating_thermostat "KG heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,g_hz_all,g_hz_auto,g_hz_kg) {channel="mqtt:topic:openhab:kg_heating:thermostat"}
+Number:Temperature kg_heating_thermostat "KG heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,kg_hz) {channel="mqtt:topic:openhab:kg_heating:thermostat"}
 String kg_heating_thermostat_mode "KG heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:kg_heating:thermostat_mode"}
 String kg_heating_thermostat_preset "KG heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:kg_heating:thermostat_preset"}
-Switch kg_heating_thermostat_enable "KG heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,g_hz_enable,g_hz_kg_enable) {channel="mqtt:topic:openhab:kg_heating:thermostat_enable"}
+Switch kg_heating_thermostat_enable "KG heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,kg_hz_enable) {channel="mqtt:topic:openhab:kg_heating:thermostat_enable"}
 Switch kg_heating_lowbatt "KG heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_heating:battery_low"}
 Switch kg_heating_ota "KG heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_heating:ota"}
 Number:Dimensionless kg_heating_link "KG heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_heating:link"}

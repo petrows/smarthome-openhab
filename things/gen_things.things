@@ -892,37 +892,37 @@ Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab)
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JS:codegen-activity.js"]
 }
-// FS heating (0x0c4314fffe63b727)
+// SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Thing mqtt:topic:openhab:fs_heating "FS heating" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
 	Channels:
-		Type number : thermostat [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"current_heating_setpoint\".*)∩JSONPATH:$.current_heating_setpoint", transformationPatternOut="JS:codegen-cmd-thermostat-point.js", unit="C°"]
-		Type string : thermostat_mode [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JSONPATH:$.system_mode", formatBeforePublish="{\"system_mode\": \"%s\"}"]
-		Type string : thermostat_preset [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"preset\".*)∩JSONPATH:$.preset", formatBeforePublish="{\"preset\": \"%s\"}"]
-		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/fs_heating", commandTopic="zigbee2mqtt/fs_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
-		Type number : local_temperature [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
-		Type number : battery_voltage [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
-		Type number : link [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/fs_heating", transformationPattern="JS:codegen-activity.js"]
+		Type number : thermostat [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"current_heating_setpoint\".*)∩JSONPATH:$.current_heating_setpoint", transformationPatternOut="JS:codegen-cmd-thermostat-point.js", unit="C°"]
+		Type string : thermostat_mode [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JSONPATH:$.system_mode", formatBeforePublish="{\"system_mode\": \"%s\"}"]
+		Type string : thermostat_preset [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"preset\".*)∩JSONPATH:$.preset", formatBeforePublish="{\"preset\": \"%s\"}"]
+		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
+		Type number : local_temperature [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
+		Type number : battery_voltage [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:codegen-activity.js"]
 }
-// NS heating (0x0c4314fffe62f090)
+// KS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Thing mqtt:topic:openhab:ns_heating "NS heating" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:ks_heating "KS heating" (mqtt:broker:openhab) {
 	Channels:
-		Type number : thermostat [stateTopic="zigbee2mqtt/ns_heating", commandTopic="zigbee2mqtt/ns_heating/set", transformationPattern="REGEX:(.*\"current_heating_setpoint\".*)∩JSONPATH:$.current_heating_setpoint", transformationPatternOut="JS:codegen-cmd-thermostat-point.js", unit="C°"]
-		Type string : thermostat_mode [stateTopic="zigbee2mqtt/ns_heating", commandTopic="zigbee2mqtt/ns_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JSONPATH:$.system_mode", formatBeforePublish="{\"system_mode\": \"%s\"}"]
-		Type string : thermostat_preset [stateTopic="zigbee2mqtt/ns_heating", commandTopic="zigbee2mqtt/ns_heating/set", transformationPattern="REGEX:(.*\"preset\".*)∩JSONPATH:$.preset", formatBeforePublish="{\"preset\": \"%s\"}"]
-		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/ns_heating", commandTopic="zigbee2mqtt/ns_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
-		Type number : local_temperature [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
-		Type number : battery_voltage [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
-		Type number : link [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/ns_heating", transformationPattern="JS:codegen-activity.js"]
+		Type number : thermostat [stateTopic="zigbee2mqtt/ks_heating", commandTopic="zigbee2mqtt/ks_heating/set", transformationPattern="REGEX:(.*\"current_heating_setpoint\".*)∩JSONPATH:$.current_heating_setpoint", transformationPatternOut="JS:codegen-cmd-thermostat-point.js", unit="C°"]
+		Type string : thermostat_mode [stateTopic="zigbee2mqtt/ks_heating", commandTopic="zigbee2mqtt/ks_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JSONPATH:$.system_mode", formatBeforePublish="{\"system_mode\": \"%s\"}"]
+		Type string : thermostat_preset [stateTopic="zigbee2mqtt/ks_heating", commandTopic="zigbee2mqtt/ks_heating/set", transformationPattern="REGEX:(.*\"preset\".*)∩JSONPATH:$.preset", formatBeforePublish="{\"preset\": \"%s\"}"]
+		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/ks_heating", commandTopic="zigbee2mqtt/ks_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
+		Type number : local_temperature [stateTopic="zigbee2mqtt/ks_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
+		Type number : battery_voltage [stateTopic="zigbee2mqtt/ks_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ks_heating", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/ks_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
+		Type number : link [stateTopic="zigbee2mqtt/ks_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ks_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ks_heating", transformationPattern="JS:codegen-activity.js"]
 }
 // KU heating (0x0c4314fffe73bf1f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -940,21 +940,21 @@ Thing mqtt:topic:openhab:ku_heating "KU heating" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_heating", transformationPattern="JS:codegen-activity.js"]
 }
-// SZ heating (0x0c4314fffe73c43f)
+// WZ heating (0x0c4314fffe73c43f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:wz_heating "WZ heating" (mqtt:broker:openhab) {
 	Channels:
-		Type number : thermostat [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"current_heating_setpoint\".*)∩JSONPATH:$.current_heating_setpoint", transformationPatternOut="JS:codegen-cmd-thermostat-point.js", unit="C°"]
-		Type string : thermostat_mode [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JSONPATH:$.system_mode", formatBeforePublish="{\"system_mode\": \"%s\"}"]
-		Type string : thermostat_preset [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"preset\".*)∩JSONPATH:$.preset", formatBeforePublish="{\"preset\": \"%s\"}"]
-		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/sz_heating", commandTopic="zigbee2mqtt/sz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
-		Type number : local_temperature [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
-		Type number : battery_voltage [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/sz_heating", transformationPattern="JS:codegen-activity.js"]
+		Type number : thermostat [stateTopic="zigbee2mqtt/wz_heating", commandTopic="zigbee2mqtt/wz_heating/set", transformationPattern="REGEX:(.*\"current_heating_setpoint\".*)∩JSONPATH:$.current_heating_setpoint", transformationPatternOut="JS:codegen-cmd-thermostat-point.js", unit="C°"]
+		Type string : thermostat_mode [stateTopic="zigbee2mqtt/wz_heating", commandTopic="zigbee2mqtt/wz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JSONPATH:$.system_mode", formatBeforePublish="{\"system_mode\": \"%s\"}"]
+		Type string : thermostat_preset [stateTopic="zigbee2mqtt/wz_heating", commandTopic="zigbee2mqtt/wz_heating/set", transformationPattern="REGEX:(.*\"preset\".*)∩JSONPATH:$.preset", formatBeforePublish="{\"preset\": \"%s\"}"]
+		Type switch : thermostat_enable [stateTopic="zigbee2mqtt/wz_heating", commandTopic="zigbee2mqtt/wz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
+		Type number : local_temperature [stateTopic="zigbee2mqtt/wz_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
+		Type number : battery_voltage [stateTopic="zigbee2mqtt/wz_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/wz_heating", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/wz_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
+		Type number : link [stateTopic="zigbee2mqtt/wz_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/wz_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/wz_heating", transformationPattern="JS:codegen-activity.js"]
 }
 // KG heating (0x0c4314fffe5c6913)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
