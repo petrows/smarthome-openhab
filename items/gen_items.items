@@ -285,7 +285,7 @@ Dimmer sz_bed_light_l_ct "SZ Bed L CT [JS(codegen-mired.js): %s]" <light> (g_all
 Switch sz_bed_light_l_ota "SZ Bed L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_light_l:ota"}
 Number:Dimensionless sz_bed_light_l_link "SZ Bed L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_light_l:link"}
 Switch sz_bed_light_l_sw "SZ Bed L" <light> (g_all_sw,all_light,eg_light,sz_light,sz_bed_light) {channel="mqtt:topic:openhab:sz_bed_light_l:state"}
-// SZ Bed R (0x90395efffeb9dcee)
+// SZ Bed R (0x94deb8fffeda7949)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
 Dimmer sz_bed_light_r_dim "SZ Bed R DIM [%d %%]" <light> (g_all_dim,sz_light_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_r:dim"}
 Dimmer sz_bed_light_r_dim_fast "SZ Bed R DIM-F [%d %%]" (g_all_dim_fast,sz_bed_light_dim_fast) {channel="mqtt:topic:openhab:sz_bed_light_r:dim_fast"}

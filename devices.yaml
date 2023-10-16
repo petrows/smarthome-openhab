@@ -110,13 +110,13 @@
   simulated_brightness:
     delta: 5
     interval: 100
-'0x90395efffeb9dcee':
-  friendly_name: sz_bed_light_r
 '0x94deb8fffea8a1f9':
   friendly_name: sz_bed_l_remote
   simulated_brightness:
     delta: 5
     interval: 100
+'0x94deb8fffeda7949':
+  friendly_name: sz_bed_light_r
 '0xa4c138018d7a55bf':
   friendly_name: ku_shutter
 '0xa4c13804963f4ccf':

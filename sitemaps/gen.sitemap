@@ -343,8 +343,8 @@ Text item=sz_bed_light_l_ota
 Text item=sz_bed_light_l_link
 Switch item=sz_bed_light_l_sw
 }
-Frame label="SZ Bed R (0x90395efffeb9dcee)" {
-// SZ Bed R (0x90395efffeb9dcee)
+Frame label="SZ Bed R (0x94deb8fffeda7949)" {
+// SZ Bed R (0x94deb8fffeda7949)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
 Slider item=sz_bed_light_r_dim
 Slider item=sz_bed_light_r_ct

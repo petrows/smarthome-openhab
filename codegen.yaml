@@ -353,7 +353,7 @@ devices:
 
   - name: SZ Bed R
     id: sz_bed_light_r
-    zigbee_id: '0x90395efffeb9dcee'
+    zigbee_id: '0x94deb8fffeda7949'
     type: IKEA_TRADFRI_LAMP_LED2101G4
     groups:
       sw:
