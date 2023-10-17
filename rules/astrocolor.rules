@@ -42,7 +42,9 @@ end
 rule "Astrocolor: Set lamps color according to daytime"
 when
     // Sunset (early)
-    Channel "astro:sun:home:set#event" triggered START
+    // Channel "astro:sun:home:set#event" triggered START
+    // At time
+    Time cron "0 00 18 ? * *"
 then
     logWarn("light", "Astrocolor emulation started")
 
