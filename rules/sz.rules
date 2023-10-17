@@ -99,14 +99,14 @@ then
             if (sz_curtain_state.state == "stop") {
                 sz_curtain_position.sendCommand(0)
             } else {
-                sz_blinds_cmd.sendCommand("stop")
+                sz_curtain_switch.sendCommand("stop")
             }
         }
         case "dots_1_initial_press": {
             if (sz_curtain_state.state == "stop") {
                 sz_curtain_position.sendCommand(100)
             } else {
-                sz_blinds_cmd.sendCommand("stop")
+                sz_curtain_switch.sendCommand("stop")
             }
         }
     }
