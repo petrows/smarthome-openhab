@@ -201,7 +201,7 @@ devices:
     zigbee_id: '0x003c84fffe16f988'
     type: IKEA_TRADFRI_STYRBAR
 
-  - name: SZ Main
+  - name: WZ Main
     id: wz_up_light
     zigbee_id: '0x588e81fffefe9a05'
     type: LIVARNO_CELLING_14147206L
@@ -318,6 +318,11 @@ devices:
   - name: SZ remote L
     id: sz_bed_l_remote
     zigbee_id: '0x94deb8fffea8a1f9'
+    type: IKEA_TRADFRI_STYRBAR
+
+  - name: SZ remote R
+    id: sz_bed_r_remote
+    zigbee_id: '0x540f57fffe1e420c'
     type: IKEA_TRADFRI_STYRBAR
 
   - name: Bedroom curtains remote

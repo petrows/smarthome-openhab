@@ -116,7 +116,7 @@ then
     ])
 end
 // Device should apply saved color temp when ON
-rule "SZ Main apply color on ON"
+rule "WZ Main apply color on ON"
 when
     Item wz_up_light_sw changed to ON
 then

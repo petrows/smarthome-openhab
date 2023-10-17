@@ -70,6 +70,11 @@
     interval: 100
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
+'0x540f57fffe1e420c':
+  friendly_name: sz_bed_r_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x588e81fffefb217b':
   friendly_name: ks_up_light
 '0x588e81fffefe9a05':

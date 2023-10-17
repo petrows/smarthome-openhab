@@ -180,14 +180,14 @@ Switch wz_up_remote_lowbatt "Bedroom main remote BAT [MAP(codegen-lowbat.map):%s
 Switch wz_up_remote_ota "Bedroom main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_up_remote:ota"}
 Number:Dimensionless wz_up_remote_link "Bedroom main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_up_remote:link"}
 Number:Dimensionless wz_up_remote_battery "Bedroom main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:wz_up_remote:battery"}
-// SZ Main (0x588e81fffefe9a05)
+// WZ Main (0x588e81fffefe9a05)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
-Dimmer wz_up_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim,wz_light_dim) {channel="mqtt:topic:openhab:wz_up_light:dim"}
-Dimmer wz_up_light_dim_fast "SZ Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_up_light:dim_fast"}
-Dimmer wz_up_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,wz_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:wz_up_light:ct"}
-Switch wz_up_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_up_light:ota"}
-Number:Dimensionless wz_up_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_up_light:link"}
-Switch wz_up_light_sw "SZ Main" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_up_light:state"}
+Dimmer wz_up_light_dim "WZ Main DIM [%d %%]" <light> (g_all_dim,wz_light_dim) {channel="mqtt:topic:openhab:wz_up_light:dim"}
+Dimmer wz_up_light_dim_fast "WZ Main DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_up_light:dim_fast"}
+Dimmer wz_up_light_ct "WZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,wz_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:wz_up_light:ct"}
+Switch wz_up_light_ota "WZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_up_light:ota"}
+Number:Dimensionless wz_up_light_link "WZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_up_light:link"}
+Switch wz_up_light_sw "WZ Main" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_up_light:state"}
 // WZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
 Dimmer wz_light_color_dim "WZ Color Decor DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_light_color:dim"}
@@ -259,6 +259,13 @@ Switch sz_bed_l_remote_lowbatt "SZ remote L BAT [MAP(codegen-lowbat.map):%s]" <l
 Switch sz_bed_l_remote_ota "SZ remote L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_l_remote:ota"}
 Number:Dimensionless sz_bed_l_remote_link "SZ remote L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_l_remote:link"}
 Number:Dimensionless sz_bed_l_remote_battery "SZ remote L  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_bed_l_remote:battery"}
+// SZ remote R (0x540f57fffe1e420c)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer sz_bed_r_remote_dim "SZ remote R DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bed_r_remote:dim"}
+Switch sz_bed_r_remote_lowbatt "SZ remote R BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_bed_r_remote:battery_low"}
+Switch sz_bed_r_remote_ota "SZ remote R OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_r_remote:ota"}
+Number:Dimensionless sz_bed_r_remote_link "SZ remote R LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_r_remote:link"}
+Number:Dimensionless sz_bed_r_remote_battery "SZ remote R  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_bed_r_remote:battery"}
 // Bedroom curtains remote (0x8cf681fffe36d14e)
 // IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
 Switch sz_curtain_remote_lowbatt "Bedroom curtains remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_curtain_remote:battery_low"}

@@ -219,8 +219,8 @@ Text item=wz_up_remote_ota
 Text item=wz_up_remote_link
 Text item=wz_up_remote_battery
 }
-Frame label="SZ Main (0x588e81fffefe9a05)" {
-// SZ Main (0x588e81fffefe9a05)
+Frame label="WZ Main (0x588e81fffefe9a05)" {
+// WZ Main (0x588e81fffefe9a05)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Slider item=wz_up_light_dim
 Slider item=wz_up_light_ct
@@ -310,6 +310,15 @@ Text item=sz_bed_l_remote_lowbatt
 Text item=sz_bed_l_remote_ota
 Text item=sz_bed_l_remote_link
 Text item=sz_bed_l_remote_battery
+}
+Frame label="SZ remote R (0x540f57fffe1e420c)" {
+// SZ remote R (0x540f57fffe1e420c)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=sz_bed_r_remote_dim
+Text item=sz_bed_r_remote_lowbatt
+Text item=sz_bed_r_remote_ota
+Text item=sz_bed_r_remote_link
+Text item=sz_bed_r_remote_battery
 }
 Frame label="Bedroom curtains remote (0x8cf681fffe36d14e)" {
 // Bedroom curtains remote (0x8cf681fffe36d14e)
