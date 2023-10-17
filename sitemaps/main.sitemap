@@ -112,7 +112,7 @@ sitemap main label="MAIN"
 		Switch item=all_light_mode label="All" icon="light" mappings=["ON"="ON","N"="NIGHT", OFF="OFF"]
 		Switch item=eg_light label="EG" icon="light" mappings=[ON="ON", OFF="OFF"]
 		Switch item=kg_light label="KG" icon="light" mappings=[ON="ON", OFF="OFF"]
-        Switch item=g_light_christmas label="Christmas []" icon="light" mappings=[ON="ON", OFF="OFF"]
+        Switch item=all_light_christmas label="Christmas []" icon="light" mappings=[ON="ON", OFF="OFF"]
         Switch item=cinema_mode label="Cinemo mode" icon="projector" mappings=[ON="ON", OFF="OFF"]
     }
     Frame {
@@ -203,7 +203,7 @@ sitemap main label="MAIN"
                 Switch item=ir_stb_power label="STB []" mappings=["ON"="⚇"] icon="receiver"
             }
             Frame label="Christmas" {
-			    Switch item=ns_christmas_light_sw label="Christmas [%s]" icon="light"
+			    Switch item=ks_christmas_light_sw label="Christmas [%s]" icon="light"
             }
 		}
         Group item=sz_light label="Sleep [%s]" icon="light" {

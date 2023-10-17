@@ -63,8 +63,6 @@
   friendly_name: bk_light_1
 '0x14b457fffe6383e5':
   friendly_name: ks_light_night
-'0x14b457fffe7e2305':
-  friendly_name: sz_remote_bed
 '0x1c34f1fffe830517':
   friendly_name: fl_door_remote
   simulated_brightness:
@@ -83,9 +81,9 @@
 '0x680ae2fffeaf18d4':
   friendly_name: ku_light_switch_kochfeld
 '0x7cb03eaa0a093a8b':
-  friendly_name: fs_christmas_light
+  friendly_name: sz_christmas_light
 '0x7cb03eaa0a094303':
-  friendly_name: ns_christmas_light
+  friendly_name: ks_christmas_light
 '0x7cb03eaa0a094bf2':
   friendly_name: bk_christmas_light
 '0x7cb03eaa0a094d1d':

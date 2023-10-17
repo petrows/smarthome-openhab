@@ -52,4 +52,6 @@ Thing mqtt:topic:openhab:sz-curtain (mqtt:broker:openhab) {
         // Position
         // Channel 2 - command, 3 - current position
 		Type dimmer : position  [ commandTopic="tuya/sz_curtain/dps/2/command", stateTopic="tuya/sz_curtain/dps/3/state", min=0, max=100 ]
+		// Read-only channel, to read current state
+		Type string : state  [ stateTopic="tuya/sz_curtain/dps/3/state", trigger="true" ]
 }

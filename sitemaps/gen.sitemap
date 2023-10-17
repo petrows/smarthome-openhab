@@ -293,8 +293,8 @@ Text item=sz_up_light_ota
 Text item=sz_up_light_link
 Switch item=sz_up_light_sw
 }
-Frame label="FS Main remote (0xb4e3f9fffeb35529)" {
-// FS Main remote (0xb4e3f9fffeb35529)
+Frame label="SZ Main remote (0xb4e3f9fffeb35529)" {
+// SZ Main remote (0xb4e3f9fffeb35529)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Text item=sz_up_remote_dim
 Text item=sz_up_remote_lowbatt
@@ -302,22 +302,14 @@ Text item=sz_up_remote_ota
 Text item=sz_up_remote_link
 Text item=sz_up_remote_battery
 }
-Frame label="FS remote L (0x94deb8fffea8a1f9)" {
-// FS remote L (0x94deb8fffea8a1f9)
+Frame label="SZ remote L (0x94deb8fffea8a1f9)" {
+// SZ remote L (0x94deb8fffea8a1f9)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Text item=sz_bed_l_remote_dim
 Text item=sz_bed_l_remote_lowbatt
 Text item=sz_bed_l_remote_ota
 Text item=sz_bed_l_remote_link
 Text item=sz_bed_l_remote_battery
-}
-Frame label="Bedroom remote (0x14b457fffe7e2305)" {
-// Bedroom remote (0x14b457fffe7e2305)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Text item=sz_remote_bed_lowbatt
-Text item=sz_remote_bed_ota
-Text item=sz_remote_bed_link
-Text item=sz_remote_bed_battery
 }
 Frame label="Bedroom curtains remote (0x8cf681fffe36d14e)" {
 // Bedroom curtains remote (0x8cf681fffe36d14e)
@@ -802,19 +794,19 @@ Text item=kg_heating_activity
 Text item=kg_heating_local_temperature
 Text item=kg_heating_battery_voltage
 }
-Frame label="FS Christmas light (0x7cb03eaa0a093a8b)" {
-// FS Christmas light (0x7cb03eaa0a093a8b)
+Frame label="SZ Christmas light (0x7cb03eaa0a093a8b)" {
+// SZ Christmas light (0x7cb03eaa0a093a8b)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=fs_christmas_light_ota
-Text item=fs_christmas_light_link
-Switch item=fs_christmas_light_sw
+Text item=sz_christmas_light_ota
+Text item=sz_christmas_light_link
+Switch item=sz_christmas_light_sw
 }
-Frame label="NS Christmas light (0x7cb03eaa0a094303)" {
-// NS Christmas light (0x7cb03eaa0a094303)
+Frame label="KS Christmas light (0x7cb03eaa0a094303)" {
+// KS Christmas light (0x7cb03eaa0a094303)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=ns_christmas_light_ota
-Text item=ns_christmas_light_link
-Switch item=ns_christmas_light_sw
+Text item=ks_christmas_light_ota
+Text item=ks_christmas_light_link
+Switch item=ks_christmas_light_sw
 }
 Frame label="Balkon Christmas light (0x7cb03eaa0a094bf2)" {
 // Balkon Christmas light (0x7cb03eaa0a094bf2)

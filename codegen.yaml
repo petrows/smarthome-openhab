@@ -310,20 +310,15 @@ devices:
         - sunrise_ct
         - astro_color_light_ct
 
-  - name: FS Main remote
+  - name: SZ Main remote
     id: sz_up_remote
     zigbee_id: '0xb4e3f9fffeb35529'
     type: IKEA_TRADFRI_STYRBAR
 
-  - name: FS remote L
+  - name: SZ remote L
     id: sz_bed_l_remote
     zigbee_id: '0x94deb8fffea8a1f9'
     type: IKEA_TRADFRI_STYRBAR
-
-  - name: Bedroom remote
-    id: sz_remote_bed
-    zigbee_id: '0x14b457fffe7e2305'
-    type: IKEA_TRADFRI_REMOTE
 
   - name: Bedroom curtains remote
     id: sz_curtain_remote
@@ -853,21 +848,21 @@ devices:
 
 # Christmas lights
 
-  - name: FS Christmas light
-    id: fs_christmas_light
+  - name: SZ Christmas light
+    id: sz_christmas_light
     zigbee_id: '0x7cb03eaa0a093a8b'
     type: OSRAM_SMART_PLUG
     groups:
       sw:
-      - g_light_christmas
+      - all_light_christmas
 
-  - name: NS Christmas light
-    id: ns_christmas_light
+  - name: KS Christmas light
+    id: ks_christmas_light
     zigbee_id: '0x7cb03eaa0a094303'
     type: OSRAM_SMART_PLUG
     groups:
       sw:
-      - g_light_christmas
+      - all_light_christmas
 
   - name: Balkon Christmas light
     id: bk_christmas_light
@@ -875,7 +870,7 @@ devices:
     type: OSRAM_SMART_PLUG
     groups:
       sw:
-      - g_light_christmas
+      - all_light_christmas
 
 # Blinds
 

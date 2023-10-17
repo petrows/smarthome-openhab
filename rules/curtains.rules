@@ -46,3 +46,21 @@ then
         blinds_auto_cmd.sendCommand("close")
     }
 end
+
+// SZ Curtains: update current state var
+// We dont have built-in "action" channel and we need to track mqtt channel,
+// that curtains started and stopped moving
+rule "SZ Curtains: moving"
+when
+    Item sz_curtain_switch received command
+    or Item sz_curtain_position received command
+then
+    sz_curtain_state.sendCommand("move")
+end
+
+rule "SZ Curtains: stop"
+when
+    Channel "mqtt:topic:openhab:sz-curtain:state" triggered
+then
+    sz_curtain_state.sendCommand("stop")
+end

@@ -28,3 +28,4 @@ Switch cfg_blinds_auto_ku "KU Curtain auto" <curtains_cfg>
 
 String sz_curtain_switch "SZ Curtain" <curtains> (curtains_cmd) {channel="mqtt:topic:openhab:sz-curtain:command"}
 Dimmer sz_curtain_position "SZ Curtain pos [%d %%]" <curtains> (curtains_pos) {channel="mqtt:topic:openhab:sz-curtain:position"}
+String sz_curtain_state "SZ Curtain state [%s]" <curtains>

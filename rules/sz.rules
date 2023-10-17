@@ -80,17 +80,33 @@ then
         }
         // Control Blinds
         case "track_next": {
-            sz_blinds_cmd.sendCommand("open")
+            if (sz_shutter_mov.state == "STOP") {
+                sz_blinds_cmd.sendCommand("open")
+            } else {
+                sz_blinds_cmd.sendCommand("stop")
+            }
         }
         case "dots_2_initial_press": {
-            sz_blinds_cmd.sendCommand("close")
+            if (sz_shutter_mov.state == "STOP") {
+                sz_blinds_cmd.sendCommand("close")
+            } else {
+                sz_blinds_cmd.sendCommand("stop")
+            }
         }
         // Control Curtains
         case "track_previous": {
-            sz_curtain_position.sendCommand(0)
+            if (sz_curtain_state.state == "stop") {
+                sz_curtain_position.sendCommand(0)
+            } else {
+                sz_blinds_cmd.sendCommand("stop")
+            }
         }
         case "dots_1_initial_press": {
-            sz_curtain_position.sendCommand(100)
+            if (sz_curtain_state.state == "stop") {
+                sz_curtain_position.sendCommand(100)
+            } else {
+                sz_blinds_cmd.sendCommand("stop")
+            }
         }
     }
 end

@@ -245,26 +245,20 @@ Dimmer sz_up_light_ct "SZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,
 Switch sz_up_light_ota "SZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_up_light:ota"}
 Number:Dimensionless sz_up_light_link "SZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_up_light:link"}
 Switch sz_up_light_sw "SZ Main" <light> (g_all_sw,all_light,eg_light,sz_light) {channel="mqtt:topic:openhab:sz_up_light:state"}
-// FS Main remote (0xb4e3f9fffeb35529)
+// SZ Main remote (0xb4e3f9fffeb35529)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Dimmer sz_up_remote_dim "FS Main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_up_remote:dim"}
-Switch sz_up_remote_lowbatt "FS Main remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_up_remote:battery_low"}
-Switch sz_up_remote_ota "FS Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_up_remote:ota"}
-Number:Dimensionless sz_up_remote_link "FS Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_up_remote:link"}
-Number:Dimensionless sz_up_remote_battery "FS Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_up_remote:battery"}
-// FS remote L (0x94deb8fffea8a1f9)
+Dimmer sz_up_remote_dim "SZ Main remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_up_remote:dim"}
+Switch sz_up_remote_lowbatt "SZ Main remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_up_remote:battery_low"}
+Switch sz_up_remote_ota "SZ Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_up_remote:ota"}
+Number:Dimensionless sz_up_remote_link "SZ Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_up_remote:link"}
+Number:Dimensionless sz_up_remote_battery "SZ Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_up_remote:battery"}
+// SZ remote L (0x94deb8fffea8a1f9)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Dimmer sz_bed_l_remote_dim "FS remote L DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bed_l_remote:dim"}
-Switch sz_bed_l_remote_lowbatt "FS remote L BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_bed_l_remote:battery_low"}
-Switch sz_bed_l_remote_ota "FS remote L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_l_remote:ota"}
-Number:Dimensionless sz_bed_l_remote_link "FS remote L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_l_remote:link"}
-Number:Dimensionless sz_bed_l_remote_battery "FS remote L  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_bed_l_remote:battery"}
-// Bedroom remote (0x14b457fffe7e2305)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Switch sz_remote_bed_lowbatt "Bedroom remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_remote_bed:battery_low"}
-Switch sz_remote_bed_ota "Bedroom remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_remote_bed:ota"}
-Number:Dimensionless sz_remote_bed_link "Bedroom remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_remote_bed:link"}
-Number:Dimensionless sz_remote_bed_battery "Bedroom remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_remote_bed:battery"}
+Dimmer sz_bed_l_remote_dim "SZ remote L DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bed_l_remote:dim"}
+Switch sz_bed_l_remote_lowbatt "SZ remote L BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_bed_l_remote:battery_low"}
+Switch sz_bed_l_remote_ota "SZ remote L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_l_remote:ota"}
+Number:Dimensionless sz_bed_l_remote_link "SZ remote L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_l_remote:link"}
+Number:Dimensionless sz_bed_l_remote_battery "SZ remote L  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_bed_l_remote:battery"}
 // Bedroom curtains remote (0x8cf681fffe36d14e)
 // IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
 Switch sz_curtain_remote_lowbatt "Bedroom curtains remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_curtain_remote:battery_low"}
@@ -659,21 +653,21 @@ Number:Dimensionless kg_heating_link "KG heating LINK [%d]" <linkz> (g_all_link)
 DateTime kg_heating_activity "KG heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_heating:activity"}
 Number:Temperature kg_heating_local_temperature "KG heating temp  [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:kg_heating:local_temperature"}
 Number:ElectricPotential kg_heating_battery_voltage "KG heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:kg_heating:battery_voltage"}
-// FS Christmas light (0x7cb03eaa0a093a8b)
+// SZ Christmas light (0x7cb03eaa0a093a8b)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch fs_christmas_light_ota "FS Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fs_christmas_light:ota"}
-Number:Dimensionless fs_christmas_light_link "FS Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fs_christmas_light:link"}
-Switch fs_christmas_light_sw "FS Christmas light" <light> (g_all_sw,g_light_christmas) {channel="mqtt:topic:openhab:fs_christmas_light:state"}
-// NS Christmas light (0x7cb03eaa0a094303)
+Switch sz_christmas_light_ota "SZ Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_christmas_light:ota"}
+Number:Dimensionless sz_christmas_light_link "SZ Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_christmas_light:link"}
+Switch sz_christmas_light_sw "SZ Christmas light" <light> (g_all_sw,all_light_christmas) {channel="mqtt:topic:openhab:sz_christmas_light:state"}
+// KS Christmas light (0x7cb03eaa0a094303)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch ns_christmas_light_ota "NS Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ns_christmas_light:ota"}
-Number:Dimensionless ns_christmas_light_link "NS Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ns_christmas_light:link"}
-Switch ns_christmas_light_sw "NS Christmas light" <light> (g_all_sw,g_light_christmas) {channel="mqtt:topic:openhab:ns_christmas_light:state"}
+Switch ks_christmas_light_ota "KS Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_christmas_light:ota"}
+Number:Dimensionless ks_christmas_light_link "KS Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_christmas_light:link"}
+Switch ks_christmas_light_sw "KS Christmas light" <light> (g_all_sw,all_light_christmas) {channel="mqtt:topic:openhab:ks_christmas_light:state"}
 // Balkon Christmas light (0x7cb03eaa0a094bf2)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
 Switch bk_christmas_light_ota "Balkon Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_christmas_light:ota"}
 Number:Dimensionless bk_christmas_light_link "Balkon Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_christmas_light:link"}
-Switch bk_christmas_light_sw "Balkon Christmas light" <light> (g_all_sw,g_light_christmas) {channel="mqtt:topic:openhab:bk_christmas_light:state"}
+Switch bk_christmas_light_sw "Balkon Christmas light" <light> (g_all_sw,all_light_christmas) {channel="mqtt:topic:openhab:bk_christmas_light:state"}
 // SZ Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
 Switch sz_shutter_ota "SZ Shutter OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_shutter:ota"}
