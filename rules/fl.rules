@@ -1,3 +1,5 @@
+var Timer verlassenTimer
+
 rule "Main door leave remote"
 when
     Channel "mqtt:topic:openhab:fl_door_remote:action" triggered
