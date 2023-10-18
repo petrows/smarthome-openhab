@@ -434,6 +434,18 @@ Thing mqtt:topic:openhab:sz_bed_light_r "SZ Bed R" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/sz_bed_light_r", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_light_r", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// SZ CO2 (sz_co2)
+// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
+Thing mqtt:topic:openhab:sz_co2 "SZ CO2" (mqtt:broker:openhab) {
+	Channels:
+		Type number : co2 [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.CO2", unit="ppm"]
+		Type switch : co2_led [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.led", on="1", off="0"]
+		Type number : temperature [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.DHT22.Temperature", unit="°C"]
+		Type number : humidity [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.DHT22.Humidity", unit="%"]
+		Type number : rssi [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type datetime : activity [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JS:codegen-activity.js"]
+}
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {

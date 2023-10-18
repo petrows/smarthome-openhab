@@ -377,6 +377,11 @@ devices:
       dim_fast:
         - sz_bed_light_dim_fast
 
+  - name: SZ CO2
+    id: sz_co2
+    type: PETROWS_CO2_SENSOR
+    device_id: 5C:CF:7F:68:19:46
+
 # KITCHEN ================================
 
   - name: KU Climate
