@@ -615,7 +615,7 @@ Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heating
 String sz_heating_thermostat_mode "SZ heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:sz_heating:thermostat_mode"}
 String sz_heating_thermostat_preset "SZ heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:sz_heating:thermostat_preset"}
 Switch sz_heating_thermostat_enable "SZ heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,sz_hz_enable) {channel="mqtt:topic:openhab:sz_heating:thermostat_enable"}
-Number:Temperature sz_heating_local_temperature_calibration "SZ heating CAL [%.0f %unit%]" <heatingt> (g_all_thermostat_local_temperature_calibration) {channel="mqtt:topic:openhab:sz_heating:thermostat_local_temperature_calibration"}
+Number:Temperature sz_heating_local_temperature_calibration "SZ heating CAL [%.0f %unit%]" <heatingt> (g_all_local_temperature_calibration) {channel="mqtt:topic:openhab:sz_heating:local_temperature_calibration"}
 Switch sz_heating_lowbatt "SZ heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_heating:battery_low"}
 Switch sz_heating_ota "SZ heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
 Number:Dimensionless sz_heating_link "SZ heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_heating:link"}
@@ -628,7 +628,7 @@ Number:Temperature ks_heating_thermostat "KS heating SET [%.0f %unit%]" <heating
 String ks_heating_thermostat_mode "KS heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:ks_heating:thermostat_mode"}
 String ks_heating_thermostat_preset "KS heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:ks_heating:thermostat_preset"}
 Switch ks_heating_thermostat_enable "KS heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,ks_hz_enable) {channel="mqtt:topic:openhab:ks_heating:thermostat_enable"}
-Number:Temperature ks_heating_local_temperature_calibration "KS heating CAL [%.0f %unit%]" <heatingt> (g_all_thermostat_local_temperature_calibration) {channel="mqtt:topic:openhab:ks_heating:thermostat_local_temperature_calibration"}
+Number:Temperature ks_heating_local_temperature_calibration "KS heating CAL [%.0f %unit%]" <heatingt> (g_all_local_temperature_calibration) {channel="mqtt:topic:openhab:ks_heating:local_temperature_calibration"}
 Switch ks_heating_lowbatt "KS heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ks_heating:battery_low"}
 Switch ks_heating_ota "KS heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_heating:ota"}
 Number:Dimensionless ks_heating_link "KS heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_heating:link"}
@@ -641,7 +641,7 @@ Number:Temperature ku_heating_thermostat "KU heating SET [%.0f %unit%]" <heating
 String ku_heating_thermostat_mode "KU heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:ku_heating:thermostat_mode"}
 String ku_heating_thermostat_preset "KU heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:ku_heating:thermostat_preset"}
 Switch ku_heating_thermostat_enable "KU heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,ku_hz_enable) {channel="mqtt:topic:openhab:ku_heating:thermostat_enable"}
-Number:Temperature ku_heating_local_temperature_calibration "KU heating CAL [%.0f %unit%]" <heatingt> (g_all_thermostat_local_temperature_calibration) {channel="mqtt:topic:openhab:ku_heating:thermostat_local_temperature_calibration"}
+Number:Temperature ku_heating_local_temperature_calibration "KU heating CAL [%.0f %unit%]" <heatingt> (g_all_local_temperature_calibration) {channel="mqtt:topic:openhab:ku_heating:local_temperature_calibration"}
 Switch ku_heating_lowbatt "KU heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_heating:battery_low"}
 Switch ku_heating_ota "KU heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_heating:ota"}
 Number:Dimensionless ku_heating_link "KU heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_heating:link"}
@@ -654,7 +654,7 @@ Number:Temperature wz_heating_thermostat "WZ heating SET [%.0f %unit%]" <heating
 String wz_heating_thermostat_mode "WZ heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:wz_heating:thermostat_mode"}
 String wz_heating_thermostat_preset "WZ heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:wz_heating:thermostat_preset"}
 Switch wz_heating_thermostat_enable "WZ heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,sz_hz_enable) {channel="mqtt:topic:openhab:wz_heating:thermostat_enable"}
-Number:Temperature wz_heating_local_temperature_calibration "WZ heating CAL [%.0f %unit%]" <heatingt> (g_all_thermostat_local_temperature_calibration) {channel="mqtt:topic:openhab:wz_heating:thermostat_local_temperature_calibration"}
+Number:Temperature wz_heating_local_temperature_calibration "WZ heating CAL [%.0f %unit%]" <heatingt> (g_all_local_temperature_calibration) {channel="mqtt:topic:openhab:wz_heating:local_temperature_calibration"}
 Switch wz_heating_lowbatt "WZ heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:wz_heating:battery_low"}
 Switch wz_heating_ota "WZ heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_heating:ota"}
 Number:Dimensionless wz_heating_link "WZ heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_heating:link"}
@@ -667,7 +667,7 @@ Number:Temperature kg_heating_thermostat "KG heating SET [%.0f %unit%]" <heating
 String kg_heating_thermostat_mode "KG heating MODE [%s]" <heatingt> (g_all_thermostat_mode) {channel="mqtt:topic:openhab:kg_heating:thermostat_mode"}
 String kg_heating_thermostat_preset "KG heating PRESET [%s]" <heatingt> (g_all_thermostat_preset) {channel="mqtt:topic:openhab:kg_heating:thermostat_preset"}
 Switch kg_heating_thermostat_enable "KG heating ENABLE [%s]" <heatingt> (g_all_thermostat_enable,all_hz_enable,kg_hz_enable) {channel="mqtt:topic:openhab:kg_heating:thermostat_enable"}
-Number:Temperature kg_heating_local_temperature_calibration "KG heating CAL [%.0f %unit%]" <heatingt> (g_all_thermostat_local_temperature_calibration) {channel="mqtt:topic:openhab:kg_heating:thermostat_local_temperature_calibration"}
+Number:Temperature kg_heating_local_temperature_calibration "KG heating CAL [%.0f %unit%]" <heatingt> (g_all_local_temperature_calibration) {channel="mqtt:topic:openhab:kg_heating:local_temperature_calibration"}
 Switch kg_heating_lowbatt "KG heating BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_heating:battery_low"}
 Switch kg_heating_ota "KG heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_heating:ota"}
 Number:Dimensionless kg_heating_link "KG heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_heating:link"}
