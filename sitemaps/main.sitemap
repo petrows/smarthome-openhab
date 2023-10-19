@@ -221,7 +221,7 @@ sitemap main label="MAIN"
             Frame label="Curtains" {
                 Switch item=sz_curtain_switch label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=sz_curtain_position label="Position [%d %%]"
-                Switch item=cfg_blinds_auto_sz label="Enable auto [%s]"
+                Switch item=cfg_curtains_auto_sz label="Enable auto [%s]"
             }
             Frame label="Main" {
 				Switch item=sz_up_light_sw label="Main [%s]" icon="light"
@@ -463,9 +463,12 @@ sitemap main label="MAIN"
 			Frame label="Blinds" {
 				Switch item=cfg_blinds_auto label="Enable blinds auto control [%s]"
                 Switch item=cfg_blinds_auto_sz label="Sleeproom: auto [%s]" visibility=[cfg_blinds_auto==ON]
-                Switch item=cfg_blinds_auto_ns label="New Room: auto [%s]" visibility=[cfg_blinds_auto==ON]
-                Switch item=cfg_blinds_auto_fs label="Theater: auto [%s]" visibility=[cfg_blinds_auto==ON]
-                Switch item=cfg_blinds_auto_ku label="Theater: auto [%s]" visibility=[cfg_blinds_auto==ON]
+                Switch item=cfg_blinds_auto_ks label="Theater: auto [%s]" visibility=[cfg_blinds_auto==ON]
+                Switch item=cfg_blinds_auto_ku label="Kitchen: auto [%s]" visibility=[cfg_blinds_auto==ON]
+			}
+			Frame label="Curtains" {
+				Switch item=cfg_curtains_auto label="Enable curtains auto control [%s]"
+                Switch item=cfg_curtains_auto_sz label="Sleeproom: auto [%s]" visibility=[cfg_curtains_auto==ON]
 			}
 		}
 

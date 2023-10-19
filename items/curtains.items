@@ -21,10 +21,12 @@ Group ku_blinds_cmd "KU Blinds command []" <rollershutter>
 Group:Dimmer:AVG ku_blinds_pos "KU Blinds pos [%d %%]" <rollershutter>
 
 Switch cfg_blinds_auto "Blinds auto" <curtains_cfg>
-Switch cfg_blinds_auto_sz "SZ Curtain auto" <curtains_cfg>
-Switch cfg_blinds_auto_wz "WZ Curtain auto" <curtains_cfg>
-Switch cfg_blinds_auto_ks "KS Curtain auto" <curtains_cfg>
-Switch cfg_blinds_auto_ku "KU Curtain auto" <curtains_cfg>
+Switch cfg_blinds_auto_sz "SZ Blinds auto" <curtains_cfg>
+Switch cfg_blinds_auto_ks "KS Blinds auto" <curtains_cfg>
+Switch cfg_blinds_auto_ku "KU Blinds auto" <curtains_cfg>
+
+Switch cfg_curtains_auto "Curtains auto" <curtains_cfg>
+Switch cfg_curtains_auto_sz "SZ Curtains auto" <curtains_cfg>
 
 String sz_curtain_switch "SZ Curtain" <curtains> (curtains_cmd) {channel="mqtt:topic:openhab:sz-curtain:command"}
 Dimmer sz_curtain_position "SZ Curtain pos [%d %%]" <curtains> (curtains_pos) {channel="mqtt:topic:openhab:sz-curtain:position"}
