@@ -1,4 +1,8 @@
+import java.time.temporal.ChronoUnit
 import org.openhab.core.model.script.ScriptServiceUtil
+import java.util.List
+
+val List<String> rooms_list = newArrayList('ks', 'wz', 'ku', 'sz', 'kg')
 
 val Functions$Function2<String, Number, Boolean> set_room = [
     room_name,
@@ -206,6 +210,76 @@ then
             }
         }
     ]
+end
+
+// === HEATING LOCAL CORRECTION==================================
+
+rule "Heating local temp correction"
+when
+	Time cron "0 0/5 * * * ?" //every 5 Minutes
+then
+	logDebug("heating", "Local temp correction")
+
+    rooms_list.forEach[ room |
+        logDebug("heating", "Room: {}", room)
+
+        // Do we have thermostat for this room active?
+        try {
+            // Current temperature via separate room sensor
+            val float room_temp = ((ScriptServiceUtil.getItemRegistry?.getItem(room + "_climate_temperature") as NumberItem).state as QuantityType<Temperature>).toUnit("°C").floatValue()
+            val DateTimeItem room_temp_activity = ScriptServiceUtil.getItemRegistry?.getItem(room + "_climate_activity") as DateTimeItem
+
+            // Current target temperature
+            val GroupItem room_set = ScriptServiceUtil.getItemRegistry?.getItem(room + "_hz") as GroupItem
+
+            // Check that target temperature is set somehow
+            if (room_set.state < 10|°C) {
+                // Ignore if not working
+                logDebug("heating", "Room: {} ignored, set temp is {}", room, room_set.state)
+                return
+            }
+
+            // Check that room sensor is alive
+            val temp_date_item = ( room_temp_activity.state as DateTimeType).zonedDateTime
+            val date_now = ZonedDateTime.now
+            var double diff_hours = ChronoUnit.HOURS.between(temp_date_item, date_now)
+            if (diff_hours > 1) {
+                logError("heating", "No activity from local sensor > 1h")
+                return
+            }
+
+            // Check all thermostats
+            room_set.members.forEach[ termostat_set |
+                // Find original device name, by cutting-off
+                val device_name = transform("REGEX", "(.*)_thermostat", termostat_set.name.toString)
+
+                // What is current temperature, measured by device?
+                val float device_sensor = ((ScriptServiceUtil.getItemRegistry?.getItem(device_name + "_local_temperature") as NumberItem).state as QuantityType<Temperature>).toUnit("°C").floatValue()
+                // What is calibration value?
+                var NumberItem device_cal_item = ScriptServiceUtil.getItemRegistry?.getItem(device_name + "_local_temperature_calibration") as NumberItem
+                val float device_cal = (device_cal_item.state as QuantityType<Temperature>).toUnit("°C").floatValue()
+
+                // Calculate current diff local <-> room temp
+                val float room_device_diff = device_sensor - room_temp
+
+                logInfo("heating", "Device: {}, Sensor: {}, Cal: {}, Diff: {}", device_name, device_sensor, device_cal, room_device_diff)
+
+                if (Math::abs(room_device_diff) > 0.1) {
+                    // Correct current diff with new value
+                    val correction_value = device_cal - room_device_diff
+                    logInfo("heating", "Device: {}, set correction: {}", device_name, correction_value)
+                    device_cal_item.sendCommand(correction_value.toString())
+                }
+            ]
+
+            logInfo("heating", "Room {} set: {}, actual temp: {}", room, room_set.state, room_temp)
+
+        } catch(Throwable t) {
+            logWarn("heating", "Error getting room info: {}", t.toString())
+            return
+        }
+    ]
+
 end
 
 // === HEATING SWITCHES =========================================

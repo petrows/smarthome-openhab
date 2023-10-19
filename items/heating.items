@@ -8,14 +8,13 @@ Group:Number:AVG all_hz <heatingt>
 Group:Number:AVG all_hz_auto <heatingt>
 
 // Heaters in KG
-Group kg_hz <heating>
+Group:Number:AVG kg_hz <heating>
 
 // Heaters in EG
-Group eg_hz <heating>
-Group wz_hz <heating>
-Group ks_hz <heating>
-Group ku_hz <heating>
-Group sz_hz <heating>
+Group:Number:AVG wz_hz <heating>
+Group:Number:AVG ks_hz <heating>
+Group:Number:AVG ku_hz <heating>
+Group:Number:AVG sz_hz <heating>
 
 // Group to control heaters on/off
 Group:Switch:OR(ON, OFF) all_hz_enable <heating>
