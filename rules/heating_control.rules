@@ -218,6 +218,9 @@ rule "Heating local temp correction"
 when
 	Time cron "0 0/5 * * * ?" //every 5 Minutes
 then
+    if (cfgHeatingEnable.state != ON ) {
+		return
+	}
 	logDebug("heating", "Local temp correction")
 
     rooms_list.forEach[ room |
@@ -233,7 +236,7 @@ then
             val GroupItem room_set = ScriptServiceUtil.getItemRegistry?.getItem(room + "_hz") as GroupItem
 
             // Check that target temperature is set somehow
-            if (room_set.state < 10|°C) {
+            if (room_set.state < 10) {
                 // Ignore if not working
                 logDebug("heating", "Room: {} ignored, set temp is {}", room, room_set.state)
                 return
@@ -266,9 +269,11 @@ then
 
                 if (Math::abs(room_device_diff) > 0.1) {
                     // Correct current diff with new value
-                    val correction_value = device_cal - room_device_diff
-                    logInfo("heating", "Device: {}, set correction: {}", device_name, correction_value)
-                    device_cal_item.sendCommand(correction_value.toString())
+                    var correction_value = device_cal - room_device_diff
+                    // Round to %.1f
+                    var String correction_value_str = String.format("%.1f", correction_value)
+                    logInfo("heating", "Device: {}, set correction: {}", device_name, correction_value_str)
+                    device_cal_item.sendCommand(correction_value_str)
                 }
             ]
 
