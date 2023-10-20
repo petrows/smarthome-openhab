@@ -257,19 +257,22 @@ then
                 val device_name = transform("REGEX", "(.*)_thermostat", termostat_set.name.toString)
 
                 // What is current temperature, measured by device?
-                val float device_sensor = ((ScriptServiceUtil.getItemRegistry?.getItem(device_name + "_local_temperature") as NumberItem).state as QuantityType<Temperature>).toUnit("°C").floatValue()
+                val double device_sensor = ((ScriptServiceUtil.getItemRegistry?.getItem(device_name + "_local_temperature") as NumberItem).state as QuantityType<Temperature>).toUnit("°C").floatValue()
                 // What is calibration value?
                 var NumberItem device_cal_item = ScriptServiceUtil.getItemRegistry?.getItem(device_name + "_local_temperature_calibration") as NumberItem
-                val float device_cal = (device_cal_item.state as QuantityType<Temperature>).toUnit("°C").floatValue()
+                val double device_cal = (device_cal_item.state as QuantityType<Temperature>).toUnit("°C").floatValue()
 
                 // Calculate current diff local <-> room temp
-                val float room_device_diff = device_sensor - room_temp
+                val double room_device_diff = device_sensor - room_temp
 
                 logInfo("heating", "Device: {}, Sensor: {}, Cal: {}, Diff: {}", device_name, device_sensor, device_cal, room_device_diff)
 
                 if (Math::abs(room_device_diff) > 0.1) {
                     // Correct current diff with new value
-                    var correction_value = device_cal - room_device_diff
+                    var double correction_value = device_cal - room_device_diff
+                    // Limit correction value in allowed range (-12.5...5.5)
+                    if (correction_value < -12.5) { correction_value = -12.5 }
+                    if (correction_value > 5.5) { correction_value = 5.5 }
                     // Round to %.1f
                     var String correction_value_str = String.format("%.1f", correction_value)
                     logInfo("heating", "Device: {}, set correction: {}", device_name, correction_value_str)
