@@ -561,12 +561,12 @@ Number:Dimensionless kg_lager3_door_link "KG Lager 3 door LINK [%d]" <linkz> (g_
 DateTime kg_lager3_door_activity "KG Lager 3 door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager3_door:activity"}
 Contact kg_lager3_door_contact "KG Lager 3 door [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:kg_lager3_door:contact"}
 Number:Dimensionless kg_lager3_door_battery "KG Lager 3 door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager3_door:battery"}
-// KG Lager 3 (Haupt) (kg_lager3_main_light)
+// KG Lager 3 (Haupt) (lg3_up_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_lager3_main_light "KG Lager 3 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager3_main_light:POWER"}
-Number:Dimensionless kg_lager3_main_light_rssi "KG Lager 3 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager3_main_light:rssi"}
-String kg_lager3_main_light_bssid "KG Lager 3 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager3_main_light:bssid"}
-DateTime kg_lager3_main_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager3_main_light:activity"}
+Switch lg3_up_light "KG Lager 3 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:lg3_up_light:POWER"}
+Number:Dimensionless lg3_up_light_rssi "KG Lager 3 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:lg3_up_light:rssi"}
+String lg3_up_light_bssid "KG Lager 3 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:lg3_up_light:bssid"}
+DateTime lg3_up_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_up_light:activity"}
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager4_main_light:POWER"}

@@ -684,13 +684,13 @@ Text item=kg_lager3_door_activity
 Text item=kg_lager3_door_contact
 Text item=kg_lager3_door_battery
 }
-Frame label="KG Lager 3 (Haupt) (kg_lager3_main_light)" {
-// KG Lager 3 (Haupt) (kg_lager3_main_light)
+Frame label="KG Lager 3 (Haupt) (lg3_up_light)" {
+// KG Lager 3 (Haupt) (lg3_up_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch item=kg_lager3_main_light
-Text item=kg_lager3_main_light_rssi
-Text item=kg_lager3_main_light_bssid
-Text item=kg_lager3_main_light_activity
+Switch item=lg3_up_light
+Text item=lg3_up_light_rssi
+Text item=lg3_up_light_bssid
+Text item=lg3_up_light_activity
 }
 Frame label="KG Lager 4 (Haupt) (kg_lager4_main_light)" {
 // KG Lager 4 (Haupt) (kg_lager4_main_light)

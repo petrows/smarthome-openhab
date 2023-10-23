@@ -281,7 +281,7 @@ sitemap main label="MAIN"
 				Switch item=kg_main1_light label="Workshop (main) [%s]" icon="light"
 				Switch item=kg_main1_work_light_sw label="Workshop (table) [%s]" icon="light"
 				Switch item=kg_lager1_main_light label="Warehouse 1 [%s]" icon="light"
-                Switch item=kg_lager3_main_light label="Warehouse 3 [%s]" icon="light"
+                Switch item=lg3_up_light label="Warehouse 3 [%s]" icon="light"
                 Switch item=kg_lager4_main_light label="Warehouse 4 [%s]" icon="light"
                 Switch item=kg_hz_main_light label="Boiler [%s]" icon="light"
 			}

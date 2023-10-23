@@ -1,0 +1,16 @@
+
+// Auto light in laundry
+// turn ON light when dorr is open
+rule "Laubdry door light"
+when
+    Item kg_lager3_door_contact changed
+then
+    if (newState == OPEN) {
+        lg3_up_light.sendCommand(ON)
+        if (kg_light_auto.state == OFF) {
+            kg_light_auto.sendCommand(ON)
+        }
+    } else {
+        lg3_up_light.sendCommand(OFF)
+    }
+end

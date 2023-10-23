@@ -67,8 +67,8 @@ end
 // then
 //     logInfo("light", "KG Laundry Motion: " + newState.toString)
 //     if (newState == OFF) {
-//         sendCommand(kg_lager3_main_light, OFF)
+//         sendCommand(lg3_up_light, OFF)
 //     } else {
-//         sendCommand(kg_lager3_main_light, ON)
+//         sendCommand(lg3_up_light, ON)
 //     }
 // end

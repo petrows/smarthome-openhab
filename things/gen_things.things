@@ -834,15 +834,15 @@ Thing mqtt:topic:openhab:kg_lager3_door "KG Lager 3 door" (mqtt:broker:openhab) 
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_door", transformationPattern="JS:codegen-activity.js"]
 }
-// KG Lager 3 (Haupt) (kg_lager3_main_light)
+// KG Lager 3 (Haupt) (lg3_up_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Thing mqtt:topic:openhab:kg_lager3_main_light "KG Lager 3 (Haupt)" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:lg3_up_light "KG Lager 3 (Haupt)" (mqtt:broker:openhab) {
 	Channels:
-		Type number : rssi [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
-		Type string : bssid [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
-		Type number : la [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
-		Type datetime : activity [stateTopic="tele/kg_lager3_main_light/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : POWER [stateTopic="stat/kg_lager3_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager3_main_light/POWER", on="ON", off="OFF"]
+		Type number : rssi [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type switch : POWER [stateTopic="stat/lg3_up_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/lg3_up_light/POWER", on="ON", off="OFF"]
 }
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html

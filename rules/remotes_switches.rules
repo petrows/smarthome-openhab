@@ -54,7 +54,7 @@ then
             tr_light.sendCommand(OFF)
             g_light_lager_auto.sendCommand(OFF) // Lager licht also OFF
             kg_lager1_main_light.sendCommand(OFF)
-            kg_lager3_main_light.sendCommand(OFF)
+            lg3_up_light.sendCommand(OFF)
             kg_lager4_main_light.sendCommand(OFF)
         }
         // Left arrow: turn off all light in KG rooms
@@ -113,7 +113,7 @@ then
         case "off": {
             sendCommand(g_light_lager_auto, OFF)
             sendCommand(kg_lager1_main_light, OFF)
-            sendCommand(kg_lager3_main_light, OFF)
+            sendCommand(lg3_up_light, OFF)
             sendCommand(kg_lager4_main_light, OFF)
         }
     }

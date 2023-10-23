@@ -740,11 +740,11 @@ devices:
     type: TUYA_WINDOW_SENSOR_TS0203
 
   - name: KG Lager 3 (Haupt)
-    id: kg_lager3_main_light
+    id: lg3_up_light
     type: TASMOTA_SONOFF_MINI
     channels:
       POWER:
-        id: kg_lager3_main_light
+        id: lg3_up_light
         name: KG Lager 3 (Haupt)
         expire: 1h
         groups:
