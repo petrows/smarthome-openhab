@@ -159,6 +159,9 @@ devices:
     id: ks_climate
     zigbee_id: '0xa4c1386df39045f6'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    groups:
+      temperature:
+        - ks_hz_temperature_sensor
 
   - name: KS Night lamp
     id: ks_light_night
@@ -195,6 +198,9 @@ devices:
     id: wz_climate
     zigbee_id: '0xa4c1386a03a53708'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    groups:
+      temperature:
+        - wz_hz_temperature_sensor
 
   - name: Bedroom main remote
     id: wz_up_remote
@@ -381,6 +387,9 @@ devices:
     id: sz_co2
     type: PETROWS_CO2_SENSOR
     device_id: 5C:CF:7F:68:19:46
+    groups:
+      temperature:
+        - sz_hz_temperature_sensor
 
 # KITCHEN ================================
 
@@ -388,6 +397,9 @@ devices:
     id: ku_climate
     zigbee_id: '0xa4c138f5460e22dd'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    groups:
+      temperature:
+        - ku_hz_temperature_sensor
 
   - name: "KU Light Button (Sp\xFCle)"
     id: ku_light_switch_spule
@@ -554,6 +566,9 @@ devices:
     id: kg_climate
     zigbee_id: '0xa4c138234138f73a'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    groups:
+      temperature:
+        - kg_hz_temperature_sensor
 
   - name: Petro Desktop up light 1
     id: desktop_petro_up_light_1

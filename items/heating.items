@@ -16,6 +16,13 @@ Group:Number:AVG ks_hz <heating>
 Group:Number:AVG ku_hz <heating>
 Group:Number:AVG sz_hz <heating>
 
+// Groups to read temperature in room (each should contain one element)
+Group:Number:AVG wz_hz_temperature_sensor <temperature>
+Group:Number:AVG ks_hz_temperature_sensor <temperature>
+Group:Number:AVG ku_hz_temperature_sensor <temperature>
+Group:Number:AVG sz_hz_temperature_sensor <temperature>
+Group:Number:AVG kg_hz_temperature_sensor <temperature>
+
 // Group to control heaters on/off
 Group:Switch:OR(ON, OFF) all_hz_enable <heating>
 // Room items
