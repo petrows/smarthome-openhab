@@ -22,7 +22,7 @@ then
             }
         }
         case "arrow_right_click": {
-            sz_bed_light_dim.sendCommand(10)
+            sz_bed_light_dim.sendCommand(75)
         }
         case "arrow_right_hold": {
             if (100 != curtainPos) {
@@ -97,14 +97,14 @@ then
         // Control Curtains
         case "track_previous": {
             if (sz_curtain_state.state == "stop") {
-                sz_curtain_position.sendCommand(0)
+                sz_curtain_switch.sendCommand("open")
             } else {
                 sz_curtain_switch.sendCommand("stop")
             }
         }
         case "dots_1_initial_press": {
             if (sz_curtain_state.state == "stop") {
-                sz_curtain_position.sendCommand(100)
+                sz_curtain_switch.sendCommand("close")
             } else {
                 sz_curtain_switch.sendCommand("stop")
             }
