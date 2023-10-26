@@ -4,8 +4,6 @@
   friendly_name: eg_router
 '0x00158d0001be5b2d':
   friendly_name: ku_light_switch_spule
-'0x00158d0001c19a6b':
-  friendly_name: kg_lager3_climate
 '0x00158d0001c2cc22':
   friendly_name: ext_climate
 '0x00158d000488052c':
@@ -101,8 +99,6 @@
   friendly_name: sz_up_light
 '0x842e14fffe1267fb':
   friendly_name: ku_light_switch
-'0x847127fffec6acc3':
-  friendly_name: sz_climate
 '0x8cf681fffe36d14e':
   friendly_name: sz_curtain_remote
 '0x8cf681fffef62c85':
@@ -127,6 +123,8 @@
   friendly_name: ku_shutter
 '0xa4c13804963f4ccf':
   friendly_name: wz_window_1
+'0xa4c1381155f63287':
+  friendly_name: lg3_climate
 '0xa4c138182f60d651':
   friendly_name: eg_main_door
 '0xa4c1381a072fcf8b':

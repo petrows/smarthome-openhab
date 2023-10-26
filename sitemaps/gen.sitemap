@@ -273,16 +273,16 @@ Text item=wz_window_1_activity
 Text item=wz_window_1_contact
 Text item=wz_window_1_battery
 }
-Frame label="SZ Climate (0x847127fffec6acc3)" {
-// SZ Climate (0x847127fffec6acc3)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Text item=sz_climate_lowbatt
-Text item=sz_climate_ota
-Text item=sz_climate_link
+Frame label="SZ Climate (sz_climate)" {
+// SZ Climate (sz_climate)
+// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
+Text item=sz_climate_rssi
+Text item=sz_climate_bssid
 Text item=sz_climate_activity
 Text item=sz_climate_temperature
 Text item=sz_climate_humidity
-Text item=sz_climate_battery
+Text item=sz_climate_co2
+Text item=sz_climate_co2_led
 }
 Frame label="SZ Main (0x842e14fffe0eb8a0)" {
 // SZ Main (0x842e14fffe0eb8a0)
@@ -353,17 +353,6 @@ Slider item=sz_bed_light_r_ct
 Text item=sz_bed_light_r_ota
 Text item=sz_bed_light_r_link
 Switch item=sz_bed_light_r_sw
-}
-Frame label="SZ CO2 (sz_co2)" {
-// SZ CO2 (sz_co2)
-// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
-Text item=sz_co2_rssi
-Text item=sz_co2_bssid
-Text item=sz_co2_activity
-Text item=sz_co2_temperature
-Text item=sz_co2_humidity
-Text item=sz_co2_co2
-Text item=sz_co2_co2_led
 }
 Frame label="KU Climate (0xa4c138f5460e22dd)" {
 // KU Climate (0xa4c138f5460e22dd)
@@ -652,17 +641,16 @@ Text item=kg_lager1_main_light_rssi
 Text item=kg_lager1_main_light_bssid
 Text item=kg_lager1_main_light_activity
 }
-Frame label="KG Lager 3 Climate (0x00158d0001c19a6b)" {
-// KG Lager 3 Climate (0x00158d0001c19a6b)
-// Xiaomi Aqara temperature, humidity and pressure sensor (WSDCGQ11LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ11LM.html
-Text item=kg_lager3_climate_lowbatt
-Text item=kg_lager3_climate_ota
-Text item=kg_lager3_climate_link
-Text item=kg_lager3_climate_activity
-Text item=kg_lager3_climate_temperature
-Text item=kg_lager3_climate_humidity
-Text item=kg_lager3_climate_pressure
-Text item=kg_lager3_climate_battery
+Frame label="KG Lager 3 Climate (0xa4c1381155f63287)" {
+// KG Lager 3 Climate (0xa4c1381155f63287)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
+Text item=lg3_climate_lowbatt
+Text item=lg3_climate_ota
+Text item=lg3_climate_link
+Text item=lg3_climate_activity
+Text item=lg3_climate_temperature
+Text item=lg3_climate_humidity
+Text item=lg3_climate_battery
 }
 Frame label="KG Lager 3 motion (0x04cd15fffe873cb7)" {
 // KG Lager 3 motion (0x04cd15fffe873cb7)

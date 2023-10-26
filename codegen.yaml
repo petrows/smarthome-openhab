@@ -297,8 +297,11 @@ devices:
 
   - name: SZ Climate
     id: sz_climate
-    zigbee_id: '0x847127fffec6acc3'
-    type: TUYA_TEMPERATURE_SENSOR_TS0201
+    type: PETROWS_CO2_SENSOR
+    device_id: 5C:CF:7F:68:19:46
+    groups:
+      temperature:
+        - sz_hz_temperature_sensor
 
   - name: SZ Main
     id: sz_up_light
@@ -382,14 +385,6 @@ devices:
         - sz_bed_light_dim
       dim_fast:
         - sz_bed_light_dim_fast
-
-  - name: SZ CO2
-    id: sz_co2
-    type: PETROWS_CO2_SENSOR
-    device_id: 5C:CF:7F:68:19:46
-    groups:
-      temperature:
-        - sz_hz_temperature_sensor
 
 # KITCHEN ================================
 
@@ -725,9 +720,9 @@ devices:
             - kg_light
 
   - name: KG Lager 3 Climate
-    id: kg_lager3_climate
-    zigbee_id: '0x00158d0001c19a6b'
-    type: XIAOMI_AQARA_V2
+    id: lg3_climate
+    zigbee_id: '0xa4c1381155f63287'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   - name: KG Lager 3 motion
     id: kg_lager3_motion
