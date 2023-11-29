@@ -132,8 +132,8 @@ sitemap main label="MAIN"
 			Slider item=fl_up_light_dim label="Main DIM [%d %%]" icon="light"
 			Switch item=eg_decoration_light_sw label="Decor [%s]" icon="light"
             Slider item=eg_decoration_light_dim label="Decor DIM [%d %%]"
-			Switch item=snf_eg_fl_spiegel label="Mirror [%s]" icon="light"
-			Slider item=snf_eg_fl_spiegel_brightness label="Mirror DIM [%d %%]" icon="light"
+			Switch item=eg_fl_spiegel_sw label="Mirror [%s]" icon="light"
+			Slider item=eg_fl_spiegel_dim label="Mirror DIM [%d %%]" icon="light"
 			Text item=eg_main_door_contact label="Main door [%s]"
 		}
 		Group item=bz_light label="WC [%s]" icon="light" {

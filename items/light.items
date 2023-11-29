@@ -91,5 +91,5 @@ String sz_remote_mode "SZ remote control mode" <light>
 // Special item to hold origin of "external" control -> if triggered via buttons
 String fl_up_light_trigger "FL UP light trigger"
 
-Switch snf_eg_fl_spiegel "EG Flur Spiegel" <light> (all_light, eg_light, fl_light, sz_light_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
-Dimmer snf_eg_fl_spiegel_brightness "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }
+Switch eg_fl_spiegel_sw "EG Flur Spiegel" <light> (all_light, eg_light, fl_light, sz_light_night) { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:power" }
+Dimmer eg_fl_spiegel_dim "EG Flur Spiegel dim" <light> { channel="mqtt:topic:openhab:snf-eg-fl-spiegel:brightness" }

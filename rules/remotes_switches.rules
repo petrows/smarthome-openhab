@@ -8,27 +8,27 @@ then
 	var state = receivedEvent
     switch(state) {
         case "toggle": {
-            if (snf_eg_fl_spiegel.state != ON) {
-                snf_eg_fl_spiegel.sendCommand(ON)
+            if (eg_fl_spiegel_sw.state != ON) {
+                eg_fl_spiegel_sw.sendCommand(ON)
             } else {
-                snf_eg_fl_spiegel.sendCommand(OFF)
+                eg_fl_spiegel_sw.sendCommand(OFF)
             }
         }
         case "brightness_up_click": {
-            var brightness = snf_eg_fl_spiegel_brightness.getState as Number
+            var brightness = eg_fl_spiegel_dim.getState as Number
 
             brightness = brightness + 30;
             if (brightness > 80) { brightness = 100; }
 
-            snf_eg_fl_spiegel_brightness.sendCommand(brightness)
+            eg_fl_spiegel_dim.sendCommand(brightness)
         }
         case "brightness_down_click": {
-            var brightness = snf_eg_fl_spiegel_brightness.getState as Number
+            var brightness = eg_fl_spiegel_dim.getState as Number
 
             brightness = brightness - 30;
             if (brightness < 10) { brightness = 1; }
 
-            snf_eg_fl_spiegel_brightness.sendCommand(brightness)
+            eg_fl_spiegel_dim.sendCommand(brightness)
         }
         case "arrow_left_click": {
             // kg_light.sendCommand(OFF)
