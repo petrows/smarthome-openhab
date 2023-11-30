@@ -20,6 +20,7 @@ const ROOMS = {
     SLEEP: 'Спальня',
     KITCHEN: 'Кухня',
     LIVING: 'Гостиная',
+    KINO: 'Кинозал',
     KG_CABINET: 'Кабинет',
 }
 
@@ -77,6 +78,7 @@ module.exports = {
             id: 'sz_climate',
             name: 'Климат',
             room: ROOMS.SLEEP,
+            co2: true,
         }),
         Shutter({
             id: 'sz_blinds',
@@ -90,16 +92,68 @@ module.exports = {
         }),
 
         // Kitchen
+        Light(LIGHT.CT, {
+            id: 'ku_up_light',
+            name: 'Верхний',
+            room: ROOMS.KITCHEN,
+        }),
+        Thermostat({
+            id: 'ku_heating',
+            name: 'Отопление',
+            room: ROOMS.KITCHEN,
+        }),
+        Sensor({
+            id: 'ku_climate',
+            name: 'Климат',
+            room: ROOMS.KITCHEN,
+        }),
         Shutter({
             id: 'ku_blinds',
             name: 'Жалюзи',
             room: ROOMS.KITCHEN,
         }),
 
-        // Зал
+        // Кинозал
+        Light(LIGHT.CT, {
+            id: 'ks_up_light',
+            name: 'Верхний',
+            room: ROOMS.KINO,
+        }),
+        Light(LIGHT.RGB, {
+            id: 'ks_light_night',
+            name: 'Торшер',
+            room: ROOMS.KINO,
+        }),
         Shutter({
-            id: 'wz_blinds',
+            id: 'ks_blinds',
             name: 'Жалюзи',
+            room: ROOMS.KINO,
+        }),
+        Thermostat({
+            id: 'ks_heating',
+            name: 'Отопление',
+            room: ROOMS.KINO,
+        }),
+        Sensor({
+            id: 'ks_climate',
+            name: 'Климат',
+            room: ROOMS.KINO,
+        }),
+
+        // Зал
+        Light(LIGHT.CT, {
+            id: 'wz_up_light',
+            name: 'Верхний',
+            room: ROOMS.LIVING,
+        }),
+        Thermostat({
+            id: 'wz_heating',
+            name: 'Отопление',
+            room: ROOMS.LIVING,
+        }),
+        Sensor({
+            id: 'wz_climate',
+            name: 'Климат',
             room: ROOMS.LIVING,
         }),
 

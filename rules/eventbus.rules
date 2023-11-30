@@ -110,6 +110,7 @@ when
     or Member of all_hz_enable changed
     or Member of g_all_temperature changed
     or Member of g_all_humidity changed
+    or Member of g_all_co2 changed
 then
     var state = triggeringItem.state
     var value = state.toString()

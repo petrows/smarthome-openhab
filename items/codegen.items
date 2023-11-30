@@ -6,3 +6,4 @@ Group:Dimmer:AVG g_all_ct
 
 Group:Number:AVG g_all_temperature
 Group:Number:AVG g_all_humidity
+Group:Number:AVG g_all_co2

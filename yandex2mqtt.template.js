@@ -204,6 +204,24 @@ function Sensor(options) {
             value: 0,
         },
     })
+
+    if (options.co2) {
+        dev.addMQTT('co2_level', null, options.id + '_co2')
+        dev.addProperty({
+            type: 'devices.properties.float',
+            retrievable: true,
+            reportable: true,
+            parameters: {
+                instance: 'co2_level',
+                unit: 'unit.ppm',
+            },
+            state: {
+                instance: 'co2_level',
+                value: 0,
+            },
+        })
+    }
+
     return dev.toConfig()
 }
 
