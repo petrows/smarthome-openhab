@@ -219,8 +219,8 @@ sitemap main label="MAIN"
                 Switch item=cfg_blinds_auto_sz label="Enable auto [%s]"
             }
             Frame label="Curtains" {
-                Switch item=sz_curtain_switch label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
-                Slider item=sz_curtain_position label="Position [%d %%]"
+                Switch item=sz_curtain_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
+                Slider item=sz_curtain_pos label="Position [%d %%]"
                 Switch item=cfg_curtains_auto_sz label="Enable auto [%s]"
             }
             Frame label="Main" {
@@ -229,7 +229,7 @@ sitemap main label="MAIN"
 				Slider item=sz_up_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
             Frame label="Bed" {
-				Switch item=sz_bed_light label="Bed [%s]" icon="light"
+				Switch item=sz_bed_light_sw label="Bed [%s]" icon="light"
 				Slider item=sz_bed_light_dim label="Bed DIM [%d %%]" icon="light"
                 Slider item=sz_bed_light_ct label="Bed CT [JS(codegen-mired.js):%s]" icon="light"
 			}

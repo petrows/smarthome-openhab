@@ -1,0 +1,8 @@
+// Codegen groups
+
+Group:Switch:OR(ON, OFF) g_all_sw
+Group:Dimmer:AVG g_all_dim
+Group:Dimmer:AVG g_all_ct
+
+Group:Number:AVG g_all_temperature
+Group:Number:AVG g_all_humidity

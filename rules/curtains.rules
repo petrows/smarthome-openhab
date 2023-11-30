@@ -30,7 +30,7 @@ then
     // If enabled - command blinds
     if (ON == cfg_curtains_auto.state) {
         if (ON == cfg_curtains_auto_sz.state) {
-            sz_curtain_switch.sendCommand(cmd)
+            sz_curtain_cmd.sendCommand(cmd)
         }
     }
 end
@@ -52,8 +52,8 @@ end
 // that curtains started and stopped moving
 rule "SZ Curtains: moving"
 when
-    Item sz_curtain_switch received command
-    or Item sz_curtain_position received command
+    Item sz_curtain_cmd received command
+    or Item sz_curtain_pos received command
 then
     sz_curtain_state.sendCommand("move")
 end

@@ -23,3 +23,6 @@ DateTime current_date_time "Current date and time"
 
 // From phone
 DateTime PetroAlarmClock "Alarm Clock [%s]" <time>
+
+// All items (eventbus)
+Group g_all

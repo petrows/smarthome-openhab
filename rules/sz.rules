@@ -7,7 +7,7 @@ then
 
     var curtainPos = 0
     try {
-        curtainPos = Integer::parseInt(sz_curtain_switch.state.toString())
+        curtainPos = Integer::parseInt(sz_curtain_cmd.state.toString())
     } catch(Throwable t) {}
 
     switch(state) {
@@ -26,9 +26,9 @@ then
         }
         case "arrow_right_hold": {
             if (100 != curtainPos) {
-                sz_curtain_switch.sendCommand("close")
+                sz_curtain_cmd.sendCommand("close")
             }
-            sz_bed_light.sendCommand(ON)
+            sz_bed_light_sw.sendCommand(ON)
             sz_bed_light_dim.sendCommand(50)
             Thread::sleep(3000)
             fl_light.sendCommand(OFF)
@@ -48,7 +48,7 @@ then
     if (sz_up_light_sw.state == ON) {
         sz_up_light_dim_fast.sendCommand((sz_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
     }
-    if (sz_bed_light.state == ON) {
+    if (sz_bed_light_sw.state == ON) {
         sz_bed_light_dim_fast.sendCommand((sz_bed_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
     }
 end
@@ -68,14 +68,14 @@ then
             sz_up_light_dim.sendCommand(100)
         }
         case "volume_up": {
-            sz_bed_light.sendCommand(ON)
+            sz_bed_light_sw.sendCommand(ON)
             sz_bed_light_dim.sendCommand(100)
         }
         case "volume_down": {
             if (sz_light.state == ON && sz_bed_light_dim.state < 10) {
                 sz_light.sendCommand(OFF)
             } else {
-                sz_bed_light.sendCommand(ON)
+                sz_bed_light_sw.sendCommand(ON)
                 sz_bed_light_dim.sendCommand(1)
             }
         }
@@ -97,16 +97,16 @@ then
         // Control Curtains
         case "track_previous": {
             if (sz_curtain_state.state == "stop") {
-                sz_curtain_switch.sendCommand("open")
+                sz_curtain_cmd.sendCommand("open")
             } else {
-                sz_curtain_switch.sendCommand("stop")
+                sz_curtain_cmd.sendCommand("stop")
             }
         }
         case "dots_1_initial_press": {
             if (sz_curtain_state.state == "stop") {
-                sz_curtain_switch.sendCommand("close")
+                sz_curtain_cmd.sendCommand("close")
             } else {
-                sz_curtain_switch.sendCommand("stop")
+                sz_curtain_cmd.sendCommand("stop")
             }
         }
     }
@@ -117,5 +117,5 @@ when
     Channel "mqtt:topic:openhab:sz_curtain_remote:action" triggered
 then
 	var state = receivedEvent
-    sz_curtain_switch.sendCommand(state)
+    sz_curtain_cmd.sendCommand(state)
 end

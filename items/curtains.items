@@ -6,19 +6,21 @@ String curtains_auto_cmd
 Group blinds_curtains_cmd "Blinds+Curtains command []" <rollershutter>
 
 Group blinds_cmd "Blinds command []" <rollershutter> (blinds_curtains_cmd)
-Group:Dimmer:AVG blinds_pos "Blinds pos [%d %%]" <rollershutter>
+Group:Dimmer:AVG blinds_pos "Blinds pos [%d %%]" <rollershutter> (g_all)
 
 Group curtains_cmd "Curtains command []" <curtains> (blinds_curtains_cmd)
-Group:Dimmer:AVG curtains_pos "Curtains pos [%d %%]" <curtains>
+Group:Dimmer:AVG curtains_pos "Curtains pos [%d %%]" <curtains> (g_all)
 
 Group ks_blinds_cmd "KS Blinds command []" <rollershutter>
-Group:Dimmer:AVG ks_blinds_pos "KS Blinds pos [%d %%]" <rollershutter>
+Group:Dimmer:AVG ks_blinds_pos "KS Blinds pos [%d %%]" <rollershutter> (g_all)
 
-Group sz_blinds_cmd "FS Blinds command []" <rollershutter>
-Group:Dimmer:AVG sz_blinds_pos "FS Blinds pos [%d %%]" <rollershutter>
+Group sz_blinds_cmd "SZ Blinds command []" <rollershutter>
+Group:Dimmer:AVG sz_blinds_pos "SZ Blinds pos [%d %%]" <rollershutter> (g_all)
+Group sz_curtains_cmd "SZ Curtain command []" <rollershutter>
+Group:Dimmer:AVG sz_curtains_pos "SZ Curtain pos [%d %%]" <rollershutter> (g_all)
 
 Group ku_blinds_cmd "KU Blinds command []" <rollershutter>
-Group:Dimmer:AVG ku_blinds_pos "KU Blinds pos [%d %%]" <rollershutter>
+Group:Dimmer:AVG ku_blinds_pos "KU Blinds pos [%d %%]" <rollershutter> (g_all)
 
 Switch cfg_blinds_auto "Blinds auto" <curtains_cfg>
 Switch cfg_blinds_auto_sz "SZ Blinds auto" <curtains_cfg>
@@ -28,6 +30,6 @@ Switch cfg_blinds_auto_ku "KU Blinds auto" <curtains_cfg>
 Switch cfg_curtains_auto "Curtains auto" <curtains_cfg>
 Switch cfg_curtains_auto_sz "SZ Curtains auto" <curtains_cfg>
 
-String sz_curtain_switch "SZ Curtain" <curtains> (curtains_cmd) {channel="mqtt:topic:openhab:sz-curtain:command"}
-Dimmer sz_curtain_position "SZ Curtain pos [%d %%]" <curtains> (curtains_pos) {channel="mqtt:topic:openhab:sz-curtain:position"}
+String sz_curtain_cmd "SZ Curtain" <curtains> (curtains_cmd, sz_curtains_cmd) {channel="mqtt:topic:openhab:sz-curtain:command"}
+Dimmer sz_curtain_pos "SZ Curtain pos [%d %%]" <curtains> (curtains_pos, sz_curtains_pos) {channel="mqtt:topic:openhab:sz-curtain:position"}
 String sz_curtain_state "SZ Curtain state [%s]" <curtains>

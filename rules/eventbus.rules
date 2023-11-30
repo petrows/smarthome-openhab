@@ -1,0 +1,141 @@
+import org.openhab.core.model.script.ScriptServiceUtil
+import java.util.List
+
+rule "Eventbus command"
+when
+    Channel "mqtt:broker:openhab:eventbus" triggered
+then
+    // Constant
+    val List<String> offStates = newArrayList("off", "false", "0")
+
+
+    // Message: eventbus/set/item_id/value_type#value
+    var messageParts = receivedEvent.split('#')
+    var messageTopic = messageParts.get(0).split('/')
+
+    var systemID = messageTopic.get(0).toString()
+
+    if (systemID != "eventbus") {
+        return // Ignore other commands
+    }
+
+    var itemID = messageTopic.get(2).toString()
+    var itemCommandType = messageTopic.get(3).toString()
+    var itemCommand = messageParts.get(1).toString()
+
+    logInfo("eventbus", "Command, item = " + itemID + ", commandType = " + itemCommandType + ", command = " + itemCommand)
+
+    // Handle command special types (converters):
+
+    // Bool true / false, 0 / 1 for ON / OFF?
+    if ("sw" == itemCommandType) {
+        if (offStates.contains(itemCommand.toLowerCase())) {
+            itemCommand = "OFF"
+        } else {
+            itemCommand = "ON"
+        }
+    }
+
+    // Relative value?
+    var prefixChar = itemCommand.substring(0, 1)
+    if (prefixChar == '-' || prefixChar == '+') {
+        // Correct value, using current state
+        var currentItem = ScriptServiceUtil.getItemRegistry?.getItem(itemID) as GenericItem
+        var commandValue = Double.parseDouble(itemCommand.substring(1))
+
+        // Detect current value:
+        // Quantity -> drop units
+        // Numeric -> parse double
+        var currentValue = 0.0
+        if (currentItem.state instanceof QuantityType) {
+            currentValue = currentItem.getStateAs(QuantityType).doubleValue()
+        } else {
+            currentValue = Double.parseDouble(currentItem.state.toString())
+        }
+
+        if (prefixChar == '-') {
+            itemCommand = (currentValue - commandValue).toString()
+        }
+        if (prefixChar == '+') {
+            itemCommand = (currentValue + commandValue).toString()
+        }
+    }
+
+    // CT in Kelvin
+    if ("ct_k" == itemCommandType) {
+        // Convert K -> MiRED
+        var valueK = Double.parseDouble(itemCommand)
+        var valueMiRed = 1000000.0 / valueK
+
+        logInfo("eventbus", "CT/K converter: K = " + valueK + ", MiRed = " + valueMiRed)
+
+        if (valueMiRed < 150) { valueMiRed = 150 }
+        if (valueMiRed > 500) { valueMiRed = 500 }
+
+        // Calculate % in range 150...500
+
+        var valuePers = (valueMiRed - 150) / (500 - 150) * 100.0
+
+        itemCommand = Math::round(valuePers).toString()
+    }
+
+    // RGB as 24-bit int
+    if ("rgb_int" == itemCommandType) {
+        var valueInt = Integer.parseInt(itemCommand)
+        var r = (valueInt >> 16).bitwiseAnd(255)
+        var g = (valueInt >> 8).bitwiseAnd(255)
+        var b = (valueInt >> 0).bitwiseAnd(255)
+
+        var hsbValue = HSBType::fromRGB(r, g, b)
+
+        // Drop brightness to 50%
+        hsbValue = new HSBType(hsbValue.getHue(), hsbValue.getSaturation(), new PercentType(50))
+
+        logInfo("eventbus", "Color converter: Int = " + valueInt + ", HSB = " + hsbValue)
+
+        itemCommand = hsbValue.toString()
+    }
+
+    sendCommand(itemID, itemCommand)
+end
+
+rule "Eventbus status"
+when
+    Member of g_all changed
+    or Member of g_all_sw changed
+    or Member of g_all_dim changed
+    or Member of g_all_ct changed
+    or Member of g_all_ct changed
+    or Member of all_hz changed
+    or Member of all_hz_enable changed
+    or Member of g_all_temperature changed
+    or Member of g_all_humidity changed
+then
+    var state = triggeringItem.state
+    var value = state.toString()
+    // logInfo("eventbus", "Status: " + triggeringItem.name + ", type = " + triggeringItem.getType)
+
+    // If Item with Units -> get raw value as double
+    if (state instanceof QuantityType) {
+        value = state.doubleValue.toString()
+    }
+
+    // If Dimmer item -> round value to avoid 54.0582013333333333333333333333333300
+    if (state instanceof DecimalType) {
+        // logInfo("eventbus", "Status: " + triggeringItem.name + " -> NUMBER")
+        value = Math::round(Double.parseDouble(value)).toString()
+    }
+
+    var topic = "eventbus/state/" + triggeringItem.name
+    val mqtt = getActions("mqtt","mqtt:broker:openhab")
+    mqtt.publishMQTT(topic, value, true);
+
+    // Handle command special types (converters):
+    if (triggeringItem.name.endsWith("_ct")) {
+        // Send second state for CT items - in Kelvin (need for some bindings, like Yandex)
+        var dim = Double.parseDouble(value)
+        var mired = 150 + (500 - 150) * (dim / 100.0)
+        var kelvin = Math::round(1000000.0 / mired)
+        mqtt.publishMQTT(topic + "/ct_k", kelvin.toString(), true);
+    }
+end

@@ -353,7 +353,7 @@ devices:
         - all_light
         - eg_light
         - sz_light
-        - sz_bed_light
+        - sz_bed_light_sw
       ct:
         - sz_light_ct
         - sz_bed_light_ct
@@ -374,7 +374,7 @@ devices:
         - all_light
         - eg_light
         - sz_light
-        - sz_bed_light
+        - sz_bed_light_sw
       ct:
         - sz_light_ct
         - sz_bed_light_ct
