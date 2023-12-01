@@ -1,6 +1,6 @@
 
 Group:Switch:OR(ON, OFF) all_light (g_all)
-Group:Switch:OR(ON, OFF) eg_light
+Group:Switch:OR(ON, OFF) eg_light (g_all)
 
 // Balkon light
 Group:Switch:OR(ON, OFF) bk_light "Balkon light [%s]" <light>
@@ -51,7 +51,7 @@ Group:Dimmer:AVG bz_light_ct "BZ main CT [%d %%]" <light>
 Group:Color:AVG bz_light_color "BZ main Color []" <light>
 
 // KG and Treppe lamps
-Group:Switch:OR(ON, OFF) kg_light // All lamps in KG
+Group:Switch:OR(ON, OFF) kg_light (g_all) // All lamps in KG
 Group:Switch:OR(ON, OFF) kg_light_auto // Lamps to be on by "All ON"
 Group:Switch:OR(ON, OFF) kg_light_hobbyraum // All lights in "rooms" KG
 Group:Switch:OR(ON, OFF) tr_light

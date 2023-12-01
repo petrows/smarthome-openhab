@@ -45,6 +45,23 @@ const LIGHT = {
     RGB: 'rgb', // on/off, dimmer, RGB
 }
 
+function LightGroup(options) {
+    if (!options.type) { options.type = 'devices.types.light' }
+    let dev = new GenDevice(options)
+    // Group lights can ON/OFF
+    dev.addMQTT('on', options.id + '/sw', options.id)
+    dev.addCapability({
+        type: 'devices.capabilities.on_off',
+        retrievable: true,
+        reportable: true,
+        state: {
+            instance: 'on',
+            value: false,
+        },
+    })
+    return dev.toConfig()
+}
+
 function Light(type, options) {
     if (!options.type) { options.type = 'devices.types.light' }
     let dev = new GenDevice(options)
@@ -276,6 +293,7 @@ function Shutter(options) {
 
 module.exports = {
     LIGHT: LIGHT,
+    LightGroup: LightGroup,
     Light: Light,
     Thermostat: Thermostat,
     Sensor: Sensor,

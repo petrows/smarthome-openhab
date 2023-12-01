@@ -12,9 +12,10 @@ Config for PWS fork: https://github.com/petrows/yandex2mqtt
 
 const tpl = require('./yandex2mqtt.template')
 
-const { LIGHT, Light, Thermostat, Sensor, Shutter } = tpl
+const { LIGHT, LightGroup, Light, Thermostat, Sensor, Shutter } = tpl
 
 const ROOMS = {
+    GROUPS: 'Группы',
     LOBBY: 'Прихожая',
     WC: 'Ванная',
     SLEEP: 'Спальня',
@@ -26,6 +27,23 @@ const ROOMS = {
 
 module.exports = {
     devices: [
+        // Groups
+        LightGroup({
+            id: 'all_light',
+            name: 'Все',
+            room: ROOMS.GROUPS,
+        }),
+        LightGroup({
+            id: 'eg_light',
+            name: 'Верхний этаж',
+            room: ROOMS.GROUPS,
+        }),
+        LightGroup({
+            id: 'kg_light',
+            name: 'Нижний этаж',
+            room: ROOMS.GROUPS,
+        }),
+
         // Corridor
         Light(LIGHT.DIM, {
             id: 'fl_up_light',
