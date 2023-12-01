@@ -126,7 +126,7 @@ function Thermostat(options) {
     if (!options.type) { options.type = 'devices.types.thermostat' }
     let dev = new GenDevice(options)
     // On/Off control
-    dev.addMQTT('on', options.id + '_thermostat_enable', options.id + '_thermostat_enable')
+    dev.addMQTT('on', options.id + '_thermostat_enable/sw', options.id + '_thermostat_enable')
     dev.addCapability({
         type: 'devices.capabilities.on_off',
         retrievable: true,
