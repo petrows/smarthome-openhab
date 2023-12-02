@@ -169,15 +169,6 @@ function Thermostat(options) {
             }
         },
     })
-    dev.addProperty({
-        type: 'devices.properties.float',
-        retrievable: true,
-        reportable: true,
-        parameters: {
-            instance: 'temperature',
-            unit: 'unit.temperature.celsius',
-        },
-    })
     // Конвертация, для эмуляции ВКЛ/ВЫКЛ отопления
     dev.addValueMapping({
         type: 'on_off',
