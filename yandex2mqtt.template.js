@@ -141,17 +141,17 @@ function Light(type, options) {
 
 function Thermostat(options) {
     if (!options.type) { options.type = 'devices.types.thermostat' }
+    // Device settings
+    options.temp_off = options.temp_off || 5
+    options.temp_on = options.temp_on || 23
+    options.temp_on_min = options.temp_on_min || 15
     let dev = new GenDevice(options)
     // On/Off control
-    dev.addMQTT('on', options.id + '_thermostat_enable/sw', options.id + '_thermostat_enable')
+    dev.addMQTT('on', options.id + '_thermostat/temperature', options.id + '_thermostat')
     dev.addCapability({
         type: 'devices.capabilities.on_off',
         retrievable: true,
         reportable: true,
-        state: {
-            instance: 'on',
-            value: false,
-        },
     })
     // Temperature control
     dev.addMQTT('temperature', options.id + '_thermostat/temperature', options.id + '_thermostat')
@@ -168,10 +168,6 @@ function Thermostat(options) {
                 precision: 1
             }
         },
-        state: {
-            instance: 'temperature',
-            value: 0,
-        },
     })
     dev.addProperty({
         type: 'devices.properties.float',
@@ -181,10 +177,19 @@ function Thermostat(options) {
             instance: 'temperature',
             unit: 'unit.temperature.celsius',
         },
-        state: {
-            instance: 'temperature',
-            value: 0,
-        },
+    })
+    // Конвертация, для эмуляции ВКЛ/ВЫКЛ отопления
+    dev.addValueMapping({
+        type: 'on_off',
+        mapping: function (device, value, y2m) {
+            // Кастомная функция конвертации
+            if (y2m) { // От Яндекс в MQTT
+                return value ? options.temp_on : options.temp_off
+            } else { // От MQTT в Яндекс
+                // Если температура больше 17°C -> репортим ВКЛ, иначе ВЫКЛ
+                return value > options.temp_on_min
+            }
+        }
     })
     return dev.toConfig()
 }
@@ -247,21 +252,26 @@ function Shutter(options) {
     if (!options.type) { options.type = 'devices.types.openable.curtain' }
     let dev = new GenDevice(options)
 
-    // Открой-закрой
-    dev.addMQTT('on', options.id + '_cmd/cmd', options.id + '_cmd')
+    // Открой-закрой (конвертация функцией)
+    dev.addMQTT('on', options.id + '_pos/pos', options.id + '_pos')
     dev.addCapability({
         type: 'devices.capabilities.on_off',
         retrievable: true,
         reportable: true,
-        state: {
-            instance: 'on',
-            value: false,
-        },
     })
-    // Приведение к On -> open, Off -> close
+    // Вычисление и усправление ON/OFF -> открой / закрой
     dev.addValueMapping({
         type: 'on_off',
-        mapping: [[true, false], ["open", "close"]], // [yandex, mqtt]
+        mapping: function (device, value, y2m) {
+            // Кастомная функция конвертации
+            // У меня % означают "насколько закрыто"
+            if (y2m) { // От Яндекс в MQTT
+                return value ? 0 : 100
+            } else { // От MQTT в Яндекс
+                // Закрыто менее чем на 90% -> открыто
+                return value < 90
+            }
+        }
     })
 
     // Положение
