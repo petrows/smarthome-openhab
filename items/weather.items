@@ -44,7 +44,7 @@ Number:Temperature weather_ext_temp_feel "Apparent temperature [%.0f °C]" <temp
 Number:Length weather_ext_visibility "Visibility [%.1f km]" <visibility> { channel="openweathermap:onecall:api:local:current#visibility" }
 // Number:ArealDensity weather_ext_ozone "Ozone [%.2f]" <sun> { channel="openweathermap:onecall:api:local:current#ozone" }
 Number:Dimensionless weather_ext_uv "UV Index [%.0f]" <sun> { channel="openweathermap:onecall:api:local:current#uvindex" }
-Number:Speed weather_ext_rain "Hourly rain [%s mm]" <rain> { channel="openweathermap:onecall:api:local:current#rain" }
+Number:Length weather_ext_rain "Hourly rain [%s mm]" <rain> { channel="openweathermap:onecall:api:local:current#rain" }
 
 // Forecast for hours
 
