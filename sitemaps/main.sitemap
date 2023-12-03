@@ -328,7 +328,7 @@ sitemap main label="MAIN"
 		Group item=sz_climate_temperature label="Sleep" {
 			Text 		item=sz_climate_temperature label="Temperature [%d °C]"
 			Text 		item=sz_climate_humidity label="Humidity [%d %%]"
-            Text 		item=sz_climate_co2 label="CO₂ [%d %unit%]"
+            Text 		item=sz_climate_co2 label="CO₂ [%d ppm]"
 			Text 		item=sz_climate_co2_led label="CO₂ alarm [%s]"
 			Setpoint	item=sz_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]

@@ -172,7 +172,7 @@ function Thermostat(options) {
     // Конвертация, для эмуляции ВКЛ/ВЫКЛ отопления
     dev.addValueMapping({
         type: 'on_off',
-        mapping: function (device, value, y2m) {
+        mapping: function (device, instance, value, y2m) {
             // Кастомная функция конвертации
             if (y2m) { // От Яндекс в MQTT
                 return value ? options.temp_on : options.temp_off
@@ -217,7 +217,20 @@ function Sensor(options) {
             value: 0,
         },
     })
-
+    dev.addValueMapping({
+        type: 'float',
+        mapping: function (device, instance, value, y2m) {
+            if ('humidity' == instance) {
+                // Convert humidity from 0-1.0 to 0-100%
+                return Math.round(value * 100.0)
+            }
+            if ('co2_level' == instance) {
+                // Convert CO2 from 1/1M to ppm
+                return Math.round(value * 1000000.0)
+            }
+            return value
+        }
+    })
     if (options.co2) {
         dev.addMQTT('co2_level', null, options.id + '_co2')
         dev.addProperty({
@@ -234,7 +247,6 @@ function Sensor(options) {
             },
         })
     }
-
     return dev.toConfig()
 }
 
@@ -253,7 +265,7 @@ function Shutter(options) {
     // Вычисление и усправление ON/OFF -> открой / закрой
     dev.addValueMapping({
         type: 'on_off',
-        mapping: function (device, value, y2m) {
+        mapping: function (device, instance, value, y2m) {
             // Кастомная функция конвертации
             // У меня % означают "насколько закрыто"
             if (y2m) { // От Яндекс в MQTT
