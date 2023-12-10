@@ -112,6 +112,8 @@
   simulated_brightness:
     delta: 5
     interval: 100
+'0x90ab96fffe52f8fa':
+  friendly_name: sz_cabinet_light
 '0x94deb8fffea8a1f9':
   friendly_name: sz_bed_l_remote
   simulated_brightness:

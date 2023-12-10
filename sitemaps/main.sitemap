@@ -243,6 +243,10 @@ sitemap main label="MAIN"
 				Slider item=sz_bed_light_r_dim label="Bed R DIM [%d %%]" icon="light"
                 Slider item=sz_bed_light_r_ct label="Bed R CT [JS(codegen-mired.js):%s]" icon="light"
 			}
+            Frame label="Cabinet" {
+				Switch item=sz_cabinet_light_sw label="Cabinet [%s]" icon="light"
+				Slider item=sz_cabinet_light_dim label="Cabinet DIM [%d %%]" icon="light"
+			}
         }
 		Group item=wz_light label="Living [%s]" icon="light" {
 			Frame {
