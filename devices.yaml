@@ -97,8 +97,6 @@
   friendly_name: kg_main1_work_light
 '0x842e14fffe0eb8a0':
   friendly_name: sz_up_light
-'0x842e14fffe1267fb':
-  friendly_name: ku_light_switch
 '0x8cf681fffe36d14e':
   friendly_name: sz_curtain_remote
 '0x8cf681fffef62c85':
@@ -149,6 +147,8 @@
   friendly_name: fl_up_light
 '0xa4c138a52c4e5c19':
   friendly_name: kg_lager3_door
+'0xa4c138b192bc39c0':
+  friendly_name: ku_light_switch
 '0xa4c138f1bf27592c':
   friendly_name: ks_window_2
 '0xa4c138f5460e22dd':

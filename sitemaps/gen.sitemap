@@ -413,8 +413,8 @@ Text item=ku_light_table_ota
 Text item=ku_light_table_link
 Switch item=ku_light_table_sw
 }
-Frame label="KU Light SW (0x842e14fffe1267fb)" {
-// KU Light SW (0x842e14fffe1267fb)
+Frame label="KU Light SW (0xa4c138b192bc39c0)" {
+// KU Light SW (0xa4c138b192bc39c0)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
 Text item=ku_light_switch_ota
 Text item=ku_light_switch_link

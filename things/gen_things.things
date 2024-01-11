@@ -506,12 +506,12 @@ Thing mqtt:topic:openhab:ku_light_table "KU Light Table" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KU Light SW (0x842e14fffe1267fb)
+// KU Light SW (0xa4c138b192bc39c0)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
 Thing mqtt:topic:openhab:ku_light_switch "KU Light SW" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state_l1 [stateTopic="zigbee2mqtt/ku_light_switch", commandTopic="zigbee2mqtt/ku_light_switch/set", transformationPattern="JSONPATH:$.state_l1", formatBeforePublish="{\"state_l1\": \"%s\"}"]
-		Type switch : state_l2 [stateTopic="zigbee2mqtt/ku_light_switch", commandTopic="zigbee2mqtt/ku_light_switch/set", transformationPattern="JSONPATH:$.state_l2", formatBeforePublish="{\"state_l2\": \"%s\"}"]
+		Type switch : state_left [stateTopic="zigbee2mqtt/ku_light_switch", commandTopic="zigbee2mqtt/ku_light_switch/set", transformationPattern="JSONPATH:$.state_left", formatBeforePublish="{\"state_left\": \"%s\"}"]
+		Type switch : state_right [stateTopic="zigbee2mqtt/ku_light_switch", commandTopic="zigbee2mqtt/ku_light_switch/set", transformationPattern="JSONPATH:$.state_right", formatBeforePublish="{\"state_right\": \"%s\"}"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }

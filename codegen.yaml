@@ -444,10 +444,10 @@ devices:
 
   - name: KU Light SW
     id: ku_light_switch
-    zigbee_id: '0x842e14fffe1267fb'
+    zigbee_id: '0xa4c138b192bc39c0'
     type: TUYA_WALL_SWITCH_TS0601
     channels:
-      l1:
+      left:
         id: ku_light_switch_haupt
         name: KU Light Haupt (Wall SW)
         groups:
@@ -456,7 +456,7 @@ devices:
           - eg_light
           - ku_light
           - ku_up_light
-      l2:
+      right:
         id: ku_light_switch_arbeit
         name: KU Light Arbeit (Wall SW)
         expire: 3h
