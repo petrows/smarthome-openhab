@@ -40,3 +40,37 @@ then
         wz_light_decor_dim_fast.sendCommand((wz_light_decor_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
     }
 end
+
+rule "WZ Julia sw"
+when
+    Channel "mqtt:topic:openhab:sz_julia_remote:action" triggered
+then
+	var state = receivedEvent
+
+    switch(state) {
+        case "on": {
+            wz_julia_desktop_light_dim.sendCommand(100)
+        }
+        case "off": {
+            if (wz_julia_desktop_light_sw.state == ON) {
+                wz_julia_desktop_light_sw.sendCommand(OFF)
+            } else {
+                wz_julia_desktop_light_dim.sendCommand(1)
+            }
+        }
+        // Exit
+        case "arrow_right_click": {
+            wz_julia_stand_light_dim.sendCommand(100)
+        }
+        case "arrow_left_click": {
+            wz_julia_stand_light_sw.sendCommand(OFF)
+        }
+    }
+end
+
+rule "WZ Julia dimmer"
+when
+    Channel "mqtt:topic:openhab:sz_julia_remote:action_dim" triggered
+then
+    wz_julia_desktop_light_dim_fast.sendCommand((wz_julia_desktop_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+end
