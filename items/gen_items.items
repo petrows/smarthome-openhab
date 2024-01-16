@@ -188,6 +188,24 @@ Dimmer wz_up_light_ct "WZ Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,
 Switch wz_up_light_ota "WZ Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_up_light:ota"}
 Number:Dimensionless wz_up_light_link "WZ Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_up_light:link"}
 Switch wz_up_light_sw "WZ Main" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_up_light:state"}
+// WZ Julia stand (0x5cc7c1fffe4c4a46)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
+Dimmer wz_julia_stand_light_dim "WZ Julia stand DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_julia_stand_light:dim"}
+Dimmer wz_julia_stand_light_dim_fast "WZ Julia stand DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_julia_stand_light:dim_fast"}
+Dimmer wz_julia_stand_light_ct "WZ Julia stand CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,wz_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:wz_julia_stand_light:ct"}
+Color wz_julia_stand_light_color "WZ Julia stand Color" <colorwheel> (g_all_color) {channel="mqtt:topic:openhab:wz_julia_stand_light:color"}
+String wz_julia_stand_light_color_mode "WZ Julia stand Color mode" <colorwheel> (g_all_color_mode) {channel="mqtt:topic:openhab:wz_julia_stand_light:color_mode"}
+Switch wz_julia_stand_light_ota "WZ Julia stand OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_julia_stand_light:ota"}
+Number:Dimensionless wz_julia_stand_light_link "WZ Julia stand LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_julia_stand_light:link"}
+Switch wz_julia_stand_light_sw "WZ Julia stand" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_julia_stand_light:state"}
+// WZ Julia stand (0xec1bbdfffe1b89d1)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Dimmer wz_julia_desktop_light_dim "WZ Julia stand DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_julia_desktop_light:dim"}
+Dimmer wz_julia_desktop_light_dim_fast "WZ Julia stand DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_julia_desktop_light:dim_fast"}
+Dimmer wz_julia_desktop_light_ct "WZ Julia stand CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,wz_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:wz_julia_desktop_light:ct"}
+Switch wz_julia_desktop_light_ota "WZ Julia stand OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_julia_desktop_light:ota"}
+Number:Dimensionless wz_julia_desktop_light_link "WZ Julia stand LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_julia_desktop_light:link"}
+Switch wz_julia_desktop_light_sw "WZ Julia stand" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_julia_desktop_light:state"}
 // WZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
 Dimmer wz_light_color_dim "WZ Color Decor DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_light_color:dim"}

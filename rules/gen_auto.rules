@@ -12,6 +12,8 @@ var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
 var Timer ks_up_light_ct_timer
 var Timer wz_up_light_ct_timer
+var Timer wz_julia_stand_light_ct_timer
+var Timer wz_julia_desktop_light_ct_timer
 var Timer wz_light_color_ct_timer
 var Timer sz_up_light_ct_timer
 var Timer sz_bed_light_l_ct_timer
@@ -123,6 +125,30 @@ then
     val ct_set = (wz_up_light_ct.state as Number).intValue
     wz_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
         wz_up_light_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "WZ Julia stand apply color on ON"
+when
+    Item wz_julia_stand_light_sw changed to ON
+then
+    val ct_set = (wz_julia_stand_light_ct.state as Number).intValue
+    wz_julia_stand_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        // Item with RGB: do not reset RGB color while ON
+        if (wz_julia_stand_light_color_mode.state == "xy") {
+            return
+        }
+        wz_julia_stand_light_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "WZ Julia stand apply color on ON"
+when
+    Item wz_julia_desktop_light_sw changed to ON
+then
+    val ct_set = (wz_julia_desktop_light_ct.state as Number).intValue
+    wz_julia_desktop_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        wz_julia_desktop_light_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON

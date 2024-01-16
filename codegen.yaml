@@ -222,6 +222,33 @@ devices:
         - wz_light_ct
         - astro_color_light_ct
 
+# Julia zone
+  - name: WZ Julia stand
+    id: wz_julia_stand_light
+    zigbee_id: '0x5cc7c1fffe4c4a46'
+    type: IKEA_TRADFRI_LAMP_COLOR_600
+    groups:
+      sw:
+        - all_light
+        - eg_light
+        - wz_light
+      ct:
+        - wz_light_ct
+        - astro_color_light_ct
+
+  - name: WZ Julia desktop
+    id: wz_julia_desktop_light
+    zigbee_id: '0xec1bbdfffe1b89d1'
+    type: IKEA_TRADFRI_LAMP_CT_1000
+    groups:
+      sw:
+        - all_light
+        - eg_light
+        - wz_light
+      ct:
+        - wz_light_ct
+        - astro_color_light_ct
+
 # Light in torsher
   - name: WZ Color Decor
     id: wz_light_color

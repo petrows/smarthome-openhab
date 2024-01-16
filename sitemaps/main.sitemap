@@ -259,6 +259,22 @@ sitemap main label="MAIN"
 				Slider item=wz_up_light_dim label="Main DIM [%d %%]" icon="light"
 				Slider item=wz_up_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
+            Frame label="Julia stand" {
+				Switch item=wz_julia_stand_light_sw label="Stand [%s]" icon="light"
+				Slider item=wz_julia_stand_light_dim label="Stand DIM [%d %%]" icon="light"
+				Slider item=wz_julia_stand_light_ct label="Stand CT [JS(codegen-mired.js):%s]" icon="light"
+            }
+            Frame label="Julia desktop" {
+				Switch item=wz_julia_desktop_light_sw label="Desktop [%s]" icon="light"
+				Slider item=wz_julia_desktop_light_dim label="Desktop DIM [%d %%]" icon="light"
+				Slider item=wz_julia_desktop_light_ct label="Desktop CT [JS(codegen-mired.js):%s]" icon="light"
+            }
+            Frame label="Torsher" {
+				Switch item=wz_light_color_sw label="Torsher [%s]" icon="light"
+				Slider item=wz_light_color_dim label="Torsher DIM [%d %%]" icon="light"
+				Slider item=wz_light_color_ct label="Torsher CT [JS(codegen-mired.js):%s]" icon="light"
+                Colorpicker item=wz_light_color_color label="Torsher []" icon="colorpicker"
+            }
 			Frame label="Room decor" {
                 Switch item=wz_light_decor label="Room light [%s]" icon="light"
                 Slider item=wz_light_decor_dim label="Room light DIM [%d %%]" icon="light"

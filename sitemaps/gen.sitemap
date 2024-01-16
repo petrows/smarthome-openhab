@@ -228,6 +228,26 @@ Text item=wz_up_light_ota
 Text item=wz_up_light_link
 Switch item=wz_up_light_sw
 }
+Frame label="WZ Julia stand (0x5cc7c1fffe4c4a46)" {
+// WZ Julia stand (0x5cc7c1fffe4c4a46)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
+Slider item=wz_julia_stand_light_dim
+Slider item=wz_julia_stand_light_ct
+Colorpicker item=wz_julia_stand_light_color
+Text item=wz_julia_stand_light_color_mode
+Text item=wz_julia_stand_light_ota
+Text item=wz_julia_stand_light_link
+Switch item=wz_julia_stand_light_sw
+}
+Frame label="WZ Julia stand (0xec1bbdfffe1b89d1)" {
+// WZ Julia stand (0xec1bbdfffe1b89d1)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Slider item=wz_julia_desktop_light_dim
+Slider item=wz_julia_desktop_light_ct
+Text item=wz_julia_desktop_light_ota
+Text item=wz_julia_desktop_light_link
+Switch item=wz_julia_desktop_light_sw
+}
 Frame label="WZ Color Decor (0x8cf681fffef62c85)" {
 // WZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
