@@ -290,9 +290,9 @@ Thing mqtt:topic:openhab:wz_julia_stand_light "WZ Julia stand" (mqtt:broker:open
 		Type number : link [stateTopic="zigbee2mqtt/wz_julia_stand_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/wz_julia_stand_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// WZ Julia stand (0xec1bbdfffe1b89d1)
+// WZ Julia desktop (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Thing mqtt:topic:openhab:wz_julia_desktop_light "WZ Julia stand" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:wz_julia_desktop_light "WZ Julia desktop" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/wz_julia_desktop_light", commandTopic="zigbee2mqtt/wz_julia_desktop_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
 		Type dimmer : dim [stateTopic="zigbee2mqtt/wz_julia_desktop_light", commandTopic="zigbee2mqtt/wz_julia_desktop_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=254]
@@ -300,6 +300,18 @@ Thing mqtt:topic:openhab:wz_julia_desktop_light "WZ Julia stand" (mqtt:broker:op
 		Type dimmer : ct [stateTopic="zigbee2mqtt/wz_julia_desktop_light", commandTopic="zigbee2mqtt/wz_julia_desktop_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/wz_julia_desktop_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/wz_julia_desktop_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// WZ Julia remote (0x1c34f1fffe7ccde1)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:sz_julia_remote "WZ Julia remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="zigbee2mqtt/sz_julia_remote", commandTopic="zigbee2mqtt/sz_julia_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="zigbee2mqtt/sz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="zigbee2mqtt/sz_julia_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_julia_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/sz_julia_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/sz_julia_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // WZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b

@@ -239,14 +239,23 @@ Text item=wz_julia_stand_light_ota
 Text item=wz_julia_stand_light_link
 Switch item=wz_julia_stand_light_sw
 }
-Frame label="WZ Julia stand (0xec1bbdfffe1b89d1)" {
-// WZ Julia stand (0xec1bbdfffe1b89d1)
+Frame label="WZ Julia desktop (0xec1bbdfffe1b89d1)" {
+// WZ Julia desktop (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Slider item=wz_julia_desktop_light_dim
 Slider item=wz_julia_desktop_light_ct
 Text item=wz_julia_desktop_light_ota
 Text item=wz_julia_desktop_light_link
 Switch item=wz_julia_desktop_light_sw
+}
+Frame label="WZ Julia remote (0x1c34f1fffe7ccde1)" {
+// WZ Julia remote (0x1c34f1fffe7ccde1)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=sz_julia_remote_dim
+Text item=sz_julia_remote_lowbatt
+Text item=sz_julia_remote_ota
+Text item=sz_julia_remote_link
+Text item=sz_julia_remote_battery
 }
 Frame label="WZ Color Decor (0x8cf681fffef62c85)" {
 // WZ Color Decor (0x8cf681fffef62c85)

@@ -198,14 +198,21 @@ String wz_julia_stand_light_color_mode "WZ Julia stand Color mode" <colorwheel> 
 Switch wz_julia_stand_light_ota "WZ Julia stand OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_julia_stand_light:ota"}
 Number:Dimensionless wz_julia_stand_light_link "WZ Julia stand LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_julia_stand_light:link"}
 Switch wz_julia_stand_light_sw "WZ Julia stand" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_julia_stand_light:state"}
-// WZ Julia stand (0xec1bbdfffe1b89d1)
+// WZ Julia desktop (0xec1bbdfffe1b89d1)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Dimmer wz_julia_desktop_light_dim "WZ Julia stand DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_julia_desktop_light:dim"}
-Dimmer wz_julia_desktop_light_dim_fast "WZ Julia stand DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_julia_desktop_light:dim_fast"}
-Dimmer wz_julia_desktop_light_ct "WZ Julia stand CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,wz_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:wz_julia_desktop_light:ct"}
-Switch wz_julia_desktop_light_ota "WZ Julia stand OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_julia_desktop_light:ota"}
-Number:Dimensionless wz_julia_desktop_light_link "WZ Julia stand LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_julia_desktop_light:link"}
-Switch wz_julia_desktop_light_sw "WZ Julia stand" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_julia_desktop_light:state"}
+Dimmer wz_julia_desktop_light_dim "WZ Julia desktop DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_julia_desktop_light:dim"}
+Dimmer wz_julia_desktop_light_dim_fast "WZ Julia desktop DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:wz_julia_desktop_light:dim_fast"}
+Dimmer wz_julia_desktop_light_ct "WZ Julia desktop CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,wz_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:wz_julia_desktop_light:ct"}
+Switch wz_julia_desktop_light_ota "WZ Julia desktop OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_julia_desktop_light:ota"}
+Number:Dimensionless wz_julia_desktop_light_link "WZ Julia desktop LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_julia_desktop_light:link"}
+Switch wz_julia_desktop_light_sw "WZ Julia desktop" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_julia_desktop_light:state"}
+// WZ Julia remote (0x1c34f1fffe7ccde1)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer sz_julia_remote_dim "WZ Julia remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_julia_remote:dim"}
+Switch sz_julia_remote_lowbatt "WZ Julia remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_julia_remote:battery_low"}
+Switch sz_julia_remote_ota "WZ Julia remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_julia_remote:ota"}
+Number:Dimensionless sz_julia_remote_link "WZ Julia remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_julia_remote:link"}
+Number:Dimensionless sz_julia_remote_battery "WZ Julia remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_julia_remote:battery"}
 // WZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
 Dimmer wz_light_color_dim "WZ Color Decor DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_light_color:dim"}

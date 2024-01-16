@@ -142,7 +142,7 @@ then
     ])
 end
 // Device should apply saved color temp when ON
-rule "WZ Julia stand apply color on ON"
+rule "WZ Julia desktop apply color on ON"
 when
     Item wz_julia_desktop_light_sw changed to ON
 then
