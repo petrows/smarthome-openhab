@@ -336,12 +336,12 @@ DateTime ku_climate_activity "KU Climate activity [JS(codegen-display-activity.j
 Number:Temperature ku_climate_temperature "KU Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,ku_hz_temperature_sensor) {channel="mqtt:topic:openhab:ku_climate:temperature"}
 Number:Dimensionless ku_climate_humidity "KU Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ku_climate:humidity"}
 Number:Dimensionless ku_climate_battery "KU Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_climate:battery"}
-// KU Light Button (Spüle) (0x00158d0001be5b2d)
+// KU Light Button (Spuele) (0x00158d0001be5b2d)
 // Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
-Switch ku_light_switch_spule_lowbatt "KU Light Button (Spüle) BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_light_switch_spule:battery_low"}
-Switch ku_light_switch_spule_ota "KU Light Button (Spüle) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_light_switch_spule:ota"}
-Number:Dimensionless ku_light_switch_spule_link "KU Light Button (Spüle) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_light_switch_spule:link"}
-Number:Dimensionless ku_light_switch_spule_battery "KU Light Button (Spüle)  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_light_switch_spule:battery"}
+Switch ku_light_switch_spule_lowbatt "KU Light Button (Spuele) BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_light_switch_spule:battery_low"}
+Switch ku_light_switch_spule_ota "KU Light Button (Spuele) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_light_switch_spule:ota"}
+Number:Dimensionless ku_light_switch_spule_link "KU Light Button (Spuele) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_light_switch_spule:link"}
+Number:Dimensionless ku_light_switch_spule_battery "KU Light Button (Spuele)  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_light_switch_spule:battery"}
 // KU Light Button (Kochfield) (0x680ae2fffeaf18d4)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Switch ku_light_switch_kochfeld_lowbatt "KU Light Button (Kochfield) BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_light_switch_kochfeld:battery_low"}
@@ -367,12 +367,13 @@ Dimmer ku_light_table_dim_fast "KU Light Table DIM-F [%d %%]" (g_all_dim_fast) {
 Switch ku_light_table_ota "KU Light Table OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_light_table:ota"}
 Number:Dimensionless ku_light_table_link "KU Light Table LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_light_table:link"}
 Switch ku_light_table_sw "KU Light Table" <light> (g_all_sw,all_light,eg_light,ku_light,eg_light_auto) {channel="mqtt:topic:openhab:ku_light_table:state"}
-// KU Light SW (0xa4c138b192bc39c0)
-// TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
-Switch ku_light_switch_ota "KU Light SW OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_light_switch:ota"}
-Number:Dimensionless ku_light_switch_link "KU Light SW LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_light_switch:link"}
-Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_light_switch:state_left"}
-Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_light_switch:state_right", expire="3h,command=OFF"}
+// KU Light SW (ku_main_switch)
+// Sonoff Touch EU Switch (2 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
+Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_main_switch:POWER1"}
+Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_main_switch:POWER2"}
+Number:Dimensionless ku_main_switch_rssi "KU Light SW RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:ku_main_switch:rssi"}
+String ku_main_switch_bssid "KU Light SW BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:ku_main_switch:bssid"}
+DateTime ku_main_switch_activity "KU Light SW activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_main_switch:activity"}
 // KU Window Door (0xa4c1389dec8b9204)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch ku_window_door_lowbatt "KU Window Door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_window_door:battery_low"}

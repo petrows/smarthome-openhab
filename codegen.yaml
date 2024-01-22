@@ -433,7 +433,7 @@ devices:
       temperature:
         - ku_hz_temperature_sensor
 
-  - name: "KU Light Button (Sp\xFCle)"
+  - name: "KU Light Button (Spuele)"
     id: ku_light_switch_spule
     zigbee_id: '0x00158d0001be5b2d'
     type: XIAOMI_BUTTON
@@ -475,12 +475,11 @@ devices:
       - eg_light_auto_dim
 
   - name: KU Light SW
-    id: ku_light_switch
-    zigbee_id: '0xa4c138b192bc39c0'
-    type: TUYA_WALL_SWITCH_TS0601
+    id: ku_main_switch
+    type: TASMOTA_SONOFF_TOUCH_EU2
     channels:
-      left:
-        id: ku_light_switch_haupt
+      POWER1:
+        id: ku_light_switch_haupt_sw
         name: KU Light Haupt (Wall SW)
         groups:
           sw:
@@ -488,8 +487,8 @@ devices:
           - eg_light
           - ku_light
           - ku_up_light
-      right:
-        id: ku_light_switch_arbeit
+      POWER2:
+        id: ku_light_switch_arbeit_sw
         name: KU Light Arbeit (Wall SW)
         expire: 3h
         groups:

@@ -402,8 +402,8 @@ Text item=ku_climate_temperature
 Text item=ku_climate_humidity
 Text item=ku_climate_battery
 }
-Frame label="KU Light Button (Spüle) (0x00158d0001be5b2d)" {
-// KU Light Button (Spüle) (0x00158d0001be5b2d)
+Frame label="KU Light Button (Spuele) (0x00158d0001be5b2d)" {
+// KU Light Button (Spuele) (0x00158d0001be5b2d)
 // Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
 Text item=ku_light_switch_spule_lowbatt
 Text item=ku_light_switch_spule_ota
@@ -442,13 +442,14 @@ Text item=ku_light_table_ota
 Text item=ku_light_table_link
 Switch item=ku_light_table_sw
 }
-Frame label="KU Light SW (0xa4c138b192bc39c0)" {
-// KU Light SW (0xa4c138b192bc39c0)
-// TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
-Text item=ku_light_switch_ota
-Text item=ku_light_switch_link
+Frame label="KU Light SW (ku_main_switch)" {
+// KU Light SW (ku_main_switch)
+// Sonoff Touch EU Switch (2 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
 Switch item=ku_light_switch_haupt_sw
 Switch item=ku_light_switch_arbeit_sw
+Text item=ku_main_switch_rssi
+Text item=ku_main_switch_bssid
+Text item=ku_main_switch_activity
 }
 Frame label="KU Window Door (0xa4c1389dec8b9204)" {
 // KU Window Door (0xa4c1389dec8b9204)
