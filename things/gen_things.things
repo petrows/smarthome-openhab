@@ -542,16 +542,14 @@ Thing mqtt:topic:openhab:ku_light_table "KU Light Table" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KU Light SW (ku_main_switch)
-// Sonoff Touch EU Switch (2 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
+// KU Light SW (0xa4c138c9dd85a675)
+// TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
 Thing mqtt:topic:openhab:ku_main_switch "KU Light SW" (mqtt:broker:openhab) {
 	Channels:
-		Type number : rssi [stateTopic="tele/ku_main_switch/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
-		Type string : bssid [stateTopic="tele/ku_main_switch/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
-		Type number : la [stateTopic="tele/ku_main_switch/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
-		Type datetime : activity [stateTopic="tele/ku_main_switch/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : POWER1 [stateTopic="stat/ku_main_switch/RESULT", transformationPattern="JSONPATH:$.POWER1", commandTopic="cmnd/ku_main_switch/POWER1", on="ON", off="OFF"]
-		Type switch : POWER2 [stateTopic="stat/ku_main_switch/RESULT", transformationPattern="JSONPATH:$.POWER2", commandTopic="cmnd/ku_main_switch/POWER2", on="ON", off="OFF"]
+		Type switch : state_left [stateTopic="zigbee2mqtt/ku_main_switch", commandTopic="zigbee2mqtt/ku_main_switch/set", transformationPattern="JSONPATH:$.state_left", formatBeforePublish="{\"state_left\": \"%s\"}"]
+		Type switch : state_right [stateTopic="zigbee2mqtt/ku_main_switch", commandTopic="zigbee2mqtt/ku_main_switch/set", transformationPattern="JSONPATH:$.state_right", formatBeforePublish="{\"state_right\": \"%s\"}"]
+		Type number : link [stateTopic="zigbee2mqtt/ku_main_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ku_main_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // KU Window Door (0xa4c1389dec8b9204)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
