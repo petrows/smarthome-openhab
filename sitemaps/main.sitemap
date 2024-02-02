@@ -264,6 +264,7 @@ sitemap main label="MAIN"
 				Slider item=wz_julia_stand_light_dim label="Stand DIM [%d %%]" icon="light"
 				Slider item=wz_julia_stand_light_ct label="Stand CT [JS(codegen-mired.js):%s]" icon="light"
                 Colorpicker item=wz_julia_stand_light_color label="Stand []" icon="colorpicker"
+                Switch item=wz_julia_stand_colorchange label="Stand color cycle [%s]" icon="light"
             }
             Frame label="Julia desktop" {
 				Switch item=wz_julia_desktop_light_sw label="Desktop [%s]" icon="light"

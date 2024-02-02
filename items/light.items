@@ -30,6 +30,9 @@ Group:Switch:OR(ON, OFF) wz_light_decor
 Group:Dimmer:MAX wz_light_decor_dim
 Group:Dimmer:MAX wz_light_decor_dim_fast
 
+// WZ items
+Switch wz_julia_stand_colorchange "WZ Julua stand color-change" <light>
+
 // Sunrise groups
 Group:Dimmer:AVG sunrise_ct // Group of lamps to control temperature
 

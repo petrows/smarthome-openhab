@@ -1,3 +1,8 @@
+import java.time.temporal.ChronoUnit
+
+val java.util.Random rand = new java.util.Random()
+
+var Timer standColorTimer = null
 
 rule "WZ main sw"
 when
@@ -73,4 +78,51 @@ when
     Channel "mqtt:topic:openhab:sz_julia_remote:action_dim" triggered
 then
     wz_julia_desktop_light_dim_fast.sendCommand((wz_julia_desktop_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+end
+
+rule "WZ Julia color change"
+when
+    Item wz_julia_stand_light_sw changed to ON
+    or Item wz_julia_stand_colorchange changed to ON
+then
+    if (standColorTimer !== null) {
+        standColorTimer.cancel()
+        standColorTimer = null
+    }
+
+    // Program disabled? Exit
+    if (wz_julia_stand_colorchange.state == OFF) { return }
+
+    logInfo("light", "WZ Julia stand color mode activated")
+
+    standColorTimer = createTimer(now, [ |
+        // Check status - if light is OFF or mode disabled -> exit
+        if (wz_julia_stand_light_sw.state == OFF || wz_julia_stand_colorchange.state == OFF) {
+            logInfo("light", "WZ Julia stand color mode stopped")
+            return
+        }
+
+        val hue = rand.nextInt(360) // Angle 0..360
+        val sat = 50 + rand.nextInt(50) // Saturation 50..100
+
+        // New random color
+        var color = new HSBType(new DecimalType(hue), new PercentType(sat), new PercentType(50))
+
+        // Convert to XY value - for MQTT command
+        var xy = color.toXY()
+        var x = xy.get(0).floatValue / 100.0
+        var y = xy.get(1).floatValue / 100.0
+
+        // logInfo("light", "WZ Julia stand color: {}, {}", hue, sat)
+
+        // Send command to device with custom transition
+        val mq = getActions("mqtt","mqtt:broker:openhab")
+        mq.publishMQTT("zigbee2mqtt/wz_julia_stand_light/set","{\"color\":{\"x\":"+x+",\"y\":"+y+"}, \"transition\": 10}")
+
+        // Update (but not command!) UI item
+        wz_julia_stand_light_color.postUpdate(color.toString())
+
+        // Shedule new cycle
+        standColorTimer.reschedule(ZonedDateTime.now.plus(20000, ChronoUnit.MILLIS))
+    ])
 end
