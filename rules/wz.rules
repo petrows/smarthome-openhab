@@ -29,7 +29,7 @@ then
             wz_up_light_sw.sendCommand(OFF)
         }
         case "arrow_left_click": {
-            wz_light_decor_dim.sendCommand(10)
+            wz_julia_desktop_light_dim.sendCommand(100)
         }
     }
 end
