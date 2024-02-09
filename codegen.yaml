@@ -124,6 +124,7 @@ devices:
       POWER:
         id: bz_mirror
         name: BZ Mirror
+        expire: 1h
         groups:
           sw:
           - all_light

@@ -100,7 +100,7 @@ Switch bz_light_2_sw_proxy "BZ Light (shower) proxy" <light> (g_all_sw,all_light
 Switch bz_light_2_sw "BZ Light (shower)" <light> {channel="mqtt:topic:openhab:bz_light_2:state"}
 // BZ Mirror (bz_mirror)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch bz_mirror "BZ Mirror" <light> (g_all_sw,all_light,eg_light,bz_light) {channel="mqtt:topic:openhab:bz_mirror:POWER"}
+Switch bz_mirror "BZ Mirror" <light> (g_all_sw,all_light,eg_light,bz_light) {channel="mqtt:topic:openhab:bz_mirror:POWER", expire="1h,command=OFF"}
 Number:Dimensionless bz_mirror_rssi "BZ Mirror RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:bz_mirror:rssi"}
 String bz_mirror_bssid "BZ Mirror BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bz_mirror:bssid"}
 DateTime bz_mirror_activity "BZ Mirror activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:bz_mirror:activity"}
@@ -534,13 +534,13 @@ String kg_main2_light_bssid "KG Hobbyraum (Haupt) BSSID [%s]" <network> (g_all_b
 DateTime kg_main2_light_activity "KG Hobbyraum (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_main2_light:activity"}
 // KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_hz_main_light:POWER"}
+Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_hz_main_light:POWER", expire="1h,command=OFF"}
 Number:Dimensionless kg_hz_main_light_rssi "KG Heuzung (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_hz_main_light:rssi"}
 String kg_hz_main_light_bssid "KG Heuzung (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_hz_main_light:bssid"}
 DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_hz_main_light:activity"}
 // Garden water (garten_wasser_sw)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:openhab:garten_wasser_sw:POWER"}
+Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:openhab:garten_wasser_sw:POWER", expire="1h,command=OFF"}
 Number:Dimensionless garten_wasser_sw_rssi "Garden water RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:garten_wasser_sw:rssi"}
 String garten_wasser_sw_bssid "Garden water BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:garten_wasser_sw:bssid"}
 DateTime garten_wasser_sw_activity "Garden water activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:garten_wasser_sw:activity"}
@@ -554,7 +554,7 @@ Switch garten_wasser_leak_leak "Warehouse 3 leak [%s]" <flow> (g_all_leak) {chan
 Number:Dimensionless garten_wasser_leak_battery "Warehouse 3 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:garten_wasser_leak:battery"}
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager1_main_light:POWER"}
+Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager1_main_light:POWER", expire="1h,command=OFF"}
 Number:Dimensionless kg_lager1_main_light_rssi "KG Lager 1 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager1_main_light:rssi"}
 String kg_lager1_main_light_bssid "KG Lager 1 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager1_main_light:bssid"}
 DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_main_light:activity"}
@@ -585,13 +585,13 @@ Contact kg_lager3_door_contact "KG Lager 3 door [%s]" <door> (g_all_contact) {ch
 Number:Dimensionless kg_lager3_door_battery "KG Lager 3 door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager3_door:battery"}
 // KG Lager 3 (Haupt) (lg3_up_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch lg3_up_light "KG Lager 3 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:lg3_up_light:POWER"}
+Switch lg3_up_light "KG Lager 3 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:lg3_up_light:POWER", expire="1h,command=OFF"}
 Number:Dimensionless lg3_up_light_rssi "KG Lager 3 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:lg3_up_light:rssi"}
 String lg3_up_light_bssid "KG Lager 3 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:lg3_up_light:bssid"}
 DateTime lg3_up_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_up_light:activity"}
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager4_main_light:POWER"}
+Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager4_main_light:POWER", expire="1h,command=OFF"}
 Number:Dimensionless kg_lager4_main_light_rssi "KG Lager 4 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager4_main_light:rssi"}
 String kg_lager4_main_light_bssid "KG Lager 4 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager4_main_light:bssid"}
 DateTime kg_lager4_main_light_activity "KG Lager 4 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager4_main_light:activity"}
