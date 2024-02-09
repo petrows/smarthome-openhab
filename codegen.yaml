@@ -1,21 +1,30 @@
 config:
   mqtt_broker_id: openhab
+
 devices:
   - name: Sturbar test
     id: sturbar_test
     zigbee_id: '0x04cd15fffe6d57dc'
     type: IKEA_TRADFRI_STYRBAR
+
   - name: Outside Climate
     id: ext_climate
     zigbee_id: '0x00158d0001c2cc22'
     type: XIAOMI_AQARA_V1
+    y2m:
+      name: Климат
+      room: OUTSIDE
     groups:
       sw:
       - all_light
+
   - name: Balkon light 1
     id: bk_light_1
     zigbee_id: '0x14b457fffe399241'
     type: IKEA_TRADFRI_LAMP_CT_1000
+    y2m:
+      name: Верхний
+      room: BALKON
     groups:
       sw:
       - all_light
@@ -30,7 +39,6 @@ devices:
     zigbee_id: '0xccccccfffe58f1c3'
     type: IKEA_TRADFRI_ON_OFF
 
-
   - name: EG Router
     id: eg_router
     zigbee_id: '0x00124b000b4ed5cc'
@@ -42,6 +50,9 @@ devices:
     id: fl_up_light
     zigbee_id: '0xa4c138a06ec38c9e'
     type: TUYA_WALL_DIMMER
+    y2m:
+      name: Верхний
+      room: LOBBY
     groups:
       sw:
       - all_light
@@ -52,6 +63,9 @@ devices:
     id: eg_decoration_light
     zigbee_id: '0x9035eafffe20e847'
     type: IKEA_TRADFRI_LAMP_W_250
+    y2m:
+      name: Комод
+      room: LOBBY
     groups:
       sw:
       - all_light
@@ -81,6 +95,9 @@ devices:
     id: bz_light_1
     zigbee_id: '0xcc86ecfffea0c7cb'
     type: LIVARNO_CELLING
+    y2m:
+      name: Туалет
+      room: WC
     groups:
       sw:
       - all_light
@@ -101,6 +118,9 @@ devices:
     id: bz_light_2
     zigbee_id: '0x04cd15fffedb319f'
     type: LIVARNO_CELLING
+    y2m:
+      name: Душ
+      room: WC
     groups:
       sw:
       - all_light
@@ -120,6 +140,10 @@ devices:
   - name: BZ Mirror
     id: bz_mirror
     type: TASMOTA_SONOFF_MINI
+    y2m:
+      subtype: LIGHT.SW
+      name: Зеркало
+      room: WC
     channels:
       POWER:
         id: bz_mirror
@@ -147,6 +171,9 @@ devices:
     id: ks_up_light
     zigbee_id: '0x588e81fffefb217b'
     type: LIVARNO_CELLING_14147206L
+    y2m:
+      name: Верхний
+      room: KINO
     groups:
       sw:
         - all_light
@@ -160,6 +187,9 @@ devices:
     id: ks_climate
     zigbee_id: '0xa4c1386df39045f6'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    y2m:
+      name: Климат
+      room: KINO
     groups:
       temperature:
         - ks_hz_temperature_sensor
@@ -169,6 +199,9 @@ devices:
     zigbee_id: '0x14b457fffe6383e5'
     type: IKEA_TRADFRI_LAMP_COLOR_600
     ct_auto: False # Do not apply CT when ON
+    y2m:
+      name: Декоративный
+      room: KINO
     groups:
       sw:
       - all_light
@@ -179,6 +212,9 @@ devices:
     id: ks_projector_power
     zigbee_id: '0x7cb03eaa0a094d1d'
     type: OSRAM_SMART_PLUG
+    y2m:
+      name: Прожектор
+      room: KINO
 
   - name: KS Window 2
     id: ks_window_2
@@ -199,6 +235,9 @@ devices:
     id: wz_climate
     zigbee_id: '0xa4c1386a03a53708'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    y2m:
+      name: Климат
+      room: LIVING
     groups:
       temperature:
         - wz_hz_temperature_sensor
@@ -212,6 +251,9 @@ devices:
     id: wz_up_light
     zigbee_id: '0x588e81fffefe9a05'
     type: LIVARNO_CELLING_14147206L
+    y2m:
+      name: Верхний
+      room: LIVING
     groups:
       sw:
         - all_light
@@ -228,6 +270,9 @@ devices:
     id: wz_julia_stand_light
     zigbee_id: '0x5cc7c1fffe4c4a46'
     type: IKEA_TRADFRI_LAMP_COLOR_600
+    y2m:
+      name: Стол задник
+      room: LIVING
     groups:
       sw:
         - all_light
@@ -241,6 +286,9 @@ devices:
     id: wz_julia_desktop_light
     zigbee_id: '0xec1bbdfffe1b89d1'
     type: IKEA_TRADFRI_LAMP_CT_1000
+    y2m:
+      name: Стол
+      room: LIVING
     groups:
       sw:
         - all_light
@@ -260,6 +308,9 @@ devices:
     id: wz_light_color
     zigbee_id: '0x8cf681fffef62c85'
     type: LIVARNO_RGB_HG07834B
+    y2m:
+      name: Торшер
+      room: LIVING
     groups:
       sw:
         - all_light
@@ -272,6 +323,9 @@ devices:
     zigbee_id: '0xec1bbdfffe972819'
     type: IKEA_TRADFRI_LAMP_W_250
     transition_brightness: 3
+    y2m:
+      name: Декор 1
+      room: LIVING
     groups:
       sw:
         - all_light
@@ -289,6 +343,9 @@ devices:
     zigbee_id: '0xec1bbdfffe972203'
     type: IKEA_TRADFRI_LAMP_W_250
     transition_brightness: 3
+    y2m:
+      name: Декор 2
+      room: LIVING
     groups:
       sw:
         - all_light
@@ -306,6 +363,9 @@ devices:
     zigbee_id: '0xec1bbdfffe91007b'
     type: IKEA_TRADFRI_LAMP_W_250
     transition_brightness: 3
+    y2m:
+      name: Декор 3
+      room: LIVING
     groups:
       sw:
         - all_light
@@ -332,6 +392,9 @@ devices:
     id: sz_climate
     type: PETROWS_CO2_SENSOR
     device_id: 5C:CF:7F:68:19:46
+    y2m:
+      name: Климат
+      room: SLEEP
     groups:
       temperature:
         - sz_hz_temperature_sensor
@@ -340,6 +403,9 @@ devices:
     id: sz_up_light
     zigbee_id: '0x842e14fffe0eb8a0'
     type: LIVARNO_CELLING_14147206L
+    y2m:
+      name: Верхний
+      room: SLEEP
     groups:
       sw:
         - all_light
@@ -430,6 +496,9 @@ devices:
     id: ku_climate
     zigbee_id: '0xa4c138f5460e22dd'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    y2m:
+      name: Климат
+      room: KITCHEN
     groups:
       temperature:
         - ku_hz_temperature_sensor

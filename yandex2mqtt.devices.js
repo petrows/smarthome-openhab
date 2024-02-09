@@ -16,7 +16,7 @@ const { LIGHT, LightGroup, Light, Thermostat, Sensor, Shutter } = tpl
 
 const ROOMS = {
     GROUPS: 'Группы',
-    LOBBY: 'Прихожая',
+    LOBBY: 'Коридор (прихожая)',
     WC: 'Ванная',
     SLEEP: 'Спальня',
     KITCHEN: 'Кухня',
