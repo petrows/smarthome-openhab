@@ -61,7 +61,13 @@ then
 	var state = receivedEvent
     switch(state) {
         case "play_pause": {
-            all_light.sendCommand(OFF)
+            // Set all off, except bed light
+            all_light.members.forEach [s |
+                if (!s.getGroupNames.contains("sz_bed_light_sw")) {
+                    s.sendCommand(OFF)
+                }
+            ]
+            sz_bed_light_dim.sendCommand(50)
         }
         case "volume_up_hold": {
             sz_up_light_sw.sendCommand(ON)
