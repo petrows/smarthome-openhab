@@ -1,6 +1,22 @@
 config:
   mqtt_broker_id: openhab
 
+y2m:
+  rooms:
+    GROUPS: 'Группы'
+    LOBBY: 'Коридор (прихожая)'
+    WC: 'Ванная'
+    SLEEP: 'Спальня'
+    KITCHEN: 'Кухня'
+    LIVING: 'Гостиная'
+    KINO: 'Кинозал'
+    TREPPE: 'Лестница'
+    KG_CABINET: 'Кабинет'
+    KG_BOILER: 'Котельная'
+    KG_L1: 'Кладовка 1'
+    KG_L4: 'Кладовка 4'
+    KG_LAUNDRY: 'Прачечная'
+
 devices:
   - name: Sturbar test
     id: sturbar_test
@@ -452,6 +468,9 @@ devices:
     id: sz_bed_light_l
     zigbee_id: '0x9035eafffe93bfc6'
     type: IKEA_TRADFRI_LAMP_LED2101G4
+    y2m:
+      name: Кровать левый
+      room: SLEEP
     groups:
       sw:
         - all_light
@@ -473,6 +492,9 @@ devices:
     id: sz_bed_light_r
     zigbee_id: '0x94deb8fffeda7949'
     type: IKEA_TRADFRI_LAMP_LED2101G4
+    y2m:
+      name: Кровать правый
+      room: SLEEP
     groups:
       sw:
         - all_light
@@ -535,6 +557,9 @@ devices:
     zigbee_id: '0xec1bbdfffe4695b5'
     type: IKEA_TRADFRI_LAMP_W_806
     transition_brightness: 3
+    y2m:
+      name: Стол
+      room: KITCHEN
     groups:
       sw:
       - all_light
@@ -552,6 +577,9 @@ devices:
       left:
         id: ku_light_switch_haupt
         name: KU Light Haupt (Wall SW)
+        y2m:
+          name: Верхний
+          room: KITCHEN
         groups:
           sw:
           - all_light
@@ -562,6 +590,9 @@ devices:
         id: ku_light_switch_arbeit
         name: KU Light Arbeit (Wall SW)
         expire: 3h
+        y2m:
+          name: Рабочий
+          room: KITCHEN
         groups:
           sw:
           - all_light
@@ -599,6 +630,9 @@ devices:
     zigbee_id: '0xd0cf5efffee892b0'
     type: IKEA_TRADFRI_LAMP_CT_1000
     expire: 1h
+    y2m:
+      name: Верхний
+      room: TREPPE
     groups:
       sw:
       - all_light
@@ -616,6 +650,9 @@ devices:
     zigbee_id: '0x04cd15fffedb31f7'
     type: LIVARNO_CELLING
     expire: 1h
+    y2m:
+      name: Нижний
+      room: TREPPE
     groups:
       sw:
       - all_light
@@ -637,6 +674,9 @@ devices:
     id: tr_climate
     zigbee_id: '0xa4c1383cc92cbbd2'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    y2m:
+      name: Климат
+      room: TREPPE
 
   - name: KG Window (Cabinet)
     id: kg_window_1
@@ -668,6 +708,9 @@ devices:
     id: kg_climate
     zigbee_id: '0xa4c138234138f73a'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    y2m:
+      name: Климат
+      room: KG_CABINET
     groups:
       temperature:
         - kg_hz_temperature_sensor
@@ -728,6 +771,9 @@ devices:
     zigbee_id: '0xccccccfffed8ef9d'
     type: IKEA_TRADFRI_LAMP_CLEAR_806
     transition_brightness: 3
+    y2m:
+      name: Стол
+      room: KG_CABINET
     groups:
       sw:
       - all_light
@@ -766,6 +812,9 @@ devices:
       POWER:
         id: kg_main1_light
         name: "KG Hobbyraum (Workshop)"
+        y2m:
+          name: Мастерская стол
+          room: KG_CABINET
         groups:
           sw:
             - all_light
@@ -780,6 +829,9 @@ devices:
       POWER:
         id: kg_main2_light
         name: KG Hobbyraum (Haupt)
+        y2m:
+          name: Мастерская верхний
+          room: KG_CABINET
         groups:
           sw:
             - all_light
@@ -794,6 +846,9 @@ devices:
         id: kg_hz_main_light
         name: KG Heuzung (Haupt)
         expire: 1h
+        y2m:
+          name: Верхний
+          room: KG_BOILER
         groups:
           sw:
             - all_light
@@ -821,6 +876,9 @@ devices:
         id: kg_lager1_main_light
         name: KG Lager 1 (Haupt)
         expire: 1h
+        y2m:
+          name: Верхний
+          room: KG_L1
         groups:
           sw:
             - all_light
@@ -830,6 +888,9 @@ devices:
     id: lg3_climate
     zigbee_id: '0xa4c1381155f63287'
     type: TUYA_TEMPERATURE_SENSOR_TS0201
+    y2m:
+      name: Климат
+      room: KG_LAUNDRY
 
   - name: KG Lager 3 motion
     id: kg_lager3_motion
@@ -849,6 +910,9 @@ devices:
         id: lg3_up_light
         name: KG Lager 3 (Haupt)
         expire: 1h
+        y2m:
+          name: Верхний
+          room: KG_LAUNDRY
         groups:
           sw:
             - all_light
@@ -862,6 +926,9 @@ devices:
         id: kg_lager4_main_light
         name: KG Lager 4 (Haupt)
         expire: 1h
+        y2m:
+          name: Верхний
+          room: KG_L4
         groups:
           sw:
             - all_light
@@ -872,6 +939,9 @@ devices:
     zigbee_id: '0xccccccfffedf345a'
     type: IKEA_TRADFRI_LAMP_W_806
     expire: 1h
+    y2m:
+      name: Дежурный 1
+      room: KG_L4
     groups:
       sw:
       - all_light
@@ -885,6 +955,9 @@ devices:
     zigbee_id: '0xccccccfffedf5314'
     type: IKEA_TRADFRI_LAMP_W_806
     expire: 1h
+    y2m:
+      name: Дежурный 2
+      room: KG_L4
     groups:
       sw:
       - all_light
@@ -925,6 +998,9 @@ devices:
     id: ks_heating
     zigbee_id: '0x0c4314fffe62f090'
     type: SILVERCREST_THERMOSTAT_368308_2010
+    y2m:
+      name: Отопление
+      room: KINO
     groups:
       thermostat:
       - all_hz
@@ -938,6 +1014,9 @@ devices:
     id: ku_heating
     zigbee_id: '0x0c4314fffe73bf1f'
     type: SILVERCREST_THERMOSTAT_368308_2010
+    y2m:
+      name: Отопление
+      room: KITCHEN
     groups:
       thermostat:
       - all_hz
@@ -951,6 +1030,9 @@ devices:
     id: wz_heating
     zigbee_id: '0x0c4314fffe73c43f'
     type: SILVERCREST_THERMOSTAT_368308_2010
+    y2m:
+      name: Отопление
+      room: LIVING
     groups:
       thermostat:
       - all_hz
@@ -964,6 +1046,9 @@ devices:
     id: kg_heating
     zigbee_id: '0x0c4314fffe5c6913'
     type: SILVERCREST_THERMOSTAT_368308_2010
+    y2m:
+      name: Отопление
+      room: KG_CABINET
     groups:
       thermostat:
       - all_hz
