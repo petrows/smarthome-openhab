@@ -51,6 +51,11 @@ Light(LIGHT.RGB, {
     room: ROOMS.WC,
     proxy: true,
 }),
+Light(LIGHT.SW, {
+    id: 'bz_mirror',
+    name: 'Зеркало',
+    room: ROOMS.WC,
+}),
 Light(LIGHT.CT, {
     id: 'ks_up_light',
     name: 'Верхний',
@@ -173,10 +178,40 @@ Light(LIGHT.CT, {
     name: 'Стол',
     room: ROOMS.KG_CABINET,
 }),
+Light(LIGHT.SW, {
+    id: 'kg_main1_light',
+    name: 'Мастерская стол',
+    room: ROOMS.KG_CABINET,
+}),
+Light(LIGHT.SW, {
+    id: 'kg_main2_light',
+    name: 'Мастерская верхний',
+    room: ROOMS.KG_CABINET,
+}),
+Light(LIGHT.SW, {
+    id: 'kg_hz_main_light',
+    name: 'Верхний',
+    room: ROOMS.KG_BOILER,
+}),
+Light(LIGHT.SW, {
+    id: 'kg_lager1_main_light',
+    name: 'Верхний',
+    room: ROOMS.KG_L1,
+}),
 Sensor({
     id: 'lg3_climate',
     name: 'Климат',
     room: ROOMS.KG_LAUNDRY,
+}),
+Light(LIGHT.SW, {
+    id: 'lg3_up_light',
+    name: 'Верхний',
+    room: ROOMS.KG_LAUNDRY,
+}),
+Light(LIGHT.SW, {
+    id: 'kg_lager4_main_light',
+    name: 'Верхний',
+    room: ROOMS.KG_L4,
 }),
 Light(LIGHT.DIM, {
     id: 'kg_lager4_1_light',

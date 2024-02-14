@@ -158,15 +158,16 @@ devices:
   - name: BZ Mirror
     id: bz_mirror
     type: TASMOTA_SONOFF_MINI
-    y2m:
-      subtype: LIGHT.SW
-      name: Зеркало
-      room: WC
     channels:
       POWER:
         id: bz_mirror
         name: BZ Mirror
         expire: 1h
+        y2m:
+          type: Light
+          subtype: LIGHT.SW
+          name: Зеркало
+          room: WC
         groups:
           sw:
           - all_light
@@ -815,6 +816,8 @@ devices:
         id: kg_main1_light
         name: "KG Hobbyraum (Workshop)"
         y2m:
+          type: Light
+          subtype: LIGHT.SW
           name: Мастерская стол
           room: KG_CABINET
         groups:
@@ -832,6 +835,8 @@ devices:
         id: kg_main2_light
         name: KG Hobbyraum (Haupt)
         y2m:
+          type: Light
+          subtype: LIGHT.SW
           name: Мастерская верхний
           room: KG_CABINET
         groups:
@@ -849,6 +854,8 @@ devices:
         name: KG Heuzung (Haupt)
         expire: 1h
         y2m:
+          type: Light
+          subtype: LIGHT.SW
           name: Верхний
           room: KG_BOILER
         groups:
@@ -879,6 +886,8 @@ devices:
         name: KG Lager 1 (Haupt)
         expire: 1h
         y2m:
+          type: Light
+          subtype: LIGHT.SW
           name: Верхний
           room: KG_L1
         groups:
@@ -913,6 +922,8 @@ devices:
         name: KG Lager 3 (Haupt)
         expire: 1h
         y2m:
+          type: Light
+          subtype: LIGHT.SW
           name: Верхний
           room: KG_LAUNDRY
         groups:
@@ -929,6 +940,8 @@ devices:
         name: KG Lager 4 (Haupt)
         expire: 1h
         y2m:
+          type: Light
+          subtype: LIGHT.SW
           name: Верхний
           room: KG_L4
         groups:
