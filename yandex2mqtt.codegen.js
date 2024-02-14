@@ -55,6 +55,7 @@ Light(LIGHT.SW, {
     id: 'bz_mirror',
     name: 'Зеркало',
     room: ROOMS.WC,
+    sw: '',
 }),
 Light(LIGHT.CT, {
     id: 'ks_up_light',
@@ -182,21 +183,25 @@ Light(LIGHT.SW, {
     id: 'kg_main1_light',
     name: 'Мастерская стол',
     room: ROOMS.KG_CABINET,
+    sw: '',
 }),
 Light(LIGHT.SW, {
     id: 'kg_main2_light',
     name: 'Мастерская верхний',
     room: ROOMS.KG_CABINET,
+    sw: '',
 }),
 Light(LIGHT.SW, {
     id: 'kg_hz_main_light',
     name: 'Верхний',
     room: ROOMS.KG_BOILER,
+    sw: '',
 }),
 Light(LIGHT.SW, {
     id: 'kg_lager1_main_light',
     name: 'Верхний',
     room: ROOMS.KG_L1,
+    sw: '',
 }),
 Sensor({
     id: 'lg3_climate',
@@ -207,11 +212,13 @@ Light(LIGHT.SW, {
     id: 'lg3_up_light',
     name: 'Верхний',
     room: ROOMS.KG_LAUNDRY,
+    sw: '',
 }),
 Light(LIGHT.SW, {
     id: 'kg_lager4_main_light',
     name: 'Верхний',
     room: ROOMS.KG_L4,
+    sw: '',
 }),
 Light(LIGHT.DIM, {
     id: 'kg_lager4_1_light',

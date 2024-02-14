@@ -69,11 +69,12 @@ function LightGroup(options) {
 
 function Light(type, options) {
     if (!options.type) { options.type = 'devices.types.light' }
+    if (typeof options.sw === 'undefined') { options.sw = '_sw' }
     let dev = new GenDevice(options)
     // Special suffux for buggy devices (use not real item, but proxy)
     let suffix = options.proxy ? '_proxy' : ''
     // All lights can ON/OFF
-    dev.addMQTT('on', options.id + '_sw' + suffix + '/sw', options.id + '_sw' + suffix)
+    dev.addMQTT('on', options.id + options.sw + suffix + '/sw', options.id + options.sw + suffix)
     dev.addCapability({
         type: 'devices.capabilities.on_off',
         retrievable: true,
