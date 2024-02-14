@@ -2,7 +2,9 @@ const tpl = require("./yandex2mqtt.template")
 const { LIGHT, LightGroup, Light, Thermostat, Sensor, Shutter } = tpl
 const ROOMS = {
   GROUPS: 'Группы',
-  LOBBY: 'Коридор (прихожая)',
+  OUTSIDE: 'Улица',
+  BALKON: 'Балкон',
+  LOBBY: 'Коридор',
   WC: 'Ванная',
   SLEEP: 'Спальня',
   KITCHEN: 'Кухня',
@@ -133,6 +135,16 @@ Sensor({
 Light(LIGHT.DIM, {
     id: 'ku_light_table',
     name: 'Стол',
+    room: ROOMS.KITCHEN,
+}),
+Light(LIGHT.SW, {
+    id: 'ku_light_switch_haupt',
+    name: 'Верхний',
+    room: ROOMS.KITCHEN,
+}),
+Light(LIGHT.SW, {
+    id: 'ku_light_switch_arbeit',
+    name: 'Рабочий',
     room: ROOMS.KITCHEN,
 }),
 Light(LIGHT.CT, {

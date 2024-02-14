@@ -1,3 +1,8 @@
+/*
+    Yandex2mqtt template classes
+
+    Used by codegen updated on each Codegen call!
+*/
 
 class GenDevice {
     data = {}

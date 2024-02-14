@@ -4,7 +4,9 @@ config:
 y2m:
   rooms:
     GROUPS: 'Группы'
-    LOBBY: 'Коридор (прихожая)'
+    OUTSIDE: 'Улица'
+    BALKON: 'Балкон'
+    LOBBY: 'Коридор'
     WC: 'Ванная'
     SLEEP: 'Спальня'
     KITCHEN: 'Кухня'
