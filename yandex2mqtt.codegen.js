@@ -98,21 +98,6 @@ Light(LIGHT.RGB, {
     room: ROOMS.LIVING,
     proxy: true,
 }),
-Light(LIGHT.DIM, {
-    id: 'wz_declamp_1',
-    name: 'Декор 1',
-    room: ROOMS.LIVING,
-}),
-Light(LIGHT.DIM, {
-    id: 'wz_declamp_2',
-    name: 'Декор 2',
-    room: ROOMS.LIVING,
-}),
-Light(LIGHT.DIM, {
-    id: 'wz_declamp_3',
-    name: 'Декор 3',
-    room: ROOMS.LIVING,
-}),
 Sensor({
     id: 'sz_climate',
     name: 'Климат',
@@ -121,16 +106,6 @@ Sensor({
 Light(LIGHT.CT, {
     id: 'sz_up_light',
     name: 'Верхний',
-    room: ROOMS.SLEEP,
-}),
-Light(LIGHT.CT, {
-    id: 'sz_bed_light_l',
-    name: 'Кровать левый',
-    room: ROOMS.SLEEP,
-}),
-Light(LIGHT.CT, {
-    id: 'sz_bed_light_r',
-    name: 'Кровать правый',
     room: ROOMS.SLEEP,
 }),
 Sensor({

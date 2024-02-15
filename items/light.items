@@ -26,7 +26,7 @@ Group:Dimmer:MAX sz_bed_light_dim_fast
 Group:Switch:OR(ON, OFF) wz_light <light>
 Group:Dimmer:AVG wz_light_ct "WZ CT [%d %%]" <light>
 Group:Dimmer:AVG wz_light_dim "WZ DIM [%d %%]" <light>
-Group:Switch:OR(ON, OFF) wz_light_decor
+Group:Switch:OR(ON, OFF) wz_light_decor_sw
 Group:Dimmer:MAX wz_light_decor_dim
 Group:Dimmer:MAX wz_light_decor_dim_fast
 

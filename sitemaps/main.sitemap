@@ -278,7 +278,7 @@ sitemap main label="MAIN"
                 Colorpicker item=wz_light_color_color label="Torsher []" icon="colorpicker"
             }
 			Frame label="Room decor" {
-                Switch item=wz_light_decor label="Room light [%s]" icon="light"
+                Switch item=wz_light_decor_sw label="Room light [%s]" icon="light"
                 Slider item=wz_light_decor_dim label="Room light DIM [%d %%]" icon="light"
             }
             Frame label="Lamps control" {

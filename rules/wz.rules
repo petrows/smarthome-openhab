@@ -41,7 +41,7 @@ then
     if (wz_up_light_sw.state == ON) {
         wz_up_light_dim_fast.sendCommand((wz_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
     }
-    if (wz_light_decor.state == ON) {
+    if (wz_light_decor_sw.state == ON) {
         wz_light_decor_dim_fast.sendCommand((wz_light_decor_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
     }
 end

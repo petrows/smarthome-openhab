@@ -342,15 +342,12 @@ devices:
     zigbee_id: '0xec1bbdfffe972819'
     type: IKEA_TRADFRI_LAMP_W_250
     transition_brightness: 3
-    y2m:
-      name: Декор 1
-      room: LIVING
     groups:
       sw:
         - all_light
         - eg_light
         - wz_light
-        - wz_light_decor
+        - wz_light_decor_sw
       dim:
         - wz_light_dim
         - wz_light_decor_dim
@@ -362,15 +359,12 @@ devices:
     zigbee_id: '0xec1bbdfffe972203'
     type: IKEA_TRADFRI_LAMP_W_250
     transition_brightness: 3
-    y2m:
-      name: Декор 2
-      room: LIVING
     groups:
       sw:
         - all_light
         - eg_light
         - wz_light
-        - wz_light_decor
+        - wz_light_decor_sw
       dim:
         - wz_light_dim
         - wz_light_decor_dim
@@ -382,15 +376,12 @@ devices:
     zigbee_id: '0xec1bbdfffe91007b'
     type: IKEA_TRADFRI_LAMP_W_250
     transition_brightness: 3
-    y2m:
-      name: Декор 3
-      room: LIVING
     groups:
       sw:
         - all_light
         - eg_light
         - wz_light
-        - wz_light_decor
+        - wz_light_decor_sw
       dim:
         - wz_light_dim
         - wz_light_decor_dim
@@ -471,9 +462,6 @@ devices:
     id: sz_bed_light_l
     zigbee_id: '0x9035eafffe93bfc6'
     type: IKEA_TRADFRI_LAMP_LED2101G4
-    y2m:
-      name: Кровать левый
-      room: SLEEP
     groups:
       sw:
         - all_light
@@ -495,9 +483,6 @@ devices:
     id: sz_bed_light_r
     zigbee_id: '0x94deb8fffeda7949'
     type: IKEA_TRADFRI_LAMP_LED2101G4
-    y2m:
-      name: Кровать правый
-      room: SLEEP
     groups:
       sw:
         - all_light

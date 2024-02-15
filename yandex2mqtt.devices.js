@@ -43,6 +43,16 @@ devices = [
         name: 'Нижний этаж',
         room: ROOMS.GROUPS,
     }),
+    Light(LIGHT.CT, {
+        id: 'sz_bed_light',
+        name: 'Кровать',
+        room: ROOMS.SLEEP,
+    }),
+    Light(LIGHT.CT, {
+        id: 'wz_light_decor',
+        name: 'Декоративный',
+        room: ROOMS.LIVING,
+    }),
 
     // Blinds
     Shutter({
