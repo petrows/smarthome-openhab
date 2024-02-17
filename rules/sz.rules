@@ -67,7 +67,7 @@ then
                     s.sendCommand(OFF)
                 }
             ]
-            sz_bed_light_dim.sendCommand(50)
+            // sz_bed_light_dim.sendCommand(50)
         }
         case "volume_up_hold": {
             sz_up_light_sw.sendCommand(ON)
