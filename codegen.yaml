@@ -121,16 +121,16 @@ devices:
       - all_light
       - eg_light
       - bz_light
-      - bz_up_light
+      - bz_up_light_sw
       dim:
-      - g_light_bz_dim
+      - bz_up_light_dim
       dim_fast:
-      - g_light_bz_dim_fast
+      - bz_up_light_dim_fast
       ct:
       - astro_color_light_ct
-      - bz_light_ct
+      - bz_up_light_ct
       color:
-      - bz_light_color
+      - bz_up_light_color
 
   - name: BZ Light (shower)
     id: bz_light_2
@@ -144,16 +144,16 @@ devices:
       - all_light
       - eg_light
       - bz_light
-      - bz_up_light
+      - bz_up_light_sw
       dim:
-      - g_light_bz_dim
+      - bz_up_light_dim
       dim_fast:
-      - g_light_bz_dim_fast
+      - bz_up_light_dim_fast
       ct:
       - astro_color_light_ct
-      - bz_light_ct
+      - bz_up_light_ct
       color:
-      - bz_light_color
+      - bz_up_light_color
 
   - name: BZ Mirror
     id: bz_mirror

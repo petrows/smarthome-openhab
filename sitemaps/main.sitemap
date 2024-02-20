@@ -142,10 +142,10 @@ sitemap main label="MAIN"
                 Switch item=bz_mirror label="Mirror" icon="light"
             }
             Frame {
-			    Switch item=bz_up_light label="Main" icon="light"
-                Slider item=g_light_bz_dim label="Main DIM [%d %%]" icon="light"
-                Slider item=bz_light_ct label="Main CT [JS(codegen-mired.js):%s]"
-                Colorpicker item=bz_light_color label="Main Color []" icon="colorpicker"
+			    Switch item=bz_up_light_sw label="Main" icon="light"
+                Slider item=bz_up_light_dim label="Main DIM [%d %%]" icon="light"
+                Slider item=bz_up_light_ct label="Main CT [JS(codegen-mired.js):%s]"
+                Colorpicker item=bz_up_light_color label="Main Color []" icon="colorpicker"
             }
             Frame {
 			    Switch item=bz_light_1_sw label="Main toilet" icon="light"

@@ -47,11 +47,11 @@ Dimmer astro_color_value "Astrocolor Value [%d %%]" <light>
 
 
 // BZ groups
-Group:Switch:OR(ON, OFF) bz_up_light "BZ main [%s]" <light>
-Group:Dimmer:AVG g_light_bz_dim "BZ main DIM [%d %%]" <light>
-Group:Dimmer:AVG g_light_bz_dim_fast
-Group:Dimmer:AVG bz_light_ct "BZ main CT [%d %%]" <light>
-Group:Color:AVG bz_light_color "BZ main Color []" <light>
+Group:Switch:OR(ON, OFF) bz_up_light_sw "BZ main [%s]" <light>
+Group:Dimmer:AVG bz_up_light_dim "BZ main DIM [%d %%]" <light>
+Group:Dimmer:AVG bz_up_light_dim_fast
+Group:Dimmer:AVG bz_up_light_ct "BZ main CT [%d %%]" <light>
+Group:Color:AVG bz_up_light_color "BZ main Color []" <light>
 
 // KG and Treppe lamps
 Group:Switch:OR(ON, OFF) kg_light (g_all) // All lamps in KG

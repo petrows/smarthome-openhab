@@ -53,6 +53,11 @@ devices = [
         name: 'Декоративный',
         room: ROOMS.LIVING,
     }),
+    Light(LIGHT.RGB, {
+        id: 'bz_up_light',
+        name: 'Верхний',
+        room: ROOMS.WC,
+    }),
 
     // Blinds
     Shutter({

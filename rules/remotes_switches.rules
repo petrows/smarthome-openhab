@@ -261,14 +261,14 @@ then
             bz_mirror.sendCommand(ON)
         }
         case "brightness_move_up": {
-            bz_up_light.sendCommand(ON)
-            g_light_bz_dim.sendCommand(100)
+            bz_up_light_sw.sendCommand(ON)
+            bz_up_light_dim.sendCommand(100)
         }
         case "off": {
             bz_mirror.sendCommand(OFF)
         }
         case "brightness_move_down": {
-            bz_up_light.sendCommand(OFF)
+            bz_up_light_sw.sendCommand(OFF)
         }
     }
 end
@@ -284,17 +284,17 @@ then
     switch(state) {
         case "on": {
             // "up" -> Full power
-            bz_light_ct.sendCommand(astro_color_value.state.toString)
-            g_light_bz_dim.sendCommand(100)
-            bz_light_ct.sendCommand(astro_color_value.state.toString)
+            bz_up_light_ct.sendCommand(astro_color_value.state.toString)
+            bz_up_light_dim.sendCommand(100)
+            bz_up_light_ct.sendCommand(astro_color_value.state.toString)
         }
         case "off": {
             // "down" -> Small power
-            bz_light_color.sendCommand("0,100,50")
+            bz_up_light_color.sendCommand("0,100,50")
             // Start from minimal to avoid flicker
             bz_light_1_dim_fast.sendCommand(1)
             bz_light_2_dim_fast.sendCommand(1)
-            bz_light_color.sendCommand("0,100,50")
+            bz_up_light_color.sendCommand("0,100,50")
             bz_light_1_dim.sendCommand(50)
             bz_light_2_dim.sendCommand(10)
         }
@@ -315,5 +315,5 @@ rule "BZ main dimmer"
 when
     Channel "mqtt:topic:openhab:bz_light_switch:action_dim" triggered
 then
-    g_light_bz_dim_fast.sendCommand((g_light_bz_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+    bz_up_light_dim_fast.sendCommand((bz_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
 end
