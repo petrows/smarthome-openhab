@@ -102,6 +102,7 @@ Sensor({
     id: 'sz_climate',
     name: 'Климат',
     room: ROOMS.SLEEP,
+    co2: true,
 }),
 Light(LIGHT.CT, {
     id: 'sz_up_light',
