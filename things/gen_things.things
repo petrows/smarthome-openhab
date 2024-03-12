@@ -876,6 +876,18 @@ Thing mqtt:topic:openhab:lg3_up_light "KG Lager 3 (Haupt)" (mqtt:broker:openhab)
 		Type datetime : activity [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JS:codegen-activity.js"]
 		Type switch : POWER [stateTopic="stat/lg3_up_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/lg3_up_light/POWER", on="ON", off="OFF"]
 }
+// Washmachine (0x70b3d52b60057a95)
+// Plug socket with power function / https://www.zigbee2mqtt.io/devices/TS000F_power.html
+Thing mqtt:topic:openhab:lg3_washmachine "Washmachine" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/lg3_washmachine", commandTopic="zigbee2mqtt/lg3_washmachine/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0"]
+		Type number : ac_voltage [stateTopic="zigbee2mqtt/lg3_washmachine", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="zigbee2mqtt/lg3_washmachine", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="zigbee2mqtt/lg3_washmachine", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="zigbee2mqtt/lg3_washmachine", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="zigbee2mqtt/lg3_washmachine", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/lg3_washmachine", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Thing mqtt:topic:openhab:kg_lager4_main_light "KG Lager 4 (Haupt)" (mqtt:broker:openhab) {

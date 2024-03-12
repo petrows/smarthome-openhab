@@ -717,6 +717,17 @@ Text item=lg3_up_light_rssi
 Text item=lg3_up_light_bssid
 Text item=lg3_up_light_activity
 }
+Frame label="Washmachine (0x70b3d52b60057a95)" {
+// Washmachine (0x70b3d52b60057a95)
+// Plug socket with power function / https://www.zigbee2mqtt.io/devices/TS000F_power.html
+Text item=lg3_washmachine_ota
+Text item=lg3_washmachine_link
+Switch item=lg3_washmachine_sw
+Text item=lg3_washmachine_ac_voltage
+Text item=lg3_washmachine_ac_current
+Text item=lg3_washmachine_ac_power
+Text item=lg3_washmachine_ac_energy
+}
 Frame label="KG Lager 4 (Haupt) (kg_lager4_main_light)" {
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html

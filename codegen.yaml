@@ -916,6 +916,11 @@ devices:
             - all_light
             - kg_light
 
+  - name: Washmachine
+    id: lg3_washmachine
+    zigbee_id: '0x70b3d52b60057a95'
+    type: TUYA_PLUG_TS000F
+
   - name: KG Lager 4 (Haupt)
     id: kg_lager4_main_light
     type: TASMOTA_SONOFF_MINI
