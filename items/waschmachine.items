@@ -1,4 +1,1 @@
-Switch washMachinePower "Стриальная машина" { expire="5m,command=OFF" }
-
-Switch sonoffWMSwitch "Питание" { mqtt=">[ mqtt:cmnd/sonoff-pow-1/POWER:command:*:default],<[mqtt:stat/sonoff-pow-1/POWER:state:default]" }
-Number:Power sonoffWMPower "Мощность [%.1f W]" { mqtt="<[mqtt:tele/sonoff-pow-1/SENSOR:state:JSONPATH($.ENERGY.Power)]" }
+Switch lg3_washmachine "Waschmachine active" <washingmachine> { expire="5m,command=OFF" }

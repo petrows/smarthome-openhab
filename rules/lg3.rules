@@ -1,0 +1,36 @@
+var washMachineDetectedPower = 0
+
+rule "Washmachine power"
+when
+    Item lg3_washmachine_ac_power changed
+then
+	if (lg3_washmachine_ac_power.state > 10 | W) {
+
+		// Initial signal should be > 100W
+		// Initial signal should be >= 3 times in a row
+		if (lg3_washmachine.state != ON) {
+			if (lg3_washmachine_ac_power.state < 100) {
+				logWarn("washmachine", "Initial signal too low, ignoring")
+				return;
+			}
+			washMachineDetectedPower = washMachineDetectedPower + 1
+			if (washMachineDetectedPower < 3) {
+				logWarn("washmachine", "Initial signal repeated " + washMachineDetectedPower +" times, igonring")
+				return;
+			}
+		}
+
+		// Update the WM timer
+		lg3_washmachine.sendCommand(ON)
+	} else {
+		washMachineDetectedPower = 0
+	}
+end
+
+rule "Washmachine done"
+when
+	Item lg3_washmachine changed from ON to OFF
+then
+	logWarn("washmachine", "Washmachine done")
+    global_message.sendCommand("Washmachine done")
+end

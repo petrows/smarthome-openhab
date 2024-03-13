@@ -386,13 +386,16 @@ sitemap main label="MAIN"
             }
 		}
 	}
+    Frame {
+        Text item=lg3_washmachine label="Washmachine [MAP(wm_status.map):%s]"
+        Text item=dryer_state_grp
+    }
 	Frame {
         Group item=m800s_state_grp label="Multicooker [%s]" {
             Text item=m800s_state
             Text item=m800s_time
             Switch item=m800s_state_command label="Command []" mappings=["OFF"="OFF", "WARM"="WARM", "ON"="START"]
 		}
-        Text item=dryer_state_grp
 		Group item=eg_robot_status icon="pump" label="Robot EG [MAP(eve_status.map):%s]" {
             Frame label="Regular cleaning" {
                 Switch item=eg_robot_regular_enable label="Enable"
