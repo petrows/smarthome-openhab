@@ -4,7 +4,7 @@ rule "Washmachine power"
 when
     Item lg3_washmachine_ac_power changed
 then
-	if (lg3_washmachine_ac_power.state > 10 | W) {
+	if (lg3_washmachine_ac_power.state >= 3 | W) {
 
 		// Initial signal should be > 100W
 		// Initial signal should be >= 3 times in a row
