@@ -20,6 +20,8 @@
   simulated_brightness:
     delta: 5
     interval: 100
+'0x048727fffea43740':
+  friendly_name: mouse_trap_1
 '0x04cd15fffe35f24e':
   friendly_name: desktop_petro_up_light_1
 '0x04cd15fffe6bf002':
@@ -73,6 +75,8 @@
     interval: 100
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
+'0x3c2ef5fffe41fc77':
+  friendly_name: mouse_trap_2
 '0x540f57fffe1e420c':
   friendly_name: sz_bed_r_remote
   simulated_brightness:

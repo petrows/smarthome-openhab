@@ -917,4 +917,22 @@ Text item=backup_ext_power_ota
 Text item=backup_ext_power_link
 Switch item=backup_ext_power_sw
 }
+Frame label="Mouse trap KU (0x048727fffea43740)" {
+// Mouse trap KU (0x048727fffea43740)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=mouse_trap_1_lowbatt
+Text item=mouse_trap_1_ota
+Text item=mouse_trap_1_link
+Text item=mouse_trap_1_contact
+Text item=mouse_trap_1_battery
+}
+Frame label="Mouse trap KG (0x3c2ef5fffe41fc77)" {
+// Mouse trap KG (0x3c2ef5fffe41fc77)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=mouse_trap_2_lowbatt
+Text item=mouse_trap_2_ota
+Text item=mouse_trap_2_link
+Text item=mouse_trap_2_contact
+Text item=mouse_trap_2_battery
+}
 }

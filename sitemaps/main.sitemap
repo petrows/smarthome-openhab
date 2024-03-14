@@ -390,6 +390,9 @@ sitemap main label="MAIN"
         Text item=lg3_washmachine label="Washmachine [MAP(wm_status.map):%s]"
         Text item=dryer_state_grp
     }
+    Frame {
+        Group item=mouse_trap label="Mouse trap [MAP(mouse_trap.map):%s]"
+    }
 	Frame {
         Group item=m800s_state_grp label="Multicooker [%s]" {
             Text item=m800s_state

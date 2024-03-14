@@ -753,3 +753,17 @@ Switch ku_shutter_cal "KU Shutter cal [%s]" <light> (g_all_cal) {channel="mqtt:t
 Switch backup_ext_power_ota "Ext backup power supply OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:backup_ext_power:ota"}
 Number:Dimensionless backup_ext_power_link "Ext backup power supply LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:backup_ext_power:link"}
 Switch backup_ext_power_sw "Ext backup power supply" <light> (g_all_sw) {channel="mqtt:topic:openhab:backup_ext_power:state"}
+// Mouse trap KU (0x048727fffea43740)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Switch mouse_trap_1_lowbatt "Mouse trap KU BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_1:battery_low"}
+Switch mouse_trap_1_ota "Mouse trap KU OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mouse_trap_1:ota"}
+Number:Dimensionless mouse_trap_1_link "Mouse trap KU LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_1:link"}
+Contact mouse_trap_1_contact "Mouse trap KU [%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_1:contact"}
+Number:Dimensionless mouse_trap_1_battery "Mouse trap KU  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_1:battery"}
+// Mouse trap KG (0x3c2ef5fffe41fc77)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Switch mouse_trap_2_lowbatt "Mouse trap KG BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_2:battery_low"}
+Switch mouse_trap_2_ota "Mouse trap KG OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mouse_trap_2:ota"}
+Number:Dimensionless mouse_trap_2_link "Mouse trap KG LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_2:link"}
+Contact mouse_trap_2_contact "Mouse trap KG [%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_2:contact"}
+Number:Dimensionless mouse_trap_2_battery "Mouse trap KG  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_2:battery"}

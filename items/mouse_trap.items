@@ -1,0 +1,4 @@
+// Items to control smart Mouse Traps
+// See: https://petro.ws/smart-mouse-trap/
+
+Group:Contact:AND(CLOSED, OPEN) mouse_trap "Mouse traps [%s]" <siren>

@@ -1,0 +1,7 @@
+rule "Mouse trap detected"
+when
+    Member of mouse_trap changed from CLOSED to OPEN
+then
+    logInfo("mouse", "Mouse trap: " + triggeringItem.getLabel())
+    global_message.sendCommand("MOUSE TRAP! " + triggeringItem.getLabel())
+end
