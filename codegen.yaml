@@ -1156,6 +1156,8 @@ devices:
     type: IKEA_PARASOLL
     groups_skip_auto:
       - contact
+    labels:
+      contact: '[MAP(mouse_trap.map):%s]'
     groups:
       contact:
       - mouse_trap
@@ -1166,6 +1168,8 @@ devices:
     type: IKEA_PARASOLL
     groups_skip_auto:
       - contact
+    labels:
+      contact: '[MAP(mouse_trap.map):%s]'
     groups:
       contact:
       - mouse_trap
