@@ -935,4 +935,22 @@ Text item=mouse_trap_2_link
 Text item=mouse_trap_2_contact
 Text item=mouse_trap_2_battery
 }
+Frame label="Mouse trap SZ (0x048727fffe5d58e3)" {
+// Mouse trap SZ (0x048727fffe5d58e3)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=mouse_trap_3_lowbatt
+Text item=mouse_trap_3_ota
+Text item=mouse_trap_3_link
+Text item=mouse_trap_3_contact
+Text item=mouse_trap_3_battery
+}
+Frame label="Mouse trap FL (0x048727fffe5d07db)" {
+// Mouse trap FL (0x048727fffe5d07db)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=mouse_trap_4_lowbatt
+Text item=mouse_trap_4_ota
+Text item=mouse_trap_4_link
+Text item=mouse_trap_4_contact
+Text item=mouse_trap_4_battery
+}
 }

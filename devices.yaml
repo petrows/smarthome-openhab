@@ -20,6 +20,10 @@
   simulated_brightness:
     delta: 5
     interval: 100
+'0x048727fffe5d07db':
+  friendly_name: mouse_trap_4
+'0x048727fffe5d58e3':
+  friendly_name: mouse_trap_3
 '0x048727fffea43740':
   friendly_name: mouse_trap_1
 '0x04cd15fffe35f24e':

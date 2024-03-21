@@ -767,3 +767,17 @@ Switch mouse_trap_2_ota "Mouse trap KG OTA [%s]" <fire> (g_all_ota) {channel="mq
 Number:Dimensionless mouse_trap_2_link "Mouse trap KG LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_2:link"}
 Contact mouse_trap_2_contact "Mouse trap KG [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_2:contact"}
 Number:Dimensionless mouse_trap_2_battery "Mouse trap KG  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_2:battery"}
+// Mouse trap SZ (0x048727fffe5d58e3)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Switch mouse_trap_3_lowbatt "Mouse trap SZ BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_3:battery_low"}
+Switch mouse_trap_3_ota "Mouse trap SZ OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mouse_trap_3:ota"}
+Number:Dimensionless mouse_trap_3_link "Mouse trap SZ LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_3:link"}
+Contact mouse_trap_3_contact "Mouse trap SZ [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_3:contact"}
+Number:Dimensionless mouse_trap_3_battery "Mouse trap SZ  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_3:battery"}
+// Mouse trap FL (0x048727fffe5d07db)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Switch mouse_trap_4_lowbatt "Mouse trap FL BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_4:battery_low"}
+Switch mouse_trap_4_ota "Mouse trap FL OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mouse_trap_4:ota"}
+Number:Dimensionless mouse_trap_4_link "Mouse trap FL LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_4:link"}
+Contact mouse_trap_4_contact "Mouse trap FL [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_4:contact"}
+Number:Dimensionless mouse_trap_4_battery "Mouse trap FL  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_4:battery"}

@@ -1173,3 +1173,27 @@ devices:
     groups:
       contact:
       - mouse_trap
+
+  - name: Mouse trap SZ
+    id: mouse_trap_3
+    zigbee_id: '0x048727fffe5d58e3'
+    type: IKEA_PARASOLL
+    groups_skip_auto:
+      - contact
+    labels:
+      contact: '[MAP(mouse_trap.map):%s]'
+    groups:
+      contact:
+      - mouse_trap
+
+  - name: Mouse trap FL
+    id: mouse_trap_4
+    zigbee_id: '0x048727fffe5d07db'
+    type: IKEA_PARASOLL
+    groups_skip_auto:
+      - contact
+    labels:
+      contact: '[MAP(mouse_trap.map):%s]'
+    groups:
+      contact:
+      - mouse_trap
