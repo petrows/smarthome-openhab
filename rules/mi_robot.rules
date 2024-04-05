@@ -88,7 +88,7 @@ end
 
 rule "EG Robot clean auto"
 when
-	Time cron "0 0 12 ? * MON-FRI"
+	Time cron "0 0 13 ? * MON-FRI"
 then
     // Master switch
     if (OFF == eg_robot_regular_enable.state) {
