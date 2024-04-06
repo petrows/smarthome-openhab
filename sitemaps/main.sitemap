@@ -399,6 +399,11 @@ sitemap main label="MAIN"
             Text item=m800s_time
             Switch item=m800s_state_command label="Command []" mappings=["OFF"="OFF", "WARM"="WARM", "ON"="START"]
 		}
+        Group item=ku_feeder_state label="Feeder [%s]" {
+            Text item=ku_feeder_state label="Status [%s]"
+            Switch item=ku_feeder_manual label="Feed []" mappings=["1"="SMALL", "3"="NORMAL", "9"="DAY"]
+            Switch item=ku_feeder_light
+		}
 		Group item=eg_robot_status icon="pump" label="Robot EG [MAP(eve_status.map):%s]" {
             Frame label="Regular cleaning" {
                 Switch item=eg_robot_regular_enable label="Enable"

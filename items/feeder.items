@@ -1,0 +1,6 @@
+Number:Dimensionless ku_feeder_manual { channel="tuya:tuyaDevice:bfceb8ff6c4edf5a80i3ws:manual_feed" }
+Number:Dimensionless ku_feeder_battery "Feeder BAT [%d %%]" <battery> { channel="tuya:tuyaDevice:bfceb8ff6c4edf5a80i3ws:battery_percentage" }
+Number:Dimensionless ku_feeder_report { channel="tuya:tuyaDevice:bfceb8ff6c4edf5a80i3ws:feed_report" }
+String ku_feeder_state "Feeder State [%s]" <cistern> { channel="tuya:tuyaDevice:bfceb8ff6c4edf5a80i3ws:feed_state" }
+Switch ku_feeder_light "Feeder Light [%s]" <light> { channel="tuya:tuyaDevice:bfceb8ff6c4edf5a80i3ws:light" }
+

@@ -1,0 +1,23 @@
+// One portion = 8g
+// Day ration = 72g (9x portions)
+
+rule "Feeder: morning"
+when
+    Time cron "0 00 6 ? * *"
+then
+    ku_feeder_manual.sendCommand("3")
+end
+
+rule "Feeder: day"
+when
+    Time cron "0 00 13 ? * *"
+then
+    ku_feeder_manual.sendCommand("3")
+end
+
+rule "Feeder: evening"
+when
+    Time cron "0 00 20 ? * *"
+then
+    ku_feeder_manual.sendCommand("3")
+end
