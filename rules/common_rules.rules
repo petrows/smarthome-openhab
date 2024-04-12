@@ -167,13 +167,13 @@ end
 
 // Power on external backup, due to timetable
 
-// rule "Backup ext start"
-// when
-//     Time cron "0 00 12 ? * *"
-// then
-//     logInfo("common", "Backup-ext power up")
-//     backup_ext_power_sw.sendCommand(ON)
-// end
+rule "Backup ext start"
+when
+    Time cron "0 00 12 ? * *"
+then
+    logInfo("common", "Backup-ext power up")
+    backup_ext_power_sw.sendCommand(ON)
+end
 
 // Power off external backup, if not active
 
