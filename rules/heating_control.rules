@@ -132,31 +132,6 @@ then
     set_room.apply("sz", temp_off)
 end
 
-rule "Heating EVENING"
-when
-	Time cron "0 00 18 ? * *"
-then
-	logWarn("heating", "Set EVENING")
-
-	val temp = cfgHeatingTempHeat.state as Number
-    val temp_off = cfgHeatingTempNight.state as Number
-
-    set_room.apply("ku", temp_off)
-    set_room.apply("sz", temp_off)
-    set_room.apply("kg", temp)
-end
-
-rule "Heating for study"
-when
-	Time cron "0 00 06 ? * WED,FRI"
-then
-	logWarn("heating", "Set study mode")
-
-	val temp = cfgHeatingTempHeat.state as Number
-
-    set_room.apply("kg", temp)
-end
-
 // This rule is fired if any window open/closed
 // Will stop heating on open
 rule "Windows state changed"
