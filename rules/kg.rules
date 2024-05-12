@@ -14,3 +14,13 @@ then
         lg3_up_light.sendCommand(OFF)
     }
 end
+
+// Try to check PC power status on light ON -> OFF
+
+// Check that PC is off and turn off also sockets there
+rule "KG light to PC power check"
+when
+    Item kg_light changed from ON to OFF
+then
+    desktop_petro_power_try.sendCommand(OFF)
+end
