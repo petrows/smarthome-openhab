@@ -7,19 +7,3 @@ then
 	val telegramAction = getActions("telegram","telegram:telegramBot:PWS_Notification")
     telegramAction.sendTelegram(receivedCommand.toString)
 end
-
-rule "Waterleak LG 4"
-when
-	Item kg_lager4_leak_leak changed to ON
-then
-	logWarn("water-leak", "WATER LEAK IN KG 4!")
-    global_message.sendCommand("WATER LEAK IN KG 4!")
-end
-
-rule "Waterleak LG 3"
-when
-	Item garten_wasser_leak_leak changed to ON
-then
-	logWarn("water-leak", "WATER LEAK IN KG 2!")
-    global_message.sendCommand("WATER LEAK IN KG 2!")
-end

@@ -391,6 +391,7 @@ sitemap main label="MAIN"
         Text item=dryer_state_grp
     }
     Frame {
+        Group item=g_all_leak label="Leak [MAP(leak.map):%s]"
         Group item=mouse_trap label="Mouse trap [MAP(mouse_trap.map):%s]"
     }
 	Frame {

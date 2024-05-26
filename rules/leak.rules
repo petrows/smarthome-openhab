@@ -1,0 +1,7 @@
+rule "Waterleak"
+when
+    Member of g_all_leak changed from OFF to ON
+then
+    logWarn("water-leak", "LEAK: " + triggeringItem.getLabel())
+    global_message.sendCommand("WATER LEAK! " + triggeringItem.getLabel())
+end

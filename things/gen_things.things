@@ -567,7 +567,7 @@ Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
 // BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
 Thing mqtt:topic:openhab:ku_leak "Kitchen leak" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : leak [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"leak\".*)∩JSONPATH:$.leak", on="true", off="false"]
+		Type switch : leak [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
 		Type number : battery [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
