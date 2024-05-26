@@ -460,6 +460,15 @@ Text item=ku_window_door_activity
 Text item=ku_window_door_contact
 Text item=ku_window_door_battery
 }
+Frame label="Kitchen leak (0xb0c7defffe640add)" {
+// Kitchen leak (0xb0c7defffe640add)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=ku_leak_lowbatt
+Text item=ku_leak_ota
+Text item=ku_leak_link
+Text item=ku_leak_leak
+Text item=ku_leak_battery
+}
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html

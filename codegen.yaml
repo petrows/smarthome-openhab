@@ -596,6 +596,11 @@ devices:
       contact:
       - ku_windows
 
+  - name: Kitchen leak
+    id: ku_leak
+    zigbee_id: '0xb0c7defffe640add'
+    type: IKEA_BADRING
+
 # TREPPE ================================
 
   - name: Treppe Door sensor

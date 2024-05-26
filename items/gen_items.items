@@ -381,6 +381,13 @@ Number:Dimensionless ku_window_door_link "KU Window Door LINK [%d]" <linkz> (g_a
 DateTime ku_window_door_activity "KU Window Door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_window_door:activity"}
 Contact ku_window_door_contact "KU Window Door [%s]" <door> (g_all_contact,ku_windows) {channel="mqtt:topic:openhab:ku_window_door:contact"}
 Number:Dimensionless ku_window_door_battery "KU Window Door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_window_door:battery"}
+// Kitchen leak (0xb0c7defffe640add)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Switch ku_leak_lowbatt "Kitchen leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_leak:battery_low"}
+Switch ku_leak_ota "Kitchen leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_leak:ota"}
+Number:Dimensionless ku_leak_link "Kitchen leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_leak:link"}
+Switch ku_leak_leak "Kitchen leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:ku_leak:leak"}
+Number:Dimensionless ku_leak_battery "Kitchen leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_leak:battery"}
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch tr_door_sensor_lowbatt "Treppe Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_door_sensor:battery_low"}
