@@ -37,7 +37,7 @@ Part of FontAwesome project: https://fontawesome.com/license
 # Openhab
 
 Send command to device via CLI
-```
+```bash
 docker exec -it  Openhab /openhab/runtime/bin/client
 openhab:send g_zigbee_ota OFF
 ```
@@ -66,3 +66,10 @@ Items, groups: ``<location>[_<sub-location>]_<type>``:
 * ``eg_light``
 * ``wz_main_remote``
 * ``wz_climate``
+
+# Stats
+
+Drop measurment, if group type is changed:
+```bash
+docker exec -it -u 0 Openhab-influxdb influx -database openhab3_db -execute 'DROP MEASUREMENT g_all_leak'
+```
