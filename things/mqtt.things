@@ -55,3 +55,14 @@ Thing mqtt:topic:openhab:sz-curtain (mqtt:broker:openhab) {
 		// Read-only channel, to read current state
 		Type string : state  [ stateTopic="tuya/sz_curtain/dps/3/state", trigger="true" ]
 }
+
+// octoprint events
+Thing mqtt:topic:openhab:octoprint (mqtt:broker:openhab) {
+	Channels:
+		Type number : progress  [ stateTopic="octoPrint/progress/printing", transformationPattern="REGEX:(.*\"progress\".*)∩JSONPATH:$.progress", unit="%"]
+		Type string : file  [ stateTopic="octoPrint/progress/printing", transformationPattern="REGEX:(.*\"path\".*)∩JSONPATH:$.path"]
+		Type number : temperature_bed_actual  [ stateTopic="octoPrint/temperature/bed", transformationPattern="REGEX:(.*\"actual\".*)∩JSONPATH:$.actual", unit="C°"]
+		Type number : temperature_bed_target  [ stateTopic="octoPrint/temperature/bed", transformationPattern="REGEX:(.*\"target\".*)∩JSONPATH:$.target", unit="C°"]
+		Type number : temperature_tool_actual  [ stateTopic="octoPrint/temperature/tool0", transformationPattern="REGEX:(.*\"actual\".*)∩JSONPATH:$.actual", unit="C°"]
+		Type number : temperature_tool_target  [ stateTopic="octoPrint/temperature/tool0", transformationPattern="REGEX:(.*\"target\".*)∩JSONPATH:$.target", unit="C°"]
+}

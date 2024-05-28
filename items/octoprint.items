@@ -1,0 +1,6 @@
+Number:Dimensionless ocotprint_progress "Octoprint progress [%d %%]"{channel="mqtt:topic:openhab:octoprint:progress"}
+String ocotprint_file "Octoprint file [%s]"{channel="mqtt:topic:openhab:octoprint:file"}
+Number:Temperature ocotprint_temperature_bed_actual "Octoprint bed [%.1f %unit%]"{channel="mqtt:topic:openhab:octoprint:temperature_bed_actual"}
+Number:Temperature ocotprint_temperature_bed_target "Octoprint bed set [%.1f %unit%]"{channel="mqtt:topic:openhab:octoprint:temperature_bed_target"}
+Number:Temperature ocotprint_temperature_tool_actual "Octoprint tool [%.1f %unit%]"{channel="mqtt:topic:openhab:octoprint:temperature_tool_actual"}
+Number:Temperature ocotprint_temperature_tool_target "Octoprint tool set [%.1f %unit%]"{channel="mqtt:topic:openhab:octoprint:temperature_tool_target"}

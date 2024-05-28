@@ -464,12 +464,16 @@ sitemap main label="MAIN"
             }
         }
 		Switch item=garten_wasser_sw
+        Group item=kg_lager1_printer_power_sw label="Octoprint" {
+            Group item=kg_lager1_printer_power_sw label="Power" {
+                Switch item=kg_lager1_printer_power_sw
+            }
+            Text item=ocotprint_progress
+            Text item=ocotprint_file
+            Text item=ocotprint_temperature_bed_actual
+            Text item=ocotprint_temperature_tool_actual
+        }
 	}
-
-    Frame icon="flow" {
-        Text item=garten_wasser_leak_leak
-        Text item=kg_lager4_leak_leak
-    }
 
 	Frame icon="bedroom" {
 		Group item=gSettings label="Settings" {
