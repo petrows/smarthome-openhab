@@ -565,6 +565,11 @@ Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_
 Number:Dimensionless kg_lager1_main_light_rssi "KG Lager 1 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager1_main_light:rssi"}
 String kg_lager1_main_light_bssid "KG Lager 1 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager1_main_light:bssid"}
 DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_main_light:activity"}
+// 3D Printer power (0x28dba7fffe5fa1dd)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Switch kg_lager1_printer_power_ota "3D Printer power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager1_printer_power:ota"}
+Number:Dimensionless kg_lager1_printer_power_link "3D Printer power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager1_printer_power:link"}
+Switch kg_lager1_printer_power_sw "3D Printer power" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_lager1_printer_power:state"}
 // KG Lager 3 Climate (0xa4c1381155f63287)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch lg3_climate_lowbatt "KG Lager 3 Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:lg3_climate:battery_low"}
