@@ -468,6 +468,8 @@ sitemap main label="MAIN"
             Group item=kg_lager1_printer_power_sw label="Power" {
                 Switch item=kg_lager1_printer_power_sw
             }
+            Text item=kg_lager1_printer_climate_temperature
+            Text item=kg_lager1_printer_climate_humidity
             Text item=ocotprint_progress
             Text item=ocotprint_file
             Text item=ocotprint_temperature_bed_actual

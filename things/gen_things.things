@@ -847,6 +847,19 @@ Thing mqtt:topic:openhab:kg_lager1_printer_power "3D Printer power" (mqtt:broker
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager1_printer_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager1_printer_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// 3D Printer climate (0x00158d0001c15121)
+// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Thing mqtt:topic:openhab:kg_lager1_printer_climate "3D Printer climate" (mqtt:broker:openhab) {
+	Channels:
+		Type number : temperature [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
+		Type number : humidity [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
+		Type number : battery [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="JS:codegen-activity.js"]
+}
 // KG Lager 3 Climate (0xa4c1381155f63287)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:lg3_climate "KG Lager 3 Climate" (mqtt:broker:openhab) {

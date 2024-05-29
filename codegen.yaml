@@ -892,6 +892,11 @@ devices:
     zigbee_id: '0x28dba7fffe5fa1dd'
     type: OSRAM_SMART_PLUG
 
+  - name: 3D Printer climate
+    id: kg_lager1_printer_climate
+    zigbee_id: '0x00158d0001c15121'
+    type: XIAOMI_AQARA_V1
+
   # Storage room 3
 
   - name: KG Lager 3 Climate
