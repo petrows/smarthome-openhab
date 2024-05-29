@@ -565,20 +565,20 @@ Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_
 Number:Dimensionless kg_lager1_main_light_rssi "KG Lager 1 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager1_main_light:rssi"}
 String kg_lager1_main_light_bssid "KG Lager 1 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager1_main_light:bssid"}
 DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_main_light:activity"}
-// 3D Printer power (0x28dba7fffe5fa1dd)
+// Octoprint power (0x28dba7fffe5fa1dd)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch kg_lager1_printer_power_ota "3D Printer power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager1_printer_power:ota"}
-Number:Dimensionless kg_lager1_printer_power_link "3D Printer power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager1_printer_power:link"}
-Switch kg_lager1_printer_power_sw "3D Printer power" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_lager1_printer_power:state"}
-// 3D Printer climate (0x00158d0001c15121)
+Switch octoprint_power_ota "Octoprint power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:octoprint_power:ota"}
+Number:Dimensionless octoprint_power_link "Octoprint power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:octoprint_power:link"}
+Switch octoprint_power_sw "Octoprint power" <light> (g_all_sw) {channel="mqtt:topic:openhab:octoprint_power:state"}
+// Octoprint climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Switch kg_lager1_printer_climate_lowbatt "3D Printer climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager1_printer_climate:battery_low"}
-Switch kg_lager1_printer_climate_ota "3D Printer climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager1_printer_climate:ota"}
-Number:Dimensionless kg_lager1_printer_climate_link "3D Printer climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager1_printer_climate:link"}
-DateTime kg_lager1_printer_climate_activity "3D Printer climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_printer_climate:activity"}
-Number:Temperature kg_lager1_printer_climate_temperature "3D Printer climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:kg_lager1_printer_climate:temperature"}
-Number:Dimensionless kg_lager1_printer_climate_humidity "3D Printer climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:kg_lager1_printer_climate:humidity"}
-Number:Dimensionless kg_lager1_printer_climate_battery "3D Printer climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager1_printer_climate:battery"}
+Switch octoprint_climate_lowbatt "Octoprint climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:octoprint_climate:battery_low"}
+Switch octoprint_climate_ota "Octoprint climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:octoprint_climate:ota"}
+Number:Dimensionless octoprint_climate_link "Octoprint climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:octoprint_climate:link"}
+DateTime octoprint_climate_activity "Octoprint climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:octoprint_climate:activity"}
+Number:Temperature octoprint_climate_temperature "Octoprint climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:octoprint_climate:temperature"}
+Number:Dimensionless octoprint_climate_humidity "Octoprint climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:octoprint_climate:humidity"}
+Number:Dimensionless octoprint_climate_battery "Octoprint climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:octoprint_climate:battery"}
 // KG Lager 3 Climate (0xa4c1381155f63287)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch lg3_climate_lowbatt "KG Lager 3 Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:lg3_climate:battery_low"}

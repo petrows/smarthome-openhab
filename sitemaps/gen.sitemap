@@ -687,23 +687,23 @@ Text item=kg_lager1_main_light_rssi
 Text item=kg_lager1_main_light_bssid
 Text item=kg_lager1_main_light_activity
 }
-Frame label="3D Printer power (0x28dba7fffe5fa1dd)" {
-// 3D Printer power (0x28dba7fffe5fa1dd)
+Frame label="Octoprint power (0x28dba7fffe5fa1dd)" {
+// Octoprint power (0x28dba7fffe5fa1dd)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=kg_lager1_printer_power_ota
-Text item=kg_lager1_printer_power_link
-Switch item=kg_lager1_printer_power_sw
+Text item=octoprint_power_ota
+Text item=octoprint_power_link
+Switch item=octoprint_power_sw
 }
-Frame label="3D Printer climate (0x00158d0001c15121)" {
-// 3D Printer climate (0x00158d0001c15121)
+Frame label="Octoprint climate (0x00158d0001c15121)" {
+// Octoprint climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Text item=kg_lager1_printer_climate_lowbatt
-Text item=kg_lager1_printer_climate_ota
-Text item=kg_lager1_printer_climate_link
-Text item=kg_lager1_printer_climate_activity
-Text item=kg_lager1_printer_climate_temperature
-Text item=kg_lager1_printer_climate_humidity
-Text item=kg_lager1_printer_climate_battery
+Text item=octoprint_climate_lowbatt
+Text item=octoprint_climate_ota
+Text item=octoprint_climate_link
+Text item=octoprint_climate_activity
+Text item=octoprint_climate_temperature
+Text item=octoprint_climate_humidity
+Text item=octoprint_climate_battery
 }
 Frame label="KG Lager 3 Climate (0xa4c1381155f63287)" {
 // KG Lager 3 Climate (0xa4c1381155f63287)

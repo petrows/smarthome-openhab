@@ -5,7 +5,7 @@
 '0x00158d0001be5b2d':
   friendly_name: ku_light_switch_spule
 '0x00158d0001c15121':
-  friendly_name: kg_lager1_printer_climate
+  friendly_name: octoprint_climate
 '0x00158d0001c2cc22':
   friendly_name: ext_climate
 '0x00158d000488052c':
@@ -82,7 +82,7 @@
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':
-  friendly_name: kg_lager1_printer_power
+  friendly_name: octoprint_power
 '0x3c2ef5fffe41fc77':
   friendly_name: mouse_trap_2
 '0x540f57fffe1e420c':

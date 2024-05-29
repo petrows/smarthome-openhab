@@ -839,26 +839,26 @@ Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (Haupt)" (mqtt:broker:
 		Type datetime : activity [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JS:codegen-activity.js"]
 		Type switch : POWER [stateTopic="stat/kg_lager1_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager1_main_light/POWER", on="ON", off="OFF"]
 }
-// 3D Printer power (0x28dba7fffe5fa1dd)
+// Octoprint power (0x28dba7fffe5fa1dd)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:kg_lager1_printer_power "3D Printer power" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:octoprint_power "Octoprint power" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/kg_lager1_printer_power", commandTopic="zigbee2mqtt/kg_lager1_printer_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0"]
-		Type number : link [stateTopic="zigbee2mqtt/kg_lager1_printer_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager1_printer_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type switch : state [stateTopic="zigbee2mqtt/octoprint_power", commandTopic="zigbee2mqtt/octoprint_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0"]
+		Type number : link [stateTopic="zigbee2mqtt/octoprint_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/octoprint_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// 3D Printer climate (0x00158d0001c15121)
+// Octoprint climate (0x00158d0001c15121)
 // Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Thing mqtt:topic:openhab:kg_lager1_printer_climate "3D Printer climate" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:octoprint_climate "Octoprint climate" (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
-		Type number : humidity [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager1_printer_climate", transformationPattern="JS:codegen-activity.js"]
+		Type number : temperature [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
+		Type number : humidity [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
+		Type number : battery [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Lager 3 Climate (0xa4c1381155f63287)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
