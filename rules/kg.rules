@@ -1,4 +1,17 @@
 
+// Auto light in Lager 1
+// turn ON light when dorr is open
+rule "Lager 1 door light"
+when
+    Item kg_lager1_door_contact changed
+then
+    if (newState == OPEN) {
+        kg_lager1_main_light.sendCommand(ON)
+    } else {
+        kg_lager1_main_light.sendCommand(OFF)
+    }
+end
+
 // Auto light in laundry
 // turn ON light when dorr is open
 rule "Laubdry door light"
@@ -24,3 +37,4 @@ when
 then
     desktop_petro_power_try.sendCommand(OFF)
 end
+

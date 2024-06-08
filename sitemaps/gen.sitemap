@@ -695,6 +695,15 @@ Text item=kg_lager1_main_light_rssi
 Text item=kg_lager1_main_light_bssid
 Text item=kg_lager1_main_light_activity
 }
+Frame label="KG Lager 1 door (0x048727fffe9cc0fb)" {
+// KG Lager 1 door (0x048727fffe9cc0fb)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=kg_lager1_door_lowbatt
+Text item=kg_lager1_door_ota
+Text item=kg_lager1_door_link
+Text item=kg_lager1_door_contact
+Text item=kg_lager1_door_battery
+}
 Frame label="Octoprint power (0x28dba7fffe5fa1dd)" {
 // Octoprint power (0x28dba7fffe5fa1dd)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
