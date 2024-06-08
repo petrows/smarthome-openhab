@@ -248,6 +248,11 @@ devices:
     zigbee_id: '0x9035eafffee1ba1d'
     type: IKEA_TRADFRI_STYRBAR
 
+  - name: KS Blinds remote
+    id: ks_blinds_remote
+    zigbee_id: '0xb43522fffe7939b3'
+    type: IKEA_TRADFRI_REMOTE
+
 # LIVING ROOM ================================
 
   - name: WZ Climate

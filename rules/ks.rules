@@ -105,3 +105,23 @@ then
         ks_light_night_dim_fast.sendCommand((ks_light_night_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
     }
 end
+
+rule "KS blinds remote sw"
+when
+    Channel "mqtt:topic:openhab:ks_blinds_remote:action" triggered
+then
+	var state = receivedEvent
+    switch(state) {
+        case "brightness_move_up",
+        case "on": {
+            ks_shutter_1_cmd.sendCommand("open")
+        }
+        case "brightness_move_down",
+        case "off": {
+            ks_shutter_1_cmd.sendCommand("close")
+        }
+        case "brightness_stop": {
+            ks_shutter_1_cmd.sendCommand("stop")
+        }
+    }
+end

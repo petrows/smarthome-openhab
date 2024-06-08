@@ -180,6 +180,8 @@
   friendly_name: ku_leak
 '0xb43522fffe790ebe':
   friendly_name: kg_lager4_switch
+'0xb43522fffe7939b3':
+  friendly_name: ks_blinds_remote
 '0xb4e3f9fffeb35529':
   friendly_name: sz_up_remote
   simulated_brightness:
