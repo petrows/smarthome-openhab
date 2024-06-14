@@ -100,7 +100,7 @@ Switch bz_light_2_sw_proxy "BZ Light (shower) proxy" <light> (g_all_sw,all_light
 Switch bz_light_2_sw "BZ Light (shower)" <light> {channel="mqtt:topic:openhab:bz_light_2:state"}
 // BZ Mirror (bz_mirror)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch bz_mirror "BZ Mirror" <light> (g_all_sw) {channel="mqtt:topic:openhab:bz_mirror:power"}
+Switch bz_mirror "BZ Mirror" <light> (g_all_sw,all_light,eg_light,bz_light) {channel="mqtt:topic:openhab:bz_mirror:power", expire="1h,command=OFF"}
 Number:Dimensionless bz_mirror_rssi "BZ Mirror RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:bz_mirror:rssi"}
 String bz_mirror_bssid "BZ Mirror BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bz_mirror:bssid"}
 DateTime bz_mirror_activity "BZ Mirror activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:bz_mirror:activity"}
@@ -335,7 +335,7 @@ Number:Dimensionless sz_bed_light_r_link "SZ Bed R LINK [%d]" <linkz> (g_all_lin
 Switch sz_bed_light_r_sw "SZ Bed R" <light> (g_all_sw,all_light,eg_light,sz_light,sz_bed_light_sw) {channel="mqtt:topic:openhab:sz_bed_light_r:state"}
 // SZ Bed Floor (sz_bed_floor_light)
 // Tasmota RGB+W dimmer / https://templates.blakadder.com/arilux_LC06.html
-Switch sz_bed_floor_light_sw "SZ Bed Floor" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_bed_floor_light:power"}
+Switch sz_bed_floor_light_sw "SZ Bed Floor" <light> (g_all_sw,all_light,sz_light) {channel="mqtt:topic:openhab:sz_bed_floor_light:power"}
 Dimmer sz_bed_floor_light_dim "SZ Bed Floor dim" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bed_floor_light:dimmer"}
 Dimmer sz_bed_floor_light_ct "SZ Bed Floor ct" <light> (g_all_ct) {channel="mqtt:topic:openhab:sz_bed_floor_light:ct"}
 Color sz_bed_floor_light_color "SZ Bed Floor color" <light> (g_all_color) {channel="mqtt:topic:openhab:sz_bed_floor_light:hsbcolor"}
@@ -544,25 +544,25 @@ Number:Dimensionless kg_main1_work_light_link "KG Hobbyraum (Work light) LINK [%
 Switch kg_main1_work_light_sw "KG Hobbyraum (Work light)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum) {channel="mqtt:topic:openhab:kg_main1_work_light:state"}
 // KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
-Switch kg_main1_light "KG Hobbyraum (Workshop)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_main1_light:power"}
+Switch kg_main1_light "KG Hobbyraum (Workshop)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_auto) {channel="mqtt:topic:openhab:kg_main1_light:power"}
 Number:Dimensionless kg_main1_light_rssi "KG Hobbyraum (Workshop) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_main1_light:rssi"}
 String kg_main1_light_bssid "KG Hobbyraum (Workshop) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_main1_light:bssid"}
 DateTime kg_main1_light_activity "KG Hobbyraum (Workshop) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_main1_light:activity"}
 // KG Hobbyraum (Haupt) (kg_main2_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
-Switch kg_main2_light "KG Hobbyraum (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_main2_light:power"}
+Switch kg_main2_light "KG Hobbyraum (Haupt)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum) {channel="mqtt:topic:openhab:kg_main2_light:power"}
 Number:Dimensionless kg_main2_light_rssi "KG Hobbyraum (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_main2_light:rssi"}
 String kg_main2_light_bssid "KG Hobbyraum (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_main2_light:bssid"}
 DateTime kg_main2_light_activity "KG Hobbyraum (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_main2_light:activity"}
 // KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_hz_main_light:power"}
+Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_hz_main_light:power", expire="1h,command=OFF"}
 Number:Dimensionless kg_hz_main_light_rssi "KG Heuzung (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_hz_main_light:rssi"}
 String kg_hz_main_light_bssid "KG Heuzung (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_hz_main_light:bssid"}
 DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_hz_main_light:activity"}
 // Garden water (garten_wasser_sw)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:openhab:garten_wasser_sw:power"}
+Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:openhab:garten_wasser_sw:power", expire="1h,command=OFF"}
 Number:Dimensionless garten_wasser_sw_rssi "Garden water RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:garten_wasser_sw:rssi"}
 String garten_wasser_sw_bssid "Garden water BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:garten_wasser_sw:bssid"}
 DateTime garten_wasser_sw_activity "Garden water activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:garten_wasser_sw:activity"}
@@ -576,7 +576,7 @@ Switch garten_wasser_leak_leak "Warehouse 3 leak [%s]" <flow> (g_all_leak) {chan
 Number:Dimensionless garten_wasser_leak_battery "Warehouse 3 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:garten_wasser_leak:battery"}
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_lager1_main_light:power"}
+Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager1_main_light:power", expire="1h,command=OFF"}
 Number:Dimensionless kg_lager1_main_light_rssi "KG Lager 1 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager1_main_light:rssi"}
 String kg_lager1_main_light_bssid "KG Lager 1 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager1_main_light:bssid"}
 DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_main_light:activity"}
@@ -628,7 +628,7 @@ Contact kg_lager3_door_contact "KG Lager 3 door [%s]" <door> (g_all_contact) {ch
 Number:Dimensionless kg_lager3_door_battery "KG Lager 3 door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager3_door:battery"}
 // KG Lager 3 (Haupt) (lg3_up_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch lg3_up_light "KG Lager 3 (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:lg3_up_light:power"}
+Switch lg3_up_light "KG Lager 3 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:lg3_up_light:power", expire="1h,command=OFF"}
 Number:Dimensionless lg3_up_light_rssi "KG Lager 3 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:lg3_up_light:rssi"}
 String lg3_up_light_bssid "KG Lager 3 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:lg3_up_light:bssid"}
 DateTime lg3_up_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_up_light:activity"}
@@ -643,7 +643,7 @@ Number:Power lg3_washmachine_ac_power "Washmachine [%.0f W]" <energy> (g_all_ac_
 Number:Energy lg3_washmachine_ac_energy "Washmachine [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:lg3_washmachine:ac_energy"}
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_lager4_main_light:power"}
+Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager4_main_light:power", expire="1h,command=OFF"}
 Number:Dimensionless kg_lager4_main_light_rssi "KG Lager 4 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager4_main_light:rssi"}
 String kg_lager4_main_light_bssid "KG Lager 4 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager4_main_light:bssid"}
 DateTime kg_lager4_main_light_activity "KG Lager 4 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager4_main_light:activity"}

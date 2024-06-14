@@ -781,7 +781,7 @@ Thing mqtt:topic:openhab:desktop_petro_pc_power "Petro Desktop PC" (mqtt:broker:
 		Type string : bssid [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : power [stateTopic="stat/desktop_petro_pc_power/RESULT", transformationPattern="JSONPATH:$.power", commandTopic="cmnd/desktop_petro_pc_power/power", on="ON", off="OFF"]
+		Type switch : power [stateTopic="stat/desktop_petro_pc_power/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/desktop_petro_pc_power/POWER", on="ON", off="OFF"]
 }
 // Petro Desktop remote (0x000d6ffffee8357d)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
@@ -819,7 +819,7 @@ Thing mqtt:topic:openhab:kg_main2_light "KG Hobbyraum (Haupt)" (mqtt:broker:open
 		Type string : bssid [stateTopic="tele/kg_main2_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/kg_main2_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/kg_main2_light/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : power [stateTopic="stat/kg_main2_light/RESULT", transformationPattern="JSONPATH:$.power", commandTopic="cmnd/kg_main2_light/power", on="ON", off="OFF"]
+		Type switch : power [stateTopic="stat/kg_main2_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_main2_light/POWER", on="ON", off="OFF"]
 }
 // KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
@@ -829,7 +829,7 @@ Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (Haupt)" (mqtt:broker:open
 		Type string : bssid [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : power [stateTopic="stat/kg_hz_main_light/RESULT", transformationPattern="JSONPATH:$.power", commandTopic="cmnd/kg_hz_main_light/power", on="ON", off="OFF"]
+		Type switch : power [stateTopic="stat/kg_hz_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_hz_main_light/POWER", on="ON", off="OFF"]
 }
 // Garden water (garten_wasser_sw)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
@@ -839,7 +839,7 @@ Thing mqtt:topic:openhab:garten_wasser_sw "Garden water" (mqtt:broker:openhab) {
 		Type string : bssid [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/garten_wasser_sw/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : power [stateTopic="stat/garten_wasser_sw/RESULT", transformationPattern="JSONPATH:$.power", commandTopic="cmnd/garten_wasser_sw/power", on="ON", off="OFF"]
+		Type switch : power [stateTopic="stat/garten_wasser_sw/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/garten_wasser_sw/POWER", on="ON", off="OFF"]
 }
 // Warehouse 3 leak (0x00158d0006b7aa81)
 // Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
@@ -861,7 +861,7 @@ Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (Haupt)" (mqtt:broker:
 		Type string : bssid [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/kg_lager1_main_light/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : power [stateTopic="stat/kg_lager1_main_light/RESULT", transformationPattern="JSONPATH:$.power", commandTopic="cmnd/kg_lager1_main_light/power", on="ON", off="OFF"]
+		Type switch : power [stateTopic="stat/kg_lager1_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager1_main_light/POWER", on="ON", off="OFF"]
 }
 // KG Lager 1 door (0x048727fffe9cc0fb)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
@@ -939,7 +939,7 @@ Thing mqtt:topic:openhab:lg3_up_light "KG Lager 3 (Haupt)" (mqtt:broker:openhab)
 		Type string : bssid [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : power [stateTopic="stat/lg3_up_light/RESULT", transformationPattern="JSONPATH:$.power", commandTopic="cmnd/lg3_up_light/power", on="ON", off="OFF"]
+		Type switch : power [stateTopic="stat/lg3_up_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/lg3_up_light/POWER", on="ON", off="OFF"]
 }
 // Washmachine (0x70b3d52b60057a95)
 // Plug socket with power function / https://www.zigbee2mqtt.io/devices/TS000F_power.html
@@ -961,7 +961,7 @@ Thing mqtt:topic:openhab:kg_lager4_main_light "KG Lager 4 (Haupt)" (mqtt:broker:
 		Type string : bssid [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : power [stateTopic="stat/kg_lager4_main_light/RESULT", transformationPattern="JSONPATH:$.power", commandTopic="cmnd/kg_lager4_main_light/power", on="ON", off="OFF"]
+		Type switch : power [stateTopic="stat/kg_lager4_main_light/RESULT", transformationPattern="JSONPATH:$.POWER", commandTopic="cmnd/kg_lager4_main_light/POWER", on="ON", off="OFF"]
 }
 // KG Lager 4 (1) (0xccccccfffedf345a)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
