@@ -109,6 +109,11 @@ Light(LIGHT.CT, {
     name: 'Верхний',
     room: ROOMS.SLEEP,
 }),
+Light(LIGHT.RGB, {
+    id: 'sz_bed_floor_light',
+    name: 'Пол',
+    room: ROOMS.SLEEP,
+}),
 Sensor({
     id: 'ku_climate',
     name: 'Климат',

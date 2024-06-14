@@ -505,6 +505,33 @@ devices:
       dim_fast:
         - sz_bed_light_dim_fast
 
+  - name: SZ Bed Floor
+    id: sz_bed_floor_light
+    type: TASMOTA_RGBW
+    channels:
+      POWER:
+        id: sz_bed_floor_light_sw
+        name: SZ Bed Floor
+        groups:
+          sw:
+            - all_light
+            - sz_light
+      Dimmer:
+        id: sz_bed_floor_light_dim
+        name: SZ Bed Floor dim
+      CT:
+        id: sz_bed_floor_light_ct
+        name: SZ Bed Floor ct
+      HSBColor:
+        id: sz_bed_floor_light_color
+        name: SZ Bed Floor color
+        y2m:
+          id: sz_bed_floor_light
+          type: Light
+          subtype: LIGHT.RGB
+          name: Пол
+          room: SLEEP
+
 # KITCHEN ================================
 
   - name: KU Climate

@@ -243,6 +243,11 @@ sitemap main label="MAIN"
 				Slider item=sz_bed_light_r_dim label="Bed R DIM [%d %%]" icon="light"
                 Slider item=sz_bed_light_r_ct label="Bed R CT [JS(codegen-mired.js):%s]" icon="light"
 			}
+            Frame {
+				Switch item=sz_bed_floor_light_sw label="Bed Floor [%s]" icon="light"
+				Slider item=sz_bed_floor_light_dim label="Bed Floor DIM [%d %%]" icon="light"
+                Colorpicker item=sz_bed_floor_light_color label="Bed Floor RGB []" icon="colorpicker"
+			}
             Frame label="Cabinet" {
 				Switch item=sz_cabinet_light_sw label="Cabinet [%s]" icon="light"
 				Slider item=sz_cabinet_light_dim label="Cabinet DIM [%d %%]" icon="light"

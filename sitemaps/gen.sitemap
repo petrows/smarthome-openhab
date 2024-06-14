@@ -399,6 +399,17 @@ Text item=sz_bed_light_r_ota
 Text item=sz_bed_light_r_link
 Switch item=sz_bed_light_r_sw
 }
+Frame label="SZ Bed Floor (sz_bed_floor_light)" {
+// SZ Bed Floor (sz_bed_floor_light)
+// Tasmota RGB+W dimmer / https://templates.blakadder.com/arilux_LC06.html
+Switch item=sz_bed_floor_light_sw
+Slider item=sz_bed_floor_light_dim
+Slider item=sz_bed_floor_light_ct
+Colorpicker item=sz_bed_floor_light_color
+Text item=sz_bed_floor_light_rssi
+Text item=sz_bed_floor_light_bssid
+Text item=sz_bed_floor_light_activity
+}
 Frame label="KU Climate (0xa4c138f5460e22dd)" {
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
