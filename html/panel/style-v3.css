@@ -1,0 +1,75 @@
+.pws-value {
+	color: red;
+}
+#clock-table {
+    width: 100%;
+}
+#clock-table-time-row {
+    text-align: center;
+    width: 50%;
+}
+#clock-table-date-row {
+    text-align: center;
+    width: 50%;
+    text-transform: uppercase;
+}
+#clock-table-date {
+    font-size: 32pt;
+}
+#clock-table-wdate {
+    font-size: 18pt;
+}
+.weather-outside-value {
+	font-size: 20pt;
+}
+.weather-forecast td {
+    padding: 3pt;
+}
+.weather-forecast-temp td {
+    padding-bottom: 1pt;
+    font-size: larger;
+    font-weight: bold;
+}
+.weather-forecast-icon td {
+    padding-top: 0pt;
+}
+
+.timetable td {
+    font-size: 15pt;
+}
+
+.nagel-clima {
+    font-size: 25pt;
+}
+
+.music-artist {
+    padding: 0pt 15pt 5pt 15pt;
+    text-align: left;
+    font-weight: bold;
+    font-size: larger;
+}
+.music-track {
+    padding: 0pt 15pt 5pt 15pt;
+    text-align: left;
+    font-size: medium;
+}
+
+.machines-info td {
+    padding: 1pt;
+    text-align: left;
+    font-size: 14pt;
+}
+
+.machines-value {
+    padding-left: 5pt !important;
+    font-weight: bold;
+}
+
+.widget-map p {
+    position: absolute;
+    font-size: 18pt;
+}
+
+.widget-map p i {
+    font-style: normal;
+}
