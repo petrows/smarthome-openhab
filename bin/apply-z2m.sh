@@ -8,3 +8,4 @@ cp /srv/zigbee2mqtt-data/devices.yaml /srv/zigbee2mqtt-data/devices-backup/$(dat
 cp /srv/openhab-data/conf/devices.yaml /srv/zigbee2mqtt-data/
 
 docker restart Openhab-zigbee2mqtt
+docker restart Openhab-yandex2mqtt
