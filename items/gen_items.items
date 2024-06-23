@@ -396,6 +396,7 @@ Number:Dimensionless ku_window_door_battery "KU Window Door  BAT [%d %%]" <batte
 Switch ku_leak_lowbatt "Kitchen leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_leak:battery_low"}
 Switch ku_leak_ota "Kitchen leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_leak:ota"}
 Number:Dimensionless ku_leak_link "Kitchen leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_leak:link"}
+DateTime ku_leak_activity "Kitchen leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_leak:activity"}
 Switch ku_leak_leak "Kitchen leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:ku_leak:leak"}
 Number:Dimensionless ku_leak_battery "Kitchen leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_leak:battery"}
 // Treppe Door sensor (0xccccccfffed82b91)

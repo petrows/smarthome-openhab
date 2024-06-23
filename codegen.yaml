@@ -117,8 +117,6 @@ devices:
     dim_max: 220
     # Do not allow run too much
     expire: 30m
-    transition_sw: 1
-    transition_brightness: 1
     y2m:
       name: Зеркало
       room: LOBBY

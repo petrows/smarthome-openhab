@@ -478,6 +478,7 @@ Frame label="Kitchen leak (0xb0c7defffe640add)" {
 Text item=ku_leak_lowbatt
 Text item=ku_leak_ota
 Text item=ku_leak_link
+Text item=ku_leak_activity
 Text item=ku_leak_leak
 Text item=ku_leak_battery
 }
