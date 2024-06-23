@@ -128,6 +128,9 @@ sitemap main label="MAIN"
             Switch item=bk_christmas_light_sw label="Christmas [%s]" icon="light"
 		}
 		Group item=fl_light label="Corridor [%s]" icon="light" {
+            Frame {
+			    Switch item=fl_light label="All [%s]" icon="light"
+            }
             Frame label="Main" {
                 Switch item=fl_up_light_sw label="Main [%s]" icon="light"
                 Slider item=fl_up_light_dim label="Main DIM [%d %%]" icon="light"

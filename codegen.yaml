@@ -89,6 +89,7 @@ devices:
       - all_light
       - eg_light
       - eg_light_auto
+      - fl_light
       dim:
       - eg_light_auto_dim
 
@@ -116,6 +117,8 @@ devices:
     dim_max: 220
     # Do not allow run too much
     expire: 30m
+    transition_sw: 1
+    transition_brightness: 1
     y2m:
       name: Зеркало
       room: LOBBY
@@ -123,6 +126,7 @@ devices:
       sw:
       - all_light
       - eg_light
+      - fl_light
 
 # WC =====================================
 

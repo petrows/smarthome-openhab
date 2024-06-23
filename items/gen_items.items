@@ -54,7 +54,7 @@ Dimmer eg_decoration_light_dim "EG Decor light DIM [%d %%]" <light> (g_all_dim,e
 Dimmer eg_decoration_light_dim_fast "EG Decor light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:eg_decoration_light:dim_fast"}
 Switch eg_decoration_light_ota "EG Decor light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_decoration_light:ota"}
 Number:Dimensionless eg_decoration_light_link "EG Decor light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_decoration_light:link"}
-Switch eg_decoration_light_sw "EG Decor light" <light> (g_all_sw,all_light,eg_light,eg_light_auto) {channel="mqtt:topic:openhab:eg_decoration_light:state"}
+Switch eg_decoration_light_sw "EG Decor light" <light> (g_all_sw,all_light,eg_light,eg_light_auto,fl_light) {channel="mqtt:topic:openhab:eg_decoration_light:state"}
 // Entrance Door sensor (0xa4c138182f60d651)
 // TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
 Switch eg_main_door_lowbatt "Entrance Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:eg_main_door:battery_low"}
@@ -83,7 +83,7 @@ Dimmer fl_mirror_dim "Entrance mirror DIM [%d %%]" <light> (g_all_dim) {channel=
 Dimmer fl_mirror_dim_fast "Entrance mirror DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:fl_mirror:dim_fast"}
 Switch fl_mirror_ota "Entrance mirror OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fl_mirror:ota"}
 Number:Dimensionless fl_mirror_link "Entrance mirror LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fl_mirror:link"}
-Switch fl_mirror_sw "Entrance mirror" <light> (g_all_sw,all_light,eg_light) {channel="mqtt:topic:openhab:fl_mirror:state", expire="30m,command=OFF"}
+Switch fl_mirror_sw "Entrance mirror" <light> (g_all_sw,all_light,eg_light,fl_light) {channel="mqtt:topic:openhab:fl_mirror:state", expire="30m,command=OFF"}
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer bz_light_1_dim "BZ Light (toilet) DIM [%d %%]" <light> (g_all_dim,bz_up_light_dim) {channel="mqtt:topic:openhab:bz_light_1:dim"}

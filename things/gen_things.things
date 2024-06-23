@@ -120,8 +120,8 @@ Thing mqtt:topic:openhab:fl_mirror_remote "Mirror remote" (mqtt:broker:openhab) 
 // IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
 Thing mqtt:topic:openhab:fl_mirror "Entrance mirror" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/fl_mirror", commandTopic="zigbee2mqtt/fl_mirror/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/fl_mirror", commandTopic="zigbee2mqtt/fl_mirror/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=220]
+		Type switch : state [stateTopic="zigbee2mqtt/fl_mirror", commandTopic="zigbee2mqtt/fl_mirror/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1"]
+		Type dimmer : dim [stateTopic="zigbee2mqtt/fl_mirror", commandTopic="zigbee2mqtt/fl_mirror/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1", min=1, max=220]
 		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/fl_mirror", commandTopic="zigbee2mqtt/fl_mirror/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=220]
 		Type number : link [stateTopic="zigbee2mqtt/fl_mirror", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/fl_mirror", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
