@@ -70,12 +70,20 @@ Switch fl_door_remote_lowbatt "Entrance Door remote BAT [MAP(codegen-lowbat.map)
 Switch fl_door_remote_ota "Entrance Door remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fl_door_remote:ota"}
 Number:Dimensionless fl_door_remote_link "Entrance Door remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fl_door_remote:link"}
 Number:Dimensionless fl_door_remote_battery "Entrance Door remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:fl_door_remote:battery"}
-// Mirror remote (0x680ae2fffeab6b80)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Switch mirror_remote_lowbatt "Mirror remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mirror_remote:battery_low"}
-Switch mirror_remote_ota "Mirror remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mirror_remote:ota"}
-Number:Dimensionless mirror_remote_link "Mirror remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mirror_remote:link"}
-Number:Dimensionless mirror_remote_battery "Mirror remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mirror_remote:battery"}
+// Mirror remote (0xb43522fffe7939b3)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer fl_mirror_remote_dim "Mirror remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fl_mirror_remote:dim"}
+Switch fl_mirror_remote_lowbatt "Mirror remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fl_mirror_remote:battery_low"}
+Switch fl_mirror_remote_ota "Mirror remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fl_mirror_remote:ota"}
+Number:Dimensionless fl_mirror_remote_link "Mirror remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fl_mirror_remote:link"}
+Number:Dimensionless fl_mirror_remote_battery "Mirror remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:fl_mirror_remote:battery"}
+// Entrance mirror (0x90ab96fffe52f8fa)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Dimmer fl_mirror_dim "Entrance mirror DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fl_mirror:dim"}
+Dimmer fl_mirror_dim_fast "Entrance mirror DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:fl_mirror:dim_fast"}
+Switch fl_mirror_ota "Entrance mirror OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fl_mirror:ota"}
+Number:Dimensionless fl_mirror_link "Entrance mirror LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fl_mirror:link"}
+Switch fl_mirror_sw "Entrance mirror" <light> (g_all_sw,all_light,eg_light) {channel="mqtt:topic:openhab:fl_mirror:state", expire="30m,command=OFF"}
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer bz_light_1_dim "BZ Light (toilet) DIM [%d %%]" <light> (g_all_dim,bz_up_light_dim) {channel="mqtt:topic:openhab:bz_light_1:dim"}
@@ -164,12 +172,6 @@ Switch ks_light_switch_lowbatt "KS Main remote BAT [MAP(codegen-lowbat.map):%s]"
 Switch ks_light_switch_ota "KS Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_light_switch:ota"}
 Number:Dimensionless ks_light_switch_link "KS Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_light_switch:link"}
 Number:Dimensionless ks_light_switch_battery "KS Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ks_light_switch:battery"}
-// KS Blinds remote (0xb43522fffe7939b3)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Switch ks_blinds_remote_lowbatt "KS Blinds remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ks_blinds_remote:battery_low"}
-Switch ks_blinds_remote_ota "KS Blinds remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_blinds_remote:ota"}
-Number:Dimensionless ks_blinds_remote_link "KS Blinds remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_blinds_remote:link"}
-Number:Dimensionless ks_blinds_remote_battery "KS Blinds remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ks_blinds_remote:battery"}
 // WZ Climate (0xa4c1386a03a53708)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch wz_climate_lowbatt "WZ Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:wz_climate:battery_low"}
@@ -310,13 +312,6 @@ Dimmer sz_bedside_drawler_light_dim_fast "SZ Bedside drawler DIM-F [%d %%]" (g_a
 Switch sz_bedside_drawler_light_ota "SZ Bedside drawler OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:ota"}
 Number:Dimensionless sz_bedside_drawler_light_link "SZ Bedside drawler LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:link"}
 Switch sz_bedside_drawler_light_sw "SZ Bedside drawler" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:state"}
-// SZ Cabinet (0x90ab96fffe52f8fa)
-// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
-Dimmer sz_cabinet_light_dim "SZ Cabinet DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_cabinet_light:dim"}
-Dimmer sz_cabinet_light_dim_fast "SZ Cabinet DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_cabinet_light:dim_fast"}
-Switch sz_cabinet_light_ota "SZ Cabinet OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_cabinet_light:ota"}
-Number:Dimensionless sz_cabinet_light_link "SZ Cabinet LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_cabinet_light:link"}
-Switch sz_cabinet_light_sw "SZ Cabinet" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_cabinet_light:state"}
 // SZ Bed L (0x9035eafffe93bfc6)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
 Dimmer sz_bed_light_l_dim "SZ Bed L DIM [%d %%]" <light> (g_all_dim,sz_light_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_l:dim"}

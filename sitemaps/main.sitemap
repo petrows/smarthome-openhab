@@ -128,13 +128,21 @@ sitemap main label="MAIN"
             Switch item=bk_christmas_light_sw label="Christmas [%s]" icon="light"
 		}
 		Group item=fl_light label="Corridor [%s]" icon="light" {
-			Switch item=fl_up_light_sw label="Main [%s]" icon="light"
-			Slider item=fl_up_light_dim label="Main DIM [%d %%]" icon="light"
-			Switch item=eg_decoration_light_sw label="Decor [%s]" icon="light"
-            Slider item=eg_decoration_light_dim label="Decor DIM [%d %%]"
-			Switch item=eg_fl_spiegel_sw label="Mirror [%s]" icon="light"
-			Slider item=eg_fl_spiegel_dim label="Mirror DIM [%d %%]" icon="light"
-			Text item=eg_main_door_contact label="Main door [%s]"
+            Frame label="Main" {
+                Switch item=fl_up_light_sw label="Main [%s]" icon="light"
+                Slider item=fl_up_light_dim label="Main DIM [%d %%]" icon="light"
+            }
+            Frame label="Decor" {
+                Switch item=eg_decoration_light_sw label="Decor [%s]" icon="light"
+                Slider item=eg_decoration_light_dim label="Decor DIM [%d %%]"
+            }
+            Frame label="MIrror" {
+                Switch item=fl_mirror_sw label="Mirror [%s]" icon="light"
+                Slider item=fl_mirror_dim label="Mirror DIM [%d %%]" icon="light"
+            }
+            Frame {
+			    Text item=eg_main_door_contact label="Main door [%s]"
+            }
 		}
 		Group item=bz_light label="WC [%s]" icon="light" {
             Frame {
@@ -248,10 +256,10 @@ sitemap main label="MAIN"
 				Slider item=sz_bed_floor_light_dim label="Bed Floor DIM [%d %%]" icon="light"
                 Colorpicker item=sz_bed_floor_light_color label="Bed Floor RGB []" icon="colorpicker"
 			}
-            Frame label="Cabinet" {
-				Switch item=sz_cabinet_light_sw label="Cabinet [%s]" icon="light"
-				Slider item=sz_cabinet_light_dim label="Cabinet DIM [%d %%]" icon="light"
-			}
+            // Frame label="Cabinet" {
+			// 	Switch item=sz_cabinet_light_sw label="Cabinet [%s]" icon="light"
+			// 	Slider item=sz_cabinet_light_dim label="Cabinet DIM [%d %%]" icon="light"
+			// }
         }
 		Group item=wz_light label="Living [%s]" icon="light" {
 			Frame {

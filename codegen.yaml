@@ -103,9 +103,26 @@ devices:
     type: IKEA_TRADFRI_STYRBAR
 
   - name: Mirror remote
-    id: mirror_remote
-    zigbee_id: '0x680ae2fffeab6b80'
-    type: IKEA_TRADFRI_REMOTE
+    id: fl_mirror_remote
+    zigbee_id: '0xb43522fffe7939b3'
+    type: IKEA_TRADFRI_STYRBAR
+
+  - name: Entrance mirror
+    id: fl_mirror
+    zigbee_id: '0x90ab96fffe52f8fa'
+    type: IKEA_TRADFRI_LED_DRIVER
+    # Driver is a bit overloaded, LED gets 1.5 A @ 24V,
+    # and driver has 30W max, so max power is limited
+    dim_max: 220
+    # Do not allow run too much
+    expire: 30m
+    y2m:
+      name: Зеркало
+      room: LOBBY
+    groups:
+      sw:
+      - all_light
+      - eg_light
 
 # WC =====================================
 
@@ -247,11 +264,6 @@ devices:
     id: ks_light_switch
     zigbee_id: '0x9035eafffee1ba1d'
     type: IKEA_TRADFRI_STYRBAR
-
-  - name: KS Blinds remote
-    id: ks_blinds_remote
-    zigbee_id: '0xb43522fffe7939b3'
-    type: IKEA_TRADFRI_REMOTE
 
 # LIVING ROOM ================================
 
@@ -458,10 +470,10 @@ devices:
     zigbee_id: '0x287681fffe95cba4'
     type: IKEA_TRADFRI_LED_DRIVER
 
-  - name: SZ Cabinet
-    id: sz_cabinet_light
-    zigbee_id: '0x90ab96fffe52f8fa'
-    type: IKEA_TRADFRI_LED_DRIVER
+  # - name: SZ Cabinet
+  #   id: sz_cabinet_light
+  #   zigbee_id: '0x90ab96fffe52f8fa'
+  #   type: IKEA_TRADFRI_LED_DRIVER
 
   - name: SZ Bed L
     id: sz_bed_light_l

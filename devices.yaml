@@ -100,8 +100,6 @@
   friendly_name: wz_julia_stand_light
 '0x680ae2fffe1a92f3':
   friendly_name: tr_up_switch
-'0x680ae2fffeab6b80':
-  friendly_name: mirror_remote
 '0x680ae2fffeaf18d4':
   friendly_name: ku_light_switch_kochfeld
 '0x70b3d52b60057a95':
@@ -134,7 +132,7 @@
     delta: 5
     interval: 100
 '0x90ab96fffe52f8fa':
-  friendly_name: sz_cabinet_light
+  friendly_name: fl_mirror
 '0x94deb8fffea8a1f9':
   friendly_name: sz_bed_l_remote
   simulated_brightness:
@@ -183,7 +181,10 @@
 '0xb43522fffe790ebe':
   friendly_name: kg_lager4_switch
 '0xb43522fffe7939b3':
-  friendly_name: ks_blinds_remote
+  friendly_name: fl_mirror_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0xb4e3f9fffeb35529':
   friendly_name: sz_up_remote
   simulated_brightness:

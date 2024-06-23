@@ -87,13 +87,22 @@ Text item=fl_door_remote_ota
 Text item=fl_door_remote_link
 Text item=fl_door_remote_battery
 }
-Frame label="Mirror remote (0x680ae2fffeab6b80)" {
-// Mirror remote (0x680ae2fffeab6b80)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Text item=mirror_remote_lowbatt
-Text item=mirror_remote_ota
-Text item=mirror_remote_link
-Text item=mirror_remote_battery
+Frame label="Mirror remote (0xb43522fffe7939b3)" {
+// Mirror remote (0xb43522fffe7939b3)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=fl_mirror_remote_dim
+Text item=fl_mirror_remote_lowbatt
+Text item=fl_mirror_remote_ota
+Text item=fl_mirror_remote_link
+Text item=fl_mirror_remote_battery
+}
+Frame label="Entrance mirror (0x90ab96fffe52f8fa)" {
+// Entrance mirror (0x90ab96fffe52f8fa)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Slider item=fl_mirror_dim
+Text item=fl_mirror_ota
+Text item=fl_mirror_link
+Switch item=fl_mirror_sw
 }
 Frame label="BZ Light (toilet) (0xcc86ecfffea0c7cb)" {
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
@@ -198,14 +207,6 @@ Text item=ks_light_switch_lowbatt
 Text item=ks_light_switch_ota
 Text item=ks_light_switch_link
 Text item=ks_light_switch_battery
-}
-Frame label="KS Blinds remote (0xb43522fffe7939b3)" {
-// KS Blinds remote (0xb43522fffe7939b3)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Text item=ks_blinds_remote_lowbatt
-Text item=ks_blinds_remote_ota
-Text item=ks_blinds_remote_link
-Text item=ks_blinds_remote_battery
 }
 Frame label="WZ Climate (0xa4c1386a03a53708)" {
 // WZ Climate (0xa4c1386a03a53708)
@@ -372,14 +373,6 @@ Slider item=sz_bedside_drawler_light_dim
 Text item=sz_bedside_drawler_light_ota
 Text item=sz_bedside_drawler_light_link
 Switch item=sz_bedside_drawler_light_sw
-}
-Frame label="SZ Cabinet (0x90ab96fffe52f8fa)" {
-// SZ Cabinet (0x90ab96fffe52f8fa)
-// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
-Slider item=sz_cabinet_light_dim
-Text item=sz_cabinet_light_ota
-Text item=sz_cabinet_light_link
-Switch item=sz_cabinet_light_sw
 }
 Frame label="SZ Bed L (0x9035eafffe93bfc6)" {
 // SZ Bed L (0x9035eafffe93bfc6)

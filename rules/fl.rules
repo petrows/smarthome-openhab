@@ -65,6 +65,33 @@ then
     }
 end
 
+rule "Main door miror remote"
+when
+    Channel "mqtt:topic:openhab:fl_mirror_remote:action" triggered
+then
+	var state = receivedEvent
+
+    switch(state) {
+        case "on": {
+            fl_mirror_dim.sendCommand(100)
+        }
+        case "off": {
+            if (fl_mirror_sw.state == OFF) {
+                fl_mirror_dim.sendCommand(30)
+            } else {
+                fl_mirror_sw.sendCommand(OFF)
+            }
+        }
+    }
+end
+
+rule "Main door mirror remote dimmer"
+when
+    Channel "mqtt:topic:openhab:fl_mirror_remote:action_dim" triggered
+then
+    fl_mirror_dim_fast.sendCommand((fl_mirror_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+end
+
 // Apply auto brightness on ON for light in corridor
 // bright at day, dimmed at night
 rule "Corridor auto brightness"

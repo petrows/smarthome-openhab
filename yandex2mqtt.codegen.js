@@ -39,6 +39,11 @@ Light(LIGHT.DIM, {
     name: 'Комод',
     room: ROOMS.LOBBY,
 }),
+Light(LIGHT.DIM, {
+    id: 'fl_mirror',
+    name: 'Зеркало',
+    room: ROOMS.LOBBY,
+}),
 Light(LIGHT.RGB, {
     id: 'bz_light_1',
     name: 'Туалет',
