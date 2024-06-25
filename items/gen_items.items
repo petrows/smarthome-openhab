@@ -312,6 +312,13 @@ Dimmer sz_bedside_drawler_light_dim_fast "SZ Bedside drawler DIM-F [%d %%]" (g_a
 Switch sz_bedside_drawler_light_ota "SZ Bedside drawler OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:ota"}
 Number:Dimensionless sz_bedside_drawler_light_link "SZ Bedside drawler LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:link"}
 Switch sz_bedside_drawler_light_sw "SZ Bedside drawler" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:state"}
+// SZ Cabinet (0x0cae5ffffea07d0d)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Dimmer sz_cabinet_light_dim "SZ Cabinet DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_cabinet_light:dim"}
+Dimmer sz_cabinet_light_dim_fast "SZ Cabinet DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:sz_cabinet_light:dim_fast"}
+Switch sz_cabinet_light_ota "SZ Cabinet OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_cabinet_light:ota"}
+Number:Dimensionless sz_cabinet_light_link "SZ Cabinet LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_cabinet_light:link"}
+Switch sz_cabinet_light_sw "SZ Cabinet" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_cabinet_light:state"}
 // SZ Bed L (0x9035eafffe93bfc6)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
 Dimmer sz_bed_light_l_dim "SZ Bed L DIM [%d %%]" <light> (g_all_dim,sz_light_dim,sz_bed_light_dim) {channel="mqtt:topic:openhab:sz_bed_light_l:dim"}

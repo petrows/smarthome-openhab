@@ -374,6 +374,14 @@ Text item=sz_bedside_drawler_light_ota
 Text item=sz_bedside_drawler_light_link
 Switch item=sz_bedside_drawler_light_sw
 }
+Frame label="SZ Cabinet (0x0cae5ffffea07d0d)" {
+// SZ Cabinet (0x0cae5ffffea07d0d)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Slider item=sz_cabinet_light_dim
+Text item=sz_cabinet_light_ota
+Text item=sz_cabinet_light_link
+Switch item=sz_cabinet_light_sw
+}
 Frame label="SZ Bed L (0x9035eafffe93bfc6)" {
 // SZ Bed L (0x9035eafffe93bfc6)
 // TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html

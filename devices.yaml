@@ -67,6 +67,8 @@
   friendly_name: ku_heating
 '0x0c4314fffe73c43f':
   friendly_name: wz_heating
+'0x0cae5ffffea07d0d':
+  friendly_name: sz_cabinet_light
 '0x14b457fffe399241':
   friendly_name: bk_light_1
 '0x14b457fffe6383e5':

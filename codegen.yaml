@@ -472,10 +472,10 @@ devices:
     zigbee_id: '0x287681fffe95cba4'
     type: IKEA_TRADFRI_LED_DRIVER
 
-  # - name: SZ Cabinet
-  #   id: sz_cabinet_light
-  #   zigbee_id: '0x90ab96fffe52f8fa'
-  #   type: IKEA_TRADFRI_LED_DRIVER
+  - name: SZ Cabinet
+    id: sz_cabinet_light
+    zigbee_id: '0x0cae5ffffea07d0d'
+    type: IKEA_TRADFRI_LED_DRIVER
 
   - name: SZ Bed L
     id: sz_bed_light_l
