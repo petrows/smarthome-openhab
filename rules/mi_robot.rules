@@ -101,6 +101,12 @@ then
         global_message.sendCommand("EG Robot clean skipped, error: " + eg_robot_fault_text.state)
         return
     }
+    // Check valid status (already running)
+    if (4 == (eg_robot_status.state as Number)) {
+        logWarn("robot-eg", "Regular clean skipped: robot already active")
+        global_message.sendCommand("EG Robot clean skipped: robot already active")
+        return
+    }
 
     logWarn("robot-eg", "Regular clean started")
     logWarn("robot-eg", "Regular clean x2 mode: " + eg_robot_regular_x2.state.toString)
