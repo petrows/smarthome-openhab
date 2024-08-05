@@ -63,7 +63,7 @@ then
         case "toggle": {
             // Set all off, except bed light
             all_light.members.forEach [s |
-                if (!s.getGroupNames.contains("sz_bed_light_sw")) {
+                if (!s.getGroupNames.contains("sz_bed_floor_light_sw")) {
                     s.sendCommand(OFF)
                 }
             ]
