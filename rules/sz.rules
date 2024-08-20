@@ -61,9 +61,9 @@ then
 	var state = receivedEvent
     switch(state) {
         case "toggle": {
-            // Set all off, except bed light
+            // Кнопка посередине на Юлиной тумбочке - выключить свет везде кроме спальни. Если в спальне горит какой либо свет, то его не выключать
             all_light.members.forEach [s |
-                if (!s.getGroupNames.contains("sz_bed_floor_light_sw")) {
+                if (!s.getGroupNames.contains("sz_light")) {
                     s.sendCommand(OFF)
                 }
             ]
