@@ -51,8 +51,6 @@
   simulated_brightness:
     delta: 5
     interval: 100
-'0x04cd15fffe873cb7':
-  friendly_name: kg_lager3_motion
 '0x04cd15fffedb319f':
   friendly_name: bz_light_2
 '0x04cd15fffedb31f7':
@@ -120,6 +118,8 @@
   friendly_name: kg_main1_work_light
 '0x842e14fffe0eb8a0':
   friendly_name: sz_up_light
+'0x8c6fb9fffe1c11b3':
+  friendly_name: kg_lager3_motion
 '0x8cf681fffe36d14e':
   friendly_name: sz_curtain_remote
 '0x8cf681fffef62c85':
