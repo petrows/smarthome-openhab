@@ -614,12 +614,14 @@ Number:Temperature lg3_climate_temperature "KG Lager 3 Climate temp [%.0f %unit%
 Number:Dimensionless lg3_climate_humidity "KG Lager 3 Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:lg3_climate:humidity"}
 Number:Dimensionless lg3_climate_battery "KG Lager 3 Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:lg3_climate:battery"}
 // KG Lager 3 motion (0x8c6fb9fffe1c11b3)
-// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
 Switch kg_lager3_motion_lowbatt "KG Lager 3 motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager3_motion:battery_low"}
 Switch kg_lager3_motion_ota "KG Lager 3 motion OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager3_motion:ota"}
 Number:Dimensionless kg_lager3_motion_link "KG Lager 3 motion LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager3_motion:link"}
 DateTime kg_lager3_motion_activity "KG Lager 3 motion activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager3_motion:activity"}
 Switch kg_lager3_motion_occupancy "KG Lager 3 motion [%s]" <motion> (g_all_occupancy) {channel="mqtt:topic:openhab:kg_lager3_motion:occupancy"}
+Number:Illuminance kg_lager3_motion_illuminance_lux "KG Lager 3 motion  light [%d %unit%]" <sun> (g_all_illuminance_lux) {channel="mqtt:topic:openhab:kg_lager3_motion:illuminance_lux"}
+Number:Dimensionless kg_lager3_motion_illuminance "KG Lager 3 motion  light raw [%d]" <sun> (g_all_illuminance) {channel="mqtt:topic:openhab:kg_lager3_motion:illuminance"}
 Number:Dimensionless kg_lager3_motion_battery "KG Lager 3 motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager3_motion:battery"}
 // KG Lager 3 door (0xa4c138a52c4e5c19)
 // TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203

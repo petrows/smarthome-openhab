@@ -912,10 +912,12 @@ Thing mqtt:topic:openhab:lg3_climate "KG Lager 3 Climate" (mqtt:broker:openhab) 
 		Type datetime : activity [stateTopic="zigbee2mqtt/lg3_climate", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Lager 3 motion (0x8c6fb9fffe1c11b3)
-// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
 Thing mqtt:topic:openhab:kg_lager3_motion "KG Lager 3 motion" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : occupancy [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy", on="true", off="false"]
+		Type number : illuminance_lux [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"illuminance_lux\".*)∩JSONPATH:$.illuminance_lux", unit="lx"]
+		Type number : illuminance [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"illuminance\".*)∩JSONPATH:$.illuminance"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager3_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
