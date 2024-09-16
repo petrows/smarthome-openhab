@@ -1,0 +1,22 @@
+// Common scenarios
+
+
+rule "SZ Scene: sleep"
+when
+    Item scene_sleep received command ON
+then
+    logWarn("scene", "Toggle: sleep")
+    // Revert state back
+    scene_sleep.sendCommand(OFF)
+    // Actions:
+    // Свет кровать яркость 30%
+    sz_bed_light_dim.sendCommand(30)
+    // Выключить остальной свет везде кроме спальни (и может кроме кабинета?)
+    all_light.members.forEach [s |
+        if (!s.getGroupNames.contains("sz_light")) {
+            s.sendCommand(OFF)
+        }
+    ]
+    // Закрыть шторы
+    sz_curtain_cmd.sendCommand("close")
+end

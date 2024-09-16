@@ -106,6 +106,7 @@ when
     or Member of g_all_dim changed
     or Member of g_all_ct changed
     or Member of g_all_ct changed
+    or Member of all_scene changed
     or Member of all_hz changed
     or Member of g_all_thermostat_enable changed
     or Member of g_all_temperature changed

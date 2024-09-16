@@ -13,7 +13,7 @@ Config for PWS fork: https://github.com/petrows/yandex2mqtt
 const tpl = require('./yandex2mqtt.template')
 const cdg = require('./yandex2mqtt.codegen')
 
-const { LIGHT, LightGroup, Light, Thermostat, Sensor, Shutter } = tpl
+const { LIGHT, Scene, LightGroup, Light, Thermostat, Sensor, Shutter } = tpl
 
 const ROOMS = {
     GROUPS: 'Группы',
@@ -27,6 +27,13 @@ const ROOMS = {
 }
 
 devices = [
+    // Scenes
+    Scene({
+        id: 'scene_sleep',
+        name: 'Хочу спать',
+        room: ROOMS.GROUPS,
+    }),
+
     // Groups
     LightGroup({
         id: 'all_light',
