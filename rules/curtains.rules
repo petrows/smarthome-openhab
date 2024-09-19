@@ -36,16 +36,16 @@ then
 end
 
 // Check the current forecast and close blinds - if too heat
-rule "Blinds: protect from weather"
-when
-    Time cron "0 00 10 ? * *"
-then
-    // Check, do we have some heat expected today?
-    if (weather_fc_0d_temp_max.state > 28 | °C) {
-        logWarn("blinds", "Expected today " + weather_fc_0d_temp_max.state.toString() + ", closing hard blinds")
-        blinds_auto_cmd.sendCommand("close")
-    }
-end
+// rule "Blinds: protect from weather"
+// when
+//     Time cron "0 00 10 ? * *"
+// then
+//     // Check, do we have some heat expected today?
+//     if (weather_fc_0d_temp_max.state > 28 | °C) {
+//         logWarn("blinds", "Expected today " + weather_fc_0d_temp_max.state.toString() + ", closing hard blinds")
+//         blinds_auto_cmd.sendCommand("close")
+//     }
+// end
 
 // SZ Curtains: update current state var
 // We dont have built-in "action" channel and we need to track mqtt channel,
