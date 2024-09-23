@@ -960,7 +960,7 @@ devices:
 
   - name: KG Lager 3 motion
     id: kg_lager3_motion
-    zigbee_id: '0x8c6fb9fffe1c11b3'
+    zigbee_id: '0x8c65a3fffe3dbc2c'
     type: IKEA_VALLHORN
 
   - name: KG Lager 3 door

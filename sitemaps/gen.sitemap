@@ -746,8 +746,8 @@ Text item=lg3_climate_temperature
 Text item=lg3_climate_humidity
 Text item=lg3_climate_battery
 }
-Frame label="KG Lager 3 motion (0x8c6fb9fffe1c11b3)" {
-// KG Lager 3 motion (0x8c6fb9fffe1c11b3)
+Frame label="KG Lager 3 motion (0x8c65a3fffe3dbc2c)" {
+// KG Lager 3 motion (0x8c65a3fffe3dbc2c)
 // VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
 Text item=kg_lager3_motion_lowbatt
 Text item=kg_lager3_motion_ota

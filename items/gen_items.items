@@ -613,7 +613,7 @@ DateTime lg3_climate_activity "KG Lager 3 Climate activity [JS(codegen-display-a
 Number:Temperature lg3_climate_temperature "KG Lager 3 Climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:lg3_climate:temperature"}
 Number:Dimensionless lg3_climate_humidity "KG Lager 3 Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:lg3_climate:humidity"}
 Number:Dimensionless lg3_climate_battery "KG Lager 3 Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:lg3_climate:battery"}
-// KG Lager 3 motion (0x8c6fb9fffe1c11b3)
+// KG Lager 3 motion (0x8c65a3fffe3dbc2c)
 // VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
 Switch kg_lager3_motion_lowbatt "KG Lager 3 motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager3_motion:battery_low"}
 Switch kg_lager3_motion_ota "KG Lager 3 motion OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager3_motion:ota"}
