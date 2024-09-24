@@ -116,8 +116,9 @@ sitemap main label="MAIN"
         Switch item=cinema_mode label="Cinemo mode" icon="projector" mappings=[ON="ON", OFF="OFF"]
     }
     Frame {
-        Slider item=blinds_pos label="Blinds [%d %%]"
-        Slider item=curtains_pos label="Curtains [%d %%]"
+        // Disable buggy controls: do not place on index page
+        Text item=blinds_pos label="Blinds [%d %%]"
+        Text item=curtains_pos label="Curtains [%d %%]"
         Switch item=blinds_curtains_cmd label="All []" mappings=["open"="☼","stop"="||","close"="☰"]
     }
     Frame {
@@ -175,7 +176,7 @@ sitemap main label="MAIN"
                 Switch item=ku_light_table_sw label="Table [%s]" icon="light"
                 Slider item=ku_light_table_dim label="Table DIM [%d %%]" icon="light"
             }
-            Frame label="Curtains" {
+            Frame label="Blinds" {
                 Switch item=ku_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=ku_blinds_pos label="Position [%d %%]"
                 Switch item=cfg_blinds_auto_ku label="Enable auto [%s]"
@@ -191,7 +192,7 @@ sitemap main label="MAIN"
                 Slider item=ks_up_light_dim label="Main DIM [%d %%]" icon="light"
 				Slider item=ks_up_light_ct label="Main CT [JS(codegen-mired.js):%s]" icon="light"
             }
-            Frame label="Curtains" {
+            Frame label="Blinds" {
                 Switch item=ks_shutter_1_cmd label="Command 1 []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=ks_shutter_1_pos label="Position 1 [%d %%]"
                 Switch item=ks_shutter_2_cmd label="Command 2 []" mappings=["open"="☼","stop"="||","close"="☰"]
