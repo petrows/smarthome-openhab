@@ -58,19 +58,18 @@ when
     Channel "mqtt:topic:openhab:sz_door_bed_remote:action" triggered
 then
 	var state = receivedEvent
+    var redColor = new HSBType(new DecimalType(0), new PercentType(100), new PercentType(100))
 
     switch(state) {
         // Night mode: red, 100%
         case "on": {
-            val mq = getActions("mqtt","mqtt:broker:openhab")
-            mq.publishMQTT("zigbee2mqtt/sz_bed_floor_light/set","{\"brightness\":100}")
-            mq.publishMQTT("zigbee2mqtt/sz_bed_floor_light/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+            sz_bed_floor_light_color.sendCommand(redColor.toString())
+            sz_bed_floor_light_dim.sendCommand(100)
         }
         // Night mode: red, 20%
         case "off": {
-            val mq = getActions("mqtt","mqtt:broker:openhab")
-            mq.publishMQTT("zigbee2mqtt/sz_bed_floor_light/set","{\"brightness\":30}")
-            mq.publishMQTT("zigbee2mqtt/sz_bed_floor_light/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+            sz_bed_floor_light_color.sendCommand(redColor.toString())
+            sz_bed_floor_light_dim.sendCommand(20)
         }
     }
 end
