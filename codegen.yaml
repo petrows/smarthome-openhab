@@ -1239,7 +1239,7 @@ devices:
 
   - name: Mouse trap KG
     id: mouse_trap_2
-    zigbee_id: '0x3c2ef5fffe41fc77'
+    zigbee_id: '0x048727fffe9d1259'
     type: IKEA_PARASOLL
     groups_skip_auto:
       - contact
