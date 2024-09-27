@@ -452,6 +452,11 @@ devices:
     zigbee_id: '0xb4e3f9fffeb35529'
     type: IKEA_TRADFRI_STYRBAR
 
+  - name: SZ door bedlight remote
+    id: sz_door_bed_remote
+    zigbee_id: '0xccccccfffee401f8'
+    type: IKEA_TRADFRI_ON_OFF
+
   - name: SZ remote L
     id: sz_bed_l_remote
     zigbee_id: '0x94deb8fffea8a1f9'

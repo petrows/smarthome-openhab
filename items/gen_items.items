@@ -285,6 +285,12 @@ Switch sz_up_remote_lowbatt "SZ Main remote BAT [MAP(codegen-lowbat.map):%s]" <l
 Switch sz_up_remote_ota "SZ Main remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_up_remote:ota"}
 Number:Dimensionless sz_up_remote_link "SZ Main remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_up_remote:link"}
 Number:Dimensionless sz_up_remote_battery "SZ Main remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_up_remote:battery"}
+// SZ door bedlight remote (0xccccccfffee401f8)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Switch sz_door_bed_remote_lowbatt "SZ door bedlight remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_door_bed_remote:battery_low"}
+Switch sz_door_bed_remote_ota "SZ door bedlight remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_door_bed_remote:ota"}
+Number:Dimensionless sz_door_bed_remote_link "SZ door bedlight remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_door_bed_remote:link"}
+Number:Dimensionless sz_door_bed_remote_battery "SZ door bedlight remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_door_bed_remote:battery"}
 // SZ remote L (0x94deb8fffea8a1f9)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Dimmer sz_bed_l_remote_dim "SZ remote L DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bed_l_remote:dim"}
@@ -588,6 +594,7 @@ DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-
 Switch kg_lager1_door_lowbatt "KG Lager 1 door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager1_door:battery_low"}
 Switch kg_lager1_door_ota "KG Lager 1 door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager1_door:ota"}
 Number:Dimensionless kg_lager1_door_link "KG Lager 1 door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager1_door:link"}
+DateTime kg_lager1_door_activity "KG Lager 1 door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_door:activity"}
 Contact kg_lager1_door_contact "KG Lager 1 door [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:kg_lager1_door:contact"}
 Number:Dimensionless kg_lager1_door_battery "KG Lager 1 door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager1_door:battery"}
 // Octoprint power (0x28dba7fffe5fa1dd)
@@ -806,6 +813,7 @@ Switch backup_ext_power_sw "Ext backup power supply" <light> (g_all_sw) {channel
 Switch mouse_trap_1_lowbatt "Mouse trap KU BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_1:battery_low"}
 Switch mouse_trap_1_ota "Mouse trap KU OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mouse_trap_1:ota"}
 Number:Dimensionless mouse_trap_1_link "Mouse trap KU LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_1:link"}
+DateTime mouse_trap_1_activity "Mouse trap KU activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:mouse_trap_1:activity"}
 Contact mouse_trap_1_contact "Mouse trap KU [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_1:contact"}
 Number:Dimensionless mouse_trap_1_battery "Mouse trap KU  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_1:battery"}
 // Mouse trap KG (0x3c2ef5fffe41fc77)
@@ -813,6 +821,7 @@ Number:Dimensionless mouse_trap_1_battery "Mouse trap KU  BAT [%d %%]" <battery>
 Switch mouse_trap_2_lowbatt "Mouse trap KG BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_2:battery_low"}
 Switch mouse_trap_2_ota "Mouse trap KG OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mouse_trap_2:ota"}
 Number:Dimensionless mouse_trap_2_link "Mouse trap KG LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_2:link"}
+DateTime mouse_trap_2_activity "Mouse trap KG activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:mouse_trap_2:activity"}
 Contact mouse_trap_2_contact "Mouse trap KG [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_2:contact"}
 Number:Dimensionless mouse_trap_2_battery "Mouse trap KG  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_2:battery"}
 // Mouse trap SZ (0x048727fffe5d58e3)
@@ -820,6 +829,7 @@ Number:Dimensionless mouse_trap_2_battery "Mouse trap KG  BAT [%d %%]" <battery>
 Switch mouse_trap_3_lowbatt "Mouse trap SZ BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_3:battery_low"}
 Switch mouse_trap_3_ota "Mouse trap SZ OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mouse_trap_3:ota"}
 Number:Dimensionless mouse_trap_3_link "Mouse trap SZ LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_3:link"}
+DateTime mouse_trap_3_activity "Mouse trap SZ activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:mouse_trap_3:activity"}
 Contact mouse_trap_3_contact "Mouse trap SZ [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_3:contact"}
 Number:Dimensionless mouse_trap_3_battery "Mouse trap SZ  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_3:battery"}
 // Mouse trap FL (0x048727fffe5d07db)
@@ -827,5 +837,6 @@ Number:Dimensionless mouse_trap_3_battery "Mouse trap SZ  BAT [%d %%]" <battery>
 Switch mouse_trap_4_lowbatt "Mouse trap FL BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_4:battery_low"}
 Switch mouse_trap_4_ota "Mouse trap FL OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:mouse_trap_4:ota"}
 Number:Dimensionless mouse_trap_4_link "Mouse trap FL LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:mouse_trap_4:link"}
+DateTime mouse_trap_4_activity "Mouse trap FL activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:mouse_trap_4:activity"}
 Contact mouse_trap_4_contact "Mouse trap FL [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_4:contact"}
 Number:Dimensionless mouse_trap_4_battery "Mouse trap FL  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_4:battery"}

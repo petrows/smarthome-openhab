@@ -340,6 +340,14 @@ Text item=sz_up_remote_ota
 Text item=sz_up_remote_link
 Text item=sz_up_remote_battery
 }
+Frame label="SZ door bedlight remote (0xccccccfffee401f8)" {
+// SZ door bedlight remote (0xccccccfffee401f8)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=sz_door_bed_remote_lowbatt
+Text item=sz_door_bed_remote_ota
+Text item=sz_door_bed_remote_link
+Text item=sz_door_bed_remote_battery
+}
 Frame label="SZ remote L (0x94deb8fffea8a1f9)" {
 // SZ remote L (0x94deb8fffea8a1f9)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
@@ -714,6 +722,7 @@ Frame label="KG Lager 1 door (0x048727fffe9cc0fb)" {
 Text item=kg_lager1_door_lowbatt
 Text item=kg_lager1_door_ota
 Text item=kg_lager1_door_link
+Text item=kg_lager1_door_activity
 Text item=kg_lager1_door_contact
 Text item=kg_lager1_door_battery
 }
@@ -982,6 +991,7 @@ Frame label="Mouse trap KU (0x048727fffea43740)" {
 Text item=mouse_trap_1_lowbatt
 Text item=mouse_trap_1_ota
 Text item=mouse_trap_1_link
+Text item=mouse_trap_1_activity
 Text item=mouse_trap_1_contact
 Text item=mouse_trap_1_battery
 }
@@ -991,6 +1001,7 @@ Frame label="Mouse trap KG (0x3c2ef5fffe41fc77)" {
 Text item=mouse_trap_2_lowbatt
 Text item=mouse_trap_2_ota
 Text item=mouse_trap_2_link
+Text item=mouse_trap_2_activity
 Text item=mouse_trap_2_contact
 Text item=mouse_trap_2_battery
 }
@@ -1000,6 +1011,7 @@ Frame label="Mouse trap SZ (0x048727fffe5d58e3)" {
 Text item=mouse_trap_3_lowbatt
 Text item=mouse_trap_3_ota
 Text item=mouse_trap_3_link
+Text item=mouse_trap_3_activity
 Text item=mouse_trap_3_contact
 Text item=mouse_trap_3_battery
 }
@@ -1009,6 +1021,7 @@ Frame label="Mouse trap FL (0x048727fffe5d07db)" {
 Text item=mouse_trap_4_lowbatt
 Text item=mouse_trap_4_ota
 Text item=mouse_trap_4_link
+Text item=mouse_trap_4_activity
 Text item=mouse_trap_4_contact
 Text item=mouse_trap_4_battery
 }

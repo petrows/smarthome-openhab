@@ -53,6 +53,28 @@ then
     }
 end
 
+rule "SZ door bed sw"
+when
+    Channel "mqtt:topic:openhab:sz_door_bed_remote:action" triggered
+then
+	var state = receivedEvent
+
+    switch(state) {
+        // Night mode: red, 100%
+        case "on": {
+            val mq = getActions("mqtt","mqtt:broker:openhab")
+            mq.publishMQTT("zigbee2mqtt/sz_bed_floor_light/set","{\"brightness\":100}")
+            mq.publishMQTT("zigbee2mqtt/sz_bed_floor_light/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+        }
+        // Night mode: red, 20%
+        case "off": {
+            val mq = getActions("mqtt","mqtt:broker:openhab")
+            mq.publishMQTT("zigbee2mqtt/sz_bed_floor_light/set","{\"brightness\":30}")
+            mq.publishMQTT("zigbee2mqtt/sz_bed_floor_light/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+        }
+    }
+end
+
 rule "SZ main sw (bed)"
 when
     Channel "mqtt:topic:openhab:sz_bed_l_remote:action" triggered
