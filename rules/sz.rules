@@ -58,18 +58,16 @@ when
     Channel "mqtt:topic:openhab:sz_door_bed_remote:action" triggered
 then
 	var state = receivedEvent
-    var redColor = new HSBType(new DecimalType(0), new PercentType(100), new PercentType(100))
-
     switch(state) {
         // Night mode: red, 100%
         case "on": {
+            var redColor = new HSBType(new DecimalType(0), new PercentType(100), new PercentType(100))
             sz_bed_floor_light_color.sendCommand(redColor.toString())
-            sz_bed_floor_light_dim.sendCommand(100)
         }
         // Night mode: red, 20%
         case "off": {
+            var redColor = new HSBType(new DecimalType(0), new PercentType(100), new PercentType(20))
             sz_bed_floor_light_color.sendCommand(redColor.toString())
-            sz_bed_floor_light_dim.sendCommand(20)
         }
     }
 end
@@ -80,7 +78,6 @@ when
     or Channel "mqtt:topic:openhab:sz_bed_r_remote:action" triggered
 then
 	var state = receivedEvent
-    var redColor = new HSBType(new DecimalType(0), new PercentType(100), new PercentType(100))
     switch(state) {
         case "toggle": {
             // Обновление 2023-09-29: выключить всё
@@ -99,12 +96,12 @@ then
         }
         // Volume press: floor fill light
         case "volume_up": {
+            var redColor = new HSBType(new DecimalType(0), new PercentType(100), new PercentType(100))
             sz_bed_floor_light_color.sendCommand(redColor.toString())
-            sz_bed_floor_light_dim.sendCommand(100)
         }
         case "volume_down": {
+            var redColor = new HSBType(new DecimalType(0), new PercentType(100), new PercentType(20))
             sz_bed_floor_light_color.sendCommand(redColor.toString())
-            sz_bed_floor_light_dim.sendCommand(20)
         }
         // Control Blinds
         case "track_next": {
