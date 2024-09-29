@@ -80,31 +80,31 @@ when
     or Channel "mqtt:topic:openhab:sz_bed_r_remote:action" triggered
 then
 	var state = receivedEvent
+    var redColor = new HSBType(new DecimalType(0), new PercentType(100), new PercentType(100))
     switch(state) {
         case "toggle": {
-            // Кнопка посередине на Юлиной тумбочке - выключить свет везде кроме спальни. Если в спальне горит какой либо свет, то его не выключать
-            all_light.members.forEach [s |
-                if (!s.getGroupNames.contains("sz_light")) {
-                    s.sendCommand(OFF)
-                }
-            ]
-            // sz_bed_light_dim.sendCommand(50)
+            // Обновление 2023-09-29: выключить всё
+            all_light.sendCommand(OFF)
         }
+        // Volume hold: normal bed lights
         case "volume_up_hold": {
-            sz_up_light_sw.sendCommand(ON)
-            sz_up_light_dim.sendCommand(100)
-        }
-        case "volume_up": {
-            sz_bed_light_sw.sendCommand(ON)
             sz_bed_light_dim.sendCommand(100)
         }
-        case "volume_down": {
+        case "volume_down_hold": {
             if (sz_light.state == ON && sz_bed_light_dim.state < 10) {
                 sz_light.sendCommand(OFF)
             } else {
-                sz_bed_light_sw.sendCommand(ON)
                 sz_bed_light_dim.sendCommand(1)
             }
+        }
+        // Volume press: floor fill light
+        case "volume_up": {
+            sz_bed_floor_light_color.sendCommand(redColor.toString())
+            sz_bed_floor_light_dim.sendCommand(100)
+        }
+        case "volume_down": {
+            sz_bed_floor_light_color.sendCommand(redColor.toString())
+            sz_bed_floor_light_dim.sendCommand(20)
         }
         // Control Blinds
         case "track_next": {
