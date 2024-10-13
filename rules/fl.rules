@@ -30,6 +30,7 @@ then
         }
 
         // Right -> exit
+        case "arrow_right_hold",
         case "arrow_right_click": {
             verlassenTimer = createTimer(now.plusSeconds(20), [ |
                 logWarn("light", "Leave all OFF")
@@ -49,6 +50,14 @@ then
 
             // Check that PC is off and turn off also sockets there
             desktop_petro_power_try.sendCommand(OFF)
+
+            // If hold -> start robot
+            if ("arrow_right_hold" == state) {
+                logWarn("robot-eg", "Exit-clean started")
+                eg_robot_double_clean.sendCommand(eg_robot_regular_x2.state.toString)
+                eg_robot_sweep_level.sendCommand(4) // 100%, see eve_level.map
+                eg_robot_custom_command.sendCommand("START")
+            }
         }
     }
 end
