@@ -1,23 +1,9 @@
 // One portion = 8g
 // Day ration = 48g (6x portions)
 
-rule "Feeder: morning"
+rule "Feeder: every 4h to feed 1 portion"
 when
-    Time cron "0 00 6 ? * *"
+    Time cron "0 00 0/4 ? * *"
 then
-    ku_feeder_manual.sendCommand("2")
-end
-
-rule "Feeder: day"
-when
-    Time cron "0 00 13 ? * *"
-then
-    ku_feeder_manual.sendCommand("2")
-end
-
-rule "Feeder: evening"
-when
-    Time cron "0 00 20 ? * *"
-then
-    ku_feeder_manual.sendCommand("2")
+    ku_feeder_manual.sendCommand("1")
 end
