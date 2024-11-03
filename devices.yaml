@@ -74,7 +74,7 @@
 '0x14b457fffe6383e5':
   friendly_name: ks_light_night
 '0x1c34f1fffe7ccde1':
-  friendly_name: sz_julia_remote
+  friendly_name: wz_julia_remote
   simulated_brightness:
     delta: 5
     interval: 100
@@ -87,6 +87,8 @@
   friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':
   friendly_name: octoprint_power
+'0x3c2ef5fffe41fc77':
+  friendly_name: sz_window_r
 '0x540f57fffe1e420c':
   friendly_name: sz_bed_r_remote
   simulated_brightness:
@@ -216,6 +218,8 @@
   friendly_name: bz_mirror_switch
 '0xd0cf5efffee892b0':
   friendly_name: tr_up_light
+'0xd44867fffed2e67c':
+  friendly_name: sz_window_l
 '0xec1bbdfffe1b89d1':
   friendly_name: wz_julia_desktop_light
 '0xec1bbdfffe4695b5':

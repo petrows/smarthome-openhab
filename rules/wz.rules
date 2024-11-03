@@ -48,7 +48,7 @@ end
 
 rule "WZ Julia sw"
 when
-    Channel "mqtt:topic:openhab:sz_julia_remote:action" triggered
+    Channel "mqtt:topic:openhab:wz_julia_remote:action" triggered
 then
 	var state = receivedEvent
 
@@ -75,7 +75,7 @@ end
 
 rule "WZ Julia dimmer"
 when
-    Channel "mqtt:topic:openhab:sz_julia_remote:action_dim" triggered
+    Channel "mqtt:topic:openhab:wz_julia_remote:action_dim" triggered
 then
     wz_julia_desktop_light_dim_fast.sendCommand((wz_julia_desktop_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
 end

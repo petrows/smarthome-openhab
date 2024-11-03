@@ -216,11 +216,11 @@ Number:Dimensionless wz_julia_desktop_light_link "WZ Julia desktop LINK [%d]" <l
 Switch wz_julia_desktop_light_sw "WZ Julia desktop" <light> (g_all_sw,all_light,eg_light,wz_light) {channel="mqtt:topic:openhab:wz_julia_desktop_light:state"}
 // WZ Julia remote (0x1c34f1fffe7ccde1)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Dimmer sz_julia_remote_dim "WZ Julia remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_julia_remote:dim"}
-Switch sz_julia_remote_lowbatt "WZ Julia remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_julia_remote:battery_low"}
-Switch sz_julia_remote_ota "WZ Julia remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_julia_remote:ota"}
-Number:Dimensionless sz_julia_remote_link "WZ Julia remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_julia_remote:link"}
-Number:Dimensionless sz_julia_remote_battery "WZ Julia remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_julia_remote:battery"}
+Dimmer wz_julia_remote_dim "WZ Julia remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_julia_remote:dim"}
+Switch wz_julia_remote_lowbatt "WZ Julia remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:wz_julia_remote:battery_low"}
+Switch wz_julia_remote_ota "WZ Julia remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_julia_remote:ota"}
+Number:Dimensionless wz_julia_remote_link "WZ Julia remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_julia_remote:link"}
+Number:Dimensionless wz_julia_remote_battery "WZ Julia remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:wz_julia_remote:battery"}
 // WZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
 Dimmer wz_light_color_dim "WZ Color Decor DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:wz_light_color:dim"}
@@ -350,6 +350,22 @@ Color sz_bed_floor_light_color "SZ Bed Floor color" <light> (g_all_color) {chann
 Number:Dimensionless sz_bed_floor_light_rssi "SZ Bed Floor RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:sz_bed_floor_light:rssi"}
 String sz_bed_floor_light_bssid "SZ Bed Floor BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:sz_bed_floor_light:bssid"}
 DateTime sz_bed_floor_light_activity "SZ Bed Floor activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_bed_floor_light:activity"}
+// SZ Window L (0xd44867fffed2e67c)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Switch sz_window_l_lowbatt "SZ Window L BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_window_l:battery_low"}
+Switch sz_window_l_ota "SZ Window L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_window_l:ota"}
+Number:Dimensionless sz_window_l_link "SZ Window L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_window_l:link"}
+DateTime sz_window_l_activity "SZ Window L activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_window_l:activity"}
+Contact sz_window_l_contact "SZ Window L [%s]" <door> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_l:contact"}
+Number:Dimensionless sz_window_l_battery "SZ Window L  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_window_l:battery"}
+// SZ Window R (0x3c2ef5fffe41fc77)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Switch sz_window_r_lowbatt "SZ Window R BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_window_r:battery_low"}
+Switch sz_window_r_ota "SZ Window R OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_window_r:ota"}
+Number:Dimensionless sz_window_r_link "SZ Window R LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_window_r:link"}
+DateTime sz_window_r_activity "SZ Window R activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_window_r:activity"}
+Contact sz_window_r_contact "SZ Window R [%s]" <door> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_r:contact"}
+Number:Dimensionless sz_window_r_battery "SZ Window R  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_window_r:battery"}
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch ku_climate_lowbatt "KU Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_climate:battery_low"}

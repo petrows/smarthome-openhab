@@ -337,7 +337,7 @@ devices:
         - astro_color_light_ct
 
   - name: WZ Julia remote
-    id: sz_julia_remote
+    id: wz_julia_remote
     zigbee_id: '0x1c34f1fffe7ccde1'
     type: IKEA_TRADFRI_STYRBAR
 
@@ -550,6 +550,22 @@ devices:
           subtype: LIGHT.RGB
           name: Пол
           room: SLEEP
+
+  - name: SZ Window L
+    id: sz_window_l
+    zigbee_id: '0xd44867fffed2e67c'
+    type: IKEA_PARASOLL
+    groups:
+      contact:
+        - sz_windows
+
+  - name: SZ Window R
+    id: sz_window_r
+    zigbee_id: '0x3c2ef5fffe41fc77'
+    type: IKEA_PARASOLL
+    groups:
+      contact:
+        - sz_windows
 
 # KITCHEN ================================
 
