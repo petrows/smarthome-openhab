@@ -24,11 +24,6 @@ Sensor({
     name: 'Климат',
     room: ROOMS.OUTSIDE,
 }),
-Light(LIGHT.CT, {
-    id: 'bk_light_1',
-    name: 'Верхний',
-    room: ROOMS.BALKON,
-}),
 Light(LIGHT.DIM, {
     id: 'fl_up_light',
     name: 'Верхний',

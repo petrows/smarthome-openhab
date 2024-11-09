@@ -25,12 +25,20 @@ Number:Dimensionless ext_climate_humidity "Outside Climate humidity  [%.0f %%]" 
 Number:Dimensionless ext_climate_battery "Outside Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ext_climate:battery"}
 // Balkon light 1 (0x14b457fffe399241)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Dimmer bk_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (g_all_dim,bk_light_dim) {channel="mqtt:topic:openhab:bk_light_1:dim"}
+Dimmer bk_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (g_all_dim,bk_light_dim,bk_up_light_dim) {channel="mqtt:topic:openhab:bk_light_1:dim"}
 Dimmer bk_light_1_dim_fast "Balkon light 1 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:bk_light_1:dim_fast"}
-Dimmer bk_light_1_ct "Balkon light 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,bk_light_ct) {channel="mqtt:topic:openhab:bk_light_1:ct"}
+Dimmer bk_light_1_ct "Balkon light 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,bk_light_ct,bk_up_light_ct) {channel="mqtt:topic:openhab:bk_light_1:ct"}
 Switch bk_light_1_ota "Balkon light 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_light_1:ota"}
 Number:Dimensionless bk_light_1_link "Balkon light 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_light_1:link"}
-Switch bk_light_1_sw "Balkon light 1" <light> (g_all_sw,all_light,bk_light) {channel="mqtt:topic:openhab:bk_light_1:state"}
+Switch bk_light_1_sw "Balkon light 1" <light> (g_all_sw,all_light,bk_light_sw,bk_up_light_sw) {channel="mqtt:topic:openhab:bk_light_1:state"}
+// Balkon light 2 (0xb0c7defffe411c6f)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Dimmer bk_light_2_dim "Balkon light 2 DIM [%d %%]" <light> (g_all_dim,bk_light_dim,bk_up_light_dim) {channel="mqtt:topic:openhab:bk_light_2:dim"}
+Dimmer bk_light_2_dim_fast "Balkon light 2 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:bk_light_2:dim_fast"}
+Dimmer bk_light_2_ct "Balkon light 2 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,bk_light_ct,bk_up_light_ct) {channel="mqtt:topic:openhab:bk_light_2:ct"}
+Switch bk_light_2_ota "Balkon light 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_light_2:ota"}
+Number:Dimensionless bk_light_2_link "Balkon light 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_light_2:link"}
+Switch bk_light_2_sw "Balkon light 2" <light> (g_all_sw,all_light,bk_light_sw,bk_up_light_sw) {channel="mqtt:topic:openhab:bk_light_2:state"}
 // Garten wasser remote (0xccccccfffe58f1c3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
 Switch garten_wasser_remote_lowbatt "Garten wasser remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:garten_wasser_remote:battery_low"}

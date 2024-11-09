@@ -122,8 +122,8 @@ sitemap main label="MAIN"
         Switch item=blinds_curtains_cmd label="All []" mappings=["open"="☼","stop"="||","close"="☰"]
     }
     Frame {
-		Group item=bk_light label="Balkon [%s]" icon="light" {
-			Switch item=bk_light label="Main [%s]" icon="light"
+		Group item=bk_light_sw label="Balkon [%s]" icon="light" {
+			Switch item=bk_light_sw label="Main [%s]" icon="light"
 			Slider item=bk_light_dim label="Main DIM [%d %%]" icon="light"
             Slider item=bk_light_ct label="Main CT [JS(codegen-mired.js):%s]"
             Switch item=bk_christmas_light_sw label="Christmas [%s]" icon="light"

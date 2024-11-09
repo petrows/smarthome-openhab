@@ -8,6 +8,7 @@
 
 
 var Timer bk_light_1_ct_timer
+var Timer bk_light_2_ct_timer
 var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
 var Timer ks_up_light_ct_timer
@@ -33,6 +34,16 @@ then
     val ct_set = (bk_light_1_ct.state as Number).intValue
     bk_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
         bk_light_1_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "Balkon light 2 apply color on ON"
+when
+    Item bk_light_2_sw changed to ON
+then
+    val ct_set = (bk_light_2_ct.state as Number).intValue
+    bk_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
+        bk_light_2_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON

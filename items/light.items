@@ -3,9 +3,12 @@ Group:Switch:OR(ON, OFF) all_light (g_all)
 Group:Switch:OR(ON, OFF) eg_light (g_all)
 
 // Balkon light
-Group:Switch:OR(ON, OFF) bk_light "Balkon light [%s]" <light>
+Group:Switch:OR(ON, OFF) bk_light_sw "Balkon light [%s]" <light>
 Group:Dimmer:MAX bk_light_dim "Balkon DIM [%d %%]" <light>
 Group:Dimmer:MAX bk_light_ct "Balkon CT [%d %%]" <light>
+Group:Switch:OR(ON, OFF) bk_up_light_sw "Balkon main light [%s]" <light>
+Group:Dimmer:MAX bk_up_light_dim "Balkon main DIM [%d %%]" <light>
+Group:Dimmer:MAX bk_up_light_ct "Balkon main CT [%d %%]" <light>
 
 Group:Switch:OR(ON, OFF) fl_light <light>
 Group:Switch:OR(ON, OFF) bz_light <light>

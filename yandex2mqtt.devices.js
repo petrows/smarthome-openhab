@@ -24,6 +24,7 @@ const ROOMS = {
     LIVING: 'Гостиная',
     KINO: 'Кинозал',
     KG_CABINET: 'Кабинет',
+    BALKON: 'Балкон',
 }
 
 devices = [
@@ -64,6 +65,11 @@ devices = [
         id: 'bz_up_light',
         name: 'Верхний',
         room: ROOMS.WC,
+    }),
+    Light(LIGHT.CT, {
+        id: 'bk_up_light',
+        name: 'Верхний',
+        room: ROOMS.BALKON,
     }),
 
     // Blinds

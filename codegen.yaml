@@ -40,17 +40,33 @@ devices:
     id: bk_light_1
     zigbee_id: '0x14b457fffe399241'
     type: IKEA_TRADFRI_LAMP_CT_1000
-    y2m:
-      name: Верхний
-      room: BALKON
     groups:
       sw:
       - all_light
-      - bk_light
+      - bk_light_sw
+      - bk_up_light_sw
       dim:
       - bk_light_dim
+      - bk_up_light_dim
       ct:
       - bk_light_ct
+      - bk_up_light_ct
+
+  - name: Balkon light 2
+    id: bk_light_2
+    zigbee_id: '0xb0c7defffe411c6f'
+    type: IKEA_TRADFRI_LAMP_CT_1000
+    groups:
+      sw:
+      - all_light
+      - bk_light_sw
+      - bk_up_light_sw
+      dim:
+      - bk_light_dim
+      - bk_up_light_dim
+      ct:
+      - bk_light_ct
+      - bk_up_light_ct
 
   - name: Garten wasser remote
     id: garten_wasser_remote

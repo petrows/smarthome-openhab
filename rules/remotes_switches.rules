@@ -177,11 +177,11 @@ then
             }
         }
         case "arrow_left_click": {
-            if (bk_light.state == OFF) {
-                bk_light.sendCommand(ON)
+            if (bk_light_sw.state == OFF) {
+                bk_light_sw.sendCommand(ON)
                 bk_light_dim.sendCommand(100)
             } else {
-                bk_light.sendCommand(OFF)
+                bk_light_sw.sendCommand(OFF)
             }
         }
         case "arrow_right_click": {
