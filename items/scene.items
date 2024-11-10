@@ -1,4 +1,4 @@
 // Common scenarios
 Group:Switch:OR(ON, OFF) all_scene (g_all)
-
-Switch scene_sleep (all_scene)
+// Each item should have small expire, to return to 'ready' state
+Switch scene_sleep (all_scene) { expire="3s,command=OFF" }

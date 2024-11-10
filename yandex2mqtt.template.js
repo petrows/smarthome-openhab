@@ -48,7 +48,7 @@ function Scene(options) {
     if (!options.type) { options.type = 'devices.types.switch' }
     let dev = new GenDevice(options)
     // Scene can ON/OFF
-    dev.addMQTT('on', options.id + '/sw')
+    dev.addMQTT('on', options.id + '/sw', options.id)
     dev.addCapability({
         type: 'devices.capabilities.on_off',
         retrievable: true,
@@ -57,16 +57,6 @@ function Scene(options) {
             instance: 'on',
             value: false,
         },
-    })
-    dev.addValueMapping({
-        type: 'on_off',
-        mapping: function (device, instance, value, y2m) {
-            if (!y2m) { // От MQTT в Яндекс
-                // Always false, scene can be toggled only
-                return false
-            }
-            return value
-        }
     })
     return dev.toConfig()
 }

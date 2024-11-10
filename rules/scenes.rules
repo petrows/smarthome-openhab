@@ -6,8 +6,6 @@ when
     Item scene_sleep received command ON
 then
     logWarn("scene", "Toggle: sleep")
-    // Revert state back
-    scene_sleep.sendCommand(OFF)
     // Actions:
     // Свет кровать яркость 30%
     sz_bed_light_dim.sendCommand(30)
