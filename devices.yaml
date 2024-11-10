@@ -2,8 +2,6 @@
   friendly_name: desktop_petro_remote
 '0x00124b000b4ed5cc':
   friendly_name: eg_router
-'0x00158d0001be5b2d':
-  friendly_name: ku_light_switch_spule
 '0x00158d0001c15121':
   friendly_name: octoprint_climate
 '0x00158d0001c2cc22':
@@ -87,6 +85,8 @@
   friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':
   friendly_name: octoprint_power
+'0x2c1165fffe30cf8f':
+  friendly_name: ku_light_switch_spule
 '0x3c2ef5fffe41fc77':
   friendly_name: sz_window_r
 '0x540f57fffe1e420c':

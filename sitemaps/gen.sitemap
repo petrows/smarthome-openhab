@@ -459,9 +459,9 @@ Text item=ku_climate_temperature
 Text item=ku_climate_humidity
 Text item=ku_climate_battery
 }
-Frame label="KU Light Button (Spuele) (0x00158d0001be5b2d)" {
-// KU Light Button (Spuele) (0x00158d0001be5b2d)
-// Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
+Frame label="KU Light Button (Spuele) (0x2c1165fffe30cf8f)" {
+// KU Light Button (Spuele) (0x2c1165fffe30cf8f)
+// Lidl Silvercrest smart button (HG08164) / https://www.zigbee2mqtt.io/devices/HG08164.html
 Text item=ku_light_switch_spule_lowbatt
 Text item=ku_light_switch_spule_ota
 Text item=ku_light_switch_spule_link

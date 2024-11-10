@@ -563,8 +563,8 @@ Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// KU Light Button (Spuele) (0x00158d0001be5b2d)
-// Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
+// KU Light Button (Spuele) (0x2c1165fffe30cf8f)
+// Lidl Silvercrest smart button (HG08164) / https://www.zigbee2mqtt.io/devices/HG08164.html
 Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spuele)" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/ku_light_switch_spule", commandTopic="zigbee2mqtt/ku_light_switch_spule/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]

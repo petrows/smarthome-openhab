@@ -383,8 +383,8 @@ DateTime ku_climate_activity "KU Climate activity [JS(codegen-display-activity.j
 Number:Temperature ku_climate_temperature "KU Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,ku_hz_temperature_sensor) {channel="mqtt:topic:openhab:ku_climate:temperature"}
 Number:Dimensionless ku_climate_humidity "KU Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ku_climate:humidity"}
 Number:Dimensionless ku_climate_battery "KU Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_climate:battery"}
-// KU Light Button (Spuele) (0x00158d0001be5b2d)
-// Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
+// KU Light Button (Spuele) (0x2c1165fffe30cf8f)
+// Lidl Silvercrest smart button (HG08164) / https://www.zigbee2mqtt.io/devices/HG08164.html
 Switch ku_light_switch_spule_lowbatt "KU Light Button (Spuele) BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_light_switch_spule:battery_low"}
 Switch ku_light_switch_spule_ota "KU Light Button (Spuele) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_light_switch_spule:ota"}
 Number:Dimensionless ku_light_switch_spule_link "KU Light Button (Spuele) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_light_switch_spule:link"}
