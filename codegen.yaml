@@ -1188,6 +1188,14 @@ devices:
       sw:
       - all_light_christmas
 
+  - name: WZ Christmas light
+    id: wz_christmas_light
+    zigbee_id: '0x7cb03eaa0a09ad23'
+    type: OSRAM_SMART_PLUG
+    groups:
+      sw:
+      - all_light_christmas
+
   - name: Balkon Christmas light
     id: bk_christmas_light
     zigbee_id: '0x7cb03eaa0a094bf2'

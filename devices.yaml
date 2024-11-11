@@ -114,6 +114,8 @@
   friendly_name: bk_christmas_light
 '0x7cb03eaa0a094d1d':
   friendly_name: ks_projector_power
+'0x7cb03eaa0a09ad23':
+  friendly_name: wz_christmas_light
 '0x7cb03eaa0a09e7bc':
   friendly_name: backup_ext_power
 '0x7cb03eaa0a0a1103':
