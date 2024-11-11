@@ -85,6 +85,44 @@ function LightGroup(options) {
     return dev.toConfig()
 }
 
+function WindowSensorGroup(options) {
+    if (!options.type) { options.type = 'devices.types.sensor.open' }
+    let dev = new GenDevice(options)
+    // Group lights can ON/OFF
+    dev.addMQTT('open', null, options.id)
+    dev.addProperty({
+        type: 'devices.properties.event',
+        retrievable: true,
+        reportable: true,
+        parameters: {
+            instance: 'open',
+            events: [
+                { 'value': 'opened' },
+                { 'value': 'closed' },
+            ]
+        },
+        state: {
+            instance: 'open',
+            value: 'opened',
+        },
+    })
+    // Конвертация, для коррекции стейтов,
+    // OpenHAB: OPEN -> opened, CLOSED -> closed
+    dev.addValueMapping({
+        type: 'event',
+        mapping: function (device, instance, value, y2m) {
+            // Кастомная функция конвертации
+            value = value.toLowerCase()
+            if (value == 'open') return 'opened'
+            if (value == 'false') return 'opened'
+            if (value == 'close') return 'closed'
+            if (value == 'true') return 'closed'
+            return value
+        }
+    })
+    return dev.toConfig()
+}
+
 function Light(type, options) {
     if (!options.type) { options.type = 'devices.types.light' }
     if (typeof options.sw === 'undefined') { options.sw = '_sw' }
@@ -332,6 +370,7 @@ module.exports = {
     LIGHT: LIGHT,
     Scene: Scene,
     LightGroup: LightGroup,
+    WindowSensorGroup: WindowSensorGroup,
     Light: Light,
     Thermostat: Thermostat,
     Sensor: Sensor,

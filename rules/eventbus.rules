@@ -108,10 +108,12 @@ when
     or Member of g_all_ct changed
     or Member of all_scene changed
     or Member of all_hz changed
+    or Member of all_windows changed
     or Member of g_all_thermostat_enable changed
     or Member of g_all_temperature changed
     or Member of g_all_humidity changed
     or Member of g_all_co2 changed
+    or Member of g_all_contact changed
 then
     var state = triggeringItem.state
     var value = state.toString()
