@@ -98,6 +98,11 @@ devices = [
         name: 'Окна',
         room: ROOMS.KG_CABINET,
     }),
+    WindowSensorGroup({
+        id: 'bz_windows',
+        name: 'Окна',
+        room: ROOMS.WC,
+    }),
 
     // Blinds
     Shutter({

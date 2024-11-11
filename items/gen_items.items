@@ -133,6 +133,14 @@ Switch bz_light_switch_lowbatt "BZ Light Control BAT [MAP(codegen-lowbat.map):%s
 Switch bz_light_switch_ota "BZ Light Control OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bz_light_switch:ota"}
 Number:Dimensionless bz_light_switch_link "BZ Light Control LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bz_light_switch:link"}
 Number:Dimensionless bz_light_switch_battery "BZ Light Control  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:bz_light_switch:battery"}
+// BZ Window R (0x048727fffe9cf022)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Switch bz_window_r_lowbatt "BZ Window R BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:bz_window_r:battery_low"}
+Switch bz_window_r_ota "BZ Window R OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bz_window_r:ota"}
+Number:Dimensionless bz_window_r_link "BZ Window R LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bz_window_r:link"}
+DateTime bz_window_r_activity "BZ Window R activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:bz_window_r:activity"}
+Contact bz_window_r_contact "BZ Window R [%s]" <door> (g_all_contact,bz_windows) {channel="mqtt:topic:openhab:bz_window_r:contact"}
+Number:Dimensionless bz_window_r_battery "BZ Window R  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:bz_window_r:battery"}
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Dimmer ks_up_light_dim "KS Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:ks_up_light:dim"}

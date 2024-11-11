@@ -47,6 +47,7 @@ Group:Contact:AND(CLOSED, OPEN) sz_windows "SZ windows [%s]" <window> (all_windo
 Group:Contact:AND(CLOSED, OPEN) ks_windows "KS windows [%s]" <window> (all_windows)
 Group:Contact:AND(CLOSED, OPEN) wz_windows "WZ windows [%s]" <window> (all_windows)
 Group:Contact:AND(CLOSED, OPEN) ku_windows "KU windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) bz_windows "BZ windows [%s]" <window> (all_windows)
 
 // NS force fan
 // Switch ns_heating_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF" }

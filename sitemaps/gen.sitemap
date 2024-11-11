@@ -160,6 +160,16 @@ Text item=bz_light_switch_ota
 Text item=bz_light_switch_link
 Text item=bz_light_switch_battery
 }
+Frame label="BZ Window R (0x048727fffe9cf022)" {
+// BZ Window R (0x048727fffe9cf022)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=bz_window_r_lowbatt
+Text item=bz_window_r_ota
+Text item=bz_window_r_link
+Text item=bz_window_r_activity
+Text item=bz_window_r_contact
+Text item=bz_window_r_battery
+}
 Frame label="KS Main (0x588e81fffefb217b)" {
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l

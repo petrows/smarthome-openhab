@@ -219,6 +219,14 @@ devices:
     zigbee_id: '0x003c84fffe132b20'
     type: IKEA_TRADFRI_STYRBAR
 
+  - name: BZ Window R
+    id: bz_window_r
+    zigbee_id: '0x048727fffe9cf022'
+    type: IKEA_PARASOLL
+    groups:
+      contact:
+        - bz_windows
+
 # THEATER ================================
 
   - name: KS Main
