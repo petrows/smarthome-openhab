@@ -113,6 +113,9 @@ devices:
     id: eg_main_door
     zigbee_id: '0xa4c138182f60d651'
     type: TUYA_WINDOW_SENSOR_TS0203
+    y2m:
+      name: Входная дверь
+      room: LOBBY
 
   - name: Entrance Door remote
     id: fl_door_remote
@@ -225,7 +228,7 @@ devices:
     type: IKEA_PARASOLL
     groups:
       contact:
-        - bz_windows
+        - bz_windows_contact
 
 # THEATER ================================
 
@@ -284,7 +287,7 @@ devices:
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-      - ks_windows
+      - ks_windows_contact
 
   - name: KS Main remote
     id: ks_light_switch
@@ -437,7 +440,7 @@ devices:
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-        - wz_windows
+        - wz_windows_contact
 
 # BEDROOM ================================
 
@@ -581,7 +584,7 @@ devices:
     type: IKEA_PARASOLL
     groups:
       contact:
-        - sz_windows
+        - sz_windows_contact
 
   - name: SZ Window R
     id: sz_window_r
@@ -589,7 +592,7 @@ devices:
     type: IKEA_PARASOLL
     groups:
       contact:
-        - sz_windows
+        - sz_windows_contact
 
 # KITCHEN ================================
 
@@ -685,7 +688,7 @@ devices:
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-      - ku_windows
+      - ku_windows_contact
 
   - name: Kitchen leak
     id: ku_leak
@@ -768,7 +771,7 @@ devices:
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-      - kg_windows
+      - kg_windows_contact
 
   - name: KG Window (Hobbyraum)
     id: kg_window_2
@@ -776,7 +779,7 @@ devices:
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-      - kg_windows
+      - kg_windows_contact
       - windows_skip_off  # Using this window should not deactivate heating
 
   - name: KG Cabinet door
@@ -785,7 +788,7 @@ devices:
     type: TUYA_WINDOW_SENSOR
     groups:
       contact:
-      - kg_windows
+      - kg_windows_contact
       - windows_skip_off  # Using door should not deactivate heating
 
   - name: KG Climate

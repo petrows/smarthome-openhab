@@ -48,7 +48,7 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     // Check that we have window-sensors for this room
     try {
-        val GroupItem room_sensors = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_windows") as GroupItem
+        val GroupItem room_sensors = ScriptServiceUtil.getItemRegistry?.getItem(room_name + "_windows_contact") as GroupItem
         room_sensors.members.forEach [sensor |
             if (room_sensors_enabled) {
                 if (sensor.state == OFF || sensor.state == OPEN) {
@@ -147,7 +147,7 @@ then
 	}
     logInfo("heating", "Windows state changed")
 	all_windows.members.forEach [sensor_group |
-        val room_name = transform("REGEX", "(.*)_windows", sensor_group.name.toString)
+        val room_name = transform("REGEX", "(.*)_windows_contact", sensor_group.name.toString)
         var room_sensor_state = false
         var sensor_group_g = sensor_group as GroupItem
 

@@ -139,7 +139,7 @@ Switch bz_window_r_lowbatt "BZ Window R BAT [MAP(codegen-lowbat.map):%s]" <lowba
 Switch bz_window_r_ota "BZ Window R OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bz_window_r:ota"}
 Number:Dimensionless bz_window_r_link "BZ Window R LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bz_window_r:link"}
 DateTime bz_window_r_activity "BZ Window R activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:bz_window_r:activity"}
-Contact bz_window_r_contact "BZ Window R [%s]" <door> (g_all_contact,bz_windows) {channel="mqtt:topic:openhab:bz_window_r:contact"}
+Contact bz_window_r_contact "BZ Window R [%s]" <door> (g_all_contact,bz_windows_contact) {channel="mqtt:topic:openhab:bz_window_r:contact"}
 Number:Dimensionless bz_window_r_battery "BZ Window R  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:bz_window_r:battery"}
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
@@ -179,7 +179,7 @@ Switch ks_window_2_lowbatt "KS Window 2 BAT [MAP(codegen-lowbat.map):%s]" <lowba
 Switch ks_window_2_ota "KS Window 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_window_2:ota"}
 Number:Dimensionless ks_window_2_link "KS Window 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_window_2:link"}
 DateTime ks_window_2_activity "KS Window 2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ks_window_2:activity"}
-Contact ks_window_2_contact "KS Window 2 [%s]" <door> (g_all_contact,ks_windows) {channel="mqtt:topic:openhab:ks_window_2:contact"}
+Contact ks_window_2_contact "KS Window 2 [%s]" <door> (g_all_contact,ks_windows_contact) {channel="mqtt:topic:openhab:ks_window_2:contact"}
 Number:Dimensionless ks_window_2_battery "KS Window 2  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ks_window_2:battery"}
 // KS Main remote (0x9035eafffee1ba1d)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
@@ -275,7 +275,7 @@ Switch wz_window_1_lowbatt "WZ Window 1 BAT [MAP(codegen-lowbat.map):%s]" <lowba
 Switch wz_window_1_ota "WZ Window 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_window_1:ota"}
 Number:Dimensionless wz_window_1_link "WZ Window 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_window_1:link"}
 DateTime wz_window_1_activity "WZ Window 1 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:wz_window_1:activity"}
-Contact wz_window_1_contact "WZ Window 1 [%s]" <door> (g_all_contact,wz_windows) {channel="mqtt:topic:openhab:wz_window_1:contact"}
+Contact wz_window_1_contact "WZ Window 1 [%s]" <door> (g_all_contact,wz_windows_contact) {channel="mqtt:topic:openhab:wz_window_1:contact"}
 Number:Dimensionless wz_window_1_battery "WZ Window 1  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:wz_window_1:battery"}
 // SZ Climate (sz_climate)
 // Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
@@ -372,7 +372,7 @@ Switch sz_window_l_lowbatt "SZ Window L BAT [MAP(codegen-lowbat.map):%s]" <lowba
 Switch sz_window_l_ota "SZ Window L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_window_l:ota"}
 Number:Dimensionless sz_window_l_link "SZ Window L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_window_l:link"}
 DateTime sz_window_l_activity "SZ Window L activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_window_l:activity"}
-Contact sz_window_l_contact "SZ Window L [%s]" <door> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_l:contact"}
+Contact sz_window_l_contact "SZ Window L [%s]" <door> (g_all_contact,sz_windows_contact) {channel="mqtt:topic:openhab:sz_window_l:contact"}
 Number:Dimensionless sz_window_l_battery "SZ Window L  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_window_l:battery"}
 // SZ Window R (0x3c2ef5fffe41fc77)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
@@ -380,7 +380,7 @@ Switch sz_window_r_lowbatt "SZ Window R BAT [MAP(codegen-lowbat.map):%s]" <lowba
 Switch sz_window_r_ota "SZ Window R OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_window_r:ota"}
 Number:Dimensionless sz_window_r_link "SZ Window R LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_window_r:link"}
 DateTime sz_window_r_activity "SZ Window R activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_window_r:activity"}
-Contact sz_window_r_contact "SZ Window R [%s]" <door> (g_all_contact,sz_windows) {channel="mqtt:topic:openhab:sz_window_r:contact"}
+Contact sz_window_r_contact "SZ Window R [%s]" <door> (g_all_contact,sz_windows_contact) {channel="mqtt:topic:openhab:sz_window_r:contact"}
 Number:Dimensionless sz_window_r_battery "SZ Window R  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_window_r:battery"}
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
@@ -434,7 +434,7 @@ Switch ku_window_door_lowbatt "KU Window Door BAT [MAP(codegen-lowbat.map):%s]" 
 Switch ku_window_door_ota "KU Window Door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_window_door:ota"}
 Number:Dimensionless ku_window_door_link "KU Window Door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_window_door:link"}
 DateTime ku_window_door_activity "KU Window Door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_window_door:activity"}
-Contact ku_window_door_contact "KU Window Door [%s]" <door> (g_all_contact,ku_windows) {channel="mqtt:topic:openhab:ku_window_door:contact"}
+Contact ku_window_door_contact "KU Window Door [%s]" <door> (g_all_contact,ku_windows_contact) {channel="mqtt:topic:openhab:ku_window_door:contact"}
 Number:Dimensionless ku_window_door_battery "KU Window Door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_window_door:battery"}
 // Kitchen leak (0xb0c7defffe640add)
 // BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
@@ -507,7 +507,7 @@ Switch kg_window_1_lowbatt "KG Window (Cabinet) BAT [MAP(codegen-lowbat.map):%s]
 Switch kg_window_1_ota "KG Window (Cabinet) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_1:ota"}
 Number:Dimensionless kg_window_1_link "KG Window (Cabinet) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_1:link"}
 DateTime kg_window_1_activity "KG Window (Cabinet) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_window_1:activity"}
-Contact kg_window_1_contact "KG Window (Cabinet) [%s]" <door> (g_all_contact,kg_windows) {channel="mqtt:topic:openhab:kg_window_1:contact"}
+Contact kg_window_1_contact "KG Window (Cabinet) [%s]" <door> (g_all_contact,kg_windows_contact) {channel="mqtt:topic:openhab:kg_window_1:contact"}
 Number:Dimensionless kg_window_1_battery "KG Window (Cabinet)  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_1:battery"}
 // KG Window (Hobbyraum) (0xa4c1381a072fcf8b)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -515,7 +515,7 @@ Switch kg_window_2_lowbatt "KG Window (Hobbyraum) BAT [MAP(codegen-lowbat.map):%
 Switch kg_window_2_ota "KG Window (Hobbyraum) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_2:ota"}
 Number:Dimensionless kg_window_2_link "KG Window (Hobbyraum) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_2:link"}
 DateTime kg_window_2_activity "KG Window (Hobbyraum) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_window_2:activity"}
-Contact kg_window_2_contact "KG Window (Hobbyraum) [%s]" <door> (g_all_contact,kg_windows,windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
+Contact kg_window_2_contact "KG Window (Hobbyraum) [%s]" <door> (g_all_contact,kg_windows_contact,windows_skip_off) {channel="mqtt:topic:openhab:kg_window_2:contact"}
 Number:Dimensionless kg_window_2_battery "KG Window (Hobbyraum)  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_2:battery"}
 // KG Cabinet door (0xa4c138312d2c455f)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -523,7 +523,7 @@ Switch kg_cabinet_door_lowbatt "KG Cabinet door BAT [MAP(codegen-lowbat.map):%s]
 Switch kg_cabinet_door_ota "KG Cabinet door OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_cabinet_door:ota"}
 Number:Dimensionless kg_cabinet_door_link "KG Cabinet door LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_cabinet_door:link"}
 DateTime kg_cabinet_door_activity "KG Cabinet door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_cabinet_door:activity"}
-Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows,windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
+Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows_contact,windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
 Number:Dimensionless kg_cabinet_door_battery "KG Cabinet door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_cabinet_door:battery"}
 // KG Climate (0xa4c138234138f73a)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html

@@ -42,12 +42,12 @@ Group:Contact:AND(CLOSED, OPEN) all_windows "All windows [%s]" <window>
 Group:Contact:AND(CLOSED, OPEN) windows_skip_off "Windows skip auto OFF" <window>
 
 // Groups of sensors, enabeling heating
-Group:Contact:AND(CLOSED, OPEN) kg_windows "KG windows [%s]" <window> (all_windows)
-Group:Contact:AND(CLOSED, OPEN) sz_windows "SZ windows [%s]" <window> (all_windows)
-Group:Contact:AND(CLOSED, OPEN) ks_windows "KS windows [%s]" <window> (all_windows)
-Group:Contact:AND(CLOSED, OPEN) wz_windows "WZ windows [%s]" <window> (all_windows)
-Group:Contact:AND(CLOSED, OPEN) ku_windows "KU windows [%s]" <window> (all_windows)
-Group:Contact:AND(CLOSED, OPEN) bz_windows "BZ windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) kg_windows_contact "KG windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) sz_windows_contact "SZ windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) ks_windows_contact "KS windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) wz_windows_contact "WZ windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) ku_windows_contact "KU windows [%s]" <window> (all_windows)
+Group:Contact:AND(CLOSED, OPEN) bz_windows_contact "BZ windows [%s]" <window> (all_windows)
 
 // NS force fan
 // Switch ns_heating_boost "NS Heuzung Boost" <heatingt> { expire="20m,command=OFF" }

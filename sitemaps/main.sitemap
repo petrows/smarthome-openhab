@@ -355,7 +355,7 @@ sitemap main label="MAIN"
 			Setpoint	item=ku_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=ku_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ku_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-            Text        item=ku_windows label="Windows [%s]"
+            Text        item=ku_windows_contact label="Windows [%s]"
 		}
 
 		Group item=ks_climate_temperature label="Theater" {
@@ -364,7 +364,7 @@ sitemap main label="MAIN"
 			Setpoint	item=ks_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=ks_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ks_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-            Text        item=ks_windows label="Windows [%s]"
+            Text        item=ks_windows_contact label="Windows [%s]"
 		}
 		Group item=sz_climate_temperature label="Sleep" {
 			Text 		item=sz_climate_temperature label="Temperature [%d °C]"
@@ -374,7 +374,7 @@ sitemap main label="MAIN"
 			Setpoint	item=sz_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=sz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-            Text        item=sz_windows label="Windows [%s]"
+            Text        item=sz_windows_contact label="Windows [%s]"
 		}
 		Group item=wz_climate_temperature label="Living" {
 			Text 		item=wz_climate_temperature label="Temperature [%d °C]"
@@ -382,7 +382,7 @@ sitemap main label="MAIN"
 			Setpoint	item=wz_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
 			Switch  	item=wz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0 °C"="☼", "17.0 °C"="☾", "5.0 °C"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=wz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-            Text        item=wz_windows label="Windows [%s]"
+            Text        item=wz_windows_contact label="Windows [%s]"
 		}
 		Group item=kg_climate_temperature label="KG" {
             Frame label="Treppe" {
@@ -395,7 +395,7 @@ sitemap main label="MAIN"
                 Setpoint	item=kg_heating_thermostat label="Set" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
                 Switch  	item=kg_heating_thermostat label="Mode []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
                 Switch      item=kg_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-                Text        item=kg_windows label="Windows [%s]"
+                Text        item=kg_windows_contact label="Windows [%s]"
                 Text        item=kg_window_1_contact label="Window 1 [%s]" icon="window"
                 Text        item=kg_window_2_contact label="Window 2 [%s]" icon="window"
                 Text        item=kg_cabinet_door_contact label="Door [%s]"

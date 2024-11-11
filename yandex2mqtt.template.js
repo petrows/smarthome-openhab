@@ -85,44 +85,6 @@ function LightGroup(options) {
     return dev.toConfig()
 }
 
-function WindowSensorGroup(options) {
-    if (!options.type) { options.type = 'devices.types.sensor.open' }
-    let dev = new GenDevice(options)
-    // Group lights can ON/OFF
-    dev.addMQTT('open', null, options.id)
-    dev.addProperty({
-        type: 'devices.properties.event',
-        retrievable: true,
-        reportable: true,
-        parameters: {
-            instance: 'open',
-            events: [
-                { 'value': 'opened' },
-                { 'value': 'closed' },
-            ]
-        },
-        state: {
-            instance: 'open',
-            value: 'opened',
-        },
-    })
-    // Конвертация, для коррекции стейтов,
-    // OpenHAB: OPEN -> opened, CLOSED -> closed
-    dev.addValueMapping({
-        type: 'event',
-        mapping: function (device, instance, value, y2m) {
-            // Кастомная функция конвертации
-            value = value.toLowerCase()
-            if (value == 'open') return 'opened'
-            if (value == 'false') return 'opened'
-            if (value == 'close') return 'closed'
-            if (value == 'true') return 'closed'
-            return value
-        }
-    })
-    return dev.toConfig()
-}
-
 function Light(type, options) {
     if (!options.type) { options.type = 'devices.types.light' }
     if (typeof options.sw === 'undefined') { options.sw = '_sw' }
@@ -247,9 +209,11 @@ function Thermostat(options) {
     return dev.toConfig()
 }
 
-function Sensor(options) {
+function SensorClimate(options) {
     if (!options.type) { options.type = 'devices.types.sensor.climate' }
     let dev = new GenDevice(options)
+    // Special suffux for signle / group devices
+    let suffix = options.proxy ? '_proxy' : ''
     // Temperature
     dev.addMQTT('temperature', null, options.id + '_temperature')
     dev.addMQTT('humidity', null, options.id + '_humidity')
@@ -312,6 +276,42 @@ function Sensor(options) {
     return dev.toConfig()
 }
 
+function SensorWindow(options) {
+    if (!options.type) { options.type = 'devices.types.sensor.open' }
+    let dev = new GenDevice(options)
+    dev.addMQTT('open', null, options.id + '_contact')
+    dev.addProperty({
+        type: 'devices.properties.event',
+        retrievable: true,
+        reportable: true,
+        parameters: {
+            instance: 'open',
+            events: [
+                { 'value': 'opened' },
+                { 'value': 'closed' },
+            ]
+        },
+        state: {
+            instance: 'open',
+            value: 'opened',
+        },
+    })
+    // Conversion for Yandex states from OpenHAB:
+    // OPEN -> opened, CLOSED -> closed
+    dev.addValueMapping({
+        type: 'event',
+        mapping: function (device, instance, value, y2m) {
+            value = value.toLowerCase()
+            if (value == 'open') return 'opened'
+            if (value == 'false') return 'opened'
+            if (value == 'close') return 'closed'
+            if (value == 'true') return 'closed'
+            return value
+        }
+    })
+    return dev.toConfig()
+}
+
 // Жалюзи твёрдые
 function Shutter(options) {
     if (!options.type) { options.type = 'devices.types.openable.curtain' }
@@ -370,9 +370,9 @@ module.exports = {
     LIGHT: LIGHT,
     Scene: Scene,
     LightGroup: LightGroup,
-    WindowSensorGroup: WindowSensorGroup,
     Light: Light,
     Thermostat: Thermostat,
-    Sensor: Sensor,
+    SensorClimate: SensorClimate,
+    SensorWindow: SensorWindow,
     Shutter: Shutter,
 }

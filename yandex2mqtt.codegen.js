@@ -1,5 +1,5 @@
 const tpl = require("./yandex2mqtt.template")
-const { LIGHT, LightGroup, Light, Thermostat, Sensor, Shutter } = tpl
+const { LIGHT, LightGroup, Light, Thermostat, SensorClimate, SensorWindow, Shutter } = tpl
 const ROOMS = {
   GROUPS: 'Группы',
   OUTSIDE: 'Улица',
@@ -19,7 +19,7 @@ const ROOMS = {
 }
 module.exports = {
 devices: [
-Sensor({
+SensorClimate({
     id: 'ext_climate',
     name: 'Климат',
     room: ROOMS.OUTSIDE,
@@ -32,6 +32,11 @@ Light(LIGHT.DIM, {
 Light(LIGHT.DIM, {
     id: 'eg_decoration_light',
     name: 'Комод',
+    room: ROOMS.LOBBY,
+}),
+SensorWindow({
+    id: 'eg_main_door',
+    name: 'Входная дверь',
     room: ROOMS.LOBBY,
 }),
 Light(LIGHT.DIM, {
@@ -62,7 +67,7 @@ Light(LIGHT.CT, {
     name: 'Верхний',
     room: ROOMS.KINO,
 }),
-Sensor({
+SensorClimate({
     id: 'ks_climate',
     name: 'Климат',
     room: ROOMS.KINO,
@@ -72,7 +77,7 @@ Light(LIGHT.RGB, {
     name: 'Декоративный',
     room: ROOMS.KINO,
 }),
-Sensor({
+SensorClimate({
     id: 'wz_climate',
     name: 'Климат',
     room: ROOMS.LIVING,
@@ -98,7 +103,7 @@ Light(LIGHT.RGB, {
     room: ROOMS.LIVING,
     proxy: true,
 }),
-Sensor({
+SensorClimate({
     id: 'sz_climate',
     name: 'Климат',
     room: ROOMS.SLEEP,
@@ -114,7 +119,7 @@ Light(LIGHT.RGB, {
     name: 'Пол',
     room: ROOMS.SLEEP,
 }),
-Sensor({
+SensorClimate({
     id: 'ku_climate',
     name: 'Климат',
     room: ROOMS.KITCHEN,
@@ -145,12 +150,12 @@ Light(LIGHT.RGB, {
     room: ROOMS.TREPPE,
     proxy: true,
 }),
-Sensor({
+SensorClimate({
     id: 'tr_climate',
     name: 'Климат',
     room: ROOMS.TREPPE,
 }),
-Sensor({
+SensorClimate({
     id: 'kg_climate',
     name: 'Климат',
     room: ROOMS.KG_CABINET,
@@ -184,7 +189,7 @@ Light(LIGHT.SW, {
     room: ROOMS.KG_L1,
     sw: '',
 }),
-Sensor({
+SensorClimate({
     id: 'lg3_climate',
     name: 'Климат',
     room: ROOMS.KG_LAUNDRY,
