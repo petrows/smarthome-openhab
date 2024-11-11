@@ -983,6 +983,13 @@ Text item=wz_christmas_light_ota
 Text item=wz_christmas_light_link
 Switch item=wz_christmas_light_sw
 }
+Frame label="KG Christmas light (0x84182600000d9c12)" {
+// KG Christmas light (0x84182600000d9c12)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Text item=kg_christmas_light_ota
+Text item=kg_christmas_light_link
+Switch item=kg_christmas_light_sw
+}
 Frame label="Balkon Christmas light (0x7cb03eaa0a094bf2)" {
 // Balkon Christmas light (0x7cb03eaa0a094bf2)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html

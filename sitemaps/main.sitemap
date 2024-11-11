@@ -342,6 +342,9 @@ sitemap main label="MAIN"
                 Text item=online_petro_pc label="Online PC [%s]"
                 Text item=online_petro_nb label="Online Laptop [%s]"
 			}
+			Frame label="Christmas" {
+			    Switch item=kg_christmas_light_sw label="Christmas [%s]" icon="light"
+            }
 		}
 	}
 
