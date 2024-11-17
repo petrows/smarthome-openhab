@@ -55,7 +55,7 @@ end
 
 rule "Christmas lights off"
 when
-	Time cron "0 00 01 ? * *"
+	Time cron "0 00 01,03,04 ? * *"
 then
     logWarn("light", "Decorative light off")
 
@@ -73,11 +73,6 @@ then
 
 	all_light.sendCommand(OFF)
 
-    // Stop decorative lights
-    if (christmas_lights_enable.state == ON) {
-        all_light_christmas.sendCommand(OFF)
-    }
-
     // Stop projector
     ks_projector_power_sw.sendCommand(OFF)
 
@@ -94,9 +89,6 @@ then
 
     // All light in KG off
 	kg_light.sendCommand(OFF)
-
-    // Stop decorative lights
-    all_light_christmas.sendCommand(OFF)
 
     // Check that PC is off and turn off also sockets there
     desktop_petro_power_try.sendCommand(OFF)

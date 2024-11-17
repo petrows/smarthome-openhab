@@ -123,10 +123,14 @@ sitemap main label="MAIN"
     }
     Frame {
 		Group item=bk_light_sw label="Balkon [%s]" icon="light" {
-			Switch item=bk_light_sw label="Main [%s]" icon="light"
-			Slider item=bk_light_dim label="Main DIM [%d %%]" icon="light"
-            Slider item=bk_light_ct label="Main CT [JS(codegen-mired.js):%s]"
-            Switch item=bk_christmas_light_sw label="Christmas [%s]" icon="light"
+            Frame label="Main" {
+                Switch item=bk_light_sw label="Main [%s]" icon="light"
+                Slider item=bk_light_dim label="Main DIM [%d %%]" icon="light"
+                Slider item=bk_light_ct label="Main CT [JS(codegen-mired.js):%s]"
+            }
+            Frame label="Christmas" {
+                Switch item=bk_christmas_light_sw label="Christmas [%s]" icon="light"
+            }
 		}
 		Group item=fl_light label="Corridor [%s]" icon="light" {
             Frame {
@@ -264,6 +268,9 @@ sitemap main label="MAIN"
 				Switch item=sz_cabinet_light_sw label="Cabinet [%s]" icon="light"
 				Slider item=sz_cabinet_light_dim label="Cabinet DIM [%d %%]" icon="light"
 			}
+            Frame label="Christmas" {
+			    Switch item=sz_christmas_light_sw label="Christmas [%s]" icon="light"
+            }
         }
 		Group item=wz_light label="Living [%s]" icon="light" {
 			Frame {
