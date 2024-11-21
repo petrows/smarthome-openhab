@@ -7,3 +7,11 @@ Switch cinema_mode "Cinema modus"
 Switch ir_projector_power { channel="mqtt:topic:openhab:snf-ns-ir:projector_power" }
 Switch ir_stb_power { channel="mqtt:topic:openhab:snf-ns-ir:stb_power" }
 Switch ir_audio_power { channel="mqtt:topic:openhab:snf-ns-ir:audio_power" }
+
+
+// Temp: DIY room v2 sensor
+
+Number:Temperature kg_climate_v2_temperature "KG Climate temp [%.0f %unit%]" <temperature>{channel="mqtt:topic:openhab:kg_climate_v2:temperature"}
+Number:Dimensionless kg_climate_v2_humidity "KG Climate humidity  [%.0f %%]" <humidity> {channel="mqtt:topic:openhab:kg_climate_v2:humidity"}
+Number:Pressure kg_climate_v2_pressure "KG Climate pressure  [%.0f %unit%]" <humidity> {channel="mqtt:topic:openhab:kg_climate_v2:pressure"}
+Number:Dimensionless kg_climate_v2_co2 "KG Climate CO₂ [%d %unit%]" <co2> {channel="mqtt:topic:openhab:kg_climate_v2:co2"}
