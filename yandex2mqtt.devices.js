@@ -154,6 +154,38 @@ devices = [
         name: 'Отопление',
         room: ROOMS.KG_CABINET,
     }),
+
+    // Christmas lights
+    Light(LIGHT.SW, {
+        id: 'sz_christmas_light',
+        type: 'devices.types.switch',
+        name: 'Гирлянда',
+        room: ROOMS.SLEEP,
+    }),
+    Light(LIGHT.SW, {
+        id: 'ks_christmas_light',
+        type: 'devices.types.switch',
+        name: 'Гирлянда',
+        room: ROOMS.KINO,
+    }),
+    Light(LIGHT.SW, {
+        id: 'wz_christmas_light',
+        type: 'devices.types.switch',
+        name: 'Гирлянда',
+        room: ROOMS.LIVING,
+    }),
+    Light(LIGHT.SW, {
+        id: 'kg_christmas_light',
+        type: 'devices.types.switch',
+        name: 'Гирлянда',
+        room: ROOMS.KG_CABINET,
+    }),
+    Light(LIGHT.SW, {
+        id: 'bk_christmas_light',
+        type: 'devices.types.switch',
+        name: 'Гирлянда',
+        room: ROOMS.BALKON,
+    }),
 ];
 
 devices = devices.concat(cdg.devices)
