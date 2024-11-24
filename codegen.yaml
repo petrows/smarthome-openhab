@@ -793,11 +793,20 @@ devices:
 
   - name: KG Climate
     id: kg_climate
-    zigbee_id: '0xa4c138234138f73a'
-    type: TUYA_TEMPERATURE_SENSOR_TS0201
-    y2m:
-      name: Климат
-      room: KG_CABINET
+    type: TASMOTA_PWS_ROOM_SENSOR_V2
+    # y2m:
+    #   name: Климат
+    #   room: KG_CABINET
+    channels:
+      POWER1:
+        id: kg_climate_led_r
+        name: 'KG Climate Led R'
+      POWER2:
+        id: kg_climate_led_y
+        name: 'KG Climate Led Y'
+      POWER3:
+        id: kg_climate_led_g
+        name: 'KG Climate Led G'
     groups:
       temperature:
         - kg_hz_temperature_sensor

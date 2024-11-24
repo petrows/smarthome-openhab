@@ -68,11 +68,11 @@ Thing mqtt:topic:openhab:octoprint (mqtt:broker:openhab) {
 }
 
 
-// Temp: DIY room v2 sensor
-Thing mqtt:topic:openhab:kg_climate_v2 (mqtt:broker:openhab) {
-	Channels:
-		Type number : temperature  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Temperature", unit="C°"]
-		Type number : humidity  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Humidity", unit="%"]
-		Type number : pressure  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
-		Type number : co2  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.S8.CarbonDioxide", unit="ppm"]
-}
+// // Temp: DIY room v2 sensor
+// Thing mqtt:topic:openhab:kg_climate_v2 (mqtt:broker:openhab) {
+// 	Channels:
+// 		Type number : temperature  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Temperature", unit="C°"]
+// 		Type number : humidity  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Humidity", unit="%"]
+// 		Type number : pressure  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
+// 		Type number : co2  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.S8.CarbonDioxide", unit="ppm"]
+// }

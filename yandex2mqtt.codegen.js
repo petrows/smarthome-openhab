@@ -155,11 +155,6 @@ SensorClimate({
     name: 'Климат',
     room: ROOMS.TREPPE,
 }),
-SensorClimate({
-    id: 'kg_climate',
-    name: 'Климат',
-    room: ROOMS.KG_CABINET,
-}),
 Light(LIGHT.CT, {
     id: 'desktop_petro_light',
     name: 'Стол',

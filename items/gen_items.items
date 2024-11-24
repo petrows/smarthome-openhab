@@ -284,7 +284,7 @@ String sz_climate_bssid "SZ Climate BSSID [%s]" <network> (g_all_bssid) {channel
 DateTime sz_climate_activity "SZ Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_climate:activity"}
 Number:Temperature sz_climate_temperature "SZ Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,sz_hz_temperature_sensor) {channel="mqtt:topic:openhab:sz_climate:temperature"}
 Number:Dimensionless sz_climate_humidity "SZ Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:sz_climate:humidity"}
-Number:Dimensionless sz_climate_co2 "SZ Climate CO₂ [%d %unit%]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_climate:co2"}
+Number:Dimensionless sz_climate_co2 "SZ Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_climate:co2"}
 Switch sz_climate_co2_led "SZ Climate CO₂ alarm [%s]" <alarm> (g_all_co2_led) {channel="mqtt:topic:openhab:sz_climate:co2_led"}
 // SZ Main (0x842e14fffe0eb8a0)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
@@ -525,15 +525,19 @@ Number:Dimensionless kg_cabinet_door_link "KG Cabinet door LINK [%d]" <linkz> (g
 DateTime kg_cabinet_door_activity "KG Cabinet door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_cabinet_door:activity"}
 Contact kg_cabinet_door_contact "KG Cabinet door [%s]" <door> (g_all_contact,kg_windows_contact,windows_skip_off) {channel="mqtt:topic:openhab:kg_cabinet_door:contact"}
 Number:Dimensionless kg_cabinet_door_battery "KG Cabinet door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_cabinet_door:battery"}
-// KG Climate (0xa4c138234138f73a)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Switch kg_climate_lowbatt "KG Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_climate:battery_low"}
-Switch kg_climate_ota "KG Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_climate:ota"}
-Number:Dimensionless kg_climate_link "KG Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_climate:link"}
-DateTime kg_climate_activity "KG Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_climate:activity"}
-Number:Temperature kg_climate_temperature "KG Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,kg_hz_temperature_sensor) {channel="mqtt:topic:openhab:kg_climate:temperature"}
+// KG Climate (kg_climate)
+// PWS room sensor v2 / https://oshwlab.com/petrows/wemos-d1-room-sensor
+Switch kg_climate_led_r "KG Climate Led R" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_climate:power1"}
+Switch kg_climate_led_y "KG Climate Led Y" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_climate:power2"}
+Switch kg_climate_led_g "KG Climate Led G" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_climate:power3"}
+Number:Dimensionless kg_climate_co2 "KG Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:kg_climate:co2"}
+Number:Temperature kg_climate_temperature "KG Climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:kg_climate:temperature"}
 Number:Dimensionless kg_climate_humidity "KG Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:kg_climate:humidity"}
-Number:Dimensionless kg_climate_battery "KG Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_climate:battery"}
+Number:Temperature kg_climate_dewpoint "KG Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:kg_climate:dewpoint"}
+Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:kg_climate:pressure"}
+Number:Dimensionless kg_climate_rssi "KG Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_climate:rssi"}
+String kg_climate_bssid "KG Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_climate:bssid"}
+DateTime kg_climate_activity "KG Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_climate:activity"}
 // Petro Desktop up light 1 (0x04cd15fffe35f24e)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer desktop_petro_up_light_1_dim "Petro Desktop up light 1 DIM [%d %%]" <light> (g_all_dim,kg_light_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim"}

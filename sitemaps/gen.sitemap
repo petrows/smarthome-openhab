@@ -635,16 +635,20 @@ Text item=kg_cabinet_door_activity
 Text item=kg_cabinet_door_contact
 Text item=kg_cabinet_door_battery
 }
-Frame label="KG Climate (0xa4c138234138f73a)" {
-// KG Climate (0xa4c138234138f73a)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Text item=kg_climate_lowbatt
-Text item=kg_climate_ota
-Text item=kg_climate_link
-Text item=kg_climate_activity
+Frame label="KG Climate (kg_climate)" {
+// KG Climate (kg_climate)
+// PWS room sensor v2 / https://oshwlab.com/petrows/wemos-d1-room-sensor
+Switch item=kg_climate_led_r
+Switch item=kg_climate_led_y
+Switch item=kg_climate_led_g
+Text item=kg_climate_co2
 Text item=kg_climate_temperature
 Text item=kg_climate_humidity
-Text item=kg_climate_battery
+Text item=kg_climate_dewpoint
+Text item=kg_climate_pressure
+Text item=kg_climate_rssi
+Text item=kg_climate_bssid
+Text item=kg_climate_activity
 }
 Frame label="Petro Desktop up light 1 (0x04cd15fffe35f24e)" {
 // Petro Desktop up light 1 (0x04cd15fffe35f24e)
