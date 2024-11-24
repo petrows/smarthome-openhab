@@ -27,14 +27,10 @@ devices:
 
   - name: Outside Climate
     id: ext_climate
-    zigbee_id: '0x00158d0001c2cc22'
-    type: XIAOMI_AQARA_V1
+    type: TASMOTA_PWS_ROOM_SENSOR_V2_NOCO2
     y2m:
       name: Климат
       room: OUTSIDE
-    groups:
-      sw:
-      - all_light
 
   - name: Balkon light 1
     id: bk_light_1
@@ -794,9 +790,9 @@ devices:
   - name: KG Climate
     id: kg_climate
     type: TASMOTA_PWS_ROOM_SENSOR_V2
-    # y2m:
-    #   name: Климат
-    #   room: KG_CABINET
+    y2m:
+      name: Климат
+      room: KG_CABINET
     channels:
       POWER1:
         id: kg_climate_led_r

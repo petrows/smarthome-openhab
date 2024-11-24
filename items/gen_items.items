@@ -14,15 +14,19 @@ Switch sturbar_test_lowbatt "Sturbar test BAT [MAP(codegen-lowbat.map):%s]" <low
 Switch sturbar_test_ota "Sturbar test OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sturbar_test:ota"}
 Number:Dimensionless sturbar_test_link "Sturbar test LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sturbar_test:link"}
 Number:Dimensionless sturbar_test_battery "Sturbar test  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sturbar_test:battery"}
-// Outside Climate (0x00158d0001c2cc22)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Switch ext_climate_lowbatt "Outside Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ext_climate:battery_low"}
-Switch ext_climate_ota "Outside Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ext_climate:ota"}
-Number:Dimensionless ext_climate_link "Outside Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ext_climate:link"}
-DateTime ext_climate_activity "Outside Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ext_climate:activity"}
+// Outside Climate (ext_climate)
+// PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Number:Temperature ext_climate_temperature "Outside Climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ext_climate:temperature"}
 Number:Dimensionless ext_climate_humidity "Outside Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ext_climate:humidity"}
-Number:Dimensionless ext_climate_battery "Outside Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ext_climate:battery"}
+Number:Temperature ext_climate_dewpoint "Outside Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:ext_climate:dewpoint"}
+Number:Pressure ext_climate_pressure "Outside Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ext_climate:pressure"}
+Number:Dimensionless ext_climate_rssi "Outside Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:ext_climate:rssi"}
+String ext_climate_bssid "Outside Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:ext_climate:bssid"}
+DateTime ext_climate_activity "Outside Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ext_climate:activity"}
+Number:Temperature ext_climate_temperature "Outside Climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ext_climate:temperature"}
+Number:Temperature ext_climate_dewpoint "Outside Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:ext_climate:dewpoint"}
+Number:Dimensionless ext_climate_humidity "Outside Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ext_climate:humidity"}
+Number:Pressure ext_climate_pressure "Outside Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ext_climate:pressure"}
 // Balkon light 1 (0x14b457fffe399241)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer bk_light_1_dim "Balkon light 1 DIM [%d %%]" <light> (g_all_dim,bk_light_dim,bk_up_light_dim) {channel="mqtt:topic:openhab:bk_light_1:dim"}
@@ -538,6 +542,11 @@ Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressu
 Number:Dimensionless kg_climate_rssi "KG Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_climate:rssi"}
 String kg_climate_bssid "KG Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_climate:bssid"}
 DateTime kg_climate_activity "KG Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_climate:activity"}
+Number:Temperature kg_climate_temperature "KG Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,kg_hz_temperature_sensor) {channel="mqtt:topic:openhab:kg_climate:temperature"}
+Number:Temperature kg_climate_dewpoint "KG Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:kg_climate:dewpoint"}
+Number:Dimensionless kg_climate_humidity "KG Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:kg_climate:humidity"}
+Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:kg_climate:pressure"}
+Number:Dimensionless kg_climate_co2 "KG Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:kg_climate:co2"}
 // Petro Desktop up light 1 (0x04cd15fffe35f24e)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Dimmer desktop_petro_up_light_1_dim "Petro Desktop up light 1 DIM [%d %%]" <light> (g_all_dim,kg_light_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim"}

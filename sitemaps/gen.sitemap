@@ -18,16 +18,20 @@ Text item=sturbar_test_ota
 Text item=sturbar_test_link
 Text item=sturbar_test_battery
 }
-Frame label="Outside Climate (0x00158d0001c2cc22)" {
-// Outside Climate (0x00158d0001c2cc22)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
-Text item=ext_climate_lowbatt
-Text item=ext_climate_ota
-Text item=ext_climate_link
-Text item=ext_climate_activity
+Frame label="Outside Climate (ext_climate)" {
+// Outside Climate (ext_climate)
+// PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Text item=ext_climate_temperature
 Text item=ext_climate_humidity
-Text item=ext_climate_battery
+Text item=ext_climate_dewpoint
+Text item=ext_climate_pressure
+Text item=ext_climate_rssi
+Text item=ext_climate_bssid
+Text item=ext_climate_activity
+Text item=ext_climate_temperature
+Text item=ext_climate_dewpoint
+Text item=ext_climate_humidity
+Text item=ext_climate_pressure
 }
 Frame label="Balkon light 1 (0x14b457fffe399241)" {
 // Balkon light 1 (0x14b457fffe399241)
@@ -649,6 +653,11 @@ Text item=kg_climate_pressure
 Text item=kg_climate_rssi
 Text item=kg_climate_bssid
 Text item=kg_climate_activity
+Text item=kg_climate_temperature
+Text item=kg_climate_dewpoint
+Text item=kg_climate_humidity
+Text item=kg_climate_pressure
+Text item=kg_climate_co2
 }
 Frame label="Petro Desktop up light 1 (0x04cd15fffe35f24e)" {
 // Petro Desktop up light 1 (0x04cd15fffe35f24e)

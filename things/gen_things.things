@@ -19,18 +19,18 @@ Thing mqtt:topic:openhab:sturbar_test "Sturbar test" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Outside Climate (0x00158d0001c2cc22)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+// Outside Climate (ext_climate)
+// PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
-		Type number : humidity [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : battery [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/ext_climate", transformationPattern="JS:codegen-activity.js"]
+		Type number : rssi [stateTopic="tele/ext_climate/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/ext_climate/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/ext_climate/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/ext_climate/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : temperature [stateTopic="tele/ext_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Temperature", unit="C°"]
+		Type number : humidity [stateTopic="tele/ext_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Humidity", unit="%"]
+		Type number : dewpoint [stateTopic="tele/ext_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.DewPoint", unit="C°"]
+		Type number : pressure [stateTopic="tele/ext_climate/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
 }
 // Balkon light 1 (0x14b457fffe399241)
 // IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html

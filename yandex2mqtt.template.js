@@ -250,6 +250,10 @@ function SensorClimate(options) {
                 // Convert humidity from 0-1.0 to 0-100%
                 return Math.round(value * 100.0)
             }
+            if ('pressure' == instance) {
+                // Convert hPa to atm
+                return Math.round(value * 0.000986923)
+            }
             if ('co2_level' == instance) {
                 // Convert CO2 from 1/1M to ppm
                 return Math.round(value * 1000000.0)
@@ -269,6 +273,22 @@ function SensorClimate(options) {
             },
             state: {
                 instance: 'co2_level',
+                value: 0,
+            },
+        })
+    }
+    if (options.pressure) {
+        dev.addMQTT('pressure', null, options.id + '_pressure')
+        dev.addProperty({
+            type: 'devices.properties.float',
+            retrievable: true,
+            reportable: true,
+            parameters: {
+                instance: 'pressure',
+                unit: 'unit.pressure.atm',
+            },
+            state: {
+                instance: 'pressure',
                 value: 0,
             },
         })

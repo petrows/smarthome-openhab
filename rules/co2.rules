@@ -1,0 +1,23 @@
+// Control and warn about current co2 levels
+
+rule "Presence master"
+when
+	Item kg_climate_co2 received update
+then
+    var led_r = OFF
+    var led_y = OFF
+    var led_g = OFF
+    var co2 = kg_climate_co2.state as Number
+
+    if (co2 < 800) {
+        led_g = ON
+    } else if (co2 < 1500) {
+        led_y = ON
+    } else {
+        led_r = ON
+    }
+
+	kg_climate_led_r.sendCommand(led_r)
+	kg_climate_led_y.sendCommand(led_y)
+	kg_climate_led_g.sendCommand(led_g)
+end

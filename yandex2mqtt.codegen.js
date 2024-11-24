@@ -23,6 +23,7 @@ SensorClimate({
     id: 'ext_climate',
     name: 'Климат',
     room: ROOMS.OUTSIDE,
+    pressure: true,
 }),
 Light(LIGHT.DIM, {
     id: 'fl_up_light',
@@ -154,6 +155,13 @@ SensorClimate({
     id: 'tr_climate',
     name: 'Климат',
     room: ROOMS.TREPPE,
+}),
+SensorClimate({
+    id: 'kg_climate',
+    name: 'Климат',
+    room: ROOMS.KG_CABINET,
+    co2: true,
+    pressure: true,
 }),
 Light(LIGHT.CT, {
     id: 'desktop_petro_light',
