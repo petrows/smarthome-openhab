@@ -362,8 +362,8 @@ sitemap main label="MAIN"
 		Group item=ku_climate_temperature label="Kitchen" {
 			Text 		item=ku_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ku_climate_humidity label="Humidity [%d %%]"
-			Setpoint	item=ku_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=ku_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+			Setpoint	item=ku_heating_thermostat 	label="Set"	minValue=5 maxValue=25 step=1	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=ku_heating_thermostat label="Mode []"  icon="climate" mappings=["20.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ku_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
             Text        item=ku_windows_contact label="Windows [%s]"
 		}
@@ -371,8 +371,8 @@ sitemap main label="MAIN"
 		Group item=ks_climate_temperature label="Theater" {
 			Text 		item=ks_climate_temperature label="Temperature [%d °C]"
 			Text 		item=ks_climate_humidity label="Humidity [%d %%]"
-			Setpoint	item=ks_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=ks_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+			Setpoint	item=ks_heating_thermostat 	label="Set"	minValue=5 maxValue=25 step=1	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=ks_heating_thermostat label="Mode []"  icon="climate" mappings=["20.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=ks_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
             Text        item=ks_windows_contact label="Windows [%s]"
 		}
@@ -381,16 +381,16 @@ sitemap main label="MAIN"
 			Text 		item=sz_climate_humidity label="Humidity [%d %%]"
             Text 		item=sz_climate_co2 label="CO₂ [%d ppm]"
 			Text 		item=sz_climate_co2_led label="CO₂ alarm [%s]"
-			Setpoint	item=sz_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+			Setpoint	item=sz_heating_thermostat 	label="Set"	minValue=5 maxValue=25 step=1	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["20.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=sz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
             Text        item=sz_windows_contact label="Windows [%s]"
 		}
 		Group item=wz_climate_temperature label="Living" {
 			Text 		item=wz_climate_temperature label="Temperature [%d °C]"
 			Text 		item=wz_climate_humidity label="Humidity [%d %%]"
-			Setpoint	item=wz_heating_thermostat 	label="Set"	minValue=4.5 maxValue=25 step=0.5	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=wz_heating_thermostat label="Mode []"  icon="climate" mappings=["23.0 °C"="☼", "17.0 °C"="☾", "5.0 °C"="OFF"]	visibility=[cfgHeatingEnable==ON]
+			Setpoint	item=wz_heating_thermostat 	label="Set"	minValue=5 maxValue=25 step=1	visibility=[cfgHeatingEnable==ON]
+			Switch  	item=wz_heating_thermostat label="Mode []"  icon="climate" mappings=["20.0"="☼", "17.0 °C"="☾", "5.0 °C"="OFF"]	visibility=[cfgHeatingEnable==ON]
             Switch      item=wz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
             Text        item=wz_windows_contact label="Windows [%s]"
 		}
@@ -404,8 +404,8 @@ sitemap main label="MAIN"
                 Text 		item=kg_climate_humidity label="Humidity [%d %%]"
                 Text 		item=kg_climate_pressure label="Pressure [%d hPa]"
                 Text 		item=kg_climate_co2 label="CO₂ [%d ppm]"
-                Setpoint	item=kg_heating_thermostat label="Set" minValue=4.5 maxValue=25 step=0.5 visibility=[cfgHeatingEnable==ON]
-                Switch  	item=kg_heating_thermostat label="Mode []" icon="climate" mappings=["23.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+                Setpoint	item=kg_heating_thermostat label="Set" minValue=5 maxValue=25 step=1 visibility=[cfgHeatingEnable==ON]
+                Switch  	item=kg_heating_thermostat label="Mode []" icon="climate" mappings=["20.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
                 Switch      item=kg_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
                 Text        item=kg_windows_contact label="Windows [%s]"
                 Text        item=kg_window_1_contact label="Window 1 [%s]" icon="window"
