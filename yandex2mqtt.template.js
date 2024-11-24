@@ -252,7 +252,7 @@ function SensorClimate(options) {
             }
             if ('pressure' == instance) {
                 // Convert hPa to atm
-                return (parseFloat(value) * 0.000986923)
+                return (parseFloat(value) * 0.750062)
             }
             if ('co2_level' == instance) {
                 // Convert CO2 from 1/1M to ppm
@@ -285,7 +285,7 @@ function SensorClimate(options) {
             reportable: true,
             parameters: {
                 instance: 'pressure',
-                unit: 'unit.pressure.atm',
+                unit: 'unit.pressure.mmhg',
             },
             state: {
                 instance: 'pressure',
