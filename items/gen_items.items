@@ -145,6 +145,15 @@ Number:Dimensionless bz_window_r_link "BZ Window R LINK [%d]" <linkz> (g_all_lin
 DateTime bz_window_r_activity "BZ Window R activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:bz_window_r:activity"}
 Contact bz_window_r_contact "BZ Window R [%s]" <door> (g_all_contact,bz_windows_contact) {channel="mqtt:topic:openhab:bz_window_r:contact"}
 Number:Dimensionless bz_window_r_battery "BZ Window R  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:bz_window_r:battery"}
+// BZ Towel Heater (0x6cfd22fffe1cb2bc)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch bz_towel_heater_ota "BZ Towel Heater OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bz_towel_heater:ota"}
+Number:Dimensionless bz_towel_heater_link "BZ Towel Heater LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bz_towel_heater:link"}
+Switch bz_towel_heater_sw "BZ Towel Heater" <light> (g_all_sw) {channel="mqtt:topic:openhab:bz_towel_heater:state", expire="2h,command=OFF"}
+Number:ElectricPotential bz_towel_heater_ac_voltage "BZ Towel Heater [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:bz_towel_heater:ac_voltage"}
+Number:ElectricCurrent bz_towel_heater_ac_current "BZ Towel Heater [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:bz_towel_heater:ac_current"}
+Number:Power bz_towel_heater_ac_power "BZ Towel Heater [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:bz_towel_heater:ac_power"}
+Number:Energy bz_towel_heater_ac_energy "BZ Towel Heater [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:bz_towel_heater:ac_energy"}
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Dimmer ks_up_light_dim "KS Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:ks_up_light:dim"}
