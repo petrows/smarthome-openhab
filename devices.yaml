@@ -104,6 +104,8 @@
   friendly_name: tr_up_switch
 '0x680ae2fffeaf18d4':
   friendly_name: ku_light_switch_kochfeld
+'0x6cfd22fffe1a1af2':
+  friendly_name: kg_srv_power
 '0x6cfd22fffe1cb2bc':
   friendly_name: bz_towel_heater
 '0x70b3d52b60057a95':

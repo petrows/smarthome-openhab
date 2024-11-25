@@ -1116,6 +1116,15 @@ devices:
     zigbee_id: '0x00158d000488052c'
     type: XIAOMI_AQARA_LEAK_V1
 
+# Server room
+
+  - name: SRV power
+    id: kg_srv_power
+    zigbee_id: '0x6cfd22fffe1a1af2'
+    type: IKEA_INSPELNING
+
+# Heating
+
   - name: SZ heating
     id: sz_heating
     zigbee_id: '0x0c4314fffe63b727'

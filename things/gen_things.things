@@ -1098,6 +1098,18 @@ Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab)
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JS:codegen-activity.js"]
 }
+// SRV power (0x6cfd22fffe1a1af2)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Thing mqtt:topic:openhab:kg_srv_power "SRV power" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/kg_srv_power", commandTopic="zigbee2mqtt/kg_srv_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0"]
+		Type number : ac_voltage [stateTopic="zigbee2mqtt/kg_srv_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="zigbee2mqtt/kg_srv_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="zigbee2mqtt/kg_srv_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="zigbee2mqtt/kg_srv_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="zigbee2mqtt/kg_srv_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/kg_srv_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {

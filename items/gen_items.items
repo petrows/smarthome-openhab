@@ -749,6 +749,15 @@ Number:Dimensionless kg_lager4_leak_link "Warehouse 4 leak LINK [%d]" <linkz> (g
 DateTime kg_lager4_leak_activity "Warehouse 4 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager4_leak:activity"}
 Switch kg_lager4_leak_leak "Warehouse 4 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:kg_lager4_leak:leak"}
 Number:Dimensionless kg_lager4_leak_battery "Warehouse 4 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager4_leak:battery"}
+// SRV power (0x6cfd22fffe1a1af2)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch kg_srv_power_ota "SRV power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_srv_power:ota"}
+Number:Dimensionless kg_srv_power_link "SRV power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_srv_power:link"}
+Switch kg_srv_power_sw "SRV power" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_srv_power:state"}
+Number:ElectricPotential kg_srv_power_ac_voltage "SRV power [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:kg_srv_power:ac_voltage"}
+Number:ElectricCurrent kg_srv_power_ac_current "SRV power [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:kg_srv_power:ac_current"}
+Number:Power kg_srv_power_ac_power "SRV power [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:kg_srv_power:ac_power"}
+Number:Energy kg_srv_power_ac_energy "SRV power [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:kg_srv_power:ac_energy"}
 // SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,sz_hz) {channel="mqtt:topic:openhab:sz_heating:thermostat"}

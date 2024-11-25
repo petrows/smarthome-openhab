@@ -911,6 +911,17 @@ Text item=kg_lager4_leak_activity
 Text item=kg_lager4_leak_leak
 Text item=kg_lager4_leak_battery
 }
+Frame label="SRV power (0x6cfd22fffe1a1af2)" {
+// SRV power (0x6cfd22fffe1a1af2)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=kg_srv_power_ota
+Text item=kg_srv_power_link
+Switch item=kg_srv_power_sw
+Text item=kg_srv_power_ac_voltage
+Text item=kg_srv_power_ac_current
+Text item=kg_srv_power_ac_power
+Text item=kg_srv_power_ac_energy
+}
 Frame label="SZ heating (0x0c4314fffe63b727)" {
 // SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
