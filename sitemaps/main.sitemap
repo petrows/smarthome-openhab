@@ -169,6 +169,13 @@ sitemap main label="MAIN"
                 Colorpicker item=bz_light_1_color label="Main toilet []" icon="colorpicker"
                 Colorpicker item=bz_light_2_color label="Main shower []" icon="colorpicker"
             }
+            Frame {
+                Switch item=bz_towel_heater_sw
+                Text item=bz_towel_heater_ac_voltage icon="energy"
+                Text item=bz_towel_heater_ac_current icon="energy"
+                Text item=bz_towel_heater_ac_power icon="energy"
+                Text item=bz_towel_heater_ac_energy icon="energy"
+            }
 		}
 		Group item=ku_light label="Kitchen [%s]" icon="light" {
             Frame {
@@ -508,6 +515,10 @@ sitemap main label="MAIN"
             Text item=ocotprint_temperature_tool_actual
         }
 	}
+
+    Frame {
+        Group item=g_all_ac_energy label="Energy [%d kWh]"
+    }
 
 	Frame icon="bedroom" {
 		Group item=gSettings label="Settings" {

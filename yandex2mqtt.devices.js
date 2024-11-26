@@ -186,6 +186,14 @@ devices = [
         name: 'Гирлянда',
         room: ROOMS.BALKON,
     }),
+
+    // Heater in BZ
+    Light(LIGHT.SW, {
+        id: 'bz_towel_heater',
+        type: 'devices.types.switch',
+        name: 'Полотенцесушитель',
+        room: ROOMS.WC,
+    }),
 ];
 
 devices = devices.concat(cdg.devices)
