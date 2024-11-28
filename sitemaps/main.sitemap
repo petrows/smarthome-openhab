@@ -320,6 +320,9 @@ sitemap main label="MAIN"
 				Switch item=wz_declamp_3_sw label="Night 3 [%s]"
 				Slider item=wz_declamp_3_dim label="Night 3 DIM [%d %%]"
 			}
+            Frame label="Plants" {
+				Switch item=wz_plant_light_sw label="Plant light [%s]"
+			}
 		}
 		Group item=kg_light label="KG [%s]" icon="light" {
 			Frame label="Ladder" {

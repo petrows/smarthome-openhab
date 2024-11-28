@@ -403,6 +403,14 @@ Thing mqtt:topic:openhab:wz_declamp_3 "WZ Decor lamp 3" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/wz_declamp_3", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/wz_declamp_3", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// WZ Plants light (0x7cb03eaa0a02b08f)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Thing mqtt:topic:openhab:wz_plant_light "WZ Plants light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="zigbee2mqtt/wz_plant_light", commandTopic="zigbee2mqtt/wz_plant_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0"]
+		Type number : link [stateTopic="zigbee2mqtt/wz_plant_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/wz_plant_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // WZ Window 1 (0xa4c13804963f4ccf)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:wz_window_1 "WZ Window 1" (mqtt:broker:openhab) {

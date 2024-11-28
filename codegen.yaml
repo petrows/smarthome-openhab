@@ -437,6 +437,11 @@ devices:
       dim_fast:
         - wz_light_decor_dim_fast
 
+  - name: WZ Plants light
+    id: wz_plant_light
+    zigbee_id: '0x7cb03eaa0a02b08f'
+    type: OSRAM_SMART_PLUG
+
   - name: WZ Window 1
     id: wz_window_1
     zigbee_id: '0xa4c13804963f4ccf'

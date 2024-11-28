@@ -126,3 +126,22 @@ then
         standColorTimer.reschedule(ZonedDateTime.now.plus(20000, ChronoUnit.MILLIS))
     ])
 end
+
+// Plants light control
+rule "Plant lights on"
+when
+	Time cron "0 00 08 ? * *"
+then
+    logWarn("light", "Plants light on")
+
+    wz_plant_light_sw.sendCommand(ON)
+end
+
+rule "Plant lights off"
+when
+	Time cron "0 00 23,00 ? * *"
+then
+    logWarn("light", "Plants light off")
+
+    wz_plant_light_sw.sendCommand(OFF)
+end

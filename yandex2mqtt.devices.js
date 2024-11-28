@@ -194,6 +194,14 @@ devices = [
         name: 'Полотенцесушитель',
         room: ROOMS.WC,
     }),
+
+    // Plant lamp switch
+    Light(LIGHT.SW, {
+        id: 'wz_plant_light',
+        type: 'devices.types.switch',
+        name: 'Цветы',
+        room: ROOMS.LIVING,
+    }),
 ];
 
 devices = devices.concat(cdg.devices)

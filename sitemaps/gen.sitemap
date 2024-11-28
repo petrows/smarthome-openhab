@@ -335,6 +335,13 @@ Text item=wz_declamp_3_ota
 Text item=wz_declamp_3_link
 Switch item=wz_declamp_3_sw
 }
+Frame label="WZ Plants light (0x7cb03eaa0a02b08f)" {
+// WZ Plants light (0x7cb03eaa0a02b08f)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Text item=wz_plant_light_ota
+Text item=wz_plant_light_link
+Switch item=wz_plant_light_sw
+}
 Frame label="WZ Window 1 (0xa4c13804963f4ccf)" {
 // WZ Window 1 (0xa4c13804963f4ccf)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
