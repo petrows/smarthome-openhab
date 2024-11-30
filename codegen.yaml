@@ -708,6 +708,11 @@ devices:
     zigbee_id: '0xb0c7defffe640add'
     type: IKEA_BADRING
 
+  - name: KU up power
+    id: ku_up_power
+    zigbee_id: '0x6cfd22fffe1a4e35'
+    type: IKEA_INSPELNING
+
 # TREPPE ================================
 
   - name: Treppe Door sensor

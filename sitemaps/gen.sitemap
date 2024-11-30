@@ -570,6 +570,17 @@ Text item=ku_leak_activity
 Text item=ku_leak_leak
 Text item=ku_leak_battery
 }
+Frame label="KU up power (0x6cfd22fffe1a4e35)" {
+// KU up power (0x6cfd22fffe1a4e35)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=ku_up_power_ota
+Text item=ku_up_power_link
+Switch item=ku_up_power_sw
+Text item=ku_up_power_ac_voltage
+Text item=ku_up_power_ac_current
+Text item=ku_up_power_ac_power
+Text item=ku_up_power_ac_energy
+}
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html

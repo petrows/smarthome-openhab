@@ -471,6 +471,15 @@ Number:Dimensionless ku_leak_link "Kitchen leak LINK [%d]" <linkz> (g_all_link) 
 DateTime ku_leak_activity "Kitchen leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_leak:activity"}
 Switch ku_leak_leak "Kitchen leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:ku_leak:leak"}
 Number:Dimensionless ku_leak_battery "Kitchen leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_leak:battery"}
+// KU up power (0x6cfd22fffe1a4e35)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch ku_up_power_ota "KU up power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_up_power:ota"}
+Number:Dimensionless ku_up_power_link "KU up power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_up_power:link"}
+Switch ku_up_power_sw "KU up power" <light> (g_all_sw) {channel="mqtt:topic:openhab:ku_up_power:state"}
+Number:ElectricPotential ku_up_power_ac_voltage "KU up power [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:ku_up_power:ac_voltage"}
+Number:ElectricCurrent ku_up_power_ac_current "KU up power [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:ku_up_power:ac_current"}
+Number:Power ku_up_power_ac_power "KU up power [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:ku_up_power:ac_power"}
+Number:Energy ku_up_power_ac_energy "KU up power [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:ku_up_power:ac_energy"}
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch tr_door_sensor_lowbatt "Treppe Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_door_sensor:battery_low"}
