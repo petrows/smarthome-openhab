@@ -95,7 +95,7 @@ Dimmer fl_mirror_dim "Entrance mirror DIM [%d %%]" <light> (g_all_dim) {channel=
 Dimmer fl_mirror_dim_fast "Entrance mirror DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:fl_mirror:dim_fast"}
 Switch fl_mirror_ota "Entrance mirror OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fl_mirror:ota"}
 Number:Dimensionless fl_mirror_link "Entrance mirror LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fl_mirror:link"}
-Switch fl_mirror_sw "Entrance mirror" <light> (g_all_sw,all_light,eg_light,fl_light) {channel="mqtt:topic:openhab:fl_mirror:state", expire="30m,command=OFF"}
+Switch fl_mirror_sw "Entrance mirror" <light> (g_all_sw,all_light,eg_light,fl_light) {channel="mqtt:topic:openhab:fl_mirror:state", expire="30m,command=OFF" [ignoreStateUpdates="true"]}
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer bz_light_1_dim "BZ Light (toilet) DIM [%d %%]" <light> (g_all_dim,bz_up_light_dim) {channel="mqtt:topic:openhab:bz_light_1:dim"}
@@ -120,7 +120,7 @@ Switch bz_light_2_sw_proxy "BZ Light (shower) proxy" <light> (g_all_sw,all_light
 Switch bz_light_2_sw "BZ Light (shower)" <light> {channel="mqtt:topic:openhab:bz_light_2:state"}
 // BZ Mirror (bz_mirror)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch bz_mirror "BZ Mirror" <light> (g_all_sw,all_light,eg_light,bz_light) {channel="mqtt:topic:openhab:bz_mirror:power", expire="1h,command=OFF"}
+Switch bz_mirror "BZ Mirror" <light> (g_all_sw,all_light,eg_light,bz_light) {channel="mqtt:topic:openhab:bz_mirror:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 Number:Dimensionless bz_mirror_rssi "BZ Mirror RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:bz_mirror:rssi"}
 String bz_mirror_bssid "BZ Mirror BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:bz_mirror:bssid"}
 DateTime bz_mirror_activity "BZ Mirror activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:bz_mirror:activity"}
@@ -149,7 +149,7 @@ Number:Dimensionless bz_window_r_battery "BZ Window R  BAT [%d %%]" <battery> (g
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Switch bz_towel_heater_ota "BZ Towel Heater OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bz_towel_heater:ota"}
 Number:Dimensionless bz_towel_heater_link "BZ Towel Heater LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bz_towel_heater:link"}
-Switch bz_towel_heater_sw "BZ Towel Heater" <light> (g_all_sw) {channel="mqtt:topic:openhab:bz_towel_heater:state", expire="2h,command=OFF"}
+Switch bz_towel_heater_sw "BZ Towel Heater" <light> (g_all_sw) {channel="mqtt:topic:openhab:bz_towel_heater:state", expire="90m,command=OFF" [ignoreStateUpdates="true"]}
 Number:ElectricPotential bz_towel_heater_ac_voltage "BZ Towel Heater [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:bz_towel_heater:ac_voltage"}
 Number:ElectricCurrent bz_towel_heater_ac_current "BZ Towel Heater [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:bz_towel_heater:ac_current"}
 Number:Power bz_towel_heater_ac_power "BZ Towel Heater [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:bz_towel_heater:ac_power"}
@@ -434,7 +434,7 @@ Number:Dimensionless ku_light_switch_kochfeld_battery "KU Light Button (Kochfiel
 // Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html
 Switch ku_light_arbeitplatte_ota "KU Light Arbeit OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:ota"}
 Number:Dimensionless ku_light_arbeitplatte_link "KU Light Arbeit LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:link"}
-Switch ku_light_arbeitplatte_sw "KU Light Arbeit" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:state", expire="3h,command=OFF"}
+Switch ku_light_arbeitplatte_sw "KU Light Arbeit" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_light_arbeitplatte:state", expire="3h,command=OFF" [ignoreStateUpdates="true"]}
 // KU Light Table SW (0x04cd15fffe789098)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Dimmer ku_light_table_switch_dim "KU Light Table SW DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:ku_light_table_switch:dim"}
@@ -454,7 +454,7 @@ Switch ku_light_table_sw "KU Light Table" <light> (g_all_sw,all_light,eg_light,k
 Switch ku_main_switch_ota "KU Light SW OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_main_switch:ota"}
 Number:Dimensionless ku_main_switch_link "KU Light SW LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_main_switch:link"}
 Switch ku_light_switch_haupt_sw "KU Light Haupt (Wall SW)" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_main_switch:state_left"}
-Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_main_switch:state_right", expire="3h,command=OFF"}
+Switch ku_light_switch_arbeit_sw "KU Light Arbeit (Wall SW)" <light> (g_all_sw,all_light,eg_light,ku_light,ku_up_light) {channel="mqtt:topic:openhab:ku_main_switch:state_right", expire="3h,command=OFF" [ignoreStateUpdates="true"]}
 // KU Window Door (0xa4c1389dec8b9204)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch ku_window_door_lowbatt "KU Window Door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_window_door:battery_low"}
@@ -508,7 +508,7 @@ Dimmer tr_up_light_dim_fast "Treppe Up light DIM-F [%d %%]" (g_all_dim_fast) {ch
 Dimmer tr_up_light_ct "Treppe Up light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,tr_light_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:tr_up_light:ct"}
 Switch tr_up_light_ota "Treppe Up light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:tr_up_light:ota"}
 Number:Dimensionless tr_up_light_link "Treppe Up light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:tr_up_light:link"}
-Switch tr_up_light_sw "Treppe Up light" <light> (g_all_sw,all_light,tr_light,kg_light,kg_light_auto) {channel="mqtt:topic:openhab:tr_up_light:state", expire="1h,command=OFF"}
+Switch tr_up_light_sw "Treppe Up light" <light> (g_all_sw,all_light,tr_light,kg_light,kg_light_auto) {channel="mqtt:topic:openhab:tr_up_light:state", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 // Treppe Down light (0x04cd15fffedb31f7)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
 Dimmer tr_down_light_dim "Treppe Down light DIM [%d %%]" <light> (g_all_dim,tr_light_dim) {channel="mqtt:topic:openhab:tr_down_light:dim"}
@@ -519,7 +519,7 @@ String tr_down_light_color_mode "Treppe Down light Color mode" <colorwheel> (g_a
 Switch tr_down_light_ota "Treppe Down light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:tr_down_light:ota"}
 Number:Dimensionless tr_down_light_link "Treppe Down light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:tr_down_light:link"}
 Switch tr_down_light_sw_proxy "Treppe Down light proxy" <light> (g_all_sw,all_light,tr_light,kg_light,kg_light_auto)
-Switch tr_down_light_sw "Treppe Down light" <light> {channel="mqtt:topic:openhab:tr_down_light:state", expire="1h,command=OFF"}
+Switch tr_down_light_sw "Treppe Down light" <light> {channel="mqtt:topic:openhab:tr_down_light:state", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 // Treppe motion (0xbc33acfffe872049)
 // IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
 Switch tr_motion_lowbatt "Treppe motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_motion:battery_low"}
@@ -642,13 +642,13 @@ String kg_main2_light_bssid "KG Hobbyraum (Haupt) BSSID [%s]" <network> (g_all_b
 DateTime kg_main2_light_activity "KG Hobbyraum (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_main2_light:activity"}
 // KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_hz_main_light:power", expire="1h,command=OFF"}
+Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_hz_main_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 Number:Dimensionless kg_hz_main_light_rssi "KG Heuzung (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_hz_main_light:rssi"}
 String kg_hz_main_light_bssid "KG Heuzung (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_hz_main_light:bssid"}
 DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_hz_main_light:activity"}
 // Garden water (garten_wasser_sw)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:openhab:garten_wasser_sw:power", expire="1h,command=OFF"}
+Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:openhab:garten_wasser_sw:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 Number:Dimensionless garten_wasser_sw_rssi "Garden water RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:garten_wasser_sw:rssi"}
 String garten_wasser_sw_bssid "Garden water BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:garten_wasser_sw:bssid"}
 DateTime garten_wasser_sw_activity "Garden water activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:garten_wasser_sw:activity"}
@@ -662,7 +662,7 @@ Switch garten_wasser_leak_leak "Warehouse 3 leak [%s]" <flow> (g_all_leak) {chan
 Number:Dimensionless garten_wasser_leak_battery "Warehouse 3 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:garten_wasser_leak:battery"}
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager1_main_light:power", expire="1h,command=OFF"}
+Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager1_main_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 Number:Dimensionless kg_lager1_main_light_rssi "KG Lager 1 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager1_main_light:rssi"}
 String kg_lager1_main_light_bssid "KG Lager 1 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager1_main_light:bssid"}
 DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_main_light:activity"}
@@ -717,7 +717,7 @@ Contact kg_lager3_door_contact "KG Lager 3 door [%s]" <door> (g_all_contact) {ch
 Number:Dimensionless kg_lager3_door_battery "KG Lager 3 door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager3_door:battery"}
 // KG Lager 3 (Haupt) (lg3_up_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch lg3_up_light "KG Lager 3 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:lg3_up_light:power", expire="1h,command=OFF"}
+Switch lg3_up_light "KG Lager 3 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:lg3_up_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 Number:Dimensionless lg3_up_light_rssi "KG Lager 3 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:lg3_up_light:rssi"}
 String lg3_up_light_bssid "KG Lager 3 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:lg3_up_light:bssid"}
 DateTime lg3_up_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_up_light:activity"}
@@ -732,7 +732,7 @@ Number:Power lg3_washmachine_ac_power "Washmachine [%.0f W]" <energy> (g_all_ac_
 Number:Energy lg3_washmachine_ac_energy "Washmachine [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:lg3_washmachine:ac_energy"}
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager4_main_light:power", expire="1h,command=OFF"}
+Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager4_main_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 Number:Dimensionless kg_lager4_main_light_rssi "KG Lager 4 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager4_main_light:rssi"}
 String kg_lager4_main_light_bssid "KG Lager 4 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager4_main_light:bssid"}
 DateTime kg_lager4_main_light_activity "KG Lager 4 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager4_main_light:activity"}
@@ -742,14 +742,14 @@ Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]" <light> (g_all_dim,g_d
 Dimmer kg_lager4_1_light_dim_fast "KG Lager 4 (1) DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim_fast"}
 Switch kg_lager4_1_light_ota "KG Lager 4 (1) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_1_light:ota"}
 Number:Dimensionless kg_lager4_1_light_link "KG Lager 4 (1) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_1_light:link"}
-Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_all_sw,all_light,kg_light,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:state", expire="1h,command=OFF"}
+Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_all_sw,all_light,kg_light,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:state", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 // KG Lager 4 (2) (0xccccccfffedf5314)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer kg_lager4_2_light_dim "KG Lager 4 (2) DIM [%d %%]" <light> (g_all_dim,g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:dim"}
 Dimmer kg_lager4_2_light_dim_fast "KG Lager 4 (2) DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:kg_lager4_2_light:dim_fast"}
 Switch kg_lager4_2_light_ota "KG Lager 4 (2) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_2_light:ota"}
 Number:Dimensionless kg_lager4_2_light_link "KG Lager 4 (2) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_2_light:link"}
-Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_all_sw,all_light,kg_light,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:state", expire="1h,command=OFF"}
+Switch kg_lager4_2_light_sw "KG Lager 4 (2)" <light> (g_all_sw,all_light,kg_light,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:state", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
 // KG Lager switch (0xb43522fffe790ebe)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
 Switch kg_lager4_switch_lowbatt "KG Lager switch BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager4_switch:battery_low"}

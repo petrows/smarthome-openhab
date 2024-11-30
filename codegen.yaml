@@ -231,7 +231,7 @@ devices:
     zigbee_id: '0x6cfd22fffe1cb2bc'
     type: IKEA_INSPELNING
     # Do not allow too much to heat
-    expire: 2h
+    expire: 90m
 
 # THEATER ================================
 
