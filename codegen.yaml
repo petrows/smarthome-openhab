@@ -602,6 +602,11 @@ devices:
       contact:
         - sz_windows_contact
 
+  - name: SRV power
+    id: sz_bed_power
+    zigbee_id: '0x6cfd22fffe1a2043'
+    type: IKEA_INSPELNING
+
 # KITCHEN ================================
 
   - name: KU Climate

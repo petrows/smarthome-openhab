@@ -480,6 +480,17 @@ Text item=sz_window_r_activity
 Text item=sz_window_r_contact
 Text item=sz_window_r_battery
 }
+Frame label="SRV power (0x6cfd22fffe1a2043)" {
+// SRV power (0x6cfd22fffe1a2043)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=sz_bed_power_ota
+Text item=sz_bed_power_link
+Switch item=sz_bed_power_sw
+Text item=sz_bed_power_ac_voltage
+Text item=sz_bed_power_ac_current
+Text item=sz_bed_power_ac_power
+Text item=sz_bed_power_ac_energy
+}
 Frame label="KU Climate (0xa4c138f5460e22dd)" {
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
