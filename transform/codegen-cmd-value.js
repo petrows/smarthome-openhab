@@ -13,7 +13,7 @@
     if (transition && 0 != transition) {
         out['transition'] = Math.round(transition)
     }
-    if (expire && 0 != expire && input == "ON") {
+    if (expire && 0 != expire && expire <= 6553 && input == "ON") {
         out['on_time'] = Math.round(expire)
         // Add 'cooldown' f 1 seconds, as some device might require it
         out['off_wait_time'] = 1
