@@ -51,6 +51,11 @@ then
             // Check that PC is off and turn off also sockets there
             desktop_petro_power_try.sendCommand(OFF)
 
+            // Turn off the heating
+            if (cfgHeatingEnable.state == ON) {
+                all_hz.sendCommand(cfgHeatingTempOff.state as Number)
+            }
+
             // If hold -> start robot
             if ("arrow_right_hold" == state) {
                 logWarn("robot-eg", "Exit-clean started")
