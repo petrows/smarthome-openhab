@@ -150,10 +150,10 @@ Number:Dimensionless bz_window_r_battery "BZ Window R  BAT [%d %%]" <battery> (g
 Switch bz_towel_heater_ota "BZ Towel Heater OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bz_towel_heater:ota"}
 Number:Dimensionless bz_towel_heater_link "BZ Towel Heater LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bz_towel_heater:link"}
 Switch bz_towel_heater_sw "BZ Towel Heater" <light> (g_all_sw) {channel="mqtt:topic:openhab:bz_towel_heater:state", expire="90m,command=OFF" [ignoreStateUpdates="true"]}
-Number:ElectricPotential bz_towel_heater_ac_voltage "BZ Towel Heater [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:bz_towel_heater:ac_voltage"}
-Number:ElectricCurrent bz_towel_heater_ac_current "BZ Towel Heater [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:bz_towel_heater:ac_current"}
-Number:Power bz_towel_heater_ac_power "BZ Towel Heater [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:bz_towel_heater:ac_power"}
-Number:Energy bz_towel_heater_ac_energy "BZ Towel Heater [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:bz_towel_heater:ac_energy"}
+Number:ElectricPotential bz_towel_heater_ac_voltage "BZ Towel Heater [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:bz_towel_heater:ac_voltage"}
+Number:ElectricCurrent bz_towel_heater_ac_current "BZ Towel Heater [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:bz_towel_heater:ac_current"}
+Number:Power bz_towel_heater_ac_power "BZ Towel Heater [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:bz_towel_heater:ac_power"}
+Number:Energy bz_towel_heater_ac_energy "BZ Towel Heater [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:bz_towel_heater:ac_energy"}
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Dimmer ks_up_light_dim "KS Main DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:ks_up_light:dim"}
@@ -400,15 +400,15 @@ Number:Dimensionless sz_window_r_link "SZ Window R LINK [%d]" <linkz> (g_all_lin
 DateTime sz_window_r_activity "SZ Window R activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_window_r:activity"}
 Contact sz_window_r_contact "SZ Window R [%s]" <door> (g_all_contact,sz_windows_contact) {channel="mqtt:topic:openhab:sz_window_r:contact"}
 Number:Dimensionless sz_window_r_battery "SZ Window R  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_window_r:battery"}
-// SRV power (0x6cfd22fffe1a2043)
+// SZ Bed power (0x6cfd22fffe1a2043)
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Switch sz_bed_power_ota "SRV power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_power:ota"}
-Number:Dimensionless sz_bed_power_link "SRV power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_power:link"}
-Switch sz_bed_power_sw "SRV power" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_bed_power:state"}
-Number:ElectricPotential sz_bed_power_ac_voltage "SRV power [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:sz_bed_power:ac_voltage"}
-Number:ElectricCurrent sz_bed_power_ac_current "SRV power [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:sz_bed_power:ac_current"}
-Number:Power sz_bed_power_ac_power "SRV power [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:sz_bed_power:ac_power"}
-Number:Energy sz_bed_power_ac_energy "SRV power [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:sz_bed_power:ac_energy"}
+Switch sz_bed_power_ota "SZ Bed power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_power:ota"}
+Number:Dimensionless sz_bed_power_link "SZ Bed power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_power:link"}
+Switch sz_bed_power_sw "SZ Bed power" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_bed_power:state"}
+Number:ElectricPotential sz_bed_power_ac_voltage "SZ Bed power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:sz_bed_power:ac_voltage"}
+Number:ElectricCurrent sz_bed_power_ac_current "SZ Bed power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:sz_bed_power:ac_current"}
+Number:Power sz_bed_power_ac_power "SZ Bed power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:sz_bed_power:ac_power"}
+Number:Energy sz_bed_power_ac_energy "SZ Bed power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:sz_bed_power:ac_energy"}
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch ku_climate_lowbatt "KU Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_climate:battery_low"}
@@ -476,10 +476,10 @@ Number:Dimensionless ku_leak_battery "Kitchen leak  BAT [%d %%]" <battery> (g_al
 Switch ku_up_power_ota "KU up power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_up_power:ota"}
 Number:Dimensionless ku_up_power_link "KU up power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_up_power:link"}
 Switch ku_up_power_sw "KU up power" <light> (g_all_sw) {channel="mqtt:topic:openhab:ku_up_power:state"}
-Number:ElectricPotential ku_up_power_ac_voltage "KU up power [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:ku_up_power:ac_voltage"}
-Number:ElectricCurrent ku_up_power_ac_current "KU up power [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:ku_up_power:ac_current"}
-Number:Power ku_up_power_ac_power "KU up power [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:ku_up_power:ac_power"}
-Number:Energy ku_up_power_ac_energy "KU up power [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:ku_up_power:ac_energy"}
+Number:ElectricPotential ku_up_power_ac_voltage "KU up power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:ku_up_power:ac_voltage"}
+Number:ElectricCurrent ku_up_power_ac_current "KU up power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:ku_up_power:ac_current"}
+Number:Power ku_up_power_ac_power "KU up power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:ku_up_power:ac_power"}
+Number:Energy ku_up_power_ac_energy "KU up power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:ku_up_power:ac_energy"}
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch tr_door_sensor_lowbatt "Treppe Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_door_sensor:battery_low"}
@@ -726,10 +726,10 @@ DateTime lg3_up_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-
 Switch lg3_washmachine_ota "Washmachine OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:lg3_washmachine:ota"}
 Number:Dimensionless lg3_washmachine_link "Washmachine LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:lg3_washmachine:link"}
 Switch lg3_washmachine_sw "Washmachine" <light> (g_all_sw) {channel="mqtt:topic:openhab:lg3_washmachine:state"}
-Number:ElectricPotential lg3_washmachine_ac_voltage "Washmachine [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:lg3_washmachine:ac_voltage"}
-Number:ElectricCurrent lg3_washmachine_ac_current "Washmachine [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:lg3_washmachine:ac_current"}
-Number:Power lg3_washmachine_ac_power "Washmachine [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:lg3_washmachine:ac_power"}
-Number:Energy lg3_washmachine_ac_energy "Washmachine [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:lg3_washmachine:ac_energy"}
+Number:ElectricPotential lg3_washmachine_ac_voltage "Washmachine [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:lg3_washmachine:ac_voltage"}
+Number:ElectricCurrent lg3_washmachine_ac_current "Washmachine [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:lg3_washmachine:ac_current"}
+Number:Power lg3_washmachine_ac_power "Washmachine [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:lg3_washmachine:ac_power"}
+Number:Energy lg3_washmachine_ac_energy "Washmachine [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:lg3_washmachine:ac_energy"}
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_lager4_main_light "KG Lager 4 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager4_main_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
@@ -777,10 +777,10 @@ Number:Dimensionless kg_lager4_leak_battery "Warehouse 4 leak  BAT [%d %%]" <bat
 Switch kg_srv_power_ota "SRV power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_srv_power:ota"}
 Number:Dimensionless kg_srv_power_link "SRV power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_srv_power:link"}
 Switch kg_srv_power_sw "SRV power" <light> (g_all_sw) {channel="mqtt:topic:openhab:kg_srv_power:state"}
-Number:ElectricPotential kg_srv_power_ac_voltage "SRV power [%.0f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:kg_srv_power:ac_voltage"}
-Number:ElectricCurrent kg_srv_power_ac_current "SRV power [%.0f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:kg_srv_power:ac_current"}
-Number:Power kg_srv_power_ac_power "SRV power [%.0f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:kg_srv_power:ac_power"}
-Number:Energy kg_srv_power_ac_energy "SRV power [%.0f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:kg_srv_power:ac_energy"}
+Number:ElectricPotential kg_srv_power_ac_voltage "SRV power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:kg_srv_power:ac_voltage"}
+Number:ElectricCurrent kg_srv_power_ac_current "SRV power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:kg_srv_power:ac_current"}
+Number:Power kg_srv_power_ac_power "SRV power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:kg_srv_power:ac_power"}
+Number:Energy kg_srv_power_ac_energy "SRV power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:kg_srv_power:ac_energy"}
 // SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Number:Temperature sz_heating_thermostat "SZ heating SET [%.0f %unit%]" <heatingt> (g_all_thermostat,all_hz,all_hz_auto,sz_hz) {channel="mqtt:topic:openhab:sz_heating:thermostat"}

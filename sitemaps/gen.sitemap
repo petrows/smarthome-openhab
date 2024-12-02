@@ -480,8 +480,8 @@ Text item=sz_window_r_activity
 Text item=sz_window_r_contact
 Text item=sz_window_r_battery
 }
-Frame label="SRV power (0x6cfd22fffe1a2043)" {
-// SRV power (0x6cfd22fffe1a2043)
+Frame label="SZ Bed power (0x6cfd22fffe1a2043)" {
+// SZ Bed power (0x6cfd22fffe1a2043)
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Text item=sz_bed_power_ota
 Text item=sz_bed_power_link

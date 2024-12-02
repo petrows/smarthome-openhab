@@ -520,7 +520,12 @@ sitemap main label="MAIN"
 	}
 
     Frame {
-        Group item=g_all_ac_energy label="Energy [%d kWh]"
+        Group item=g_all_ac_energy label="Energy [%d kWh]" {
+            Group item=g_all_ac_energy
+            Group item=g_all_ac_voltage
+            Group item=g_all_ac_current
+            Group item=g_all_ac_power
+        }
     }
 
 	Frame icon="bedroom" {

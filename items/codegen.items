@@ -9,7 +9,11 @@ Group:Number:AVG g_all_humidity
 Group:Number:AVG g_all_pressure
 Group:Number:AVG g_all_co2
 Group:Switch:OR(ON, OFF) g_all_leak <water>
-Group:Number:SUM g_all_ac_energy <energy>
-
+// Power meters
+Group:Number:SUM g_all_ac_energy "Energy [%d kWh]" <energy>
+Group:Number:AVG g_all_ac_voltage "Voltage [%.2f V]" <energy>
+Group:Number:SUM g_all_ac_current "Current [%.2f A]" <energy>
+Group:Number:SUM g_all_ac_power "Power [%d W]" <energy>
+// HEating
 Group:Number:AVG g_all_thermostat
 Group:Switch:OR(ON, OFF) g_all_thermostat_enable
