@@ -167,7 +167,7 @@ function Thermostat(options) {
     if (!options.type) { options.type = 'devices.types.thermostat' }
     // Device settings
     options.temp_off = options.temp_off || 5
-    options.temp_on = options.temp_on || 23
+    options.temp_on = options.temp_on || 20
     options.temp_on_min = options.temp_on_min || 15
     let dev = new GenDevice(options)
     // On/Off control
