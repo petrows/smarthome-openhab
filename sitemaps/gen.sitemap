@@ -735,6 +735,17 @@ Text item=desktop_petro_light_ota
 Text item=desktop_petro_light_link
 Switch item=desktop_petro_light_sw
 }
+Frame label="Petro Desktop power (0x6cfd22fffe1a433d)" {
+// Petro Desktop power (0x6cfd22fffe1a433d)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=desktop_petro_power_ota
+Text item=desktop_petro_power_link
+Switch item=desktop_petro_power_sw
+Text item=desktop_petro_power_ac_voltage
+Text item=desktop_petro_power_ac_current
+Text item=desktop_petro_power_ac_power
+Text item=desktop_petro_power_ac_energy
+}
 Frame label="Petro Desktop PC (desktop_petro_pc_power)" {
 // Petro Desktop PC (desktop_petro_pc_power)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html

@@ -896,6 +896,11 @@ devices:
       ct:
       - astro_color_light_ct
 
+  - name: Petro Desktop power
+    id: desktop_petro_power
+    zigbee_id: '0x6cfd22fffe1a433d'
+    type: IKEA_INSPELNING
+
   - name: Petro Desktop PC
     id: desktop_petro_pc_power
     type: TASMOTA_SONOFF_MINI
