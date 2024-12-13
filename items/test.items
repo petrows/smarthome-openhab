@@ -1,5 +1,5 @@
 // Dummy showth to fix HabPanel
-Number:Dimensionless sz_co2_co2 "Co2 dummy"
+// Number:Dimensionless sz_co2_co2 "Co2 dummy"
 
 
 // Switch mqttSw1 {mqtt=">[mqtt:pws/testsw/comd1:command:ON:1],>[mqtt:pws/testsw/comd1:command:OFF:0]"}
