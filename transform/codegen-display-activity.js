@@ -2,6 +2,12 @@
     // Make a fuzzy time
     // https://stackoverflow.com/a/7641812
 
+    // dataString now "2024-12-28T10:10:28.720+01:00[Europe/Berlin]"
+    // starting from OH 4.3+
+
+    // Remove wrong timezone in "[...]"
+    dataString = dataString.replace(/\[.*\]/g, "")
+
     var delta = Math.round((+new Date - new Date(dataString)) / 1000);
 
     if (isNaN(delta)) {
