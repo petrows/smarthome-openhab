@@ -4,3 +4,7 @@ Number:Dimensionless ku_feeder_report { channel="tuya:tuyaDevice:bfceb8ff6c4edf5
 String ku_feeder_state "Feeder State [%s]" <cistern> { channel="tuya:tuyaDevice:bfceb8ff6c4edf5a80i3ws:feed_state" }
 Switch ku_feeder_light "Feeder Light [%s]" <light> { channel="tuya:tuyaDevice:bfceb8ff6c4edf5a80i3ws:light" }
 
+// Number:Dimensionless ku_feeder_test
+
+Number:Mass ku_feeder_total "Feeder total [%.2f g]" <cistern>
+Number:Mass ku_feeder_today "Feeder today [%.2f g]" <cistern>

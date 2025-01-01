@@ -1,9 +1,35 @@
 // One portion = 8g
 // Day ration = 48g (6x portions)
 
+rule "Feeder: reset today"
+when
+    Time cron "0 0 00 ? * * *"
+then
+    ku_feeder_today.sendCommand(0)
+end
+
 rule "Feeder: every 2h to feed 1 portion from 8 to 20"
 when
     Time cron "0 0 8,10,12,16,18,20 ? * * *"
 then
     ku_feeder_manual.sendCommand("1")
+end
+
+rule "Feeder: commanded"
+when
+    Item ku_feeder_manual received command
+    // Item ku_feeder_test received command
+then
+    // New value
+    val add_kg = (receivedCommand as Number).doubleValue * 0.008 // 8g per portion
+    var today_kg = (ku_feeder_today.state as QuantityType<Mass>).toUnit('kg').doubleValue
+    var total_kg = (ku_feeder_total.state as QuantityType<Mass>).toUnit('kg').doubleValue
+
+    total_kg = total_kg + add_kg
+    today_kg = today_kg + add_kg
+
+    ku_feeder_total.sendCommand(total_kg)
+    ku_feeder_today.sendCommand(today_kg)
+
+    logInfo("feeder", "Feeded with " + add_kg + " kg, total " + total_kg + " kg, today " + today_kg + " kg")
 end

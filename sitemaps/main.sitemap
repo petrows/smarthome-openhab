@@ -422,7 +422,9 @@ sitemap main label="MAIN"
             Text item=m800s_time
             Switch item=m800s_state_command label="Command []" mappings=["OFF"="OFF", "WARM"="WARM", "ON"="START"]
 		}
-        Group item=ku_feeder_state label="Feeder [%s]" {
+        Group item=ku_feeder_today label="Feeder [%d g]" {
+            Text item=ku_feeder_today label="Today [%d g]"
+            Text item=ku_feeder_total label="Total [%.2f kg]"
             Text item=ku_feeder_state label="Status [%s]"
             Switch item=ku_feeder_manual label="Feed []" mappings=["1"="SMALL", "3"="NORMAL", "9"="DAY"]
             Switch item=ku_feeder_light
