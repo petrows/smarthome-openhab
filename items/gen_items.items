@@ -913,6 +913,23 @@ Switch ku_shutter_cal "KU Shutter cal [%s]" <light> (g_all_cal) {channel="mqtt:t
 Switch backup_ext_power_ota "Ext backup power supply OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:backup_ext_power:ota"}
 Number:Dimensionless backup_ext_power_link "Ext backup power supply LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:backup_ext_power:link"}
 Switch backup_ext_power_sw "Ext backup power supply" <light> (g_all_sw) {channel="mqtt:topic:openhab:backup_ext_power:state"}
+// Main power (0x0c2a6ffffebf2819)
+// Smart energy monitor for 3P+N system / https://www.zigbee2mqtt.io/devices/SPM02V2.5.html#tuya-spm02v2.5
+Switch main_power_ota "Main power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:main_power:ota"}
+Number:Dimensionless main_power_link "Main power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:main_power:link"}
+Number:Frequency main_power_ac_frequency "Main power freq [%d Hz]" <energy> (g_all_ac_frequency) {channel="mqtt:topic:openhab:main_power:ac_frequency"}
+Number:Dimensionless main_power_ac_power_factor "Main power factor [%d %%]" <energy> (g_all_ac_power_factor) {channel="mqtt:topic:openhab:main_power:ac_power_factor"}
+Number:ElectricPotential main_power_ac_voltage_a "Main power A [%.1f V]" <energy> (g_all_ac_voltage_a) {channel="mqtt:topic:openhab:main_power:ac_voltage_a"}
+Number:ElectricPotential main_power_ac_voltage_b "Main power B [%.1f V]" <energy> (g_all_ac_voltage_b) {channel="mqtt:topic:openhab:main_power:ac_voltage_b"}
+Number:ElectricPotential main_power_ac_voltage_c "Main power C [%.1f V]" <energy> (g_all_ac_voltage_c) {channel="mqtt:topic:openhab:main_power:ac_voltage_c"}
+Number:ElectricCurrent main_power_ac_current_a "Main power A [%.2f A]" <energy> (g_all_ac_current_a) {channel="mqtt:topic:openhab:main_power:ac_current_a"}
+Number:ElectricCurrent main_power_ac_current_b "Main power B [%.2f A]" <energy> (g_all_ac_current_b) {channel="mqtt:topic:openhab:main_power:ac_current_b"}
+Number:ElectricCurrent main_power_ac_current_c "Main power C [%.2f A]" <energy> (g_all_ac_current_c) {channel="mqtt:topic:openhab:main_power:ac_current_c"}
+Number:Power main_power_ac_power "Main power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:main_power:ac_power"}
+Number:Power main_power_ac_power_a "Main power A [%.1f W]" <energy> (g_all_ac_power_a) {channel="mqtt:topic:openhab:main_power:ac_power_a"}
+Number:Power main_power_ac_power_b "Main power B [%.1f W]" <energy> (g_all_ac_power_b) {channel="mqtt:topic:openhab:main_power:ac_power_b"}
+Number:Power main_power_ac_power_c "Main power C [%.1f W]" <energy> (g_all_ac_power_c) {channel="mqtt:topic:openhab:main_power:ac_power_c"}
+Number:Energy main_power_ac_energy "Main power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:main_power:ac_energy"}
 // Mouse trap KU (0x048727fffea43740)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Switch mouse_trap_1_lowbatt "Mouse trap KU BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_1:battery_low"}

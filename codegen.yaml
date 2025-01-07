@@ -1323,6 +1323,11 @@ devices:
     zigbee_id: '0x7cb03eaa0a09e7bc'
     type: OSRAM_SMART_PLUG
 
+  - name: Main power
+    id: main_power
+    zigbee_id: '0x0c2a6ffffebf2819'
+    type: ZEMNISMART_3PHASE_METER
+
 # Mouse traps
 
   - name: Mouse trap KU

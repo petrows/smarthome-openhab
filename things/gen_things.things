@@ -1324,6 +1324,26 @@ Thing mqtt:topic:openhab:backup_ext_power "Ext backup power supply" (mqtt:broker
 		Type number : link [stateTopic="zigbee2mqtt/backup_ext_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/backup_ext_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// Main power (0x0c2a6ffffebf2819)
+// Smart energy monitor for 3P+N system / https://www.zigbee2mqtt.io/devices/SPM02V2.5.html#tuya-spm02v2.5
+Thing mqtt:topic:openhab:main_power "Main power" (mqtt:broker:openhab) {
+	Channels:
+		Type number : ac_frequency [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"ac_frequency\".*)∩JSONPATH:$.ac_frequency", unit="Hz"]
+		Type number : ac_power_factor [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"power_factor\".*)∩JSONPATH:$.power_factor", unit="%"]
+		Type number : ac_voltage_a [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"voltage_a\".*)∩JSONPATH:$.voltage_a", unit="V"]
+		Type number : ac_voltage_b [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"voltage_b\".*)∩JSONPATH:$.voltage_b", unit="V"]
+		Type number : ac_voltage_c [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"voltage_c\".*)∩JSONPATH:$.voltage_c", unit="V"]
+		Type number : ac_current_a [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"current_a\".*)∩JSONPATH:$.current_a", unit="A"]
+		Type number : ac_current_b [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"current_b\".*)∩JSONPATH:$.current_b", unit="A"]
+		Type number : ac_current_c [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"current_c\".*)∩JSONPATH:$.current_c", unit="A"]
+		Type number : ac_power [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_power_a [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"power_a\".*)∩JSONPATH:$.power_a", unit="W"]
+		Type number : ac_power_b [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"power_b\".*)∩JSONPATH:$.power_b", unit="W"]
+		Type number : ac_power_c [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"power_c\".*)∩JSONPATH:$.power_c", unit="W"]
+		Type number : ac_energy [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // Mouse trap KU (0x048727fffea43740)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Thing mqtt:topic:openhab:mouse_trap_1 "Mouse trap KU" (mqtt:broker:openhab) {

@@ -1113,6 +1113,25 @@ Text item=backup_ext_power_ota
 Text item=backup_ext_power_link
 Switch item=backup_ext_power_sw
 }
+Frame label="Main power (0x0c2a6ffffebf2819)" {
+// Main power (0x0c2a6ffffebf2819)
+// Smart energy monitor for 3P+N system / https://www.zigbee2mqtt.io/devices/SPM02V2.5.html#tuya-spm02v2.5
+Text item=main_power_ota
+Text item=main_power_link
+Text item=main_power_ac_frequency
+Text item=main_power_ac_power_factor
+Text item=main_power_ac_voltage_a
+Text item=main_power_ac_voltage_b
+Text item=main_power_ac_voltage_c
+Text item=main_power_ac_current_a
+Text item=main_power_ac_current_b
+Text item=main_power_ac_current_c
+Text item=main_power_ac_power
+Text item=main_power_ac_power_a
+Text item=main_power_ac_power_b
+Text item=main_power_ac_power_c
+Text item=main_power_ac_energy
+}
 Frame label="Mouse trap KU (0x048727fffea43740)" {
 // Mouse trap KU (0x048727fffea43740)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
