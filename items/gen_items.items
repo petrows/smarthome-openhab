@@ -688,8 +688,8 @@ Number:Dimensionless kg_lager1_door_battery "KG Lager 1 door  BAT [%d %%]" <batt
 Switch octoprint_power_ota "Octoprint power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:octoprint_power:ota"}
 Number:Dimensionless octoprint_power_link "Octoprint power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:octoprint_power:link"}
 Switch octoprint_power_sw "Octoprint power" <light> (g_all_sw) {channel="mqtt:topic:openhab:octoprint_power:state"}
-// Octoprint climate (0x00158d0001c15121)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+// Octoprint climate (0xa4c138234138f73a)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Switch octoprint_climate_lowbatt "Octoprint climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:octoprint_climate:battery_low"}
 Switch octoprint_climate_ota "Octoprint climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:octoprint_climate:ota"}
 Number:Dimensionless octoprint_climate_link "Octoprint climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:octoprint_climate:link"}

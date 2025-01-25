@@ -1004,8 +1004,8 @@ Thing mqtt:topic:openhab:octoprint_power "Octoprint power" (mqtt:broker:openhab)
 		Type number : link [stateTopic="zigbee2mqtt/octoprint_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/octoprint_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Octoprint climate (0x00158d0001c15121)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+// Octoprint climate (0xa4c138234138f73a)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:octoprint_climate "Octoprint climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="zigbee2mqtt/octoprint_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]

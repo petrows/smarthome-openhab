@@ -836,9 +836,9 @@ Text item=octoprint_power_ota
 Text item=octoprint_power_link
 Switch item=octoprint_power_sw
 }
-Frame label="Octoprint climate (0x00158d0001c15121)" {
-// Octoprint climate (0x00158d0001c15121)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Frame label="Octoprint climate (0xa4c138234138f73a)" {
+// Octoprint climate (0xa4c138234138f73a)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Text item=octoprint_climate_lowbatt
 Text item=octoprint_climate_ota
 Text item=octoprint_climate_link

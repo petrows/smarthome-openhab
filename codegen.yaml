@@ -1025,8 +1025,8 @@ devices:
 
   - name: Octoprint climate
     id: octoprint_climate
-    zigbee_id: '0x00158d0001c15121'
-    type: XIAOMI_AQARA_V1
+    zigbee_id: '0xa4c138234138f73a'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   # Storage room 3
 
