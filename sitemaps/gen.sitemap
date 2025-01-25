@@ -185,6 +185,16 @@ Text item=bz_towel_heater_ac_current
 Text item=bz_towel_heater_ac_power
 Text item=bz_towel_heater_ac_energy
 }
+Frame label="BZ leak (0x8c65a3fffe70093b)" {
+// BZ leak (0x8c65a3fffe70093b)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=bz_leak_lowbatt
+Text item=bz_leak_ota
+Text item=bz_leak_link
+Text item=bz_leak_activity
+Text item=bz_leak_leak
+Text item=bz_leak_battery
+}
 Frame label="KS Main (0x588e81fffefb217b)" {
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l

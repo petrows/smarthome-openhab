@@ -233,6 +233,11 @@ devices:
     # Do not allow too much to heat
     expire: 90m
 
+  - name: BZ leak
+    id: bz_leak
+    zigbee_id: '0x8c65a3fffe70093b'
+    type: IKEA_BADRING
+
 # THEATER ================================
 
   - name: KS Main

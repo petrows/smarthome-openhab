@@ -219,6 +219,18 @@ Thing mqtt:topic:openhab:bz_towel_heater "BZ Towel Heater" (mqtt:broker:openhab)
 		Type number : link [stateTopic="zigbee2mqtt/bz_towel_heater", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/bz_towel_heater", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// BZ leak (0x8c65a3fffe70093b)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Thing mqtt:topic:openhab:bz_leak "BZ leak" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : leak [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
+		Type number : battery [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="JS:codegen-activity.js"]
+}
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Thing mqtt:topic:openhab:ks_up_light "KS Main" (mqtt:broker:openhab) {
