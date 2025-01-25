@@ -671,7 +671,7 @@ Text item=kg_window_1_battery
 }
 Frame label="KG Window (Hobbyraum) (0xa4c1381a072fcf8b)" {
 // KG Window (Hobbyraum) (0xa4c1381a072fcf8b)
-// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Text item=kg_window_2_lowbatt
 Text item=kg_window_2_ota
 Text item=kg_window_2_link

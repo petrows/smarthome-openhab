@@ -810,7 +810,7 @@ Thing mqtt:topic:openhab:kg_window_1 "KG Window (Cabinet)" (mqtt:broker:openhab)
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Window (Hobbyraum) (0xa4c1381a072fcf8b)
-// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Thing mqtt:topic:openhab:kg_window_2 "KG Window (Hobbyraum)" (mqtt:broker:openhab) {
 	Channels:
 		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]

@@ -799,7 +799,7 @@ devices:
   - name: KG Window (Hobbyraum)
     id: kg_window_2
     zigbee_id: '0xa4c1381a072fcf8b'
-    type: TUYA_WINDOW_SENSOR
+    type: IKEA_PARASOLL
     groups:
       contact:
       - kg_windows_contact

@@ -554,7 +554,7 @@ DateTime kg_window_1_activity "KG Window (Cabinet) activity [JS(codegen-display-
 Contact kg_window_1_contact "KG Window (Cabinet) [%s]" <door> (g_all_contact,kg_windows_contact) {channel="mqtt:topic:openhab:kg_window_1:contact"}
 Number:Dimensionless kg_window_1_battery "KG Window (Cabinet)  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_window_1:battery"}
 // KG Window (Hobbyraum) (0xa4c1381a072fcf8b)
-// TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Switch kg_window_2_lowbatt "KG Window (Hobbyraum) BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_window_2:battery_low"}
 Switch kg_window_2_ota "KG Window (Hobbyraum) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_window_2:ota"}
 Number:Dimensionless kg_window_2_link "KG Window (Hobbyraum) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_window_2:link"}
