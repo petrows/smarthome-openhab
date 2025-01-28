@@ -176,7 +176,7 @@ then
                 ku_light_table_sw.sendCommand(OFF)
             }
         }
-        case "arrow_left_click": {
+        case "arrow_right_click": {
             if (bk_light_sw.state == OFF) {
                 bk_light_sw.sendCommand(ON)
                 bk_light_dim.sendCommand(100)
@@ -184,7 +184,7 @@ then
                 bk_light_sw.sendCommand(OFF)
             }
         }
-        case "arrow_right_click": {
+        case "arrow_left_click": {
             if (ku_up_light.state == OFF) {
                 ku_light_switch_haupt_sw.sendCommand(ON)
             } else {
