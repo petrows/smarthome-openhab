@@ -15,6 +15,14 @@ then
     ku_feeder_manual.sendCommand("1")
 end
 
+rule "Feeder: scene"
+when
+    Item scene_cat_food received command ON
+then
+    logInfo("feeder", "Scene command")
+    ku_feeder_manual.sendCommand("1")
+end
+
 rule "Feeder: commanded"
 when
     Item ku_feeder_manual received command

@@ -34,6 +34,11 @@ devices = [
         name: 'Хочу спать',
         room: ROOMS.GROUPS,
     }),
+    Scene({
+        id: 'scene_cat_food',
+        name: 'Покорми котов',
+        room: ROOMS.GROUPS,
+    }),
 
     // Groups
     LightGroup({
