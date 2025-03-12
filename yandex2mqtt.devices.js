@@ -207,6 +207,14 @@ devices = [
         name: 'Цветы',
         room: ROOMS.LIVING,
     }),
+
+    // Petro desktop laptop power
+    Light(LIGHT.SW, {
+        id: 'desktop_petro_laptop_power',
+        type: 'devices.types.switch',
+        name: 'Ноутбук',
+        room: ROOMS.KG_CABINET,
+    }),
 ];
 
 devices = devices.concat(cdg.devices)

@@ -896,11 +896,12 @@ devices:
       ct:
       - astro_color_light_ct
 
+  # Power for whole desktop in general (+measure)
   - name: Petro Desktop power
     id: desktop_petro_power
     zigbee_id: '0x6cfd22fffe1a433d'
     type: IKEA_INSPELNING
-
+  # Power for devices to be switched off
   - name: Petro Desktop PC
     id: desktop_petro_pc_power
     type: TASMOTA_SONOFF_MINI
@@ -908,6 +909,12 @@ devices:
       POWER:
         id: desktop_petro_pc_power
         name: Petro Desktop PC
+  # Power for laptop to be switched off
+  - name: Petro Desktop Laptop
+    id: desktop_petro_laptop_power
+    # FIXME use temporaly power plug from SZ
+    zigbee_id: '0x7cb03eaa0a093a8b'
+    type: OSRAM_SMART_PLUG
 
   - name: Petro Desktop remote
     id: desktop_petro_remote

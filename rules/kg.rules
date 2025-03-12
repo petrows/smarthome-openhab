@@ -38,3 +38,99 @@ then
     desktop_petro_power_try.sendCommand(OFF)
 end
 
+// PC turned off -> trigger offline check
+rule "PC desktop offline"
+when
+    Item g_online_petro changed from ON to OFF
+then
+    logWarn("light", "Petro desktop offline")
+    desktop_petro_power_try.sendCommand(OFF)
+end
+
+// Petro desktop power control
+rule "Petro desktop power"
+when
+    Item desktop_petro_power_try received update
+then
+    logWarn("light", "Petro desktop power: " + newState)
+
+    if (newState == ON) {
+        desktop_petro_pc_power.sendCommand(ON)
+        return
+    }
+
+    if (newState == OFF) {
+        createTimer(now.plusSeconds(300), [|
+            logWarn("light", "Petro delayed power off check, PC status is " + g_online_petro.state + ", light status is " + kg_light_hobbyraum.state)
+            if (g_online_petro.state == ON || kg_light_hobbyraum.state == ON) {
+                desktop_petro_power_try.setState(ON) // Decline state change
+                return
+            }
+            desktop_petro_pc_power.sendCommand(OFF)
+            desktop_petro_laptop_power_sw.sendCommand(OFF)
+        ])
+        return
+    }
+end
+
+// Follow Laptop power: switch off after common
+rule "Switch off Laptop, when main power is off"
+when
+    Item desktop_petro_pc_power received command OFF
+then
+    desktop_petro_laptop_power_sw.sendCommand(OFF)
+end
+
+rule "Petro desktop remote"
+when
+    Channel "mqtt:topic:openhab:desktop_petro_remote:action" triggered
+then
+	var state = receivedEvent
+
+    // any evebt turs on table power
+    desktop_petro_power_try.sendCommand(ON)
+
+    switch(state) {
+        case "toggle": {
+            if (kg_light_desktop.state == ON) {
+                kg_light_desktop.sendCommand(OFF)
+            } else {
+                kg_light_desktop.sendCommand(ON)
+            }
+        }
+        case "arrow_right_click": {
+            kg_light_desktop_dim.sendCommand(100)
+            desktop_petro_light_dim.sendCommand(100)
+        }
+        // Press: power on
+        case "arrow_left_click": {
+            kg_light_desktop_dim.sendCommand(25)
+            desktop_petro_light_dim.sendCommand(100)
+        }
+        // Hold: power on + laptop
+        case "arrow_left_hold": {
+            kg_light_desktop_dim.sendCommand(25)
+            desktop_petro_light_dim.sendCommand(100)
+            desktop_petro_laptop_power_sw.sendCommand(ON)
+        }
+        case "brightness_down_click": {
+            kg_light.members.forEach [s |
+                if (
+                    s != desktop_petro_light_sw
+                    && s != desktop_petro_up_light_1_sw
+                    && s != desktop_petro_up_light_2_sw
+                    && s != desktop_petro_up_light_3_sw
+                ) {
+                    s.sendCommand(OFF)
+                }
+            ]
+        }
+        case "brightness_up_click": {
+            kg_light_auto.members.forEach [s |
+                if (s != desktop_petro_light_sw) {
+                    s.sendCommand(ON)
+                }
+            ]
+        }
+    }
+end

@@ -758,6 +758,13 @@ Text item=desktop_petro_pc_power_rssi
 Text item=desktop_petro_pc_power_bssid
 Text item=desktop_petro_pc_power_activity
 }
+Frame label="Petro Desktop Laptop (0x7cb03eaa0a093a8b)" {
+// Petro Desktop Laptop (0x7cb03eaa0a093a8b)
+// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Text item=desktop_petro_laptop_power_ota
+Text item=desktop_petro_laptop_power_link
+Switch item=desktop_petro_laptop_power_sw
+}
 Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {
 // Petro Desktop remote (0x000d6ffffee8357d)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
