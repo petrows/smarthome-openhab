@@ -69,11 +69,6 @@ devices:
     zigbee_id: '0xccccccfffe58f1c3'
     type: IKEA_TRADFRI_ON_OFF
 
-  - name: EG Router
-    id: eg_router
-    zigbee_id: '0x00124b000b4ed5cc'
-    type: DIY_CC2540_ROUTER
-
 # CORRIDOR ===============================
 
   - name: EG Corridor Light
