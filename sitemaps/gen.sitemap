@@ -59,12 +59,6 @@ Text item=garten_wasser_remote_ota
 Text item=garten_wasser_remote_link
 Text item=garten_wasser_remote_battery
 }
-Frame label="EG Router (0x00124b000b4ed5cc)" {
-// EG Router (0x00124b000b4ed5cc)
-// CC2530.ROUTER - Custom devices (DiY) / https://www.zigbee2mqtt.io/devices/CC2530.ROUTER.html
-Text item=eg_router_ota
-Text item=eg_router_link
-}
 Frame label="EG Corridor Light (0xa4c138a06ec38c9e)" {
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
@@ -1046,27 +1040,6 @@ Text item=kg_heating_link
 Text item=kg_heating_activity
 Text item=kg_heating_local_temperature
 Text item=kg_heating_battery_voltage
-}
-Frame label="SZ Christmas light (0x7cb03eaa0a093a8b)" {
-// SZ Christmas light (0x7cb03eaa0a093a8b)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=sz_christmas_light_ota
-Text item=sz_christmas_light_link
-Switch item=sz_christmas_light_sw
-}
-Frame label="KS Christmas light (0x7cb03eaa0a094303)" {
-// KS Christmas light (0x7cb03eaa0a094303)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=ks_christmas_light_ota
-Text item=ks_christmas_light_link
-Switch item=ks_christmas_light_sw
-}
-Frame label="WZ Christmas light (0x7cb03eaa0a09ad23)" {
-// WZ Christmas light (0x7cb03eaa0a09ad23)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=wz_christmas_light_ota
-Text item=wz_christmas_light_link
-Switch item=wz_christmas_light_sw
 }
 Frame label="KG Christmas light (0x84182600000d9c12)" {
 // KG Christmas light (0x84182600000d9c12)

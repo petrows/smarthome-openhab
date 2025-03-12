@@ -1224,29 +1224,29 @@ devices:
 
 # Christmas lights
 
-  - name: SZ Christmas light
-    id: sz_christmas_light
-    zigbee_id: '0x7cb03eaa0a093a8b'
-    type: OSRAM_SMART_PLUG
-    groups:
-      sw:
-      - all_light_christmas
+  # - name: SZ Christmas light
+  #   id: sz_christmas_light
+  #   zigbee_id: '0x7cb03eaa0a093a8b'
+  #   type: OSRAM_SMART_PLUG
+  #   groups:
+  #     sw:
+  #     - all_light_christmas
 
-  - name: KS Christmas light
-    id: ks_christmas_light
-    zigbee_id: '0x7cb03eaa0a094303'
-    type: OSRAM_SMART_PLUG
-    groups:
-      sw:
-      - all_light_christmas
+  # - name: KS Christmas light
+  #   id: ks_christmas_light
+  #   zigbee_id: '0x7cb03eaa0a094303'
+  #   type: OSRAM_SMART_PLUG
+  #   groups:
+  #     sw:
+  #     - all_light_christmas
 
-  - name: WZ Christmas light
-    id: wz_christmas_light
-    zigbee_id: '0x7cb03eaa0a09ad23'
-    type: OSRAM_SMART_PLUG
-    groups:
-      sw:
-      - all_light_christmas
+  # - name: WZ Christmas light
+  #   id: wz_christmas_light
+  #   zigbee_id: '0x7cb03eaa0a09ad23'
+  #   type: OSRAM_SMART_PLUG
+  #   groups:
+  #     sw:
+  #     - all_light_christmas
 
   - name: KG Christmas light
     id: kg_christmas_light

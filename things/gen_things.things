@@ -64,13 +64,6 @@ Thing mqtt:topic:openhab:garten_wasser_remote "Garten wasser remote" (mqtt:broke
 		Type number : link [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// EG Router (0x00124b000b4ed5cc)
-// CC2530.ROUTER - Custom devices (DiY) / https://www.zigbee2mqtt.io/devices/CC2530.ROUTER.html
-Thing mqtt:topic:openhab:eg_router "EG Router" (mqtt:broker:openhab) {
-	Channels:
-		Type number : link [stateTopic="zigbee2mqtt/eg_router", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/eg_router", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
 Thing mqtt:topic:openhab:fl_up_light "EG Corridor Light" (mqtt:broker:openhab) {
@@ -1250,30 +1243,6 @@ Thing mqtt:topic:openhab:kg_heating "KG heating" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:codegen-activity.js"]
-}
-// SZ Christmas light (0x7cb03eaa0a093a8b)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:sz_christmas_light "SZ Christmas light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/sz_christmas_light", commandTopic="zigbee2mqtt/sz_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// KS Christmas light (0x7cb03eaa0a094303)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:ks_christmas_light "KS Christmas light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ks_christmas_light", commandTopic="zigbee2mqtt/ks_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/ks_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ks_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Christmas light (0x7cb03eaa0a09ad23)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:wz_christmas_light "WZ Christmas light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/wz_christmas_light", commandTopic="zigbee2mqtt/wz_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/wz_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // KG Christmas light (0x84182600000d9c12)
 // OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html

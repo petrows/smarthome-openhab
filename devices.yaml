@@ -1,7 +1,5 @@
 '0x000d6ffffee8357d':
   friendly_name: desktop_petro_remote
-'0x00124b000b4ed5cc':
-  friendly_name: eg_router
 '0x00158d0001e612b9':
   friendly_name: ku_light_switch_spule
 '0x00158d000488052c':
@@ -118,16 +116,10 @@
   friendly_name: lg3_washmachine
 '0x7cb03eaa0a02b08f':
   friendly_name: wz_plant_light
-'0x7cb03eaa0a093a8b':
-  friendly_name: sz_christmas_light
-'0x7cb03eaa0a094303':
-  friendly_name: ks_christmas_light
 '0x7cb03eaa0a094bf2':
   friendly_name: bk_christmas_light
 '0x7cb03eaa0a094d1d':
   friendly_name: ks_projector_power
-'0x7cb03eaa0a09ad23':
-  friendly_name: wz_christmas_light
 '0x7cb03eaa0a09e7bc':
   friendly_name: backup_ext_power
 '0x7cb03eaa0a0a1103':
