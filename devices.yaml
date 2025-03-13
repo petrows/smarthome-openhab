@@ -112,6 +112,8 @@
   friendly_name: ku_up_power
 '0x6cfd22fffe1cb2bc':
   friendly_name: bz_towel_heater
+'0x6cfd22fffeb63428':
+  friendly_name: kg_window_2
 '0x70b3d52b60057a95':
   friendly_name: lg3_washmachine
 '0x7cb03eaa0a02b08f':
@@ -164,8 +166,6 @@
   friendly_name: lg3_climate
 '0xa4c138182f60d651':
   friendly_name: eg_main_door
-'0xa4c1381a072fcf8b':
-  friendly_name: kg_window_2
 '0xa4c138234138f73a':
   friendly_name: octoprint_climate
 '0xa4c138312d2c455f':

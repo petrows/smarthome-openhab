@@ -793,7 +793,7 @@ devices:
 
   - name: KG Window (Hobbyraum)
     id: kg_window_2
-    zigbee_id: '0xa4c1381a072fcf8b'
+    zigbee_id: '0x6cfd22fffeb63428'
     type: IKEA_PARASOLL
     groups:
       contact:

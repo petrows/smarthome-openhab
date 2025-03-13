@@ -663,8 +663,8 @@ Text item=kg_window_1_activity
 Text item=kg_window_1_contact
 Text item=kg_window_1_battery
 }
-Frame label="KG Window (Hobbyraum) (0xa4c1381a072fcf8b)" {
-// KG Window (Hobbyraum) (0xa4c1381a072fcf8b)
+Frame label="KG Window (Hobbyraum) (0x6cfd22fffeb63428)" {
+// KG Window (Hobbyraum) (0x6cfd22fffeb63428)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Text item=kg_window_2_lowbatt
 Text item=kg_window_2_ota
