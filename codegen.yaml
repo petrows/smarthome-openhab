@@ -913,8 +913,8 @@ devices:
   - name: Petro Desktop Laptop
     id: desktop_petro_laptop_power
     # FIXME use temporaly power plug from SZ
-    zigbee_id: '0x7cb03eaa0a093a8b'
-    type: OSRAM_SMART_PLUG
+    zigbee_id: '0x28dba7fffe5fa1dd'
+    type: IKEA_TRETAKT
 
   - name: Petro Desktop remote
     id: desktop_petro_remote
@@ -1027,8 +1027,8 @@ devices:
 
   - name: Octoprint power
     id: octoprint_power
-    zigbee_id: '0x28dba7fffe5fa1dd'
-    type: OSRAM_SMART_PLUG
+    zigbee_id: '0x94ec32fffe202672'
+    type: IKEA_INSPELNING
 
   - name: Octoprint climate
     id: octoprint_climate

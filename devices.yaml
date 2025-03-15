@@ -84,7 +84,7 @@
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':
-  friendly_name: octoprint_power
+  friendly_name: desktop_petro_laptop_power
 '0x3c2ef5fffe41fc77':
   friendly_name: sz_window_r
 '0x540f57fffe1e420c':
@@ -118,8 +118,6 @@
   friendly_name: lg3_washmachine
 '0x7cb03eaa0a02b08f':
   friendly_name: wz_plant_light
-'0x7cb03eaa0a093a8b':
-  friendly_name: desktop_petro_laptop_power
 '0x7cb03eaa0a094bf2':
   friendly_name: bk_christmas_light
 '0x7cb03eaa0a094d1d':
@@ -158,6 +156,8 @@
     interval: 100
 '0x94deb8fffeda7949':
   friendly_name: sz_bed_light_r
+'0x94ec32fffe202672':
+  friendly_name: octoprint_power
 '0xa4c138018d7a55bf':
   friendly_name: ku_shutter
 '0xa4c13804963f4ccf':

@@ -758,9 +758,9 @@ Text item=desktop_petro_pc_power_rssi
 Text item=desktop_petro_pc_power_bssid
 Text item=desktop_petro_pc_power_activity
 }
-Frame label="Petro Desktop Laptop (0x7cb03eaa0a093a8b)" {
-// Petro Desktop Laptop (0x7cb03eaa0a093a8b)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Frame label="Petro Desktop Laptop (0x28dba7fffe5fa1dd)" {
+// Petro Desktop Laptop (0x28dba7fffe5fa1dd)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
 Text item=desktop_petro_laptop_power_ota
 Text item=desktop_petro_laptop_power_link
 Switch item=desktop_petro_laptop_power_sw
@@ -840,12 +840,16 @@ Text item=kg_lager1_door_activity
 Text item=kg_lager1_door_contact
 Text item=kg_lager1_door_battery
 }
-Frame label="Octoprint power (0x28dba7fffe5fa1dd)" {
-// Octoprint power (0x28dba7fffe5fa1dd)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Frame label="Octoprint power (0x94ec32fffe202672)" {
+// Octoprint power (0x94ec32fffe202672)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Text item=octoprint_power_ota
 Text item=octoprint_power_link
 Switch item=octoprint_power_sw
+Text item=octoprint_power_ac_voltage
+Text item=octoprint_power_ac_current
+Text item=octoprint_power_ac_power
+Text item=octoprint_power_ac_energy
 }
 Frame label="Octoprint climate (0xa4c138234138f73a)" {
 // Octoprint climate (0xa4c138234138f73a)

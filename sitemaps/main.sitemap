@@ -336,6 +336,7 @@ sitemap main label="MAIN"
 				Slider item=desktop_petro_light_dim label="Desktop DIM [%d %%]"
 				Slider item=desktop_petro_light_ct label="Desktop CT [JS(codegen-mired.js):%s]"
 				Switch item=desktop_petro_pc_power label="Desktop power [%s]"
+				Switch item=desktop_petro_laptop_power_sw label="Laptop power [%s]"
                 Text item=online_petro_pc label="Online PC [%s]"
                 Text item=online_petro_nb label="Online Laptop [%s]"
 			}
@@ -491,9 +492,14 @@ sitemap main label="MAIN"
         Group item=octoprint_power_sw label="Octoprint" {
             Group item=octoprint_power_sw label="Power" {
                 Switch item=octoprint_power_sw
+                Text item=octoprint_power_ac_voltage
+                Text item=octoprint_power_ac_current
+                Text item=octoprint_power_ac_power
+                Text item=octoprint_power_ac_energy
             }
             Text item=octoprint_climate_temperature
             Text item=octoprint_climate_humidity
+            Text item=octoprint_power_ac_power
             Text item=ocotprint_progress
             Text item=ocotprint_file
             Text item=ocotprint_temperature_bed_actual
