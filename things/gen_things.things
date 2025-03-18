@@ -1171,6 +1171,18 @@ Thing mqtt:topic:openhab:kg_srv_power "SRV power" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/kg_srv_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_srv_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// SRV leak (0x6cfd22fffe1c54d8)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Thing mqtt:topic:openhab:srv_leak "SRV leak" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : leak [stateTopic="zigbee2mqtt/srv_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
+		Type number : battery [stateTopic="zigbee2mqtt/srv_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/srv_leak", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/srv_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/srv_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/srv_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/srv_leak", transformationPattern="JS:codegen-activity.js"]
+}
 // SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {

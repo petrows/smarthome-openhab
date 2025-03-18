@@ -977,6 +977,16 @@ Text item=kg_srv_power_ac_current
 Text item=kg_srv_power_ac_power
 Text item=kg_srv_power_ac_energy
 }
+Frame label="SRV leak (0x6cfd22fffe1c54d8)" {
+// SRV leak (0x6cfd22fffe1c54d8)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=srv_leak_lowbatt
+Text item=srv_leak_ota
+Text item=srv_leak_link
+Text item=srv_leak_activity
+Text item=srv_leak_leak
+Text item=srv_leak_battery
+}
 Frame label="SZ heating (0x0c4314fffe63b727)" {
 // SZ heating (0x0c4314fffe63b727)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html

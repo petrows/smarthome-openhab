@@ -1150,6 +1150,11 @@ devices:
     zigbee_id: '0x6cfd22fffe1a1af2'
     type: IKEA_INSPELNING
 
+  - name: SRV leak
+    id: srv_leak
+    zigbee_id: '0x6cfd22fffe1c54d8'
+    type: IKEA_BADRING
+
 # Heating
 
   - name: SZ heating

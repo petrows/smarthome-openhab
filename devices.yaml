@@ -110,6 +110,8 @@
   friendly_name: desktop_petro_power
 '0x6cfd22fffe1a4e35':
   friendly_name: ku_up_power
+'0x6cfd22fffe1c54d8':
+  friendly_name: srv_leak
 '0x6cfd22fffe1cb2bc':
   friendly_name: bz_towel_heater
 '0x6cfd22fffeb63428':
