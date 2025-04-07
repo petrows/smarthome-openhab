@@ -81,6 +81,8 @@
   simulated_brightness:
     delta: 5
     interval: 100
+'0x1cc089fffe13a7e3':
+  friendly_name: backup_ext_power
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':
@@ -118,18 +120,6 @@
   friendly_name: kg_window_2
 '0x70b3d52b60057a95':
   friendly_name: lg3_washmachine
-'0x7cb03eaa0a02b08f':
-  friendly_name: wz_plant_light
-'0x7cb03eaa0a094bf2':
-  friendly_name: bk_christmas_light
-'0x7cb03eaa0a094d1d':
-  friendly_name: ks_projector_power
-'0x7cb03eaa0a09e7bc':
-  friendly_name: backup_ext_power
-'0x7cb03eaa0a0a1103':
-  friendly_name: kg_main1_work_light
-'0x84182600000d9c12':
-  friendly_name: kg_christmas_light
 '0x842e14fffe0eb8a0':
   friendly_name: sz_up_light
 '0x8c65a3fffe3dbc2c':

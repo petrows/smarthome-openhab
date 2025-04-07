@@ -220,13 +220,6 @@ Text item=ks_light_night_ota
 Text item=ks_light_night_link
 Switch item=ks_light_night_sw
 }
-Frame label="KS Projector (0x7cb03eaa0a094d1d)" {
-// KS Projector (0x7cb03eaa0a094d1d)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=ks_projector_power_ota
-Text item=ks_projector_power_link
-Switch item=ks_projector_power_sw
-}
 Frame label="KS Window 2 (0xa4c138f1bf27592c)" {
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -338,13 +331,6 @@ Slider item=wz_declamp_3_dim
 Text item=wz_declamp_3_ota
 Text item=wz_declamp_3_link
 Switch item=wz_declamp_3_sw
-}
-Frame label="WZ Plants light (0x7cb03eaa0a02b08f)" {
-// WZ Plants light (0x7cb03eaa0a02b08f)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=wz_plant_light_ota
-Text item=wz_plant_light_link
-Switch item=wz_plant_light_sw
 }
 Frame label="WZ Window 1 (0xa4c13804963f4ccf)" {
 // WZ Window 1 (0xa4c13804963f4ccf)
@@ -773,13 +759,6 @@ Text item=desktop_petro_remote_ota
 Text item=desktop_petro_remote_link
 Text item=desktop_petro_remote_battery
 }
-Frame label="KG Hobbyraum (Work light) (0x7cb03eaa0a0a1103)" {
-// KG Hobbyraum (Work light) (0x7cb03eaa0a0a1103)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=kg_main1_work_light_ota
-Text item=kg_main1_work_light_link
-Switch item=kg_main1_work_light_sw
-}
 Frame label="KG Hobbyraum (Workshop) (kg_main1_light)" {
 // KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
@@ -1062,20 +1041,6 @@ Text item=kg_heating_activity
 Text item=kg_heating_local_temperature
 Text item=kg_heating_battery_voltage
 }
-Frame label="KG Christmas light (0x84182600000d9c12)" {
-// KG Christmas light (0x84182600000d9c12)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=kg_christmas_light_ota
-Text item=kg_christmas_light_link
-Switch item=kg_christmas_light_sw
-}
-Frame label="Balkon Christmas light (0x7cb03eaa0a094bf2)" {
-// Balkon Christmas light (0x7cb03eaa0a094bf2)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Text item=bk_christmas_light_ota
-Text item=bk_christmas_light_link
-Switch item=bk_christmas_light_sw
-}
 Frame label="SZ Shutter (0xa4c138fd0fd1c168)" {
 // SZ Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
@@ -1110,12 +1075,16 @@ Text item=ku_shutter_mov
 Slider item=ku_shutter_pos
 Switch item=ku_shutter_cal
 }
-Frame label="Ext backup power supply (0x7cb03eaa0a09e7bc)" {
-// Ext backup power supply (0x7cb03eaa0a09e7bc)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+Frame label="Ext backup power supply (0x1cc089fffe13a7e3)" {
+// Ext backup power supply (0x1cc089fffe13a7e3)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Text item=backup_ext_power_ota
 Text item=backup_ext_power_link
 Switch item=backup_ext_power_sw
+Text item=backup_ext_power_ac_voltage
+Text item=backup_ext_power_ac_current
+Text item=backup_ext_power_ac_power
+Text item=backup_ext_power_ac_energy
 }
 Frame label="Main power (0x0c2a6ffffebf2819)" {
 // Main power (0x0c2a6ffffebf2819)

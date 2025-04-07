@@ -261,14 +261,6 @@ Thing mqtt:topic:openhab:ks_light_night "KS Night lamp" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/ks_light_night", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ks_light_night", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KS Projector (0x7cb03eaa0a094d1d)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:ks_projector_power "KS Projector" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ks_projector_power", commandTopic="zigbee2mqtt/ks_projector_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/ks_projector_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ks_projector_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:ks_window_2 "KS Window 2" (mqtt:broker:openhab) {
@@ -407,14 +399,6 @@ Thing mqtt:topic:openhab:wz_declamp_3 "WZ Decor lamp 3" (mqtt:broker:openhab) {
 		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/wz_declamp_3", commandTopic="zigbee2mqtt/wz_declamp_3/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0", min=1, max=254]
 		Type number : link [stateTopic="zigbee2mqtt/wz_declamp_3", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/wz_declamp_3", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Plants light (0x7cb03eaa0a02b08f)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:wz_plant_light "WZ Plants light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/wz_plant_light", commandTopic="zigbee2mqtt/wz_plant_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/wz_plant_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_plant_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // WZ Window 1 (0xa4c13804963f4ccf)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -927,14 +911,6 @@ Thing mqtt:topic:openhab:desktop_petro_remote "Petro Desktop remote" (mqtt:broke
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KG Hobbyraum (Work light) (0x7cb03eaa0a0a1103)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:kg_main1_work_light "KG Hobbyraum (Work light)" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/kg_main1_work_light", commandTopic="zigbee2mqtt/kg_main1_work_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/kg_main1_work_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/kg_main1_work_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
 Thing mqtt:topic:openhab:kg_main1_light "KG Hobbyraum (Workshop)" (mqtt:broker:openhab) {
@@ -1268,22 +1244,6 @@ Thing mqtt:topic:openhab:kg_heating "KG heating" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_heating", transformationPattern="JS:codegen-activity.js"]
 }
-// KG Christmas light (0x84182600000d9c12)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:kg_christmas_light "KG Christmas light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/kg_christmas_light", commandTopic="zigbee2mqtt/kg_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/kg_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/kg_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Balkon Christmas light (0x7cb03eaa0a094bf2)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Thing mqtt:topic:openhab:bk_christmas_light "Balkon Christmas light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/bk_christmas_light", commandTopic="zigbee2mqtt/bk_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/bk_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bk_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // SZ Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
 Thing mqtt:topic:openhab:sz_shutter "SZ Shutter" (mqtt:broker:openhab) {
@@ -1321,11 +1281,15 @@ Thing mqtt:topic:openhab:ku_shutter "KU Shutter" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/ku_shutter", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_shutter", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Ext backup power supply (0x7cb03eaa0a09e7bc)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+// Ext backup power supply (0x1cc089fffe13a7e3)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Thing mqtt:topic:openhab:backup_ext_power "Ext backup power supply" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/backup_ext_power", commandTopic="zigbee2mqtt/backup_ext_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : ac_voltage [stateTopic="zigbee2mqtt/backup_ext_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="zigbee2mqtt/backup_ext_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="zigbee2mqtt/backup_ext_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="zigbee2mqtt/backup_ext_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
 		Type number : link [stateTopic="zigbee2mqtt/backup_ext_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/backup_ext_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }

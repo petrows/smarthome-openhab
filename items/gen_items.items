@@ -185,11 +185,6 @@ String ks_light_night_color_mode "KS Night lamp Color mode" <colorwheel> (g_all_
 Switch ks_light_night_ota "KS Night lamp OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_light_night:ota"}
 Number:Dimensionless ks_light_night_link "KS Night lamp LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_light_night:link"}
 Switch ks_light_night_sw "KS Night lamp" <light> (g_all_sw,all_light,eg_light,ks_light) {channel="mqtt:topic:openhab:ks_light_night:state"}
-// KS Projector (0x7cb03eaa0a094d1d)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch ks_projector_power_ota "KS Projector OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_projector_power:ota"}
-Number:Dimensionless ks_projector_power_link "KS Projector LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_projector_power:link"}
-Switch ks_projector_power_sw "KS Projector" <light> (g_all_sw) {channel="mqtt:topic:openhab:ks_projector_power:state"}
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch ks_window_2_lowbatt "KS Window 2 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ks_window_2:battery_low"}
@@ -286,11 +281,6 @@ Dimmer wz_declamp_3_dim_fast "WZ Decor lamp 3 DIM-F [%d %%]" (g_all_dim_fast,wz_
 Switch wz_declamp_3_ota "WZ Decor lamp 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_declamp_3:ota"}
 Number:Dimensionless wz_declamp_3_link "WZ Decor lamp 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_declamp_3:link"}
 Switch wz_declamp_3_sw "WZ Decor lamp 3" <light> (g_all_sw,all_light,eg_light,wz_light,wz_light_decor_sw) {channel="mqtt:topic:openhab:wz_declamp_3:state"}
-// WZ Plants light (0x7cb03eaa0a02b08f)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch wz_plant_light_ota "WZ Plants light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_plant_light:ota"}
-Number:Dimensionless wz_plant_light_link "WZ Plants light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_plant_light:link"}
-Switch wz_plant_light_sw "WZ Plants light" <light> (g_all_sw) {channel="mqtt:topic:openhab:wz_plant_light:state"}
 // WZ Window 1 (0xa4c13804963f4ccf)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch wz_window_1_lowbatt "WZ Window 1 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:wz_window_1:battery_low"}
@@ -641,11 +631,6 @@ Switch desktop_petro_remote_lowbatt "Petro Desktop remote BAT [MAP(codegen-lowba
 Switch desktop_petro_remote_ota "Petro Desktop remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_remote:ota"}
 Number:Dimensionless desktop_petro_remote_link "Petro Desktop remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_remote:link"}
 Number:Dimensionless desktop_petro_remote_battery "Petro Desktop remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:desktop_petro_remote:battery"}
-// KG Hobbyraum (Work light) (0x7cb03eaa0a0a1103)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch kg_main1_work_light_ota "KG Hobbyraum (Work light) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_main1_work_light:ota"}
-Number:Dimensionless kg_main1_work_light_link "KG Hobbyraum (Work light) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_main1_work_light:link"}
-Switch kg_main1_work_light_sw "KG Hobbyraum (Work light)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum) {channel="mqtt:topic:openhab:kg_main1_work_light:state"}
 // KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
 Switch kg_main1_light "KG Hobbyraum (Workshop)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_auto) {channel="mqtt:topic:openhab:kg_main1_light:power"}
@@ -876,16 +861,6 @@ Number:Dimensionless kg_heating_link "KG heating LINK [%d]" <linkz> (g_all_link)
 DateTime kg_heating_activity "KG heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_heating:activity"}
 Number:Temperature kg_heating_local_temperature "KG heating temp [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:kg_heating:local_temperature"}
 Number:ElectricPotential kg_heating_battery_voltage "KG heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:kg_heating:battery_voltage"}
-// KG Christmas light (0x84182600000d9c12)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch kg_christmas_light_ota "KG Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_christmas_light:ota"}
-Number:Dimensionless kg_christmas_light_link "KG Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_christmas_light:link"}
-Switch kg_christmas_light_sw "KG Christmas light" <light> (g_all_sw,all_light_christmas) {channel="mqtt:topic:openhab:kg_christmas_light:state"}
-// Balkon Christmas light (0x7cb03eaa0a094bf2)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
-Switch bk_christmas_light_ota "Balkon Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_christmas_light:ota"}
-Number:Dimensionless bk_christmas_light_link "Balkon Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_christmas_light:link"}
-Switch bk_christmas_light_sw "Balkon Christmas light" <light> (g_all_sw,all_light_christmas) {channel="mqtt:topic:openhab:bk_christmas_light:state"}
 // SZ Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
 Switch sz_shutter_ota "SZ Shutter OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_shutter:ota"}
@@ -914,11 +889,15 @@ String ku_shutter_cmd "KU Shutter [%s]" <blinds> (g_all_cmd,blinds_cmd,ku_blinds
 String ku_shutter_mov "KU Shutter movement" <blinds> {channel="mqtt:topic:openhab:ku_shutter:moving"}
 Dimmer ku_shutter_pos "KU Shutter [%d %%]" <blinds> (g_all_pos,blinds_pos,ku_blinds_pos) {channel="mqtt:topic:openhab:ku_shutter:position"}
 Switch ku_shutter_cal "KU Shutter cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ku_shutter:calibration"}
-// Ext backup power supply (0x7cb03eaa0a09e7bc)
-// OSRAM Smart+ plug / https://www.zigbee2mqtt.io/devices/AB3257001NJ.html
+// Ext backup power supply (0x1cc089fffe13a7e3)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Switch backup_ext_power_ota "Ext backup power supply OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:backup_ext_power:ota"}
 Number:Dimensionless backup_ext_power_link "Ext backup power supply LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:backup_ext_power:link"}
 Switch backup_ext_power_sw "Ext backup power supply" <light> (g_all_sw) {channel="mqtt:topic:openhab:backup_ext_power:state"}
+Number:ElectricPotential backup_ext_power_ac_voltage "Ext backup power supply [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:backup_ext_power:ac_voltage"}
+Number:ElectricCurrent backup_ext_power_ac_current "Ext backup power supply [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:backup_ext_power:ac_current"}
+Number:Power backup_ext_power_ac_power "Ext backup power supply [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:backup_ext_power:ac_power"}
+Number:Energy backup_ext_power_ac_energy "Ext backup power supply [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:backup_ext_power:ac_energy"}
 // Main power (0x0c2a6ffffebf2819)
 // Smart energy monitor for 3P+N system / https://www.zigbee2mqtt.io/devices/SPM02V2.5.html#tuya-spm02v2.5
 Switch main_power_ota "Main power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:main_power:ota"}
