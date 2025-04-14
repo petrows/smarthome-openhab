@@ -1,6 +1,6 @@
 // Zigbe Coordinator
 Thing mqtt:topic:openhab:zigbee-root (mqtt:broker:openhab) {
 	Channels:
-		Type switch : pair [ stateTopic="zigbee2mqtt/bridge/info", transformationPattern="JS:codegen-permit-join.js", commandTopic="zigbee2mqtt/bridge/request/permit_join", on="{\"value\": true}", off="{\"value\": false}" ]
+		Type switch : pair [ stateTopic="zigbee2mqtt/bridge/info", transformationPattern="JS:codegen-permit-join.js", commandTopic="zigbee2mqtt/bridge/request/permit_join", on="{\"time\": 254}", off="{\"time\": 0}" ]
 		Type string : log [ stateTopic="zigbee2mqtt/bridge/log", trigger=true ]
 }
