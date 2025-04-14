@@ -281,6 +281,11 @@ Dimmer wz_declamp_3_dim_fast "WZ Decor lamp 3 DIM-F [%d %%]" (g_all_dim_fast,wz_
 Switch wz_declamp_3_ota "WZ Decor lamp 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_declamp_3:ota"}
 Number:Dimensionless wz_declamp_3_link "WZ Decor lamp 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_declamp_3:link"}
 Switch wz_declamp_3_sw "WZ Decor lamp 3" <light> (g_all_sw,all_light,eg_light,wz_light,wz_light_decor_sw) {channel="mqtt:topic:openhab:wz_declamp_3:state"}
+// WZ Plants light (0x94ec32fffe1f54d0)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Switch wz_plant_light_ota "WZ Plants light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_plant_light:ota"}
+Number:Dimensionless wz_plant_light_link "WZ Plants light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_plant_light:link"}
+Switch wz_plant_light_sw "WZ Plants light" <light> (g_all_sw) {channel="mqtt:topic:openhab:wz_plant_light:state"}
 // WZ Window 1 (0xa4c13804963f4ccf)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch wz_window_1_lowbatt "WZ Window 1 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:wz_window_1:battery_low"}
@@ -631,6 +636,11 @@ Switch desktop_petro_remote_lowbatt "Petro Desktop remote BAT [MAP(codegen-lowba
 Switch desktop_petro_remote_ota "Petro Desktop remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_remote:ota"}
 Number:Dimensionless desktop_petro_remote_link "Petro Desktop remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_remote:link"}
 Number:Dimensionless desktop_petro_remote_battery "Petro Desktop remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:desktop_petro_remote:battery"}
+// KG Hobbyraum (Work light) (0x00be44fffea95063)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Switch kg_main1_work_light_ota "KG Hobbyraum (Work light) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_main1_work_light:ota"}
+Number:Dimensionless kg_main1_work_light_link "KG Hobbyraum (Work light) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_main1_work_light:link"}
+Switch kg_main1_work_light_sw "KG Hobbyraum (Work light)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum) {channel="mqtt:topic:openhab:kg_main1_work_light:state"}
 // KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
 Switch kg_main1_light "KG Hobbyraum (Workshop)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_auto) {channel="mqtt:topic:openhab:kg_main1_light:power"}

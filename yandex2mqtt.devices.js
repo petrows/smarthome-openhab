@@ -23,6 +23,7 @@ const ROOMS = {
     KITCHEN: 'Кухня',
     LIVING: 'Гостиная',
     KINO: 'Кинозал',
+    KG_WORKSHOP: 'Мастерская',
     KG_CABINET: 'Кабинет',
     BALKON: 'Балкон',
 }

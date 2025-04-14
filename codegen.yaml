@@ -13,6 +13,7 @@ y2m:
     LIVING: 'Гостиная'
     KINO: 'Кинозал'
     TREPPE: 'Лестница'
+    KG_WORKSHOP: 'Мастерская'
     KG_CABINET: 'Кабинет'
     KG_BOILER: 'Котельная'
     KG_L1: 'Кладовка 1'
@@ -437,10 +438,10 @@ devices:
       dim_fast:
         - wz_light_decor_dim_fast
 
-  # - name: WZ Plants light
-  #   id: wz_plant_light
-  #   zigbee_id: '0x7cb03eaa0a02b08f'
-  #   type: OSRAM_SMART_PLUG
+  - name: WZ Plants light
+    id: wz_plant_light
+    zigbee_id: '0x94ec32fffe1f54d0'
+    type: IKEA_TRETAKT
 
   - name: WZ Window 1
     id: wz_window_1
@@ -921,15 +922,20 @@ devices:
     zigbee_id: '0x000d6ffffee8357d'
     type: IKEA_TRADFRI_REMOTE
 
-  # - name: "KG Hobbyraum (Work light)"
-  #   id: kg_main1_work_light
-  #   zigbee_id: '0x7cb03eaa0a0a1103'
-  #   type: OSRAM_SMART_PLUG
-  #   groups:
-  #     sw:
-  #     - all_light
-  #     - kg_light
-  #     - kg_light_hobbyraum
+  - name: "KG Hobbyraum (Work light)"
+    id: kg_main1_work_light
+    zigbee_id: '0x00be44fffea95063'
+    type: IKEA_TRETAKT
+    y2m:
+      type: Light
+      subtype: LIGHT.SW
+      name: Стол
+      room: KG_WORKSHOP
+    groups:
+      sw:
+      - all_light
+      - kg_light
+      - kg_light_hobbyraum
 
   - name: "KG Hobbyraum (Workshop)"
     id: kg_main1_light
@@ -941,8 +947,8 @@ devices:
         y2m:
           type: Light
           subtype: LIGHT.SW
-          name: Мастерская стол
-          room: KG_CABINET
+          name: Верхний
+          room: KG_WORKSHOP
         groups:
           sw:
             - all_light
@@ -960,7 +966,7 @@ devices:
         y2m:
           type: Light
           subtype: LIGHT.SW
-          name: Мастерская верхний
+          name: Верхний
           room: KG_CABINET
         groups:
           sw:
