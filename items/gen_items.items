@@ -760,7 +760,7 @@ Dimmer kg_lager4_1_light_dim_fast "KG Lager 4 (1) DIM-F [%d %%]" (g_all_dim_fast
 Switch kg_lager4_1_light_ota "KG Lager 4 (1) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_1_light:ota"}
 Number:Dimensionless kg_lager4_1_light_link "KG Lager 4 (1) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_1_light:link"}
 Switch kg_lager4_1_light_sw "KG Lager 4 (1)" <light> (g_all_sw,all_light,kg_light,g_light_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:state", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
-// KG Lager 4 (2) (0xccccccfffedf5314)
+// KG Lager 4 (2) (0xec1bbdfffe9abfde)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer kg_lager4_2_light_dim "KG Lager 4 (2) DIM [%d %%]" <light> (g_all_dim,g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_2_light:dim"}
 Dimmer kg_lager4_2_light_dim_fast "KG Lager 4 (2) DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:kg_lager4_2_light:dim_fast"}

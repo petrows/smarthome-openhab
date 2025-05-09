@@ -1120,7 +1120,7 @@ devices:
 
   - name: KG Lager 4 (2)
     id: kg_lager4_2_light
-    zigbee_id: '0xccccccfffedf5314'
+    zigbee_id: '0xec1bbdfffe9abfde'
     type: IKEA_TRADFRI_LAMP_W_806
     expire: 1h
     y2m:

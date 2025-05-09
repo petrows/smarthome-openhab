@@ -220,8 +220,6 @@
   friendly_name: desktop_petro_light
 '0xccccccfffedf345a':
   friendly_name: kg_lager4_1_light
-'0xccccccfffedf5314':
-  friendly_name: kg_lager4_2_light
 '0xccccccfffee401f8':
   friendly_name: sz_door_bed_remote
 '0xccccccfffef0356e':
@@ -240,5 +238,7 @@
   friendly_name: wz_declamp_2
 '0xec1bbdfffe972819':
   friendly_name: wz_declamp_1
+'0xec1bbdfffe9abfde':
+  friendly_name: kg_lager4_2_light
 '0xec1bbdfffea37757':
   friendly_name: ku_light_arbeitplatte

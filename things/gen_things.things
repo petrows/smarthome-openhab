@@ -1107,7 +1107,7 @@ Thing mqtt:topic:openhab:kg_lager4_1_light "KG Lager 4 (1)" (mqtt:broker:openhab
 		Type number : link [stateTopic="zigbee2mqtt/kg_lager4_1_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_1_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KG Lager 4 (2) (0xccccccfffedf5314)
+// KG Lager 4 (2) (0xec1bbdfffe9abfde)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Thing mqtt:topic:openhab:kg_lager4_2_light "KG Lager 4 (2)" (mqtt:broker:openhab) {
 	Channels:
