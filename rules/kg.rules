@@ -87,16 +87,15 @@ when
 then
 	var state = receivedEvent
 
-    // any evebt turs on table power
-    desktop_petro_power_try.sendCommand(ON)
-
     switch(state) {
+        // Power on desktop
         case "toggle": {
-            if (kg_light_desktop.state == ON) {
-                kg_light_desktop.sendCommand(OFF)
-            } else {
-                kg_light_desktop.sendCommand(ON)
-            }
+            desktop_petro_power_try.sendCommand(ON)
+        }
+        // Power off desktop (forced)
+        case "toggle_hold": {
+            desktop_petro_pc_power.sendCommand(OFF)
+            desktop_petro_laptop_power_sw.sendCommand(OFF)
         }
         case "arrow_right_click": {
             kg_light_desktop_dim.sendCommand(100)
