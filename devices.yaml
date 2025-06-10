@@ -128,6 +128,8 @@
   friendly_name: kg_lager3_motion
 '0x8c65a3fffe70093b':
   friendly_name: bz_leak
+'0x8c8b48fffe0ef9ed':
+  friendly_name: sz_tv_power
 '0x8cf681fffe36d14e':
   friendly_name: sz_curtain_remote
 '0x8cf681fffef62c85':

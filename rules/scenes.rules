@@ -1,6 +1,5 @@
 // Common scenarios
 
-
 rule "SZ Scene: sleep"
 when
     Item scene_sleep received command ON
@@ -17,4 +16,15 @@ then
     ]
     // Закрыть шторы
     sz_curtain_cmd.sendCommand("close")
+end
+
+rule "SZ Scene: tv restart"
+when
+    Item scene_tv_restart received command ON
+then
+    logWarn("scene", "Toggle: TV restart")
+    sz_tv_power_sw.sendCommand(OFF)
+    // Ждать 3 секунды, чтобы телевизор выключился
+    Thread::sleep(3000)
+    sz_tv_power_sw.sendCommand(ON)
 end

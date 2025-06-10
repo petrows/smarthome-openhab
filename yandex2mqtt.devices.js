@@ -36,6 +36,11 @@ devices = [
         room: ROOMS.GROUPS,
     }),
     Scene({
+        id: 'scene_tv_restart',
+        name: 'Перезагрузи телевизор',
+        room: ROOMS.GROUPS,
+    }),
+    Scene({
         id: 'scene_cat_food',
         name: 'Покорми котов',
         room: ROOMS.GROUPS,

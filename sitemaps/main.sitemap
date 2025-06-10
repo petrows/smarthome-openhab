@@ -258,6 +258,9 @@ sitemap main label="MAIN"
             Frame label="Christmas" {
 			    Switch item=sz_christmas_light_sw label="Christmas [%s]" icon="light"
             }
+            Frame label="TV" {
+			    Switch item=sz_tv_power_sw label="TV power [%s]" icon="switch"
+            }
         }
 		Group item=wz_light label="Living [%s]" icon="light" {
 			Frame {

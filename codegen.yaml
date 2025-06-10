@@ -608,6 +608,16 @@ devices:
     zigbee_id: '0x6cfd22fffe1a2043'
     type: IKEA_INSPELNING
 
+  - name: SZ TV power
+    id: sz_tv_power
+    zigbee_id: '0x8c8b48fffe0ef9ed'
+    type: IKEA_INSPELNING
+    y2m:
+      type: Light
+      subtype: LIGHT.SW
+      name: Телевизор
+      room: SZ
+
 # KITCHEN ================================
 
   - name: KU Climate

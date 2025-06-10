@@ -121,6 +121,11 @@ Light(LIGHT.RGB, {
     name: 'Пол',
     room: ROOMS.SLEEP,
 }),
+Light(LIGHT.SW, {
+    id: 'sz_tv_power',
+    name: 'Телевизор',
+    room: ROOMS.SZ,
+}),
 SensorClimate({
     id: 'ku_climate',
     name: 'Климат',
