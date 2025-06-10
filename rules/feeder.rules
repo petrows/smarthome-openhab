@@ -10,7 +10,7 @@ end
 
 rule "Feeder: every 2h to feed 1 portion from 8 to 20"
 when
-    Time cron "0 0 8,10,12,16,18,20 ? * * *"
+    Time cron "0 0 6,10,12,16,18,20 ? * * *"
 then
     ku_feeder_manual.sendCommand("1")
 end
