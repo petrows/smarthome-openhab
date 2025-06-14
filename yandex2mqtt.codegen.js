@@ -79,6 +79,12 @@ Light(LIGHT.RGB, {
     name: 'Декоративный',
     room: ROOMS.KINO,
 }),
+Light(LIGHT.SW, {
+    id: 'ks_projector_power',
+    name: 'Проектор',
+    room: ROOMS.KINO,
+    type: 'devices.types.switch',
+}),
 SensorClimate({
     id: 'wz_climate',
     name: 'Климат',

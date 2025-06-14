@@ -152,6 +152,8 @@
     interval: 100
 '0x90ab96fffe52f8fa':
   friendly_name: fl_mirror
+'0x94a081fffe5f9218':
+  friendly_name: ks_projector_power
 '0x94deb8fffea8a1f9':
   friendly_name: sz_bed_l_remote
   simulated_brightness:

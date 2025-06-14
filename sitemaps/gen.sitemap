@@ -229,6 +229,13 @@ Text item=ks_light_night_ota
 Text item=ks_light_night_link
 Switch item=ks_light_night_sw
 }
+Frame label="KS Projector (0x94a081fffe5f9218)" {
+// KS Projector (0x94a081fffe5f9218)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Text item=ks_projector_power_ota
+Text item=ks_projector_power_link
+Switch item=ks_projector_power_sw
+}
 Frame label="KS Window 2 (0xa4c138f1bf27592c)" {
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html

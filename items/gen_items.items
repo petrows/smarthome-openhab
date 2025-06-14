@@ -192,6 +192,11 @@ String ks_light_night_color_mode "KS Night lamp Color mode" <colorwheel> (g_all_
 Switch ks_light_night_ota "KS Night lamp OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_light_night:ota"}
 Number:Dimensionless ks_light_night_link "KS Night lamp LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_light_night:link"}
 Switch ks_light_night_sw "KS Night lamp" <light> (g_all_sw,all_light,eg_light,ks_light) {channel="mqtt:topic:openhab:ks_light_night:state"}
+// KS Projector (0x94a081fffe5f9218)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Switch ks_projector_power_ota "KS Projector OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_projector_power:ota"}
+Number:Dimensionless ks_projector_power_link "KS Projector LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_projector_power:link"}
+Switch ks_projector_power_sw "KS Projector" <light> (g_all_sw) {channel="mqtt:topic:openhab:ks_projector_power:state"}
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch ks_window_2_lowbatt "KS Window 2 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ks_window_2:battery_low"}
