@@ -1,21 +1,66 @@
-rule "Blinds: auto command"
+rule "Blinds: auto astro command"
 when
-    Item blinds_auto_cmd received command
+    Item blinds_auto_astro_cmd received command
 then
     // New value
     val cmd = receivedCommand.toString()
 
     // If enabled - command blinds
-    if (ON == cfg_blinds_auto.state) {
+    if (ON == cfg_blinds_auto_astro.state) {
         // Theater - skip auto modes, if Cinema mode is active
-        if (ON == cfg_blinds_auto_ks.state && OFF == cinema_mode.state) {
+        if (ON == cfg_blinds_auto_astro_ks.state && OFF == cinema_mode.state) {
             ks_blinds_cmd.sendCommand(cmd)
         }
-        if (ON == cfg_blinds_auto_sz.state) {
+        if (ON == cfg_blinds_auto_astro_sz.state) {
             sz_blinds_cmd.sendCommand(cmd)
         }
-        if (ON == cfg_blinds_auto_ku.state) {
+        if (ON == cfg_blinds_auto_astro_ku.state) {
             ku_blinds_cmd.sendCommand(cmd)
+        }
+    }
+end
+
+rule "Blinds: auto weather command"
+when
+    Item blinds_auto_weather_cmd received command
+then
+    // New value
+    val cmd = receivedCommand.toString()
+
+    // If enabled - command blinds
+    if (ON == cfg_blinds_auto_weather.state) {
+        // Theater - skip auto modes, if Cinema mode is active
+        if (ON == cfg_blinds_auto_weather_ks.state && OFF == cinema_mode.state) {
+            ks_blinds_cmd.sendCommand(cmd)
+        }
+        if (ON == cfg_blinds_auto_weather_sz.state) {
+            sz_blinds_cmd.sendCommand(cmd)
+        }
+        if (ON == cfg_blinds_auto_weather_ku.state) {
+            ku_blinds_cmd.sendCommand(cmd)
+        }
+    }
+end
+
+// Weather-driven control
+rule "Blinds: weather watch"
+when
+    Item ext_climate_temperature changed
+then
+    // New value
+    val temp_new = newState
+    logInfo("blinds", "Ext temperature new: " + temp_new)
+
+    if (temp_new >= cfg_blinds_auto_weather_close.state) {
+        if (blinds_auto_weather_cmd.state != "close") {
+            logInfo("blinds", "Weather monitor: to close")
+            blinds_auto_weather_cmd.sendCommand("close")
+        }
+    }
+    if (temp_new <= cfg_blinds_auto_weather_open.state) {
+        if (blinds_auto_weather_cmd.state != "open") {
+            logInfo("blinds", "Weather monitor: to open")
+            blinds_auto_weather_cmd.sendCommand("open")
         }
     }
 end
@@ -34,18 +79,6 @@ then
         }
     }
 end
-
-// Check the current forecast and close blinds - if too heat
-// rule "Blinds: protect from weather"
-// when
-//     Time cron "0 00 10 ? * *"
-// then
-//     // Check, do we have some heat expected today?
-//     if (weather_fc_0d_temp_max.state > 28 | °C) {
-//         logWarn("blinds", "Expected today " + weather_fc_0d_temp_max.state.toString() + ", closing hard blinds")
-//         blinds_auto_cmd.sendCommand("close")
-//     }
-// end
 
 // SZ Curtains: update current state var
 // We dont have built-in "action" channel and we need to track mqtt channel,

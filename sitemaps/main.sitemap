@@ -170,7 +170,7 @@ sitemap main label="MAIN"
             Frame label="Blinds" {
                 Switch item=ku_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=ku_blinds_pos label="Position [%d %%]"
-                Switch item=cfg_blinds_auto_ku label="Enable auto [%s]"
+                Switch item=cfg_blinds_auto_astro_ku label="Enable auto [%s]"
             }
 		}
 		Group item=ks_light label="Theater [%s]" icon="light" {
@@ -188,7 +188,7 @@ sitemap main label="MAIN"
                 Slider item=ks_shutter_1_pos label="Position 1 [%d %%]"
                 Switch item=ks_shutter_2_cmd label="Command 2 []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=ks_shutter_2_pos label="Position 2 [%d %%]"
-                Switch item=cfg_blinds_auto_ks label="Enable auto [%s]"
+                Switch item=cfg_blinds_auto_astro_ks label="Enable auto [%s]"
             }
             Frame label="RGB" {
                 Switch item=ks_light_night_sw label="RGB [%s]" icon="light"
@@ -219,7 +219,7 @@ sitemap main label="MAIN"
             Frame label="Blinds" {
                 Switch item=sz_blinds_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
                 Slider item=sz_blinds_pos label="Position [%d %%]"
-                Switch item=cfg_blinds_auto_sz label="Enable auto [%s]"
+                Switch item=cfg_blinds_auto_astro_sz label="Enable auto [%s]"
             }
             Frame label="Curtains" {
                 Switch item=sz_curtain_cmd label="Command []" mappings=["open"="☼","stop"="||","close"="☰"]
@@ -542,11 +542,19 @@ sitemap main label="MAIN"
 				Switch	item=wassering_auto_enable
 				Text    item=garten_wasser_leak_leak
 			}
-			Frame label="Blinds" {
-				Switch item=cfg_blinds_auto label="Enable blinds auto control [%s]"
-                Switch item=cfg_blinds_auto_sz label="Sleeproom: auto [%s]" visibility=[cfg_blinds_auto==ON]
-                Switch item=cfg_blinds_auto_ks label="Theater: auto [%s]" visibility=[cfg_blinds_auto==ON]
-                Switch item=cfg_blinds_auto_ku label="Kitchen: auto [%s]" visibility=[cfg_blinds_auto==ON]
+			Frame label="Blinds (Astro control)" {
+				Switch item=cfg_blinds_auto_astro label="Enable blinds astro control [%s]"
+                Switch item=cfg_blinds_auto_astro_sz label="Sleeproom: astro [%s]" visibility=[cfg_blinds_auto_astro==ON]
+                Switch item=cfg_blinds_auto_astro_ks label="Theater: astro [%s]" visibility=[cfg_blinds_auto_astro==ON]
+                Switch item=cfg_blinds_auto_astro_ku label="Kitchen: astro [%s]" visibility=[cfg_blinds_auto_astro==ON]
+			}
+			Frame label="Blinds (Weather control)" {
+				Setpoint item=cfg_blinds_auto_weather_close label="Temp to close [%s]" minValue=20 maxValue=40 step=1
+				Setpoint item=cfg_blinds_auto_weather_open label="Temp to open [%s]" minValue=20 maxValue=40 step=1
+				Switch item=cfg_blinds_auto_weather label="Enable blinds weather control [%s]"
+                Switch item=cfg_blinds_auto_weather_sz label="Sleeproom: weather [%s]" visibility=[cfg_blinds_auto_weather==ON]
+                Switch item=cfg_blinds_auto_weather_ks label="Theater: weather [%s]" visibility=[cfg_blinds_auto_weather==ON]
+                Switch item=cfg_blinds_auto_weather_ku label="Kitchen: weather [%s]" visibility=[cfg_blinds_auto_weather==ON]
 			}
 			Frame label="Curtains" {
 				Switch item=cfg_curtains_auto label="Enable curtains auto control [%s]"

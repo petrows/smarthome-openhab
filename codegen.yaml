@@ -101,6 +101,11 @@ devices:
       dim:
       - eg_light_auto_dim
 
+  - name: Comode remote
+    id: fl_comode_remote
+    zigbee_id: '0x04e3e5fffe02fbd6'
+    type: IKEA_TRADFRI_STYRBAR
+
   - name: Entrance Door sensor
     id: eg_main_door
     zigbee_id: '0xa4c138182f60d651'

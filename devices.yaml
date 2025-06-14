@@ -55,6 +55,11 @@
   friendly_name: bz_light_2
 '0x04cd15fffedb31f7':
   friendly_name: tr_down_light
+'0x04e3e5fffe02fbd6':
+  friendly_name: fl_comode_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x0c2a6ffffebf2819':
   friendly_name: main_power
 '0x0c4314fffe5c6913':

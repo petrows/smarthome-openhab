@@ -1,6 +1,7 @@
 // Jalousie groups
 
-String blinds_auto_cmd
+String blinds_auto_astro_cmd
+String blinds_auto_weather_cmd
 String curtains_auto_cmd
 
 Group blinds_curtains_cmd "Blinds+Curtains command []" <rollershutter>
@@ -22,10 +23,19 @@ Group:Dimmer:AVG sz_curtains_pos "SZ Curtain pos [%d %%]" <rollershutter> (g_all
 Group ku_blinds_cmd "KU Blinds command []" <rollershutter>
 Group:Dimmer:AVG ku_blinds_pos "KU Blinds pos [%d %%]" <rollershutter> (g_all)
 
-Switch cfg_blinds_auto "Blinds auto" <curtains_cfg>
-Switch cfg_blinds_auto_sz "SZ Blinds auto" <curtains_cfg>
-Switch cfg_blinds_auto_ks "KS Blinds auto" <curtains_cfg>
-Switch cfg_blinds_auto_ku "KU Blinds auto" <curtains_cfg>
+// Blinds control auto via Sun and Moon On/Off
+Switch cfg_blinds_auto_astro "Blinds auto (astro)" <curtains_cfg>
+Switch cfg_blinds_auto_astro_sz "SZ Blinds auto (astro)" <curtains_cfg>
+Switch cfg_blinds_auto_astro_ks "KS Blinds auto (astro)" <curtains_cfg>
+Switch cfg_blinds_auto_astro_ku "KU Blinds auto (astro)" <curtains_cfg>
+
+Switch cfg_blinds_auto_weather "Blinds auto (weather)" <curtains_cfg>
+Switch cfg_blinds_auto_weather_sz "SZ Blinds auto (weather)" <curtains_cfg>
+Switch cfg_blinds_auto_weather_ks "KS Blinds auto (weather)" <curtains_cfg>
+Switch cfg_blinds_auto_weather_ku "KU Blinds auto (weather)" <curtains_cfg>
+
+Number:Temperature cfg_blinds_auto_weather_close "Blinds auto (weather) close [%.1f °C]" <temperature>
+Number:Temperature cfg_blinds_auto_weather_open "Blinds auto (weather) open [%.1f °C]" <temperature>
 
 Switch cfg_curtains_auto "Curtains auto" <curtains_cfg>
 Switch cfg_curtains_auto_sz "SZ Curtains auto" <curtains_cfg>

@@ -75,6 +75,15 @@ Text item=eg_decoration_light_ota
 Text item=eg_decoration_light_link
 Switch item=eg_decoration_light_sw
 }
+Frame label="Comode remote (0x04e3e5fffe02fbd6)" {
+// Comode remote (0x04e3e5fffe02fbd6)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=fl_comode_remote_dim
+Text item=fl_comode_remote_lowbatt
+Text item=fl_comode_remote_ota
+Text item=fl_comode_remote_link
+Text item=fl_comode_remote_battery
+}
 Frame label="Entrance Door sensor (0xa4c138182f60d651)" {
 // Entrance Door sensor (0xa4c138182f60d651)
 // TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203

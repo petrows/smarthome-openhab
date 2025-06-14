@@ -63,6 +63,13 @@ Dimmer eg_decoration_light_dim_fast "EG Decor light DIM-F [%d %%]" (g_all_dim_fa
 Switch eg_decoration_light_ota "EG Decor light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_decoration_light:ota"}
 Number:Dimensionless eg_decoration_light_link "EG Decor light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_decoration_light:link"}
 Switch eg_decoration_light_sw "EG Decor light" <light> (g_all_sw,all_light,eg_light,eg_light_auto,fl_light) {channel="mqtt:topic:openhab:eg_decoration_light:state"}
+// Comode remote (0x04e3e5fffe02fbd6)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Dimmer fl_comode_remote_dim "Comode remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fl_comode_remote:dim"}
+Switch fl_comode_remote_lowbatt "Comode remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:fl_comode_remote:battery_low"}
+Switch fl_comode_remote_ota "Comode remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:fl_comode_remote:ota"}
+Number:Dimensionless fl_comode_remote_link "Comode remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:fl_comode_remote:link"}
+Number:Dimensionless fl_comode_remote_battery "Comode remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:fl_comode_remote:battery"}
 // Entrance Door sensor (0xa4c138182f60d651)
 // TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
 Switch eg_main_door_lowbatt "Entrance Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:eg_main_door:battery_low"}

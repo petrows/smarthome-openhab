@@ -8,7 +8,7 @@ then
     // We are going to sleep soon
 
     // Close all blinds
-    blinds_auto_cmd.sendCommand("close")
+    blinds_auto_astro_cmd.sendCommand("close")
     // Close all curtains
     curtains_auto_cmd.sendCommand("close")
 end
@@ -23,7 +23,7 @@ then
     // Morning
 
     // Open all blinds
-    blinds_auto_cmd.sendCommand("open")
+    blinds_auto_astro_cmd.sendCommand("open")
     // Open all curtains
     curtains_auto_cmd.sendCommand("open")
 end
