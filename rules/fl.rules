@@ -143,3 +143,30 @@ then
 
     logWarn("light", "Elevation is " + elev.toString() + ", corridor brightness is " + brt.toString())
 end
+
+rule "FL Comode remote"
+when
+    Channel "mqtt:topic:openhab:fl_comode_remote:action" triggered
+then
+	var state = receivedEvent
+
+    switch(state) {
+        case "on": {
+            eg_decoration_light_dim.sendCommand(100)
+        }
+        case "off": {
+            if (eg_decoration_light_sw.state == OFF) {
+                eg_decoration_light_dim.sendCommand(30)
+            } else {
+                eg_decoration_light_sw.sendCommand(OFF)
+            }
+        }
+    }
+end
+
+rule "FL Comode remote dimmer"
+when
+    Channel "mqtt:topic:openhab:fl_comode_remote:action_dim" triggered
+then
+    eg_decoration_light_dim_fast.sendCommand((eg_decoration_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+end
