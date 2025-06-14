@@ -18,6 +18,8 @@
     interval: 100
 '0x00be44fffea95063':
   friendly_name: kg_main1_work_light
+'0x040d84fffec53aaf':
+  friendly_name: desktop_petro_light
 '0x048727fffe5d07db':
   friendly_name: mouse_trap_4
 '0x048727fffe5d58e3':
@@ -223,8 +225,6 @@
   friendly_name: tr_door_sensor
 '0xccccccfffed82ba3':
   friendly_name: kg_window_1
-'0xccccccfffed8ef9d':
-  friendly_name: desktop_petro_light
 '0xccccccfffedf345a':
   friendly_name: kg_lager4_1_light
 '0xccccccfffee401f8':

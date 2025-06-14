@@ -892,8 +892,8 @@ Thing mqtt:topic:openhab:desktop_petro_up_light_3 "Petro Desktop up light 3" (mq
 		Type number : link [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/desktop_petro_up_light_3", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Petro Desktop light (0xccccccfffed8ef9d)
-// IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
+// Petro Desktop light (0x040d84fffec53aaf)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Thing mqtt:topic:openhab:desktop_petro_light "Petro Desktop light" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/desktop_petro_light", commandTopic="zigbee2mqtt/desktop_petro_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]

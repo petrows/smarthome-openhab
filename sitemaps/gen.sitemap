@@ -743,9 +743,9 @@ Text item=desktop_petro_up_light_3_ota
 Text item=desktop_petro_up_light_3_link
 Switch item=desktop_petro_up_light_3_sw
 }
-Frame label="Petro Desktop light (0xccccccfffed8ef9d)" {
-// Petro Desktop light (0xccccccfffed8ef9d)
-// IKEA TRADFRI LED bulb E27 806 lumen, dimmable, white spectrum, clear (LED1736G9) / https://www.zigbee2mqtt.io/devices/LED1736G9.html
+Frame label="Petro Desktop light (0x040d84fffec53aaf)" {
+// Petro Desktop light (0x040d84fffec53aaf)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Slider item=desktop_petro_light_dim
 Slider item=desktop_petro_light_ct
 Text item=desktop_petro_light_ota
