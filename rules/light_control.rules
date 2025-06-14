@@ -61,7 +61,7 @@ then
 
     // Stop decorative lights
     if (christmas_lights_enable.state == ON) {
-        all_light_christmas.sendCommand(OFF)
+        all_christmas_light.sendCommand(OFF)
     }
 end
 
@@ -102,7 +102,7 @@ then
     logWarn("light", "Sunset Rule")
 
     if (christmas_lights_enable.state == ON) {
-        all_light_christmas.sendCommand(ON)
+        all_christmas_light.sendCommand(ON)
     }
 end
 

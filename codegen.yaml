@@ -1263,7 +1263,7 @@ devices:
   #   type: OSRAM_SMART_PLUG
   #   groups:
   #     sw:
-  #     - all_light_christmas
+  #     - all_christmas_light
 
   # - name: KS Christmas light
   #   id: ks_christmas_light
@@ -1271,7 +1271,7 @@ devices:
   #   type: OSRAM_SMART_PLUG
   #   groups:
   #     sw:
-  #     - all_light_christmas
+  #     - all_christmas_light
 
   # - name: WZ Christmas light
   #   id: wz_christmas_light
@@ -1279,7 +1279,7 @@ devices:
   #   type: OSRAM_SMART_PLUG
   #   groups:
   #     sw:
-  #     - all_light_christmas
+  #     - all_christmas_light
 
   # - name: KG Christmas light
   #   id: kg_christmas_light
@@ -1287,7 +1287,7 @@ devices:
   #   type: OSRAM_SMART_PLUG
   #   groups:
   #     sw:
-  #     - all_light_christmas
+  #     - all_christmas_light
 
   # - name: Balkon Christmas light
   #   id: bk_christmas_light
@@ -1295,7 +1295,7 @@ devices:
   #   type: OSRAM_SMART_PLUG
   #   groups:
   #     sw:
-  #     - all_light_christmas
+  #     - all_christmas_light
 
 # Blinds
 

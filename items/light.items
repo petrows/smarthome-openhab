@@ -81,7 +81,13 @@ Switch kg_lager4_manual_sw "KG Lager 4 manual SW" <light> { expire="3h,command=O
 Switch desktop_petro_power_try "Petro desktop power gracefull [%s]"
 
 // Holydays: exterrior light
-Group:Switch:AND(ON, OFF) all_light_christmas "Christmas light [%s]" <light>
+Group:Switch:AND(ON, OFF) all_christmas_light "Christmas light [%s]" <light>
+// Per-location
+Group:Switch:AND(ON, OFF) sz_christmas_light "Christmas SZ [%s]" <light> (all_christmas_light)
+Group:Switch:AND(ON, OFF) ks_christmas_light "Christmas KS [%s]" <light> (all_christmas_light)
+Group:Switch:AND(ON, OFF) wz_christmas_light "Christmas WZ [%s]" <light> (all_christmas_light)
+Group:Switch:AND(ON, OFF) kg_christmas_light "Christmas KG [%s]" <light> (all_christmas_light)
+Group:Switch:AND(ON, OFF) bk_christmas_light "Christmas BK [%s]" <light> (all_christmas_light)
 
 String all_light_mode "Light mode" <light>
 Switch sunrise_enable "Sunrise enabled [%s]" <light>
