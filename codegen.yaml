@@ -1058,7 +1058,7 @@ devices:
 
   # Storage room 3
 
-  - name: KG Lager 3 Climate
+  - name: LG3 Climate
     id: lg3_climate
     zigbee_id: '0xa4c1381155f63287'
     type: TUYA_TEMPERATURE_SENSOR_TS0201

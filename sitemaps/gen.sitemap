@@ -882,8 +882,8 @@ Text item=octoprint_climate_temperature
 Text item=octoprint_climate_humidity
 Text item=octoprint_climate_battery
 }
-Frame label="KG Lager 3 Climate (0xa4c1381155f63287)" {
-// KG Lager 3 Climate (0xa4c1381155f63287)
+Frame label="LG3 Climate (0xa4c1381155f63287)" {
+// LG3 Climate (0xa4c1381155f63287)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Text item=lg3_climate_lowbatt
 Text item=lg3_climate_ota
