@@ -60,15 +60,18 @@ then
     }
 end
 
-// Motion detect in Laundry
-// rule "KG Motion detect Laundry"
-// when
-//     Item kg_lager3_motion_occupancy received update
-// then
-//     logInfo("light", "KG Laundry Motion: " + newState.toString)
-//     if (newState == OFF) {
-//         sendCommand(lg3_up_light, OFF)
-//     } else {
-//         sendCommand(lg3_up_light, ON)
-//     }
-// end
+// Motion detect in cat door
+rule "Cat door motion detect"
+when
+    Item kg_lager3_cat_door_motion_occupancy received update
+then
+    logInfo("motion", "KG Cat Door Motion: " + newState.toString)
+    if (newState == ON) {
+        // Send command to ZoneMinder to trigger the cat door
+        // We are starting for 10 minutes, should be cut-off by device (see OFF rule)
+        executeCommandLine("/openhab/conf/bin/zm-trigger", "1", "on+600", "openhab-motion")
+    }
+    if (newState == OFF) {
+        executeCommandLine("/openhab/conf/bin/zm-trigger", "1", "off", "")
+    }
+end

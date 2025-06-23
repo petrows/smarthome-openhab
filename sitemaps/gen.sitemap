@@ -893,17 +893,17 @@ Text item=lg3_climate_temperature
 Text item=lg3_climate_humidity
 Text item=lg3_climate_battery
 }
-Frame label="KG Lager 3 motion (0x8c65a3fffe3dbc2c)" {
-// KG Lager 3 motion (0x8c65a3fffe3dbc2c)
+Frame label="KG Cat Door motion (0x8c65a3fffe3dbc2c)" {
+// KG Cat Door motion (0x8c65a3fffe3dbc2c)
 // VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
-Text item=kg_lager3_motion_lowbatt
-Text item=kg_lager3_motion_ota
-Text item=kg_lager3_motion_link
-Text item=kg_lager3_motion_activity
-Text item=kg_lager3_motion_occupancy
-Text item=kg_lager3_motion_illuminance_lux
-Text item=kg_lager3_motion_illuminance
-Text item=kg_lager3_motion_battery
+Text item=kg_lager3_cat_door_motion_lowbatt
+Text item=kg_lager3_cat_door_motion_ota
+Text item=kg_lager3_cat_door_motion_link
+Text item=kg_lager3_cat_door_motion_activity
+Text item=kg_lager3_cat_door_motion_occupancy
+Text item=kg_lager3_cat_door_motion_illuminance_lux
+Text item=kg_lager3_cat_door_motion_illuminance
+Text item=kg_lager3_cat_door_motion_battery
 }
 Frame label="KG Lager 3 door (0xa4c138a52c4e5c19)" {
 // KG Lager 3 door (0xa4c138a52c4e5c19)

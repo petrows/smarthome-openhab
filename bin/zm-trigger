@@ -1,0 +1,11 @@
+#!/bin/bash -x
+
+# This script is used to trigger a ZM event from OpenHAB
+
+# Usage: zm-trigger <monitor_id> <on+duration|off> <event-text>
+
+MONITOR_ID=$1
+ON_OFF=$2
+EVENT_TEXT=$3
+
+echo "$MONITOR_ID|$ON_OFF|100|$EVENT_TEXT||" | nc -N zm.media.pws 6802
