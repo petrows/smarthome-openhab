@@ -17,6 +17,9 @@ then
         case "RETURN": {
             eg_robot_actions.sendCommand("battery-start-charge")
         }
+        case "SUCK": {
+            kg_robot_actions.sendCommand("custom-start-dust")
+        }
     }
     // Reset button status to empty
     eg_robot_custom_command.postUpdate("")
@@ -40,6 +43,9 @@ then
         }
         case "RETURN": {
             kg_robot_actions.sendCommand("battery-start-charge")
+        }
+        case "SUCK": {
+            kg_robot_actions.sendCommand("custom-start-dust")
         }
     }
     // Reset button status to empty
