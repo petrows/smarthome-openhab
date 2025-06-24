@@ -500,6 +500,16 @@ Number:ElectricPotential ku_up_power_ac_voltage "KU up power [%.1f V]" <energy> 
 Number:ElectricCurrent ku_up_power_ac_current "KU up power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:ku_up_power:ac_current"}
 Number:Power ku_up_power_ac_power "KU up power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:ku_up_power:ac_power"}
 Number:Energy ku_up_power_ac_energy "KU up power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:ku_up_power:ac_energy"}
+// KU Cat Feeder motion (0x94a081fffe57e936)
+// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
+Switch ku_cat_feeder_motion_lowbatt "KU Cat Feeder motion BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ku_cat_feeder_motion:battery_low"}
+Switch ku_cat_feeder_motion_ota "KU Cat Feeder motion OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_cat_feeder_motion:ota"}
+Number:Dimensionless ku_cat_feeder_motion_link "KU Cat Feeder motion LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_cat_feeder_motion:link"}
+DateTime ku_cat_feeder_motion_activity "KU Cat Feeder motion activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_cat_feeder_motion:activity"}
+Switch ku_cat_feeder_motion_occupancy "KU Cat Feeder motion [%s]" <motion> (g_all_occupancy) {channel="mqtt:topic:openhab:ku_cat_feeder_motion:occupancy"}
+Number:Illuminance ku_cat_feeder_motion_illuminance_lux "KU Cat Feeder motion  light [%d %unit%]" <sun> (g_all_illuminance_lux) {channel="mqtt:topic:openhab:ku_cat_feeder_motion:illuminance_lux"}
+Number:Dimensionless ku_cat_feeder_motion_illuminance "KU Cat Feeder motion  light raw [%d]" <sun> (g_all_illuminance) {channel="mqtt:topic:openhab:ku_cat_feeder_motion:illuminance"}
+Number:Dimensionless ku_cat_feeder_motion_battery "KU Cat Feeder motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ku_cat_feeder_motion:battery"}
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch tr_door_sensor_lowbatt "Treppe Door sensor BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:tr_door_sensor:battery_low"}

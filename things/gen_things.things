@@ -731,6 +731,20 @@ Thing mqtt:topic:openhab:ku_up_power "KU up power" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/ku_up_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_up_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// KU Cat Feeder motion (0x94a081fffe57e936)
+// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
+Thing mqtt:topic:openhab:ku_cat_feeder_motion "KU Cat Feeder motion" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : occupancy [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy", on="true", off="false"]
+		Type number : illuminance_lux [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"illuminance_lux\".*)∩JSONPATH:$.illuminance_lux", unit="lx"]
+		Type number : illuminance [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"illuminance\".*)∩JSONPATH:$.illuminance"]
+		Type number : battery [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="JS:codegen-activity.js"]
+}
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:tr_door_sensor "Treppe Door sensor" (mqtt:broker:openhab) {

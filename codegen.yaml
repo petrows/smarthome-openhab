@@ -729,6 +729,11 @@ devices:
     zigbee_id: '0x6cfd22fffe1a4e35'
     type: IKEA_INSPELNING
 
+  - name: KU Cat Feeder motion
+    id: ku_cat_feeder_motion
+    zigbee_id: '0x94a081fffe57e936'
+    type: IKEA_VALLHORN
+
 # TREPPE ================================
 
   - name: Treppe Door sensor

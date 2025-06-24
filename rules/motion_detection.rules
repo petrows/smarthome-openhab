@@ -65,13 +65,29 @@ rule "Cat door motion detect"
 when
     Item kg_lager3_cat_door_motion_occupancy received update
 then
-    logInfo("motion", "KG Cat Door Motion: " + newState.toString)
     if (newState == ON) {
+        logInfo("motion", "KG Cat Door motion")
         // Send command to ZoneMinder to trigger the cat door
         // We are starting for 10 minutes, should be cut-off by device (see OFF rule)
         executeCommandLine("/openhab/conf/bin/zm-trigger", "1", "on+600", "openhab-motion")
     }
     if (newState == OFF) {
         executeCommandLine("/openhab/conf/bin/zm-trigger", "1", "off", "")
+    }
+end
+
+// Motion detect in cat Feeder
+rule "Cat feeder motion detect"
+when
+    Item ku_cat_feeder_motion_occupancy received update
+then
+    if (newState == ON) {
+        logInfo("motion", "KU Cat Feeder motion")
+        // Send command to ZoneMinder to trigger the cat feeder
+        // We are starting for 10 minutes, should be cut-off by device (see OFF rule)
+        executeCommandLine("/openhab/conf/bin/zm-trigger", "2", "on+600", "openhab-motion")
+    }
+    if (newState == OFF) {
+        executeCommandLine("/openhab/conf/bin/zm-trigger", "2", "off", "")
     }
 end

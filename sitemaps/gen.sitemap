@@ -605,6 +605,18 @@ Text item=ku_up_power_ac_current
 Text item=ku_up_power_ac_power
 Text item=ku_up_power_ac_energy
 }
+Frame label="KU Cat Feeder motion (0x94a081fffe57e936)" {
+// KU Cat Feeder motion (0x94a081fffe57e936)
+// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
+Text item=ku_cat_feeder_motion_lowbatt
+Text item=ku_cat_feeder_motion_ota
+Text item=ku_cat_feeder_motion_link
+Text item=ku_cat_feeder_motion_activity
+Text item=ku_cat_feeder_motion_occupancy
+Text item=ku_cat_feeder_motion_illuminance_lux
+Text item=ku_cat_feeder_motion_illuminance
+Text item=ku_cat_feeder_motion_battery
+}
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
