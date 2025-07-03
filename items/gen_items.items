@@ -43,6 +43,15 @@ Dimmer bk_light_2_ct "Balkon light 2 CT [JS(codegen-mired.js): %s]" <light> (g_a
 Switch bk_light_2_ota "Balkon light 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_light_2:ota"}
 Number:Dimensionless bk_light_2_link "Balkon light 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_light_2:link"}
 Switch bk_light_2_sw "Balkon light 2" <light> (g_all_sw,all_light,bk_light_sw,bk_up_light_sw) {channel="mqtt:topic:openhab:bk_light_2:state"}
+// BK Color light (0x08b95ffffe335fe2)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch bk_color_light_ota "BK Color light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_color_light:ota"}
+Number:Dimensionless bk_color_light_link "BK Color light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_color_light:link"}
+Switch bk_color_light_sw "BK Color light" <light> (g_all_sw,all_light,all_christmas_light,bk_light_sw) {channel="mqtt:topic:openhab:bk_color_light:state"}
+Number:ElectricPotential bk_color_light_ac_voltage "BK Color light [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:bk_color_light:ac_voltage"}
+Number:ElectricCurrent bk_color_light_ac_current "BK Color light [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:bk_color_light:ac_current"}
+Number:Power bk_color_light_ac_power "BK Color light [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:bk_color_light:ac_power"}
+Number:Energy bk_color_light_ac_energy "BK Color light [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:bk_color_light:ac_energy"}
 // Garten wasser remote (0xccccccfffe58f1c3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
 Switch garten_wasser_remote_lowbatt "Garten wasser remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:garten_wasser_remote:battery_low"}

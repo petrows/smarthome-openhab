@@ -51,6 +51,17 @@ Text item=bk_light_2_ota
 Text item=bk_light_2_link
 Switch item=bk_light_2_sw
 }
+Frame label="BK Color light (0x08b95ffffe335fe2)" {
+// BK Color light (0x08b95ffffe335fe2)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=bk_color_light_ota
+Text item=bk_color_light_link
+Switch item=bk_color_light_sw
+Text item=bk_color_light_ac_voltage
+Text item=bk_color_light_ac_current
+Text item=bk_color_light_ac_power
+Text item=bk_color_light_ac_energy
+}
 Frame label="Garten wasser remote (0xccccccfffe58f1c3)" {
 // Garten wasser remote (0xccccccfffe58f1c3)
 // IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html

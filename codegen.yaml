@@ -65,6 +65,19 @@ devices:
       - bk_light_ct
       - bk_up_light_ct
 
+  - name: BK Color light
+    id: bk_color_light
+    zigbee_id: '0x08b95ffffe335fe2'
+    type: IKEA_INSPELNING
+    y2m:
+      name: Декоративный
+      room: BALKON
+    groups:
+      sw:
+      - all_light
+      - all_christmas_light
+      - bk_light_sw
+
   - name: Garten wasser remote
     id: garten_wasser_remote
     zigbee_id: '0xccccccfffe58f1c3'
@@ -618,10 +631,8 @@ devices:
     zigbee_id: '0x8c8b48fffe0ef9ed'
     type: IKEA_INSPELNING
     y2m:
-      type: Light
-      subtype: LIGHT.SW
       name: Телевизор
-      room: SZ
+      room: SLEEP
 
 # KITCHEN ================================
 

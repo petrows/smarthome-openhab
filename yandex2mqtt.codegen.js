@@ -26,6 +26,12 @@ SensorClimate({
     room: ROOMS.OUTSIDE,
     pressure: true,
 }),
+Light(LIGHT.SW, {
+    id: 'bk_color_light',
+    name: 'Декоративный',
+    room: ROOMS.BALKON,
+    type: 'devices.types.switch',
+}),
 Light(LIGHT.DIM, {
     id: 'fl_up_light',
     name: 'Верхний',
@@ -130,7 +136,8 @@ Light(LIGHT.RGB, {
 Light(LIGHT.SW, {
     id: 'sz_tv_power',
     name: 'Телевизор',
-    room: ROOMS.SZ,
+    room: ROOMS.SLEEP,
+    type: 'devices.types.switch',
 }),
 SensorClimate({
     id: 'ku_climate',
