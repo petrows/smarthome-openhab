@@ -693,12 +693,6 @@ Switch kg_main2_light "KG Hobbyraum (Haupt)" <light> (g_all_sw,all_light,kg_ligh
 Number:Dimensionless kg_main2_light_rssi "KG Hobbyraum (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_main2_light:rssi"}
 String kg_main2_light_bssid "KG Hobbyraum (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_main2_light:bssid"}
 DateTime kg_main2_light_activity "KG Hobbyraum (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_main2_light:activity"}
-// KG Heuzung (Haupt) (kg_hz_main_light)
-// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_hz_main_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
-Number:Dimensionless kg_hz_main_light_rssi "KG Heuzung (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_hz_main_light:rssi"}
-String kg_hz_main_light_bssid "KG Heuzung (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_hz_main_light:bssid"}
-DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_hz_main_light:activity"}
 // Garden water (garten_wasser_sw)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:openhab:garten_wasser_sw:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
@@ -713,6 +707,21 @@ Number:Dimensionless garten_wasser_leak_link "Warehouse 3 leak LINK [%d]" <linkz
 DateTime garten_wasser_leak_activity "Warehouse 3 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:garten_wasser_leak:activity"}
 Switch garten_wasser_leak_leak "Warehouse 3 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:garten_wasser_leak:leak"}
 Number:Dimensionless garten_wasser_leak_battery "Warehouse 3 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:garten_wasser_leak:battery"}
+// KG Heuzung (Haupt) (kg_hz_main_light)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_hz_main_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
+Number:Dimensionless kg_hz_main_light_rssi "KG Heuzung (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_hz_main_light:rssi"}
+String kg_hz_main_light_bssid "KG Heuzung (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_hz_main_light:bssid"}
+DateTime kg_hz_main_light_activity "KG Heuzung (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_hz_main_light:activity"}
+// HZ climate (0x00158d0001c2cc22)
+// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Switch hz_climate_lowbatt "HZ climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:hz_climate:battery_low"}
+Switch hz_climate_ota "HZ climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:hz_climate:ota"}
+Number:Dimensionless hz_climate_link "HZ climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:hz_climate:link"}
+DateTime hz_climate_activity "HZ climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:hz_climate:activity"}
+Number:Temperature hz_climate_temperature "HZ climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:hz_climate:temperature"}
+Number:Dimensionless hz_climate_humidity "HZ climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:hz_climate:humidity"}
+Number:Dimensionless hz_climate_battery "HZ climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:hz_climate:battery"}
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_lager1_main_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}

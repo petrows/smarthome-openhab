@@ -111,6 +111,9 @@ sitemap main label="MAIN"
             Frame label="Christmas" {
                 Switch item=bk_christmas_light label="Christmas [%s]" icon="light"
             }
+            Frame label="Color lights" {
+                Switch item=bk_color_light_sw label="Color lamps [%s]" icon="light"
+            }
 		}
 		Group item=fl_light label="Corridor [%s]" icon="light" {
             Frame {

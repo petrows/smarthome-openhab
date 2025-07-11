@@ -70,6 +70,8 @@ devices:
     zigbee_id: '0x08b95ffffe335fe2'
     type: IKEA_INSPELNING
     y2m:
+      type: Light
+      subtype: LIGHT.SW
       name: Декоративный
       room: BALKON
     groups:
@@ -1005,6 +1007,22 @@ devices:
             - kg_light
             - kg_light_hobbyraum
 
+  - name: Garden water
+    id: garten_wasser_sw
+    type: TASMOTA_SONOFF_MINI
+    channels:
+      POWER:
+        id: garten_wasser_sw
+        name: Garden water
+        expire: 1h
+
+  - name: Warehouse 3 leak
+    id: garten_wasser_leak
+    zigbee_id: '0x00158d0006b7aa81'
+    type: XIAOMI_AQARA_LEAK_V1
+
+  # Heating room
+
   - name: KG Heuzung (Haupt)
     id: kg_hz_main_light
     type: TASMOTA_SONOFF_MINI
@@ -1023,19 +1041,10 @@ devices:
             - all_light
             - kg_light
 
-  - name: Garden water
-    id: garten_wasser_sw
-    type: TASMOTA_SONOFF_MINI
-    channels:
-      POWER:
-        id: garten_wasser_sw
-        name: Garden water
-        expire: 1h
-
-  - name: Warehouse 3 leak
-    id: garten_wasser_leak
-    zigbee_id: '0x00158d0006b7aa81'
-    type: XIAOMI_AQARA_LEAK_V1
+  - name: HZ climate
+    id: hz_climate
+    zigbee_id: '0x00158d0001c2cc22'
+    type: XIAOMI_AQARA_V1
 
   # Storage Room 1
 
