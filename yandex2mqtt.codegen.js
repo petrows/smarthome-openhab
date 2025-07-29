@@ -30,7 +30,6 @@ Light(LIGHT.SW, {
     id: 'bk_color_light',
     name: 'Декоративный',
     room: ROOMS.BALKON,
-    type: 'devices.types.switch',
 }),
 Light(LIGHT.DIM, {
     id: 'fl_up_light',

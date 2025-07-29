@@ -413,6 +413,10 @@ sitemap main label="MAIN"
                 Text 		item=lg3_climate_temperature label="Temperature [%d °C]"
                 Text 		item=lg3_climate_humidity label="Humidity [%d %%]"
             }
+            Frame label="Heating room" {
+                Text 		item=hz_climate_temperature label="Temperature [%d °C]"
+                Text 		item=hz_climate_humidity label="Humidity [%d %%]"
+            }
 		}
 	}
     Frame {

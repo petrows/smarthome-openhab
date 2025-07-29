@@ -1091,16 +1091,6 @@ devices:
       name: Климат
       room: KG_LAUNDRY
 
-  - name: KG Cat Door motion
-    id: kg_lager3_cat_door_motion
-    zigbee_id: '0x8c65a3fffe3dbc2c'
-    type: IKEA_VALLHORN
-
-  - name: KG Lager 3 door
-    id: kg_lager3_door
-    zigbee_id: '0xa4c138a52c4e5c19'
-    type: TUYA_WINDOW_SENSOR_TS0203
-
   - name: KG Lager 3 (Haupt)
     id: lg3_up_light
     type: TASMOTA_SONOFF_MINI
