@@ -1091,6 +1091,11 @@ devices:
       name: Климат
       room: KG_LAUNDRY
 
+  - name: KG Lager 3 door
+    id: kg_lager3_door
+    zigbee_id: '0xa4c138a52c4e5c19'
+    type: TUYA_WINDOW_SENSOR_TS0203
+
   - name: KG Lager 3 (Haupt)
     id: lg3_up_light
     type: TASMOTA_SONOFF_MINI
