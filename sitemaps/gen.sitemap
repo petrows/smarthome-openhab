@@ -876,6 +876,16 @@ Text item=hz_climate_temperature
 Text item=hz_climate_humidity
 Text item=hz_climate_battery
 }
+Frame label="HZ leak (0x8c8b48fffe226767)" {
+// HZ leak (0x8c8b48fffe226767)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=hz_wasser_leak_lowbatt
+Text item=hz_wasser_leak_ota
+Text item=hz_wasser_leak_link
+Text item=hz_wasser_leak_activity
+Text item=hz_wasser_leak_leak
+Text item=hz_wasser_leak_battery
+}
 Frame label="KG Lager 1 (Haupt) (kg_lager1_main_light)" {
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
@@ -998,9 +1008,9 @@ Text item=kg_lager4_motion_activity
 Text item=kg_lager4_motion_occupancy
 Text item=kg_lager4_motion_battery
 }
-Frame label="Warehouse 4 leak (0x00158d000488052c)" {
-// Warehouse 4 leak (0x00158d000488052c)
-// Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
+Frame label="Warehouse 4 leak (0x6cfd22fffe1c82d4)" {
+// Warehouse 4 leak (0x6cfd22fffe1c82d4)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
 Text item=kg_lager4_leak_lowbatt
 Text item=kg_lager4_leak_ota
 Text item=kg_lager4_leak_link

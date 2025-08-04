@@ -1050,6 +1050,18 @@ Thing mqtt:topic:openhab:hz_climate "HZ climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/hz_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/hz_climate", transformationPattern="JS:codegen-activity.js"]
 }
+// HZ leak (0x8c8b48fffe226767)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Thing mqtt:topic:openhab:hz_wasser_leak "HZ leak" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : leak [stateTopic="zigbee2mqtt/hz_wasser_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
+		Type number : battery [stateTopic="zigbee2mqtt/hz_wasser_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/hz_wasser_leak", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="zigbee2mqtt/hz_wasser_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="zigbee2mqtt/hz_wasser_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="zigbee2mqtt/hz_wasser_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="zigbee2mqtt/hz_wasser_leak", transformationPattern="JS:codegen-activity.js"]
+}
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Thing mqtt:topic:openhab:kg_lager1_main_light "KG Lager 1 (Haupt)" (mqtt:broker:openhab) {
@@ -1196,11 +1208,11 @@ Thing mqtt:topic:openhab:kg_lager4_motion "KG Lager motion" (mqtt:broker:openhab
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_motion", transformationPattern="JS:codegen-activity.js"]
 }
-// Warehouse 4 leak (0x00158d000488052c)
-// Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
+// Warehouse 4 leak (0x6cfd22fffe1c82d4)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
 Thing mqtt:topic:openhab:kg_lager4_leak "Warehouse 4 leak" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : leak [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"leak\".*)∩JSONPATH:$.leak", on="true", off="false"]
+		Type switch : leak [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
 		Type number : battery [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_lager4_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]

@@ -1046,6 +1046,11 @@ devices:
     zigbee_id: '0x00158d0001c2cc22'
     type: XIAOMI_AQARA_V1
 
+  - name: HZ leak
+    id: hz_wasser_leak
+    zigbee_id: '0x8c8b48fffe226767'
+    type: IKEA_BADRING
+
   # Storage Room 1
 
   - name: KG Lager 1 (Haupt)
@@ -1181,8 +1186,8 @@ devices:
 
   - name: Warehouse 4 leak
     id: kg_lager4_leak
-    zigbee_id: '0x00158d000488052c'
-    type: XIAOMI_AQARA_LEAK_V1
+    zigbee_id: '0x6cfd22fffe1c82d4'
+    type: IKEA_BADRING
 
 # Server room
 
