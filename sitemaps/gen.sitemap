@@ -53,14 +53,10 @@ Switch item=bk_light_2_sw
 }
 Frame label="BK Color light (0x08b95ffffe335fe2)" {
 // BK Color light (0x08b95ffffe335fe2)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
 Text item=bk_color_light_ota
 Text item=bk_color_light_link
 Switch item=bk_color_light_sw
-Text item=bk_color_light_ac_voltage
-Text item=bk_color_light_ac_current
-Text item=bk_color_light_ac_power
-Text item=bk_color_light_ac_energy
 }
 Frame label="Garten wasser remote (0xccccccfffe58f1c3)" {
 // Garten wasser remote (0xccccccfffe58f1c3)
@@ -517,14 +513,10 @@ Text item=sz_bed_power_ac_energy
 }
 Frame label="SZ TV power (0x8c8b48fffe0ef9ed)" {
 // SZ TV power (0x8c8b48fffe0ef9ed)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
 Text item=sz_tv_power_ota
 Text item=sz_tv_power_link
 Switch item=sz_tv_power_sw
-Text item=sz_tv_power_ac_voltage
-Text item=sz_tv_power_ac_current
-Text item=sz_tv_power_ac_power
-Text item=sz_tv_power_ac_energy
 }
 Frame label="KU Climate (0xa4c138f5460e22dd)" {
 // KU Climate (0xa4c138f5460e22dd)

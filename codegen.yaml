@@ -68,7 +68,7 @@ devices:
   - name: BK Color light
     id: bk_color_light
     zigbee_id: '0x08b95ffffe335fe2'
-    type: IKEA_INSPELNING
+    type: IKEA_TRETAKT
     y2m:
       type: Light
       subtype: LIGHT.SW
@@ -631,7 +631,7 @@ devices:
   - name: SZ TV power
     id: sz_tv_power
     zigbee_id: '0x8c8b48fffe0ef9ed'
-    type: IKEA_INSPELNING
+    type: IKEA_TRETAKT
     y2m:
       name: Телевизор
       room: SLEEP
