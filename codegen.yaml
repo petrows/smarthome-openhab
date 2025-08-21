@@ -80,11 +80,6 @@ devices:
       - all_christmas_light
       - bk_light_sw
 
-  - name: Garten wasser remote
-    id: garten_wasser_remote
-    zigbee_id: '0xccccccfffe58f1c3'
-    type: IKEA_TRADFRI_ON_OFF
-
 # CORRIDOR ===============================
 
   - name: EG Corridor Light
@@ -522,11 +517,6 @@ devices:
     id: sz_bed_r_remote
     zigbee_id: '0x540f57fffe1e420c'
     type: IKEA_TRADFRI_STYRBAR
-
-  - name: Bedroom curtains remote
-    id: sz_curtain_remote
-    zigbee_id: '0x8cf681fffe36d14e'
-    type: IKEA_TRADFRI_CURTAIN_REMOTE
 
   - name: SZ Bedside drawler
     id: sz_bedside_drawler_light

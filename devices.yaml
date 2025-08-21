@@ -141,8 +141,6 @@
   friendly_name: sz_tv_power
 '0x8c8b48fffe226767':
   friendly_name: hz_wasser_leak
-'0x8cf681fffe36d14e':
-  friendly_name: sz_curtain_remote
 '0x8cf681fffef62c85':
   friendly_name: wz_light_color
 '0x9035eafffe20e847':
@@ -227,8 +225,6 @@
   friendly_name: tr_motion
 '0xcc86ecfffea0c7cb':
   friendly_name: bz_light_1
-'0xccccccfffe58f1c3':
-  friendly_name: garten_wasser_remote
 '0xccccccfffed82b91':
   friendly_name: tr_door_sensor
 '0xccccccfffed82ba3':

@@ -62,16 +62,6 @@ Thing mqtt:topic:openhab:bk_color_light "BK Color light" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/bk_color_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/bk_color_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Garten wasser remote (0xccccccfffe58f1c3)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Thing mqtt:topic:openhab:garten_wasser_remote "Garten wasser remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/garten_wasser_remote", commandTopic="zigbee2mqtt/garten_wasser_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/garten_wasser_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
 Thing mqtt:topic:openhab:fl_up_light "EG Corridor Light" (mqtt:broker:openhab) {
@@ -516,16 +506,6 @@ Thing mqtt:topic:openhab:sz_bed_r_remote "SZ remote R" (mqtt:broker:openhab) {
 		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Bedroom curtains remote (0x8cf681fffe36d14e)
-// IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
-Thing mqtt:topic:openhab:sz_curtain_remote "Bedroom curtains remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/sz_curtain_remote", commandTopic="zigbee2mqtt/sz_curtain_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_curtain_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // SZ Bedside drawler (0x287681fffe95cba4)
 // IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html

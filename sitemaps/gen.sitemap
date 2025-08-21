@@ -58,14 +58,6 @@ Text item=bk_color_light_ota
 Text item=bk_color_light_link
 Switch item=bk_color_light_sw
 }
-Frame label="Garten wasser remote (0xccccccfffe58f1c3)" {
-// Garten wasser remote (0xccccccfffe58f1c3)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Text item=garten_wasser_remote_lowbatt
-Text item=garten_wasser_remote_ota
-Text item=garten_wasser_remote_link
-Text item=garten_wasser_remote_battery
-}
 Frame label="EG Corridor Light (0xa4c138a06ec38c9e)" {
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
@@ -426,14 +418,6 @@ Text item=sz_bed_r_remote_lowbatt
 Text item=sz_bed_r_remote_ota
 Text item=sz_bed_r_remote_link
 Text item=sz_bed_r_remote_battery
-}
-Frame label="Bedroom curtains remote (0x8cf681fffe36d14e)" {
-// Bedroom curtains remote (0x8cf681fffe36d14e)
-// IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
-Text item=sz_curtain_remote_lowbatt
-Text item=sz_curtain_remote_ota
-Text item=sz_curtain_remote_link
-Text item=sz_curtain_remote_battery
 }
 Frame label="SZ Bedside drawler (0x287681fffe95cba4)" {
 // SZ Bedside drawler (0x287681fffe95cba4)

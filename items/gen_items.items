@@ -48,12 +48,6 @@ Switch bk_light_2_sw "Balkon light 2" <light> (g_all_sw,all_light,bk_light_sw,bk
 Switch bk_color_light_ota "BK Color light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_color_light:ota"}
 Number:Dimensionless bk_color_light_link "BK Color light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_color_light:link"}
 Switch bk_color_light_sw "BK Color light" <light> (g_all_sw,all_light,all_christmas_light,bk_light_sw) {channel="mqtt:topic:openhab:bk_color_light:state"}
-// Garten wasser remote (0xccccccfffe58f1c3)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Switch garten_wasser_remote_lowbatt "Garten wasser remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:garten_wasser_remote:battery_low"}
-Switch garten_wasser_remote_ota "Garten wasser remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:garten_wasser_remote:ota"}
-Number:Dimensionless garten_wasser_remote_link "Garten wasser remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:garten_wasser_remote:link"}
-Number:Dimensionless garten_wasser_remote_battery "Garten wasser remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:garten_wasser_remote:battery"}
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
 Dimmer fl_up_light_dim "EG Corridor Light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fl_up_light:dim"}
@@ -355,12 +349,6 @@ Switch sz_bed_r_remote_lowbatt "SZ remote R BAT [MAP(codegen-lowbat.map):%s]" <l
 Switch sz_bed_r_remote_ota "SZ remote R OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_bed_r_remote:ota"}
 Number:Dimensionless sz_bed_r_remote_link "SZ remote R LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_bed_r_remote:link"}
 Number:Dimensionless sz_bed_r_remote_battery "SZ remote R  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_bed_r_remote:battery"}
-// Bedroom curtains remote (0x8cf681fffe36d14e)
-// IKEA TRADFRI open/close remote (E1766) / https://www.zigbee2mqtt.io/devices/E1766.html
-Switch sz_curtain_remote_lowbatt "Bedroom curtains remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:sz_curtain_remote:battery_low"}
-Switch sz_curtain_remote_ota "Bedroom curtains remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_curtain_remote:ota"}
-Number:Dimensionless sz_curtain_remote_link "Bedroom curtains remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_curtain_remote:link"}
-Number:Dimensionless sz_curtain_remote_battery "Bedroom curtains remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:sz_curtain_remote:battery"}
 // SZ Bedside drawler (0x287681fffe95cba4)
 // IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
 Dimmer sz_bedside_drawler_light_dim "SZ Bedside drawler DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:sz_bedside_drawler_light:dim"}
