@@ -620,8 +620,8 @@ Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// KU Light Button (Spuele) (0x00158d0001e612b9)
-// Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
+// KU Light Button (Spuele) (0x680ae2fffeaf18d4)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spuele)" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="zigbee2mqtt/ku_light_switch_spule", commandTopic="zigbee2mqtt/ku_light_switch_spule/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
@@ -629,16 +629,6 @@ Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spuele)" (mqtt:
 		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// KU Light Button (Kochfield) (0x680ae2fffeaf18d4)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Thing mqtt:topic:openhab:ku_light_switch_kochfeld "KU Light Button (Kochfield)" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", commandTopic="zigbee2mqtt/ku_light_switch_kochfeld/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_switch_kochfeld", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // KU Light Arbeit (0xec1bbdfffea37757)
 // Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html

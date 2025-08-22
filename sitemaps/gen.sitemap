@@ -513,21 +513,13 @@ Text item=ku_climate_temperature
 Text item=ku_climate_humidity
 Text item=ku_climate_battery
 }
-Frame label="KU Light Button (Spuele) (0x00158d0001e612b9)" {
-// KU Light Button (Spuele) (0x00158d0001e612b9)
-// Xiaomi MiJia wireless switch (WXKG01LM) / https://www.zigbee2mqtt.io/devices/WXKG01LM.html
+Frame label="KU Light Button (Spuele) (0x680ae2fffeaf18d4)" {
+// KU Light Button (Spuele) (0x680ae2fffeaf18d4)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Text item=ku_light_switch_spule_lowbatt
 Text item=ku_light_switch_spule_ota
 Text item=ku_light_switch_spule_link
 Text item=ku_light_switch_spule_battery
-}
-Frame label="KU Light Button (Kochfield) (0x680ae2fffeaf18d4)" {
-// KU Light Button (Kochfield) (0x680ae2fffeaf18d4)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Text item=ku_light_switch_kochfeld_lowbatt
-Text item=ku_light_switch_kochfeld_ota
-Text item=ku_light_switch_kochfeld_link
-Text item=ku_light_switch_kochfeld_battery
 }
 Frame label="KU Light Arbeit (0xec1bbdfffea37757)" {
 // KU Light Arbeit (0xec1bbdfffea37757)

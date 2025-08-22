@@ -2,8 +2,6 @@
   friendly_name: desktop_petro_remote
 '0x00158d0001c2cc22':
   friendly_name: hz_climate
-'0x00158d0001e612b9':
-  friendly_name: ku_light_switch_spule
 '0x00158d0006b7aa81':
   friendly_name: garten_wasser_leak
 '0x003c84fffe132b20':
@@ -114,7 +112,7 @@
 '0x680ae2fffe1a92f3':
   friendly_name: tr_up_switch
 '0x680ae2fffeaf18d4':
-  friendly_name: ku_light_switch_kochfeld
+  friendly_name: ku_light_switch_spule
 '0x6cfd22fffe1a1af2':
   friendly_name: kg_srv_power
 '0x6cfd22fffe1a2043':

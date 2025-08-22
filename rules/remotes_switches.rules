@@ -80,28 +80,6 @@ then
     }
 end
 
-rule "KU Arbeitlicht SW (Kochfeld)"
-when
-    Channel "mqtt:topic:openhab:ku_light_switch_kochfeld:action" triggered
-then
-	var state = receivedEvent
-    switch(state) {
-        case "toggle": {
-            if (ku_light_switch_arbeit_sw.state == ON) {
-                ku_light_switch_arbeit_sw.sendCommand(OFF)
-            } else {
-                ku_light_switch_arbeit_sw.sendCommand(ON)
-            }
-        }
-        case "brightness_up_click": {
-            ku_light_switch_haupt_sw.sendCommand(ON)
-        }
-        case "brightness_down_click": {
-            ku_light_switch_haupt_sw.sendCommand(OFF)
-        }
-    }
-end
-
 rule "KU table dimmer"
 when
     Channel "mqtt:topic:openhab:ku_light_table_switch:action_dim" triggered

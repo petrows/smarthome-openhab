@@ -639,13 +639,8 @@ devices:
       temperature:
         - ku_hz_temperature_sensor
 
-  - name: "KU Light Button (Spuele)"
+  - name: KU Light Button (Spuele)
     id: ku_light_switch_spule
-    zigbee_id: '0x00158d0001e612b9'
-    type: XIAOMI_BUTTON
-
-  - name: KU Light Button (Kochfield)
-    id: ku_light_switch_kochfeld
     zigbee_id: '0x680ae2fffeaf18d4'
     type: IKEA_TRADFRI_REMOTE
 
