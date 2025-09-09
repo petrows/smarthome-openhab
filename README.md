@@ -73,3 +73,7 @@ Drop measurment, if group type is changed:
 ```bash
 docker exec -it -u 0 Openhab-influxdb influx -database openhab3_db -execute 'DROP MEASUREMENT g_all_leak'
 ```
+
+# Install 3rd-party addons:
+```bash
+addons install json:org-smarthome-binding-tuya
