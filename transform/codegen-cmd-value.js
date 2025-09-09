@@ -1,4 +1,9 @@
-(function (input, field, transition, expire) {
+// Args:
+// f = field name
+// t = transition time (seconds) (optional)
+// exp = expire time (seconds) (optional, only for ON command, max 6553 seconds)
+
+(function (input) {
     out = {}
     // Check: is number?
     if (isNaN(input)) {
@@ -8,15 +13,15 @@
         input = Math.round(input)
     }
     // Write value
-    out[field] = input
+    out[f] = input
     // Write transition?
-    if (transition && 0 != transition) {
-        out['transition'] = Math.round(transition)
+    if (t && 0 != t) {
+        out['transition'] = Math.round(t)
     }
-    if (expire && 0 != expire && expire <= 6553 && input == "ON") {
-        out['on_time'] = Math.round(expire)
+    if (exp && 0 != exp && exp <= 6553 && input == "ON") {
+        out['on_time'] = Math.round(exp)
         // Add 'cooldown' f 1 seconds, as some device might require it
         out['off_wait_time'] = 1
     }
     return JSON.stringify(out)
-})(input, f, t, exp)
+})(input)
