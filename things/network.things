@@ -1,4 +1,4 @@
 // PC
-Thing network:pingdevice:petro_pc "Petro PC" [ hostname="petro-pc.pws", retry=5, timeout=5000, refreshInterval=30000 ]
-Thing network:pingdevice:petro_nb "Petro NB" [ hostname="petro-nb.pws", retry=5, timeout=5000, refreshInterval=30000 ]
-Thing network:pingdevice:backup_ext "Backup ext" [ hostname="backup-ext.pws", retry=5, timeout=5000, refreshInterval=30000 ]
+Thing network:pingdevice:petro_pc "Petro PC" [ hostname="petro-pc.pws", useArpPing=false, retry=5, timeout=5000, refreshInterval=30000 ]
+Thing network:pingdevice:petro_nb "Petro NB" [ hostname="petro-nb.pws", useArpPing=false, retry=5, timeout=5000, refreshInterval=30000 ]
+Thing network:pingdevice:backup_ext "Backup ext" [ hostname="backup-ext.pws", useArpPing=false, retry=5, timeout=5000, refreshInterval=30000 ]
