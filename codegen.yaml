@@ -1106,8 +1106,8 @@ devices:
 
   - name: Washmachine
     id: lg3_washmachine
-    zigbee_id: '0x70b3d52b60057a95'
-    type: TUYA_PLUG_TS000F
+    zigbee_id: '0x94ec32fffe1f762d'
+    type: IKEA_INSPELNING
 
   - name: KG Lager 4 (Haupt)
     id: kg_lager4_main_light

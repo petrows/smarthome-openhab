@@ -127,8 +127,6 @@
   friendly_name: bz_towel_heater
 '0x6cfd22fffeb63428':
   friendly_name: kg_window_2
-'0x70b3d52b60057a95':
-  friendly_name: lg3_washmachine
 '0x842e14fffe0eb8a0':
   friendly_name: sz_up_light
 '0x8c65a3fffe70093b':
@@ -163,6 +161,8 @@
   friendly_name: sz_bed_light_r
 '0x94ec32fffe1f54d0':
   friendly_name: wz_plant_light
+'0x94ec32fffe1f762d':
+  friendly_name: lg3_washmachine
 '0x94ec32fffe202672':
   friendly_name: octoprint_power
 '0xa4c138018d7a55bf':

@@ -759,8 +759,8 @@ Switch lg3_up_light "KG Lager 3 (Haupt)" <light> (g_all_sw,all_light,kg_light) {
 Number:Dimensionless lg3_up_light_rssi "KG Lager 3 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:lg3_up_light:rssi"}
 String lg3_up_light_bssid "KG Lager 3 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:lg3_up_light:bssid"}
 DateTime lg3_up_light_activity "KG Lager 3 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_up_light:activity"}
-// Washmachine (0x70b3d52b60057a95)
-// Plug socket with power function / https://www.zigbee2mqtt.io/devices/TS000F_power.html
+// Washmachine (0x94ec32fffe1f762d)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Switch lg3_washmachine_ota "Washmachine OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:lg3_washmachine:ota"}
 Number:Dimensionless lg3_washmachine_link "Washmachine LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:lg3_washmachine:link"}
 Switch lg3_washmachine_sw "Washmachine" <light> (g_all_sw) {channel="mqtt:topic:openhab:lg3_washmachine:state"}

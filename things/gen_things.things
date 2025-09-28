@@ -1106,8 +1106,8 @@ Thing mqtt:topic:openhab:lg3_up_light "KG Lager 3 (Haupt)" (mqtt:broker:openhab)
 		Type datetime : activity [stateTopic="tele/lg3_up_light/STATE", transformationPattern="JS:codegen-activity.js"]
 		Type switch : power [stateTopic="stat/lg3_up_light/RESULT", transformationPattern="REGEX:(.*\"POWER\".*)∩JSONPATH:$.POWER", commandTopic="cmnd/lg3_up_light/POWER", on="ON", off="OFF"]
 }
-// Washmachine (0x70b3d52b60057a95)
-// Plug socket with power function / https://www.zigbee2mqtt.io/devices/TS000F_power.html
+// Washmachine (0x94ec32fffe1f762d)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Thing mqtt:topic:openhab:lg3_washmachine "Washmachine" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="zigbee2mqtt/lg3_washmachine", commandTopic="zigbee2mqtt/lg3_washmachine/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
