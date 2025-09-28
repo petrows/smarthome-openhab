@@ -164,23 +164,3 @@ then
     val DateTimeType date_now = DateTimeType.valueOf(now.toLocalDateTime().toString())
     current_date_time.postUpdate(date_now)
 end
-
-// Power on external backup, due to timetable
-
-rule "Backup ext start"
-when
-    Time cron "0 00 12 ? * *"
-then
-    logInfo("common", "Backup-ext power up")
-    backup_ext_power_sw.sendCommand(ON)
-end
-
-// Power off external backup, if not active
-
-rule "Backup ext offline"
-when
-    Item online_backup_ext changed from ON to OFF
-then
-    logInfo("common", "Backup-ext offline, switching off")
-    backup_ext_power_sw.sendCommand(OFF)
-end

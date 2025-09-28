@@ -1361,11 +1361,6 @@ devices:
 
 # Other
 
-  - name: Ext backup power supply
-    id: backup_ext_power
-    zigbee_id: '0x1cc089fffe13a7e3'
-    type: IKEA_INSPELNING
-
   - name: Main power
     id: main_power
     zigbee_id: '0x0c2a6ffffebf2819'

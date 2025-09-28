@@ -1116,17 +1116,6 @@ Text item=ku_shutter_mov
 Slider item=ku_shutter_pos
 Switch item=ku_shutter_cal
 }
-Frame label="Ext backup power supply (0x1cc089fffe13a7e3)" {
-// Ext backup power supply (0x1cc089fffe13a7e3)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Text item=backup_ext_power_ota
-Text item=backup_ext_power_link
-Switch item=backup_ext_power_sw
-Text item=backup_ext_power_ac_voltage
-Text item=backup_ext_power_ac_current
-Text item=backup_ext_power_ac_power
-Text item=backup_ext_power_ac_energy
-}
 Frame label="Main power (0x0c2a6ffffebf2819)" {
 // Main power (0x0c2a6ffffebf2819)
 // Smart energy monitor for 3P+N system / https://www.zigbee2mqtt.io/devices/SPM02V2.5.html#tuya-spm02v2.5

@@ -90,8 +90,6 @@
   simulated_brightness:
     delta: 5
     interval: 100
-'0x1cc089fffe13a7e3':
-  friendly_name: backup_ext_power
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':

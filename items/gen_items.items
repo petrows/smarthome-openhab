@@ -920,15 +920,6 @@ String ku_shutter_cmd "KU Shutter [%s]" <blinds> (g_all_cmd,blinds_cmd,ku_blinds
 String ku_shutter_mov "KU Shutter movement" <blinds> {channel="mqtt:topic:openhab:ku_shutter:moving"}
 Dimmer ku_shutter_pos "KU Shutter [%d %%]" <blinds> (g_all_pos,blinds_pos,ku_blinds_pos) {channel="mqtt:topic:openhab:ku_shutter:position"}
 Switch ku_shutter_cal "KU Shutter cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:ku_shutter:calibration"}
-// Ext backup power supply (0x1cc089fffe13a7e3)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Switch backup_ext_power_ota "Ext backup power supply OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:backup_ext_power:ota"}
-Number:Dimensionless backup_ext_power_link "Ext backup power supply LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:backup_ext_power:link"}
-Switch backup_ext_power_sw "Ext backup power supply" <light> (g_all_sw) {channel="mqtt:topic:openhab:backup_ext_power:state"}
-Number:ElectricPotential backup_ext_power_ac_voltage "Ext backup power supply [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:backup_ext_power:ac_voltage"}
-Number:ElectricCurrent backup_ext_power_ac_current "Ext backup power supply [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:backup_ext_power:ac_current"}
-Number:Power backup_ext_power_ac_power "Ext backup power supply [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:backup_ext_power:ac_power"}
-Number:Energy backup_ext_power_ac_energy "Ext backup power supply [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:backup_ext_power:ac_energy"}
 // Main power (0x0c2a6ffffebf2819)
 // Smart energy monitor for 3P+N system / https://www.zigbee2mqtt.io/devices/SPM02V2.5.html#tuya-spm02v2.5
 Switch main_power_ota "Main power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:main_power:ota"}
