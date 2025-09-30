@@ -1,24 +1,6 @@
 config:
   mqtt_broker_id: openhab
-
-y2m:
-  rooms:
-    GROUPS: 'Группы'
-    OUTSIDE: 'Улица'
-    BALKON: 'Балкон'
-    LOBBY: 'Коридор'
-    WC: 'Ванная'
-    SLEEP: 'Спальня'
-    KITCHEN: 'Кухня'
-    LIVING: 'Гостиная'
-    KINO: 'Кинозал'
-    TREPPE: 'Лестница'
-    KG_WORKSHOP: 'Мастерская'
-    KG_CABINET: 'Кабинет'
-    KG_BOILER: 'Котельная'
-    KG_L1: 'Кладовка 1'
-    KG_L4: 'Кладовка 4'
-    KG_LAUNDRY: 'Прачечная'
+  topic: zigbee2mqtt
 
 devices:
   - name: Sturbar test
@@ -934,11 +916,6 @@ devices:
     # FIXME use temporaly power plug from SZ
     zigbee_id: '0x28dba7fffe5fa1dd'
     type: IKEA_TRETAKT
-
-  - name: Petro Desktop remote
-    id: desktop_petro_remote
-    zigbee_id: '0x000d6ffffee8357d'
-    type: IKEA_TRADFRI_REMOTE
 
   - name: "KG Hobbyraum (Work light)"
     id: kg_main1_work_light

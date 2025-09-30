@@ -1,0 +1,19 @@
+y2m:
+  rooms:
+    GROUPS: 'Группы'
+    OUTSIDE: 'Улица'
+    BALKON: 'Балкон'
+    LOBBY: 'Коридор'
+    WC: 'Ванная'
+    SLEEP: 'Спальня'
+    KITCHEN: 'Кухня'
+    LIVING: 'Гостиная'
+    KINO: 'Кинозал'
+    TREPPE: 'Лестница'
+    KG_WORKSHOP: 'Мастерская'
+    KG_CABINET: 'Кабинет'
+    KG_BOILER: 'Котельная'
+    KG_L1: 'Кладовка 1'
+    KG_L4: 'Кладовка 4'
+    KG_LAUNDRY: 'Прачечная'
+

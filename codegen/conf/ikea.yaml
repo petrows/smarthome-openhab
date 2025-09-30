@@ -1,0 +1,9 @@
+config:
+  mqtt_broker_id: openhab
+  topic: z2m-ikea
+
+devices:
+  - name: Petro Desktop remote
+    id: desktop_petro_remote
+    zigbee_id: '0x000d6ffffee8357d'
+    type: IKEA_TRADFRI_REMOTE
