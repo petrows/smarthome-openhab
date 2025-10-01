@@ -181,16 +181,6 @@ SensorClimate({
     co2: true,
     pressure: true,
 }),
-Light(LIGHT.CT, {
-    id: 'desktop_petro_light',
-    name: 'Стол',
-    room: ROOMS.KG_CABINET,
-}),
-Light(LIGHT.SW, {
-    id: 'kg_main1_work_light',
-    name: 'Стол',
-    room: ROOMS.KG_WORKSHOP,
-}),
 Light(LIGHT.SW, {
     id: 'kg_main1_light',
     name: 'Верхний',
@@ -241,6 +231,16 @@ Light(LIGHT.DIM, {
     id: 'kg_lager4_2_light',
     name: 'Дежурный 2',
     room: ROOMS.KG_L4,
+}),
+Light(LIGHT.CT, {
+    id: 'desktop_petro_light',
+    name: 'Стол',
+    room: ROOMS.KG_CABINET,
+}),
+Light(LIGHT.SW, {
+    id: 'kg_main1_work_light',
+    name: 'Стол',
+    room: ROOMS.KG_WORKSHOP,
 }),
 ]
 }

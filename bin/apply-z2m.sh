@@ -1,11 +1,21 @@
 #!/bin/bash -xe
 
-# This script applies devices list to Zigbee2mqtt and reloads it
+# Search instances
+for instance_file in /srv/openhab-data/conf/codegen/devices/*.yaml; do
+    instance_name=$(basename "$instance_file" .yaml)
+    echo "Generating for $instance_name"
+    z2m_root="/srv/zigbee2mqtt-data/$instance_name"
+    if [ ! -d "$z2m_root" ]; then
+        echo "Directory $z2m_root does not exist"
+        exit 1
+    fi
 
-mkdir -p /srv/zigbee2mqtt-data/devices-backup
+    mkdir -p "$z2m_root/devices-backup"
 
-cp /srv/zigbee2mqtt-data/devices.yaml /srv/zigbee2mqtt-data/devices-backup/$(date +"%Y-%m-%d").yaml
-cp /srv/openhab-data/conf/devices.yaml /srv/zigbee2mqtt-data/
+    cp "$z2m_root/devices.yaml" "$z2m_root/devices-backup/$(date +"%Y-%m-%d").yaml"
+    cp "$instance_file" "$z2m_root/devices.yaml"
 
-docker restart Openhab-zigbee2mqtt
+    docker restart Openhab-zigbee2mqtt-$instance_name
+done
+
 docker restart Openhab-yandex2mqtt

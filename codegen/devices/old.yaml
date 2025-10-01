@@ -12,10 +12,6 @@
   simulated_brightness:
     delta: 5
     interval: 100
-'0x00be44fffea95063':
-  friendly_name: kg_main1_work_light
-'0x040d84fffec53aaf':
-  friendly_name: desktop_petro_light
 '0x048727fffe5d07db':
   friendly_name: mouse_trap_4
 '0x048727fffe5d58e3':
@@ -28,17 +24,11 @@
   friendly_name: mouse_trap_2
 '0x048727fffea43740':
   friendly_name: mouse_trap_1
-'0x04cd15fffe35f24e':
-  friendly_name: desktop_petro_up_light_1
-'0x04cd15fffe6bf002':
-  friendly_name: desktop_petro_up_light_2
 '0x04cd15fffe6d57dc':
   friendly_name: sturbar_test
   simulated_brightness:
     delta: 5
     interval: 100
-'0x04cd15fffe73ecb6':
-  friendly_name: desktop_petro_up_light_3
 '0x04cd15fffe75c518':
   friendly_name: tr_down_switch
   simulated_brightness:
@@ -90,8 +80,6 @@
     interval: 100
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
-'0x28dba7fffe5fa1dd':
-  friendly_name: desktop_petro_laptop_power
 '0x3c2ef5fffe41fc77':
   friendly_name: sz_window_r
 '0x540f57fffe1e420c':
@@ -113,8 +101,6 @@
   friendly_name: kg_srv_power
 '0x6cfd22fffe1a2043':
   friendly_name: sz_bed_power
-'0x6cfd22fffe1a433d':
-  friendly_name: desktop_petro_power
 '0x6cfd22fffe1a4e35':
   friendly_name: ku_up_power
 '0x6cfd22fffe1c54d8':

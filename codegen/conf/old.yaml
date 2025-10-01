@@ -1,6 +1,6 @@
 config:
   mqtt_broker_id: openhab
-  topic: zigbee2mqtt
+  mqtt_topic: zigbee2mqtt
 
 devices:
   - name: Sturbar test
@@ -830,78 +830,6 @@ devices:
       temperature:
         - kg_hz_temperature_sensor
 
-  - name: Petro Desktop up light 1
-    id: desktop_petro_up_light_1
-    zigbee_id: '0x04cd15fffe35f24e'
-    type: IKEA_TRADFRI_LAMP_CT_1000
-    transition_brightness: 3
-    groups:
-      sw:
-      - all_light
-      - kg_light
-      - kg_light_hobbyraum
-      - kg_light_desktop
-      ct:
-      - astro_color_light_ct
-      - kg_light_desktop_color
-      dim:
-      - kg_light_desktop_dim
-
-  - name: Petro Desktop up light 2
-    id: desktop_petro_up_light_2
-    zigbee_id: '0x04cd15fffe6bf002'
-    type: IKEA_TRADFRI_LAMP_CT_1000
-    transition_brightness: 3
-    groups:
-      sw:
-      - all_light
-      - kg_light
-      - kg_light_hobbyraum
-      - kg_light_desktop
-      ct:
-      - astro_color_light_ct
-      - kg_light_desktop_color
-      dim:
-      - kg_light_desktop_dim
-
-  - name: Petro Desktop up light 3
-    id: desktop_petro_up_light_3
-    zigbee_id: '0x04cd15fffe73ecb6'
-    type: IKEA_TRADFRI_LAMP_CT_1000
-    transition_brightness: 3
-    groups:
-      sw:
-      - all_light
-      - kg_light
-      - kg_light_hobbyraum
-      - kg_light_desktop
-      ct:
-      - astro_color_light_ct
-      - kg_light_desktop_color
-      dim:
-      - kg_light_desktop_dim
-
-  - name: Petro Desktop light
-    id: desktop_petro_light
-    zigbee_id: '0x040d84fffec53aaf'
-    type: IKEA_TRADFRI_LAMP_CT_1000
-    transition_brightness: 3
-    y2m:
-      name: Стол
-      room: KG_CABINET
-    groups:
-      sw:
-      - all_light
-      - kg_light
-      - kg_light_hobbyraum
-      ct:
-      - astro_color_light_ct
-
-  # Power for whole desktop in general (+measure)
-  - name: Petro Desktop power
-    id: desktop_petro_power
-    zigbee_id: '0x6cfd22fffe1a433d'
-    type: IKEA_INSPELNING
   # Power for devices to be switched off
   - name: Petro Desktop PC
     id: desktop_petro_pc_power
@@ -910,27 +838,6 @@ devices:
       POWER:
         id: desktop_petro_pc_power
         name: Petro Desktop PC
-  # Power for laptop to be switched off
-  - name: Petro Desktop Laptop
-    id: desktop_petro_laptop_power
-    # FIXME use temporaly power plug from SZ
-    zigbee_id: '0x28dba7fffe5fa1dd'
-    type: IKEA_TRETAKT
-
-  - name: "KG Hobbyraum (Work light)"
-    id: kg_main1_work_light
-    zigbee_id: '0x00be44fffea95063'
-    type: IKEA_TRETAKT
-    y2m:
-      type: Light
-      subtype: LIGHT.SW
-      name: Стол
-      room: KG_WORKSHOP
-    groups:
-      sw:
-      - all_light
-      - kg_light
-      - kg_light_hobbyraum
 
   - name: "KG Hobbyraum (Workshop)"
     id: kg_main1_light

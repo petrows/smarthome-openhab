@@ -1,2 +1,16 @@
 '0x000d6ffffee8357d':
   friendly_name: desktop_petro_remote
+'0x00be44fffea95063':
+  friendly_name: kg_main1_work_light
+'0x040d84fffec53aaf':
+  friendly_name: desktop_petro_light
+'0x04cd15fffe35f24e':
+  friendly_name: desktop_petro_up_light_1
+'0x04cd15fffe6bf002':
+  friendly_name: desktop_petro_up_light_2
+'0x04cd15fffe73ecb6':
+  friendly_name: desktop_petro_up_light_3
+'0x28dba7fffe5fa1dd':
+  friendly_name: desktop_petro_laptop_power
+'0x6cfd22fffe1a433d':
+  friendly_name: desktop_petro_power

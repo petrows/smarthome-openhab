@@ -592,69 +592,12 @@ Number:Temperature kg_climate_dewpoint "KG Climate dewpoint [%.0f %unit%]" <temp
 Number:Dimensionless kg_climate_humidity "KG Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:kg_climate:humidity"}
 Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:kg_climate:pressure"}
 Number:Dimensionless kg_climate_co2 "KG Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:kg_climate:co2"}
-// Petro Desktop up light 1 (0x04cd15fffe35f24e)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Dimmer desktop_petro_up_light_1_dim "Petro Desktop up light 1 DIM [%d %%]" <light> (g_all_dim,kg_light_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim"}
-Dimmer desktop_petro_up_light_1_dim_fast "Petro Desktop up light 1 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim_fast"}
-Dimmer desktop_petro_up_light_1_ct "Petro Desktop up light 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct,kg_light_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:ct"}
-Switch desktop_petro_up_light_1_ota "Petro Desktop up light 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:ota"}
-Number:Dimensionless desktop_petro_up_light_1_link "Petro Desktop up light 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:link"}
-Switch desktop_petro_up_light_1_sw "Petro Desktop up light 1" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_desktop) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:state"}
-// Petro Desktop up light 2 (0x04cd15fffe6bf002)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Dimmer desktop_petro_up_light_2_dim "Petro Desktop up light 2 DIM [%d %%]" <light> (g_all_dim,kg_light_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:dim"}
-Dimmer desktop_petro_up_light_2_dim_fast "Petro Desktop up light 2 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:dim_fast"}
-Dimmer desktop_petro_up_light_2_ct "Petro Desktop up light 2 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct,kg_light_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:ct"}
-Switch desktop_petro_up_light_2_ota "Petro Desktop up light 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:ota"}
-Number:Dimensionless desktop_petro_up_light_2_link "Petro Desktop up light 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:link"}
-Switch desktop_petro_up_light_2_sw "Petro Desktop up light 2" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_desktop) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:state"}
-// Petro Desktop up light 3 (0x04cd15fffe73ecb6)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Dimmer desktop_petro_up_light_3_dim "Petro Desktop up light 3 DIM [%d %%]" <light> (g_all_dim,kg_light_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:dim"}
-Dimmer desktop_petro_up_light_3_dim_fast "Petro Desktop up light 3 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:dim_fast"}
-Dimmer desktop_petro_up_light_3_ct "Petro Desktop up light 3 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct,kg_light_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:ct"}
-Switch desktop_petro_up_light_3_ota "Petro Desktop up light 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:ota"}
-Number:Dimensionless desktop_petro_up_light_3_link "Petro Desktop up light 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:link"}
-Switch desktop_petro_up_light_3_sw "Petro Desktop up light 3" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_desktop) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:state"}
-// Petro Desktop light (0x040d84fffec53aaf)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:desktop_petro_light:dim"}
-Dimmer desktop_petro_light_dim_fast "Petro Desktop light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_light:dim_fast"}
-Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:desktop_petro_light:ct"}
-Switch desktop_petro_light_ota "Petro Desktop light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_light:ota"}
-Number:Dimensionless desktop_petro_light_link "Petro Desktop light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_light:link"}
-Switch desktop_petro_light_sw "Petro Desktop light" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum) {channel="mqtt:topic:openhab:desktop_petro_light:state"}
-// Petro Desktop power (0x6cfd22fffe1a433d)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Switch desktop_petro_power_ota "Petro Desktop power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_power:ota"}
-Number:Dimensionless desktop_petro_power_link "Petro Desktop power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_power:link"}
-Switch desktop_petro_power_sw "Petro Desktop power" <light> (g_all_sw) {channel="mqtt:topic:openhab:desktop_petro_power:state"}
-Number:ElectricPotential desktop_petro_power_ac_voltage "Petro Desktop power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:desktop_petro_power:ac_voltage"}
-Number:ElectricCurrent desktop_petro_power_ac_current "Petro Desktop power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:desktop_petro_power:ac_current"}
-Number:Power desktop_petro_power_ac_power "Petro Desktop power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:desktop_petro_power:ac_power"}
-Number:Energy desktop_petro_power_ac_energy "Petro Desktop power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:desktop_petro_power:ac_energy"}
 // Petro Desktop PC (desktop_petro_pc_power)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch desktop_petro_pc_power "Petro Desktop PC" <light> (g_all_sw) {channel="mqtt:topic:openhab:desktop_petro_pc_power:power"}
 Number:Dimensionless desktop_petro_pc_power_rssi "Petro Desktop PC RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:desktop_petro_pc_power:rssi"}
 String desktop_petro_pc_power_bssid "Petro Desktop PC BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:desktop_petro_pc_power:bssid"}
 DateTime desktop_petro_pc_power_activity "Petro Desktop PC activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:desktop_petro_pc_power:activity"}
-// Petro Desktop Laptop (0x28dba7fffe5fa1dd)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Switch desktop_petro_laptop_power_ota "Petro Desktop Laptop OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_laptop_power:ota"}
-Number:Dimensionless desktop_petro_laptop_power_link "Petro Desktop Laptop LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_laptop_power:link"}
-Switch desktop_petro_laptop_power_sw "Petro Desktop Laptop" <light> (g_all_sw) {channel="mqtt:topic:openhab:desktop_petro_laptop_power:state"}
-// Petro Desktop remote (0x000d6ffffee8357d)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Switch desktop_petro_remote_lowbatt "Petro Desktop remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:desktop_petro_remote:battery_low"}
-Switch desktop_petro_remote_ota "Petro Desktop remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_remote:ota"}
-Number:Dimensionless desktop_petro_remote_link "Petro Desktop remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_remote:link"}
-Number:Dimensionless desktop_petro_remote_battery "Petro Desktop remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:desktop_petro_remote:battery"}
-// KG Hobbyraum (Work light) (0x00be44fffea95063)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Switch kg_main1_work_light_ota "KG Hobbyraum (Work light) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_main1_work_light:ota"}
-Number:Dimensionless kg_main1_work_light_link "KG Hobbyraum (Work light) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_main1_work_light:link"}
-Switch kg_main1_work_light_sw "KG Hobbyraum (Work light)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum) {channel="mqtt:topic:openhab:kg_main1_work_light:state"}
 // KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
 Switch kg_main1_light "KG Hobbyraum (Workshop)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_auto) {channel="mqtt:topic:openhab:kg_main1_light:power"}
@@ -969,3 +912,60 @@ Number:Dimensionless mouse_trap_4_link "Mouse trap FL LINK [%d]" <linkz> (g_all_
 DateTime mouse_trap_4_activity "Mouse trap FL activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:mouse_trap_4:activity"}
 Contact mouse_trap_4_contact "Mouse trap FL [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_4:contact"}
 Number:Dimensionless mouse_trap_4_battery "Mouse trap FL  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_4:battery"}
+// Petro Desktop remote (0x000d6ffffee8357d)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Switch desktop_petro_remote_lowbatt "Petro Desktop remote BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:desktop_petro_remote:battery_low"}
+Switch desktop_petro_remote_ota "Petro Desktop remote OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_remote:ota"}
+Number:Dimensionless desktop_petro_remote_link "Petro Desktop remote LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_remote:link"}
+Number:Dimensionless desktop_petro_remote_battery "Petro Desktop remote  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:desktop_petro_remote:battery"}
+// Petro Desktop up light 1 (0x04cd15fffe35f24e)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Dimmer desktop_petro_up_light_1_dim "Petro Desktop up light 1 DIM [%d %%]" <light> (g_all_dim,kg_light_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim"}
+Dimmer desktop_petro_up_light_1_dim_fast "Petro Desktop up light 1 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:dim_fast"}
+Dimmer desktop_petro_up_light_1_ct "Petro Desktop up light 1 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct,kg_light_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:ct"}
+Switch desktop_petro_up_light_1_ota "Petro Desktop up light 1 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:ota"}
+Number:Dimensionless desktop_petro_up_light_1_link "Petro Desktop up light 1 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:link"}
+Switch desktop_petro_up_light_1_sw "Petro Desktop up light 1" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_desktop) {channel="mqtt:topic:openhab:desktop_petro_up_light_1:state"}
+// Petro Desktop up light 2 (0x04cd15fffe6bf002)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Dimmer desktop_petro_up_light_2_dim "Petro Desktop up light 2 DIM [%d %%]" <light> (g_all_dim,kg_light_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:dim"}
+Dimmer desktop_petro_up_light_2_dim_fast "Petro Desktop up light 2 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:dim_fast"}
+Dimmer desktop_petro_up_light_2_ct "Petro Desktop up light 2 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct,kg_light_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:ct"}
+Switch desktop_petro_up_light_2_ota "Petro Desktop up light 2 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:ota"}
+Number:Dimensionless desktop_petro_up_light_2_link "Petro Desktop up light 2 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:link"}
+Switch desktop_petro_up_light_2_sw "Petro Desktop up light 2" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_desktop) {channel="mqtt:topic:openhab:desktop_petro_up_light_2:state"}
+// Petro Desktop up light 3 (0x04cd15fffe73ecb6)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Dimmer desktop_petro_up_light_3_dim "Petro Desktop up light 3 DIM [%d %%]" <light> (g_all_dim,kg_light_desktop_dim) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:dim"}
+Dimmer desktop_petro_up_light_3_dim_fast "Petro Desktop up light 3 DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:dim_fast"}
+Dimmer desktop_petro_up_light_3_ct "Petro Desktop up light 3 CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct,kg_light_desktop_color) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:ct"}
+Switch desktop_petro_up_light_3_ota "Petro Desktop up light 3 OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:ota"}
+Number:Dimensionless desktop_petro_up_light_3_link "Petro Desktop up light 3 LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:link"}
+Switch desktop_petro_up_light_3_sw "Petro Desktop up light 3" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_desktop) {channel="mqtt:topic:openhab:desktop_petro_up_light_3:state"}
+// Petro Desktop light (0x040d84fffec53aaf)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Dimmer desktop_petro_light_dim "Petro Desktop light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:desktop_petro_light:dim"}
+Dimmer desktop_petro_light_dim_fast "Petro Desktop light DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:desktop_petro_light:dim_fast"}
+Dimmer desktop_petro_light_ct "Petro Desktop light CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,astro_color_light_ct) {channel="mqtt:topic:openhab:desktop_petro_light:ct"}
+Switch desktop_petro_light_ota "Petro Desktop light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_light:ota"}
+Number:Dimensionless desktop_petro_light_link "Petro Desktop light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_light:link"}
+Switch desktop_petro_light_sw "Petro Desktop light" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum) {channel="mqtt:topic:openhab:desktop_petro_light:state"}
+// Petro Desktop power (0x6cfd22fffe1a433d)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch desktop_petro_power_ota "Petro Desktop power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_power:ota"}
+Number:Dimensionless desktop_petro_power_link "Petro Desktop power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_power:link"}
+Switch desktop_petro_power_sw "Petro Desktop power" <light> (g_all_sw) {channel="mqtt:topic:openhab:desktop_petro_power:state"}
+Number:ElectricPotential desktop_petro_power_ac_voltage "Petro Desktop power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:desktop_petro_power:ac_voltage"}
+Number:ElectricCurrent desktop_petro_power_ac_current "Petro Desktop power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:desktop_petro_power:ac_current"}
+Number:Power desktop_petro_power_ac_power "Petro Desktop power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:desktop_petro_power:ac_power"}
+Number:Energy desktop_petro_power_ac_energy "Petro Desktop power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:desktop_petro_power:ac_energy"}
+// Petro Desktop Laptop (0x28dba7fffe5fa1dd)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Switch desktop_petro_laptop_power_ota "Petro Desktop Laptop OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:desktop_petro_laptop_power:ota"}
+Number:Dimensionless desktop_petro_laptop_power_link "Petro Desktop Laptop LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:desktop_petro_laptop_power:link"}
+Switch desktop_petro_laptop_power_sw "Petro Desktop Laptop" <light> (g_all_sw) {channel="mqtt:topic:openhab:desktop_petro_laptop_power:state"}
+// KG Hobbyraum (Work light) (0x00be44fffea95063)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Switch kg_main1_work_light_ota "KG Hobbyraum (Work light) OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_main1_work_light:ota"}
+Number:Dimensionless kg_main1_work_light_link "KG Hobbyraum (Work light) LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_main1_work_light:link"}
+Switch kg_main1_work_light_sw "KG Hobbyraum (Work light)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum) {channel="mqtt:topic:openhab:kg_main1_work_light:state"}
