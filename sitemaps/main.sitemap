@@ -576,8 +576,8 @@ sitemap main label="MAIN"
 				Switch	item=zigbee_root_pair label="ZigBee pairing"
 			}
 			Frame label="ZigBee" {
-				Group item=g_zigbee_link
-				Group item=g_zigbee_ota icon="fire"
+				Group item=g_all_link
+				Group item=g_all_ota icon="fire"
 			}
 		}
 

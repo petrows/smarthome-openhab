@@ -1,5 +1,5 @@
-Group:Number:AVG g_zigbee_link "Zigbee Link [%d]" <network>
-Group:Switch:OR(ON, OFF) g_zigbee_ota "Zigbee OTA [%s]" <network>
+Group:Number:AVG g_all_link "Zigbee Link [%d]" <network>
+Group:Switch:OR(ON, OFF) g_all_ota "Zigbee OTA [%s]" <network>
 
 Switch zigbee_root_pair "ZB root pair" { channel="mqtt:topic:openhab:zigbee-root:pair", expire="15m,command=OFF" }
 
