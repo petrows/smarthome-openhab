@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash -e
 
 # Search instances
 for instance_file in /srv/openhab-data/conf/codegen/devices/*.yaml; do
@@ -10,11 +10,18 @@ for instance_file in /srv/openhab-data/conf/codegen/devices/*.yaml; do
         exit 1
     fi
 
+    # Check if we really need to restart?
+    if diff "$z2m_root/devices.yaml" "$instance_file"; then
+        echo "No changes detected for $instance_name"
+        continue
+    fi
+
     mkdir -p "$z2m_root/devices-backup"
 
     cp "$z2m_root/devices.yaml" "$z2m_root/devices-backup/$(date +"%Y-%m-%d").yaml"
     cp "$instance_file" "$z2m_root/devices.yaml"
 
+    echo "Restarting zigbee2mqtt for $instance_name"
     docker restart Openhab-zigbee2mqtt-$instance_name
 done
 
