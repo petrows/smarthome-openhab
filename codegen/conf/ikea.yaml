@@ -172,7 +172,6 @@ devices:
 
 # LIVING ROOTM =================================
 
-
   - name: Living main remote
     id: wz_up_remote
     zigbee_id: '0x003c84fffe16f988'
