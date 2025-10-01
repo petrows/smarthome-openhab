@@ -776,16 +776,6 @@ Text item=hz_climate_temperature
 Text item=hz_climate_humidity
 Text item=hz_climate_battery
 }
-Frame label="HZ leak (0x8c8b48fffe226767)" {
-// HZ leak (0x8c8b48fffe226767)
-// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Text item=hz_wasser_leak_lowbatt
-Text item=hz_wasser_leak_ota
-Text item=hz_wasser_leak_link
-Text item=hz_wasser_leak_activity
-Text item=hz_wasser_leak_leak
-Text item=hz_wasser_leak_battery
-}
 Frame label="KG Lager 1 (Haupt) (kg_lager1_main_light)" {
 // KG Lager 1 (Haupt) (kg_lager1_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
@@ -793,27 +783,6 @@ Switch item=kg_lager1_main_light
 Text item=kg_lager1_main_light_rssi
 Text item=kg_lager1_main_light_bssid
 Text item=kg_lager1_main_light_activity
-}
-Frame label="KG Lager 1 door (0x048727fffe9cc0fb)" {
-// KG Lager 1 door (0x048727fffe9cc0fb)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=kg_lager1_door_lowbatt
-Text item=kg_lager1_door_ota
-Text item=kg_lager1_door_link
-Text item=kg_lager1_door_activity
-Text item=kg_lager1_door_contact
-Text item=kg_lager1_door_battery
-}
-Frame label="Octoprint power (0x94ec32fffe202672)" {
-// Octoprint power (0x94ec32fffe202672)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Text item=octoprint_power_ota
-Text item=octoprint_power_link
-Switch item=octoprint_power_sw
-Text item=octoprint_power_ac_voltage
-Text item=octoprint_power_ac_current
-Text item=octoprint_power_ac_power
-Text item=octoprint_power_ac_energy
 }
 Frame label="Octoprint climate (0xa4c138234138f73a)" {
 // Octoprint climate (0xa4c138234138f73a)
@@ -855,17 +824,6 @@ Text item=lg3_up_light_rssi
 Text item=lg3_up_light_bssid
 Text item=lg3_up_light_activity
 }
-Frame label="Washmachine (0x94ec32fffe1f762d)" {
-// Washmachine (0x94ec32fffe1f762d)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Text item=lg3_washmachine_ota
-Text item=lg3_washmachine_link
-Switch item=lg3_washmachine_sw
-Text item=lg3_washmachine_ac_voltage
-Text item=lg3_washmachine_ac_current
-Text item=lg3_washmachine_ac_power
-Text item=lg3_washmachine_ac_energy
-}
 Frame label="KG Lager 4 (Haupt) (kg_lager4_main_light)" {
 // KG Lager 4 (Haupt) (kg_lager4_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
@@ -873,71 +831,6 @@ Switch item=kg_lager4_main_light
 Text item=kg_lager4_main_light_rssi
 Text item=kg_lager4_main_light_bssid
 Text item=kg_lager4_main_light_activity
-}
-Frame label="KG Lager 4 (1) (0xccccccfffedf345a)" {
-// KG Lager 4 (1) (0xccccccfffedf345a)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Slider item=kg_lager4_1_light_dim
-Text item=kg_lager4_1_light_ota
-Text item=kg_lager4_1_light_link
-Switch item=kg_lager4_1_light_sw
-}
-Frame label="KG Lager 4 (2) (0xec1bbdfffe9abfde)" {
-// KG Lager 4 (2) (0xec1bbdfffe9abfde)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Slider item=kg_lager4_2_light_dim
-Text item=kg_lager4_2_light_ota
-Text item=kg_lager4_2_light_link
-Switch item=kg_lager4_2_light_sw
-}
-Frame label="KG Lager switch (0xb43522fffe790ebe)" {
-// KG Lager switch (0xb43522fffe790ebe)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Text item=kg_lager4_switch_lowbatt
-Text item=kg_lager4_switch_ota
-Text item=kg_lager4_switch_link
-Text item=kg_lager4_switch_battery
-}
-Frame label="KG Lager motion (0xbc33acfffe84ca1e)" {
-// KG Lager motion (0xbc33acfffe84ca1e)
-// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Text item=kg_lager4_motion_lowbatt
-Text item=kg_lager4_motion_ota
-Text item=kg_lager4_motion_link
-Text item=kg_lager4_motion_activity
-Text item=kg_lager4_motion_occupancy
-Text item=kg_lager4_motion_battery
-}
-Frame label="Warehouse 4 leak (0x6cfd22fffe1c82d4)" {
-// Warehouse 4 leak (0x6cfd22fffe1c82d4)
-// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Text item=kg_lager4_leak_lowbatt
-Text item=kg_lager4_leak_ota
-Text item=kg_lager4_leak_link
-Text item=kg_lager4_leak_activity
-Text item=kg_lager4_leak_leak
-Text item=kg_lager4_leak_battery
-}
-Frame label="SRV power (0x6cfd22fffe1a1af2)" {
-// SRV power (0x6cfd22fffe1a1af2)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Text item=kg_srv_power_ota
-Text item=kg_srv_power_link
-Switch item=kg_srv_power_sw
-Text item=kg_srv_power_ac_voltage
-Text item=kg_srv_power_ac_current
-Text item=kg_srv_power_ac_power
-Text item=kg_srv_power_ac_energy
-}
-Frame label="SRV leak (0x6cfd22fffe1c54d8)" {
-// SRV leak (0x6cfd22fffe1c54d8)
-// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Text item=srv_leak_lowbatt
-Text item=srv_leak_ota
-Text item=srv_leak_link
-Text item=srv_leak_activity
-Text item=srv_leak_leak
-Text item=srv_leak_battery
 }
 Frame label="SZ heating (0x0c4314fffe63b727)" {
 // SZ heating (0x0c4314fffe63b727)
@@ -1067,46 +960,6 @@ Text item=main_power_ac_power_b
 Text item=main_power_ac_power_c
 Text item=main_power_ac_energy
 }
-Frame label="Mouse trap KU (0x048727fffea43740)" {
-// Mouse trap KU (0x048727fffea43740)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=mouse_trap_1_lowbatt
-Text item=mouse_trap_1_ota
-Text item=mouse_trap_1_link
-Text item=mouse_trap_1_activity
-Text item=mouse_trap_1_contact
-Text item=mouse_trap_1_battery
-}
-Frame label="Mouse trap KG (0x048727fffe9d1259)" {
-// Mouse trap KG (0x048727fffe9d1259)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=mouse_trap_2_lowbatt
-Text item=mouse_trap_2_ota
-Text item=mouse_trap_2_link
-Text item=mouse_trap_2_activity
-Text item=mouse_trap_2_contact
-Text item=mouse_trap_2_battery
-}
-Frame label="Mouse trap SZ (0x048727fffe5d58e3)" {
-// Mouse trap SZ (0x048727fffe5d58e3)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=mouse_trap_3_lowbatt
-Text item=mouse_trap_3_ota
-Text item=mouse_trap_3_link
-Text item=mouse_trap_3_activity
-Text item=mouse_trap_3_contact
-Text item=mouse_trap_3_battery
-}
-Frame label="Mouse trap FL (0x048727fffe5d07db)" {
-// Mouse trap FL (0x048727fffe5d07db)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=mouse_trap_4_lowbatt
-Text item=mouse_trap_4_ota
-Text item=mouse_trap_4_link
-Text item=mouse_trap_4_activity
-Text item=mouse_trap_4_contact
-Text item=mouse_trap_4_battery
-}
 }
 Text label="Z2M ikea" {
 Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {
@@ -1177,6 +1030,153 @@ Frame label="KG Hobbyraum (Work light) (0x00be44fffea95063)" {
 Text item=kg_main1_work_light_ota
 Text item=kg_main1_work_light_link
 Switch item=kg_main1_work_light_sw
+}
+Frame label="SRV power (0x6cfd22fffe1a1af2)" {
+// SRV power (0x6cfd22fffe1a1af2)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=kg_srv_power_ota
+Text item=kg_srv_power_link
+Switch item=kg_srv_power_sw
+Text item=kg_srv_power_ac_voltage
+Text item=kg_srv_power_ac_current
+Text item=kg_srv_power_ac_power
+Text item=kg_srv_power_ac_energy
+}
+Frame label="SRV leak (0x6cfd22fffe1c54d8)" {
+// SRV leak (0x6cfd22fffe1c54d8)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=srv_leak_lowbatt
+Text item=srv_leak_ota
+Text item=srv_leak_link
+Text item=srv_leak_activity
+Text item=srv_leak_leak
+Text item=srv_leak_battery
+}
+Frame label="HZ leak (0x8c8b48fffe226767)" {
+// HZ leak (0x8c8b48fffe226767)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=hz_wasser_leak_lowbatt
+Text item=hz_wasser_leak_ota
+Text item=hz_wasser_leak_link
+Text item=hz_wasser_leak_activity
+Text item=hz_wasser_leak_leak
+Text item=hz_wasser_leak_battery
+}
+Frame label="KG Lager 1 door (0x048727fffe9cc0fb)" {
+// KG Lager 1 door (0x048727fffe9cc0fb)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=kg_lager1_door_lowbatt
+Text item=kg_lager1_door_ota
+Text item=kg_lager1_door_link
+Text item=kg_lager1_door_activity
+Text item=kg_lager1_door_contact
+Text item=kg_lager1_door_battery
+}
+Frame label="Octoprint power (0x94ec32fffe202672)" {
+// Octoprint power (0x94ec32fffe202672)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=octoprint_power_ota
+Text item=octoprint_power_link
+Switch item=octoprint_power_sw
+Text item=octoprint_power_ac_voltage
+Text item=octoprint_power_ac_current
+Text item=octoprint_power_ac_power
+Text item=octoprint_power_ac_energy
+}
+Frame label="Washmachine (0x94ec32fffe1f762d)" {
+// Washmachine (0x94ec32fffe1f762d)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=lg3_washmachine_ota
+Text item=lg3_washmachine_link
+Switch item=lg3_washmachine_sw
+Text item=lg3_washmachine_ac_voltage
+Text item=lg3_washmachine_ac_current
+Text item=lg3_washmachine_ac_power
+Text item=lg3_washmachine_ac_energy
+}
+Frame label="KG Lager 4 (1) (0xccccccfffedf345a)" {
+// KG Lager 4 (1) (0xccccccfffedf345a)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Slider item=kg_lager4_1_light_dim
+Text item=kg_lager4_1_light_ota
+Text item=kg_lager4_1_light_link
+Switch item=kg_lager4_1_light_sw
+}
+Frame label="KG Lager 4 (2) (0xec1bbdfffe9abfde)" {
+// KG Lager 4 (2) (0xec1bbdfffe9abfde)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Slider item=kg_lager4_2_light_dim
+Text item=kg_lager4_2_light_ota
+Text item=kg_lager4_2_light_link
+Switch item=kg_lager4_2_light_sw
+}
+Frame label="KG Lager switch (0xb43522fffe790ebe)" {
+// KG Lager switch (0xb43522fffe790ebe)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=kg_lager4_switch_lowbatt
+Text item=kg_lager4_switch_ota
+Text item=kg_lager4_switch_link
+Text item=kg_lager4_switch_battery
+}
+Frame label="KG Lager motion (0xbc33acfffe84ca1e)" {
+// KG Lager motion (0xbc33acfffe84ca1e)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Text item=kg_lager4_motion_lowbatt
+Text item=kg_lager4_motion_ota
+Text item=kg_lager4_motion_link
+Text item=kg_lager4_motion_activity
+Text item=kg_lager4_motion_occupancy
+Text item=kg_lager4_motion_battery
+}
+Frame label="Warehouse 4 leak (0x6cfd22fffe1c82d4)" {
+// Warehouse 4 leak (0x6cfd22fffe1c82d4)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=kg_lager4_leak_lowbatt
+Text item=kg_lager4_leak_ota
+Text item=kg_lager4_leak_link
+Text item=kg_lager4_leak_activity
+Text item=kg_lager4_leak_leak
+Text item=kg_lager4_leak_battery
+}
+Frame label="Mouse trap KU (0x048727fffea43740)" {
+// Mouse trap KU (0x048727fffea43740)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=mouse_trap_1_lowbatt
+Text item=mouse_trap_1_ota
+Text item=mouse_trap_1_link
+Text item=mouse_trap_1_activity
+Text item=mouse_trap_1_contact
+Text item=mouse_trap_1_battery
+}
+Frame label="Mouse trap KG (0x048727fffe9d1259)" {
+// Mouse trap KG (0x048727fffe9d1259)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=mouse_trap_2_lowbatt
+Text item=mouse_trap_2_ota
+Text item=mouse_trap_2_link
+Text item=mouse_trap_2_activity
+Text item=mouse_trap_2_contact
+Text item=mouse_trap_2_battery
+}
+Frame label="Mouse trap SZ (0x048727fffe5d58e3)" {
+// Mouse trap SZ (0x048727fffe5d58e3)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=mouse_trap_3_lowbatt
+Text item=mouse_trap_3_ota
+Text item=mouse_trap_3_link
+Text item=mouse_trap_3_activity
+Text item=mouse_trap_3_contact
+Text item=mouse_trap_3_battery
+}
+Frame label="Mouse trap FL (0x048727fffe5d07db)" {
+// Mouse trap FL (0x048727fffe5d07db)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=mouse_trap_4_lowbatt
+Text item=mouse_trap_4_ota
+Text item=mouse_trap_4_link
+Text item=mouse_trap_4_activity
+Text item=mouse_trap_4_contact
+Text item=mouse_trap_4_battery
 }
 }
 }

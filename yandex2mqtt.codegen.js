@@ -222,16 +222,6 @@ Light(LIGHT.SW, {
     room: ROOMS.KG_L4,
     sw: '',
 }),
-Light(LIGHT.DIM, {
-    id: 'kg_lager4_1_light',
-    name: 'Дежурный 1',
-    room: ROOMS.KG_L4,
-}),
-Light(LIGHT.DIM, {
-    id: 'kg_lager4_2_light',
-    name: 'Дежурный 2',
-    room: ROOMS.KG_L4,
-}),
 Light(LIGHT.CT, {
     id: 'desktop_petro_light',
     name: 'Стол',
@@ -241,6 +231,16 @@ Light(LIGHT.SW, {
     id: 'kg_main1_work_light',
     name: 'Стол',
     room: ROOMS.KG_WORKSHOP,
+}),
+Light(LIGHT.DIM, {
+    id: 'kg_lager4_1_light',
+    name: 'Дежурный 1',
+    room: ROOMS.KG_L4,
+}),
+Light(LIGHT.DIM, {
+    id: 'kg_lager4_2_light',
+    name: 'Дежурный 2',
+    room: ROOMS.KG_L4,
 }),
 ]
 }

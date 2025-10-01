@@ -4,6 +4,16 @@
   friendly_name: kg_main1_work_light
 '0x040d84fffec53aaf':
   friendly_name: desktop_petro_light
+'0x048727fffe5d07db':
+  friendly_name: mouse_trap_4
+'0x048727fffe5d58e3':
+  friendly_name: mouse_trap_3
+'0x048727fffe9cc0fb':
+  friendly_name: kg_lager1_door
+'0x048727fffe9d1259':
+  friendly_name: mouse_trap_2
+'0x048727fffea43740':
+  friendly_name: mouse_trap_1
 '0x04cd15fffe35f24e':
   friendly_name: desktop_petro_up_light_1
 '0x04cd15fffe6bf002':
@@ -12,5 +22,25 @@
   friendly_name: desktop_petro_up_light_3
 '0x28dba7fffe5fa1dd':
   friendly_name: desktop_petro_laptop_power
+'0x6cfd22fffe1a1af2':
+  friendly_name: kg_srv_power
 '0x6cfd22fffe1a433d':
   friendly_name: desktop_petro_power
+'0x6cfd22fffe1c54d8':
+  friendly_name: srv_leak
+'0x6cfd22fffe1c82d4':
+  friendly_name: kg_lager4_leak
+'0x8c8b48fffe226767':
+  friendly_name: hz_wasser_leak
+'0x94ec32fffe1f762d':
+  friendly_name: lg3_washmachine
+'0x94ec32fffe202672':
+  friendly_name: octoprint_power
+'0xb43522fffe790ebe':
+  friendly_name: kg_lager4_switch
+'0xbc33acfffe84ca1e':
+  friendly_name: kg_lager4_motion
+'0xccccccfffedf345a':
+  friendly_name: kg_lager4_1_light
+'0xec1bbdfffe9abfde':
+  friendly_name: kg_lager4_2_light

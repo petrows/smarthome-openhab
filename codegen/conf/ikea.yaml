@@ -84,7 +84,7 @@ devices:
     zigbee_id: '0x6cfd22fffe1a433d'
     type: IKEA_INSPELNING
 
-# Power for laptop to be switched off
+  # Power for laptop to be switched off
   - name: Petro Desktop Laptop
     id: desktop_petro_laptop_power
     # FIXME use temporaly power plug from SZ
@@ -105,3 +105,140 @@ devices:
       - all_light
       - kg_light
       - kg_light_hobbyraum
+
+# SERVER ROOM ================================
+
+  - name: SRV power
+    id: kg_srv_power
+    zigbee_id: '0x6cfd22fffe1a1af2'
+    type: IKEA_INSPELNING
+
+  - name: SRV leak
+    id: srv_leak
+    zigbee_id: '0x6cfd22fffe1c54d8'
+    type: IKEA_BADRING
+
+# HEATING ROOM ================================
+
+  - name: HZ leak
+    id: hz_wasser_leak
+    zigbee_id: '0x8c8b48fffe226767'
+    type: IKEA_BADRING
+
+# STORAGE 1 ================================
+
+  - name: KG Lager 1 door
+    id: kg_lager1_door
+    zigbee_id: '0x048727fffe9cc0fb'
+    type: IKEA_PARASOLL
+
+  - name: Octoprint power
+    id: octoprint_power
+    zigbee_id: '0x94ec32fffe202672'
+    type: IKEA_INSPELNING
+
+# STORAGE 3 ================================
+
+  - name: Washmachine
+    id: lg3_washmachine
+    zigbee_id: '0x94ec32fffe1f762d'
+    type: IKEA_INSPELNING
+
+# STORAGE 4 ================================
+
+  - name: KG Lager 4 (1)
+    id: kg_lager4_1_light
+    zigbee_id: '0xccccccfffedf345a'
+    type: IKEA_TRADFRI_LAMP_W_806
+    expire: 1h
+    y2m:
+      name: Дежурный 1
+      room: KG_L4
+    groups:
+      sw:
+      - all_light
+      - kg_light
+      - g_light_lager_auto
+      dim:
+      - g_dim_lager_auto
+
+  - name: KG Lager 4 (2)
+    id: kg_lager4_2_light
+    zigbee_id: '0xec1bbdfffe9abfde'
+    type: IKEA_TRADFRI_LAMP_W_806
+    expire: 1h
+    y2m:
+      name: Дежурный 2
+      room: KG_L4
+    groups:
+      sw:
+      - all_light
+      - kg_light
+      - g_light_lager_auto
+      dim:
+      - g_dim_lager_auto
+
+  - name: KG Lager switch
+    id: kg_lager4_switch
+    zigbee_id: '0xb43522fffe790ebe'
+    type: IKEA_TRADFRI_ON_OFF
+
+  - name: KG Lager motion
+    id: kg_lager4_motion
+    zigbee_id: '0xbc33acfffe84ca1e'
+    type: IKEA_TRADFRI_MOTION_SENSOR
+
+  - name: Warehouse 4 leak
+    id: kg_lager4_leak
+    zigbee_id: '0x6cfd22fffe1c82d4'
+    type: IKEA_BADRING
+
+# MOUSE TRAPS ================================
+
+  - name: Mouse trap KU
+    id: mouse_trap_1
+    zigbee_id: '0x048727fffea43740'
+    type: IKEA_PARASOLL
+    groups_skip_auto:
+      - contact
+    labels:
+      contact: '[MAP(mouse_trap.map):%s]'
+    groups:
+      contact:
+      - mouse_trap
+
+  - name: Mouse trap KG
+    id: mouse_trap_2
+    zigbee_id: '0x048727fffe9d1259'
+    type: IKEA_PARASOLL
+    groups_skip_auto:
+      - contact
+    labels:
+      contact: '[MAP(mouse_trap.map):%s]'
+    groups:
+      contact:
+      - mouse_trap
+
+  - name: Mouse trap SZ
+    id: mouse_trap_3
+    zigbee_id: '0x048727fffe5d58e3'
+    type: IKEA_PARASOLL
+    groups_skip_auto:
+      - contact
+    labels:
+      contact: '[MAP(mouse_trap.map):%s]'
+    groups:
+      contact:
+      - mouse_trap
+
+  - name: Mouse trap FL
+    id: mouse_trap_4
+    zigbee_id: '0x048727fffe5d07db'
+    type: IKEA_PARASOLL
+    groups_skip_auto:
+      - contact
+    labels:
+      contact: '[MAP(mouse_trap.map):%s]'
+    groups:
+      contact:
+      - mouse_trap
