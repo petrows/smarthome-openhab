@@ -7,18 +7,6 @@
 // ==========================================
 
 
-// Sturbar test (0x04cd15fffe6d57dc)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:sturbar_test "Sturbar test" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/sturbar_test", commandTopic="zigbee2mqtt/sturbar_test/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sturbar_test", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // Outside Climate (ext_climate)
 // PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {
@@ -32,36 +20,6 @@ Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {
 		Type number : dewpoint [stateTopic="tele/ext_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.DewPoint", unit="C°"]
 		Type number : pressure [stateTopic="tele/ext_climate/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
 }
-// Balkon light 1 (0x14b457fffe399241)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Thing mqtt:topic:openhab:bk_light_1 "Balkon light 1" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/bk_light_1", commandTopic="zigbee2mqtt/bk_light_1/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/bk_light_1", commandTopic="zigbee2mqtt/bk_light_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/bk_light_1", commandTopic="zigbee2mqtt/bk_light_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/bk_light_1", commandTopic="zigbee2mqtt/bk_light_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
-		Type number : link [stateTopic="zigbee2mqtt/bk_light_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bk_light_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Balkon light 2 (0xb0c7defffe411c6f)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Thing mqtt:topic:openhab:bk_light_2 "Balkon light 2" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/bk_light_2", commandTopic="zigbee2mqtt/bk_light_2/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/bk_light_2", commandTopic="zigbee2mqtt/bk_light_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/bk_light_2", commandTopic="zigbee2mqtt/bk_light_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/bk_light_2", commandTopic="zigbee2mqtt/bk_light_2/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
-		Type number : link [stateTopic="zigbee2mqtt/bk_light_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bk_light_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// BK Color light (0x08b95ffffe335fe2)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Thing mqtt:topic:openhab:bk_color_light "BK Color light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/bk_color_light", commandTopic="zigbee2mqtt/bk_color_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/bk_color_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bk_color_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
 Thing mqtt:topic:openhab:fl_up_light "EG Corridor Light" (mqtt:broker:openhab) {
@@ -71,28 +29,6 @@ Thing mqtt:topic:openhab:fl_up_light "EG Corridor Light" (mqtt:broker:openhab) {
 		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/fl_up_light", commandTopic="zigbee2mqtt/fl_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=30, max=254]
 		Type number : link [stateTopic="zigbee2mqtt/fl_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/fl_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// EG Decor light (0x9035eafffe20e847)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Thing mqtt:topic:openhab:eg_decoration_light "EG Decor light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/eg_decoration_light", commandTopic="zigbee2mqtt/eg_decoration_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/eg_decoration_light", commandTopic="zigbee2mqtt/eg_decoration_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/eg_decoration_light", commandTopic="zigbee2mqtt/eg_decoration_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type number : link [stateTopic="zigbee2mqtt/eg_decoration_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/eg_decoration_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Comode remote (0x04e3e5fffe02fbd6)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:fl_comode_remote "Comode remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/fl_comode_remote", commandTopic="zigbee2mqtt/fl_comode_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/fl_comode_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/fl_comode_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/fl_comode_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/fl_comode_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/fl_comode_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/fl_comode_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Entrance Door sensor (0xa4c138182f60d651)
 // TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
@@ -105,40 +41,6 @@ Thing mqtt:topic:openhab:eg_main_door "Entrance Door sensor" (mqtt:broker:openha
 		Type number : link [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/eg_main_door", transformationPattern="JS:codegen-activity.js"]
-}
-// Entrance Door remote (0x1c34f1fffe830517)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:fl_door_remote "Entrance Door remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/fl_door_remote", commandTopic="zigbee2mqtt/fl_door_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/fl_door_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/fl_door_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/fl_door_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/fl_door_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/fl_door_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/fl_door_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Mirror remote (0xb43522fffe7939b3)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:fl_mirror_remote "Mirror remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/fl_mirror_remote", commandTopic="zigbee2mqtt/fl_mirror_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/fl_mirror_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/fl_mirror_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/fl_mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/fl_mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/fl_mirror_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/fl_mirror_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Entrance mirror (0x90ab96fffe52f8fa)
-// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
-Thing mqtt:topic:openhab:fl_mirror "Entrance mirror" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/fl_mirror", commandTopic="zigbee2mqtt/fl_mirror/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=1800"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/fl_mirror", commandTopic="zigbee2mqtt/fl_mirror/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=220]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/fl_mirror", commandTopic="zigbee2mqtt/fl_mirror/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=220]
-		Type number : link [stateTopic="zigbee2mqtt/fl_mirror", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/fl_mirror", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
@@ -176,64 +78,6 @@ Thing mqtt:topic:openhab:bz_mirror "BZ Mirror" (mqtt:broker:openhab) {
 		Type datetime : activity [stateTopic="tele/bz_mirror/STATE", transformationPattern="JS:codegen-activity.js"]
 		Type switch : power [stateTopic="stat/bz_mirror/RESULT", transformationPattern="REGEX:(.*\"POWER\".*)∩JSONPATH:$.POWER", commandTopic="cmnd/bz_mirror/POWER", on="ON", off="OFF"]
 }
-// BZ Mirror switch (0xccccccfffef0356e)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Thing mqtt:topic:openhab:bz_mirror_switch "BZ Mirror switch" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/bz_mirror_switch", commandTopic="zigbee2mqtt/bz_mirror_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bz_mirror_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// BZ Light Control (0x003c84fffe132b20)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:bz_light_switch "BZ Light Control" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/bz_light_switch", commandTopic="zigbee2mqtt/bz_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bz_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// BZ Window R (0x048727fffe9cf022)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Thing mqtt:topic:openhab:bz_window_r "BZ Window R" (mqtt:broker:openhab) {
-	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/bz_window_r", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/bz_window_r", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/bz_window_r", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_window_r", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/bz_window_r", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bz_window_r", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/bz_window_r", transformationPattern="JS:codegen-activity.js"]
-}
-// BZ Towel Heater (0x6cfd22fffe1cb2bc)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Thing mqtt:topic:openhab:bz_towel_heater "BZ Towel Heater" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/bz_towel_heater", commandTopic="zigbee2mqtt/bz_towel_heater/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=5400"]
-		Type number : ac_voltage [stateTopic="zigbee2mqtt/bz_towel_heater", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
-		Type number : ac_current [stateTopic="zigbee2mqtt/bz_towel_heater", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
-		Type number : ac_power [stateTopic="zigbee2mqtt/bz_towel_heater", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
-		Type number : ac_energy [stateTopic="zigbee2mqtt/bz_towel_heater", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
-		Type number : link [stateTopic="zigbee2mqtt/bz_towel_heater", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bz_towel_heater", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// BZ leak (0x8c65a3fffe70093b)
-// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Thing mqtt:topic:openhab:bz_leak "BZ leak" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : leak [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
-		Type number : battery [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/bz_leak", transformationPattern="JS:codegen-activity.js"]
-}
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Thing mqtt:topic:openhab:ks_up_light "KS Main" (mqtt:broker:openhab) {
@@ -258,27 +102,6 @@ Thing mqtt:topic:openhab:ks_climate "KS Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ks_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ks_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// KS Night lamp (0x14b457fffe6383e5)
-// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
-Thing mqtt:topic:openhab:ks_light_night "KS Night lamp" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ks_light_night", commandTopic="zigbee2mqtt/ks_light_night/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/ks_light_night", commandTopic="zigbee2mqtt/ks_light_night/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/ks_light_night", commandTopic="zigbee2mqtt/ks_light_night/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/ks_light_night", commandTopic="zigbee2mqtt/ks_light_night/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
-		Type color : color [commandTopic="zigbee2mqtt/ks_light_night/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
-		Type string : color_mode [stateTopic="zigbee2mqtt/ks_light_night", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
-		Type number : link [stateTopic="zigbee2mqtt/ks_light_night", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ks_light_night", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// KS Projector (0x94a081fffe5f9218)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Thing mqtt:topic:openhab:ks_projector_power "KS Projector" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ks_projector_power", commandTopic="zigbee2mqtt/ks_projector_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/ks_projector_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ks_projector_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:ks_window_2 "KS Window 2" (mqtt:broker:openhab) {
@@ -290,18 +113,6 @@ Thing mqtt:topic:openhab:ks_window_2 "KS Window 2" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/ks_window_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ks_window_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ks_window_2", transformationPattern="JS:codegen-activity.js"]
-}
-// KS Main remote (0x9035eafffee1ba1d)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:ks_light_switch "KS Main remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/ks_light_switch", commandTopic="zigbee2mqtt/ks_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/ks_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/ks_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/ks_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/ks_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/ks_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ks_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // WZ Climate (0xa4c1386a03a53708)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
@@ -316,18 +127,6 @@ Thing mqtt:topic:openhab:wz_climate "WZ Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/wz_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/wz_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// Bedroom main remote (0x003c84fffe16f988)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:wz_up_remote "Bedroom main remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/wz_up_remote", commandTopic="zigbee2mqtt/wz_up_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/wz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/wz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/wz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/wz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/wz_up_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_up_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // WZ Main (0x588e81fffefe9a05)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Thing mqtt:topic:openhab:wz_up_light "WZ Main" (mqtt:broker:openhab) {
@@ -338,42 +137,6 @@ Thing mqtt:topic:openhab:wz_up_light "WZ Main" (mqtt:broker:openhab) {
 		Type dimmer : ct [stateTopic="zigbee2mqtt/wz_up_light", commandTopic="zigbee2mqtt/wz_up_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
 		Type number : link [stateTopic="zigbee2mqtt/wz_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/wz_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Julia stand (0x5cc7c1fffe4c4a46)
-// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
-Thing mqtt:topic:openhab:wz_julia_stand_light "WZ Julia stand" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/wz_julia_stand_light", commandTopic="zigbee2mqtt/wz_julia_stand_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/wz_julia_stand_light", commandTopic="zigbee2mqtt/wz_julia_stand_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/wz_julia_stand_light", commandTopic="zigbee2mqtt/wz_julia_stand_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/wz_julia_stand_light", commandTopic="zigbee2mqtt/wz_julia_stand_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
-		Type color : color [commandTopic="zigbee2mqtt/wz_julia_stand_light/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
-		Type string : color_mode [stateTopic="zigbee2mqtt/wz_julia_stand_light", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
-		Type number : link [stateTopic="zigbee2mqtt/wz_julia_stand_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_julia_stand_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Julia desktop (0xec1bbdfffe1b89d1)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Thing mqtt:topic:openhab:wz_julia_desktop_light "WZ Julia desktop" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/wz_julia_desktop_light", commandTopic="zigbee2mqtt/wz_julia_desktop_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/wz_julia_desktop_light", commandTopic="zigbee2mqtt/wz_julia_desktop_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/wz_julia_desktop_light", commandTopic="zigbee2mqtt/wz_julia_desktop_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/wz_julia_desktop_light", commandTopic="zigbee2mqtt/wz_julia_desktop_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
-		Type number : link [stateTopic="zigbee2mqtt/wz_julia_desktop_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_julia_desktop_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Julia remote (0x1c34f1fffe7ccde1)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:wz_julia_remote "WZ Julia remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/wz_julia_remote", commandTopic="zigbee2mqtt/wz_julia_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/wz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/wz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/wz_julia_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/wz_julia_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/wz_julia_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_julia_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // WZ Color Decor (0x8cf681fffef62c85)
 // Livarno Lux E14 candle RGB (HG07834B) / https://www.zigbee2mqtt.io/devices/HG07834B.html#lidl-hg07834b
@@ -387,44 +150,6 @@ Thing mqtt:topic:openhab:wz_light_color "WZ Color Decor" (mqtt:broker:openhab) {
 		Type string : color_mode [stateTopic="zigbee2mqtt/wz_light_color", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
 		Type number : link [stateTopic="zigbee2mqtt/wz_light_color", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/wz_light_color", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Decor lamp 1 (0xec1bbdfffe972819)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Thing mqtt:topic:openhab:wz_declamp_1 "WZ Decor lamp 1" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/wz_declamp_1", commandTopic="zigbee2mqtt/wz_declamp_1/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/wz_declamp_1", commandTopic="zigbee2mqtt/wz_declamp_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/wz_declamp_1", commandTopic="zigbee2mqtt/wz_declamp_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type number : link [stateTopic="zigbee2mqtt/wz_declamp_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_declamp_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Decor lamp 2 (0xec1bbdfffe972203)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Thing mqtt:topic:openhab:wz_declamp_2 "WZ Decor lamp 2" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/wz_declamp_2", commandTopic="zigbee2mqtt/wz_declamp_2/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/wz_declamp_2", commandTopic="zigbee2mqtt/wz_declamp_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/wz_declamp_2", commandTopic="zigbee2mqtt/wz_declamp_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type number : link [stateTopic="zigbee2mqtt/wz_declamp_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_declamp_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Decor lamp 3 (0xec1bbdfffe91007b)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Thing mqtt:topic:openhab:wz_declamp_3 "WZ Decor lamp 3" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/wz_declamp_3", commandTopic="zigbee2mqtt/wz_declamp_3/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/wz_declamp_3", commandTopic="zigbee2mqtt/wz_declamp_3/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/wz_declamp_3", commandTopic="zigbee2mqtt/wz_declamp_3/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type number : link [stateTopic="zigbee2mqtt/wz_declamp_3", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_declamp_3", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// WZ Plants light (0x94ec32fffe1f54d0)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Thing mqtt:topic:openhab:wz_plant_light "WZ Plants light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/wz_plant_light", commandTopic="zigbee2mqtt/wz_plant_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/wz_plant_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/wz_plant_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // WZ Window 1 (0xa4c13804963f4ccf)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -461,94 +186,6 @@ Thing mqtt:topic:openhab:sz_up_light "SZ Main" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/sz_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/sz_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// SZ Main remote (0xb4e3f9fffeb35529)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:sz_up_remote "SZ Main remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/sz_up_remote", commandTopic="zigbee2mqtt/sz_up_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/sz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_up_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_up_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// SZ door bedlight remote (0xccccccfffee401f8)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Thing mqtt:topic:openhab:sz_door_bed_remote "SZ door bedlight remote" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/sz_door_bed_remote", commandTopic="zigbee2mqtt/sz_door_bed_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_door_bed_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_door_bed_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_door_bed_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_door_bed_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// SZ remote L (0x94deb8fffea8a1f9)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:sz_bed_l_remote "SZ remote L" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/sz_bed_l_remote", commandTopic="zigbee2mqtt/sz_bed_l_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_l_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// SZ remote R (0x540f57fffe1e420c)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:sz_bed_r_remote "SZ remote R" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/sz_bed_r_remote", commandTopic="zigbee2mqtt/sz_bed_r_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_r_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// SZ Bedside drawler (0x287681fffe95cba4)
-// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
-Thing mqtt:topic:openhab:sz_bedside_drawler_light "SZ Bedside drawler" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", commandTopic="zigbee2mqtt/sz_bedside_drawler_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", commandTopic="zigbee2mqtt/sz_bedside_drawler_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", commandTopic="zigbee2mqtt/sz_bedside_drawler_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type number : link [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_bedside_drawler_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// SZ Cabinet (0x0cae5ffffea07d0d)
-// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
-Thing mqtt:topic:openhab:sz_cabinet_light "SZ Cabinet" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/sz_cabinet_light", commandTopic="zigbee2mqtt/sz_cabinet_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_cabinet_light", commandTopic="zigbee2mqtt/sz_cabinet_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/sz_cabinet_light", commandTopic="zigbee2mqtt/sz_cabinet_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type number : link [stateTopic="zigbee2mqtt/sz_cabinet_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_cabinet_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// SZ Bed L (0x9035eafffe93bfc6)
-// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
-Thing mqtt:topic:openhab:sz_bed_light_l "SZ Bed L" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/sz_bed_light_l", commandTopic="zigbee2mqtt/sz_bed_light_l/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bed_light_l", commandTopic="zigbee2mqtt/sz_bed_light_l/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/sz_bed_light_l", commandTopic="zigbee2mqtt/sz_bed_light_l/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_bed_light_l", commandTopic="zigbee2mqtt/sz_bed_light_l/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
-		Type number : link [stateTopic="zigbee2mqtt/sz_bed_light_l", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_light_l", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// SZ Bed R (0x94deb8fffeda7949)
-// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
-Thing mqtt:topic:openhab:sz_bed_light_r "SZ Bed R" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/sz_bed_light_r", commandTopic="zigbee2mqtt/sz_bed_light_r/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/sz_bed_light_r", commandTopic="zigbee2mqtt/sz_bed_light_r/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/sz_bed_light_r", commandTopic="zigbee2mqtt/sz_bed_light_r/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/sz_bed_light_r", commandTopic="zigbee2mqtt/sz_bed_light_r/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
-		Type number : link [stateTopic="zigbee2mqtt/sz_bed_light_r", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_light_r", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // SZ Bed Floor (sz_bed_floor_light)
 // Tasmota RGB+W dimmer / https://templates.blakadder.com/arilux_LC06.html
 Thing mqtt:topic:openhab:sz_bed_floor_light "SZ Bed Floor" (mqtt:broker:openhab) {
@@ -563,50 +200,6 @@ Thing mqtt:topic:openhab:sz_bed_floor_light "SZ Bed Floor" (mqtt:broker:openhab)
 		Type dimmer : ct [stateTopic="stat/sz_bed_floor_light/RESULT", transformationPattern="REGEX:(.*\"CT\".*)∩JSONPATH:$.CT", commandTopic="cmnd/sz_bed_floor_light/CT", min="150", max="500"]
 		Type color : hsbcolor [stateTopic="stat/sz_bed_floor_light/RESULT", transformationPattern="REGEX:(.*\"HSBColor\".*)∩JSONPATH:$.HSBColor", commandTopic="cmnd/sz_bed_floor_light/HSBColor"]
 }
-// SZ Window L (0xd44867fffed2e67c)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Thing mqtt:topic:openhab:sz_window_l "SZ Window L" (mqtt:broker:openhab) {
-	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_l", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_window_l", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_l", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_l", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_window_l", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_l", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_l", transformationPattern="JS:codegen-activity.js"]
-}
-// SZ Window R (0x3c2ef5fffe41fc77)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Thing mqtt:topic:openhab:sz_window_r "SZ Window R" (mqtt:broker:openhab) {
-	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/sz_window_r", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/sz_window_r", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_r", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/sz_window_r", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_window_r", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_window_r", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/sz_window_r", transformationPattern="JS:codegen-activity.js"]
-}
-// SZ Bed power (0x6cfd22fffe1a2043)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Thing mqtt:topic:openhab:sz_bed_power "SZ Bed power" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/sz_bed_power", commandTopic="zigbee2mqtt/sz_bed_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : ac_voltage [stateTopic="zigbee2mqtt/sz_bed_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
-		Type number : ac_current [stateTopic="zigbee2mqtt/sz_bed_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
-		Type number : ac_power [stateTopic="zigbee2mqtt/sz_bed_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
-		Type number : ac_energy [stateTopic="zigbee2mqtt/sz_bed_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_bed_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_bed_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// SZ TV power (0x8c8b48fffe0ef9ed)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Thing mqtt:topic:openhab:sz_tv_power "SZ TV power" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/sz_tv_power", commandTopic="zigbee2mqtt/sz_tv_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : link [stateTopic="zigbee2mqtt/sz_tv_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/sz_tv_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // KU Climate (0xa4c138f5460e22dd)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
@@ -620,16 +213,6 @@ Thing mqtt:topic:openhab:ku_climate "KU Climate" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// KU Light Button (Spuele) (0x680ae2fffeaf18d4)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spuele)" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/ku_light_switch_spule", commandTopic="zigbee2mqtt/ku_light_switch_spule/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_switch_spule", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
 // KU Light Arbeit (0xec1bbdfffea37757)
 // Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html
 Thing mqtt:topic:openhab:ku_light_arbeitplatte "KU Light Arbeit" (mqtt:broker:openhab) {
@@ -637,28 +220,6 @@ Thing mqtt:topic:openhab:ku_light_arbeitplatte "KU Light Arbeit" (mqtt:broker:op
 		Type switch : state [stateTopic="zigbee2mqtt/ku_light_arbeitplatte", commandTopic="zigbee2mqtt/ku_light_arbeitplatte/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=10800"]
 		Type number : link [stateTopic="zigbee2mqtt/ku_light_arbeitplatte", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_arbeitplatte", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// KU Light Table SW (0x04cd15fffe789098)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:ku_light_table_switch "KU Light Table SW" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/ku_light_table_switch", commandTopic="zigbee2mqtt/ku_light_table_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_table_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// KU Light Table (0xec1bbdfffe4695b5)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Thing mqtt:topic:openhab:ku_light_table "KU Light Table" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ku_light_table", commandTopic="zigbee2mqtt/ku_light_table/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/ku_light_table", commandTopic="zigbee2mqtt/ku_light_table/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/ku_light_table", commandTopic="zigbee2mqtt/ku_light_table/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type number : link [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ku_light_table", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // KU Light SW (0xa4c138c9dd85a675)
 // TS0601_switch - TuYa 1, 2, 3 or 4 gang switch (Router) / https://www.zigbee2mqtt.io/devices/TS0601_switch.html
@@ -681,44 +242,6 @@ Thing mqtt:topic:openhab:ku_window_door "KU Window Door" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/ku_window_door", transformationPattern="JS:codegen-activity.js"]
 }
-// Kitchen leak (0xb0c7defffe640add)
-// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Thing mqtt:topic:openhab:ku_leak "Kitchen leak" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : leak [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/ku_leak", transformationPattern="JS:codegen-activity.js"]
-}
-// KU up power (0x6cfd22fffe1a4e35)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Thing mqtt:topic:openhab:ku_up_power "KU up power" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/ku_up_power", commandTopic="zigbee2mqtt/ku_up_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : ac_voltage [stateTopic="zigbee2mqtt/ku_up_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
-		Type number : ac_current [stateTopic="zigbee2mqtt/ku_up_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
-		Type number : ac_power [stateTopic="zigbee2mqtt/ku_up_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
-		Type number : ac_energy [stateTopic="zigbee2mqtt/ku_up_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
-		Type number : link [stateTopic="zigbee2mqtt/ku_up_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ku_up_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// KU Cat Feeder motion (0x94a081fffe57e936)
-// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
-Thing mqtt:topic:openhab:ku_cat_feeder_motion "KU Cat Feeder motion" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : occupancy [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy", on="true", off="false"]
-		Type number : illuminance_lux [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"illuminance_lux\".*)∩JSONPATH:$.illuminance_lux", unit="lx"]
-		Type number : illuminance [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"illuminance\".*)∩JSONPATH:$.illuminance"]
-		Type number : battery [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/ku_cat_feeder_motion", transformationPattern="JS:codegen-activity.js"]
-}
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Thing mqtt:topic:openhab:tr_door_sensor "Treppe Door sensor" (mqtt:broker:openhab) {
@@ -730,39 +253,6 @@ Thing mqtt:topic:openhab:tr_door_sensor "Treppe Door sensor" (mqtt:broker:openha
 		Type number : link [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/tr_door_sensor", transformationPattern="JS:codegen-activity.js"]
-}
-// Treppe Up switch (0x680ae2fffe1a92f3)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Thing mqtt:topic:openhab:tr_up_switch "Treppe Up switch" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/tr_up_switch", commandTopic="zigbee2mqtt/tr_up_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/tr_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/tr_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/tr_up_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/tr_up_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Treppe Down switch (0x04cd15fffe75c518)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Thing mqtt:topic:openhab:tr_down_switch "Treppe Down switch" (mqtt:broker:openhab) {
-	Channels:
-		Type string : action [stateTopic="zigbee2mqtt/tr_down_switch", commandTopic="zigbee2mqtt/tr_down_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
-		Type number : action_dim [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/tr_down_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Treppe Up light (0xd0cf5efffee892b0)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Thing mqtt:topic:openhab:tr_up_light "Treppe Up light" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : state [stateTopic="zigbee2mqtt/tr_up_light", commandTopic="zigbee2mqtt/tr_up_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=3600"]
-		Type dimmer : dim [stateTopic="zigbee2mqtt/tr_up_light", commandTopic="zigbee2mqtt/tr_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
-		Type dimmer : dim_fast [stateTopic="zigbee2mqtt/tr_up_light", commandTopic="zigbee2mqtt/tr_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
-		Type dimmer : ct [stateTopic="zigbee2mqtt/tr_up_light", commandTopic="zigbee2mqtt/tr_up_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
-		Type number : link [stateTopic="zigbee2mqtt/tr_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/tr_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Treppe Down light (0x04cd15fffedb31f7)
 // Livarno Home LED ceiling light (HG08008) / https://www.zigbee2mqtt.io/devices/HG08008.html#lidl-hg08008
@@ -776,18 +266,6 @@ Thing mqtt:topic:openhab:tr_down_light "Treppe Down light" (mqtt:broker:openhab)
 		Type string : color_mode [stateTopic="zigbee2mqtt/tr_down_light", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
 		Type number : link [stateTopic="zigbee2mqtt/tr_down_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/tr_down_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-}
-// Treppe motion (0xbc33acfffe872049)
-// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Thing mqtt:topic:openhab:tr_motion "Treppe motion" (mqtt:broker:openhab) {
-	Channels:
-		Type switch : occupancy [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy", on="true", off="false"]
-		Type number : battery [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/tr_motion", transformationPattern="JS:codegen-activity.js"]
 }
 // Treppe climate (0xa4c1383cc92cbbd2)
 // TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
@@ -813,18 +291,6 @@ Thing mqtt:topic:openhab:kg_window_1 "KG Window (Cabinet)" (mqtt:broker:openhab)
 		Type number : link [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_1", transformationPattern="JS:codegen-activity.js"]
-}
-// KG Window (Hobbyraum) (0x6cfd22fffeb63428)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Thing mqtt:topic:openhab:kg_window_2 "KG Window (Hobbyraum)" (mqtt:broker:openhab) {
-	Channels:
-		Type contact : contact [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
-		Type number : battery [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="zigbee2mqtt/kg_window_2", transformationPattern="JS:codegen-activity.js"]
 }
 // KG Cabinet door (0xa4c138312d2c455f)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -1140,6 +606,502 @@ Thing mqtt:topic:openhab:main_power "Main power" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="zigbee2mqtt/main_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// Balkon light 1 (0x14b457fffe399241)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Thing mqtt:topic:openhab:bk_light_1 "Balkon light 1" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/bk_light_1", commandTopic="z2m-ikea/bk_light_1/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/bk_light_1", commandTopic="z2m-ikea/bk_light_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/bk_light_1", commandTopic="z2m-ikea/bk_light_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/bk_light_1", commandTopic="z2m-ikea/bk_light_1/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
+		Type number : link [stateTopic="z2m-ikea/bk_light_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bk_light_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Balkon light 2 (0xb0c7defffe411c6f)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Thing mqtt:topic:openhab:bk_light_2 "Balkon light 2" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/bk_light_2", commandTopic="z2m-ikea/bk_light_2/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/bk_light_2", commandTopic="z2m-ikea/bk_light_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/bk_light_2", commandTopic="z2m-ikea/bk_light_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/bk_light_2", commandTopic="z2m-ikea/bk_light_2/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
+		Type number : link [stateTopic="z2m-ikea/bk_light_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bk_light_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// BK Color light (0x08b95ffffe335fe2)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Thing mqtt:topic:openhab:bk_color_light "BK Color light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/bk_color_light", commandTopic="z2m-ikea/bk_color_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : link [stateTopic="z2m-ikea/bk_color_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bk_color_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// EG Decor light (0x9035eafffe20e847)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Thing mqtt:topic:openhab:eg_decoration_light "EG Decor light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/eg_decoration_light", commandTopic="z2m-ikea/eg_decoration_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/eg_decoration_light", commandTopic="z2m-ikea/eg_decoration_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/eg_decoration_light", commandTopic="z2m-ikea/eg_decoration_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/eg_decoration_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/eg_decoration_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Comode remote (0x04e3e5fffe02fbd6)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:fl_comode_remote "Comode remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/fl_comode_remote", commandTopic="z2m-ikea/fl_comode_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Entrance Door remote (0x1c34f1fffe830517)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:fl_door_remote "Entrance Door remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/fl_door_remote", commandTopic="z2m-ikea/fl_door_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Mirror remote (0xb43522fffe7939b3)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:fl_mirror_remote "Mirror remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/fl_mirror_remote", commandTopic="z2m-ikea/fl_mirror_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Entrance mirror (0x90ab96fffe52f8fa)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Thing mqtt:topic:openhab:fl_mirror "Entrance mirror" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/fl_mirror", commandTopic="z2m-ikea/fl_mirror/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=1800"]
+		Type dimmer : dim [stateTopic="z2m-ikea/fl_mirror", commandTopic="z2m-ikea/fl_mirror/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=220]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/fl_mirror", commandTopic="z2m-ikea/fl_mirror/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=220]
+		Type number : link [stateTopic="z2m-ikea/fl_mirror", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/fl_mirror", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// BZ Mirror switch (0xccccccfffef0356e)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Thing mqtt:topic:openhab:bz_mirror_switch "BZ Mirror switch" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/bz_mirror_switch", commandTopic="z2m-ikea/bz_mirror_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/bz_mirror_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/bz_mirror_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/bz_mirror_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bz_mirror_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// BZ Light Control (0x003c84fffe132b20)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:bz_light_switch "BZ Light Control" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/bz_light_switch", commandTopic="z2m-ikea/bz_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// BZ Window R (0x048727fffe9cf022)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Thing mqtt:topic:openhab:bz_window_r "BZ Window R" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="z2m-ikea/bz_window_r", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
+		Type number : battery [stateTopic="z2m-ikea/bz_window_r", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="z2m-ikea/bz_window_r", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="z2m-ikea/bz_window_r", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/bz_window_r", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bz_window_r", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="z2m-ikea/bz_window_r", transformationPattern="JS:codegen-activity.js"]
+}
+// BZ Towel Heater (0x6cfd22fffe1cb2bc)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Thing mqtt:topic:openhab:bz_towel_heater "BZ Towel Heater" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/bz_towel_heater", commandTopic="z2m-ikea/bz_towel_heater/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=5400"]
+		Type number : ac_voltage [stateTopic="z2m-ikea/bz_towel_heater", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="z2m-ikea/bz_towel_heater", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="z2m-ikea/bz_towel_heater", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="z2m-ikea/bz_towel_heater", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="z2m-ikea/bz_towel_heater", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bz_towel_heater", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// BZ leak (0x8c65a3fffe70093b)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Thing mqtt:topic:openhab:bz_leak "BZ leak" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : leak [stateTopic="z2m-ikea/bz_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
+		Type number : battery [stateTopic="z2m-ikea/bz_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="z2m-ikea/bz_leak", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="z2m-ikea/bz_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/bz_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bz_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="z2m-ikea/bz_leak", transformationPattern="JS:codegen-activity.js"]
+}
+// KS Night lamp (0x14b457fffe6383e5)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
+Thing mqtt:topic:openhab:ks_light_night "KS Night lamp" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/ks_light_night", commandTopic="z2m-ikea/ks_light_night/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/ks_light_night", commandTopic="z2m-ikea/ks_light_night/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/ks_light_night", commandTopic="z2m-ikea/ks_light_night/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/ks_light_night", commandTopic="z2m-ikea/ks_light_night/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
+		Type color : color [commandTopic="z2m-ikea/ks_light_night/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
+		Type string : color_mode [stateTopic="z2m-ikea/ks_light_night", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
+		Type number : link [stateTopic="z2m-ikea/ks_light_night", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ks_light_night", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// KS Projector (0x94a081fffe5f9218)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Thing mqtt:topic:openhab:ks_projector_power "KS Projector" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/ks_projector_power", commandTopic="z2m-ikea/ks_projector_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : link [stateTopic="z2m-ikea/ks_projector_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ks_projector_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// KS Main remote (0x9035eafffee1ba1d)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:ks_light_switch "KS Main remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/ks_light_switch", commandTopic="z2m-ikea/ks_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Living main remote (0x003c84fffe16f988)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:wz_up_remote "Living main remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/wz_up_remote", commandTopic="z2m-ikea/wz_up_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// WZ Julia stand (0x5cc7c1fffe4c4a46)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
+Thing mqtt:topic:openhab:wz_julia_stand_light "WZ Julia stand" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/wz_julia_stand_light", commandTopic="z2m-ikea/wz_julia_stand_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_julia_stand_light", commandTopic="z2m-ikea/wz_julia_stand_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/wz_julia_stand_light", commandTopic="z2m-ikea/wz_julia_stand_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/wz_julia_stand_light", commandTopic="z2m-ikea/wz_julia_stand_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
+		Type color : color [commandTopic="z2m-ikea/wz_julia_stand_light/set", transformationPatternOut="JS:codegen-cmd-color_xy.js"]
+		Type string : color_mode [stateTopic="z2m-ikea/wz_julia_stand_light", transformationPattern="REGEX:(.*\"color_mode\".*)∩JSONPATH:$.color_mode"]
+		Type number : link [stateTopic="z2m-ikea/wz_julia_stand_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/wz_julia_stand_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// WZ Julia desktop (0xec1bbdfffe1b89d1)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Thing mqtt:topic:openhab:wz_julia_desktop_light "WZ Julia desktop" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/wz_julia_desktop_light", commandTopic="z2m-ikea/wz_julia_desktop_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_julia_desktop_light", commandTopic="z2m-ikea/wz_julia_desktop_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/wz_julia_desktop_light", commandTopic="z2m-ikea/wz_julia_desktop_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/wz_julia_desktop_light", commandTopic="z2m-ikea/wz_julia_desktop_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
+		Type number : link [stateTopic="z2m-ikea/wz_julia_desktop_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/wz_julia_desktop_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// WZ Julia remote (0x1c34f1fffe7ccde1)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:wz_julia_remote "WZ Julia remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/wz_julia_remote", commandTopic="z2m-ikea/wz_julia_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// WZ Decor lamp 1 (0xec1bbdfffe972819)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Thing mqtt:topic:openhab:wz_declamp_1 "WZ Decor lamp 1" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/wz_declamp_1", commandTopic="z2m-ikea/wz_declamp_1/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_declamp_1", commandTopic="z2m-ikea/wz_declamp_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/wz_declamp_1", commandTopic="z2m-ikea/wz_declamp_1/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/wz_declamp_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/wz_declamp_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// WZ Decor lamp 2 (0xec1bbdfffe972203)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Thing mqtt:topic:openhab:wz_declamp_2 "WZ Decor lamp 2" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/wz_declamp_2", commandTopic="z2m-ikea/wz_declamp_2/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_declamp_2", commandTopic="z2m-ikea/wz_declamp_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/wz_declamp_2", commandTopic="z2m-ikea/wz_declamp_2/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/wz_declamp_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/wz_declamp_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// WZ Decor lamp 3 (0xec1bbdfffe91007b)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Thing mqtt:topic:openhab:wz_declamp_3 "WZ Decor lamp 3" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/wz_declamp_3", commandTopic="z2m-ikea/wz_declamp_3/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_declamp_3", commandTopic="z2m-ikea/wz_declamp_3/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/wz_declamp_3", commandTopic="z2m-ikea/wz_declamp_3/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/wz_declamp_3", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/wz_declamp_3", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// WZ Plants light (0x94ec32fffe1f54d0)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Thing mqtt:topic:openhab:wz_plant_light "WZ Plants light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/wz_plant_light", commandTopic="z2m-ikea/wz_plant_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : link [stateTopic="z2m-ikea/wz_plant_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/wz_plant_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ Main remote (0xb4e3f9fffeb35529)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:sz_up_remote "SZ Main remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/sz_up_remote", commandTopic="z2m-ikea/sz_up_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ door bedlight remote (0xccccccfffee401f8)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Thing mqtt:topic:openhab:sz_door_bed_remote "SZ door bedlight remote" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/sz_door_bed_remote", commandTopic="z2m-ikea/sz_door_bed_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/sz_door_bed_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/sz_door_bed_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/sz_door_bed_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_door_bed_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ remote L (0x94deb8fffea8a1f9)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:sz_bed_l_remote "SZ remote L" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/sz_bed_l_remote", commandTopic="z2m-ikea/sz_bed_l_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ remote R (0x540f57fffe1e420c)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:sz_bed_r_remote "SZ remote R" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/sz_bed_r_remote", commandTopic="z2m-ikea/sz_bed_r_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ Bedside drawler (0x287681fffe95cba4)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Thing mqtt:topic:openhab:sz_bedside_drawler_light "SZ Bedside drawler" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/sz_bedside_drawler_light", commandTopic="z2m-ikea/sz_bedside_drawler_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_bedside_drawler_light", commandTopic="z2m-ikea/sz_bedside_drawler_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/sz_bedside_drawler_light", commandTopic="z2m-ikea/sz_bedside_drawler_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/sz_bedside_drawler_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_bedside_drawler_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ Cabinet (0x0cae5ffffea07d0d)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Thing mqtt:topic:openhab:sz_cabinet_light "SZ Cabinet" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/sz_cabinet_light", commandTopic="z2m-ikea/sz_cabinet_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_cabinet_light", commandTopic="z2m-ikea/sz_cabinet_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/sz_cabinet_light", commandTopic="z2m-ikea/sz_cabinet_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/sz_cabinet_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_cabinet_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ Bed L (0x9035eafffe93bfc6)
+// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
+Thing mqtt:topic:openhab:sz_bed_light_l "SZ Bed L" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/sz_bed_light_l", commandTopic="z2m-ikea/sz_bed_light_l/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_bed_light_l", commandTopic="z2m-ikea/sz_bed_light_l/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/sz_bed_light_l", commandTopic="z2m-ikea/sz_bed_light_l/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/sz_bed_light_l", commandTopic="z2m-ikea/sz_bed_light_l/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
+		Type number : link [stateTopic="z2m-ikea/sz_bed_light_l", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_bed_light_l", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ Bed R (0x94deb8fffeda7949)
+// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
+Thing mqtt:topic:openhab:sz_bed_light_r "SZ Bed R" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/sz_bed_light_r", commandTopic="z2m-ikea/sz_bed_light_r/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_bed_light_r", commandTopic="z2m-ikea/sz_bed_light_r/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/sz_bed_light_r", commandTopic="z2m-ikea/sz_bed_light_r/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/sz_bed_light_r", commandTopic="z2m-ikea/sz_bed_light_r/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
+		Type number : link [stateTopic="z2m-ikea/sz_bed_light_r", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_bed_light_r", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ Window L (0xd44867fffed2e67c)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Thing mqtt:topic:openhab:sz_window_l "SZ Window L" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="z2m-ikea/sz_window_l", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
+		Type number : battery [stateTopic="z2m-ikea/sz_window_l", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="z2m-ikea/sz_window_l", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="z2m-ikea/sz_window_l", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/sz_window_l", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_window_l", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="z2m-ikea/sz_window_l", transformationPattern="JS:codegen-activity.js"]
+}
+// SZ Window R (0x3c2ef5fffe41fc77)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Thing mqtt:topic:openhab:sz_window_r "SZ Window R" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="z2m-ikea/sz_window_r", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
+		Type number : battery [stateTopic="z2m-ikea/sz_window_r", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="z2m-ikea/sz_window_r", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="z2m-ikea/sz_window_r", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/sz_window_r", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_window_r", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="z2m-ikea/sz_window_r", transformationPattern="JS:codegen-activity.js"]
+}
+// SZ Bed power (0x6cfd22fffe1a2043)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Thing mqtt:topic:openhab:sz_bed_power "SZ Bed power" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/sz_bed_power", commandTopic="z2m-ikea/sz_bed_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : ac_voltage [stateTopic="z2m-ikea/sz_bed_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="z2m-ikea/sz_bed_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="z2m-ikea/sz_bed_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="z2m-ikea/sz_bed_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="z2m-ikea/sz_bed_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_bed_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// SZ TV power (0x8c8b48fffe0ef9ed)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Thing mqtt:topic:openhab:sz_tv_power "SZ TV power" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/sz_tv_power", commandTopic="z2m-ikea/sz_tv_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : link [stateTopic="z2m-ikea/sz_tv_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/sz_tv_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// KU Light Button (Spuele) (0x680ae2fffeaf18d4)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spuele)" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/ku_light_switch_spule", commandTopic="z2m-ikea/ku_light_switch_spule/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/ku_light_switch_spule", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/ku_light_switch_spule", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/ku_light_switch_spule", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ku_light_switch_spule", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// KU Light Table SW (0x04cd15fffe789098)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:ku_light_table_switch "KU Light Table SW" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/ku_light_table_switch", commandTopic="z2m-ikea/ku_light_table_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// KU Light Table (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Thing mqtt:topic:openhab:ku_light_table "KU Light Table" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/ku_light_table", commandTopic="z2m-ikea/ku_light_table/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/ku_light_table", commandTopic="z2m-ikea/ku_light_table/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/ku_light_table", commandTopic="z2m-ikea/ku_light_table/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/ku_light_table", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ku_light_table", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Kitchen leak (0xb0c7defffe640add)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Thing mqtt:topic:openhab:ku_leak "Kitchen leak" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : leak [stateTopic="z2m-ikea/ku_leak", transformationPattern="REGEX:(.*\"water_leak\".*)∩JSONPATH:$.water_leak", on="true", off="false"]
+		Type number : battery [stateTopic="z2m-ikea/ku_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="z2m-ikea/ku_leak", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="z2m-ikea/ku_leak", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/ku_leak", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ku_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="z2m-ikea/ku_leak", transformationPattern="JS:codegen-activity.js"]
+}
+// KU up power (0x6cfd22fffe1a4e35)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Thing mqtt:topic:openhab:ku_up_power "KU up power" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/ku_up_power", commandTopic="z2m-ikea/ku_up_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : ac_voltage [stateTopic="z2m-ikea/ku_up_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="z2m-ikea/ku_up_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="z2m-ikea/ku_up_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="z2m-ikea/ku_up_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="z2m-ikea/ku_up_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ku_up_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Treppe Up switch (0x680ae2fffe1a92f3)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Thing mqtt:topic:openhab:tr_up_switch "Treppe Up switch" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/tr_up_switch", commandTopic="z2m-ikea/tr_up_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/tr_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/tr_up_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/tr_up_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/tr_up_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Treppe Down switch (0x04cd15fffe75c518)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Thing mqtt:topic:openhab:tr_down_switch "Treppe Down switch" (mqtt:broker:openhab) {
+	Channels:
+		Type string : action [stateTopic="z2m-ikea/tr_down_switch", commandTopic="z2m-ikea/tr_down_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
+		Type dimmer : dim [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type number : action_dim [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
+		Type number : battery [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type switch : battery_low [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Treppe Up light (0xd0cf5efffee892b0)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Thing mqtt:topic:openhab:tr_up_light "Treppe Up light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/tr_up_light", commandTopic="z2m-ikea/tr_up_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=3600"]
+		Type dimmer : dim [stateTopic="z2m-ikea/tr_up_light", commandTopic="z2m-ikea/tr_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/tr_up_light", commandTopic="z2m-ikea/tr_up_light/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/tr_up_light", commandTopic="z2m-ikea/tr_up_light/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
+		Type number : link [stateTopic="z2m-ikea/tr_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/tr_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Treppe motion (0xbc33acfffe872049)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Thing mqtt:topic:openhab:tr_motion "Treppe motion" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : occupancy [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy", on="true", off="false"]
+		Type number : battery [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="z2m-ikea/tr_motion", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="z2m-ikea/tr_motion", transformationPattern="JS:codegen-activity.js"]
+}
 // Petro Desktop remote (0x000d6ffffee8357d)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
 Thing mqtt:topic:openhab:desktop_petro_remote "Petro Desktop remote" (mqtt:broker:openhab) {
@@ -1221,6 +1183,18 @@ Thing mqtt:topic:openhab:kg_main1_work_light "KG Hobbyraum (Work light)" (mqtt:b
 		Type switch : state [stateTopic="z2m-ikea/kg_main1_work_light", commandTopic="z2m-ikea/kg_main1_work_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
 		Type number : link [stateTopic="z2m-ikea/kg_main1_work_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-ikea/kg_main1_work_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// KG Window (Hobbyraum) (0x6cfd22fffeb63428)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Thing mqtt:topic:openhab:kg_window_2 "KG Window (Hobbyraum)" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="z2m-ikea/kg_window_2", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
+		Type number : battery [stateTopic="z2m-ikea/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="z2m-ikea/kg_window_2", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="z2m-ikea/kg_window_2", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/kg_window_2", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/kg_window_2", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="z2m-ikea/kg_window_2", transformationPattern="JS:codegen-activity.js"]
 }
 // SRV power (0x6cfd22fffe1a1af2)
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html

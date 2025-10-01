@@ -10,15 +10,6 @@
 sitemap gen label="GEN ITEMS"
 {
 Text label="Z2M old" {
-Frame label="Sturbar test (0x04cd15fffe6d57dc)" {
-// Sturbar test (0x04cd15fffe6d57dc)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=sturbar_test_dim
-Text item=sturbar_test_lowbatt
-Text item=sturbar_test_ota
-Text item=sturbar_test_link
-Text item=sturbar_test_battery
-}
 Frame label="Outside Climate (ext_climate)" {
 // Outside Climate (ext_climate)
 // PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
@@ -34,31 +25,6 @@ Text item=ext_climate_dewpoint
 Text item=ext_climate_humidity
 Text item=ext_climate_pressure
 }
-Frame label="Balkon light 1 (0x14b457fffe399241)" {
-// Balkon light 1 (0x14b457fffe399241)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Slider item=bk_light_1_dim
-Slider item=bk_light_1_ct
-Text item=bk_light_1_ota
-Text item=bk_light_1_link
-Switch item=bk_light_1_sw
-}
-Frame label="Balkon light 2 (0xb0c7defffe411c6f)" {
-// Balkon light 2 (0xb0c7defffe411c6f)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Slider item=bk_light_2_dim
-Slider item=bk_light_2_ct
-Text item=bk_light_2_ota
-Text item=bk_light_2_link
-Switch item=bk_light_2_sw
-}
-Frame label="BK Color light (0x08b95ffffe335fe2)" {
-// BK Color light (0x08b95ffffe335fe2)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Text item=bk_color_light_ota
-Text item=bk_color_light_link
-Switch item=bk_color_light_sw
-}
 Frame label="EG Corridor Light (0xa4c138a06ec38c9e)" {
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
@@ -66,23 +32,6 @@ Slider item=fl_up_light_dim
 Text item=fl_up_light_ota
 Text item=fl_up_light_link
 Switch item=fl_up_light_sw
-}
-Frame label="EG Decor light (0x9035eafffe20e847)" {
-// EG Decor light (0x9035eafffe20e847)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Slider item=eg_decoration_light_dim
-Text item=eg_decoration_light_ota
-Text item=eg_decoration_light_link
-Switch item=eg_decoration_light_sw
-}
-Frame label="Comode remote (0x04e3e5fffe02fbd6)" {
-// Comode remote (0x04e3e5fffe02fbd6)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=fl_comode_remote_dim
-Text item=fl_comode_remote_lowbatt
-Text item=fl_comode_remote_ota
-Text item=fl_comode_remote_link
-Text item=fl_comode_remote_battery
 }
 Frame label="Entrance Door sensor (0xa4c138182f60d651)" {
 // Entrance Door sensor (0xa4c138182f60d651)
@@ -93,32 +42,6 @@ Text item=eg_main_door_link
 Text item=eg_main_door_activity
 Text item=eg_main_door_contact
 Text item=eg_main_door_battery
-}
-Frame label="Entrance Door remote (0x1c34f1fffe830517)" {
-// Entrance Door remote (0x1c34f1fffe830517)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=fl_door_remote_dim
-Text item=fl_door_remote_lowbatt
-Text item=fl_door_remote_ota
-Text item=fl_door_remote_link
-Text item=fl_door_remote_battery
-}
-Frame label="Mirror remote (0xb43522fffe7939b3)" {
-// Mirror remote (0xb43522fffe7939b3)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=fl_mirror_remote_dim
-Text item=fl_mirror_remote_lowbatt
-Text item=fl_mirror_remote_ota
-Text item=fl_mirror_remote_link
-Text item=fl_mirror_remote_battery
-}
-Frame label="Entrance mirror (0x90ab96fffe52f8fa)" {
-// Entrance mirror (0x90ab96fffe52f8fa)
-// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
-Slider item=fl_mirror_dim
-Text item=fl_mirror_ota
-Text item=fl_mirror_link
-Switch item=fl_mirror_sw
 }
 Frame label="BZ Light (toilet) (0xcc86ecfffea0c7cb)" {
 // BZ Light (toilet) (0xcc86ecfffea0c7cb)
@@ -150,54 +73,6 @@ Text item=bz_mirror_rssi
 Text item=bz_mirror_bssid
 Text item=bz_mirror_activity
 }
-Frame label="BZ Mirror switch (0xccccccfffef0356e)" {
-// BZ Mirror switch (0xccccccfffef0356e)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Text item=bz_mirror_switch_lowbatt
-Text item=bz_mirror_switch_ota
-Text item=bz_mirror_switch_link
-Text item=bz_mirror_switch_battery
-}
-Frame label="BZ Light Control (0x003c84fffe132b20)" {
-// BZ Light Control (0x003c84fffe132b20)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=bz_light_switch_dim
-Text item=bz_light_switch_lowbatt
-Text item=bz_light_switch_ota
-Text item=bz_light_switch_link
-Text item=bz_light_switch_battery
-}
-Frame label="BZ Window R (0x048727fffe9cf022)" {
-// BZ Window R (0x048727fffe9cf022)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=bz_window_r_lowbatt
-Text item=bz_window_r_ota
-Text item=bz_window_r_link
-Text item=bz_window_r_activity
-Text item=bz_window_r_contact
-Text item=bz_window_r_battery
-}
-Frame label="BZ Towel Heater (0x6cfd22fffe1cb2bc)" {
-// BZ Towel Heater (0x6cfd22fffe1cb2bc)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Text item=bz_towel_heater_ota
-Text item=bz_towel_heater_link
-Switch item=bz_towel_heater_sw
-Text item=bz_towel_heater_ac_voltage
-Text item=bz_towel_heater_ac_current
-Text item=bz_towel_heater_ac_power
-Text item=bz_towel_heater_ac_energy
-}
-Frame label="BZ leak (0x8c65a3fffe70093b)" {
-// BZ leak (0x8c65a3fffe70093b)
-// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Text item=bz_leak_lowbatt
-Text item=bz_leak_ota
-Text item=bz_leak_link
-Text item=bz_leak_activity
-Text item=bz_leak_leak
-Text item=bz_leak_battery
-}
 Frame label="KS Main (0x588e81fffefb217b)" {
 // KS Main (0x588e81fffefb217b)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
@@ -218,24 +93,6 @@ Text item=ks_climate_temperature
 Text item=ks_climate_humidity
 Text item=ks_climate_battery
 }
-Frame label="KS Night lamp (0x14b457fffe6383e5)" {
-// KS Night lamp (0x14b457fffe6383e5)
-// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
-Slider item=ks_light_night_dim
-Slider item=ks_light_night_ct
-Colorpicker item=ks_light_night_color
-Text item=ks_light_night_color_mode
-Text item=ks_light_night_ota
-Text item=ks_light_night_link
-Switch item=ks_light_night_sw
-}
-Frame label="KS Projector (0x94a081fffe5f9218)" {
-// KS Projector (0x94a081fffe5f9218)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Text item=ks_projector_power_ota
-Text item=ks_projector_power_link
-Switch item=ks_projector_power_sw
-}
 Frame label="KS Window 2 (0xa4c138f1bf27592c)" {
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -245,15 +102,6 @@ Text item=ks_window_2_link
 Text item=ks_window_2_activity
 Text item=ks_window_2_contact
 Text item=ks_window_2_battery
-}
-Frame label="KS Main remote (0x9035eafffee1ba1d)" {
-// KS Main remote (0x9035eafffee1ba1d)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=ks_light_switch_dim
-Text item=ks_light_switch_lowbatt
-Text item=ks_light_switch_ota
-Text item=ks_light_switch_link
-Text item=ks_light_switch_battery
 }
 Frame label="WZ Climate (0xa4c1386a03a53708)" {
 // WZ Climate (0xa4c1386a03a53708)
@@ -266,15 +114,6 @@ Text item=wz_climate_temperature
 Text item=wz_climate_humidity
 Text item=wz_climate_battery
 }
-Frame label="Bedroom main remote (0x003c84fffe16f988)" {
-// Bedroom main remote (0x003c84fffe16f988)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=wz_up_remote_dim
-Text item=wz_up_remote_lowbatt
-Text item=wz_up_remote_ota
-Text item=wz_up_remote_link
-Text item=wz_up_remote_battery
-}
 Frame label="WZ Main (0x588e81fffefe9a05)" {
 // WZ Main (0x588e81fffefe9a05)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
@@ -283,35 +122,6 @@ Slider item=wz_up_light_ct
 Text item=wz_up_light_ota
 Text item=wz_up_light_link
 Switch item=wz_up_light_sw
-}
-Frame label="WZ Julia stand (0x5cc7c1fffe4c4a46)" {
-// WZ Julia stand (0x5cc7c1fffe4c4a46)
-// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
-Slider item=wz_julia_stand_light_dim
-Slider item=wz_julia_stand_light_ct
-Colorpicker item=wz_julia_stand_light_color
-Text item=wz_julia_stand_light_color_mode
-Text item=wz_julia_stand_light_ota
-Text item=wz_julia_stand_light_link
-Switch item=wz_julia_stand_light_sw
-}
-Frame label="WZ Julia desktop (0xec1bbdfffe1b89d1)" {
-// WZ Julia desktop (0xec1bbdfffe1b89d1)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Slider item=wz_julia_desktop_light_dim
-Slider item=wz_julia_desktop_light_ct
-Text item=wz_julia_desktop_light_ota
-Text item=wz_julia_desktop_light_link
-Switch item=wz_julia_desktop_light_sw
-}
-Frame label="WZ Julia remote (0x1c34f1fffe7ccde1)" {
-// WZ Julia remote (0x1c34f1fffe7ccde1)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=wz_julia_remote_dim
-Text item=wz_julia_remote_lowbatt
-Text item=wz_julia_remote_ota
-Text item=wz_julia_remote_link
-Text item=wz_julia_remote_battery
 }
 Frame label="WZ Color Decor (0x8cf681fffef62c85)" {
 // WZ Color Decor (0x8cf681fffef62c85)
@@ -323,37 +133,6 @@ Text item=wz_light_color_color_mode
 Text item=wz_light_color_ota
 Text item=wz_light_color_link
 Switch item=wz_light_color_sw
-}
-Frame label="WZ Decor lamp 1 (0xec1bbdfffe972819)" {
-// WZ Decor lamp 1 (0xec1bbdfffe972819)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Slider item=wz_declamp_1_dim
-Text item=wz_declamp_1_ota
-Text item=wz_declamp_1_link
-Switch item=wz_declamp_1_sw
-}
-Frame label="WZ Decor lamp 2 (0xec1bbdfffe972203)" {
-// WZ Decor lamp 2 (0xec1bbdfffe972203)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Slider item=wz_declamp_2_dim
-Text item=wz_declamp_2_ota
-Text item=wz_declamp_2_link
-Switch item=wz_declamp_2_sw
-}
-Frame label="WZ Decor lamp 3 (0xec1bbdfffe91007b)" {
-// WZ Decor lamp 3 (0xec1bbdfffe91007b)
-// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
-Slider item=wz_declamp_3_dim
-Text item=wz_declamp_3_ota
-Text item=wz_declamp_3_link
-Switch item=wz_declamp_3_sw
-}
-Frame label="WZ Plants light (0x94ec32fffe1f54d0)" {
-// WZ Plants light (0x94ec32fffe1f54d0)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Text item=wz_plant_light_ota
-Text item=wz_plant_light_link
-Switch item=wz_plant_light_sw
 }
 Frame label="WZ Window 1 (0xa4c13804963f4ccf)" {
 // WZ Window 1 (0xa4c13804963f4ccf)
@@ -385,75 +164,6 @@ Text item=sz_up_light_ota
 Text item=sz_up_light_link
 Switch item=sz_up_light_sw
 }
-Frame label="SZ Main remote (0xb4e3f9fffeb35529)" {
-// SZ Main remote (0xb4e3f9fffeb35529)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=sz_up_remote_dim
-Text item=sz_up_remote_lowbatt
-Text item=sz_up_remote_ota
-Text item=sz_up_remote_link
-Text item=sz_up_remote_battery
-}
-Frame label="SZ door bedlight remote (0xccccccfffee401f8)" {
-// SZ door bedlight remote (0xccccccfffee401f8)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Text item=sz_door_bed_remote_lowbatt
-Text item=sz_door_bed_remote_ota
-Text item=sz_door_bed_remote_link
-Text item=sz_door_bed_remote_battery
-}
-Frame label="SZ remote L (0x94deb8fffea8a1f9)" {
-// SZ remote L (0x94deb8fffea8a1f9)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=sz_bed_l_remote_dim
-Text item=sz_bed_l_remote_lowbatt
-Text item=sz_bed_l_remote_ota
-Text item=sz_bed_l_remote_link
-Text item=sz_bed_l_remote_battery
-}
-Frame label="SZ remote R (0x540f57fffe1e420c)" {
-// SZ remote R (0x540f57fffe1e420c)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=sz_bed_r_remote_dim
-Text item=sz_bed_r_remote_lowbatt
-Text item=sz_bed_r_remote_ota
-Text item=sz_bed_r_remote_link
-Text item=sz_bed_r_remote_battery
-}
-Frame label="SZ Bedside drawler (0x287681fffe95cba4)" {
-// SZ Bedside drawler (0x287681fffe95cba4)
-// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
-Slider item=sz_bedside_drawler_light_dim
-Text item=sz_bedside_drawler_light_ota
-Text item=sz_bedside_drawler_light_link
-Switch item=sz_bedside_drawler_light_sw
-}
-Frame label="SZ Cabinet (0x0cae5ffffea07d0d)" {
-// SZ Cabinet (0x0cae5ffffea07d0d)
-// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
-Slider item=sz_cabinet_light_dim
-Text item=sz_cabinet_light_ota
-Text item=sz_cabinet_light_link
-Switch item=sz_cabinet_light_sw
-}
-Frame label="SZ Bed L (0x9035eafffe93bfc6)" {
-// SZ Bed L (0x9035eafffe93bfc6)
-// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
-Slider item=sz_bed_light_l_dim
-Slider item=sz_bed_light_l_ct
-Text item=sz_bed_light_l_ota
-Text item=sz_bed_light_l_link
-Switch item=sz_bed_light_l_sw
-}
-Frame label="SZ Bed R (0x94deb8fffeda7949)" {
-// SZ Bed R (0x94deb8fffeda7949)
-// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
-Slider item=sz_bed_light_r_dim
-Slider item=sz_bed_light_r_ct
-Text item=sz_bed_light_r_ota
-Text item=sz_bed_light_r_link
-Switch item=sz_bed_light_r_sw
-}
 Frame label="SZ Bed Floor (sz_bed_floor_light)" {
 // SZ Bed Floor (sz_bed_floor_light)
 // Tasmota RGB+W dimmer / https://templates.blakadder.com/arilux_LC06.html
@@ -464,44 +174,6 @@ Colorpicker item=sz_bed_floor_light_color
 Text item=sz_bed_floor_light_rssi
 Text item=sz_bed_floor_light_bssid
 Text item=sz_bed_floor_light_activity
-}
-Frame label="SZ Window L (0xd44867fffed2e67c)" {
-// SZ Window L (0xd44867fffed2e67c)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=sz_window_l_lowbatt
-Text item=sz_window_l_ota
-Text item=sz_window_l_link
-Text item=sz_window_l_activity
-Text item=sz_window_l_contact
-Text item=sz_window_l_battery
-}
-Frame label="SZ Window R (0x3c2ef5fffe41fc77)" {
-// SZ Window R (0x3c2ef5fffe41fc77)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=sz_window_r_lowbatt
-Text item=sz_window_r_ota
-Text item=sz_window_r_link
-Text item=sz_window_r_activity
-Text item=sz_window_r_contact
-Text item=sz_window_r_battery
-}
-Frame label="SZ Bed power (0x6cfd22fffe1a2043)" {
-// SZ Bed power (0x6cfd22fffe1a2043)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Text item=sz_bed_power_ota
-Text item=sz_bed_power_link
-Switch item=sz_bed_power_sw
-Text item=sz_bed_power_ac_voltage
-Text item=sz_bed_power_ac_current
-Text item=sz_bed_power_ac_power
-Text item=sz_bed_power_ac_energy
-}
-Frame label="SZ TV power (0x8c8b48fffe0ef9ed)" {
-// SZ TV power (0x8c8b48fffe0ef9ed)
-// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
-Text item=sz_tv_power_ota
-Text item=sz_tv_power_link
-Switch item=sz_tv_power_sw
 }
 Frame label="KU Climate (0xa4c138f5460e22dd)" {
 // KU Climate (0xa4c138f5460e22dd)
@@ -514,37 +186,12 @@ Text item=ku_climate_temperature
 Text item=ku_climate_humidity
 Text item=ku_climate_battery
 }
-Frame label="KU Light Button (Spuele) (0x680ae2fffeaf18d4)" {
-// KU Light Button (Spuele) (0x680ae2fffeaf18d4)
-// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
-Text item=ku_light_switch_spule_lowbatt
-Text item=ku_light_switch_spule_ota
-Text item=ku_light_switch_spule_link
-Text item=ku_light_switch_spule_battery
-}
 Frame label="KU Light Arbeit (0xec1bbdfffea37757)" {
 // KU Light Arbeit (0xec1bbdfffea37757)
 // Lidl Silvercrest smart plug (EU, CH, FR, BS, DK) (HG06337) / https://www.zigbee2mqtt.io/devices/HG06337.html
 Text item=ku_light_arbeitplatte_ota
 Text item=ku_light_arbeitplatte_link
 Switch item=ku_light_arbeitplatte_sw
-}
-Frame label="KU Light Table SW (0x04cd15fffe789098)" {
-// KU Light Table SW (0x04cd15fffe789098)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=ku_light_table_switch_dim
-Text item=ku_light_table_switch_lowbatt
-Text item=ku_light_table_switch_ota
-Text item=ku_light_table_switch_link
-Text item=ku_light_table_switch_battery
-}
-Frame label="KU Light Table (0xec1bbdfffe4695b5)" {
-// KU Light Table (0xec1bbdfffe4695b5)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
-Slider item=ku_light_table_dim
-Text item=ku_light_table_ota
-Text item=ku_light_table_link
-Switch item=ku_light_table_sw
 }
 Frame label="KU Light SW (0xa4c138c9dd85a675)" {
 // KU Light SW (0xa4c138c9dd85a675)
@@ -564,39 +211,6 @@ Text item=ku_window_door_activity
 Text item=ku_window_door_contact
 Text item=ku_window_door_battery
 }
-Frame label="Kitchen leak (0xb0c7defffe640add)" {
-// Kitchen leak (0xb0c7defffe640add)
-// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Text item=ku_leak_lowbatt
-Text item=ku_leak_ota
-Text item=ku_leak_link
-Text item=ku_leak_activity
-Text item=ku_leak_leak
-Text item=ku_leak_battery
-}
-Frame label="KU up power (0x6cfd22fffe1a4e35)" {
-// KU up power (0x6cfd22fffe1a4e35)
-// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Text item=ku_up_power_ota
-Text item=ku_up_power_link
-Switch item=ku_up_power_sw
-Text item=ku_up_power_ac_voltage
-Text item=ku_up_power_ac_current
-Text item=ku_up_power_ac_power
-Text item=ku_up_power_ac_energy
-}
-Frame label="KU Cat Feeder motion (0x94a081fffe57e936)" {
-// KU Cat Feeder motion (0x94a081fffe57e936)
-// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
-Text item=ku_cat_feeder_motion_lowbatt
-Text item=ku_cat_feeder_motion_ota
-Text item=ku_cat_feeder_motion_link
-Text item=ku_cat_feeder_motion_activity
-Text item=ku_cat_feeder_motion_occupancy
-Text item=ku_cat_feeder_motion_illuminance_lux
-Text item=ku_cat_feeder_motion_illuminance
-Text item=ku_cat_feeder_motion_battery
-}
 Frame label="Treppe Door sensor (0xccccccfffed82b91)" {
 // Treppe Door sensor (0xccccccfffed82b91)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -606,32 +220,6 @@ Text item=tr_door_sensor_link
 Text item=tr_door_sensor_activity
 Text item=tr_door_sensor_contact
 Text item=tr_door_sensor_battery
-}
-Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
-// Treppe Up switch (0x680ae2fffe1a92f3)
-// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
-Text item=tr_up_switch_lowbatt
-Text item=tr_up_switch_ota
-Text item=tr_up_switch_link
-Text item=tr_up_switch_battery
-}
-Frame label="Treppe Down switch (0x04cd15fffe75c518)" {
-// Treppe Down switch (0x04cd15fffe75c518)
-// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
-Text item=tr_down_switch_dim
-Text item=tr_down_switch_lowbatt
-Text item=tr_down_switch_ota
-Text item=tr_down_switch_link
-Text item=tr_down_switch_battery
-}
-Frame label="Treppe Up light (0xd0cf5efffee892b0)" {
-// Treppe Up light (0xd0cf5efffee892b0)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
-Slider item=tr_up_light_dim
-Slider item=tr_up_light_ct
-Text item=tr_up_light_ota
-Text item=tr_up_light_link
-Switch item=tr_up_light_sw
 }
 Frame label="Treppe Down light (0x04cd15fffedb31f7)" {
 // Treppe Down light (0x04cd15fffedb31f7)
@@ -643,16 +231,6 @@ Text item=tr_down_light_color_mode
 Text item=tr_down_light_ota
 Text item=tr_down_light_link
 Switch item=tr_down_light_sw
-}
-Frame label="Treppe motion (0xbc33acfffe872049)" {
-// Treppe motion (0xbc33acfffe872049)
-// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
-Text item=tr_motion_lowbatt
-Text item=tr_motion_ota
-Text item=tr_motion_link
-Text item=tr_motion_activity
-Text item=tr_motion_occupancy
-Text item=tr_motion_battery
 }
 Frame label="Treppe climate (0xa4c1383cc92cbbd2)" {
 // Treppe climate (0xa4c1383cc92cbbd2)
@@ -674,16 +252,6 @@ Text item=kg_window_1_link
 Text item=kg_window_1_activity
 Text item=kg_window_1_contact
 Text item=kg_window_1_battery
-}
-Frame label="KG Window (Hobbyraum) (0x6cfd22fffeb63428)" {
-// KG Window (Hobbyraum) (0x6cfd22fffeb63428)
-// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
-Text item=kg_window_2_lowbatt
-Text item=kg_window_2_ota
-Text item=kg_window_2_link
-Text item=kg_window_2_activity
-Text item=kg_window_2_contact
-Text item=kg_window_2_battery
 }
 Frame label="KG Cabinet door (0xa4c138312d2c455f)" {
 // KG Cabinet door (0xa4c138312d2c455f)
@@ -962,6 +530,407 @@ Text item=main_power_ac_energy
 }
 }
 Text label="Z2M ikea" {
+Frame label="Balkon light 1 (0x14b457fffe399241)" {
+// Balkon light 1 (0x14b457fffe399241)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Slider item=bk_light_1_dim
+Slider item=bk_light_1_ct
+Text item=bk_light_1_ota
+Text item=bk_light_1_link
+Switch item=bk_light_1_sw
+}
+Frame label="Balkon light 2 (0xb0c7defffe411c6f)" {
+// Balkon light 2 (0xb0c7defffe411c6f)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Slider item=bk_light_2_dim
+Slider item=bk_light_2_ct
+Text item=bk_light_2_ota
+Text item=bk_light_2_link
+Switch item=bk_light_2_sw
+}
+Frame label="BK Color light (0x08b95ffffe335fe2)" {
+// BK Color light (0x08b95ffffe335fe2)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Text item=bk_color_light_ota
+Text item=bk_color_light_link
+Switch item=bk_color_light_sw
+}
+Frame label="EG Decor light (0x9035eafffe20e847)" {
+// EG Decor light (0x9035eafffe20e847)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=eg_decoration_light_dim
+Text item=eg_decoration_light_ota
+Text item=eg_decoration_light_link
+Switch item=eg_decoration_light_sw
+}
+Frame label="Comode remote (0x04e3e5fffe02fbd6)" {
+// Comode remote (0x04e3e5fffe02fbd6)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=fl_comode_remote_dim
+Text item=fl_comode_remote_lowbatt
+Text item=fl_comode_remote_ota
+Text item=fl_comode_remote_link
+Text item=fl_comode_remote_battery
+}
+Frame label="Entrance Door remote (0x1c34f1fffe830517)" {
+// Entrance Door remote (0x1c34f1fffe830517)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=fl_door_remote_dim
+Text item=fl_door_remote_lowbatt
+Text item=fl_door_remote_ota
+Text item=fl_door_remote_link
+Text item=fl_door_remote_battery
+}
+Frame label="Mirror remote (0xb43522fffe7939b3)" {
+// Mirror remote (0xb43522fffe7939b3)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=fl_mirror_remote_dim
+Text item=fl_mirror_remote_lowbatt
+Text item=fl_mirror_remote_ota
+Text item=fl_mirror_remote_link
+Text item=fl_mirror_remote_battery
+}
+Frame label="Entrance mirror (0x90ab96fffe52f8fa)" {
+// Entrance mirror (0x90ab96fffe52f8fa)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Slider item=fl_mirror_dim
+Text item=fl_mirror_ota
+Text item=fl_mirror_link
+Switch item=fl_mirror_sw
+}
+Frame label="BZ Mirror switch (0xccccccfffef0356e)" {
+// BZ Mirror switch (0xccccccfffef0356e)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=bz_mirror_switch_lowbatt
+Text item=bz_mirror_switch_ota
+Text item=bz_mirror_switch_link
+Text item=bz_mirror_switch_battery
+}
+Frame label="BZ Light Control (0x003c84fffe132b20)" {
+// BZ Light Control (0x003c84fffe132b20)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=bz_light_switch_dim
+Text item=bz_light_switch_lowbatt
+Text item=bz_light_switch_ota
+Text item=bz_light_switch_link
+Text item=bz_light_switch_battery
+}
+Frame label="BZ Window R (0x048727fffe9cf022)" {
+// BZ Window R (0x048727fffe9cf022)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=bz_window_r_lowbatt
+Text item=bz_window_r_ota
+Text item=bz_window_r_link
+Text item=bz_window_r_activity
+Text item=bz_window_r_contact
+Text item=bz_window_r_battery
+}
+Frame label="BZ Towel Heater (0x6cfd22fffe1cb2bc)" {
+// BZ Towel Heater (0x6cfd22fffe1cb2bc)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=bz_towel_heater_ota
+Text item=bz_towel_heater_link
+Switch item=bz_towel_heater_sw
+Text item=bz_towel_heater_ac_voltage
+Text item=bz_towel_heater_ac_current
+Text item=bz_towel_heater_ac_power
+Text item=bz_towel_heater_ac_energy
+}
+Frame label="BZ leak (0x8c65a3fffe70093b)" {
+// BZ leak (0x8c65a3fffe70093b)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=bz_leak_lowbatt
+Text item=bz_leak_ota
+Text item=bz_leak_link
+Text item=bz_leak_activity
+Text item=bz_leak_leak
+Text item=bz_leak_battery
+}
+Frame label="KS Night lamp (0x14b457fffe6383e5)" {
+// KS Night lamp (0x14b457fffe6383e5)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
+Slider item=ks_light_night_dim
+Slider item=ks_light_night_ct
+Colorpicker item=ks_light_night_color
+Text item=ks_light_night_color_mode
+Text item=ks_light_night_ota
+Text item=ks_light_night_link
+Switch item=ks_light_night_sw
+}
+Frame label="KS Projector (0x94a081fffe5f9218)" {
+// KS Projector (0x94a081fffe5f9218)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Text item=ks_projector_power_ota
+Text item=ks_projector_power_link
+Switch item=ks_projector_power_sw
+}
+Frame label="KS Main remote (0x9035eafffee1ba1d)" {
+// KS Main remote (0x9035eafffee1ba1d)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=ks_light_switch_dim
+Text item=ks_light_switch_lowbatt
+Text item=ks_light_switch_ota
+Text item=ks_light_switch_link
+Text item=ks_light_switch_battery
+}
+Frame label="Living main remote (0x003c84fffe16f988)" {
+// Living main remote (0x003c84fffe16f988)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=wz_up_remote_dim
+Text item=wz_up_remote_lowbatt
+Text item=wz_up_remote_ota
+Text item=wz_up_remote_link
+Text item=wz_up_remote_battery
+}
+Frame label="WZ Julia stand (0x5cc7c1fffe4c4a46)" {
+// WZ Julia stand (0x5cc7c1fffe4c4a46)
+// TRADFRI LED bulb E14/E26/E27 600 lumen, dimmable, color, opal white (ebay) / https://www.zigbee2mqtt.io/devices/LED1624G9.html
+Slider item=wz_julia_stand_light_dim
+Slider item=wz_julia_stand_light_ct
+Colorpicker item=wz_julia_stand_light_color
+Text item=wz_julia_stand_light_color_mode
+Text item=wz_julia_stand_light_ota
+Text item=wz_julia_stand_light_link
+Switch item=wz_julia_stand_light_sw
+}
+Frame label="WZ Julia desktop (0xec1bbdfffe1b89d1)" {
+// WZ Julia desktop (0xec1bbdfffe1b89d1)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Slider item=wz_julia_desktop_light_dim
+Slider item=wz_julia_desktop_light_ct
+Text item=wz_julia_desktop_light_ota
+Text item=wz_julia_desktop_light_link
+Switch item=wz_julia_desktop_light_sw
+}
+Frame label="WZ Julia remote (0x1c34f1fffe7ccde1)" {
+// WZ Julia remote (0x1c34f1fffe7ccde1)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=wz_julia_remote_dim
+Text item=wz_julia_remote_lowbatt
+Text item=wz_julia_remote_ota
+Text item=wz_julia_remote_link
+Text item=wz_julia_remote_battery
+}
+Frame label="WZ Decor lamp 1 (0xec1bbdfffe972819)" {
+// WZ Decor lamp 1 (0xec1bbdfffe972819)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=wz_declamp_1_dim
+Text item=wz_declamp_1_ota
+Text item=wz_declamp_1_link
+Switch item=wz_declamp_1_sw
+}
+Frame label="WZ Decor lamp 2 (0xec1bbdfffe972203)" {
+// WZ Decor lamp 2 (0xec1bbdfffe972203)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=wz_declamp_2_dim
+Text item=wz_declamp_2_ota
+Text item=wz_declamp_2_link
+Switch item=wz_declamp_2_sw
+}
+Frame label="WZ Decor lamp 3 (0xec1bbdfffe91007b)" {
+// WZ Decor lamp 3 (0xec1bbdfffe91007b)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=wz_declamp_3_dim
+Text item=wz_declamp_3_ota
+Text item=wz_declamp_3_link
+Switch item=wz_declamp_3_sw
+}
+Frame label="WZ Plants light (0x94ec32fffe1f54d0)" {
+// WZ Plants light (0x94ec32fffe1f54d0)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Text item=wz_plant_light_ota
+Text item=wz_plant_light_link
+Switch item=wz_plant_light_sw
+}
+Frame label="SZ Main remote (0xb4e3f9fffeb35529)" {
+// SZ Main remote (0xb4e3f9fffeb35529)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=sz_up_remote_dim
+Text item=sz_up_remote_lowbatt
+Text item=sz_up_remote_ota
+Text item=sz_up_remote_link
+Text item=sz_up_remote_battery
+}
+Frame label="SZ door bedlight remote (0xccccccfffee401f8)" {
+// SZ door bedlight remote (0xccccccfffee401f8)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=sz_door_bed_remote_lowbatt
+Text item=sz_door_bed_remote_ota
+Text item=sz_door_bed_remote_link
+Text item=sz_door_bed_remote_battery
+}
+Frame label="SZ remote L (0x94deb8fffea8a1f9)" {
+// SZ remote L (0x94deb8fffea8a1f9)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=sz_bed_l_remote_dim
+Text item=sz_bed_l_remote_lowbatt
+Text item=sz_bed_l_remote_ota
+Text item=sz_bed_l_remote_link
+Text item=sz_bed_l_remote_battery
+}
+Frame label="SZ remote R (0x540f57fffe1e420c)" {
+// SZ remote R (0x540f57fffe1e420c)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=sz_bed_r_remote_dim
+Text item=sz_bed_r_remote_lowbatt
+Text item=sz_bed_r_remote_ota
+Text item=sz_bed_r_remote_link
+Text item=sz_bed_r_remote_battery
+}
+Frame label="SZ Bedside drawler (0x287681fffe95cba4)" {
+// SZ Bedside drawler (0x287681fffe95cba4)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Slider item=sz_bedside_drawler_light_dim
+Text item=sz_bedside_drawler_light_ota
+Text item=sz_bedside_drawler_light_link
+Switch item=sz_bedside_drawler_light_sw
+}
+Frame label="SZ Cabinet (0x0cae5ffffea07d0d)" {
+// SZ Cabinet (0x0cae5ffffea07d0d)
+// IKEA TRADFRI driver for wireless control / https://www.zigbee2mqtt.io/devices/ICPSHC24-10EU-IL-1.html
+Slider item=sz_cabinet_light_dim
+Text item=sz_cabinet_light_ota
+Text item=sz_cabinet_light_link
+Switch item=sz_cabinet_light_sw
+}
+Frame label="SZ Bed L (0x9035eafffe93bfc6)" {
+// SZ Bed L (0x9035eafffe93bfc6)
+// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
+Slider item=sz_bed_light_l_dim
+Slider item=sz_bed_light_l_ct
+Text item=sz_bed_light_l_ota
+Text item=sz_bed_light_l_link
+Switch item=sz_bed_light_l_sw
+}
+Frame label="SZ Bed R (0x94deb8fffeda7949)" {
+// SZ Bed R (0x94deb8fffeda7949)
+// TRADFRI bulb E12/E14 WS globe 450/470 lumen, dimmable, white spectrum, opal white / https://www.zigbee2mqtt.io/devices/LED2101G4.html
+Slider item=sz_bed_light_r_dim
+Slider item=sz_bed_light_r_ct
+Text item=sz_bed_light_r_ota
+Text item=sz_bed_light_r_link
+Switch item=sz_bed_light_r_sw
+}
+Frame label="SZ Window L (0xd44867fffed2e67c)" {
+// SZ Window L (0xd44867fffed2e67c)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=sz_window_l_lowbatt
+Text item=sz_window_l_ota
+Text item=sz_window_l_link
+Text item=sz_window_l_activity
+Text item=sz_window_l_contact
+Text item=sz_window_l_battery
+}
+Frame label="SZ Window R (0x3c2ef5fffe41fc77)" {
+// SZ Window R (0x3c2ef5fffe41fc77)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=sz_window_r_lowbatt
+Text item=sz_window_r_ota
+Text item=sz_window_r_link
+Text item=sz_window_r_activity
+Text item=sz_window_r_contact
+Text item=sz_window_r_battery
+}
+Frame label="SZ Bed power (0x6cfd22fffe1a2043)" {
+// SZ Bed power (0x6cfd22fffe1a2043)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=sz_bed_power_ota
+Text item=sz_bed_power_link
+Switch item=sz_bed_power_sw
+Text item=sz_bed_power_ac_voltage
+Text item=sz_bed_power_ac_current
+Text item=sz_bed_power_ac_power
+Text item=sz_bed_power_ac_energy
+}
+Frame label="SZ TV power (0x8c8b48fffe0ef9ed)" {
+// SZ TV power (0x8c8b48fffe0ef9ed)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Text item=sz_tv_power_ota
+Text item=sz_tv_power_link
+Switch item=sz_tv_power_sw
+}
+Frame label="KU Light Button (Spuele) (0x680ae2fffeaf18d4)" {
+// KU Light Button (Spuele) (0x680ae2fffeaf18d4)
+// IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
+Text item=ku_light_switch_spule_lowbatt
+Text item=ku_light_switch_spule_ota
+Text item=ku_light_switch_spule_link
+Text item=ku_light_switch_spule_battery
+}
+Frame label="KU Light Table SW (0x04cd15fffe789098)" {
+// KU Light Table SW (0x04cd15fffe789098)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=ku_light_table_switch_dim
+Text item=ku_light_table_switch_lowbatt
+Text item=ku_light_table_switch_ota
+Text item=ku_light_table_switch_link
+Text item=ku_light_table_switch_battery
+}
+Frame label="KU Light Table (0xec1bbdfffe4695b5)" {
+// KU Light Table (0xec1bbdfffe4695b5)
+// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+Slider item=ku_light_table_dim
+Text item=ku_light_table_ota
+Text item=ku_light_table_link
+Switch item=ku_light_table_sw
+}
+Frame label="Kitchen leak (0xb0c7defffe640add)" {
+// Kitchen leak (0xb0c7defffe640add)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=ku_leak_lowbatt
+Text item=ku_leak_ota
+Text item=ku_leak_link
+Text item=ku_leak_activity
+Text item=ku_leak_leak
+Text item=ku_leak_battery
+}
+Frame label="KU up power (0x6cfd22fffe1a4e35)" {
+// KU up power (0x6cfd22fffe1a4e35)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=ku_up_power_ota
+Text item=ku_up_power_link
+Switch item=ku_up_power_sw
+Text item=ku_up_power_ac_voltage
+Text item=ku_up_power_ac_current
+Text item=ku_up_power_ac_power
+Text item=ku_up_power_ac_energy
+}
+Frame label="Treppe Up switch (0x680ae2fffe1a92f3)" {
+// Treppe Up switch (0x680ae2fffe1a92f3)
+// IKEA TRADFRI ON/OFF switch (E1743) / https://www.zigbee2mqtt.io/devices/E1743.html
+Text item=tr_up_switch_lowbatt
+Text item=tr_up_switch_ota
+Text item=tr_up_switch_link
+Text item=tr_up_switch_battery
+}
+Frame label="Treppe Down switch (0x04cd15fffe75c518)" {
+// Treppe Down switch (0x04cd15fffe75c518)
+// IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
+Text item=tr_down_switch_dim
+Text item=tr_down_switch_lowbatt
+Text item=tr_down_switch_ota
+Text item=tr_down_switch_link
+Text item=tr_down_switch_battery
+}
+Frame label="Treppe Up light (0xd0cf5efffee892b0)" {
+// Treppe Up light (0xd0cf5efffee892b0)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+Slider item=tr_up_light_dim
+Slider item=tr_up_light_ct
+Text item=tr_up_light_ota
+Text item=tr_up_light_link
+Switch item=tr_up_light_sw
+}
+Frame label="Treppe motion (0xbc33acfffe872049)" {
+// Treppe motion (0xbc33acfffe872049)
+// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Text item=tr_motion_lowbatt
+Text item=tr_motion_ota
+Text item=tr_motion_link
+Text item=tr_motion_activity
+Text item=tr_motion_occupancy
+Text item=tr_motion_battery
+}
 Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {
 // Petro Desktop remote (0x000d6ffffee8357d)
 // IKEA TRADFRI remote control (E1524/E1810) / https://www.zigbee2mqtt.io/devices/E1524_E1810.html
@@ -1030,6 +999,16 @@ Frame label="KG Hobbyraum (Work light) (0x00be44fffea95063)" {
 Text item=kg_main1_work_light_ota
 Text item=kg_main1_work_light_link
 Switch item=kg_main1_work_light_sw
+}
+Frame label="KG Window (Hobbyraum) (0x6cfd22fffeb63428)" {
+// KG Window (Hobbyraum) (0x6cfd22fffeb63428)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=kg_window_2_lowbatt
+Text item=kg_window_2_ota
+Text item=kg_window_2_link
+Text item=kg_window_2_activity
+Text item=kg_window_2_contact
+Text item=kg_window_2_battery
 }
 Frame label="SRV power (0x6cfd22fffe1a1af2)" {
 // SRV power (0x6cfd22fffe1a1af2)

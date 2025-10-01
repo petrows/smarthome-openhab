@@ -7,45 +7,25 @@
 // ==========================================
 
 
-var Timer bk_light_1_ct_timer
-var Timer bk_light_2_ct_timer
 var Timer bz_light_1_ct_timer
 var Timer bz_light_2_ct_timer
 var Timer ks_up_light_ct_timer
 var Timer wz_up_light_ct_timer
-var Timer wz_julia_stand_light_ct_timer
-var Timer wz_julia_desktop_light_ct_timer
 var Timer wz_light_color_ct_timer
 var Timer sz_up_light_ct_timer
+var Timer tr_down_light_ct_timer
+var Timer bk_light_1_ct_timer
+var Timer bk_light_2_ct_timer
+var Timer wz_julia_stand_light_ct_timer
+var Timer wz_julia_desktop_light_ct_timer
 var Timer sz_bed_light_l_ct_timer
 var Timer sz_bed_light_r_ct_timer
 var Timer tr_up_light_ct_timer
-var Timer tr_down_light_ct_timer
 var Timer desktop_petro_up_light_1_ct_timer
 var Timer desktop_petro_up_light_2_ct_timer
 var Timer desktop_petro_up_light_3_ct_timer
 var Timer desktop_petro_light_ct_timer
 // ----------------------------
-// Device should apply saved color temp when ON
-rule "Balkon light 1 apply color on ON"
-when
-    Item bk_light_1_sw changed to ON
-then
-    val ct_set = (bk_light_1_ct.state as Number).intValue
-    bk_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
-        bk_light_1_ct.sendCommand(ct_set)
-    ])
-end
-// Device should apply saved color temp when ON
-rule "Balkon light 2 apply color on ON"
-when
-    Item bk_light_2_sw changed to ON
-then
-    val ct_set = (bk_light_2_ct.state as Number).intValue
-    bk_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
-        bk_light_2_ct.sendCommand(ct_set)
-    ])
-end
 // Device should apply saved color temp when ON
 rule "BZ Light (toilet) apply color on ON"
 when
@@ -139,30 +119,6 @@ then
     ])
 end
 // Device should apply saved color temp when ON
-rule "WZ Julia stand apply color on ON"
-when
-    Item wz_julia_stand_light_sw changed to ON
-then
-    val ct_set = (wz_julia_stand_light_ct.state as Number).intValue
-    wz_julia_stand_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        // Item with RGB: do not reset RGB color while ON
-        if (wz_julia_stand_light_color_mode.state == "xy") {
-            return
-        }
-        wz_julia_stand_light_ct.sendCommand(ct_set)
-    ])
-end
-// Device should apply saved color temp when ON
-rule "WZ Julia desktop apply color on ON"
-when
-    Item wz_julia_desktop_light_sw changed to ON
-then
-    val ct_set = (wz_julia_desktop_light_ct.state as Number).intValue
-    wz_julia_desktop_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        wz_julia_desktop_light_ct.sendCommand(ct_set)
-    ])
-end
-// Device should apply saved color temp when ON
 rule "WZ Color Decor apply color on ON"
 when
     Item wz_light_color_sw changed to ON
@@ -209,36 +165,6 @@ then
     ])
 end
 // Device should apply saved color temp when ON
-rule "SZ Bed L apply color on ON"
-when
-    Item sz_bed_light_l_sw changed to ON
-then
-    val ct_set = (sz_bed_light_l_ct.state as Number).intValue
-    sz_bed_light_l_ct_timer = createTimer(now.plusSeconds(1), [ |
-        sz_bed_light_l_ct.sendCommand(ct_set)
-    ])
-end
-// Device should apply saved color temp when ON
-rule "SZ Bed R apply color on ON"
-when
-    Item sz_bed_light_r_sw changed to ON
-then
-    val ct_set = (sz_bed_light_r_ct.state as Number).intValue
-    sz_bed_light_r_ct_timer = createTimer(now.plusSeconds(1), [ |
-        sz_bed_light_r_ct.sendCommand(ct_set)
-    ])
-end
-// Device should apply saved color temp when ON
-rule "Treppe Up light apply color on ON"
-when
-    Item tr_up_light_sw changed to ON
-then
-    val ct_set = (tr_up_light_ct.state as Number).intValue
-    tr_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
-        tr_up_light_ct.sendCommand(ct_set)
-    ])
-end
-// Device should apply saved color temp when ON
 rule "Treppe Down light apply color on ON"
 when
     Item tr_down_light_sw changed to ON
@@ -273,6 +199,80 @@ then
         val mq = getActions("mqtt","mqtt:broker:openhab")
         mq.publishMQTT("zigbee2mqtt/tr_down_light/get","{\"state\":\"\"}")
     }
+end
+// Device should apply saved color temp when ON
+rule "Balkon light 1 apply color on ON"
+when
+    Item bk_light_1_sw changed to ON
+then
+    val ct_set = (bk_light_1_ct.state as Number).intValue
+    bk_light_1_ct_timer = createTimer(now.plusSeconds(1), [ |
+        bk_light_1_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "Balkon light 2 apply color on ON"
+when
+    Item bk_light_2_sw changed to ON
+then
+    val ct_set = (bk_light_2_ct.state as Number).intValue
+    bk_light_2_ct_timer = createTimer(now.plusSeconds(1), [ |
+        bk_light_2_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "WZ Julia stand apply color on ON"
+when
+    Item wz_julia_stand_light_sw changed to ON
+then
+    val ct_set = (wz_julia_stand_light_ct.state as Number).intValue
+    wz_julia_stand_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        // Item with RGB: do not reset RGB color while ON
+        if (wz_julia_stand_light_color_mode.state == "xy") {
+            return
+        }
+        wz_julia_stand_light_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "WZ Julia desktop apply color on ON"
+when
+    Item wz_julia_desktop_light_sw changed to ON
+then
+    val ct_set = (wz_julia_desktop_light_ct.state as Number).intValue
+    wz_julia_desktop_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        wz_julia_desktop_light_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "SZ Bed L apply color on ON"
+when
+    Item sz_bed_light_l_sw changed to ON
+then
+    val ct_set = (sz_bed_light_l_ct.state as Number).intValue
+    sz_bed_light_l_ct_timer = createTimer(now.plusSeconds(1), [ |
+        sz_bed_light_l_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "SZ Bed R apply color on ON"
+when
+    Item sz_bed_light_r_sw changed to ON
+then
+    val ct_set = (sz_bed_light_r_ct.state as Number).intValue
+    sz_bed_light_r_ct_timer = createTimer(now.plusSeconds(1), [ |
+        sz_bed_light_r_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "Treppe Up light apply color on ON"
+when
+    Item tr_up_light_sw changed to ON
+then
+    val ct_set = (tr_up_light_ct.state as Number).intValue
+    tr_up_light_ct_timer = createTimer(now.plusSeconds(1), [ |
+        tr_up_light_ct.sendCommand(ct_set)
+    ])
 end
 // Device should apply saved color temp when ON
 rule "Petro Desktop up light 1 apply color on ON"

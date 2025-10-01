@@ -1,5 +1,15 @@
 '0x000d6ffffee8357d':
   friendly_name: desktop_petro_remote
+'0x003c84fffe132b20':
+  friendly_name: bz_light_switch
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x003c84fffe16f988':
+  friendly_name: wz_up_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0x00be44fffea95063':
   friendly_name: kg_main1_work_light
 '0x040d84fffec53aaf':
@@ -10,6 +20,8 @@
   friendly_name: mouse_trap_3
 '0x048727fffe9cc0fb':
   friendly_name: kg_lager1_door
+'0x048727fffe9cf022':
+  friendly_name: bz_window_r
 '0x048727fffe9d1259':
   friendly_name: mouse_trap_2
 '0x048727fffea43740':
@@ -20,27 +32,143 @@
   friendly_name: desktop_petro_up_light_2
 '0x04cd15fffe73ecb6':
   friendly_name: desktop_petro_up_light_3
+'0x04cd15fffe75c518':
+  friendly_name: tr_down_switch
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x04cd15fffe789098':
+  friendly_name: ku_light_table_switch
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x04e3e5fffe02fbd6':
+  friendly_name: fl_comode_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x08b95ffffe335fe2':
+  friendly_name: bk_color_light
+'0x0cae5ffffea07d0d':
+  friendly_name: sz_cabinet_light
+'0x14b457fffe399241':
+  friendly_name: bk_light_1
+'0x14b457fffe6383e5':
+  friendly_name: ks_light_night
+'0x1c34f1fffe7ccde1':
+  friendly_name: wz_julia_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x1c34f1fffe830517':
+  friendly_name: fl_door_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x287681fffe95cba4':
+  friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':
   friendly_name: desktop_petro_laptop_power
+'0x3c2ef5fffe41fc77':
+  friendly_name: sz_window_r
+'0x540f57fffe1e420c':
+  friendly_name: sz_bed_r_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x5cc7c1fffe4c4a46':
+  friendly_name: wz_julia_stand_light
+'0x680ae2fffe1a92f3':
+  friendly_name: tr_up_switch
+'0x680ae2fffeaf18d4':
+  friendly_name: ku_light_switch_spule
 '0x6cfd22fffe1a1af2':
   friendly_name: kg_srv_power
+'0x6cfd22fffe1a2043':
+  friendly_name: sz_bed_power
 '0x6cfd22fffe1a433d':
   friendly_name: desktop_petro_power
+'0x6cfd22fffe1a4e35':
+  friendly_name: ku_up_power
 '0x6cfd22fffe1c54d8':
   friendly_name: srv_leak
 '0x6cfd22fffe1c82d4':
   friendly_name: kg_lager4_leak
+'0x6cfd22fffe1cb2bc':
+  friendly_name: bz_towel_heater
+'0x6cfd22fffeb63428':
+  friendly_name: kg_window_2
+'0x8c65a3fffe70093b':
+  friendly_name: bz_leak
+'0x8c8b48fffe0ef9ed':
+  friendly_name: sz_tv_power
 '0x8c8b48fffe226767':
   friendly_name: hz_wasser_leak
+'0x9035eafffe20e847':
+  friendly_name: eg_decoration_light
+'0x9035eafffe93bfc6':
+  friendly_name: sz_bed_light_l
+'0x9035eafffee1ba1d':
+  friendly_name: ks_light_switch
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x90ab96fffe52f8fa':
+  friendly_name: fl_mirror
+'0x94a081fffe5f9218':
+  friendly_name: ks_projector_power
+'0x94deb8fffea8a1f9':
+  friendly_name: sz_bed_l_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0x94deb8fffeda7949':
+  friendly_name: sz_bed_light_r
+'0x94ec32fffe1f54d0':
+  friendly_name: wz_plant_light
 '0x94ec32fffe1f762d':
   friendly_name: lg3_washmachine
 '0x94ec32fffe202672':
   friendly_name: octoprint_power
+'0xb0c7defffe411c6f':
+  friendly_name: bk_light_2
+'0xb0c7defffe640add':
+  friendly_name: ku_leak
 '0xb43522fffe790ebe':
   friendly_name: kg_lager4_switch
+'0xb43522fffe7939b3':
+  friendly_name: fl_mirror_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
+'0xb4e3f9fffeb35529':
+  friendly_name: sz_up_remote
+  simulated_brightness:
+    delta: 5
+    interval: 100
 '0xbc33acfffe84ca1e':
   friendly_name: kg_lager4_motion
+'0xbc33acfffe872049':
+  friendly_name: tr_motion
 '0xccccccfffedf345a':
   friendly_name: kg_lager4_1_light
+'0xccccccfffee401f8':
+  friendly_name: sz_door_bed_remote
+'0xccccccfffef0356e':
+  friendly_name: bz_mirror_switch
+'0xd0cf5efffee892b0':
+  friendly_name: tr_up_light
+'0xd44867fffed2e67c':
+  friendly_name: sz_window_l
+'0xec1bbdfffe1b89d1':
+  friendly_name: wz_julia_desktop_light
+'0xec1bbdfffe4695b5':
+  friendly_name: ku_light_table
+'0xec1bbdfffe91007b':
+  friendly_name: wz_declamp_3
+'0xec1bbdfffe972203':
+  friendly_name: wz_declamp_2
+'0xec1bbdfffe972819':
+  friendly_name: wz_declamp_1
 '0xec1bbdfffe9abfde':
   friendly_name: kg_lager4_2_light

@@ -3,64 +3,12 @@ config:
   mqtt_topic: zigbee2mqtt
 
 devices:
-  - name: Sturbar test
-    id: sturbar_test
-    zigbee_id: '0x04cd15fffe6d57dc'
-    type: IKEA_TRADFRI_STYRBAR
-
   - name: Outside Climate
     id: ext_climate
     type: TASMOTA_PWS_ROOM_SENSOR_V2_NOCO2
     y2m:
       name: Климат
       room: OUTSIDE
-
-  - name: Balkon light 1
-    id: bk_light_1
-    zigbee_id: '0x14b457fffe399241'
-    type: IKEA_TRADFRI_LAMP_CT_1000
-    groups:
-      sw:
-      - all_light
-      - bk_light_sw
-      - bk_up_light_sw
-      dim:
-      - bk_light_dim
-      - bk_up_light_dim
-      ct:
-      - bk_light_ct
-      - bk_up_light_ct
-
-  - name: Balkon light 2
-    id: bk_light_2
-    zigbee_id: '0xb0c7defffe411c6f'
-    type: IKEA_TRADFRI_LAMP_CT_1000
-    groups:
-      sw:
-      - all_light
-      - bk_light_sw
-      - bk_up_light_sw
-      dim:
-      - bk_light_dim
-      - bk_up_light_dim
-      ct:
-      - bk_light_ct
-      - bk_up_light_ct
-
-  - name: BK Color light
-    id: bk_color_light
-    zigbee_id: '0x08b95ffffe335fe2'
-    type: IKEA_TRETAKT
-    y2m:
-      type: Light
-      subtype: LIGHT.SW
-      name: Декоративный
-      room: BALKON
-    groups:
-      sw:
-      - all_light
-      - all_christmas_light
-      - bk_light_sw
 
 # CORRIDOR ===============================
 
@@ -77,27 +25,6 @@ devices:
       - eg_light
       - fl_light
 
-  - name: EG Decor light
-    id: eg_decoration_light
-    zigbee_id: '0x9035eafffe20e847'
-    type: IKEA_TRADFRI_LAMP_W_250
-    y2m:
-      name: Комод
-      room: LOBBY
-    groups:
-      sw:
-      - all_light
-      - eg_light
-      - eg_light_auto
-      - fl_light
-      dim:
-      - eg_light_auto_dim
-
-  - name: Comode remote
-    id: fl_comode_remote
-    zigbee_id: '0x04e3e5fffe02fbd6'
-    type: IKEA_TRADFRI_STYRBAR
-
   - name: Entrance Door sensor
     id: eg_main_door
     zigbee_id: '0xa4c138182f60d651'
@@ -105,34 +32,6 @@ devices:
     y2m:
       name: Входная дверь
       room: LOBBY
-
-  - name: Entrance Door remote
-    id: fl_door_remote
-    zigbee_id: '0x1c34f1fffe830517'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: Mirror remote
-    id: fl_mirror_remote
-    zigbee_id: '0xb43522fffe7939b3'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: Entrance mirror
-    id: fl_mirror
-    zigbee_id: '0x90ab96fffe52f8fa'
-    type: IKEA_TRADFRI_LED_DRIVER
-    # Driver is a bit overloaded, LED gets 1.5 A @ 24V,
-    # and driver has 30W max, so max power is limited
-    dim_max: 220
-    # Do not allow run too much
-    expire: 30m
-    y2m:
-      name: Зеркало
-      room: LOBBY
-    groups:
-      sw:
-      - all_light
-      - eg_light
-      - fl_light
 
 # WC =====================================
 
@@ -201,36 +100,6 @@ devices:
           - eg_light
           - bz_light
 
-  - name: BZ Mirror switch
-    id: bz_mirror_switch
-    zigbee_id: '0xccccccfffef0356e'
-    type: IKEA_TRADFRI_ON_OFF
-
-  - name: BZ Light Control
-    id: bz_light_switch
-    zigbee_id: '0x003c84fffe132b20'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: BZ Window R
-    id: bz_window_r
-    zigbee_id: '0x048727fffe9cf022'
-    type: IKEA_PARASOLL
-    groups:
-      contact:
-        - bz_windows_contact
-
-  - name: BZ Towel Heater
-    id: bz_towel_heater
-    zigbee_id: '0x6cfd22fffe1cb2bc'
-    type: IKEA_INSPELNING
-    # Do not allow too much to heat
-    expire: 90m
-
-  - name: BZ leak
-    id: bz_leak
-    zigbee_id: '0x8c65a3fffe70093b'
-    type: IKEA_BADRING
-
 # THEATER ================================
 
   - name: KS Main
@@ -260,28 +129,6 @@ devices:
       temperature:
         - ks_hz_temperature_sensor
 
-  - name: KS Night lamp
-    id: ks_light_night
-    zigbee_id: '0x14b457fffe6383e5'
-    type: IKEA_TRADFRI_LAMP_COLOR_600
-    ct_auto: False # Do not apply CT when ON
-    y2m:
-      name: Декоративный
-      room: KINO
-    groups:
-      sw:
-      - all_light
-      - eg_light
-      - ks_light
-
-  - name: KS Projector
-    id: ks_projector_power
-    zigbee_id: '0x94a081fffe5f9218'
-    type: IKEA_TRETAKT
-    y2m:
-      name: Проектор
-      room: KINO
-
   - name: KS Window 2
     id: ks_window_2
     zigbee_id: '0xa4c138f1bf27592c'
@@ -289,11 +136,6 @@ devices:
     groups:
       contact:
       - ks_windows_contact
-
-  - name: KS Main remote
-    id: ks_light_switch
-    zigbee_id: '0x9035eafffee1ba1d'
-    type: IKEA_TRADFRI_STYRBAR
 
 # LIVING ROOM ================================
 
@@ -307,11 +149,6 @@ devices:
     groups:
       temperature:
         - wz_hz_temperature_sensor
-
-  - name: Bedroom main remote
-    id: wz_up_remote
-    zigbee_id: '0x003c84fffe16f988'
-    type: IKEA_TRADFRI_STYRBAR
 
   - name: WZ Main
     id: wz_up_light
@@ -331,43 +168,6 @@ devices:
         - wz_light_ct
         - astro_color_light_ct
 
-# Julia zone
-  - name: WZ Julia stand
-    id: wz_julia_stand_light
-    zigbee_id: '0x5cc7c1fffe4c4a46'
-    type: IKEA_TRADFRI_LAMP_COLOR_600
-    y2m:
-      name: Стол задник
-      room: LIVING
-    groups:
-      sw:
-        - all_light
-        - eg_light
-        - wz_light
-      ct:
-        - wz_light_ct
-        - astro_color_light_ct
-
-  - name: WZ Julia desktop
-    id: wz_julia_desktop_light
-    zigbee_id: '0xec1bbdfffe1b89d1'
-    type: IKEA_TRADFRI_LAMP_CT_1000
-    y2m:
-      name: Стол
-      room: LIVING
-    groups:
-      sw:
-        - all_light
-        - eg_light
-        - wz_light
-      ct:
-        - wz_light_ct
-        - astro_color_light_ct
-
-  - name: WZ Julia remote
-    id: wz_julia_remote
-    zigbee_id: '0x1c34f1fffe7ccde1'
-    type: IKEA_TRADFRI_STYRBAR
 
 # Light in torsher
   - name: WZ Color Decor
@@ -382,63 +182,6 @@ devices:
         - all_light
         - eg_light
         - wz_light
-
-# Lights behind window
-  - name: WZ Decor lamp 1
-    id: wz_declamp_1
-    zigbee_id: '0xec1bbdfffe972819'
-    type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightness: 3
-    groups:
-      sw:
-        - all_light
-        - eg_light
-        - wz_light
-        - wz_light_decor_sw
-      dim:
-        - wz_light_dim
-        - wz_light_decor_dim
-      dim_fast:
-        - wz_light_decor_dim_fast
-
-  - name: WZ Decor lamp 2
-    id: wz_declamp_2
-    zigbee_id: '0xec1bbdfffe972203'
-    type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightness: 3
-    groups:
-      sw:
-        - all_light
-        - eg_light
-        - wz_light
-        - wz_light_decor_sw
-      dim:
-        - wz_light_dim
-        - wz_light_decor_dim
-      dim_fast:
-        - wz_light_decor_dim_fast
-
-  - name: WZ Decor lamp 3
-    id: wz_declamp_3
-    zigbee_id: '0xec1bbdfffe91007b'
-    type: IKEA_TRADFRI_LAMP_W_250
-    transition_brightness: 3
-    groups:
-      sw:
-        - all_light
-        - eg_light
-        - wz_light
-        - wz_light_decor_sw
-      dim:
-        - wz_light_dim
-        - wz_light_decor_dim
-      dim_fast:
-        - wz_light_decor_dim_fast
-
-  - name: WZ Plants light
-    id: wz_plant_light
-    zigbee_id: '0x94ec32fffe1f54d0'
-    type: IKEA_TRETAKT
 
   - name: WZ Window 1
     id: wz_window_1
@@ -480,78 +223,6 @@ devices:
         - sunrise_ct
         - astro_color_light_ct
 
-  - name: SZ Main remote
-    id: sz_up_remote
-    zigbee_id: '0xb4e3f9fffeb35529'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: SZ door bedlight remote
-    id: sz_door_bed_remote
-    zigbee_id: '0xccccccfffee401f8'
-    type: IKEA_TRADFRI_ON_OFF
-
-  - name: SZ remote L
-    id: sz_bed_l_remote
-    zigbee_id: '0x94deb8fffea8a1f9'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: SZ remote R
-    id: sz_bed_r_remote
-    zigbee_id: '0x540f57fffe1e420c'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: SZ Bedside drawler
-    id: sz_bedside_drawler_light
-    zigbee_id: '0x287681fffe95cba4'
-    type: IKEA_TRADFRI_LED_DRIVER
-
-  - name: SZ Cabinet
-    id: sz_cabinet_light
-    zigbee_id: '0x0cae5ffffea07d0d'
-    type: IKEA_TRADFRI_LED_DRIVER
-
-  - name: SZ Bed L
-    id: sz_bed_light_l
-    zigbee_id: '0x9035eafffe93bfc6'
-    type: IKEA_TRADFRI_LAMP_LED2101G4
-    groups:
-      sw:
-        - all_light
-        - eg_light
-        - sz_light
-        - sz_bed_light_sw
-      ct:
-        - sz_light_ct
-        - sz_bed_light_ct
-        - sunrise_ct
-        - astro_color_light_ct
-      dim:
-        - sz_light_dim
-        - sz_bed_light_dim
-      dim_fast:
-        - sz_bed_light_dim_fast
-
-  - name: SZ Bed R
-    id: sz_bed_light_r
-    zigbee_id: '0x94deb8fffeda7949'
-    type: IKEA_TRADFRI_LAMP_LED2101G4
-    groups:
-      sw:
-        - all_light
-        - eg_light
-        - sz_light
-        - sz_bed_light_sw
-      ct:
-        - sz_light_ct
-        - sz_bed_light_ct
-        - sunrise_ct
-        - astro_color_light_ct
-      dim:
-        - sz_light_dim
-        - sz_bed_light_dim
-      dim_fast:
-        - sz_bed_light_dim_fast
-
   - name: SZ Bed Floor
     id: sz_bed_floor_light
     type: TASMOTA_RGBW
@@ -579,35 +250,6 @@ devices:
           name: Пол
           room: SLEEP
 
-  - name: SZ Window L
-    id: sz_window_l
-    zigbee_id: '0xd44867fffed2e67c'
-    type: IKEA_PARASOLL
-    groups:
-      contact:
-        - sz_windows_contact
-
-  - name: SZ Window R
-    id: sz_window_r
-    zigbee_id: '0x3c2ef5fffe41fc77'
-    type: IKEA_PARASOLL
-    groups:
-      contact:
-        - sz_windows_contact
-
-  - name: SZ Bed power
-    id: sz_bed_power
-    zigbee_id: '0x6cfd22fffe1a2043'
-    type: IKEA_INSPELNING
-
-  - name: SZ TV power
-    id: sz_tv_power
-    zigbee_id: '0x8c8b48fffe0ef9ed'
-    type: IKEA_TRETAKT
-    y2m:
-      name: Телевизор
-      room: SLEEP
-
 # KITCHEN ================================
 
   - name: KU Climate
@@ -621,11 +263,6 @@ devices:
       temperature:
         - ku_hz_temperature_sensor
 
-  - name: KU Light Button (Spuele)
-    id: ku_light_switch_spule
-    zigbee_id: '0x680ae2fffeaf18d4'
-    type: IKEA_TRADFRI_REMOTE
-
   - name: KU Light Arbeit
     id: ku_light_arbeitplatte
     zigbee_id: '0xec1bbdfffea37757'
@@ -637,28 +274,6 @@ devices:
       - eg_light
       - ku_light
       - ku_up_light
-
-  - name: KU Light Table SW
-    id: ku_light_table_switch
-    zigbee_id: '0x04cd15fffe789098'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: KU Light Table
-    id: ku_light_table
-    zigbee_id: '0xec1bbdfffe4695b5'
-    type: IKEA_TRADFRI_LAMP_W_806
-    transition_brightness: 3
-    y2m:
-      name: Стол
-      room: KITCHEN
-    groups:
-      sw:
-      - all_light
-      - eg_light
-      - ku_light
-      - eg_light_auto
-      dim:
-      - eg_light_auto_dim
 
   - name: KU Light SW
     id: ku_main_switch
@@ -699,57 +314,12 @@ devices:
       contact:
       - ku_windows_contact
 
-  - name: Kitchen leak
-    id: ku_leak
-    zigbee_id: '0xb0c7defffe640add'
-    type: IKEA_BADRING
-
-  - name: KU up power
-    id: ku_up_power
-    zigbee_id: '0x6cfd22fffe1a4e35'
-    type: IKEA_INSPELNING
-
-  - name: KU Cat Feeder motion
-    id: ku_cat_feeder_motion
-    zigbee_id: '0x94a081fffe57e936'
-    type: IKEA_VALLHORN
-
 # TREPPE ================================
 
   - name: Treppe Door sensor
     id: tr_door_sensor
     zigbee_id: '0xccccccfffed82b91'
     type: TUYA_WINDOW_SENSOR
-
-  - name: Treppe Up switch
-    id: tr_up_switch
-    zigbee_id: '0x680ae2fffe1a92f3'
-    type: IKEA_TRADFRI_ON_OFF
-
-  - name: Treppe Down switch
-    id: tr_down_switch
-    zigbee_id: '0x04cd15fffe75c518'
-    type: IKEA_TRADFRI_STYRBAR
-
-  - name: Treppe Up light
-    id: tr_up_light
-    zigbee_id: '0xd0cf5efffee892b0'
-    type: IKEA_TRADFRI_LAMP_CT_1000
-    expire: 1h
-    y2m:
-      name: Верхний
-      room: TREPPE
-    groups:
-      sw:
-      - all_light
-      - tr_light
-      - kg_light
-      - kg_light_auto
-      dim:
-      - tr_light_dim
-      ct:
-      - tr_light_ct
-      - astro_color_light_ct
 
   - name: Treppe Down light
     id: tr_down_light
@@ -771,11 +341,6 @@ devices:
       - tr_light_ct
       - astro_color_light_ct
 
-  - name: Treppe motion
-    id: tr_motion
-    zigbee_id: '0xbc33acfffe872049'
-    type: IKEA_TRADFRI_MOTION_SENSOR
-
   - name: Treppe climate
     id: tr_climate
     zigbee_id: '0xa4c1383cc92cbbd2'
@@ -791,15 +356,6 @@ devices:
     groups:
       contact:
       - kg_windows_contact
-
-  - name: KG Window (Hobbyraum)
-    id: kg_window_2
-    zigbee_id: '0x6cfd22fffeb63428'
-    type: IKEA_PARASOLL
-    groups:
-      contact:
-      - kg_windows_contact
-      - windows_skip_off  # Using this window should not deactivate heating
 
   - name: KG Cabinet door
     id: kg_cabinet_door

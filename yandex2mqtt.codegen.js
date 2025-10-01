@@ -26,29 +26,14 @@ SensorClimate({
     room: ROOMS.OUTSIDE,
     pressure: true,
 }),
-Light(LIGHT.SW, {
-    id: 'bk_color_light',
-    name: 'Декоративный',
-    room: ROOMS.BALKON,
-}),
 Light(LIGHT.DIM, {
     id: 'fl_up_light',
     name: 'Верхний',
     room: ROOMS.LOBBY,
 }),
-Light(LIGHT.DIM, {
-    id: 'eg_decoration_light',
-    name: 'Комод',
-    room: ROOMS.LOBBY,
-}),
 SensorWindow({
     id: 'eg_main_door',
     name: 'Входная дверь',
-    room: ROOMS.LOBBY,
-}),
-Light(LIGHT.DIM, {
-    id: 'fl_mirror',
-    name: 'Зеркало',
     room: ROOMS.LOBBY,
 }),
 Light(LIGHT.RGB, {
@@ -79,17 +64,6 @@ SensorClimate({
     name: 'Климат',
     room: ROOMS.KINO,
 }),
-Light(LIGHT.RGB, {
-    id: 'ks_light_night',
-    name: 'Декоративный',
-    room: ROOMS.KINO,
-}),
-Light(LIGHT.SW, {
-    id: 'ks_projector_power',
-    name: 'Проектор',
-    room: ROOMS.KINO,
-    type: 'devices.types.switch',
-}),
 SensorClimate({
     id: 'wz_climate',
     name: 'Климат',
@@ -98,16 +72,6 @@ SensorClimate({
 Light(LIGHT.CT, {
     id: 'wz_up_light',
     name: 'Верхний',
-    room: ROOMS.LIVING,
-}),
-Light(LIGHT.RGB, {
-    id: 'wz_julia_stand_light',
-    name: 'Стол задник',
-    room: ROOMS.LIVING,
-}),
-Light(LIGHT.CT, {
-    id: 'wz_julia_desktop_light',
-    name: 'Стол',
     room: ROOMS.LIVING,
 }),
 Light(LIGHT.RGB, {
@@ -132,20 +96,9 @@ Light(LIGHT.RGB, {
     name: 'Пол',
     room: ROOMS.SLEEP,
 }),
-Light(LIGHT.SW, {
-    id: 'sz_tv_power',
-    name: 'Телевизор',
-    room: ROOMS.SLEEP,
-    type: 'devices.types.switch',
-}),
 SensorClimate({
     id: 'ku_climate',
     name: 'Климат',
-    room: ROOMS.KITCHEN,
-}),
-Light(LIGHT.DIM, {
-    id: 'ku_light_table',
-    name: 'Стол',
     room: ROOMS.KITCHEN,
 }),
 Light(LIGHT.SW, {
@@ -157,11 +110,6 @@ Light(LIGHT.SW, {
     id: 'ku_light_switch_arbeit',
     name: 'Рабочий',
     room: ROOMS.KITCHEN,
-}),
-Light(LIGHT.CT, {
-    id: 'tr_up_light',
-    name: 'Верхний',
-    room: ROOMS.TREPPE,
 }),
 Light(LIGHT.RGB, {
     id: 'tr_down_light',
@@ -221,6 +169,58 @@ Light(LIGHT.SW, {
     name: 'Верхний',
     room: ROOMS.KG_L4,
     sw: '',
+}),
+Light(LIGHT.SW, {
+    id: 'bk_color_light',
+    name: 'Декоративный',
+    room: ROOMS.BALKON,
+}),
+Light(LIGHT.DIM, {
+    id: 'eg_decoration_light',
+    name: 'Комод',
+    room: ROOMS.LOBBY,
+}),
+Light(LIGHT.DIM, {
+    id: 'fl_mirror',
+    name: 'Зеркало',
+    room: ROOMS.LOBBY,
+}),
+Light(LIGHT.RGB, {
+    id: 'ks_light_night',
+    name: 'Декоративный',
+    room: ROOMS.KINO,
+}),
+Light(LIGHT.SW, {
+    id: 'ks_projector_power',
+    name: 'Проектор',
+    room: ROOMS.KINO,
+    type: 'devices.types.switch',
+}),
+Light(LIGHT.RGB, {
+    id: 'wz_julia_stand_light',
+    name: 'Стол задник',
+    room: ROOMS.LIVING,
+}),
+Light(LIGHT.CT, {
+    id: 'wz_julia_desktop_light',
+    name: 'Стол',
+    room: ROOMS.LIVING,
+}),
+Light(LIGHT.SW, {
+    id: 'sz_tv_power',
+    name: 'Телевизор',
+    room: ROOMS.SLEEP,
+    type: 'devices.types.switch',
+}),
+Light(LIGHT.DIM, {
+    id: 'ku_light_table',
+    name: 'Стол',
+    room: ROOMS.KITCHEN,
+}),
+Light(LIGHT.CT, {
+    id: 'tr_up_light',
+    name: 'Верхний',
+    room: ROOMS.TREPPE,
 }),
 Light(LIGHT.CT, {
     id: 'desktop_petro_light',
