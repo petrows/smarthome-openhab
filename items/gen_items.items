@@ -16,10 +16,6 @@ Number:Pressure ext_climate_pressure "Outside Climate pressure  [%.0f %unit%]" <
 Number:Dimensionless ext_climate_rssi "Outside Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:ext_climate:rssi"}
 String ext_climate_bssid "Outside Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:ext_climate:bssid"}
 DateTime ext_climate_activity "Outside Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ext_climate:activity"}
-Number:Temperature ext_climate_temperature "Outside Climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ext_climate:temperature"}
-Number:Temperature ext_climate_dewpoint "Outside Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:ext_climate:dewpoint"}
-Number:Dimensionless ext_climate_humidity "Outside Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ext_climate:humidity"}
-Number:Pressure ext_climate_pressure "Outside Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ext_climate:pressure"}
 // EG Corridor Light (0xa4c138a06ec38c9e)
 // TuYa Wall dimmer module (TS110E_1gang_1) / https://www.zigbee2mqtt.io/devices/TS110E_1gang_1.html#tuya-ts110e_1gang_1
 Dimmer fl_up_light_dim "EG Corridor Light DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fl_up_light:dim"}
@@ -235,11 +231,6 @@ Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressu
 Number:Dimensionless kg_climate_rssi "KG Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_climate:rssi"}
 String kg_climate_bssid "KG Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_climate:bssid"}
 DateTime kg_climate_activity "KG Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_climate:activity"}
-Number:Temperature kg_climate_temperature "KG Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,kg_hz_temperature_sensor) {channel="mqtt:topic:openhab:kg_climate:temperature"}
-Number:Temperature kg_climate_dewpoint "KG Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:kg_climate:dewpoint"}
-Number:Dimensionless kg_climate_humidity "KG Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:kg_climate:humidity"}
-Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:kg_climate:pressure"}
-Number:Dimensionless kg_climate_co2 "KG Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:kg_climate:co2"}
 // Petro Desktop PC (desktop_petro_pc_power)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch desktop_petro_pc_power "Petro Desktop PC" <light> (g_all_sw) {channel="mqtt:topic:openhab:desktop_petro_pc_power:power"}
