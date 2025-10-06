@@ -1,0 +1,70 @@
+'0x00158d0001c2cc22':
+  friendly_name: hz_climate
+'0x00158d0006b7aa81':
+  friendly_name: garten_wasser_leak
+'0x04cd15fffedb319f':
+  friendly_name: bz_light_2
+'0x04cd15fffedb31f7':
+  friendly_name: tr_down_light
+'0x0c2a6ffffebf2819':
+  friendly_name: main_power
+'0x0c4314fffe5c6913':
+  friendly_name: kg_heating
+'0x0c4314fffe62f090':
+  friendly_name: ks_heating
+'0x0c4314fffe63b727':
+  friendly_name: sz_heating
+'0x0c4314fffe73bf1f':
+  friendly_name: ku_heating
+'0x0c4314fffe73c43f':
+  friendly_name: wz_heating
+'0x588e81fffefb217b':
+  friendly_name: ks_up_light
+'0x588e81fffefe9a05':
+  friendly_name: wz_up_light
+'0x842e14fffe0eb8a0':
+  friendly_name: sz_up_light
+'0x8cf681fffef62c85':
+  friendly_name: wz_light_color
+'0xa4c138018d7a55bf':
+  friendly_name: ku_shutter
+'0xa4c13804963f4ccf':
+  friendly_name: wz_window_1
+'0xa4c1381155f63287':
+  friendly_name: lg3_climate
+'0xa4c138182f60d651':
+  friendly_name: eg_main_door
+'0xa4c138234138f73a':
+  friendly_name: octoprint_climate
+'0xa4c138312d2c455f':
+  friendly_name: kg_cabinet_door
+'0xa4c1383cc92cbbd2':
+  friendly_name: tr_climate
+'0xa4c1386a03a53708':
+  friendly_name: wz_climate
+'0xa4c1386df39045f6':
+  friendly_name: ks_climate
+'0xa4c13878cea182ad':
+  friendly_name: ks_shutter
+'0xa4c1389dec8b9204':
+  friendly_name: ku_window_door
+'0xa4c138a06ec38c9e':
+  friendly_name: fl_up_light
+'0xa4c138a52c4e5c19':
+  friendly_name: kg_lager3_door
+'0xa4c138c9dd85a675':
+  friendly_name: ku_main_switch
+'0xa4c138f1bf27592c':
+  friendly_name: ks_window_2
+'0xa4c138f5460e22dd':
+  friendly_name: ku_climate
+'0xa4c138fd0fd1c168':
+  friendly_name: sz_shutter
+'0xcc86ecfffea0c7cb':
+  friendly_name: bz_light_1
+'0xccccccfffed82b91':
+  friendly_name: tr_door_sensor
+'0xccccccfffed82ba3':
+  friendly_name: kg_window_1
+'0xec1bbdfffea37757':
+  friendly_name: ku_light_arbeitplatte

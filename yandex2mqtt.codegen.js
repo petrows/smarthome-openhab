@@ -20,6 +20,78 @@ const ROOMS = {
 }
 module.exports = {
 devices: [
+Light(LIGHT.SW, {
+    id: 'bk_color_light',
+    name: 'Декоративный',
+    room: ROOMS.BALKON,
+}),
+Light(LIGHT.DIM, {
+    id: 'eg_decoration_light',
+    name: 'Комод',
+    room: ROOMS.LOBBY,
+}),
+Light(LIGHT.DIM, {
+    id: 'fl_mirror',
+    name: 'Зеркало',
+    room: ROOMS.LOBBY,
+}),
+Light(LIGHT.RGB, {
+    id: 'ks_light_night',
+    name: 'Декоративный',
+    room: ROOMS.KINO,
+}),
+Light(LIGHT.SW, {
+    id: 'ks_projector_power',
+    name: 'Проектор',
+    room: ROOMS.KINO,
+    type: 'devices.types.switch',
+}),
+Light(LIGHT.RGB, {
+    id: 'wz_julia_stand_light',
+    name: 'Стол задник',
+    room: ROOMS.LIVING,
+}),
+Light(LIGHT.CT, {
+    id: 'wz_julia_desktop_light',
+    name: 'Стол',
+    room: ROOMS.LIVING,
+}),
+Light(LIGHT.SW, {
+    id: 'sz_tv_power',
+    name: 'Телевизор',
+    room: ROOMS.SLEEP,
+    type: 'devices.types.switch',
+}),
+Light(LIGHT.DIM, {
+    id: 'ku_light_table',
+    name: 'Стол',
+    room: ROOMS.KITCHEN,
+}),
+Light(LIGHT.CT, {
+    id: 'tr_up_light',
+    name: 'Верхний',
+    room: ROOMS.TREPPE,
+}),
+Light(LIGHT.CT, {
+    id: 'desktop_petro_light',
+    name: 'Стол',
+    room: ROOMS.KG_CABINET,
+}),
+Light(LIGHT.SW, {
+    id: 'kg_main1_work_light',
+    name: 'Стол',
+    room: ROOMS.KG_WORKSHOP,
+}),
+Light(LIGHT.DIM, {
+    id: 'kg_lager4_1_light',
+    name: 'Дежурный 1',
+    room: ROOMS.KG_L4,
+}),
+Light(LIGHT.DIM, {
+    id: 'kg_lager4_2_light',
+    name: 'Дежурный 2',
+    room: ROOMS.KG_L4,
+}),
 SensorClimate({
     id: 'ext_climate',
     name: 'Климат',
@@ -169,78 +241,6 @@ Light(LIGHT.SW, {
     name: 'Верхний',
     room: ROOMS.KG_L4,
     sw: '',
-}),
-Light(LIGHT.SW, {
-    id: 'bk_color_light',
-    name: 'Декоративный',
-    room: ROOMS.BALKON,
-}),
-Light(LIGHT.DIM, {
-    id: 'eg_decoration_light',
-    name: 'Комод',
-    room: ROOMS.LOBBY,
-}),
-Light(LIGHT.DIM, {
-    id: 'fl_mirror',
-    name: 'Зеркало',
-    room: ROOMS.LOBBY,
-}),
-Light(LIGHT.RGB, {
-    id: 'ks_light_night',
-    name: 'Декоративный',
-    room: ROOMS.KINO,
-}),
-Light(LIGHT.SW, {
-    id: 'ks_projector_power',
-    name: 'Проектор',
-    room: ROOMS.KINO,
-    type: 'devices.types.switch',
-}),
-Light(LIGHT.RGB, {
-    id: 'wz_julia_stand_light',
-    name: 'Стол задник',
-    room: ROOMS.LIVING,
-}),
-Light(LIGHT.CT, {
-    id: 'wz_julia_desktop_light',
-    name: 'Стол',
-    room: ROOMS.LIVING,
-}),
-Light(LIGHT.SW, {
-    id: 'sz_tv_power',
-    name: 'Телевизор',
-    room: ROOMS.SLEEP,
-    type: 'devices.types.switch',
-}),
-Light(LIGHT.DIM, {
-    id: 'ku_light_table',
-    name: 'Стол',
-    room: ROOMS.KITCHEN,
-}),
-Light(LIGHT.CT, {
-    id: 'tr_up_light',
-    name: 'Верхний',
-    room: ROOMS.TREPPE,
-}),
-Light(LIGHT.CT, {
-    id: 'desktop_petro_light',
-    name: 'Стол',
-    room: ROOMS.KG_CABINET,
-}),
-Light(LIGHT.SW, {
-    id: 'kg_main1_work_light',
-    name: 'Стол',
-    room: ROOMS.KG_WORKSHOP,
-}),
-Light(LIGHT.DIM, {
-    id: 'kg_lager4_1_light',
-    name: 'Дежурный 1',
-    room: ROOMS.KG_L4,
-}),
-Light(LIGHT.DIM, {
-    id: 'kg_lager4_2_light',
-    name: 'Дежурный 2',
-    room: ROOMS.KG_L4,
 }),
 ]
 }
