@@ -468,8 +468,8 @@ devices:
 
   - name: HZ climate
     id: hz_climate
-    zigbee_id: '0x00158d0001c2cc22'
-    type: XIAOMI_AQARA_V1
+    zigbee_id: '0xa4c1389b51452429'
+    type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   # Storage Room 1
 

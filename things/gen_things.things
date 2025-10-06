@@ -1147,8 +1147,8 @@ Thing mqtt:topic:openhab:kg_hz_main_light "KG Heuzung (Haupt)" (mqtt:broker:open
 		Type datetime : activity [stateTopic="tele/kg_hz_main_light/STATE", transformationPattern="JS:codegen-activity.js"]
 		Type switch : power [stateTopic="stat/kg_hz_main_light/RESULT", transformationPattern="REGEX:(.*\"POWER\".*)∩JSONPATH:$.POWER", commandTopic="cmnd/kg_hz_main_light/POWER", on="ON", off="OFF"]
 }
-// HZ climate (0x00158d0001c2cc22)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+// HZ climate (0xa4c1389b51452429)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Thing mqtt:topic:openhab:hz_climate "HZ climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : temperature [stateTopic="z2m-common/hz_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]

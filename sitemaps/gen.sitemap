@@ -955,9 +955,9 @@ Text item=kg_hz_main_light_rssi
 Text item=kg_hz_main_light_bssid
 Text item=kg_hz_main_light_activity
 }
-Frame label="HZ climate (0x00158d0001c2cc22)" {
-// HZ climate (0x00158d0001c2cc22)
-// Xiaomi MiJia temperature & humidity sensor (WSDCGQ01LM) / https://www.zigbee2mqtt.io/devices/WSDCGQ01LM.html
+Frame label="HZ climate (0xa4c1389b51452429)" {
+// HZ climate (0xa4c1389b51452429)
+// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
 Text item=hz_climate_lowbatt
 Text item=hz_climate_ota
 Text item=hz_climate_link

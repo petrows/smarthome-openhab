@@ -1,5 +1,3 @@
-'0x00158d0001c2cc22':
-  friendly_name: hz_climate
 '0x00158d0006b7aa81':
   friendly_name: garten_wasser_leak
 '0x04cd15fffedb319f':
@@ -46,6 +44,8 @@
   friendly_name: ks_climate
 '0xa4c13878cea182ad':
   friendly_name: ks_shutter
+'0xa4c1389b51452429':
+  friendly_name: hz_climate
 '0xa4c1389dec8b9204':
   friendly_name: ku_window_door
 '0xa4c138a06ec38c9e':
