@@ -577,7 +577,7 @@ devices:
 # HEATING ROOM ================================
 
   - name: HZ leak
-    id: hz_wasser_leak
+    id: hz_leak
     zigbee_id: '0x8c8b48fffe226767'
     type: IKEA_BADRING
 
@@ -593,12 +593,22 @@ devices:
     zigbee_id: '0x94ec32fffe202672'
     type: IKEA_INSPELNING
 
+  - name: Warehouse 1 leak
+    id: lg1_leak
+    zigbee_id: '0x94a081fffe56f553'
+    type: IKEA_BADRING
+
 # STORAGE 3 ================================
 
   - name: Washmachine
     id: lg3_washmachine
     zigbee_id: '0x94ec32fffe1f762d'
     type: IKEA_INSPELNING
+
+  - name: Warehouse 3 leak
+    id: lg3_leak
+    zigbee_id: '0x94a081fffe56f66d'
+    type: IKEA_BADRING
 
 # STORAGE 4 ================================
 
@@ -645,7 +655,7 @@ devices:
     type: IKEA_TRADFRI_MOTION_SENSOR
 
   - name: Warehouse 4 leak
-    id: kg_lager4_leak
+    id: lg4_leak
     zigbee_id: '0x6cfd22fffe1c82d4'
     type: IKEA_BADRING
 

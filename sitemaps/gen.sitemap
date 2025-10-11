@@ -516,12 +516,12 @@ Text item=srv_leak_battery
 Frame label="HZ leak (0x8c8b48fffe226767)" {
 // HZ leak (0x8c8b48fffe226767)
 // BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Text item=hz_wasser_leak_lowbatt
-Text item=hz_wasser_leak_ota
-Text item=hz_wasser_leak_link
-Text item=hz_wasser_leak_activity
-Text item=hz_wasser_leak_leak
-Text item=hz_wasser_leak_battery
+Text item=hz_leak_lowbatt
+Text item=hz_leak_ota
+Text item=hz_leak_link
+Text item=hz_leak_activity
+Text item=hz_leak_leak
+Text item=hz_leak_battery
 }
 Frame label="KG Lager 1 door (0x048727fffe9cc0fb)" {
 // KG Lager 1 door (0x048727fffe9cc0fb)
@@ -544,6 +544,16 @@ Text item=octoprint_power_ac_current
 Text item=octoprint_power_ac_power
 Text item=octoprint_power_ac_energy
 }
+Frame label="Warehouse 1 leak (0x94a081fffe56f553)" {
+// Warehouse 1 leak (0x94a081fffe56f553)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=lg1_leak_lowbatt
+Text item=lg1_leak_ota
+Text item=lg1_leak_link
+Text item=lg1_leak_activity
+Text item=lg1_leak_leak
+Text item=lg1_leak_battery
+}
 Frame label="Washmachine (0x94ec32fffe1f762d)" {
 // Washmachine (0x94ec32fffe1f762d)
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
@@ -554,6 +564,16 @@ Text item=lg3_washmachine_ac_voltage
 Text item=lg3_washmachine_ac_current
 Text item=lg3_washmachine_ac_power
 Text item=lg3_washmachine_ac_energy
+}
+Frame label="Warehouse 3 leak (0x94a081fffe56f66d)" {
+// Warehouse 3 leak (0x94a081fffe56f66d)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Text item=lg3_leak_lowbatt
+Text item=lg3_leak_ota
+Text item=lg3_leak_link
+Text item=lg3_leak_activity
+Text item=lg3_leak_leak
+Text item=lg3_leak_battery
 }
 Frame label="KG Lager 4 (1) (0xccccccfffedf345a)" {
 // KG Lager 4 (1) (0xccccccfffedf345a)
@@ -592,12 +612,12 @@ Text item=kg_lager4_motion_battery
 Frame label="Warehouse 4 leak (0x6cfd22fffe1c82d4)" {
 // Warehouse 4 leak (0x6cfd22fffe1c82d4)
 // BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Text item=kg_lager4_leak_lowbatt
-Text item=kg_lager4_leak_ota
-Text item=kg_lager4_leak_link
-Text item=kg_lager4_leak_activity
-Text item=kg_lager4_leak_leak
-Text item=kg_lager4_leak_battery
+Text item=lg4_leak_lowbatt
+Text item=lg4_leak_ota
+Text item=lg4_leak_link
+Text item=lg4_leak_activity
+Text item=lg4_leak_leak
+Text item=lg4_leak_battery
 }
 Frame label="Mouse trap KU (0x048727fffea43740)" {
 // Mouse trap KU (0x048727fffea43740)
@@ -937,16 +957,6 @@ Text item=garten_wasser_sw_rssi
 Text item=garten_wasser_sw_bssid
 Text item=garten_wasser_sw_activity
 }
-Frame label="Warehouse 3 leak (0x00158d0006b7aa81)" {
-// Warehouse 3 leak (0x00158d0006b7aa81)
-// Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
-Text item=garten_wasser_leak_lowbatt
-Text item=garten_wasser_leak_ota
-Text item=garten_wasser_leak_link
-Text item=garten_wasser_leak_activity
-Text item=garten_wasser_leak_leak
-Text item=garten_wasser_leak_battery
-}
 Frame label="KG Heuzung (Haupt) (kg_hz_main_light)" {
 // KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
@@ -1107,8 +1117,8 @@ Text item=sz_shutter_mov
 Slider item=sz_shutter_pos
 Switch item=sz_shutter_cal
 }
-Frame label="KS Blinds (0xa4c13878cea182ad)" {
-// KS Blinds (0xa4c13878cea182ad)
+Frame label="KS Shutters (0xa4c13878cea182ad)" {
+// KS Shutters (0xa4c13878cea182ad)
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
 Text item=ks_shutter_ota
 Text item=ks_shutter_link

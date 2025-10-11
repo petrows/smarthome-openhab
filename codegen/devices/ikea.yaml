@@ -93,7 +93,7 @@
 '0x6cfd22fffe1c54d8':
   friendly_name: srv_leak
 '0x6cfd22fffe1c82d4':
-  friendly_name: kg_lager4_leak
+  friendly_name: lg4_leak
 '0x6cfd22fffe1cb2bc':
   friendly_name: bz_towel_heater
 '0x6cfd22fffeb63428':
@@ -103,7 +103,7 @@
 '0x8c8b48fffe0ef9ed':
   friendly_name: sz_tv_power
 '0x8c8b48fffe226767':
-  friendly_name: hz_wasser_leak
+  friendly_name: hz_leak
 '0x9035eafffe20e847':
   friendly_name: eg_decoration_light
 '0x9035eafffe93bfc6':
@@ -115,6 +115,10 @@
     interval: 100
 '0x90ab96fffe52f8fa':
   friendly_name: fl_mirror
+'0x94a081fffe56f553':
+  friendly_name: lg1_leak
+'0x94a081fffe56f66d':
+  friendly_name: lg3_leak
 '0x94a081fffe5f9218':
   friendly_name: ks_projector_power
 '0x94deb8fffea8a1f9':

@@ -418,12 +418,12 @@ Switch srv_leak_leak "SRV leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:op
 Number:Dimensionless srv_leak_battery "SRV leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:srv_leak:battery"}
 // HZ leak (0x8c8b48fffe226767)
 // BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Switch hz_wasser_leak_lowbatt "HZ leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:hz_wasser_leak:battery_low"}
-Switch hz_wasser_leak_ota "HZ leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:hz_wasser_leak:ota"}
-Number:Dimensionless hz_wasser_leak_link "HZ leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:hz_wasser_leak:link"}
-DateTime hz_wasser_leak_activity "HZ leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:hz_wasser_leak:activity"}
-Switch hz_wasser_leak_leak "HZ leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:hz_wasser_leak:leak"}
-Number:Dimensionless hz_wasser_leak_battery "HZ leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:hz_wasser_leak:battery"}
+Switch hz_leak_lowbatt "HZ leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:hz_leak:battery_low"}
+Switch hz_leak_ota "HZ leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:hz_leak:ota"}
+Number:Dimensionless hz_leak_link "HZ leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:hz_leak:link"}
+DateTime hz_leak_activity "HZ leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:hz_leak:activity"}
+Switch hz_leak_leak "HZ leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:hz_leak:leak"}
+Number:Dimensionless hz_leak_battery "HZ leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:hz_leak:battery"}
 // KG Lager 1 door (0x048727fffe9cc0fb)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Switch kg_lager1_door_lowbatt "KG Lager 1 door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager1_door:battery_low"}
@@ -441,6 +441,14 @@ Number:ElectricPotential octoprint_power_ac_voltage "Octoprint power [%.1f V]" <
 Number:ElectricCurrent octoprint_power_ac_current "Octoprint power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:octoprint_power:ac_current"}
 Number:Power octoprint_power_ac_power "Octoprint power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:octoprint_power:ac_power"}
 Number:Energy octoprint_power_ac_energy "Octoprint power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:octoprint_power:ac_energy"}
+// Warehouse 1 leak (0x94a081fffe56f553)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Switch lg1_leak_lowbatt "Warehouse 1 leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:lg1_leak:battery_low"}
+Switch lg1_leak_ota "Warehouse 1 leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:lg1_leak:ota"}
+Number:Dimensionless lg1_leak_link "Warehouse 1 leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:lg1_leak:link"}
+DateTime lg1_leak_activity "Warehouse 1 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg1_leak:activity"}
+Switch lg1_leak_leak "Warehouse 1 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:lg1_leak:leak"}
+Number:Dimensionless lg1_leak_battery "Warehouse 1 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:lg1_leak:battery"}
 // Washmachine (0x94ec32fffe1f762d)
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
 Switch lg3_washmachine_ota "Washmachine OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:lg3_washmachine:ota"}
@@ -450,6 +458,14 @@ Number:ElectricPotential lg3_washmachine_ac_voltage "Washmachine [%.1f V]" <ener
 Number:ElectricCurrent lg3_washmachine_ac_current "Washmachine [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:lg3_washmachine:ac_current"}
 Number:Power lg3_washmachine_ac_power "Washmachine [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:lg3_washmachine:ac_power"}
 Number:Energy lg3_washmachine_ac_energy "Washmachine [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:lg3_washmachine:ac_energy"}
+// Warehouse 3 leak (0x94a081fffe56f66d)
+// BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
+Switch lg3_leak_lowbatt "Warehouse 3 leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:lg3_leak:battery_low"}
+Switch lg3_leak_ota "Warehouse 3 leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:lg3_leak:ota"}
+Number:Dimensionless lg3_leak_link "Warehouse 3 leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:lg3_leak:link"}
+DateTime lg3_leak_activity "Warehouse 3 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_leak:activity"}
+Switch lg3_leak_leak "Warehouse 3 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:lg3_leak:leak"}
+Number:Dimensionless lg3_leak_battery "Warehouse 3 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:lg3_leak:battery"}
 // KG Lager 4 (1) (0xccccccfffedf345a)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]" <light> (g_all_dim,g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim"}
@@ -480,12 +496,12 @@ Switch kg_lager4_motion_occupancy "KG Lager motion [%s]" <motion> (g_all_occupan
 Number:Dimensionless kg_lager4_motion_battery "KG Lager motion  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager4_motion:battery"}
 // Warehouse 4 leak (0x6cfd22fffe1c82d4)
 // BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
-Switch kg_lager4_leak_lowbatt "Warehouse 4 leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager4_leak:battery_low"}
-Switch kg_lager4_leak_ota "Warehouse 4 leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_lager4_leak:ota"}
-Number:Dimensionless kg_lager4_leak_link "Warehouse 4 leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_lager4_leak:link"}
-DateTime kg_lager4_leak_activity "Warehouse 4 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager4_leak:activity"}
-Switch kg_lager4_leak_leak "Warehouse 4 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:kg_lager4_leak:leak"}
-Number:Dimensionless kg_lager4_leak_battery "Warehouse 4 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager4_leak:battery"}
+Switch lg4_leak_lowbatt "Warehouse 4 leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:lg4_leak:battery_low"}
+Switch lg4_leak_ota "Warehouse 4 leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:lg4_leak:ota"}
+Number:Dimensionless lg4_leak_link "Warehouse 4 leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:lg4_leak:link"}
+DateTime lg4_leak_activity "Warehouse 4 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg4_leak:activity"}
+Switch lg4_leak_leak "Warehouse 4 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:lg4_leak:leak"}
+Number:Dimensionless lg4_leak_battery "Warehouse 4 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:lg4_leak:battery"}
 // Mouse trap KU (0x048727fffea43740)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Switch mouse_trap_1_lowbatt "Mouse trap KU BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:mouse_trap_1:battery_low"}
@@ -766,14 +782,6 @@ Switch garten_wasser_sw "Garden water" <light> (g_all_sw) {channel="mqtt:topic:o
 Number:Dimensionless garten_wasser_sw_rssi "Garden water RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:garten_wasser_sw:rssi"}
 String garten_wasser_sw_bssid "Garden water BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:garten_wasser_sw:bssid"}
 DateTime garten_wasser_sw_activity "Garden water activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:garten_wasser_sw:activity"}
-// Warehouse 3 leak (0x00158d0006b7aa81)
-// Xiaomi Aqara water leak sensor (SJCGQ11LM) / https://www.zigbee2mqtt.io/devices/SJCGQ11LM.html
-Switch garten_wasser_leak_lowbatt "Warehouse 3 leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:garten_wasser_leak:battery_low"}
-Switch garten_wasser_leak_ota "Warehouse 3 leak OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:garten_wasser_leak:ota"}
-Number:Dimensionless garten_wasser_leak_link "Warehouse 3 leak LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:garten_wasser_leak:link"}
-DateTime garten_wasser_leak_activity "Warehouse 3 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:garten_wasser_leak:activity"}
-Switch garten_wasser_leak_leak "Warehouse 3 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:garten_wasser_leak:leak"}
-Number:Dimensionless garten_wasser_leak_battery "Warehouse 3 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:garten_wasser_leak:battery"}
 // KG Heuzung (Haupt) (kg_hz_main_light)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch kg_hz_main_light "KG Heuzung (Haupt)" <light> (g_all_sw,all_light,kg_light) {channel="mqtt:topic:openhab:kg_hz_main_light:power", expire="1h,command=OFF" [ignoreStateUpdates="true"]}
@@ -906,10 +914,10 @@ String sz_shutter_cmd "SZ Shutter [%s]" <blinds> (g_all_cmd,blinds_cmd,sz_blinds
 String sz_shutter_mov "SZ Shutter movement" <blinds> {channel="mqtt:topic:openhab:sz_shutter:moving"}
 Dimmer sz_shutter_pos "SZ Shutter [%d %%]" <blinds> (g_all_pos,blinds_pos,sz_blinds_pos) {channel="mqtt:topic:openhab:sz_shutter:position"}
 Switch sz_shutter_cal "SZ Shutter cal [%s]" <light> (g_all_cal) {channel="mqtt:topic:openhab:sz_shutter:calibration"}
-// KS Blinds (0xa4c13878cea182ad)
+// KS Shutters (0xa4c13878cea182ad)
 // Curtains module (2 gang) / https://www.zigbee2mqtt.io/devices/TS130F_dual.html
-Switch ks_shutter_ota "KS Blinds OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_shutter:ota"}
-Number:Dimensionless ks_shutter_link "KS Blinds LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_shutter:link"}
+Switch ks_shutter_ota "KS Shutters OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_shutter:ota"}
+Number:Dimensionless ks_shutter_link "KS Shutters LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_shutter:link"}
 String ks_shutter_1_cmd "KS Shutter (Main) [%s]" <blinds> (g_all_cmd,blinds_cmd,ks_blinds_cmd) {channel="mqtt:topic:openhab:ks_shutter:state_left"}
 String ks_shutter_1_mov "KS Shutter (Main) movement" <blinds> {channel="mqtt:topic:openhab:ks_shutter:moving_left"}
 Dimmer ks_shutter_1_pos "KS Shutter (Main) [%d %%]" <blinds> (g_all_pos,blinds_pos,ks_blinds_pos) {channel="mqtt:topic:openhab:ks_shutter:position_left"}

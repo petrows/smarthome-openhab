@@ -441,11 +441,6 @@ devices:
         name: Garden water
         expire: 1h
 
-  - name: Warehouse 3 leak
-    id: garten_wasser_leak
-    zigbee_id: '0x00158d0006b7aa81'
-    type: XIAOMI_AQARA_LEAK_V1
-
   # Heating room
 
   - name: KG Heuzung (Haupt)
@@ -670,6 +665,7 @@ devices:
 
 # Blinds
 
+  # Calibration: 27s
   - name: SZ Shutter
     id: sz_shutter
     zigbee_id: '0xa4c138fd0fd1c168'
@@ -682,7 +678,8 @@ devices:
       - blinds_pos
       - sz_blinds_pos
 
-  - name: KS Blinds
+  # Calibration: 27s
+  - name: KS Shutters
     id: ks_shutter
     zigbee_id: '0xa4c13878cea182ad'
     type: BLINDS_MODULE_TS130F_2CH
@@ -708,6 +705,7 @@ devices:
           - blinds_pos
           - ks_blinds_pos
 
+  # Calibration: 29s
   - name: KU Shutter
     id: ku_shutter
     zigbee_id: '0xa4c138018d7a55bf'

@@ -545,10 +545,6 @@ sitemap main label="MAIN"
                 Text  item=astro_sun_up_5
                 Text  item=astro_sun_up_0
 			}
-			Frame label="Watering" {
-				Switch	item=wassering_auto_enable
-				Text    item=garten_wasser_leak_leak
-			}
 			Frame label="Blinds (Astro control)" {
 				Switch item=cfg_blinds_auto_astro label="Enable blinds astro control [%s]"
                 Switch item=cfg_blinds_auto_astro_sz label="Sleeproom: astro [%s]" visibility=[cfg_blinds_auto_astro==ON]
