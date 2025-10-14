@@ -647,21 +647,6 @@ devices:
   #     sw:
   #     - all_christmas_light
 
-  # - name: KG Christmas light
-  #   id: kg_christmas_light
-  #   zigbee_id: '0x84182600000d9c12'
-  #   type: OSRAM_SMART_PLUG
-  #   groups:
-  #     sw:
-  #     - all_christmas_light
-
-  # - name: Balkon Christmas light
-  #   id: bk_christmas_light
-  #   zigbee_id: '0x7cb03eaa0a094bf2'
-  #   type: OSRAM_SMART_PLUG
-  #   groups:
-  #     sw:
-  #     - all_christmas_light
 
 # Blinds
 

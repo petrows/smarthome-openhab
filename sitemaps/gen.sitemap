@@ -659,6 +659,39 @@ Text item=mouse_trap_4_activity
 Text item=mouse_trap_4_contact
 Text item=mouse_trap_4_battery
 }
+Frame label="EXT Christmas light (0x348d13fffec90ebd)" {
+// EXT Christmas light (0x348d13fffec90ebd)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=ext_christmas_light_ota
+Text item=ext_christmas_light_link
+Switch item=ext_christmas_light_sw
+Text item=ext_christmas_light_ac_voltage
+Text item=ext_christmas_light_ac_current
+Text item=ext_christmas_light_ac_power
+Text item=ext_christmas_light_ac_energy
+}
+Frame label="Balkon Christmas light (0x94ec32fffe203705)" {
+// Balkon Christmas light (0x94ec32fffe203705)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=bk_christmas_light_ota
+Text item=bk_christmas_light_link
+Switch item=bk_christmas_light_sw
+Text item=bk_christmas_light_ac_voltage
+Text item=bk_christmas_light_ac_current
+Text item=bk_christmas_light_ac_power
+Text item=bk_christmas_light_ac_energy
+}
+Frame label="KG Christmas light (0x94a081fffe6052ad)" {
+// KG Christmas light (0x94a081fffe6052ad)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=kg_christmas_light_ota
+Text item=kg_christmas_light_link
+Switch item=kg_christmas_light_sw
+Text item=kg_christmas_light_ac_voltage
+Text item=kg_christmas_light_ac_current
+Text item=kg_christmas_light_ac_power
+Text item=kg_christmas_light_ac_energy
+}
 }
 Text label="Z2M common" {
 Frame label="Outside Climate (ext_climate)" {

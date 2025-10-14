@@ -534,6 +534,33 @@ Number:Dimensionless mouse_trap_4_link "Mouse trap FL LINK [%d]" <linkz> (g_all_
 DateTime mouse_trap_4_activity "Mouse trap FL activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:mouse_trap_4:activity"}
 Contact mouse_trap_4_contact "Mouse trap FL [MAP(mouse_trap.map):%s]" <door> (mouse_trap) {channel="mqtt:topic:openhab:mouse_trap_4:contact"}
 Number:Dimensionless mouse_trap_4_battery "Mouse trap FL  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:mouse_trap_4:battery"}
+// EXT Christmas light (0x348d13fffec90ebd)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch ext_christmas_light_ota "EXT Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ext_christmas_light:ota"}
+Number:Dimensionless ext_christmas_light_link "EXT Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ext_christmas_light:link"}
+Switch ext_christmas_light_sw "EXT Christmas light" <light> (g_all_sw,all_christmas_light) {channel="mqtt:topic:openhab:ext_christmas_light:state"}
+Number:ElectricPotential ext_christmas_light_ac_voltage "EXT Christmas light [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:ext_christmas_light:ac_voltage"}
+Number:ElectricCurrent ext_christmas_light_ac_current "EXT Christmas light [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:ext_christmas_light:ac_current"}
+Number:Power ext_christmas_light_ac_power "EXT Christmas light [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:ext_christmas_light:ac_power"}
+Number:Energy ext_christmas_light_ac_energy "EXT Christmas light [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:ext_christmas_light:ac_energy"}
+// Balkon Christmas light (0x94ec32fffe203705)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch bk_christmas_light_ota "Balkon Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bk_christmas_light:ota"}
+Number:Dimensionless bk_christmas_light_link "Balkon Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bk_christmas_light:link"}
+Switch bk_christmas_light_sw "Balkon Christmas light" <light> (g_all_sw,all_christmas_light) {channel="mqtt:topic:openhab:bk_christmas_light:state"}
+Number:ElectricPotential bk_christmas_light_ac_voltage "Balkon Christmas light [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:bk_christmas_light:ac_voltage"}
+Number:ElectricCurrent bk_christmas_light_ac_current "Balkon Christmas light [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:bk_christmas_light:ac_current"}
+Number:Power bk_christmas_light_ac_power "Balkon Christmas light [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:bk_christmas_light:ac_power"}
+Number:Energy bk_christmas_light_ac_energy "Balkon Christmas light [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:bk_christmas_light:ac_energy"}
+// KG Christmas light (0x94a081fffe6052ad)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch kg_christmas_light_ota "KG Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_christmas_light:ota"}
+Number:Dimensionless kg_christmas_light_link "KG Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_christmas_light:link"}
+Switch kg_christmas_light_sw "KG Christmas light" <light> (g_all_sw,all_christmas_light) {channel="mqtt:topic:openhab:kg_christmas_light:state"}
+Number:ElectricPotential kg_christmas_light_ac_voltage "KG Christmas light [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:kg_christmas_light:ac_voltage"}
+Number:ElectricCurrent kg_christmas_light_ac_current "KG Christmas light [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:kg_christmas_light:ac_current"}
+Number:Power kg_christmas_light_ac_power "KG Christmas light [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:kg_christmas_light:ac_power"}
+Number:Energy kg_christmas_light_ac_energy "KG Christmas light [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:kg_christmas_light:ac_energy"}
 // Outside Climate (ext_climate)
 // PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Number:Temperature ext_climate_temperature "Outside Climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ext_climate:temperature"}

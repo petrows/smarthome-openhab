@@ -69,6 +69,8 @@
   friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':
   friendly_name: desktop_petro_laptop_power
+'0x348d13fffec90ebd':
+  friendly_name: ext_christmas_light
 '0x3c2ef5fffe41fc77':
   friendly_name: sz_window_r
 '0x540f57fffe1e420c':
@@ -121,6 +123,8 @@
   friendly_name: lg3_leak
 '0x94a081fffe5f9218':
   friendly_name: ks_projector_power
+'0x94a081fffe6052ad':
+  friendly_name: kg_christmas_light
 '0x94deb8fffea8a1f9':
   friendly_name: sz_bed_l_remote
   simulated_brightness:
@@ -134,6 +138,8 @@
   friendly_name: lg3_washmachine
 '0x94ec32fffe202672':
   friendly_name: octoprint_power
+'0x94ec32fffe203705':
+  friendly_name: bk_christmas_light
 '0xb0c7defffe411c6f':
   friendly_name: bk_light_2
 '0xb0c7defffe640add':

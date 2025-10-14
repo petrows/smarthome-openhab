@@ -795,6 +795,42 @@ Thing mqtt:topic:openhab:mouse_trap_4 "Mouse trap FL" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="z2m-ikea/mouse_trap_4", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="z2m-ikea/mouse_trap_4", transformationPattern="JS:codegen-activity.js"]
 }
+// EXT Christmas light (0x348d13fffec90ebd)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Thing mqtt:topic:openhab:ext_christmas_light "EXT Christmas light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/ext_christmas_light", commandTopic="z2m-ikea/ext_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : ac_voltage [stateTopic="z2m-ikea/ext_christmas_light", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="z2m-ikea/ext_christmas_light", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="z2m-ikea/ext_christmas_light", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="z2m-ikea/ext_christmas_light", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="z2m-ikea/ext_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ext_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Balkon Christmas light (0x94ec32fffe203705)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Thing mqtt:topic:openhab:bk_christmas_light "Balkon Christmas light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/bk_christmas_light", commandTopic="z2m-ikea/bk_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : ac_voltage [stateTopic="z2m-ikea/bk_christmas_light", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="z2m-ikea/bk_christmas_light", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="z2m-ikea/bk_christmas_light", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="z2m-ikea/bk_christmas_light", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="z2m-ikea/bk_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bk_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// KG Christmas light (0x94a081fffe6052ad)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Thing mqtt:topic:openhab:kg_christmas_light "KG Christmas light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/kg_christmas_light", commandTopic="z2m-ikea/kg_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : ac_voltage [stateTopic="z2m-ikea/kg_christmas_light", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="z2m-ikea/kg_christmas_light", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="z2m-ikea/kg_christmas_light", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="z2m-ikea/kg_christmas_light", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="z2m-ikea/kg_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/kg_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // Outside Climate (ext_climate)
 // PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {
