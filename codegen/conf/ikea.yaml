@@ -718,6 +718,7 @@ devices:
     groups:
       sw:
         - all_christmas_light
+        - ext_christmas_light
 
   - name: Balkon Christmas light
     id: bk_christmas_light
@@ -726,6 +727,7 @@ devices:
     groups:
       sw:
       - all_christmas_light
+      - bk_christmas_light
 
   - name: KG Christmas light
     id: kg_christmas_light
@@ -734,3 +736,4 @@ devices:
     groups:
       sw:
       - all_christmas_light
+      - kg_christmas_light
