@@ -99,7 +99,7 @@ end
 
 rule "KS remote dimmer"
 when
-    Channel "mqtt:topic:openhab:ns_light_switch:action_dim" triggered
+    Channel "mqtt:topic:openhab:ks_light_switch:action_dim" triggered
 then
     if (ks_up_light_sw.state == ON) {
         ks_up_light_dim_fast.sendCommand((ks_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
