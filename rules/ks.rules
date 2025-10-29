@@ -87,9 +87,12 @@ then
             ks_light.sendCommand(OFF)
         }
         case "arrow_left_click": {
-           val mq = getActions("mqtt","mqtt:broker:openhab")
-            mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"brightness\":30}")
-            mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+            ks_light_night_dim.sendCommand(50)
+            ks_light_night_ct.sendCommand(100)
+
+            // val mq = getActions("mqtt","mqtt:broker:openhab")
+            // mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"brightness\":30}")
+            // mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
         }
     }
 end
