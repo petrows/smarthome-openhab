@@ -117,7 +117,7 @@ then
 
         // Send command to device with custom transition
         val mq = getActions("mqtt","mqtt:broker:openhab")
-        mq.publishMQTT("zigbee2mqtt/wz_julia_stand_light/set","{\"color\":{\"x\":"+x+",\"y\":"+y+"}, \"transition\": 10}")
+        mq.publishMQTT("z2m-ikea/wz_julia_stand_light/set","{\"color\":{\"x\":"+x+",\"y\":"+y+"}, \"transition\": 10}")
 
         // Update (but not command!) UI item
         wz_julia_stand_light_color.postUpdate(color.toString())

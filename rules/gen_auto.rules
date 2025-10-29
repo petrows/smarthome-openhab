@@ -173,7 +173,7 @@ then
         logWarn("proxy", "Filter state for item bz_light_1")
         // Send request for status - to ensure we are in sync
         val mq = getActions("mqtt","mqtt:broker:openhab")
-        mq.publishMQTT("zigbee2mqtt/bz_light_1/get","{\"state\":\"\"}")
+        mq.publishMQTT("z2m-common/bz_light_1/get","{\"state\":\"\"}")
     }
 end
 // Device should apply saved color temp when ON
@@ -209,7 +209,7 @@ then
         logWarn("proxy", "Filter state for item bz_light_2")
         // Send request for status - to ensure we are in sync
         val mq = getActions("mqtt","mqtt:broker:openhab")
-        mq.publishMQTT("zigbee2mqtt/bz_light_2/get","{\"state\":\"\"}")
+        mq.publishMQTT("z2m-common/bz_light_2/get","{\"state\":\"\"}")
     }
 end
 // Device should apply saved color temp when ON
@@ -265,7 +265,7 @@ then
         logWarn("proxy", "Filter state for item wz_light_color")
         // Send request for status - to ensure we are in sync
         val mq = getActions("mqtt","mqtt:broker:openhab")
-        mq.publishMQTT("zigbee2mqtt/wz_light_color/get","{\"state\":\"\"}")
+        mq.publishMQTT("z2m-common/wz_light_color/get","{\"state\":\"\"}")
     }
 end
 // Device should apply saved color temp when ON
@@ -311,6 +311,6 @@ then
         logWarn("proxy", "Filter state for item tr_down_light")
         // Send request for status - to ensure we are in sync
         val mq = getActions("mqtt","mqtt:broker:openhab")
-        mq.publishMQTT("zigbee2mqtt/tr_down_light/get","{\"state\":\"\"}")
+        mq.publishMQTT("z2m-common/tr_down_light/get","{\"state\":\"\"}")
     }
 end

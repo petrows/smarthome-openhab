@@ -10,7 +10,7 @@ then
 
     // Turn ON support light
     val mq = getActions("mqtt","mqtt:broker:openhab")
-    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}, \"brightness\":254}")
+    mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}, \"brightness\":254}")
 
     // Turn ON master power
     ks_projector_power_sw.sendCommand(ON)
@@ -22,7 +22,7 @@ then
     // ir_stb_power.sendCommand(ON) // STB stay on on power
 
     // Turn OFF light except Kino
-    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"brightness\":0, \"transition\": 20}")
+    mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"brightness\":0, \"transition\": 20}")
     all_light.members.forEach [s |
         if (s == ks_light_night_sw) {
             // ns_night_lamp_dim.sendCommand(1)
@@ -48,9 +48,9 @@ then
     // Turn on light
     // Very slow transition
     val mq = getActions("mqtt","mqtt:broker:openhab")
-    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"brightness\":1}")
-    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
-    mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"brightness\":254, \"transition\": 20}")
+    mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"brightness\":1}")
+    mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+    mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"brightness\":254, \"transition\": 20}")
 
     // Turn off devices
     Thread::sleep(1000)
@@ -88,8 +88,8 @@ then
         }
         case "arrow_left_click": {
            val mq = getActions("mqtt","mqtt:broker:openhab")
-            mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"brightness\":30}")
-            mq.publishMQTT("zigbee2mqtt/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
+            mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"brightness\":30}")
+            mq.publishMQTT("z2m-ikea/ks_light_night/set","{\"color\":{\"r\":255,\"g\":0,\"b\":0}}")
         }
     }
 end
