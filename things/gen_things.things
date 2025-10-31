@@ -52,7 +52,7 @@ Thing mqtt:topic:openhab:eg_decoration_light "EG Decor light" (mqtt:broker:openh
 Thing mqtt:topic:openhab:fl_comode_remote "Comode remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/fl_comode_remote", commandTopic="z2m-ikea/fl_comode_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/fl_comode_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -64,7 +64,7 @@ Thing mqtt:topic:openhab:fl_comode_remote "Comode remote" (mqtt:broker:openhab) 
 Thing mqtt:topic:openhab:fl_door_remote "Entrance Door remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/fl_door_remote", commandTopic="z2m-ikea/fl_door_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/fl_door_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -76,7 +76,7 @@ Thing mqtt:topic:openhab:fl_door_remote "Entrance Door remote" (mqtt:broker:open
 Thing mqtt:topic:openhab:fl_mirror_remote "Mirror remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/fl_mirror_remote", commandTopic="z2m-ikea/fl_mirror_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/fl_mirror_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -108,7 +108,7 @@ Thing mqtt:topic:openhab:bz_mirror_switch "BZ Mirror switch" (mqtt:broker:openha
 Thing mqtt:topic:openhab:bz_light_switch "BZ Light Control" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/bz_light_switch", commandTopic="z2m-ikea/bz_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/bz_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -177,7 +177,7 @@ Thing mqtt:topic:openhab:ks_projector_power "KS Projector" (mqtt:broker:openhab)
 Thing mqtt:topic:openhab:ks_light_switch "KS Main remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/ks_light_switch", commandTopic="z2m-ikea/ks_light_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/ks_light_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -189,7 +189,7 @@ Thing mqtt:topic:openhab:ks_light_switch "KS Main remote" (mqtt:broker:openhab) 
 Thing mqtt:topic:openhab:wz_up_remote "Living main remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/wz_up_remote", commandTopic="z2m-ikea/wz_up_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/wz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -225,7 +225,7 @@ Thing mqtt:topic:openhab:wz_julia_desktop_light "WZ Julia desktop" (mqtt:broker:
 Thing mqtt:topic:openhab:wz_julia_remote "WZ Julia remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/wz_julia_remote", commandTopic="z2m-ikea/wz_julia_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/wz_julia_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -275,7 +275,7 @@ Thing mqtt:topic:openhab:wz_plant_light "WZ Plants light" (mqtt:broker:openhab) 
 Thing mqtt:topic:openhab:sz_up_remote "SZ Main remote" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/sz_up_remote", commandTopic="z2m-ikea/sz_up_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/sz_up_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -297,7 +297,7 @@ Thing mqtt:topic:openhab:sz_door_bed_remote "SZ door bedlight remote" (mqtt:brok
 Thing mqtt:topic:openhab:sz_bed_l_remote "SZ remote L" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/sz_bed_l_remote", commandTopic="z2m-ikea/sz_bed_l_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/sz_bed_l_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -309,7 +309,7 @@ Thing mqtt:topic:openhab:sz_bed_l_remote "SZ remote L" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:sz_bed_r_remote "SZ remote R" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/sz_bed_r_remote", commandTopic="z2m-ikea/sz_bed_r_remote/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/sz_bed_r_remote", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -417,7 +417,7 @@ Thing mqtt:topic:openhab:ku_light_switch_spule "KU Light Button (Spuele)" (mqtt:
 Thing mqtt:topic:openhab:ku_light_table_switch "KU Light Table SW" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/ku_light_table_switch", commandTopic="z2m-ikea/ku_light_table_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
@@ -473,7 +473,7 @@ Thing mqtt:topic:openhab:tr_up_switch "Treppe Up switch" (mqtt:broker:openhab) {
 Thing mqtt:topic:openhab:tr_down_switch "Treppe Down switch" (mqtt:broker:openhab) {
 	Channels:
 		Type string : action [stateTopic="z2m-ikea/tr_down_switch", commandTopic="z2m-ikea/tr_down_switch/set", transformationPattern="REGEX:(.*\"action\".*)∩JSONPATH:$.action", trigger="true"]
-		Type dimmer : dim [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=0, max=255]
+		Type dimmer : dim [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.brightness", min=1, max=255]
 		Type number : action_dim [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"action_brightness_delta\".*)∩JSONPATH:$.action_brightness_delta", trigger="true"]
 		Type number : battery [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type switch : battery_low [stateTopic="z2m-ikea/tr_down_switch", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]

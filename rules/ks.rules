@@ -99,13 +99,18 @@ end
 
 rule "KS remote dimmer"
 when
-    Channel "mqtt:topic:openhab:ks_light_switch:action_dim" triggered
+    // Channel "mqtt:topic:openhab:ks_light_switch:dim" triggered
+    Item ks_light_switch_dim changed
 then
+    var brt_value = newState as Number
+
     if (ks_up_light_sw.state == ON) {
-        ks_up_light_dim_fast.sendCommand((ks_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+        // ks_up_light_dim_fast.sendCommand((ks_up_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+        ks_up_light_dim_fast.sendCommand(brt_value)
     }
     if (ks_light_night_sw.state == ON) {
-        ks_light_night_dim_fast.sendCommand((ks_light_night_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+        // ks_light_night_dim_fast.sendCommand((ks_light_night_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
+        ks_light_night_dim_fast.sendCommand(brt_value)
     }
 end
 
