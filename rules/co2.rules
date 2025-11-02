@@ -1,5 +1,29 @@
 // Control and warn about current co2 levels
 
+rule "co2 sensor SZ"
+when
+	Item sz_climate_co2 received update
+then
+    var led_r = OFF
+    var led_y = OFF
+    var led_g = OFF
+    var co2 = (sz_climate_co2.state as Number) * 1000000
+
+    logInfo("co2-kg", "CO2 value SZ = " + co2)
+
+    if (co2 < 800) {
+        led_g = ON
+    } else if (co2 < 1500) {
+        led_y = ON
+    } else {
+        led_r = ON
+    }
+
+	sz_climate_led_r.sendCommand(led_r)
+	sz_climate_led_y.sendCommand(led_y)
+	sz_climate_led_g.sendCommand(led_g)
+end
+
 rule "co2 sensor KG"
 when
 	Item kg_climate_co2 received update
