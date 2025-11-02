@@ -9,8 +9,6 @@
 
 sitemap gen label="GEN ITEMS"
 {
-Text label="Z2M old" {
-}
 Text label="Z2M ikea" {
 Frame label="Balkon light 1 (0x14b457fffe399241)" {
 // Balkon light 1 (0x14b457fffe399241)

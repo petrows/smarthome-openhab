@@ -1,5 +1,0 @@
-config:
-  mqtt_broker_id: openhab
-  mqtt_topic: zigbee2mqtt
-
-devices: []
