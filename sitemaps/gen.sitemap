@@ -826,14 +826,18 @@ Text item=wz_window_1_battery
 }
 Frame label="SZ Climate (sz_climate)" {
 // SZ Climate (sz_climate)
-// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
+// PWS room sensor v2 / https://oshwlab.com/petrows/wemos-d1-room-sensor
+Switch item=sz_climate_led_r
+Switch item=sz_climate_led_y
+Switch item=sz_climate_led_g
+Text item=sz_climate_co2
+Text item=sz_climate_temperature
+Text item=sz_climate_humidity
+Text item=sz_climate_dewpoint
+Text item=sz_climate_pressure
 Text item=sz_climate_rssi
 Text item=sz_climate_bssid
 Text item=sz_climate_activity
-Text item=sz_climate_temperature
-Text item=sz_climate_humidity
-Text item=sz_climate_co2
-Text item=sz_climate_co2_led
 }
 Frame label="SZ Main (0x842e14fffe0eb8a0)" {
 // SZ Main (0x842e14fffe0eb8a0)

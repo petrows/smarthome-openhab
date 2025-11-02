@@ -988,16 +988,21 @@ Thing mqtt:topic:openhab:wz_window_1 "WZ Window 1" (mqtt:broker:openhab) {
 		Type datetime : activity [stateTopic="z2m-common/wz_window_1", transformationPattern="JS:codegen-activity.js"]
 }
 // SZ Climate (sz_climate)
-// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
+// PWS room sensor v2 / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
 	Channels:
-		Type number : co2 [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.CO2", unit="ppm"]
-		Type switch : co2_led [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.S8.led", on="1", off="0"]
-		Type number : temperature [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.DHT22.Temperature", unit="°C"]
-		Type number : humidity [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.DHT22.Humidity", unit="%"]
-		Type number : rssi [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
-		Type string : bssid [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
-		Type datetime : activity [stateTopic="petrows/5C:CF:7F:68:19:46/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : rssi [stateTopic="tele/sz_climate/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/sz_climate/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/sz_climate/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/sz_climate/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type switch : power1 [stateTopic="stat/sz_climate/RESULT", transformationPattern="REGEX:(.*\"POWER1\".*)∩JSONPATH:$.POWER1", commandTopic="cmnd/sz_climate/POWER1", on="ON", off="OFF"]
+		Type switch : power2 [stateTopic="stat/sz_climate/RESULT", transformationPattern="REGEX:(.*\"POWER2\".*)∩JSONPATH:$.POWER2", commandTopic="cmnd/sz_climate/POWER2", on="ON", off="OFF"]
+		Type switch : power3 [stateTopic="stat/sz_climate/RESULT", transformationPattern="REGEX:(.*\"POWER3\".*)∩JSONPATH:$.POWER3", commandTopic="cmnd/sz_climate/POWER3", on="ON", off="OFF"]
+		Type number : co2 [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.S8.CarbonDioxide", unit="ppm"]
+		Type number : temperature [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Temperature", unit="C°"]
+		Type number : humidity [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Humidity", unit="%"]
+		Type number : dewpoint [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.DewPoint", unit="C°"]
+		Type number : pressure [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
 }
 // SZ Main (0x842e14fffe0eb8a0)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l

@@ -675,14 +675,18 @@ DateTime wz_window_1_activity "WZ Window 1 activity [JS(codegen-display-activity
 Contact wz_window_1_contact "WZ Window 1 [%s]" <door> (g_all_contact,wz_windows_contact) {channel="mqtt:topic:openhab:wz_window_1:contact"}
 Number:Dimensionless wz_window_1_battery "WZ Window 1  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:wz_window_1:battery"}
 // SZ Climate (sz_climate)
-// Petro.ws CO₂ sensor module / https://github.com/petrows/smarthome-co2-module
+// PWS room sensor v2 / https://oshwlab.com/petrows/wemos-d1-room-sensor
+Switch sz_climate_led_r "SZ Climate Led R" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_climate:power1"}
+Switch sz_climate_led_y "SZ Climate Led Y" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_climate:power2"}
+Switch sz_climate_led_g "SZ Climate Led G" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_climate:power3"}
+Number:Dimensionless sz_climate_co2 "SZ Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_climate:co2"}
+Number:Temperature sz_climate_temperature "SZ Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,sz_hz_temperature_sensor) {channel="mqtt:topic:openhab:sz_climate:temperature"}
+Number:Dimensionless sz_climate_humidity "SZ Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:sz_climate:humidity"}
+Number:Temperature sz_climate_dewpoint "SZ Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:sz_climate:dewpoint"}
+Number:Pressure sz_climate_pressure "SZ Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:sz_climate:pressure"}
 Number:Dimensionless sz_climate_rssi "SZ Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:sz_climate:rssi"}
 String sz_climate_bssid "SZ Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:sz_climate:bssid"}
 DateTime sz_climate_activity "SZ Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_climate:activity"}
-Number:Temperature sz_climate_temperature "SZ Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,sz_hz_temperature_sensor) {channel="mqtt:topic:openhab:sz_climate:temperature"}
-Number:Dimensionless sz_climate_humidity "SZ Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:sz_climate:humidity"}
-Number:Dimensionless sz_climate_co2 "SZ Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_climate:co2"}
-Switch sz_climate_co2_led "SZ Climate CO₂ alarm [%s]" <alarm> (g_all_co2_led) {channel="mqtt:topic:openhab:sz_climate:co2_led"}
 // SZ Main (0x842e14fffe0eb8a0)
 // Livarno Home Lux ceiling light (14147206L) / https://www.zigbee2mqtt.io/devices/14147206L.html#lidl-14147206l
 Dimmer sz_up_light_dim "SZ Main DIM [%d %%]" <light> (g_all_dim,sz_light_dim) {channel="mqtt:topic:openhab:sz_up_light:dim"}

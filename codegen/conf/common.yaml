@@ -195,11 +195,20 @@ devices:
 
   - name: SZ Climate
     id: sz_climate
-    type: PETROWS_CO2_SENSOR
-    device_id: 5C:CF:7F:68:19:46
+    type: TASMOTA_PWS_ROOM_SENSOR_V2
     y2m:
       name: Климат
       room: SLEEP
+    channels:
+      POWER1:
+        id: sz_climate_led_r
+        name: 'SZ Climate Led R'
+      POWER2:
+        id: sz_climate_led_y
+        name: 'SZ Climate Led Y'
+      POWER3:
+        id: sz_climate_led_g
+        name: 'SZ Climate Led G'
     groups:
       temperature:
         - sz_hz_temperature_sensor
