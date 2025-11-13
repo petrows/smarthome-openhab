@@ -5,3 +5,16 @@ then
     logInfo("mouse", "Mouse trap: " + triggeringItem.getLabel())
     global_message.sendCommand("MOUSE TRAP! " + triggeringItem.getLabel())
 end
+
+// Notification every 2 hours, if any trap active
+rule "Mouse trap reminder"
+when
+    Time cron "0 0 */2 * * ?"
+then
+    val traps = mouse_trap.members.filter[ trap | trap.state == OPEN ]
+    if(traps.size > 0) {
+        var trapNames = traps.map[ trap | trap.getLabel() ].join(", ")
+        logInfo("mouse", "Mouse trap reminder: " + trapNames)
+        global_message.sendCommand("Reminder: Mouse traps active at " + trapNames)
+    }
+end
