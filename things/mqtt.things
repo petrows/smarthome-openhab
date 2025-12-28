@@ -79,7 +79,7 @@ Thing mqtt:topic:openhab:bambu (mqtt:broker:openhab) {
         Type number : tool_diameter  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.nozzle_diameter", unit="mm"]
         Type number : chamber_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.device.ctc.info.temp", unit="C°"]
         Type number : ams_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].temp", unit="C°"]
-        Type number : ams_humidity  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].humidity", unit="%"]
+        Type number : ams_humidity  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].humidity_raw", unit="%"]
 }
 
 
