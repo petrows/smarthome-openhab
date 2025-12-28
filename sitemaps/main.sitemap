@@ -499,21 +499,32 @@ sitemap main label="MAIN"
             }
         }
 		Switch item=garten_wasser_sw
-        Group item=octoprint_power_sw label="Octoprint" {
-            Group item=octoprint_power_sw label="Power" {
-                Switch item=octoprint_power_sw
-                Text item=octoprint_power_ac_voltage
-                Text item=octoprint_power_ac_current
+        Group item=octoprint_power_sw label="Bambu" {
+            Frame label="Power" {
+                Group item=octoprint_power_sw label="Power" {
+                    Switch item=octoprint_power_sw
+                    Text item=octoprint_power_ac_voltage
+                    Text item=octoprint_power_ac_current
+                    Text item=octoprint_power_ac_power
+                    Text item=octoprint_power_ac_energy
+                }
                 Text item=octoprint_power_ac_power
-                Text item=octoprint_power_ac_energy
             }
-            Text item=octoprint_climate_temperature
-            Text item=octoprint_climate_humidity
-            Text item=octoprint_power_ac_power
-            Text item=ocotprint_progress
-            Text item=ocotprint_file
-            Text item=ocotprint_temperature_bed_actual
-            Text item=ocotprint_temperature_tool_actual
+            Frame label="Climate" {
+                Text item=octoprint_climate_temperature
+                Text item=octoprint_climate_humidity
+            }
+            Frame label="Printer status" {
+                Text item=ocotprint_progress
+                Text item=ocotprint_file
+                Text item=ocotprint_chamber_temperature
+                Text item=ocotprint_temperature_bed_actual
+                Text item=ocotprint_temperature_tool_actual
+            }
+            Frame label="AMS status" {
+                Text item=ocotprint_ams_temperature
+                Text item=ocotprint_ams_humidity
+            }
         }
 	}
 

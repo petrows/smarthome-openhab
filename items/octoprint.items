@@ -1,6 +1,10 @@
-Number:Dimensionless ocotprint_progress "Octoprint progress [%d %%]"{channel="mqtt:topic:openhab:octoprint:progress"}
-String ocotprint_file "Octoprint file [%s]"{channel="mqtt:topic:openhab:octoprint:file"}
-Number:Temperature ocotprint_temperature_bed_actual "Octoprint bed [%.1f %unit%]"{channel="mqtt:topic:openhab:octoprint:temperature_bed_actual"}
-Number:Temperature ocotprint_temperature_bed_target "Octoprint bed set [%.1f %unit%]"{channel="mqtt:topic:openhab:octoprint:temperature_bed_target"}
-Number:Temperature ocotprint_temperature_tool_actual "Octoprint tool [%.1f %unit%]"{channel="mqtt:topic:openhab:octoprint:temperature_tool_actual"}
-Number:Temperature ocotprint_temperature_tool_target "Octoprint tool set [%.1f %unit%]"{channel="mqtt:topic:openhab:octoprint:temperature_tool_target"}
+Number:Dimensionless ocotprint_progress "Bambu progress [%d %%]" <pressure> {channel="mqtt:topic:openhab:bambu:progress"}
+String ocotprint_file "Bambu file [%s]" {channel="mqtt:topic:openhab:bambu:file"}
+Number:Temperature ocotprint_temperature_bed_actual "Bambu bed [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:bambu:temperature_bed_actual"}
+Number:Temperature ocotprint_temperature_bed_target "Bambu bed set [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:bambu:temperature_bed_target"}
+Number:Temperature ocotprint_temperature_tool_actual "Bambu tool [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:bambu:temperature_tool_actual"}
+Number:Temperature ocotprint_temperature_tool_target "Bambu tool set [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:bambu:temperature_tool_target"}
+Number:Length ocotprint_tool_diameter "Bambu tool diameter [%.2f %unit%]" {channel="mqtt:topic:openhab:bambu:tool_diameter"}
+Number:Temperature ocotprint_chamber_temperature "Bambu chamber temperature [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:bambu:chamber_temperature"}
+Number:Temperature ocotprint_ams_temperature "Bambu AMS temperature [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:bambu:ams_temperature"}
+Number:Dimensionless ocotprint_ams_humidity "Bambu AMS humidity [%.0f %%]" <humidity> {channel="mqtt:topic:openhab:bambu:ams_humidity"}

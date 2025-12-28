@@ -57,14 +57,29 @@ Thing mqtt:topic:openhab:sz-curtain (mqtt:broker:openhab) {
 }
 
 // octoprint events
-Thing mqtt:topic:openhab:octoprint (mqtt:broker:openhab) {
-	Channels:
-		Type number : progress  [ stateTopic="octoPrint/progress/printing", transformationPattern="REGEX:(.*\"progress\".*)∩JSONPATH:$.progress", unit="%"]
-		Type string : file  [ stateTopic="octoPrint/progress/printing", transformationPattern="REGEX:(.*\"path\".*)∩JSONPATH:$.path"]
-		Type number : temperature_bed_actual  [ stateTopic="octoPrint/temperature/bed", transformationPattern="REGEX:(.*\"actual\".*)∩JSONPATH:$.actual", unit="C°"]
-		Type number : temperature_bed_target  [ stateTopic="octoPrint/temperature/bed", transformationPattern="REGEX:(.*\"target\".*)∩JSONPATH:$.target", unit="C°"]
-		Type number : temperature_tool_actual  [ stateTopic="octoPrint/temperature/tool0", transformationPattern="REGEX:(.*\"actual\".*)∩JSONPATH:$.actual", unit="C°"]
-		Type number : temperature_tool_target  [ stateTopic="octoPrint/temperature/tool0", transformationPattern="REGEX:(.*\"target\".*)∩JSONPATH:$.target", unit="C°"]
+// Thing mqtt:topic:openhab:octoprint (mqtt:broker:openhab) {
+// 	Channels:
+// 		Type number : progress  [ stateTopic="octoPrint/progress/printing", transformationPattern="REGEX:(.*\"progress\".*)∩JSONPATH:$.progress", unit="%"]
+// 		Type string : file  [ stateTopic="octoPrint/progress/printing", transformationPattern="REGEX:(.*\"path\".*)∩JSONPATH:$.path"]
+// 		Type number : temperature_bed_actual  [ stateTopic="octoPrint/temperature/bed", transformationPattern="REGEX:(.*\"actual\".*)∩JSONPATH:$.actual", unit="C°"]
+// 		Type number : temperature_bed_target  [ stateTopic="octoPrint/temperature/bed", transformationPattern="REGEX:(.*\"target\".*)∩JSONPATH:$.target", unit="C°"]
+// 		Type number : temperature_tool_actual  [ stateTopic="octoPrint/temperature/tool0", transformationPattern="REGEX:(.*\"actual\".*)∩JSONPATH:$.actual", unit="C°"]
+// 		Type number : temperature_tool_target  [ stateTopic="octoPrint/temperature/tool0", transformationPattern="REGEX:(.*\"target\".*)∩JSONPATH:$.target", unit="C°"]
+// }
+
+// Bambu P2S events
+Thing mqtt:topic:openhab:bambu (mqtt:broker:openhab) {
+    Channels:
+        Type number : progress  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.percent", unit="%"]
+        Type string : file  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.subtask_name"]
+        Type number : temperature_bed_actual  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.bed_temper", unit="C°"]
+        Type number : temperature_bed_target  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.bed_target_temper", unit="C°"]
+        Type number : temperature_tool_actual  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.nozzle_temper", unit="C°"]
+        Type number : temperature_tool_target  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.nozzle_target_temper", unit="C°"]
+        Type number : tool_diameter  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.nozzle_diameter", unit="mm"]
+        Type number : chamber_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.device.ctc.info.temp", unit="C°"]
+        Type number : ams_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].temp", unit="C°"]
+        Type number : ams_humidity  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].humidity", unit="%"]
 }
 
 
