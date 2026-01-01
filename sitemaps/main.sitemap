@@ -515,15 +515,15 @@ sitemap main label="MAIN"
                 Text item=octoprint_climate_humidity
             }
             Frame label="Printer status" {
-                Text item=ocotprint_progress
-                Text item=ocotprint_file
-                Text item=ocotprint_chamber_temperature
-                Text item=ocotprint_temperature_bed_actual
-                Text item=ocotprint_temperature_tool_actual
+                Text item=octoprint_progress
+                Text item=octoprint_file
+                Text item=octoprint_chamber_temperature
+                Text item=octoprint_temperature_bed_actual
+                Text item=octoprint_temperature_tool_actual
             }
             Frame label="AMS status" {
-                Text item=ocotprint_ams_temperature
-                Text item=ocotprint_ams_humidity
+                Text item=octoprint_ams_temperature
+                Text item=octoprint_ams_humidity
             }
         }
 	}
