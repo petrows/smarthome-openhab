@@ -77,7 +77,7 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
 rule "Heating safe switch"
 when
-	Time cron "0 00 01,02,03,04 ? * *"
+	Time cron "0 00 23,00,01,02,03,04 ? * *"
 then
 	logWarn("heating", "Set safe off")
 
