@@ -531,16 +531,27 @@ Text item=kg_lager1_door_activity
 Text item=kg_lager1_door_contact
 Text item=kg_lager1_door_battery
 }
-Frame label="Octoprint power (0x94ec32fffe202672)" {
-// Octoprint power (0x94ec32fffe202672)
+Frame label="Bambu P2S power (0x94ec32fffe202672)" {
+// Bambu P2S power (0x94ec32fffe202672)
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Text item=octoprint_power_ota
-Text item=octoprint_power_link
-Switch item=octoprint_power_sw
-Text item=octoprint_power_ac_voltage
-Text item=octoprint_power_ac_current
-Text item=octoprint_power_ac_power
-Text item=octoprint_power_ac_energy
+Text item=bambu_p2s_power_ota
+Text item=bambu_p2s_power_link
+Switch item=bambu_p2s_power_sw
+Text item=bambu_p2s_power_ac_voltage
+Text item=bambu_p2s_power_ac_current
+Text item=bambu_p2s_power_ac_power
+Text item=bambu_p2s_power_ac_energy
+}
+Frame label="Ender3 power (0x1cc089fffe13a7e3)" {
+// Ender3 power (0x1cc089fffe13a7e3)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=ender3_power_ota
+Text item=ender3_power_link
+Switch item=ender3_power_sw
+Text item=ender3_power_ac_voltage
+Text item=ender3_power_ac_current
+Text item=ender3_power_ac_power
+Text item=ender3_power_ac_energy
 }
 Frame label="Warehouse 1 leak (0x94a081fffe56f553)" {
 // Warehouse 1 leak (0x94a081fffe56f553)

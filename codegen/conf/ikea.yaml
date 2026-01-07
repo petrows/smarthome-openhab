@@ -588,10 +588,29 @@ devices:
     zigbee_id: '0x048727fffe9cc0fb'
     type: IKEA_PARASOLL
 
-  - name: Octoprint power
-    id: octoprint_power
+  - name: Bambu P2S power
+    id: bambu_p2s_power
     zigbee_id: '0x94ec32fffe202672'
     type: IKEA_INSPELNING
+    groups:
+      sw:
+      - g_3dprinter_sw
+      ac_energy:
+      - g_3dprinter_energy
+      ac_power:
+      - g_3dprinter_power
+
+  - name: Ender3 power
+    id: ender3_power
+    zigbee_id: '0x1cc089fffe13a7e3'
+    type: IKEA_INSPELNING
+    groups:
+      sw:
+      - g_3dprinter_sw
+      ac_energy:
+      - g_3dprinter_energy
+      ac_power:
+      - g_3dprinter_power
 
   - name: Warehouse 1 leak
     id: lg1_leak

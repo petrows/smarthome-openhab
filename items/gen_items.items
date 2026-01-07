@@ -432,15 +432,24 @@ Number:Dimensionless kg_lager1_door_link "KG Lager 1 door LINK [%d]" <linkz> (g_
 DateTime kg_lager1_door_activity "KG Lager 1 door activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_door:activity"}
 Contact kg_lager1_door_contact "KG Lager 1 door [%s]" <door> (g_all_contact) {channel="mqtt:topic:openhab:kg_lager1_door:contact"}
 Number:Dimensionless kg_lager1_door_battery "KG Lager 1 door  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:kg_lager1_door:battery"}
-// Octoprint power (0x94ec32fffe202672)
+// Bambu P2S power (0x94ec32fffe202672)
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Switch octoprint_power_ota "Octoprint power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:octoprint_power:ota"}
-Number:Dimensionless octoprint_power_link "Octoprint power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:octoprint_power:link"}
-Switch octoprint_power_sw "Octoprint power" <light> (g_all_sw) {channel="mqtt:topic:openhab:octoprint_power:state"}
-Number:ElectricPotential octoprint_power_ac_voltage "Octoprint power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:octoprint_power:ac_voltage"}
-Number:ElectricCurrent octoprint_power_ac_current "Octoprint power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:octoprint_power:ac_current"}
-Number:Power octoprint_power_ac_power "Octoprint power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:octoprint_power:ac_power"}
-Number:Energy octoprint_power_ac_energy "Octoprint power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:octoprint_power:ac_energy"}
+Switch bambu_p2s_power_ota "Bambu P2S power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:bambu_p2s_power:ota"}
+Number:Dimensionless bambu_p2s_power_link "Bambu P2S power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:bambu_p2s_power:link"}
+Switch bambu_p2s_power_sw "Bambu P2S power" <light> (g_all_sw,g_3dprinter_sw) {channel="mqtt:topic:openhab:bambu_p2s_power:state"}
+Number:ElectricPotential bambu_p2s_power_ac_voltage "Bambu P2S power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:bambu_p2s_power:ac_voltage"}
+Number:ElectricCurrent bambu_p2s_power_ac_current "Bambu P2S power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:bambu_p2s_power:ac_current"}
+Number:Power bambu_p2s_power_ac_power "Bambu P2S power [%.1f W]" <energy> (g_all_ac_power,g_3dprinter_power) {channel="mqtt:topic:openhab:bambu_p2s_power:ac_power"}
+Number:Energy bambu_p2s_power_ac_energy "Bambu P2S power [%.1f kWh]" <energy> (g_all_ac_energy,g_3dprinter_energy) {channel="mqtt:topic:openhab:bambu_p2s_power:ac_energy"}
+// Ender3 power (0x1cc089fffe13a7e3)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch ender3_power_ota "Ender3 power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ender3_power:ota"}
+Number:Dimensionless ender3_power_link "Ender3 power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ender3_power:link"}
+Switch ender3_power_sw "Ender3 power" <light> (g_all_sw,g_3dprinter_sw) {channel="mqtt:topic:openhab:ender3_power:state"}
+Number:ElectricPotential ender3_power_ac_voltage "Ender3 power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:ender3_power:ac_voltage"}
+Number:ElectricCurrent ender3_power_ac_current "Ender3 power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:ender3_power:ac_current"}
+Number:Power ender3_power_ac_power "Ender3 power [%.1f W]" <energy> (g_all_ac_power,g_3dprinter_power) {channel="mqtt:topic:openhab:ender3_power:ac_power"}
+Number:Energy ender3_power_ac_energy "Ender3 power [%.1f kWh]" <energy> (g_all_ac_energy,g_3dprinter_energy) {channel="mqtt:topic:openhab:ender3_power:ac_energy"}
 // Warehouse 1 leak (0x94a081fffe56f553)
 // BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
 Switch lg1_leak_lowbatt "Warehouse 1 leak BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:lg1_leak:battery_low"}

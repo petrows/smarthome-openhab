@@ -498,32 +498,47 @@ sitemap main label="MAIN"
                 Image item=kg_robot_map
             }
         }
-		Switch item=garten_wasser_sw
-        Group item=octoprint_power_sw label="Bambu" {
-            Frame label="Power" {
-                Group item=octoprint_power_sw label="Power" {
-                    Switch item=octoprint_power_sw
-                    Text item=octoprint_power_ac_voltage
-                    Text item=octoprint_power_ac_current
-                    Text item=octoprint_power_ac_power
-                    Text item=octoprint_power_ac_energy
-                }
-                Text item=octoprint_power_ac_power
-            }
+        Group item=g_3dprinter_power label="3D Printers" {
             Frame label="Climate" {
                 Text item=octoprint_climate_temperature
                 Text item=octoprint_climate_humidity
             }
-            Frame label="Printer status" {
-                Text item=octoprint_progress
-                Text item=octoprint_file
-                Text item=octoprint_chamber_temperature
-                Text item=octoprint_temperature_bed_actual
-                Text item=octoprint_temperature_tool_actual
+            Frame label="Bambu P2S" {
+                Group item=bambu_p2s_power_sw label="Power" {
+                    Switch item=bambu_p2s_power_sw
+                    Text item=bambu_p2s_power_ac_voltage
+                    Text item=bambu_p2s_power_ac_current
+                    Text item=bambu_p2s_power_ac_power
+                    Text item=bambu_p2s_power_ac_energy
+                }
+                Text item=bambu_p2s_power_ac_power
             }
-            Frame label="AMS status" {
-                Text item=octoprint_ams_temperature
-                Text item=octoprint_ams_humidity
+            Frame label="Bambu P2S status" {
+                Text item=p2s_progress
+                Text item=p2s_file
+                Text item=p2s_chamber_temperature
+                Text item=p2s_temperature_bed_actual
+                Text item=p2s_temperature_tool_actual
+            }
+            Frame label="Bambu P2S AMS status" {
+                Text item=p2s_ams_temperature
+                Text item=p2s_ams_humidity
+            }
+            Frame label="Ender 3" {
+                Group item=ender3_power_sw label="Power" {
+                    Switch item=ender3_power_sw
+                    Text item=ender3_power_ac_voltage
+                    Text item=ender3_power_ac_current
+                    Text item=ender3_power_ac_power
+                    Text item=ender3_power_ac_energy
+                }
+                Text item=ender3_power_ac_power
+            }
+            Frame label="Ender 3 status" {
+                Text item=ender3_progress
+                Text item=ender3_file
+                Text item=ender3_temperature_bed_actual
+                Text item=ender3_temperature_tool_actual
             }
         }
 	}

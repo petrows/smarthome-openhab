@@ -1,0 +1,27 @@
+// Common groups for 3D printers
+
+Group:Switch:OR(ON, OFF) g_3dprinter_sw "3D Printer Switches [%s]" <switch>
+Group:Number:SUM g_3dprinter_power "3D Printer Power [%d W]" <energy>
+Group:Number:SUM g_3dprinter_energy "3D Printer Energy [%d kWh]" <energy>
+
+// Ender 3 (octoprint) items
+
+Number:Dimensionless ender3_progress "Ender3 progress [%d %%]" <pressure> {channel="mqtt:topic:openhab:ender3:progress"}
+String ender3_file "Ender3 file [%s]" {channel="mqtt:topic:openhab:ender3:file"}
+Number:Temperature ender3_temperature_bed_actual "Ender3 bed [%.1f %unit%]" <temperature>{channel="mqtt:topic:openhab:ender3:temperature_bed_actual"}
+Number:Temperature ender3_temperature_bed_target "Ender3 bed set [%.1f %unit%]" <temperature>{channel="mqtt:topic:openhab:ender3:temperature_bed_target"}
+Number:Temperature ender3_temperature_tool_actual "Ender3 tool [%.1f %unit%]" <temperature>{channel="mqtt:topic:openhab:ender3:temperature_tool_actual"}
+Number:Temperature ender3_temperature_tool_target "Ender3 tool set [%.1f %unit%]" <temperature>{channel="mqtt:topic:openhab:ender3:temperature_tool_target"}
+
+// Bambu P2S items
+
+Number:Dimensionless p2s_progress "P2S progress [%d %%]" <pressure> {channel="mqtt:topic:openhab:p2s:progress"}
+String p2s_file "P2S file [%s]" {channel="mqtt:topic:openhab:p2s:file"}
+Number:Temperature p2s_temperature_bed_actual "P2S bed [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:temperature_bed_actual"}
+Number:Temperature p2s_temperature_bed_target "P2S bed set [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:temperature_bed_target"}
+Number:Temperature p2s_temperature_tool_actual "P2S tool [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:temperature_tool_actual"}
+Number:Temperature p2s_temperature_tool_target "P2S tool set [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:temperature_tool_target"}
+Number:Length p2s_tool_diameter "P2S tool diameter [%.2f %unit%]" {channel="mqtt:topic:openhab:p2s:tool_diameter"}
+Number:Temperature p2s_chamber_temperature "P2S chamber temperature [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:chamber_temperature"}
+Number:Temperature p2s_ams_temperature "P2S AMS temperature [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:ams_temperature"}
+Number:Dimensionless p2s_ams_humidity "P2S AMS humidity [%.0f %%]" <humidity> {channel="mqtt:topic:openhab:p2s:ams_humidity"}

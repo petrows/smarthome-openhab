@@ -65,6 +65,8 @@
   simulated_brightness:
     delta: 5
     interval: 100
+'0x1cc089fffe13a7e3':
+  friendly_name: ender3_power
 '0x287681fffe95cba4':
   friendly_name: sz_bedside_drawler_light
 '0x28dba7fffe5fa1dd':
@@ -137,7 +139,7 @@
 '0x94ec32fffe1f762d':
   friendly_name: lg3_washmachine
 '0x94ec32fffe202672':
-  friendly_name: octoprint_power
+  friendly_name: bambu_p2s_power
 '0x94ec32fffe203705':
   friendly_name: bk_christmas_light
 '0xb0c7defffe411c6f':

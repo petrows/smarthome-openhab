@@ -645,17 +645,29 @@ Thing mqtt:topic:openhab:kg_lager1_door "KG Lager 1 door" (mqtt:broker:openhab) 
 		Type switch : ota [stateTopic="z2m-ikea/kg_lager1_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="z2m-ikea/kg_lager1_door", transformationPattern="JS:codegen-activity.js"]
 }
-// Octoprint power (0x94ec32fffe202672)
+// Bambu P2S power (0x94ec32fffe202672)
 // INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
-Thing mqtt:topic:openhab:octoprint_power "Octoprint power" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:bambu_p2s_power "Bambu P2S power" (mqtt:broker:openhab) {
 	Channels:
-		Type switch : state [stateTopic="z2m-ikea/octoprint_power", commandTopic="z2m-ikea/octoprint_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
-		Type number : ac_voltage [stateTopic="z2m-ikea/octoprint_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
-		Type number : ac_current [stateTopic="z2m-ikea/octoprint_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
-		Type number : ac_power [stateTopic="z2m-ikea/octoprint_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
-		Type number : ac_energy [stateTopic="z2m-ikea/octoprint_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
-		Type number : link [stateTopic="z2m-ikea/octoprint_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="z2m-ikea/octoprint_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type switch : state [stateTopic="z2m-ikea/bambu_p2s_power", commandTopic="z2m-ikea/bambu_p2s_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : ac_voltage [stateTopic="z2m-ikea/bambu_p2s_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="z2m-ikea/bambu_p2s_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="z2m-ikea/bambu_p2s_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="z2m-ikea/bambu_p2s_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="z2m-ikea/bambu_p2s_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/bambu_p2s_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// Ender3 power (0x1cc089fffe13a7e3)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Thing mqtt:topic:openhab:ender3_power "Ender3 power" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/ender3_power", commandTopic="z2m-ikea/ender3_power/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : ac_voltage [stateTopic="z2m-ikea/ender3_power", transformationPattern="REGEX:(.*\"voltage\".*)∩JSONPATH:$.voltage", unit="V"]
+		Type number : ac_current [stateTopic="z2m-ikea/ender3_power", transformationPattern="REGEX:(.*\"current\".*)∩JSONPATH:$.current", unit="A"]
+		Type number : ac_power [stateTopic="z2m-ikea/ender3_power", transformationPattern="REGEX:(.*\"power\".*)∩JSONPATH:$.power", unit="W"]
+		Type number : ac_energy [stateTopic="z2m-ikea/ender3_power", transformationPattern="REGEX:(.*\"energy\".*)∩JSONPATH:$.energy", unit="kWh"]
+		Type number : link [stateTopic="z2m-ikea/ender3_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ender3_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
 // Warehouse 1 leak (0x94a081fffe56f553)
 // BADRING water leakage sensor (E2202) / https://www.zigbee2mqtt.io/devices/E2202.html
