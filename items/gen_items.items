@@ -35,6 +35,20 @@ Dimmer eg_decoration_light_dim_fast "EG Decor light DIM-F [%d %%]" (g_all_dim_fa
 Switch eg_decoration_light_ota "EG Decor light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_decoration_light:ota"}
 Number:Dimensionless eg_decoration_light_link "EG Decor light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_decoration_light:link"}
 Switch eg_decoration_light_sw "EG Decor light" <light> (g_all_sw,all_light,eg_light,eg_light_auto,fl_light) {channel="mqtt:topic:openhab:eg_decoration_light:state"}
+// EG Decor light L (0x781c9dfffe588546)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Dimmer eg_decoration_light_l_dim "EG Decor light L DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:eg_decoration_light_l:dim"}
+Dimmer eg_decoration_light_l_dim_fast "EG Decor light L DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:eg_decoration_light_l:dim_fast"}
+Switch eg_decoration_light_l_ota "EG Decor light L OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_decoration_light_l:ota"}
+Number:Dimensionless eg_decoration_light_l_link "EG Decor light L LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_decoration_light_l:link"}
+Switch eg_decoration_light_l_sw "EG Decor light L" <light> (g_all_sw,all_light,eg_light) {channel="mqtt:topic:openhab:eg_decoration_light_l:state"}
+// EG Decor light R (0x781c9dfffe58d749)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Dimmer eg_decoration_light_r_dim "EG Decor light R DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:eg_decoration_light_r:dim"}
+Dimmer eg_decoration_light_r_dim_fast "EG Decor light R DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:eg_decoration_light_r:dim_fast"}
+Switch eg_decoration_light_r_ota "EG Decor light R OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:eg_decoration_light_r:ota"}
+Number:Dimensionless eg_decoration_light_r_link "EG Decor light R LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:eg_decoration_light_r:link"}
+Switch eg_decoration_light_r_sw "EG Decor light R" <light> (g_all_sw,all_light,eg_light) {channel="mqtt:topic:openhab:eg_decoration_light_r:state"}
 // Comode remote (0x04e3e5fffe02fbd6)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Dimmer fl_comode_remote_dim "Comode remote DIM [%d %%]" <light> (g_all_dim) {channel="mqtt:topic:openhab:fl_comode_remote:dim"}

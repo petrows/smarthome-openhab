@@ -76,6 +76,24 @@ devices:
       dim:
       - eg_light_auto_dim
 
+  - name: EG Decor light L
+    id: eg_decoration_light_l
+    zigbee_id: '0x781c9dfffe588546'
+    type: IKEA_TRADFRI_LAMP_W_250
+    groups:
+      sw:
+      - all_light
+      - eg_light
+
+  - name: EG Decor light R
+    id: eg_decoration_light_r
+    zigbee_id: '0x781c9dfffe58d749'
+    type: IKEA_TRADFRI_LAMP_W_250
+    groups:
+      sw:
+      - all_light
+      - eg_light
+
   - name: Comode remote
     id: fl_comode_remote
     zigbee_id: '0x04e3e5fffe02fbd6'

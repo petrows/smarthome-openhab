@@ -43,6 +43,22 @@ Text item=eg_decoration_light_ota
 Text item=eg_decoration_light_link
 Switch item=eg_decoration_light_sw
 }
+Frame label="EG Decor light L (0x781c9dfffe588546)" {
+// EG Decor light L (0x781c9dfffe588546)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=eg_decoration_light_l_dim
+Text item=eg_decoration_light_l_ota
+Text item=eg_decoration_light_l_link
+Switch item=eg_decoration_light_l_sw
+}
+Frame label="EG Decor light R (0x781c9dfffe58d749)" {
+// EG Decor light R (0x781c9dfffe58d749)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Slider item=eg_decoration_light_r_dim
+Text item=eg_decoration_light_r_ota
+Text item=eg_decoration_light_r_link
+Switch item=eg_decoration_light_r_sw
+}
 Frame label="Comode remote (0x04e3e5fffe02fbd6)" {
 // Comode remote (0x04e3e5fffe02fbd6)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html

@@ -102,6 +102,10 @@
   friendly_name: bz_towel_heater
 '0x6cfd22fffeb63428':
   friendly_name: kg_window_2
+'0x781c9dfffe588546':
+  friendly_name: eg_decoration_light_l
+'0x781c9dfffe58d749':
+  friendly_name: eg_decoration_light_r
 '0x8c65a3fffe70093b':
   friendly_name: bz_leak
 '0x8c8b48fffe0ef9ed':

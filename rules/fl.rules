@@ -170,3 +170,21 @@ when
 then
     eg_decoration_light_dim_fast.sendCommand((eg_decoration_light_dim_fast.state as Number) + Integer::parseInt(receivedEvent))
 end
+
+rule "FL Comode light"
+when
+    Item eg_decoration_light_sw changed
+then
+	var state = newState
+
+    switch(state) {
+        case ON: {
+            eg_decoration_light_l_dim.sendCommand(30)
+            eg_decoration_light_r_dim.sendCommand(30)
+        }
+        case OFF: {
+            eg_decoration_light_l_sw.sendCommand(OFF)
+            eg_decoration_light_r_sw.sendCommand(OFF)
+        }
+    }
+end

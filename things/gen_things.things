@@ -47,6 +47,26 @@ Thing mqtt:topic:openhab:eg_decoration_light "EG Decor light" (mqtt:broker:openh
 		Type number : link [stateTopic="z2m-ikea/eg_decoration_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-ikea/eg_decoration_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// EG Decor light L (0x781c9dfffe588546)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Thing mqtt:topic:openhab:eg_decoration_light_l "EG Decor light L" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/eg_decoration_light_l", commandTopic="z2m-ikea/eg_decoration_light_l/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/eg_decoration_light_l", commandTopic="z2m-ikea/eg_decoration_light_l/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/eg_decoration_light_l", commandTopic="z2m-ikea/eg_decoration_light_l/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/eg_decoration_light_l", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/eg_decoration_light_l", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
+// EG Decor light R (0x781c9dfffe58d749)
+// IKEA TRADFRI LED bulb E27 WW clear 250 lumen, dimmable (LED1842G3) / https://www.zigbee2mqtt.io/devices/LED1842G3.html
+Thing mqtt:topic:openhab:eg_decoration_light_r "EG Decor light R" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/eg_decoration_light_r", commandTopic="z2m-ikea/eg_decoration_light_r/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
+		Type dimmer : dim [stateTopic="z2m-ikea/eg_decoration_light_r", commandTopic="z2m-ikea/eg_decoration_light_r/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=1&exp=0", min=1, max=254]
+		Type dimmer : dim_fast [stateTopic="z2m-ikea/eg_decoration_light_r", commandTopic="z2m-ikea/eg_decoration_light_r/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type number : link [stateTopic="z2m-ikea/eg_decoration_light_r", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/eg_decoration_light_r", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // Comode remote (0x04e3e5fffe02fbd6)
 // IKEA STYRBAR remote control N2 / https://www.zigbee2mqtt.io/devices/E2001_E2002.html
 Thing mqtt:topic:openhab:fl_comode_remote "Comode remote" (mqtt:broker:openhab) {
