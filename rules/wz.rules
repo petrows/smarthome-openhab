@@ -139,7 +139,7 @@ end
 
 rule "Plant lights off"
 when
-	Time cron "0 00 22,00 ? * *"
+	Time cron "0 00 21,00 ? * *"
 then
     logWarn("light", "Plants light off")
 
