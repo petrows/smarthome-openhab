@@ -133,3 +133,36 @@ then
         }
     }
 end
+
+// Petro PC On/Off routine
+rule "Petro PC On/Off routine"
+when
+    Item scene_petro_pc_sw received command
+then
+    var command = receivedCommand
+    logWarn("PC Control", "Petro PC power command: " + command)
+
+    if (command == ON) {
+        if (desktop_petro_pc_power.state == OFF) {
+            // Turn On general power
+            desktop_petro_pc_power.sendCommand(ON)
+        }
+        // Wait 10 seconds to boot up control card
+        createTimer(now.plusSeconds(10), [|
+            desktop_petro_pc_control.sendCommand(ON)
+        ])
+    }
+
+    if (command == OFF) {
+        desktop_petro_pc_control.sendCommand(OFF)
+    }
+end
+
+// Update read status
+rule "Petro PC On/Off status"
+when
+    Item desktop_petro_pc_control received update
+then
+    logWarn("PC Control", "Petro PC power status: " + newState)
+    scene_petro_pc_sw.postUpdate(newState)
+end

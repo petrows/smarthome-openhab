@@ -812,12 +812,18 @@ Number:Pressure kg_climate_pressure "KG Climate pressure  [%.0f %unit%]" <pressu
 Number:Dimensionless kg_climate_rssi "KG Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_climate:rssi"}
 String kg_climate_bssid "KG Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_climate:bssid"}
 DateTime kg_climate_activity "KG Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_climate:activity"}
-// Petro Desktop PC (desktop_petro_pc_power)
+// Petro Desktop (desktop_petro_pc_power)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch desktop_petro_pc_power "Petro Desktop PC" <light> (g_all_sw) {channel="mqtt:topic:openhab:desktop_petro_pc_power:power"}
-Number:Dimensionless desktop_petro_pc_power_rssi "Petro Desktop PC RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:desktop_petro_pc_power:rssi"}
-String desktop_petro_pc_power_bssid "Petro Desktop PC BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:desktop_petro_pc_power:bssid"}
-DateTime desktop_petro_pc_power_activity "Petro Desktop PC activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:desktop_petro_pc_power:activity"}
+Number:Dimensionless desktop_petro_pc_power_rssi "Petro Desktop RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:desktop_petro_pc_power:rssi"}
+String desktop_petro_pc_power_bssid "Petro Desktop BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:desktop_petro_pc_power:bssid"}
+DateTime desktop_petro_pc_power_activity "Petro Desktop activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:desktop_petro_pc_power:activity"}
+// Petro Desktop PC (desktop_petro_pc_control)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch desktop_petro_pc_control "Petro Desktop PC Control" <light> (g_all_sw) {channel="mqtt:topic:openhab:desktop_petro_pc_control:power"}
+Number:Dimensionless desktop_petro_pc_control_rssi "Petro Desktop PC RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:desktop_petro_pc_control:rssi"}
+String desktop_petro_pc_control_bssid "Petro Desktop PC BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:desktop_petro_pc_control:bssid"}
+DateTime desktop_petro_pc_control_activity "Petro Desktop PC activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:desktop_petro_pc_control:activity"}
 // KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
 Switch kg_main1_light "KG Hobbyraum (Workshop)" <light> (g_all_sw,all_light,kg_light,kg_light_hobbyraum,kg_light_auto) {channel="mqtt:topic:openhab:kg_main1_light:power"}

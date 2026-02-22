@@ -987,13 +987,21 @@ Text item=kg_climate_rssi
 Text item=kg_climate_bssid
 Text item=kg_climate_activity
 }
-Frame label="Petro Desktop PC (desktop_petro_pc_power)" {
-// Petro Desktop PC (desktop_petro_pc_power)
+Frame label="Petro Desktop (desktop_petro_pc_power)" {
+// Petro Desktop (desktop_petro_pc_power)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
 Switch item=desktop_petro_pc_power
 Text item=desktop_petro_pc_power_rssi
 Text item=desktop_petro_pc_power_bssid
 Text item=desktop_petro_pc_power_activity
+}
+Frame label="Petro Desktop PC (desktop_petro_pc_control)" {
+// Petro Desktop PC (desktop_petro_pc_control)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Switch item=desktop_petro_pc_control
+Text item=desktop_petro_pc_control_rssi
+Text item=desktop_petro_pc_control_bssid
+Text item=desktop_petro_pc_control_activity
 }
 Frame label="KG Hobbyraum (Workshop) (kg_main1_light)" {
 // KG Hobbyraum (Workshop) (kg_main1_light)

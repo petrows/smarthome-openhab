@@ -4,3 +4,6 @@ Group:Switch:OR(ON, OFF) all_scene (g_all)
 Switch scene_sleep (all_scene) { expire="3s,command=OFF" }
 Switch scene_tv_restart (all_scene) { expire="3s,command=OFF" }
 Switch scene_cat_food (all_scene) { expire="3s,command=OFF" }
+
+// Virtual switches
+Switch scene_petro_pc_sw "Petro PC Control"

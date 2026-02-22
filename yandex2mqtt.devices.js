@@ -214,6 +214,14 @@ devices = [
         room: ROOMS.LIVING,
     }),
 
+    // Petro desktop PC control
+    Light(LIGHT.SW, {
+        id: 'scene_petro_pc',
+        type: 'devices.types.switch',
+        name: 'Компьютер',
+        room: ROOMS.KG_CABINET,
+    }),
+
     // Petro desktop laptop power
     Light(LIGHT.SW, {
         id: 'desktop_petro_laptop_power',

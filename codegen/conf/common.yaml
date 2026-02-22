@@ -396,13 +396,22 @@ devices:
         - kg_hz_temperature_sensor
 
   # Power for devices to be switched off
-  - name: Petro Desktop PC
+  - name: Petro Desktop
     id: desktop_petro_pc_power
     type: TASMOTA_SONOFF_MINI
     channels:
       POWER:
         id: desktop_petro_pc_power
         name: Petro Desktop PC
+
+  # Power for devices to be switched off
+  - name: Petro Desktop PC
+    id: desktop_petro_pc_control
+    type: TASMOTA_SONOFF_MINI
+    channels:
+      POWER:
+        id: desktop_petro_pc_control
+        name: Petro Desktop PC Control
 
   - name: "KG Hobbyraum (Workshop)"
     id: kg_main1_light

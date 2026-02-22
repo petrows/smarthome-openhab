@@ -1182,15 +1182,25 @@ Thing mqtt:topic:openhab:kg_climate "KG Climate" (mqtt:broker:openhab) {
 		Type number : dewpoint [stateTopic="tele/kg_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.DewPoint", unit="C°"]
 		Type number : pressure [stateTopic="tele/kg_climate/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
 }
-// Petro Desktop PC (desktop_petro_pc_power)
+// Petro Desktop (desktop_petro_pc_power)
 // Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
-Thing mqtt:topic:openhab:desktop_petro_pc_power "Petro Desktop PC" (mqtt:broker:openhab) {
+Thing mqtt:topic:openhab:desktop_petro_pc_power "Petro Desktop" (mqtt:broker:openhab) {
 	Channels:
 		Type number : rssi [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
 		Type string : bssid [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/desktop_petro_pc_power/STATE", transformationPattern="JS:codegen-activity.js"]
 		Type switch : power [stateTopic="stat/desktop_petro_pc_power/RESULT", transformationPattern="REGEX:(.*\"POWER\".*)∩JSONPATH:$.POWER", commandTopic="cmnd/desktop_petro_pc_power/POWER", on="ON", off="OFF"]
+}
+// Petro Desktop PC (desktop_petro_pc_control)
+// Sonoff Mini Switch / https://templates.blakadder.com/sonoff_mini.html
+Thing mqtt:topic:openhab:desktop_petro_pc_control "Petro Desktop PC" (mqtt:broker:openhab) {
+	Channels:
+		Type number : rssi [stateTopic="tele/desktop_petro_pc_control/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/desktop_petro_pc_control/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/desktop_petro_pc_control/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/desktop_petro_pc_control/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type switch : power [stateTopic="stat/desktop_petro_pc_control/RESULT", transformationPattern="REGEX:(.*\"POWER\".*)∩JSONPATH:$.POWER", commandTopic="cmnd/desktop_petro_pc_control/POWER", on="ON", off="OFF"]
 }
 // KG Hobbyraum (Workshop) (kg_main1_light)
 // Sonoff Touch EU Switch (1 gang) / https://templates.blakadder.com/sonoff_touch_eu.html
