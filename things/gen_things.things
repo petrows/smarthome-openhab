@@ -653,6 +653,18 @@ Thing mqtt:topic:openhab:hz_leak "HZ leak" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="z2m-ikea/hz_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="z2m-ikea/hz_leak", transformationPattern="JS:codegen-activity.js"]
 }
+// HZ door (0xd44867fffeb3ec35)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Thing mqtt:topic:openhab:hz_door "HZ door" (mqtt:broker:openhab) {
+	Channels:
+		Type contact : contact [stateTopic="z2m-ikea/hz_door", transformationPattern="REGEX:(.*\"contact\".*)∩JSONPATH:$.contact", on="false", off="true"]
+		Type number : battery [stateTopic="z2m-ikea/hz_door", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
+		Type datetime : activity [stateTopic="z2m-ikea/hz_door", transformationPattern="JS:codegen-activity.js"]
+		Type switch : battery_low [stateTopic="z2m-ikea/hz_door", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
+		Type number : link [stateTopic="z2m-ikea/hz_door", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/hz_door", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+		Type datetime : activity [stateTopic="z2m-ikea/hz_door", transformationPattern="JS:codegen-activity.js"]
+}
 // KG Lager 1 door (0x048727fffe9cc0fb)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
 Thing mqtt:topic:openhab:kg_lager1_door "KG Lager 1 door" (mqtt:broker:openhab) {

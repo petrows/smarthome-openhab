@@ -1,6 +1,6 @@
 
 // Auto light in Lager 1
-// turn ON light when dorr is open
+// turn ON light when door is open
 rule "Lager 1 door light"
 when
     Item kg_lager1_door_contact changed
@@ -13,8 +13,8 @@ then
 end
 
 // Auto light in laundry
-// turn ON light when dorr is open
-rule "Laubdry door light"
+// turn ON light when door is open
+rule "Laundry door light"
 when
     Item kg_lager3_door_contact changed
 then
@@ -25,6 +25,19 @@ then
         }
     } else {
         lg3_up_light.sendCommand(OFF)
+    }
+end
+
+// Auto light in Heating room
+// turn ON light when door is open
+rule "Heating room door light"
+when
+    Item hz_door_contact changed
+then
+    if (newState == OPEN) {
+        kg_hz_main_light.sendCommand(ON)
+    } else {
+        kg_hz_main_light.sendCommand(OFF)
     }
 end
 

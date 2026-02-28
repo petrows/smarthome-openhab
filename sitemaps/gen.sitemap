@@ -537,6 +537,16 @@ Text item=hz_leak_activity
 Text item=hz_leak_leak
 Text item=hz_leak_battery
 }
+Frame label="HZ door (0xd44867fffeb3ec35)" {
+// HZ door (0xd44867fffeb3ec35)
+// PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html
+Text item=hz_door_lowbatt
+Text item=hz_door_ota
+Text item=hz_door_link
+Text item=hz_door_activity
+Text item=hz_door_contact
+Text item=hz_door_battery
+}
 Frame label="KG Lager 1 door (0x048727fffe9cc0fb)" {
 // KG Lager 1 door (0x048727fffe9cc0fb)
 // PARASOLL Door/Window Sensor (E2013) / https://www.zigbee2mqtt.io/devices/E2013.html

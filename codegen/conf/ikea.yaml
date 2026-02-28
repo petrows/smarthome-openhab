@@ -599,6 +599,11 @@ devices:
     zigbee_id: '0x8c8b48fffe226767'
     type: IKEA_BADRING
 
+  - name: HZ door
+    id: hz_door
+    zigbee_id: '0xd44867fffeb3ec35'
+    type: IKEA_PARASOLL
+
 # STORAGE 1 ================================
 
   - name: KG Lager 1 door
