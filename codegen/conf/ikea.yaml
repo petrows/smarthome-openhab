@@ -529,8 +529,8 @@ devices:
 
   - name: Petro Desktop light
     id: desktop_petro_light
-    zigbee_id: '0x040d84fffec53aaf'
-    type: IKEA_TRADFRI_LAMP_CT_1000
+    zigbee_id: '0x00e456acff0d3715'
+    type: IKEA_KAJPLATS_CT
     transition_brightness: 3
     y2m:
       name: Стол

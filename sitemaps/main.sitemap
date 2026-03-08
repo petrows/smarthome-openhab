@@ -521,9 +521,13 @@ sitemap main label="MAIN"
                 Text item=p2s_temperature_bed_actual
                 Text item=p2s_temperature_tool_actual
             }
-            Frame label="Bambu P2S AMS status" {
-                Text item=p2s_ams_temperature
-                Text item=p2s_ams_humidity
+            Frame label="Bambu P2S AMS A" {
+                Text item=p2s_ams0_temperature
+                Text item=p2s_ams0_humidity
+            }
+            Frame label="Bambu P2S AMS B" {
+                Text item=p2s_ams1_temperature
+                Text item=p2s_ams1_humidity
             }
             Frame label="Ender 3" {
                 Group item=ender3_power_sw label="Power" {

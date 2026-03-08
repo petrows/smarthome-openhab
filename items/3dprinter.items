@@ -23,5 +23,7 @@ Number:Temperature p2s_temperature_tool_actual "P2S tool [%.0f %unit%]" <tempera
 Number:Temperature p2s_temperature_tool_target "P2S tool set [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:temperature_tool_target"}
 Number:Length p2s_tool_diameter "P2S tool diameter [%.2f %unit%]" {channel="mqtt:topic:openhab:p2s:tool_diameter"}
 Number:Temperature p2s_chamber_temperature "P2S chamber temperature [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:chamber_temperature"}
-Number:Temperature p2s_ams_temperature "P2S AMS temperature [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:ams_temperature"}
-Number:Dimensionless p2s_ams_humidity "P2S AMS humidity [%.0f %%]" <humidity> {channel="mqtt:topic:openhab:p2s:ams_humidity"}
+Number:Temperature p2s_ams0_temperature "P2S AMS A temperature [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:ams0_temperature"}
+Number:Dimensionless p2s_ams0_humidity "P2S AMS A humidity [%.0f %%]" <humidity> {channel="mqtt:topic:openhab:p2s:ams0_humidity"}
+Number:Temperature p2s_ams1_temperature "P2S AMS B temperature [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:ams1_temperature"}
+Number:Dimensionless p2s_ams1_humidity "P2S AMS B humidity [%.0f %%]" <humidity> {channel="mqtt:topic:openhab:p2s:ams1_humidity"}
