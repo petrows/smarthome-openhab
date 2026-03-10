@@ -13,6 +13,7 @@ var Timer wz_julia_stand_light_ct_timer
 var Timer wz_julia_desktop_light_ct_timer
 var Timer sz_bed_light_l_ct_timer
 var Timer sz_bed_light_r_ct_timer
+var Timer ku_light_table_ct_timer
 var Timer tr_up_light_ct_timer
 var Timer desktop_petro_up_light_1_ct_timer
 var Timer desktop_petro_up_light_2_ct_timer
@@ -88,6 +89,16 @@ then
     val ct_set = (sz_bed_light_r_ct.state as Number).intValue
     sz_bed_light_r_ct_timer = createTimer(now.plusSeconds(1), [ |
         sz_bed_light_r_ct.sendCommand(ct_set)
+    ])
+end
+// Device should apply saved color temp when ON
+rule "KU Light Table apply color on ON"
+when
+    Item ku_light_table_sw changed to ON
+then
+    val ct_set = (ku_light_table_ct.state as Number).intValue
+    ku_light_table_ct_timer = createTimer(now.plusSeconds(1), [ |
+        ku_light_table_ct.sendCommand(ct_set)
     ])
 end
 // Device should apply saved color temp when ON

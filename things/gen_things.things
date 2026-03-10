@@ -444,13 +444,14 @@ Thing mqtt:topic:openhab:ku_light_table_switch "KU Light Table SW" (mqtt:broker:
 		Type number : link [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-ikea/ku_light_table_switch", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KU Light Table (0xec1bbdfffe4695b5)
-// IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
+// KU Light Table (0x04cd15fffe6bf002)
+// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
 Thing mqtt:topic:openhab:ku_light_table "KU Light Table" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="z2m-ikea/ku_light_table", commandTopic="z2m-ikea/ku_light_table/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
 		Type dimmer : dim [stateTopic="z2m-ikea/ku_light_table", commandTopic="z2m-ikea/ku_light_table/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=3&exp=0", min=1, max=254]
 		Type dimmer : dim_fast [stateTopic="z2m-ikea/ku_light_table", commandTopic="z2m-ikea/ku_light_table/set", transformationPattern="REGEX:(.*\"brightness\".*)∩JS:codegen-brightness.js", transformationPatternOut="JS:codegen-cmd-value.js?f=brightness&t=0&exp=0", min=1, max=254]
+		Type dimmer : ct [stateTopic="z2m-ikea/ku_light_table", commandTopic="z2m-ikea/ku_light_table/set", transformationPattern="REGEX:(.*\"color_temp\".*)∩JSONPATH:$.color_temp", transformationPatternOut="JS:codegen-cmd-value.js?f=color_temp&t=3&exp=0", min=150, max=500]
 		Type number : link [stateTopic="z2m-ikea/ku_light_table", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-ikea/ku_light_table", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
@@ -533,8 +534,8 @@ Thing mqtt:topic:openhab:desktop_petro_remote "Petro Desktop remote" (mqtt:broke
 		Type number : link [stateTopic="z2m-ikea/desktop_petro_remote", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-ikea/desktop_petro_remote", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Petro Desktop up light 1 (0x04cd15fffe35f24e)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+// Petro Desktop up light 1 (0x008c73daff164d0d)
+// IKEA KAJPLATS white spectrum light / https://www.zigbee2mqtt.io/devices/KAJPLATS_CT.html
 Thing mqtt:topic:openhab:desktop_petro_up_light_1 "Petro Desktop up light 1" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="z2m-ikea/desktop_petro_up_light_1", commandTopic="z2m-ikea/desktop_petro_up_light_1/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]
@@ -544,8 +545,8 @@ Thing mqtt:topic:openhab:desktop_petro_up_light_1 "Petro Desktop up light 1" (mq
 		Type number : link [stateTopic="z2m-ikea/desktop_petro_up_light_1", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-ikea/desktop_petro_up_light_1", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Petro Desktop up light 2 (0x04cd15fffe6bf002)
-// IKEA TRADFRI LED bulb E27 1000 lumen, dimmable, white spectrum, opal white (LED1732G11) / https://www.zigbee2mqtt.io/devices/LED1732G11.html
+// Petro Desktop up light 2 (0x00e456acff0d8967)
+// IKEA KAJPLATS white spectrum light / https://www.zigbee2mqtt.io/devices/KAJPLATS_CT.html
 Thing mqtt:topic:openhab:desktop_petro_up_light_2 "Petro Desktop up light 2" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : state [stateTopic="z2m-ikea/desktop_petro_up_light_2", commandTopic="z2m-ikea/desktop_petro_up_light_2/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=1&exp=0"]

@@ -10,10 +10,14 @@
   simulated_brightness:
     delta: 5
     interval: 100
+'0x008c73daff164d0d':
+  friendly_name: desktop_petro_up_light_1
 '0x00be44fffea95063':
   friendly_name: kg_main1_work_light
 '0x00e456acff0d3715':
   friendly_name: desktop_petro_light
+'0x00e456acff0d8967':
+  friendly_name: desktop_petro_up_light_2
 '0x048727fffe5d07db':
   friendly_name: mouse_trap_4
 '0x048727fffe5d58e3':
@@ -26,10 +30,8 @@
   friendly_name: mouse_trap_2
 '0x048727fffea43740':
   friendly_name: mouse_trap_1
-'0x04cd15fffe35f24e':
-  friendly_name: desktop_petro_up_light_1
 '0x04cd15fffe6bf002':
-  friendly_name: desktop_petro_up_light_2
+  friendly_name: ku_light_table
 '0x04cd15fffe73ecb6':
   friendly_name: desktop_petro_up_light_3
 '0x04cd15fffe75c518':
@@ -180,8 +182,6 @@
   friendly_name: sz_window_l
 '0xec1bbdfffe1b89d1':
   friendly_name: wz_julia_desktop_light
-'0xec1bbdfffe4695b5':
-  friendly_name: ku_light_table
 '0xec1bbdfffe91007b':
   friendly_name: wz_declamp_3
 '0xec1bbdfffe972203':

@@ -62,7 +62,7 @@ Light(LIGHT.SW, {
     room: ROOMS.SLEEP,
     type: 'devices.types.switch',
 }),
-Light(LIGHT.DIM, {
+Light(LIGHT.CT, {
     id: 'ku_light_table',
     name: 'Стол',
     room: ROOMS.KITCHEN,
