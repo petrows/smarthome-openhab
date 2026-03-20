@@ -1,0 +1,39 @@
+// Bambu Lab P2S temperature
+rule "Send Temperature to MQTT with step conversion"
+when
+    Item p2s_temperature_tool_actual changed
+then
+    val double tempValue = (newState as Number).doubleValue
+
+    // Ограничиваем значение диапазоном прибора
+    val double clampedTemp = Math.max(0.0, Math.min(400.0, tempValue))
+
+    // Максимум шагов: 270° * 12 шагов/° = 3240 шагов
+    // Преобразование: 0–400°C → 0–3240 шагов
+    val int steps = ((clampedTemp / 400.0) * 3240).intValue
+
+    // Публикуем в MQTT
+    val mqttActions = getActions("mqtt","mqtt:broker:openhab")
+    mqttActions.publishMQTT("cmnd/galoped_printer/GaugeSet2", steps.toString)
+
+    logInfo("Galoped", "Temp: " + clampedTemp + "°C → Steps: " + steps + " (max 4800)")
+end
+
+rule "Send Progress to MQTT with scale conversion"
+when
+    Item p2s_progress changed
+then
+    val double progressValue = (p2s_progress.state as Number).doubleValue * 100.0
+
+    // Ограничиваем значение диапазоном 0–100%
+    val double clamped = Math.max(0.0, Math.min(100.0, progressValue))
+
+    // Преобразование: 0–100% → 0–270
+    val int position = ((clamped / 100.0) * 3240).intValue
+
+    // Публикуем в MQTT (замените топик на ваш)
+    val mqttActions = getActions("mqtt","mqtt:broker:openhab")
+    mqttActions.publishMQTT("cmnd/galoped_printer/GaugeSet1", position.toString)
+
+    logInfo("Galoped", "Progress: " + clamped + "% → Position: " + position + " (max 270)")
+end
