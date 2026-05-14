@@ -1,0 +1,10 @@
+// Galoped room 3E
+
+Number:Dimensionless cin_3e_climate_co2 "CIN 3E Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:cin_3e_climate:co2"}
+Number:Temperature cin_3e_climate_temperature "CIN 3E Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,sz_hz_temperature_sensor) {channel="mqtt:topic:openhab:cin_3e_climate:temperature"}
+Number:Dimensionless cin_3e_climate_humidity "CIN 3E Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:cin_3e_climate:humidity"}
+Number:Temperature cin_3e_climate_dewpoint "CIN 3E Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:cin_3e_climate:dewpoint"}
+Number:Pressure cin_3e_climate_pressure "CIN 3E Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:cin_3e_climate:pressure"}
+Number:Dimensionless cin_3e_climate_rssi "CIN 3E Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:cin_3e_climate:rssi"}
+String cin_3e_climate_bssid "CIN 3E Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:cin_3e_climate:bssid"}
+DateTime cin_3e_climate_activity "CIN 3E Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:cin_3e_climate:activity"}

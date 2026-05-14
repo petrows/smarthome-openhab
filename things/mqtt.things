@@ -93,3 +93,18 @@ Thing mqtt:topic:openhab:p2s (mqtt:broker:openhab) {
 // 		Type number : pressure  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
 // 		Type number : co2  [ stateTopic="tele/kg_climate_v2/SENSOR", transformationPattern="JSONPATH:$.S8.CarbonDioxide", unit="ppm"]
 // }
+
+// Galoped room 3E
+Thing mqtt:topic:openhab:cin_3e_climate "CIN 3E Climate" (mqtt:broker:hivemq-cin) {
+	Channels:
+		Type number : rssi [stateTopic="tele/galoped_660EB4/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/galoped_660EB4/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/galoped_660EB4/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/galoped_660EB4/STATE", transformationPattern="JS:codegen-activity.js"]
+
+		Type number : co2 [stateTopic="tele/galoped_660EB4/SENSOR", transformationPattern="JSONPATH:$.S8.CarbonDioxide", unit="ppm"]
+		Type number : temperature [stateTopic="tele/galoped_660EB4/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Temperature", unit="C°"]
+		Type number : humidity [stateTopic="tele/galoped_660EB4/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Humidity", unit="%"]
+		Type number : dewpoint [stateTopic="tele/galoped_660EB4/SENSOR", transformationPattern="JSONPATH:$.AHT2X.DewPoint", unit="C°"]
+		Type number : pressure [stateTopic="tele/galoped_660EB4/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
+}
