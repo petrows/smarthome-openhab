@@ -1,6 +1,3 @@
-import java.util.concurrent.locks.ReentrantLock
-val ReentrantLock lock  = new ReentrantLock()
-
 var Boolean nachtModeTest = false
 var Boolean in_bz_rule = false
 
