@@ -80,8 +80,14 @@ Thing mqtt:topic:openhab:p2s (mqtt:broker:openhab) {
         Type number : chamber_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.device.ctc.info.temp", unit="C°"]
         Type number : ams0_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].temp", unit="C°"]
         Type number : ams0_humidity  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].humidity_raw", unit="%"]
+        Type number : ams0_dry_time  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].dry_time"]
+        Type string : ams0_dry_filament  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].dry_setting.dry_filament"]
+        Type number : ams0_dry_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[0].dry_setting.dry_temperature", unit="C°"]
         Type number : ams1_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[1].temp", unit="C°"]
         Type number : ams1_humidity  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[1].humidity_raw", unit="%"]
+        Type number : ams1_dry_time  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[1].dry_time"]
+        Type string : ams1_dry_filament  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[1].dry_setting.dry_filament"]
+        Type number : ams1_dry_temperature  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.ams.ams[1].dry_setting.dry_temperature", unit="C°"]
 }
 
 
