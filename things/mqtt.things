@@ -70,6 +70,8 @@ Thing mqtt:topic:openhab:ender3 (mqtt:broker:openhab) {
 // Bambu P2S events
 Thing mqtt:topic:openhab:p2s (mqtt:broker:openhab) {
     Channels:
+        Type switch : connected  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$._meta.printer_connected", on="true", off="false"]
+        Type number : idle_time  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$._meta.idle_seconds"]
         Type number : progress  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.percent", unit="%"]
         Type string : file  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.subtask_name"]
         Type number : temperature_bed_actual  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.bed_temper", unit="C°"]

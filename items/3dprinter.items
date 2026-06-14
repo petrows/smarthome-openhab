@@ -15,6 +15,8 @@ Number:Temperature ender3_temperature_tool_target "Ender3 tool set [%.1f %unit%]
 
 // Bambu P2S items
 
+Switch p2s_connected "P2S connected [%s]" <switch> {channel="mqtt:topic:openhab:p2s:connected"}
+Number:Dimensionless p2s_idle_time "P2S idle [%d s]" <time> {channel="mqtt:topic:openhab:p2s:idle_time"}
 Number:Dimensionless p2s_progress "P2S progress [%d %%]" <pressure> {channel="mqtt:topic:openhab:p2s:progress"}
 String p2s_file "P2S file [%s]" {channel="mqtt:topic:openhab:p2s:file"}
 Number:Temperature p2s_temperature_bed_actual "P2S bed [%.0f %unit%]" <temperature> {channel="mqtt:topic:openhab:p2s:temperature_bed_actual"}

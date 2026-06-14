@@ -1,6 +1,0 @@
-rule "P2S Update"
-when
-    Item p2s_progress received update
-then
-    // Update progress and other switch
-end

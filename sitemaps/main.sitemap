@@ -513,6 +513,8 @@ sitemap main label="MAIN"
                     Text item=bambu_p2s_power_ac_energy
                 }
                 Text item=bambu_p2s_power_ac_power
+                Text item=p2s_connected
+                Text item=p2s_idle_time
             }
             Frame label="Bambu P2S status" {
                 Text item=p2s_progress
