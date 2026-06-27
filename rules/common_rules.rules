@@ -1,4 +1,5 @@
 import java.time.temporal.ChronoUnit
+import org.openhab.core.library.types.QuantityType
 
 var Timer gartenTimer
 
@@ -141,7 +142,7 @@ then
         return
     }
 
-    if (weather_today_temp_max.state < 30 | "°C") {
+    if ((weather_today_temp_max.state).doubleValue < 30) {
         logInfo("common", "Garten wasser everning not required, max temp was {}", weather_today_temp_max.state)
         return
     }
