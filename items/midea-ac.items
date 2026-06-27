@@ -1,0 +1,5 @@
+Switch sz_ac_power "SZ AC Power" (g_all_sw) { channel="mideaac:ac:sz:power" }
+Number:Temperature sz_ac_target_temperature "SZ AC Target Temperature [%.1f °C]" (g_all_temperature) { channel="mideaac:ac:sz:target-temperature" }
+String sz_ac_operational_mode "SZ AC Operational Mode [%s]" (g_all_strings) { channel="mideaac:ac:sz:operational-mode" }
+String sz_ac_fan_speed "SZ AC Fan Speed [%s]" (g_all_strings) { channel="mideaac:ac:sz:fan-speed" }
+Number:Temperature sz_ac_indoor_temperature "SZ AC Indoor Temperature [%.1f °C]" (g_all_temperature) { channel="mideaac:ac:sz:indoor-temperature" }

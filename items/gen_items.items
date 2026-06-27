@@ -277,6 +277,15 @@ Number:ElectricPotential sz_bed_power_ac_voltage "SZ Bed power [%.1f V]" <energy
 Number:ElectricCurrent sz_bed_power_ac_current "SZ Bed power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:sz_bed_power:ac_current"}
 Number:Power sz_bed_power_ac_power "SZ Bed power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:sz_bed_power:ac_power"}
 Number:Energy sz_bed_power_ac_energy "SZ Bed power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:sz_bed_power:ac_energy"}
+// SZ AC Clima power (0xf0fd45fffe0b891e)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Switch sz_ac_clima_power_ota "SZ AC Clima power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_ac_clima_power:ota"}
+Number:Dimensionless sz_ac_clima_power_link "SZ AC Clima power LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_ac_clima_power:link"}
+Switch sz_ac_clima_power_sw "SZ AC Clima power" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_ac_clima_power:state"}
+Number:ElectricPotential sz_ac_clima_power_ac_voltage "SZ AC Clima power [%.1f V]" <energy> (g_all_ac_voltage) {channel="mqtt:topic:openhab:sz_ac_clima_power:ac_voltage"}
+Number:ElectricCurrent sz_ac_clima_power_ac_current "SZ AC Clima power [%.2f A]" <energy> (g_all_ac_current) {channel="mqtt:topic:openhab:sz_ac_clima_power:ac_current"}
+Number:Power sz_ac_clima_power_ac_power "SZ AC Clima power [%.1f W]" <energy> (g_all_ac_power) {channel="mqtt:topic:openhab:sz_ac_clima_power:ac_power"}
+Number:Energy sz_ac_clima_power_ac_energy "SZ AC Clima power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:sz_ac_clima_power:ac_energy"}
 // SZ TV power (0x8c8b48fffe0ef9ed)
 // TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
 Switch sz_tv_power_ota "SZ TV power OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_tv_power:ota"}

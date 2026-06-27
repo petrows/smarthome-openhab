@@ -338,6 +338,17 @@ Text item=sz_bed_power_ac_current
 Text item=sz_bed_power_ac_power
 Text item=sz_bed_power_ac_energy
 }
+Frame label="SZ AC Clima power (0xf0fd45fffe0b891e)" {
+// SZ AC Clima power (0xf0fd45fffe0b891e)
+// INSPELNING smart plug (E2206) / https://www.zigbee2mqtt.io/devices/E2206.html
+Text item=sz_ac_clima_power_ota
+Text item=sz_ac_clima_power_link
+Switch item=sz_ac_clima_power_sw
+Text item=sz_ac_clima_power_ac_voltage
+Text item=sz_ac_clima_power_ac_current
+Text item=sz_ac_clima_power_ac_power
+Text item=sz_ac_clima_power_ac_energy
+}
 Frame label="SZ TV power (0x8c8b48fffe0ef9ed)" {
 // SZ TV power (0x8c8b48fffe0ef9ed)
 // TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html

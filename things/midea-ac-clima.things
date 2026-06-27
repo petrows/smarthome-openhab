@@ -1,0 +1,16 @@
+// Config for Midea / Comfee AC clima device:
+// Comfee Easy Cool 2.6
+//
+// pip install midea-beautiful-air
+// midea-beautiful-air-cli discover --account <mail> --password <pw> --credentials --ip <ip>
+
+Thing mideaac:ac:sz "AC" @ "SZ" [
+    ipAddress="10.80.6.13",
+    deviceId="18691697942739",
+    cloud="NetHome Plus",
+    token="2AD726BEBDD838F0220D510A96A1F17328EF1DA06FB8AA28ABEB041C62855C5E541FB03A6B645166C3D9EBEEEF94E5615584EF45561DA370E4760B0B83E52FED",
+    key="179e95f9110347d482cf996d1cd265061a591682dae64e30a5eccddfb82d5447",
+    version="3",
+    promptTone=true
+]
+

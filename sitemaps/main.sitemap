@@ -375,14 +375,25 @@ sitemap main label="MAIN"
             Text        item=ks_windows_contact label="Windows [%s]"
 		}
 		Group item=sz_climate_temperature label="Sleep" {
-			Text 		item=sz_climate_temperature label="Temperature [%d °C]"
-			Text 		item=sz_climate_humidity label="Humidity [%d %%]"
-            Text 		item=sz_climate_co2 label="CO₂ [%d ppm]"
-			Text 		item=sz_climate_co2_led label="CO₂ alarm [%s]"
-			Setpoint	item=sz_heating_thermostat 	label="Set"	minValue=5 maxValue=25 step=1	visibility=[cfgHeatingEnable==ON]
-			Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["20.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
-            Switch      item=sz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
-            Text        item=sz_windows_contact label="Windows [%s]"
+            Frame label="Climate" {
+                Text 		item=sz_climate_temperature label="Temperature [%d °C]"
+                Text 		item=sz_climate_humidity label="Humidity [%d %%]"
+                // Text 		item=sz_climate_co2 label="CO₂ [%d ppm]"
+                // Text 		item=sz_climate_co2_led label="CO₂ alarm [%s]"
+            }
+            Frame label="Heating" {
+                Setpoint	item=sz_heating_thermostat 	label="Set"	minValue=5 maxValue=25 step=1	visibility=[cfgHeatingEnable==ON]
+                Switch  	item=sz_heating_thermostat label="Mode []"  icon="climate" mappings=["20.0"="☼", "17.0"="☾", "5"="OFF"]	visibility=[cfgHeatingEnable==ON]
+                Switch      item=sz_heating_enabled label="Heating auto [%s]" visibility=[cfgHeatingEnable==ON]
+                Text        item=sz_windows_contact label="Windows [%s]"
+            }
+            Frame label="AC" {
+                Switch     item=sz_ac_power            label="Power"
+                Setpoint   item=sz_ac_target_temperature label="Target Temperature [%.1f °C]" minValue=17 maxValue=30 step=1
+                Selection  item=sz_ac_operational_mode label="Mode"      mappings=[OFF="Off", AUTO="Auto", COOL="Cool", DRY="Dry", "FAN ONLY"="Fan"]
+                Selection  item=sz_ac_fan_speed        label="Fan Speed" mappings=[AUTO="Auto", LOW="Low", MEDIUM="Medium", HIGH="High", SILENT="Silent"]
+                Text       item=sz_ac_indoor_temperature label="Indoor Temperature [%.1f °C]"
+            }
 		}
 		Group item=wz_climate_temperature label="Living" {
 			Text 		item=wz_climate_temperature label="Temperature [%d °C]"

@@ -115,6 +115,7 @@ when
     or Member of g_all_pressure changed
     or Member of g_all_co2 changed
     or Member of g_all_contact changed
+    or Member of g_all_strings changed
 then
     var state = triggeringItem.state
     var value = state.toString()

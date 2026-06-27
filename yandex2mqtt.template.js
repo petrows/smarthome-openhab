@@ -386,6 +386,38 @@ function Shutter(options) {
     return dev.toConfig()
 }
 
+// Кондей
+function AC(options) {
+    if (!options.type) { options.type = 'devices.types.thermostat.ac' }
+    let dev = new GenDevice(options)
+
+    // Открой-закрой (конвертация функцией)
+    dev.addMQTT('on', options.id + '_power/sw', options.id + '_power')
+    dev.addCapability({
+        type: 'devices.capabilities.on_off',
+        retrievable: true,
+        reportable: true,
+    })
+
+    // Температура
+    dev.addMQTT('temperature', options.id + '_target_temperature', options.id + '_target_temperature')
+    dev.addCapability({
+        type: 'devices.capabilities.range',
+        retrievable: true,
+        reportable: true,
+        parameters: {
+            instance: 'temperature',
+            unit: 'unit.temperature.celsius',
+            range: {
+                min: 15,
+                max: 30,
+                precision: 1,
+            }
+        },
+    })
+    return dev.toConfig()
+}
+
 module.exports = {
     LIGHT: LIGHT,
     Scene: Scene,
@@ -395,4 +427,5 @@ module.exports = {
     SensorClimate: SensorClimate,
     SensorWindow: SensorWindow,
     Shutter: Shutter,
+    AC: AC,
 }
