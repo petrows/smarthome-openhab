@@ -127,21 +127,21 @@ then
     ])
 end
 
-// Plants light control
-rule "Plant lights on"
-when
-	Time cron "0 00 08 ? * *"
-then
-    logWarn("light", "Plants light on")
+// // Plants light control
+// rule "Plant lights on"
+// when
+// 	Time cron "0 00 08 ? * *"
+// then
+//     logWarn("light", "Plants light on")
 
-    wz_plant_light_sw.sendCommand(ON)
-end
+//     wz_plant_light_sw.sendCommand(ON)
+// end
 
-rule "Plant lights off"
-when
-	Time cron "0 00 21,00 ? * *"
-then
-    logWarn("light", "Plants light off")
+// rule "Plant lights off"
+// when
+// 	Time cron "0 00 21,00 ? * *"
+// then
+//     logWarn("light", "Plants light off")
 
-    wz_plant_light_sw.sendCommand(OFF)
-end
+//     wz_plant_light_sw.sendCommand(OFF)
+// end

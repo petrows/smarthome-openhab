@@ -20,11 +20,11 @@ sitemap main label="MAIN"
 				Text item=weather_fc_6h_temp
                 Text item=weather_fc_6h_precip_probabiity
 			}
-            Frame {
-				Webview label="External" icon="temperature" height=8 url="https://grafana.k8s.pws/d-solo/openhab-climate/climate?orgId=1&var-smarthome=Openhab&var-resolution=10m&theme=dark&panelId=4"
-				Webview label="Rooms" icon="temperature" height=8 url="https://grafana.k8s.pws/d-solo/openhab-climate/climate?orgId=1&var-smarthome=Openhab&var-resolution=10m&theme=dark&panelId=2"
-				Webview label="CO2" icon="temperature" height=8 url="https://grafana.k8s.pws/d-solo/openhab-climate/climate?orgId=1&var-smarthome=Openhab&var-resolution=10m&theme=dark&panelId=1"
-			}
+            // Frame {
+			// 	Webview label="External" icon="temperature" height=8 url="https://grafana.h.pws/d-solo/openhab-climate/climate?orgId=1&var-smarthome=Openhab&var-resolution=10m&theme=dark&panelId=4"
+			// 	Webview label="Rooms" icon="temperature" height=8 url="https://grafana.h.pws/d-solo/openhab-climate/climate?orgId=1&var-smarthome=Openhab&var-resolution=10m&theme=dark&panelId=2"
+			// 	Webview label="CO2" icon="temperature" height=8 url="https://grafana.h.pws/d-solo/openhab-climate/climate?orgId=1&var-smarthome=Openhab&var-resolution=10m&theme=dark&panelId=1"
+			// }
             Frame label="Sun" icon="sun" {
 				Text item=astro_sun_rise icon="sunrise"
 				Text item=astro_sun_set icon="sunset"
