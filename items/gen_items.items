@@ -1031,8 +1031,8 @@ Number:Power main_power_ac_power_c "Main power C [%.1f W]" <energy> (g_all_ac_po
 Number:Energy main_power_ac_energy "Main power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:main_power:ac_energy"}
 // GDA-015 Bambu P2S (galoped_65AA60)
 // Petro.ws Galoped analog display (3D+TP) / https://github.com/petrows/smarthome-galoped-dekad/blob/master/doc/device-3dp.md
-Number:Temperature gda015_temperature "Bambu P2S temp" <temperature> {channel="mqtt:topic:openhab:galoped_65AA60:galopedset1"}
-Number:Dimensionless gda015_progress "Bambu P2S progress" <pressure> {channel="mqtt:topic:openhab:galoped_65AA60:galopedset2"}
+Number:Temperature gda015_temperature "Bambu P2S temp [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:galoped_65AA60:galopedset1"}
+Number:Dimensionless gda015_progress "Bambu P2S progress [%d %%]" <pressure> {channel="mqtt:topic:openhab:galoped_65AA60:galopedset2"}
 Number:Dimensionless galoped_65AA60_rssi "GDA-015 Bambu P2S RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:galoped_65AA60:rssi"}
 String galoped_65AA60_bssid "GDA-015 Bambu P2S BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:galoped_65AA60:bssid"}
 DateTime galoped_65AA60_activity "GDA-015 Bambu P2S activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:galoped_65AA60:activity"}
