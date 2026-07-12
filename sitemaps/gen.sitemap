@@ -1252,5 +1252,14 @@ Text item=main_power_ac_power_b
 Text item=main_power_ac_power_c
 Text item=main_power_ac_energy
 }
+Frame label="GDA-015 Bambu P2S (galoped_65AA60)" {
+// GDA-015 Bambu P2S (galoped_65AA60)
+// Petro.ws Galoped analog display (3D+TP) / https://github.com/petrows/smarthome-galoped-dekad/blob/master/doc/device-3dp.md
+Text item=gda015_temperature
+Text item=gda015_progress
+Text item=galoped_65AA60_rssi
+Text item=galoped_65AA60_bssid
+Text item=galoped_65AA60_activity
+}
 }
 }

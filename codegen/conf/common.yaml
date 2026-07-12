@@ -727,3 +727,16 @@ devices:
     id: main_power
     zigbee_id: '0x0c2a6ffffebf2819'
     type: ZEMNISMART_3PHASE_METER
+
+# Galoped devices
+
+  - name: GDA-015 Bambu P2S
+    id: galoped_65AA60
+    type: GALOPED_3D_TP
+    channels:
+      GalopedSet1:
+        id: gda015_temperature
+        name: Bambu P2S temp
+      GalopedSet2:
+        id: gda015_progress
+        name: Bambu P2S progress

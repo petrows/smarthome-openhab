@@ -1,0 +1,31 @@
+// 3D Printers control rules
+
+// Track P2S idle status and switch off with too long state
+rule "P2S Idle check"
+when
+    Item p2s_idle_time received update
+then
+    if (p2s_connected.state == OFF) {
+        // Ignore disconnected device
+        return
+    }
+    val idleValue = newState as Number
+    if (idleValue > 3600) {
+        logInfo("Bambu", "Device is idle for " + idleValue + " seconds, switch off")
+        bambu_p2s_power_sw.sendCommand(OFF)
+    }
+end
+
+// Update printer metrics data
+rule "P2S Temperature update"
+when
+    Item p2s_temperature_tool_actual received update
+then
+    gda015_temperature.sendCommand(newState as Number)
+end
+rule "P2S Progress update"
+when
+    Item p2s_progress received update
+then
+    gda015_progress.sendCommand(newState as Number)
+end

@@ -1490,3 +1490,14 @@ Thing mqtt:topic:openhab:main_power "Main power" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="z2m-common/main_power", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-common/main_power", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// GDA-015 Bambu P2S (galoped_65AA60)
+// Petro.ws Galoped analog display (3D+TP) / https://github.com/petrows/smarthome-galoped-dekad/blob/master/doc/device-3dp.md
+Thing mqtt:topic:openhab:galoped_65AA60 "GDA-015 Bambu P2S" (mqtt:broker:openhab) {
+	Channels:
+		Type number : rssi [stateTopic="tele/galoped_65AA60/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/galoped_65AA60/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/galoped_65AA60/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/galoped_65AA60/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : galopedset1 [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"GalopedSet1\".*)∩JSONPATH:$.GalopedSet1", commandTopic="cmnd/galoped_65AA60/GalopedSet1", unit="C°"]
+		Type number : galopedset2 [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"GalopedSet2\".*)∩JSONPATH:$.GalopedSet2", commandTopic="cmnd/galoped_65AA60/GalopedSet2", unit="%"]
+}
