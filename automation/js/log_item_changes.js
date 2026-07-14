@@ -7,6 +7,7 @@ rules.JSRule({
         triggers.GenericEventTrigger('openhab/items/**', '', 'ItemStateChangedEvent', 'all-item-changes'),
     ],
     execute: (event) => {
-        console.info(`${event.itemName}: ${event.payload.oldValue} -> ${event.payload.value}`);
+        // debugger;
+        // console.info(`${event.itemName}: ${event.payload.oldValue} -> ${event.payload.value}`);
     },
 });
