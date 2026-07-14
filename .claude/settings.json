@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "deny": [
+        "Read(services)",
+        "Read(tuya-mqtt)"
+    ]
+  }
+}
