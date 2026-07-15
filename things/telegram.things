@@ -1,0 +1,2 @@
+
+Thing telegram:telegramBot:PWS_Notification [ chatIds="${ENV:SS_TG_CHAT_ID}", botToken="${ENV:SS_TG_TOKEN}", parseMode="HTML" ]
