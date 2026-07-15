@@ -1,4 +1,6 @@
-services/
+# Services with secrets
+services/influxdb.cfg
+services/yandex2mqtt.js
 # Config for Tyua-mqqtt is secret
 tuya-mqtt
 

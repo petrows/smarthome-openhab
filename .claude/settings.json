@@ -1,7 +1,8 @@
 {
   "permissions": {
     "deny": [
-        "Read(services)",
+        "Read(services/influxdb.cfg)",
+        "Read(services/yandex2mqtt.js)",
         "Read(tuya-mqtt)"
     ]
   }
