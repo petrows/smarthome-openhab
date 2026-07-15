@@ -36,8 +36,9 @@ Group:Dimmer:MAX wz_light_decor_dim_fast
 // WZ items
 Switch wz_julia_stand_colorchange "WZ Julua stand color-change" <light>
 
-// Sunrise groups
-Group:Dimmer:AVG sunrise_ct // Group of lamps to control temperature
+// Sunrise: items from this group will emulate sunlight in the morning
+// Use custom meta `sunrise_order="5"` to sort items, lower -> earlier
+Group:Switch:OR(ON, OFF) g_sunrise <light>
 
 // EG auto lights
 Group:Switch:OR(ON, OFF) eg_light_auto

@@ -24,6 +24,11 @@ devices:
       - all_light
       - eg_light
       - fl_light
+      # Sunrise emulator
+      - g_sunrise
+    meta:
+      sw:
+        - sunrise_order="1"
 
   - name: Entrance Door sensor
     id: eg_main_door
@@ -225,12 +230,16 @@ devices:
         - all_light
         - eg_light
         - sz_light
+        # Sunrise emulator
+        - g_sunrise
       dim:
         - sz_light_dim
       ct:
         - sz_light_ct
-        - sunrise_ct
         - astro_color_light_ct
+    meta:
+      sw:
+        - sunrise_order="4"
 
   - name: SZ Bed Floor
     id: sz_bed_floor_light

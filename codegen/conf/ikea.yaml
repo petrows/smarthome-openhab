@@ -332,16 +332,20 @@ devices:
         - eg_light
         - sz_light
         - sz_bed_light_sw
+        # Sunrise emulator
+        - g_sunrise
       ct:
         - sz_light_ct
         - sz_bed_light_ct
-        - sunrise_ct
         - astro_color_light_ct
       dim:
         - sz_light_dim
         - sz_bed_light_dim
       dim_fast:
         - sz_bed_light_dim_fast
+    meta:
+      sw:
+        - sunrise_order="3"
 
   - name: SZ Bed R
     id: sz_bed_light_r
@@ -353,16 +357,20 @@ devices:
         - eg_light
         - sz_light
         - sz_bed_light_sw
+        # Sunrise emulator
+        - g_sunrise
       ct:
         - sz_light_ct
         - sz_bed_light_ct
-        - sunrise_ct
         - astro_color_light_ct
       dim:
         - sz_light_dim
         - sz_bed_light_dim
       dim_fast:
         - sz_bed_light_dim_fast
+    meta:
+      sw:
+        - sunrise_order="2"
 
   - name: SZ Window L
     id: sz_window_l
