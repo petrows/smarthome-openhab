@@ -1,0 +1,7 @@
+Bridge mqtt:broker:openhab "openhab" [ host="${ENV:SS_MQ_HOST}", secure=false, username="${ENV:SS_MQ_USER}", password="${ENV:SS_MQ_PASS}", clientID="openhab" ] {
+    Channels:
+        Type publishTrigger : eventbus [ stateTopic="eventbus/set/+/+", separator="#" ]
+}
+
+Bridge mqtt:broker:hivemq-cin "hivemq-cin" [ host="${ENV:SS_MQ_CIN_HOST}", secure=true, username="${ENV:SS_MQ_CIN_USER}", password="${ENV:SS_MQ_CIN_PASS}", clientID="openhab" ]
+
