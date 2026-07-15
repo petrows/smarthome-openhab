@@ -1,0 +1,12 @@
+// Weather and AirQuality thing
+
+Bridge airquality:api:main "AirQuality Bridge" [ apiKey="${ENV:SS_AIRQUALITY_APIKEY}" ] {
+    Thing station home "AirQuality" [ location="${ENV:SS_LOCATION}" ]
+}
+
+astro:sun:home  [ geolocation="${ENV:SS_LOCATION_H}", interval=60 ]
+astro:moon:home [ geolocation="${ENV:SS_LOCATION}", interval=60 ]
+
+Bridge openweathermap:weather-api:api "OpenWeatherMap Account" [apikey="${ENV:SS_OPENWEATHER_APIKEY}", refreshInterval=30, language="en"] {
+	Thing weather-and-forecast local "Local Weather And Forecast" [location="${ENV:SS_LOCATION}", forecastHours=9, forecastDays=3]
+}

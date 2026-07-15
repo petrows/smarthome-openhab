@@ -1,12 +1,4 @@
 services/
-# Weather API token is secret
-things/weather.things
-# Device token is secret
-things/mi-robot.things
-# Spotify token is secret
-things/spotify.things
-# HomeConnect token is secret
-things/homeconnect.things
 # Config for Tyua-mqqtt is secret
 tuya-mqtt
 

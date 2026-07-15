@@ -38,12 +38,12 @@ sitemap main label="MAIN"
 		}
 
         Group item=Aqi_Description valuecolor=[
-                        Aqi_Description=="HAZARDOUS"="#7e0023",
-                        =="VERY_UNHEALTHY"="#660099",
-                        =="UNHEALTHY"="#cc0033",
-                        =="UNHEALTHY_FOR_SENSITIVE"="#ff9933",
-                        =="MODERATE"="#ffde33",
-                        =="GOOD"="#009966"
+                        Aqi_Description==5="#7e0023",
+                        ==4="#660099",
+                        ==3="#cc0033",
+                        ==2="#ff9933",
+                        ==1="#ffde33",
+                        ==0="#009966"
                     ] {
             Frame {
                 Text item=Aqi_Level valuecolor=[
@@ -56,12 +56,12 @@ sitemap main label="MAIN"
                         >=0="#009966"
                     ]
                 Text item=Aqi_Description valuecolor=[
-                        Aqi_Description=="HAZARDOUS"="#7e0023",
-                        =="VERY_UNHEALTHY"="#660099",
-                        =="UNHEALTHY"="#cc0033",
-                        =="UNHEALTHY_FOR_SENSITIVE"="#ff9933",
-                        =="MODERATE"="#ffde33",
-                        =="GOOD"="#009966"
+                        Aqi_Description==5="#7e0023",
+                        ==4="#660099",
+                        ==3="#cc0033",
+                        ==2="#ff9933",
+                        ==1="#ffde33",
+                        ==0="#009966"
                     ]
             }
 
@@ -75,16 +75,11 @@ sitemap main label="MAIN"
             }
 
             Frame {
-                Text item=Aqi_LocationName
                 Text item=Aqi_ObservationTime
                 Text item=Aqi_Temperature
                 Text item=Aqi_Pressure
                 Text item=Aqi_Humidity
             }
-
-            // Frame label="Station Location" {
-            //     Mapview item=Aqi_StationGeo height=10
-            // }
         }
 	}
 

@@ -1,10 +1,9 @@
 -=-
 UNDEF=No data
 NULL=No data
-NO_DATA=No data
-GOOD=Good
-MODERATE=Moderate
-UNHEALTHY_FOR_SENSITIVE=Unhealthy for sensitive groups
-UNHEALTHY=Unhealthy
-VERY_UNHEALTHY=Very unhealthy
-HAZARDOUS=Hazardous
+0=Good
+1=Moderate
+2=Unhealthy for sensitive groups
+3=Unhealthy
+4=Very unhealthy
+5=Hazardous

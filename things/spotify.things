@@ -1,0 +1,5 @@
+Bridge spotify:player:petro "Spotify Petro" [clientId="${ENV:SS_SPOTIFY_PETER_CLIENT_ID}", clientSecret="${ENV:SS_SPOTIFY_PETER_CLIENT_SECRET}"] {
+//   Things:
+//     device device1 "Device 1" [deviceName="<spotify device name>"]
+//     device device2 "Device 2" [deviceName="<spotify device name>"]
+}
