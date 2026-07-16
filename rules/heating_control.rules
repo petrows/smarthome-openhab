@@ -15,7 +15,7 @@ val Functions$Function2<String, Number, Boolean> set_room = [
 
     if (cfgHeatingEnable.state != ON) {
         logInfo("heating", "set_room: Heating disabled")
-        sendCommand(thermostat_item_switch, OFF)
+        sendCommand(thermostat_item_switch, "OFF")
 		return false
     }
 

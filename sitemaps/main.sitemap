@@ -606,7 +606,7 @@ sitemap main label="MAIN"
 
 		Group item=g_all_battery
 
-		Group item=g_zigbee_link label="Zigbee" icon=linkz {
+		Group item=g_all_link label="Zigbee" icon=linkz {
 			Frame label="ZigBee Config" {
 				Switch	item=zigbee_root_pair label="ZigBee pairing"
 			}
