@@ -1,0 +1,3 @@
+// Matter controller
+// Do not change the nodeId
+Thing matter:controller:main [ nodeId="696969" ]
