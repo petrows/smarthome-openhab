@@ -1,5 +1,7 @@
 # Services with secrets
 services/influxdb.cfg
+# FIXME
+things/*_legacy.things
 # Config for Tyua-mqqtt is secret
 tuya-mqtt
 

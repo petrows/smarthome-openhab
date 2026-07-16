@@ -1,3 +1,3 @@
-Thing miio:basic:eve_eg "Mi Robot EG" @ "EG" [ host="${ENV:SS_MI_ROBOT_EG_HOST}", token="${ENV:SS_MI_ROBOT_EG_TOKEN}", deviceId="${ENV:SS_MI_ROBOT_EG_DID}", model="roidmi.vacuum.v60", communication="direct"]
+// Thing miio:basic:eve_eg "Mi Robot EG" @ "EG" [ host="${ENV:SS_MI_ROBOT_EG_HOST}", token="${ENV:SS_MI_ROBOT_EG_TOKEN}", deviceId="${ENV:SS_MI_ROBOT_EG_DID}", model="roidmi.vacuum.v60", communication="direct"]
 
-Thing miio:basic:eve_kg "Mi Robot KG" @ "KG" [ host="${ENV:SS_MI_ROBOT_KG_HOST}", token="${ENV:SS_MI_ROBOT_KG_TOKEN}", deviceId="${ENV:SS_MI_ROBOT_KG_DID}", model="roidmi.vacuum.v60", communication="direct"]
+// Thing miio:basic:eve_kg "Mi Robot KG" @ "KG" [ host="${ENV:SS_MI_ROBOT_KG_HOST}", token="${ENV:SS_MI_ROBOT_KG_TOKEN}", deviceId="${ENV:SS_MI_ROBOT_KG_DID}", model="roidmi.vacuum.v60", communication="direct"]

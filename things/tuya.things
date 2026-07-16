@@ -1,0 +1,25 @@
+// Tuya Cat Feeder (product 7kmf7v9psk31pj6d)
+// Channels defined manually with DP numbers from the official binding schema,
+// so they don't depend on the dynamic schema DB (broken on startup in 5.2.0).
+Thing tuya:tuyaDevice:feeder "Feeder" [
+    deviceId="${ENV:SS_TUYA_CAT_FEEDER_DEVICE_ID}",
+    localKey="${ENV:SS_TUYA_CAT_FEEDER_KEY}",
+    productId="${ENV:SS_TUYA_CAT_FEEDER_PRODUCT_ID}",
+    //ip="cat-feeder.pws",
+    ip="10.80.6.18",
+    protocol="3.3"
+] {
+    Channels:
+        Type string : meal_plan          "Meal Plan"        [ dp=1 ]
+        Type switch : quick_feed         "Quick Feed"       [ dp=2 ]
+        Type number : manual_feed        "Manual Feed"      [ dp=3, min=1, max=60 ]
+        Type string : feed_state         "Feed State"       [ dp=4, range="standby,feeding,done" ]
+        Type number : battery_percentage "Battery"          [ dp=10, min=0, max=100 ]
+        Type switch : charge_state       "Charging"         [ dp=11 ]
+        Type number : fault              "Fault Bitmap"     [ dp=13 ]
+        Type number : feed_report        "Feed Report"      [ dp=14, min=0, max=100 ]
+        Type switch : light              "Light"            [ dp=17 ]
+        Type switch : slow_feed          "Slow Feed"        [ dp=23 ]
+        Type switch : factory_reset      "Factory Reset"    [ dp=24 ]
+        Type string : power_mode         "Power Mode"       [ dp=101, range="strong_power,battery_power" ]
+}
