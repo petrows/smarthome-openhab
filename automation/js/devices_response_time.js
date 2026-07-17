@@ -51,7 +51,7 @@ rules.JSRule({
         if (unknown.length > 0) {
             report.push('', 'Never updated:', ...unknown.map((line) => `- ${line}`));
         }
-
-        items.getItem('global_message').sendCommand(report.join('\n'));
+        // Do not set \n in the item text!!! Breaks Influxdb
+        items.getItem('global_message').sendCommand(report.join('\\n'));
     },
 });
