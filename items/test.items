@@ -12,3 +12,20 @@ Switch testSwSunrise
 Switch test_sw_check_sunrize
 Switch test_sw_check_astrocolor
 Switch test_sw_check_activity
+
+// Ikea Thread items test
+// KG test
+Number tst_matter_ikea_climate_1002_battery_level "TST Timmerlotte 1002 bat [%d %%]" <battery> (g_all_battery) {channel="matter:node:main:1002:0#powersource-batchargelevel"}
+Number:Dimensionless tst_matter_ikea_climate_1002_battery_remain "TST Timmerlotte 1002 bat remain [%d %%]" <battery> {channel="matter:node:main:1002:0#powersource-batpercentremaining"}
+Number:Temperature tst_matter_ikea_climate_1002_temperature "TST Timmerlotte 1002 temp [%.0f %unit%]" <temperature> {channel="matter:node:main:1002:1#temperaturemeasurement-measuredvalue"}
+Number:Dimensionless tst_matter_ikea_climate_1002_hum "TST Timmerlotte 1002 temp [%.0f %%]" <humidity> {channel="matter:node:main:1002:2#relativehumiditymeasurement-measuredvalue"}
+// SZ test
+Number tst_matter_ikea_climate_2_battery_level "TST Timmerlotte 2 bat [%d %%]" <battery> (g_all_battery) {channel="matter:node:main:2:0#powersource-batchargelevel"}
+Number:Dimensionless tst_matter_ikea_climate_2_battery_remain "TST Timmerlotte 2 bat remain [%d %%]" <battery> {channel="matter:node:main:2:0#powersource-batpercentremaining"}
+Number:Temperature tst_matter_ikea_climate_2_temperature "TST Timmerlotte 2 temp [%.0f %unit%]" <temperature> {channel="matter:node:main:2:1#temperaturemeasurement-measuredvalue"}
+Number:Dimensionless tst_matter_ikea_climate_2_hum "TST Timmerlotte 2 temp [%.0f %%]" <humidity> {channel="matter:node:main:2:2#relativehumiditymeasurement-measuredvalue"}
+// Last activity: timestamp-update profile stamps now() on any temp/humidity report
+DateTime tst_matter_ikea_climate_2_activity "TST Timmerlotte 2 activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {
+    channel="matter:node:main:2:1#temperaturemeasurement-measuredvalue" [profile="system:timestamp-update"],
+    channel="matter:node:main:2:2#relativehumiditymeasurement-measuredvalue" [profile="system:timestamp-update"]
+}

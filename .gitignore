@@ -4,6 +4,8 @@ services/influxdb.cfg
 things/*_legacy.things
 # Config for Tyua-mqqtt is secret
 tuya-mqtt
+# Ignore Matter configs
+matter
 
 bin/config.sh
 .vscode
