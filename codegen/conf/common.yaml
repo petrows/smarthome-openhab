@@ -459,14 +459,14 @@ devices:
             - kg_light
             - kg_light_hobbyraum
 
-  - name: Garden water
-    id: garten_wasser_sw
-    type: TASMOTA_SONOFF_MINI
-    channels:
-      POWER:
-        id: garten_wasser_sw
-        name: Garden water
-        expire: 1h
+  # - name: Garden water
+  #   id: garten_wasser_sw
+  #   type: TASMOTA_SONOFF_MINI
+  #   channels:
+  #     POWER:
+  #       id: garten_wasser_sw
+  #       name: Garden water
+  #       expire: 1h
 
   # Heating room
 
