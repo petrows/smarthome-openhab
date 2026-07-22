@@ -29,3 +29,8 @@ DateTime tst_matter_ikea_climate_2_activity "TST Timmerlotte 2 activity [JS(code
     channel="matter:node:main:2:1#temperaturemeasurement-measuredvalue" [profile="system:timestamp-update"],
     channel="matter:node:main:2:2#relativehumiditymeasurement-measuredvalue" [profile="system:timestamp-update"]
 }
+
+// IKEA of Sweden MYGGBETT door/window sensor -> test HZ door
+Number tst_matter_door_3_battery_level "TST MYGGBETT 3 bat [%d %%]" <battery> (g_all_battery) {channel="matter:node:main:3:0#powersource-batchargelevel"}
+Number:Dimensionless tst_matter_door_3_battery_remain "TST MYGGBETT 3 bat remain [%d %%]" <battery> {channel="matter:node:main:3:0#powersource-batpercentremaining"}
+Contact tst_matter_door_3_contact "TST MYGGBETT 3 contact [%s]" <door> {channel="matter:node:main:3:1#contact-statevalue"}

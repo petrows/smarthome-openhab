@@ -33,7 +33,8 @@ end
 // turn ON light when door is open
 rule "Heating room door light"
 when
-    Item hz_door_contact changed
+    // Item hz_door_contact changed
+    Item tst_matter_door_3_contact changed
 then
     logWarn("light", "HZ door changed: " + newState)
     if (newState == OPEN) {
