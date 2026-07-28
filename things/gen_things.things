@@ -738,7 +738,7 @@ Thing mqtt:topic:openhab:lg3_leak "Warehouse 3 leak" (mqtt:broker:openhab) {
 		Type switch : ota [stateTopic="z2m-ikea/lg3_leak", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="z2m-ikea/lg3_leak", transformationPattern="JS:codegen-activity.js"]
 }
-// KG Lager 4 (1) (0xccccccfffedf345a)
+// KG Lager 4 (1) (0xec1bbdfffe4695b5)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Thing mqtt:topic:openhab:kg_lager4_1_light "KG Lager 4 (1)" (mqtt:broker:openhab) {
 	Channels:

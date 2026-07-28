@@ -612,8 +612,8 @@ Text item=lg3_leak_activity
 Text item=lg3_leak_leak
 Text item=lg3_leak_battery
 }
-Frame label="KG Lager 4 (1) (0xccccccfffedf345a)" {
-// KG Lager 4 (1) (0xccccccfffedf345a)
+Frame label="KG Lager 4 (1) (0xec1bbdfffe4695b5)" {
+// KG Lager 4 (1) (0xec1bbdfffe4695b5)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Slider item=kg_lager4_1_light_dim
 Text item=kg_lager4_1_light_ota

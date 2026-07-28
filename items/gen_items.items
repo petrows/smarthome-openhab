@@ -499,7 +499,7 @@ Number:Dimensionless lg3_leak_link "Warehouse 3 leak LINK [%d]" <linkz> (g_all_l
 DateTime lg3_leak_activity "Warehouse 3 leak activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_leak:activity"}
 Switch lg3_leak_leak "Warehouse 3 leak [%s]" <flow> (g_all_leak) {channel="mqtt:topic:openhab:lg3_leak:leak"}
 Number:Dimensionless lg3_leak_battery "Warehouse 3 leak  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:lg3_leak:battery"}
-// KG Lager 4 (1) (0xccccccfffedf345a)
+// KG Lager 4 (1) (0xec1bbdfffe4695b5)
 // IKEA TRADFRI LED bulb E26/E27 806 lumen, dimmable, warm white (LED1836G9) / https://www.zigbee2mqtt.io/devices/LED1836G9.html
 Dimmer kg_lager4_1_light_dim "KG Lager 4 (1) DIM [%d %%]" <light> (g_all_dim,g_dim_lager_auto) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim"}
 Dimmer kg_lager4_1_light_dim_fast "KG Lager 4 (1) DIM-F [%d %%]" (g_all_dim_fast) {channel="mqtt:topic:openhab:kg_lager4_1_light:dim_fast"}
