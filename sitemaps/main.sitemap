@@ -433,6 +433,16 @@ sitemap main label="MAIN"
     Frame {
         Group item=g_all_leak label="Leak [MAP(leak.map):%s]"
         Group item=mouse_trap label="Mouse trap [MAP(mouse_trap.map):%s]"
+        Group item=at_cats label="Коты" {
+            Frame label="Мирочка" {
+                Text item=at_mira_location_name icon="group" label="Где [%s]"
+                Text item=at_mira_location_seen icon="time" label="Когда [%s]"
+            }
+            Frame label="Кшиштик" {
+                Text item=at_kst_location_name icon="group" label="Где [%s]"
+                Text item=at_kst_location_seen icon="time" label="Когда [%s]"
+            }
+        }
     }
 	Frame {
         Group item=m800s_state_grp label="Multicooker [%s]" {

@@ -1,0 +1,16 @@
+
+// Mira: AirTag
+Thing mqtt:topic:openhab:at_mira_stats (mqtt:broker:openhab) {
+	Channels:
+		Type string : seen [stateTopic="airtag-watch/stats/mira", transformationPattern="JSONPATH:$.seen"]
+		Type string : location [stateTopic="airtag-watch/stats/mira", transformationPattern="JSONPATH:$.sensor-location"]
+		Type number : rssi [stateTopic="airtag-watch/stats/mira", transformationPattern="JSONPATH:$.rssi"]
+}
+
+// Кшиштик: AirTag
+Thing mqtt:topic:openhab:at_kst_stats (mqtt:broker:openhab) {
+	Channels:
+		Type string : seen [stateTopic="airtag-watch/stats/kst", transformationPattern="JSONPATH:$.seen"]
+		Type string : location [stateTopic="airtag-watch/stats/kst", transformationPattern="JSONPATH:$.sensor-location"]
+		Type number : rssi [stateTopic="airtag-watch/stats/kst", transformationPattern="JSONPATH:$.rssi"]
+}
