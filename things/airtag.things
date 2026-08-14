@@ -5,6 +5,9 @@ Thing mqtt:topic:openhab:at_mira_stats (mqtt:broker:openhab) {
 		Type string : seen [stateTopic="airtag-watch/stats/mira", transformationPattern="JSONPATH:$.seen"]
 		Type string : location [stateTopic="airtag-watch/stats/mira", transformationPattern="JSONPATH:$.sensor-location"]
 		Type number : rssi [stateTopic="airtag-watch/stats/mira", transformationPattern="JSONPATH:$.rssi"]
+		Type number : cloud_distance [stateTopic="airtag-watch/location/mira", transformationPattern="JSONPATH:$.distance_m", unit="m"]
+		Type number : cloud_azimuth [stateTopic="airtag-watch/location/mira", transformationPattern="JSONPATH:$.azimuth_deg", unit="°"]
+		Type string : cloud_updated [stateTopic="airtag-watch/location/mira", transformationPattern="JSONPATH:$.updated"]
 }
 
 // Кшиштик: AirTag
@@ -13,4 +16,7 @@ Thing mqtt:topic:openhab:at_kst_stats (mqtt:broker:openhab) {
 		Type string : seen [stateTopic="airtag-watch/stats/kst", transformationPattern="JSONPATH:$.seen"]
 		Type string : location [stateTopic="airtag-watch/stats/kst", transformationPattern="JSONPATH:$.sensor-location"]
 		Type number : rssi [stateTopic="airtag-watch/stats/kst", transformationPattern="JSONPATH:$.rssi"]
+        Type number : cloud_distance [stateTopic="airtag-watch/location/kst", transformationPattern="JSONPATH:$.distance_m", unit="m"]
+		Type number : cloud_azimuth [stateTopic="airtag-watch/location/kst", transformationPattern="JSONPATH:$.azimuth_deg", unit="°"]
+        Type string : cloud_updated [stateTopic="airtag-watch/location/kst", transformationPattern="JSONPATH:$.updated"]
 }
