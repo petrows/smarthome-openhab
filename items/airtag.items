@@ -1,5 +1,7 @@
 Group:Number:AVG at_cats <motion>
 
+String at_cats_home "Коты дома" <motion>
+
 // Mira
 String at_mira_location_name { channel="mqtt:topic:openhab:at_mira_stats:location" }
 String at_mira_location_seen { channel="mqtt:topic:openhab:at_mira_stats:seen" }

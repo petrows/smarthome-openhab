@@ -433,10 +433,10 @@ sitemap main label="MAIN"
     Frame {
         Group item=g_all_leak label="Leak [MAP(leak.map):%s]"
         Group item=mouse_trap label="Mouse trap [MAP(mouse_trap.map):%s]"
-        Group item=at_cats label="Коты" {
+        Group item=at_cats_home label="Коты" {
             Frame label="Мирочка (Сигнал)" {
                 Text item=at_mira_location_name icon="group" label="Где [%s]"
-                Text item=at_mira_location_seen icon="time" label="Когда [%s]"
+                Text item=at_mira_location_seen icon="time" label="Когда [%S]" valuecolor=[at_mira_location_seen=="now"="green",at_mira_location_seen!="now"="red"]
             }
             Frame label="Мирочка (Облако Apple)" {
                 Text item=at_mira_cloud_distance icon="movecontrol" label="Дистанция [%d %unit%]"
@@ -446,7 +446,7 @@ sitemap main label="MAIN"
             }
             Frame label="Кшиштик (Сигнал)" {
                 Text item=at_kst_location_name icon="group" label="Где [%s]"
-                Text item=at_kst_location_seen icon="time" label="Когда [%s]"
+                Text item=at_kst_location_seen icon="time" label="Когда [%S]" valuecolor=[at_kst_location_seen=="now"="green",at_kst_location_seen!="now"="red"]
             }
             Frame label="Кшиштик (Облако Apple)" {
                 Text item=at_kst_cloud_distance icon="movecontrol" label="Дистанция [%d %unit%]"
