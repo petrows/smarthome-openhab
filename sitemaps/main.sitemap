@@ -442,6 +442,7 @@ sitemap main label="MAIN"
                 Text item=at_mira_cloud_distance icon="movecontrol" label="Дистанция [%d %unit%]"
                 Text item=at_mira_cloud_azimuth icon="movecontrol" label="Азимут [%d %unit%]"
                 Text item=at_mira_cloud_seen icon="time" label="Когда [%s]"
+                Text item=at_mira_cloud_battery icon="battery" label="Батарея [%d %%]"
             }
             Frame label="Кшиштик (Сигнал)" {
                 Text item=at_kst_location_name icon="group" label="Где [%s]"
@@ -451,6 +452,7 @@ sitemap main label="MAIN"
                 Text item=at_kst_cloud_distance icon="movecontrol" label="Дистанция [%d %unit%]"
                 Text item=at_kst_cloud_azimuth icon="movecontrol" label="Азимут [%d %unit%]"
                 Text item=at_kst_cloud_seen icon="time" label="Когда [%s]"
+                Text item=at_kst_cloud_battery icon="battery" label="Батарея [%d %%]"
             }
         }
     }

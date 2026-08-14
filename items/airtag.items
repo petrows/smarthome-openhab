@@ -7,6 +7,7 @@ Number:Dimensionless at_mira_location_rssi { channel="mqtt:topic:openhab:at_mira
 Number:Length at_mira_cloud_distance { channel="mqtt:topic:openhab:at_mira_stats:cloud_distance" }
 Number:Angle at_mira_cloud_azimuth { channel="mqtt:topic:openhab:at_mira_stats:cloud_azimuth" }
 String at_mira_cloud_seen { channel="mqtt:topic:openhab:at_mira_stats:cloud_updated" }
+Number:Dimensionless at_mira_cloud_battery { channel="mqtt:topic:openhab:at_mira_stats:cloud_battery" }
 
 // Кшиштик
 String at_kst_location_name { channel="mqtt:topic:openhab:at_kst_stats:location" }
@@ -15,3 +16,4 @@ Number:Dimensionless at_kst_location_rssi { channel="mqtt:topic:openhab:at_kst_s
 Number:Length at_kst_cloud_distance { channel="mqtt:topic:openhab:at_kst_stats:cloud_distance" }
 Number:Angle at_kst_cloud_azimuth { channel="mqtt:topic:openhab:at_kst_stats:cloud_azimuth" }
 String at_kst_cloud_seen { channel="mqtt:topic:openhab:at_kst_stats:cloud_updated" }
+Number:Dimensionless at_kst_cloud_battery { channel="mqtt:topic:openhab:at_kst_stats:cloud_battery" }

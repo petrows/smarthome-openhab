@@ -8,6 +8,7 @@ Thing mqtt:topic:openhab:at_mira_stats (mqtt:broker:openhab) {
 		Type number : cloud_distance [stateTopic="airtag-watch/location/mira", transformationPattern="JSONPATH:$.distance_m", unit="m"]
 		Type number : cloud_azimuth [stateTopic="airtag-watch/location/mira", transformationPattern="JSONPATH:$.azimuth_deg", unit="°"]
 		Type string : cloud_updated [stateTopic="airtag-watch/location/mira", transformationPattern="JSONPATH:$.updated"]
+		Type number : cloud_battery [stateTopic="airtag-watch/location/mira", transformationPattern="JSONPATH:$.battery", unit="%"]
 }
 
 // Кшиштик: AirTag
@@ -19,4 +20,5 @@ Thing mqtt:topic:openhab:at_kst_stats (mqtt:broker:openhab) {
         Type number : cloud_distance [stateTopic="airtag-watch/location/kst", transformationPattern="JSONPATH:$.distance_m", unit="m"]
 		Type number : cloud_azimuth [stateTopic="airtag-watch/location/kst", transformationPattern="JSONPATH:$.azimuth_deg", unit="°"]
         Type string : cloud_updated [stateTopic="airtag-watch/location/kst", transformationPattern="JSONPATH:$.updated"]
+        Type number : cloud_battery [stateTopic="airtag-watch/location/kst", transformationPattern="JSONPATH:$.battery", unit="%"]
 }
