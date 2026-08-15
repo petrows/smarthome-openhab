@@ -5,7 +5,9 @@ String at_cats_home "Коты дома" <motion>
 // Mira
 String at_mira_location_name { channel="mqtt:topic:openhab:at_mira_stats:location" }
 String at_mira_location_seen { channel="mqtt:topic:openhab:at_mira_stats:seen" }
+String at_mira_location_mode { channel="mqtt:topic:openhab:at_mira_stats:mode" }
 Number:Dimensionless at_mira_location_rssi { channel="mqtt:topic:openhab:at_mira_stats:rssi" }
+Number:Dimensionless at_mira_location_signal { channel="mqtt:topic:openhab:at_mira_stats:signal" }
 Number:Length at_mira_cloud_distance { channel="mqtt:topic:openhab:at_mira_stats:cloud_distance" }
 Number:Angle at_mira_cloud_azimuth { channel="mqtt:topic:openhab:at_mira_stats:cloud_azimuth" }
 String at_mira_cloud_seen { channel="mqtt:topic:openhab:at_mira_stats:cloud_updated" }
@@ -14,7 +16,9 @@ Number:Dimensionless at_mira_cloud_battery "Мира батарея [%d %%]" <ba
 // Кшиштик
 String at_kst_location_name { channel="mqtt:topic:openhab:at_kst_stats:location" }
 String at_kst_location_seen { channel="mqtt:topic:openhab:at_kst_stats:seen" }
+String at_kst_location_mode { channel="mqtt:topic:openhab:at_kst_stats:mode" }
 Number:Dimensionless at_kst_location_rssi { channel="mqtt:topic:openhab:at_kst_stats:rssi" }
+Number:Dimensionless at_kst_location_signal { channel="mqtt:topic:openhab:at_kst_stats:signal" }
 Number:Length at_kst_cloud_distance { channel="mqtt:topic:openhab:at_kst_stats:cloud_distance" }
 Number:Angle at_kst_cloud_azimuth { channel="mqtt:topic:openhab:at_kst_stats:cloud_azimuth" }
 String at_kst_cloud_seen { channel="mqtt:topic:openhab:at_kst_stats:cloud_updated" }

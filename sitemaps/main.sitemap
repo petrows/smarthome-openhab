@@ -437,6 +437,8 @@ sitemap main label="MAIN"
             Frame label="Мирочка (Сигнал)" {
                 Text item=at_mira_location_name icon="group" label="Где [%s]"
                 Text item=at_mira_location_seen icon="time" label="Когда [%S]" valuecolor=[at_mira_location_seen=="now"="green",at_mira_location_seen!="now"="red"]
+                Text item=at_mira_location_signal icon="linkz" label="Сигнал [%d %%]"
+                Text item=at_mira_location_mode icon="network" label="Режим [%s]"
             }
             Frame label="Мирочка (Облако Apple)" {
                 Text item=at_mira_cloud_distance icon="movecontrol" label="Дистанция [%d %unit%]"
@@ -447,6 +449,8 @@ sitemap main label="MAIN"
             Frame label="Кшиштик (Сигнал)" {
                 Text item=at_kst_location_name icon="group" label="Где [%s]"
                 Text item=at_kst_location_seen icon="time" label="Когда [%S]" valuecolor=[at_kst_location_seen=="now"="green",at_kst_location_seen!="now"="red"]
+                Text item=at_kst_location_signal icon="linkz" label="Сигнал [%d %%]"
+                Text item=at_kst_location_mode icon="network" label="Режим [%s]"
             }
             Frame label="Кшиштик (Облако Apple)" {
                 Text item=at_kst_cloud_distance icon="movecontrol" label="Дистанция [%d %unit%]"
