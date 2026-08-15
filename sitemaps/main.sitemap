@@ -441,6 +441,7 @@ sitemap main label="MAIN"
                 Text item=at_mira_location_mode icon="network" label="Режим [%s]"
             }
             Frame label="Мирочка (Облако Apple)" {
+                Mapview item=at_mira_cloud_location height=10
                 Text item=at_mira_cloud_distance icon="movecontrol" label="Дистанция [%d %unit%]"
                 Text item=at_mira_cloud_azimuth icon="movecontrol" label="Азимут [%d %unit%]"
                 Text item=at_mira_cloud_seen icon="time" label="Когда [%s]"
@@ -453,6 +454,7 @@ sitemap main label="MAIN"
                 Text item=at_kst_location_mode icon="network" label="Режим [%s]"
             }
             Frame label="Кшиштик (Облако Apple)" {
+                Mapview item=at_kst_cloud_location height=10
                 Text item=at_kst_cloud_distance icon="movecontrol" label="Дистанция [%d %unit%]"
                 Text item=at_kst_cloud_azimuth icon="movecontrol" label="Азимут [%d %unit%]"
                 Text item=at_kst_cloud_seen icon="time" label="Когда [%s]"
