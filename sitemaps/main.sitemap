@@ -435,10 +435,18 @@ sitemap main label="MAIN"
         Group item=mouse_trap label="Mouse trap [MAP(mouse_trap.map):%s]"
         Group item=at_cats_home label="Коты" {
             Frame label="Мирочка (Сигнал)" {
+                Text item=at_mira_location_presence icon="light" label="Дома [MAP(presence.map):%s]"
                 Text item=at_mira_location_name icon="group" label="Где [%s]"
                 Text item=at_mira_location_seen icon="time" label="Когда [%S]" valuecolor=[at_mira_location_seen=="now"="green",at_mira_location_seen!="now"="red"]
                 Text item=at_mira_location_signal icon="linkz" label="Сигнал [%d %%]"
                 Text item=at_mira_location_mode icon="network" label="Режим [%s]"
+            }
+            Frame label="Кшиштик (Сигнал)" {
+                Text item=at_kst_location_presence icon="light" label="Дома [MAP(presence.map):%s]"
+                Text item=at_kst_location_name icon="group" label="Где [%s]"
+                Text item=at_kst_location_seen icon="time" label="Когда [%S]" valuecolor=[at_kst_location_seen=="now"="green",at_kst_location_seen!="now"="red"]
+                Text item=at_kst_location_signal icon="linkz" label="Сигнал [%d %%]"
+                Text item=at_kst_location_mode icon="network" label="Режим [%s]"
             }
             Frame label="Мирочка (Облако Apple)" {
                 Mapview item=at_mira_cloud_location height=10
@@ -446,12 +454,6 @@ sitemap main label="MAIN"
                 Text item=at_mira_cloud_azimuth icon="movecontrol" label="Азимут [%d %unit%]"
                 Text item=at_mira_cloud_seen icon="time" label="Когда [%s]"
                 Text item=at_mira_cloud_battery icon="battery" label="Батарея [%d %%]"
-            }
-            Frame label="Кшиштик (Сигнал)" {
-                Text item=at_kst_location_name icon="group" label="Где [%s]"
-                Text item=at_kst_location_seen icon="time" label="Когда [%S]" valuecolor=[at_kst_location_seen=="now"="green",at_kst_location_seen!="now"="red"]
-                Text item=at_kst_location_signal icon="linkz" label="Сигнал [%d %%]"
-                Text item=at_kst_location_mode icon="network" label="Режим [%s]"
             }
             Frame label="Кшиштик (Облако Apple)" {
                 Mapview item=at_kst_cloud_location height=10
