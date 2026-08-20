@@ -749,3 +749,24 @@ devices:
       GalopedSet2:
         id: gda015_progress
         name: Bambu P2S progress
+
+# Cat BLE sensors
+  - name: Beacon SZ
+    id: sz_beacon
+    type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON
+
+  - name: Beacon WZ
+    id: wz_beacon
+    type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON
+
+  - name: Beacon KU
+    id: ku_beacon
+    type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON
+
+  - name: Beacon KG
+    id: kg_beacon
+    type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON
+
+  - name: Beacon KI
+    id: ki_beacon
+    type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON

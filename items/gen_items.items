@@ -916,7 +916,7 @@ Switch sz_heating_lowbatt "SZ heating BAT [MAP(codegen-lowbat.map):%s]" <lowbatt
 Switch sz_heating_ota "SZ heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_heating:ota"}
 Number:Dimensionless sz_heating_link "SZ heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_heating:link"}
 DateTime sz_heating_activity "SZ heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_heating:activity"}
-Number:Temperature sz_heating_local_temperature "SZ heating temp [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:sz_heating:local_temperature"}
+Number:Temperature sz_heating_local_temperature "SZ heating temp [%.0f %unit%]" <temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:sz_heating:local_temperature"}
 Number:ElectricPotential sz_heating_battery_voltage "SZ heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:sz_heating:battery_voltage"}
 // KS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -929,7 +929,7 @@ Switch ks_heating_lowbatt "KS heating BAT [MAP(codegen-lowbat.map):%s]" <lowbatt
 Switch ks_heating_ota "KS heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_heating:ota"}
 Number:Dimensionless ks_heating_link "KS heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_heating:link"}
 DateTime ks_heating_activity "KS heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ks_heating:activity"}
-Number:Temperature ks_heating_local_temperature "KS heating temp [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ks_heating:local_temperature"}
+Number:Temperature ks_heating_local_temperature "KS heating temp [%.0f %unit%]" <temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ks_heating:local_temperature"}
 Number:ElectricPotential ks_heating_battery_voltage "KS heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ks_heating:battery_voltage"}
 // KU heating (0x0c4314fffe73bf1f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -942,7 +942,7 @@ Switch ku_heating_lowbatt "KU heating BAT [MAP(codegen-lowbat.map):%s]" <lowbatt
 Switch ku_heating_ota "KU heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ku_heating:ota"}
 Number:Dimensionless ku_heating_link "KU heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ku_heating:link"}
 DateTime ku_heating_activity "KU heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_heating:activity"}
-Number:Temperature ku_heating_local_temperature "KU heating temp [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ku_heating:local_temperature"}
+Number:Temperature ku_heating_local_temperature "KU heating temp [%.0f %unit%]" <temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:ku_heating:local_temperature"}
 Number:ElectricPotential ku_heating_battery_voltage "KU heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:ku_heating:battery_voltage"}
 // WZ heating (0x0c4314fffe73c43f)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -955,7 +955,7 @@ Switch wz_heating_lowbatt "WZ heating BAT [MAP(codegen-lowbat.map):%s]" <lowbatt
 Switch wz_heating_ota "WZ heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:wz_heating:ota"}
 Number:Dimensionless wz_heating_link "WZ heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:wz_heating:link"}
 DateTime wz_heating_activity "WZ heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:wz_heating:activity"}
-Number:Temperature wz_heating_local_temperature "WZ heating temp [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:wz_heating:local_temperature"}
+Number:Temperature wz_heating_local_temperature "WZ heating temp [%.0f %unit%]" <temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:wz_heating:local_temperature"}
 Number:ElectricPotential wz_heating_battery_voltage "WZ heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:wz_heating:battery_voltage"}
 // KG heating (0x0c4314fffe5c6913)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -968,7 +968,7 @@ Switch kg_heating_lowbatt "KG heating BAT [MAP(codegen-lowbat.map):%s]" <lowbatt
 Switch kg_heating_ota "KG heating OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:kg_heating:ota"}
 Number:Dimensionless kg_heating_link "KG heating LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:kg_heating:link"}
 DateTime kg_heating_activity "KG heating activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_heating:activity"}
-Number:Temperature kg_heating_local_temperature "KG heating temp [%.0f %unit%]" <local_temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:kg_heating:local_temperature"}
+Number:Temperature kg_heating_local_temperature "KG heating temp [%.0f %unit%]" <temperature> (g_all_local_temperature) {channel="mqtt:topic:openhab:kg_heating:local_temperature"}
 Number:ElectricPotential kg_heating_battery_voltage "KG heating [%.0f mV]" <energy> (g_all_battery_voltage) {channel="mqtt:topic:openhab:kg_heating:battery_voltage"}
 // SZ Shutter (0xa4c138fd0fd1c168)
 // Curtains module (1 gang) / https://www.zigbee2mqtt.io/devices/TS130F.html
@@ -1022,3 +1022,33 @@ Number:Dimensionless gda015_progress "Bambu P2S progress [%d %%]" <pressure> {ch
 Number:Dimensionless galoped_65AA60_rssi "GDA-015 Bambu P2S RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:galoped_65AA60:rssi"}
 String galoped_65AA60_bssid "GDA-015 Bambu P2S BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:galoped_65AA60:bssid"}
 DateTime galoped_65AA60_activity "GDA-015 Bambu P2S activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:galoped_65AA60:activity"}
+// Beacon SZ (sz_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Number:Temperature sz_beacon_chip_temperature "Beacon SZ chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:sz_beacon:chip_temperature"}
+Number:Dimensionless sz_beacon_rssi "Beacon SZ RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:sz_beacon:rssi"}
+String sz_beacon_bssid "Beacon SZ BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:sz_beacon:bssid"}
+DateTime sz_beacon_activity "Beacon SZ activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_beacon:activity"}
+// Beacon WZ (wz_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Number:Temperature wz_beacon_chip_temperature "Beacon WZ chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:wz_beacon:chip_temperature"}
+Number:Dimensionless wz_beacon_rssi "Beacon WZ RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:wz_beacon:rssi"}
+String wz_beacon_bssid "Beacon WZ BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:wz_beacon:bssid"}
+DateTime wz_beacon_activity "Beacon WZ activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:wz_beacon:activity"}
+// Beacon KU (ku_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Number:Temperature ku_beacon_chip_temperature "Beacon KU chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:ku_beacon:chip_temperature"}
+Number:Dimensionless ku_beacon_rssi "Beacon KU RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:ku_beacon:rssi"}
+String ku_beacon_bssid "Beacon KU BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:ku_beacon:bssid"}
+DateTime ku_beacon_activity "Beacon KU activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ku_beacon:activity"}
+// Beacon KG (kg_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Number:Temperature kg_beacon_chip_temperature "Beacon KG chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:kg_beacon:chip_temperature"}
+Number:Dimensionless kg_beacon_rssi "Beacon KG RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_beacon:rssi"}
+String kg_beacon_bssid "Beacon KG BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_beacon:bssid"}
+DateTime kg_beacon_activity "Beacon KG activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_beacon:activity"}
+// Beacon KI (ki_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Number:Temperature ki_beacon_chip_temperature "Beacon KI chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:ki_beacon:chip_temperature"}
+Number:Dimensionless ki_beacon_rssi "Beacon KI RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:ki_beacon:rssi"}
+String ki_beacon_bssid "Beacon KI BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:ki_beacon:bssid"}
+DateTime ki_beacon_activity "Beacon KI activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ki_beacon:activity"}

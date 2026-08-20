@@ -1479,3 +1479,53 @@ Thing mqtt:topic:openhab:galoped_65AA60 "GDA-015 Bambu P2S" (mqtt:broker:openhab
 		Type number : galopedset1 [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"GalopedSet1\".*)∩JSONPATH:$.GalopedSet1", commandTopic="cmnd/galoped_65AA60/GalopedSet1", unit="C°"]
 		Type number : galopedset2 [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"GalopedSet2\".*)∩JSONPATH:$.GalopedSet2", commandTopic="cmnd/galoped_65AA60/GalopedSet2", unit="%"]
 }
+// Beacon SZ (sz_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Thing mqtt:topic:openhab:sz_beacon "Beacon SZ" (mqtt:broker:openhab) {
+	Channels:
+		Type number : rssi [stateTopic="tele/sz_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/sz_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/sz_beacon/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/sz_beacon/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : chip_temperature [stateTopic="tele/sz_beacon/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
+}
+// Beacon WZ (wz_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Thing mqtt:topic:openhab:wz_beacon "Beacon WZ" (mqtt:broker:openhab) {
+	Channels:
+		Type number : rssi [stateTopic="tele/wz_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/wz_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/wz_beacon/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/wz_beacon/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : chip_temperature [stateTopic="tele/wz_beacon/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
+}
+// Beacon KU (ku_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Thing mqtt:topic:openhab:ku_beacon "Beacon KU" (mqtt:broker:openhab) {
+	Channels:
+		Type number : rssi [stateTopic="tele/ku_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/ku_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/ku_beacon/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/ku_beacon/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : chip_temperature [stateTopic="tele/ku_beacon/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
+}
+// Beacon KG (kg_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Thing mqtt:topic:openhab:kg_beacon "Beacon KG" (mqtt:broker:openhab) {
+	Channels:
+		Type number : rssi [stateTopic="tele/kg_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/kg_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/kg_beacon/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/kg_beacon/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : chip_temperature [stateTopic="tele/kg_beacon/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
+}
+// Beacon KI (ki_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Thing mqtt:topic:openhab:ki_beacon "Beacon KI" (mqtt:broker:openhab) {
+	Channels:
+		Type number : rssi [stateTopic="tele/ki_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/ki_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/ki_beacon/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/ki_beacon/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : chip_temperature [stateTopic="tele/ki_beacon/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
+}

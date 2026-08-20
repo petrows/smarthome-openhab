@@ -1243,5 +1243,45 @@ Text item=galoped_65AA60_rssi
 Text item=galoped_65AA60_bssid
 Text item=galoped_65AA60_activity
 }
+Frame label="Beacon SZ (sz_beacon)" {
+// Beacon SZ (sz_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Text item=sz_beacon_chip_temperature
+Text item=sz_beacon_rssi
+Text item=sz_beacon_bssid
+Text item=sz_beacon_activity
+}
+Frame label="Beacon WZ (wz_beacon)" {
+// Beacon WZ (wz_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Text item=wz_beacon_chip_temperature
+Text item=wz_beacon_rssi
+Text item=wz_beacon_bssid
+Text item=wz_beacon_activity
+}
+Frame label="Beacon KU (ku_beacon)" {
+// Beacon KU (ku_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Text item=ku_beacon_chip_temperature
+Text item=ku_beacon_rssi
+Text item=ku_beacon_bssid
+Text item=ku_beacon_activity
+}
+Frame label="Beacon KG (kg_beacon)" {
+// Beacon KG (kg_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Text item=kg_beacon_chip_temperature
+Text item=kg_beacon_rssi
+Text item=kg_beacon_bssid
+Text item=kg_beacon_activity
+}
+Frame label="Beacon KI (ki_beacon)" {
+// Beacon KI (ki_beacon)
+// PWS room v3 (beacon) / https://petro.ws/
+Text item=ki_beacon_chip_temperature
+Text item=ki_beacon_rssi
+Text item=ki_beacon_bssid
+Text item=ki_beacon_activity
+}
 }
 }
