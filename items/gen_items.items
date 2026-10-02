@@ -654,15 +654,16 @@ Dimmer ks_up_light_ct "KS Main CT [JS(codegen-mired.js): %s]" <light> (g_all_ct,
 Switch ks_up_light_ota "KS Main OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_up_light:ota"}
 Number:Dimensionless ks_up_light_link "KS Main LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_up_light:link"}
 Switch ks_up_light_sw "KS Main" <light> (g_all_sw,all_light,eg_light,ks_light) {channel="mqtt:topic:openhab:ks_up_light:state"}
-// KS Climate (0xa4c1386df39045f6)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Switch ks_climate_lowbatt "KS Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ks_climate:battery_low"}
-Switch ks_climate_ota "KS Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_climate:ota"}
-Number:Dimensionless ks_climate_link "KS Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_climate:link"}
-DateTime ks_climate_activity "KS Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ks_climate:activity"}
+// KS Climate (ks_climate)
+// PWS room v3 (Climate) / https://petro.ws/
+Number:Temperature ks_climate_chip_temperature "KS Climate chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:ks_climate:chip_temperature"}
 Number:Temperature ks_climate_temperature "KS Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,ks_hz_temperature_sensor) {channel="mqtt:topic:openhab:ks_climate:temperature"}
 Number:Dimensionless ks_climate_humidity "KS Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:ks_climate:humidity"}
-Number:Dimensionless ks_climate_battery "KS Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:ks_climate:battery"}
+Number:Temperature ks_climate_dewpoint "KS Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:ks_climate:dewpoint"}
+Number:Pressure ks_climate_pressure "KS Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:ks_climate:pressure"}
+Number:Dimensionless ks_climate_rssi "KS Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:ks_climate:rssi"}
+String ks_climate_bssid "KS Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:ks_climate:bssid"}
+DateTime ks_climate_activity "KS Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:ks_climate:activity"}
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
 Switch ks_window_2_lowbatt "KS Window 2 BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:ks_window_2:battery_low"}
@@ -708,10 +709,8 @@ DateTime wz_window_1_activity "WZ Window 1 activity [JS(codegen-display-activity
 Contact wz_window_1_contact "WZ Window 1 [%s]" <door> (g_all_contact,wz_windows_contact) {channel="mqtt:topic:openhab:wz_window_1:contact"}
 Number:Dimensionless wz_window_1_battery "WZ Window 1  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:wz_window_1:battery"}
 // SZ Climate (sz_climate)
-// PWS room sensor v2 / https://oshwlab.com/petrows/wemos-d1-room-sensor
-Switch sz_climate_led_r "SZ Climate Led R" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_climate:power1"}
-Switch sz_climate_led_y "SZ Climate Led Y" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_climate:power2"}
-Switch sz_climate_led_g "SZ Climate Led G" <light> (g_all_sw) {channel="mqtt:topic:openhab:sz_climate:power3"}
+// PWS room v3 (CO2) / https://petro.ws/
+Number:Temperature sz_climate_chip_temperature "SZ Climate chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:sz_climate:chip_temperature"}
 Number:Dimensionless sz_climate_co2 "SZ Climate CO₂ [%d ppm]" <co2> (g_all_co2) {channel="mqtt:topic:openhab:sz_climate:co2"}
 Number:Temperature sz_climate_temperature "SZ Climate temp [%.0f %unit%]" <temperature> (g_all_temperature,sz_hz_temperature_sensor) {channel="mqtt:topic:openhab:sz_climate:temperature"}
 Number:Dimensionless sz_climate_humidity "SZ Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:sz_climate:humidity"}
@@ -876,15 +875,16 @@ DateTime octoprint_climate_activity "Octoprint climate activity [JS(codegen-disp
 Number:Temperature octoprint_climate_temperature "Octoprint climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:octoprint_climate:temperature"}
 Number:Dimensionless octoprint_climate_humidity "Octoprint climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:octoprint_climate:humidity"}
 Number:Dimensionless octoprint_climate_battery "Octoprint climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:octoprint_climate:battery"}
-// LG3 Climate (0xa4c1381155f63287)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Switch lg3_climate_lowbatt "LG3 Climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:lg3_climate:battery_low"}
-Switch lg3_climate_ota "LG3 Climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:lg3_climate:ota"}
-Number:Dimensionless lg3_climate_link "LG3 Climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:lg3_climate:link"}
-DateTime lg3_climate_activity "LG3 Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_climate:activity"}
+// LG3 Climate (lg3_climate)
+// PWS room v3 (Climate) / https://petro.ws/
+Number:Temperature lg3_climate_chip_temperature "LG3 Climate chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:lg3_climate:chip_temperature"}
 Number:Temperature lg3_climate_temperature "LG3 Climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:lg3_climate:temperature"}
 Number:Dimensionless lg3_climate_humidity "LG3 Climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:lg3_climate:humidity"}
-Number:Dimensionless lg3_climate_battery "LG3 Climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:lg3_climate:battery"}
+Number:Temperature lg3_climate_dewpoint "LG3 Climate dewpoint [%.0f %unit%]" <temperature> (g_all_dewpoint) {channel="mqtt:topic:openhab:lg3_climate:dewpoint"}
+Number:Pressure lg3_climate_pressure "LG3 Climate pressure  [%.0f %unit%]" <pressure> (g_all_pressure) {channel="mqtt:topic:openhab:lg3_climate:pressure"}
+Number:Dimensionless lg3_climate_rssi "LG3 Climate RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:lg3_climate:rssi"}
+String lg3_climate_bssid "LG3 Climate BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:lg3_climate:bssid"}
+DateTime lg3_climate_activity "LG3 Climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:lg3_climate:activity"}
 // KG Lager 3 door (0xa4c138a52c4e5c19)
 // TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
 Switch kg_lager3_door_lowbatt "KG Lager 3 door BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:kg_lager3_door:battery_low"}
@@ -1017,17 +1017,14 @@ Number:Power main_power_ac_power_c "Main power C [%.1f W]" <energy> (g_all_ac_po
 Number:Energy main_power_ac_energy "Main power [%.1f kWh]" <energy> (g_all_ac_energy) {channel="mqtt:topic:openhab:main_power:ac_energy"}
 // GDA-015 Bambu P2S (galoped_65AA60)
 // Petro.ws Galoped analog display (3D+TP) / https://github.com/petrows/smarthome-galoped-dekad/blob/master/doc/device-3dp.md
+Switch gda015_bkl_sw "Bambu P2S BKL" <light> (g_all_sw) {channel="mqtt:topic:openhab:galoped_65AA60:power"}
+Dimmer gda015_bkl_dim "Bambu P2S BKL dim" <light> (g_all_dim) {channel="mqtt:topic:openhab:galoped_65AA60:dimmer"}
+Color gda015_bkl_color "Bambu P2S BKL color" <light> (g_all_color) {channel="mqtt:topic:openhab:galoped_65AA60:hsbcolor"}
 Number:Temperature gda015_temperature "Bambu P2S temp [%d %unit%]" <temperature> {channel="mqtt:topic:openhab:galoped_65AA60:galopedset1"}
 Number:Dimensionless gda015_progress "Bambu P2S progress [%d %%]" <pressure> {channel="mqtt:topic:openhab:galoped_65AA60:galopedset2"}
 Number:Dimensionless galoped_65AA60_rssi "GDA-015 Bambu P2S RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:galoped_65AA60:rssi"}
 String galoped_65AA60_bssid "GDA-015 Bambu P2S BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:galoped_65AA60:bssid"}
 DateTime galoped_65AA60_activity "GDA-015 Bambu P2S activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:galoped_65AA60:activity"}
-// Beacon SZ (sz_beacon)
-// PWS room v3 (beacon) / https://petro.ws/
-Number:Temperature sz_beacon_chip_temperature "Beacon SZ chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:sz_beacon:chip_temperature"}
-Number:Dimensionless sz_beacon_rssi "Beacon SZ RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:sz_beacon:rssi"}
-String sz_beacon_bssid "Beacon SZ BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:sz_beacon:bssid"}
-DateTime sz_beacon_activity "Beacon SZ activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:sz_beacon:activity"}
 // Beacon WZ (wz_beacon)
 // PWS room v3 (beacon) / https://petro.ws/
 Number:Temperature wz_beacon_chip_temperature "Beacon WZ chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:wz_beacon:chip_temperature"}

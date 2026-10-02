@@ -26,8 +26,6 @@
   friendly_name: ku_shutter
 '0xa4c13804963f4ccf':
   friendly_name: wz_window_1
-'0xa4c1381155f63287':
-  friendly_name: lg3_climate
 '0xa4c138182f60d651':
   friendly_name: eg_main_door
 '0xa4c138234138f73a':
@@ -38,8 +36,6 @@
   friendly_name: tr_climate
 '0xa4c1386a03a53708':
   friendly_name: wz_climate
-'0xa4c1386df39045f6':
-  friendly_name: ks_climate
 '0xa4c13878cea182ad':
   friendly_name: ks_shutter
 '0xa4c1389b51452429':

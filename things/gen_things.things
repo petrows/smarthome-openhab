@@ -958,18 +958,19 @@ Thing mqtt:topic:openhab:ks_up_light "KS Main" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="z2m-common/ks_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-common/ks_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// KS Climate (0xa4c1386df39045f6)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
+// KS Climate (ks_climate)
+// PWS room v3 (Climate) / https://petro.ws/
 Thing mqtt:topic:openhab:ks_climate "KS Climate" (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="z2m-common/ks_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
-		Type number : humidity [stateTopic="z2m-common/ks_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : battery [stateTopic="z2m-common/ks_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="z2m-common/ks_climate", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="z2m-common/ks_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="z2m-common/ks_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="z2m-common/ks_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="z2m-common/ks_climate", transformationPattern="JS:codegen-activity.js"]
+		Type number : rssi [stateTopic="tele/ks_climate/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/ks_climate/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/ks_climate/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/ks_climate/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : chip_temperature [stateTopic="tele/ks_climate/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
+		Type number : temperature [stateTopic="tele/ks_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Temperature", unit="C°"]
+		Type number : humidity [stateTopic="tele/ks_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Humidity", unit="%"]
+		Type number : dewpoint [stateTopic="tele/ks_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.DewPoint", unit="C°"]
+		Type number : pressure [stateTopic="tele/ks_climate/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
 }
 // KS Window 2 (0xa4c138f1bf27592c)
 // TuYa Rechargeable Zigbee contact sensor (SNTZ007) / https://www.zigbee2mqtt.io/devices/SNTZ007.html
@@ -1033,16 +1034,14 @@ Thing mqtt:topic:openhab:wz_window_1 "WZ Window 1" (mqtt:broker:openhab) {
 		Type datetime : activity [stateTopic="z2m-common/wz_window_1", transformationPattern="JS:codegen-activity.js"]
 }
 // SZ Climate (sz_climate)
-// PWS room sensor v2 / https://oshwlab.com/petrows/wemos-d1-room-sensor
+// PWS room v3 (CO2) / https://petro.ws/
 Thing mqtt:topic:openhab:sz_climate "SZ Climate" (mqtt:broker:openhab) {
 	Channels:
 		Type number : rssi [stateTopic="tele/sz_climate/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
 		Type string : bssid [stateTopic="tele/sz_climate/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/sz_climate/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/sz_climate/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type switch : power1 [stateTopic="stat/sz_climate/RESULT", transformationPattern="REGEX:(.*\"POWER1\".*)∩JSONPATH:$.POWER1", commandTopic="cmnd/sz_climate/POWER1", on="ON", off="OFF"]
-		Type switch : power2 [stateTopic="stat/sz_climate/RESULT", transformationPattern="REGEX:(.*\"POWER2\".*)∩JSONPATH:$.POWER2", commandTopic="cmnd/sz_climate/POWER2", on="ON", off="OFF"]
-		Type switch : power3 [stateTopic="stat/sz_climate/RESULT", transformationPattern="REGEX:(.*\"POWER3\".*)∩JSONPATH:$.POWER3", commandTopic="cmnd/sz_climate/POWER3", on="ON", off="OFF"]
+		Type number : chip_temperature [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
 		Type number : co2 [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.S8.CarbonDioxide", unit="ppm"]
 		Type number : temperature [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Temperature", unit="C°"]
 		Type number : humidity [stateTopic="tele/sz_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Humidity", unit="%"]
@@ -1281,18 +1280,19 @@ Thing mqtt:topic:openhab:octoprint_climate "Octoprint climate" (mqtt:broker:open
 		Type switch : ota [stateTopic="z2m-common/octoprint_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 		Type datetime : activity [stateTopic="z2m-common/octoprint_climate", transformationPattern="JS:codegen-activity.js"]
 }
-// LG3 Climate (0xa4c1381155f63287)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
+// LG3 Climate (lg3_climate)
+// PWS room v3 (Climate) / https://petro.ws/
 Thing mqtt:topic:openhab:lg3_climate "LG3 Climate" (mqtt:broker:openhab) {
 	Channels:
-		Type number : temperature [stateTopic="z2m-common/lg3_climate", transformationPattern="REGEX:(.*\"temperature\".*)∩JSONPATH:$.temperature", unit="C°"]
-		Type number : humidity [stateTopic="z2m-common/lg3_climate", transformationPattern="REGEX:(.*\"humidity\".*)∩JSONPATH:$.humidity", unit="%"]
-		Type number : battery [stateTopic="z2m-common/lg3_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
-		Type datetime : activity [stateTopic="z2m-common/lg3_climate", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="z2m-common/lg3_climate", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]
-		Type number : link [stateTopic="z2m-common/lg3_climate", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="z2m-common/lg3_climate", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="z2m-common/lg3_climate", transformationPattern="JS:codegen-activity.js"]
+		Type number : rssi [stateTopic="tele/lg3_climate/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
+		Type string : bssid [stateTopic="tele/lg3_climate/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
+		Type number : la [stateTopic="tele/lg3_climate/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
+		Type datetime : activity [stateTopic="tele/lg3_climate/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type number : chip_temperature [stateTopic="tele/lg3_climate/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
+		Type number : temperature [stateTopic="tele/lg3_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Temperature", unit="C°"]
+		Type number : humidity [stateTopic="tele/lg3_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.Humidity", unit="%"]
+		Type number : dewpoint [stateTopic="tele/lg3_climate/SENSOR", transformationPattern="JSONPATH:$.AHT2X.DewPoint", unit="C°"]
+		Type number : pressure [stateTopic="tele/lg3_climate/SENSOR", transformationPattern="JSONPATH:$.BMP280.Pressure", unit="hPa"]
 }
 // KG Lager 3 door (0xa4c138a52c4e5c19)
 // TuYa Rechargeable Zigbee contact sensor (TS0203) / https://www.zigbee2mqtt.io/devices/TS0203.html#tuya-ts0203
@@ -1476,18 +1476,13 @@ Thing mqtt:topic:openhab:galoped_65AA60 "GDA-015 Bambu P2S" (mqtt:broker:openhab
 		Type string : bssid [stateTopic="tele/galoped_65AA60/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
 		Type number : la [stateTopic="tele/galoped_65AA60/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/galoped_65AA60/STATE", transformationPattern="JS:codegen-activity.js"]
+		Type switch : power [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"POWER\".*)∩JSONPATH:$.POWER", commandTopic="cmnd/galoped_65AA60/POWER", on="ON", off="OFF"]
+		Type dimmer : dimmer [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"Dimmer\".*)∩JSONPATH:$.Dimmer", commandTopic="cmnd/galoped_65AA60/Dimmer", min="1", max="100"]
+		Type dimmer : white [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"White\".*)∩JSONPATH:$.White", commandTopic="cmnd/galoped_65AA60/White", min="1", max="100"]
+		Type dimmer : ct [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"CT\".*)∩JSONPATH:$.CT", commandTopic="cmnd/galoped_65AA60/CT", min="150", max="500"]
+		Type color : hsbcolor [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"HSBColor\".*)∩JSONPATH:$.HSBColor", commandTopic="cmnd/galoped_65AA60/HSBColor"]
 		Type number : galopedset1 [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"GalopedSet1\".*)∩JSONPATH:$.GalopedSet1", commandTopic="cmnd/galoped_65AA60/GalopedSet1", unit="C°"]
 		Type number : galopedset2 [stateTopic="stat/galoped_65AA60/RESULT", transformationPattern="REGEX:(.*\"GalopedSet2\".*)∩JSONPATH:$.GalopedSet2", commandTopic="cmnd/galoped_65AA60/GalopedSet2", unit="%"]
-}
-// Beacon SZ (sz_beacon)
-// PWS room v3 (beacon) / https://petro.ws/
-Thing mqtt:topic:openhab:sz_beacon "Beacon SZ" (mqtt:broker:openhab) {
-	Channels:
-		Type number : rssi [stateTopic="tele/sz_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
-		Type string : bssid [stateTopic="tele/sz_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
-		Type number : la [stateTopic="tele/sz_beacon/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
-		Type datetime : activity [stateTopic="tele/sz_beacon/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type number : chip_temperature [stateTopic="tele/sz_beacon/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
 }
 // Beacon WZ (wz_beacon)
 // PWS room v3 (beacon) / https://petro.ws/

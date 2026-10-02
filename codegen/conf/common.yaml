@@ -123,10 +123,20 @@ devices:
         - ks_light_ct
         - astro_color_light_ct
 
+  # - name: KS Climate
+  #   id: ks_climate
+  #   zigbee_id: '0xa4c1386df39045f6'
+  #   type: TUYA_TEMPERATURE_SENSOR_TS0201
+  #   y2m:
+  #     name: Климат
+  #     room: KINO
+  #   groups:
+  #     temperature:
+  #       - ks_hz_temperature_sensor
+
   - name: KS Climate
     id: ks_climate
-    zigbee_id: '0xa4c1386df39045f6'
-    type: TUYA_TEMPERATURE_SENSOR_TS0201
+    type: TASMOTA_PWS_ROOM_SENSOR_V3_TEMP
     y2m:
       name: Климат
       room: KINO
@@ -200,20 +210,10 @@ devices:
 
   - name: SZ Climate
     id: sz_climate
-    type: TASMOTA_PWS_ROOM_SENSOR_V2
+    type: TASMOTA_PWS_ROOM_SENSOR_V3_CO2
     y2m:
       name: Климат
       room: SLEEP
-    channels:
-      POWER1:
-        id: sz_climate_led_r
-        name: 'SZ Climate Led R'
-      POWER2:
-        id: sz_climate_led_y
-        name: 'SZ Climate Led Y'
-      POWER3:
-        id: sz_climate_led_g
-        name: 'SZ Climate Led G'
     groups:
       temperature:
         - sz_hz_temperature_sensor
@@ -520,10 +520,17 @@ devices:
 
   # Storage room 3
 
+  # - name: LG3 Climate
+  #   id: lg3_climate
+  #   zigbee_id: '0xa4c1381155f63287'
+  #   type: TUYA_TEMPERATURE_SENSOR_TS0201
+  #   y2m:
+  #     name: Климат
+  #     room: KG_LAUNDRY
+
   - name: LG3 Climate
     id: lg3_climate
-    zigbee_id: '0xa4c1381155f63287'
-    type: TUYA_TEMPERATURE_SENSOR_TS0201
+    type: TASMOTA_PWS_ROOM_SENSOR_V3_TEMP
     y2m:
       name: Климат
       room: KG_LAUNDRY
@@ -743,6 +750,17 @@ devices:
     id: galoped_65AA60
     type: GALOPED_3D_TP
     channels:
+      # Backlight:
+      POWER:
+        id: gda015_bkl_sw
+        name: Bambu P2S BKL
+      Dimmer:
+        id: gda015_bkl_dim
+        name: Bambu P2S BKL dim
+      HSBColor:
+        id: gda015_bkl_color
+        name: Bambu P2S BKL color
+      # Gauges:
       GalopedSet1:
         id: gda015_temperature
         name: Bambu P2S temp
@@ -751,10 +769,6 @@ devices:
         name: Bambu P2S progress
 
 # Cat BLE sensors
-  - name: Beacon SZ
-    id: sz_beacon
-    type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON
-
   - name: Beacon WZ
     id: wz_beacon
     type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON

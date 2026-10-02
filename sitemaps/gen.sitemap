@@ -799,16 +799,17 @@ Text item=ks_up_light_ota
 Text item=ks_up_light_link
 Switch item=ks_up_light_sw
 }
-Frame label="KS Climate (0xa4c1386df39045f6)" {
-// KS Climate (0xa4c1386df39045f6)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Text item=ks_climate_lowbatt
-Text item=ks_climate_ota
-Text item=ks_climate_link
-Text item=ks_climate_activity
+Frame label="KS Climate (ks_climate)" {
+// KS Climate (ks_climate)
+// PWS room v3 (Climate) / https://petro.ws/
+Text item=ks_climate_chip_temperature
 Text item=ks_climate_temperature
 Text item=ks_climate_humidity
-Text item=ks_climate_battery
+Text item=ks_climate_dewpoint
+Text item=ks_climate_pressure
+Text item=ks_climate_rssi
+Text item=ks_climate_bssid
+Text item=ks_climate_activity
 }
 Frame label="KS Window 2 (0xa4c138f1bf27592c)" {
 // KS Window 2 (0xa4c138f1bf27592c)
@@ -863,10 +864,8 @@ Text item=wz_window_1_battery
 }
 Frame label="SZ Climate (sz_climate)" {
 // SZ Climate (sz_climate)
-// PWS room sensor v2 / https://oshwlab.com/petrows/wemos-d1-room-sensor
-Switch item=sz_climate_led_r
-Switch item=sz_climate_led_y
-Switch item=sz_climate_led_g
+// PWS room v3 (CO2) / https://petro.ws/
+Text item=sz_climate_chip_temperature
 Text item=sz_climate_co2
 Text item=sz_climate_temperature
 Text item=sz_climate_humidity
@@ -1069,16 +1068,17 @@ Text item=octoprint_climate_temperature
 Text item=octoprint_climate_humidity
 Text item=octoprint_climate_battery
 }
-Frame label="LG3 Climate (0xa4c1381155f63287)" {
-// LG3 Climate (0xa4c1381155f63287)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Text item=lg3_climate_lowbatt
-Text item=lg3_climate_ota
-Text item=lg3_climate_link
-Text item=lg3_climate_activity
+Frame label="LG3 Climate (lg3_climate)" {
+// LG3 Climate (lg3_climate)
+// PWS room v3 (Climate) / https://petro.ws/
+Text item=lg3_climate_chip_temperature
 Text item=lg3_climate_temperature
 Text item=lg3_climate_humidity
-Text item=lg3_climate_battery
+Text item=lg3_climate_dewpoint
+Text item=lg3_climate_pressure
+Text item=lg3_climate_rssi
+Text item=lg3_climate_bssid
+Text item=lg3_climate_activity
 }
 Frame label="KG Lager 3 door (0xa4c138a52c4e5c19)" {
 // KG Lager 3 door (0xa4c138a52c4e5c19)
@@ -1237,19 +1237,14 @@ Text item=main_power_ac_energy
 Frame label="GDA-015 Bambu P2S (galoped_65AA60)" {
 // GDA-015 Bambu P2S (galoped_65AA60)
 // Petro.ws Galoped analog display (3D+TP) / https://github.com/petrows/smarthome-galoped-dekad/blob/master/doc/device-3dp.md
+Switch item=gda015_bkl_sw
+Slider item=gda015_bkl_dim
+Colorpicker item=gda015_bkl_color
 Text item=gda015_temperature
 Text item=gda015_progress
 Text item=galoped_65AA60_rssi
 Text item=galoped_65AA60_bssid
 Text item=galoped_65AA60_activity
-}
-Frame label="Beacon SZ (sz_beacon)" {
-// Beacon SZ (sz_beacon)
-// PWS room v3 (beacon) / https://petro.ws/
-Text item=sz_beacon_chip_temperature
-Text item=sz_beacon_rssi
-Text item=sz_beacon_bssid
-Text item=sz_beacon_activity
 }
 Frame label="Beacon WZ (wz_beacon)" {
 // Beacon WZ (wz_beacon)

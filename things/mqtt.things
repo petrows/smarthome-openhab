@@ -74,6 +74,7 @@ Thing mqtt:topic:openhab:p2s (mqtt:broker:openhab) {
         Type number : idle_time  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$._meta.idle_seconds"]
         Type number : progress  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.percent", unit="%"]
         Type string : file  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.subtask_name"]
+        Type string : gcode_state  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.gcode_state"]
         Type number : temperature_bed_actual  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.bed_temper", unit="C°"]
         Type number : temperature_bed_target  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.bed_target_temper", unit="C°"]
         Type number : temperature_tool_actual  [ stateTopic="bambu/p2s/status", transformationPattern="JSONPATH:$.print.nozzle_temper", unit="C°"]

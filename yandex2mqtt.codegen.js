@@ -135,6 +135,7 @@ SensorClimate({
     id: 'ks_climate',
     name: 'Климат',
     room: ROOMS.KINO,
+    pressure: true,
 }),
 SensorClimate({
     id: 'wz_climate',
@@ -230,6 +231,7 @@ SensorClimate({
     id: 'lg3_climate',
     name: 'Климат',
     room: ROOMS.KG_LAUNDRY,
+    pressure: true,
 }),
 Light(LIGHT.SW, {
     id: 'lg3_up_light',
