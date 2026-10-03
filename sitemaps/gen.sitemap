@@ -1106,21 +1106,6 @@ Text item=kg_lager4_main_light_rssi
 Text item=kg_lager4_main_light_bssid
 Text item=kg_lager4_main_light_activity
 }
-Frame label="SZ heating (0x0c4314fffe63b727)" {
-// SZ heating (0x0c4314fffe63b727)
-// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Setpoint item=sz_heating_thermostat
-Text item=sz_heating_thermostat_mode
-Text item=sz_heating_thermostat_preset
-Switch item=sz_heating_thermostat_enable
-Setpoint item=sz_heating_local_temperature_calibration
-Text item=sz_heating_lowbatt
-Text item=sz_heating_ota
-Text item=sz_heating_link
-Text item=sz_heating_activity
-Text item=sz_heating_local_temperature
-Text item=sz_heating_battery_voltage
-}
 Frame label="KS heating (0x0c4314fffe62f090)" {
 // KS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
@@ -1261,14 +1246,6 @@ Text item=ku_beacon_chip_temperature
 Text item=ku_beacon_rssi
 Text item=ku_beacon_bssid
 Text item=ku_beacon_activity
-}
-Frame label="Beacon KG (kg_beacon)" {
-// Beacon KG (kg_beacon)
-// PWS room v3 (beacon) / https://petro.ws/
-Text item=kg_beacon_chip_temperature
-Text item=kg_beacon_rssi
-Text item=kg_beacon_bssid
-Text item=kg_beacon_activity
 }
 Frame label="Beacon KI (ki_beacon)" {
 // Beacon KI (ki_beacon)

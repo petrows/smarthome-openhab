@@ -578,18 +578,18 @@ devices:
 
 # Heating
 
-  - name: SZ heating
-    id: sz_heating
-    zigbee_id: '0x0c4314fffe63b727'
-    type: SILVERCREST_THERMOSTAT_368308_2010
-    groups:
-      thermostat:
-      - all_hz
-      - all_hz_auto
-      - sz_hz
-      thermostat_enable:
-      - all_hz_enable
-      - sz_hz_enable
+  # - name: SZ heating
+  #   id: sz_heating
+  #   zigbee_id: '0x0c4314fffe63b727'
+  #   type: SILVERCREST_THERMOSTAT_368308_2010
+  #   groups:
+  #     thermostat:
+  #     - all_hz
+  #     - all_hz_auto
+  #     - sz_hz
+  #     thermostat_enable:
+  #     - all_hz_enable
+  #     - sz_hz_enable
 
   - name: KS heating
     id: ks_heating
@@ -777,9 +777,9 @@ devices:
     id: ku_beacon
     type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON
 
-  - name: Beacon KG
-    id: kg_beacon
-    type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON
+  # - name: Beacon KG
+  #   id: kg_beacon
+  #   type: TASMOTA_PWS_ROOM_SENSOR_V3_BEACON
 
   - name: Beacon KI
     id: ki_beacon

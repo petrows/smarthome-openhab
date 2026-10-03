@@ -1326,23 +1326,6 @@ Thing mqtt:topic:openhab:kg_lager4_main_light "KG Lager 4 (Haupt)" (mqtt:broker:
 		Type datetime : activity [stateTopic="tele/kg_lager4_main_light/STATE", transformationPattern="JS:codegen-activity.js"]
 		Type switch : power [stateTopic="stat/kg_lager4_main_light/RESULT", transformationPattern="REGEX:(.*\"POWER\".*)∩JSONPATH:$.POWER", commandTopic="cmnd/kg_lager4_main_light/POWER", on="ON", off="OFF"]
 }
-// SZ heating (0x0c4314fffe63b727)
-// Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
-Thing mqtt:topic:openhab:sz_heating "SZ heating" (mqtt:broker:openhab) {
-	Channels:
-		Type number : thermostat [stateTopic="z2m-common/sz_heating", commandTopic="z2m-common/sz_heating/set", transformationPattern="REGEX:(.*\"current_heating_setpoint\".*)∩JSONPATH:$.current_heating_setpoint", transformationPatternOut="JS:codegen-cmd-float.js?f=current_heating_setpoint", unit="C°"]
-		Type string : thermostat_mode [stateTopic="z2m-common/sz_heating", commandTopic="z2m-common/sz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JSONPATH:$.system_mode", formatBeforePublish="{\"system_mode\": \"%s\"}"]
-		Type string : thermostat_preset [stateTopic="z2m-common/sz_heating", commandTopic="z2m-common/sz_heating/set", transformationPattern="REGEX:(.*\"preset\".*)∩JSONPATH:$.preset", formatBeforePublish="{\"preset\": \"%s\"}"]
-		Type switch : thermostat_enable [stateTopic="z2m-common/sz_heating", commandTopic="z2m-common/sz_heating/set", transformationPattern="REGEX:(.*\"system_mode\".*)∩JS:codegen-thermostat-enable.js", transformationPatternOut="JS:codegen-cmd-thermostat-enable.js"]
-		Type string : local_temperature_calibration [stateTopic="z2m-common/sz_heating", commandTopic="z2m-common/sz_heating/set", transformationPattern="REGEX:(.*\"local_temperature_calibration\".*)∩JSONPATH:$.local_temperature_calibration", transformationPatternOut="JS:codegen-cmd-float.js?f=local_temperature_calibration", unit="C°"]
-		Type number : local_temperature [stateTopic="z2m-common/sz_heating", transformationPattern="REGEX:(.*\"local_temperature\".*)∩JSONPATH:$.local_temperature", unit="C°"]
-		Type number : battery_voltage [stateTopic="z2m-common/sz_heating", transformationPattern="REGEX:(.*\"battery_voltage\".*)∩JSONPATH:$.battery_voltage", unit="mV"]
-		Type datetime : activity [stateTopic="z2m-common/sz_heating", transformationPattern="JS:codegen-activity.js"]
-		Type switch : battery_low [stateTopic="z2m-common/sz_heating", transformationPattern="REGEX:(.*\"battery\".*)∩S:codegen-lowbat-1xAA.js", unit="mV"]
-		Type number : link [stateTopic="z2m-common/sz_heating", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
-		Type switch : ota [stateTopic="z2m-common/sz_heating", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
-		Type datetime : activity [stateTopic="z2m-common/sz_heating", transformationPattern="JS:codegen-activity.js"]
-}
 // KS heating (0x0c4314fffe62f090)
 // Silvercrest radiator valve with thermostat / https://www.zigbee2mqtt.io/devices/368308_2010.html
 Thing mqtt:topic:openhab:ks_heating "KS heating" (mqtt:broker:openhab) {
@@ -1503,16 +1486,6 @@ Thing mqtt:topic:openhab:ku_beacon "Beacon KU" (mqtt:broker:openhab) {
 		Type number : la [stateTopic="tele/ku_beacon/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
 		Type datetime : activity [stateTopic="tele/ku_beacon/STATE", transformationPattern="JS:codegen-activity.js"]
 		Type number : chip_temperature [stateTopic="tele/ku_beacon/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
-}
-// Beacon KG (kg_beacon)
-// PWS room v3 (beacon) / https://petro.ws/
-Thing mqtt:topic:openhab:kg_beacon "Beacon KG" (mqtt:broker:openhab) {
-	Channels:
-		Type number : rssi [stateTopic="tele/kg_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI"]
-		Type string : bssid [stateTopic="tele/kg_beacon/STATE", transformationPattern="JSONPATH:$.Wifi.BSSId"]
-		Type number : la [stateTopic="tele/kg_beacon/STATE", transformationPattern="JSONPATH:$.LoadAvg"]
-		Type datetime : activity [stateTopic="tele/kg_beacon/STATE", transformationPattern="JS:codegen-activity.js"]
-		Type number : chip_temperature [stateTopic="tele/kg_beacon/SENSOR", transformationPattern="JSONPATH:$.ESP32.Temperature", unit="C°"]
 }
 // Beacon KI (ki_beacon)
 // PWS room v3 (beacon) / https://petro.ws/
