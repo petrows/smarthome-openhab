@@ -6,6 +6,8 @@
   friendly_name: main_power
 '0x0c4314fffe5c6913':
   friendly_name: kg_heating
+'0x0c4314fffe62ddce':
+  friendly_name: sz_heating
 '0x0c4314fffe62f090':
   friendly_name: ks_heating
 '0x0c4314fffe73bf1f':
