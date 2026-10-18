@@ -866,15 +866,6 @@ Switch kg_lager1_main_light "KG Lager 1 (Haupt)" <light> (g_all_sw,all_light,kg_
 Number:Dimensionless kg_lager1_main_light_rssi "KG Lager 1 (Haupt) RSSI [%.0f]" <network> (g_all_rssi) {channel="mqtt:topic:openhab:kg_lager1_main_light:rssi"}
 String kg_lager1_main_light_bssid "KG Lager 1 (Haupt) BSSID [%s]" <network> (g_all_bssid) {channel="mqtt:topic:openhab:kg_lager1_main_light:bssid"}
 DateTime kg_lager1_main_light_activity "KG Lager 1 (Haupt) activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:kg_lager1_main_light:activity"}
-// Octoprint climate (0xa4c138234138f73a)
-// TuYa Temperature & humidity sensor / https://www.zigbee2mqtt.io/devices/TS0201.html
-Switch octoprint_climate_lowbatt "Octoprint climate BAT [MAP(codegen-lowbat.map):%s]" <lowbattery> (g_all_lowbattery) {channel="mqtt:topic:openhab:octoprint_climate:battery_low"}
-Switch octoprint_climate_ota "Octoprint climate OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:octoprint_climate:ota"}
-Number:Dimensionless octoprint_climate_link "Octoprint climate LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:octoprint_climate:link"}
-DateTime octoprint_climate_activity "Octoprint climate activity [JS(codegen-display-activity.js):%s]" <time> (g_all_activity) {channel="mqtt:topic:openhab:octoprint_climate:activity"}
-Number:Temperature octoprint_climate_temperature "Octoprint climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:octoprint_climate:temperature"}
-Number:Dimensionless octoprint_climate_humidity "Octoprint climate humidity  [%.0f %%]" <humidity> (g_all_humidity) {channel="mqtt:topic:openhab:octoprint_climate:humidity"}
-Number:Dimensionless octoprint_climate_battery "Octoprint climate  BAT [%d %%]" <battery> (g_all_battery) {channel="mqtt:topic:openhab:octoprint_climate:battery"}
 // LG3 Climate (lg3_climate)
 // PWS room v3 (Climate) / https://petro.ws/
 Number:Temperature lg3_climate_chip_temperature "LG3 Climate chip [%.0f %unit%]" <temperature> (g_all_chip_temperature) {channel="mqtt:topic:openhab:lg3_climate:chip_temperature"}

@@ -513,10 +513,10 @@ devices:
             - all_light
             - kg_light
 
-  - name: Octoprint climate
-    id: octoprint_climate
-    zigbee_id: '0xa4c138234138f73a'
-    type: TUYA_TEMPERATURE_SENSOR_TS0201
+  # - name: Octoprint climate
+  #   id: octoprint_climate
+  #   zigbee_id: '0xa4c138234138f73a'
+  #   type: TUYA_TEMPERATURE_SENSOR_TS0201
 
   # Storage room 3
 
