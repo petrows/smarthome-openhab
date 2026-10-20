@@ -524,11 +524,13 @@ Thing mqtt:topic:openhab:tr_up_light "Treppe Up light" (mqtt:broker:openhab) {
 		Type number : link [stateTopic="z2m-ikea/tr_up_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-ikea/tr_up_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
-// Treppe motion (0xbc33acfffe872049)
-// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+// Treppe motion (0x8c65a3fffe3dbc2c)
+// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
 Thing mqtt:topic:openhab:tr_motion "Treppe motion" (mqtt:broker:openhab) {
 	Channels:
 		Type switch : occupancy [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"occupancy\".*)∩JSONPATH:$.occupancy", on="true", off="false"]
+		Type number : illuminance_lux [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"illuminance_lux\".*)∩JSONPATH:$.illuminance_lux", unit="lx"]
+		Type number : illuminance [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"illuminance\".*)∩JSONPATH:$.illuminance"]
 		Type number : battery [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JSONPATH:$.battery", unit="%"]
 		Type datetime : activity [stateTopic="z2m-ikea/tr_motion", transformationPattern="JS:codegen-activity.js"]
 		Type switch : battery_low [stateTopic="z2m-ikea/tr_motion", transformationPattern="REGEX:(.*\"battery\".*)∩JS:codegen-lowbat.js"]

@@ -429,14 +429,16 @@ Text item=tr_up_light_ota
 Text item=tr_up_light_link
 Switch item=tr_up_light_sw
 }
-Frame label="Treppe motion (0xbc33acfffe872049)" {
-// Treppe motion (0xbc33acfffe872049)
-// IKEA TRADFRI motion sensor (E1525/E1745) / https://www.zigbee2mqtt.io/devices/E1525_E1745.html
+Frame label="Treppe motion (0x8c65a3fffe3dbc2c)" {
+// Treppe motion (0x8c65a3fffe3dbc2c)
+// VALLHORN wireless motion sensor (E2134) / https://www.zigbee2mqtt.io/devices/E2134.html
 Text item=tr_motion_lowbatt
 Text item=tr_motion_ota
 Text item=tr_motion_link
 Text item=tr_motion_activity
 Text item=tr_motion_occupancy
+Text item=tr_motion_illuminance_lux
+Text item=tr_motion_illuminance
 Text item=tr_motion_battery
 }
 Frame label="Petro Desktop remote (0x000d6ffffee8357d)" {

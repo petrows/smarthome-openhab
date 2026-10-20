@@ -108,6 +108,8 @@
   friendly_name: eg_decoration_light_l
 '0x781c9dfffe58d749':
   friendly_name: eg_decoration_light_r
+'0x8c65a3fffe3dbc2c':
+  friendly_name: tr_motion
 '0x8c65a3fffe70093b':
   friendly_name: bz_leak
 '0x8c8b48fffe0ef9ed':
@@ -166,8 +168,6 @@
     interval: 100
 '0xbc33acfffe84ca1e':
   friendly_name: kg_lager4_motion
-'0xbc33acfffe872049':
-  friendly_name: tr_motion
 '0xccccccfffee401f8':
   friendly_name: sz_door_bed_remote
 '0xccccccfffef0356e':

@@ -481,8 +481,8 @@ devices:
 
   - name: Treppe motion
     id: tr_motion
-    zigbee_id: '0xbc33acfffe872049'
-    type: IKEA_TRADFRI_MOTION_SENSOR
+    zigbee_id: '0x8c65a3fffe3dbc2c'
+    type: IKEA_VALLHORN
 
 # PETRO ROOM ================================
 
