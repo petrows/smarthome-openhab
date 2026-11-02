@@ -771,7 +771,7 @@ devices:
   - name: EXT Christmas light
     id: ext_christmas_light
     zigbee_id: '0x348d13fffec90ebd'
-    type: IKEA_INSPELNING
+    type: IKEA_TRETAKT
     groups:
       sw:
         - all_christmas_light
@@ -780,7 +780,7 @@ devices:
   - name: Balkon Christmas light
     id: bk_christmas_light
     zigbee_id: '0x94ec32fffe203705'
-    type: IKEA_INSPELNING
+    type: IKEA_TRETAKT
     groups:
       sw:
       - all_christmas_light
@@ -789,8 +789,17 @@ devices:
   - name: KG Christmas light
     id: kg_christmas_light
     zigbee_id: '0x94a081fffe6052ad'
-    type: IKEA_INSPELNING
+    type: IKEA_TRETAKT
     groups:
       sw:
       - all_christmas_light
       - kg_christmas_light
+
+  - name: SZ Christmas light
+    id: sz_christmas_light
+    zigbee_id: '0x781c9dfffeffc518'
+    type: IKEA_TRETAKT
+    groups:
+      sw:
+      - all_christmas_light
+      - sz_christmas_light
