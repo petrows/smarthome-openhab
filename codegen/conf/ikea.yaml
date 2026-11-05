@@ -803,3 +803,12 @@ devices:
       sw:
       - all_christmas_light
       - sz_christmas_light
+
+  - name: KS Christmas light
+    id: ks_christmas_light
+    zigbee_id: '0x880f62fffe0102ec'
+    type: IKEA_TRETAKT
+    groups:
+      sw:
+      - all_christmas_light
+      - ks_christmas_light

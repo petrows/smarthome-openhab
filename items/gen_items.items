@@ -589,6 +589,11 @@ Switch kg_christmas_light_sw "KG Christmas light" <light> (g_all_sw,all_christma
 Switch sz_christmas_light_ota "SZ Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:sz_christmas_light:ota"}
 Number:Dimensionless sz_christmas_light_link "SZ Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:sz_christmas_light:link"}
 Switch sz_christmas_light_sw "SZ Christmas light" <light> (g_all_sw,all_christmas_light,sz_christmas_light) {channel="mqtt:topic:openhab:sz_christmas_light:state"}
+// KS Christmas light (0x880f62fffe0102ec)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Switch ks_christmas_light_ota "KS Christmas light OTA [%s]" <fire> (g_all_ota) {channel="mqtt:topic:openhab:ks_christmas_light:ota"}
+Number:Dimensionless ks_christmas_light_link "KS Christmas light LINK [%d]" <linkz> (g_all_link) {channel="mqtt:topic:openhab:ks_christmas_light:link"}
+Switch ks_christmas_light_sw "KS Christmas light" <light> (g_all_sw,all_christmas_light,ks_christmas_light) {channel="mqtt:topic:openhab:ks_christmas_light:state"}
 // Outside Climate (ext_climate)
 // PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Number:Temperature ext_climate_temperature "Outside Climate temp [%.0f %unit%]" <temperature> (g_all_temperature) {channel="mqtt:topic:openhab:ext_climate:temperature"}

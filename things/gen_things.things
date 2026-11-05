@@ -874,6 +874,14 @@ Thing mqtt:topic:openhab:sz_christmas_light "SZ Christmas light" (mqtt:broker:op
 		Type number : link [stateTopic="z2m-ikea/sz_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
 		Type switch : ota [stateTopic="z2m-ikea/sz_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
 }
+// KS Christmas light (0x880f62fffe0102ec)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Thing mqtt:topic:openhab:ks_christmas_light "KS Christmas light" (mqtt:broker:openhab) {
+	Channels:
+		Type switch : state [stateTopic="z2m-ikea/ks_christmas_light", commandTopic="z2m-ikea/ks_christmas_light/set", transformationPattern="JSONPATH:$.state", transformationPatternOut="JS:codegen-cmd-value.js?f=state&t=0&exp=0"]
+		Type number : link [stateTopic="z2m-ikea/ks_christmas_light", transformationPattern="REGEX:(.*\"linkquality\".*)∩JSONPATH:$.linkquality"]
+		Type switch : ota [stateTopic="z2m-ikea/ks_christmas_light", transformationPattern="REGEX:(.*\"update_available\".*)∩JSONPATH:$.update_available", on="true", off="false"]
+}
 // Outside Climate (ext_climate)
 // PWS room sensor v2 (no co2) / https://oshwlab.com/petrows/wemos-d1-room-sensor
 Thing mqtt:topic:openhab:ext_climate "Outside Climate" (mqtt:broker:openhab) {

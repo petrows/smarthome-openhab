@@ -726,6 +726,13 @@ Text item=sz_christmas_light_ota
 Text item=sz_christmas_light_link
 Switch item=sz_christmas_light_sw
 }
+Frame label="KS Christmas light (0x880f62fffe0102ec)" {
+// KS Christmas light (0x880f62fffe0102ec)
+// TRETAKT smart plug (E22x4) / https://www.zigbee2mqtt.io/devices/E22x4.html
+Text item=ks_christmas_light_ota
+Text item=ks_christmas_light_link
+Switch item=ks_christmas_light_sw
+}
 }
 Text label="Z2M common" {
 Frame label="Outside Climate (ext_climate)" {
