@@ -10,7 +10,7 @@
 const { rules, triggers, items } = require('openhab');
 
 /** Printer is switched off after this idle time, seconds. */
-const IDLE_TIMEOUT = 3600;
+const IDLE_TIMEOUT = 360;
 
 /** Gcode state -> backlight HSB color. */
 const GCODE_STATE_COLORS = {
@@ -27,7 +27,7 @@ const DEFAULT_COLOR = '240,100,70';
 rules.JSRule({
     name: 'P2S Idle check',
     id: 'p2s-idle-check',
-    triggers: [triggers.ItemStateUpdateTrigger('p2s_idle_time')],
+    triggers: [triggers.GenericCronTrigger('0 00 04 ? * *')],
     execute: () => {
         if (items.getItem('p2s_connected').state === 'OFF') {
             // Ignore disconnected device
